@@ -286,6 +286,7 @@ export type PracticeMode =
   | 'topic'
   | 'concept_drilldown'
   | 'dynamic_mock'
+  | 'diagnostic'
   | 'random_practice';
 
 export interface PracticeConfig {
@@ -349,4 +350,25 @@ export interface User {
   id: string;
   email: string;
   name: string;
+}
+
+export type FunnelEventType =
+  | 'goal_selected'
+  | 'diagnostic_started'
+  | 'diagnostic_completed'
+  | 'remediation_started'
+  | 'retry_clicked'
+  | 'session_abandoned'
+  | 'session_completed'
+  | 'session_started';
+
+export interface FunnelEvent {
+  id: string;
+  type: FunnelEventType;
+  timestamp: string;
+  userId: string;
+  programId?: string;
+  subjectId?: string;
+  mode?: PracticeMode;
+  metadata?: Record<string, any>;
 }
