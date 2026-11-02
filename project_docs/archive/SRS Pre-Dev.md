@@ -1,3 +1,17 @@
+---
+> **DEPRECATED & SUPERSEDED HISTORICAL ARCHIVE**
+> This document is part of the historical pre-development and prototyping logs.
+> It has been superseded by the authoritative **MEP EA Digital System Architecture Suite (v3.0.0)**.
+> Please refer to:
+> - Master Architecture Index: [INDEX.md](../INDEX.md)
+> - System & Infrastructure Architecture: [01_SYSTEM_AND_INFRASTRUCTURE_ARCHITECTURE.md](../01_SYSTEM_AND_INFRASTRUCTURE_ARCHITECTURE.md)
+> - Core Services & Domain Model: [02_CORE_SERVICES_AND_DOMAIN_MODEL.md](../02_CORE_SERVICES_AND_DOMAIN_MODEL.md)
+> - Content Pipeline & Legal Decoupling: [03_CONTENT_PIPELINE_AND_LEGAL_DECOUPLING.md](../03_CONTENT_PIPELINE_AND_LEGAL_DECOUPLING.md)
+> - Vector Visualizations & Math Engine: [04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md](../04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md)
+> - UI/UX Design System: [05_UI_UX_DESIGN_SYSTEM.md](../05_UI_UX_DESIGN_SYSTEM.md)
+> - Product Roadmap & Operations: [06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md](../06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md)
+---
+
 \# Pre‑Development Work Plan for MEP‑EA‑01
 
 Before writing application code, you can complete a substantial amount of high‑value work that de‑risks development, validates the SRS, and produces reusable assets. Below is a structured breakdown of what can be done \*\*pre‑development\*\*, organised by workstream.
