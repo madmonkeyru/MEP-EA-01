@@ -1,12 +1,13 @@
 # MEP-EA-01 — Costa Rican Educación Abierta Test Simulator & Practice Platform
 
-Current student-facing availability and persistence: [Capability status](project_docs/CAPABILITY_STATUS.md). UI/UX changes: [Implementation ledger](project_docs/UI_UX_IMPLEMENTATION.md). Browser and student validation: [Checklist](project_docs/UI_UX_VALIDATION.md). Earlier implementation descriptions and test totals below are historical.
+**MEP EA Digital (`MEP-EA-01`)** is an edge-accelerated, high-fidelity web test simulator, diagnostic assessment, and learning practice platform engineered for the Costa Rican *Educación Abierta* system administered by the *Ministerio de Educación Pública* (MEP / DGEC).
 
-**MEP-EA-01** is a high-fidelity web-based test simulator and learning practice platform designed for students preparing for the Costa Rican *Bachillerato por Madurez Suficiente* (BXM) exam (Convocatorias 01-2026 & 02-2026) and the broader *Educación Abierta* framework (I&II Ciclo CICO, III Ciclo, EDAD, BXM).
+Authoritative System Architecture & Engineering Specifications: **[Master Architecture Suite (v3.0.0)](project_docs/INDEX.md)**.
+Historical exploratory pre-dev logs and audits: **[Historical Archive](project_docs/archive/README.md)**.
 
 ---
 
-The expanded navigation supports Welcome → Framework Hub → Subject Hub across all four programs. Only **BXM Mathematics, 02-2026** exposes functional question sets; other subjects and windows provide navigable previews. See [flow validation](project_docs/FLOW_VALIDATION.md) for routes, context-switch behavior and verification steps.
+The platform spans the four core Educación Abierta certification tracks: **I & II Ciclo (CICO)**, **III Ciclo (7°, 8°, 9°)**, **EDAD (Parte 1 & Parte 2)**, and **BXM (Bachillerato por Madurez)**. The active prototype exposes full multi-program navigation, dynamic formula sheets, terms dictionary, official specification tables, and production question sets in BXM Mathematics.
 
 ## 🚀 Key Features
 
