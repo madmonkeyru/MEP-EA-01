@@ -33,8 +33,8 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             <ConvocatoriaBadge convocatoriaId={currentConvocatoria} />
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight leading-tight">
-            MEP Educación Abierta — Simulador & Práctica
+          <h1 tabIndex={-1} className="text-2xl sm:text-4xl font-semibold tracking-tight leading-tight">
+            Encuentra tu programa de estudio
           </h1>
           <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 max-w-xl leading-relaxed">
             Hay distintas rutas para seguir estudiando. Explora tu programa y encuentra el siguiente paso en tu preparación.
@@ -67,7 +67,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             onClick={onEnterMvpMath}
             className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-sm cursor-pointer min-h-[48px]"
           >
-            <span>Entrar al Hub de Matemáticas</span>
+            <span>Practicar Matemáticas BXM</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -96,6 +96,8 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
         </div>
       </div>
 
+      <details className="ui-surface rounded-2xl p-5"><summary>Comparar las rutas educativas</summary><div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Comparación de programas"><table className="data-table"><caption>Elige una ruta según los estudios que deseas completar; confirma requisitos con la DGEC.</caption><thead><tr><th scope="col">Programa</th><th scope="col">Estudios previos de referencia</th><th scope="col">Meta</th></tr></thead><tbody><tr><th scope="row">I y II Ciclo</th><td>Primaria incompleta</td><td>Completar primaria</td></tr><tr><th scope="row">III Ciclo</th><td>Primaria completa</td><td>Completar noveno</td></tr><tr><th scope="row">EDAD</th><td>Noveno aprobado</td><td>Bachillerato en dos partes</td></tr><tr><th scope="row">BXM</th><td>Noveno aprobado</td><td>Bachillerato por suficiencia</td></tr></tbody></table></div></details>
+      <a href="#/guia" className="text-link">No sé qué programa elegir · Abrir guía opcional</a>
       <p className="text-sm text-stone-600 dark:text-slate-400">Plataforma independiente de preparación. No realiza inscripciones ni verifica expedientes del MEP.</p>
 
       {/* 4. Compact Informational Banner: Examination Rules & Regulations */}
@@ -124,7 +126,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             <div>
               <h4 className="font-semibold text-stone-900 dark:text-slate-100">Directriz de Calculadoras</h4>
               <p className="text-[11px] text-stone-600 dark:text-slate-400 mt-1 leading-snug">
-                Calculadora científica estándar permitida en III Ciclo, EDAD y BXM (sin cálculo simbólico).
+                En III Ciclo depende de la materia y nivel: Matemáticas de séptimo sin calculadora; octavo y noveno con calculadora sencilla. Ciencias admite científica no programable. Consulta las reglas específicas de EDAD y BXM.
                 Estrictamente prohibida en I y II Ciclo (CICO).
               </p>
             </div>

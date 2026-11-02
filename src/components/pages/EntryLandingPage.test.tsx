@@ -14,15 +14,15 @@ describe('EntryLandingPage', () => {
       />
     );
 
-    expect(screen.getByText(/Preparación y Práctica para los Exámenes/i)).toBeInTheDocument();
+    expect(screen.getByText(/Prepárate para tu próximo paso/i)).toBeInTheDocument();
     expect(screen.getByText('Matemáticas BXM')).toBeInTheDocument();
     expect(screen.getByText('Explorar Programas MEP')).toBeInTheDocument();
 
-    const enterBxmBtn = screen.getByText('Ingresar al Hub BXM');
+    const enterBxmBtn = screen.getByText('Practicar Matemáticas BXM');
     fireEvent.click(enterBxmBtn);
     expect(handleEnterBxm).toHaveBeenCalledTimes(1);
 
-    const exploreBtn = screen.getByText('Ver Planes y Programas');
+    const exploreBtn = screen.getByText('Explorar programas');
     fireEvent.click(exploreBtn);
     expect(handleExplore).toHaveBeenCalledTimes(1);
   });

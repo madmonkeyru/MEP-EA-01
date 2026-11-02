@@ -1,311 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { User, Attempt, PracticeConfig, ProgramInfo } from '../../types';
+import { useState } from 'react';
+import type { PracticeConfig, User } from '../../types';
 import { storageService } from '../../services/storageService';
 import { dataService } from '../../services/dataService';
-import { PracticeConfigModal } from '../practice/PracticeConfigModal';
-import { EvaluationModulesWidget } from '../practice/EvaluationModulesWidget';
-import { QuickStatsBanner } from '../common/QuickStatsBanner';
+import { isExam, modeLabel } from '../../services/learningSession';
+import { type AppRoute, routeHash } from '../../services/navigation';
 import { Breadcrumbs } from '../common/Breadcrumbs';
-import { ConvocatoriaBadge } from '../common/ConvocatoriaBadge';
-import { GenericSubjectHubPage } from './GenericSubjectHubPage';
-import { routeHash } from '../../services/navigation';
+import { Tabs } from '../common/Tabs';
+import { Dialog } from '../common/Dialog';
+import { EvaluationModulesWidget } from '../practice/EvaluationModulesWidget';
 import { SpecsTable } from '../knowledge/SpecsTable';
 import { TermsDictionary } from '../knowledge/TermsDictionary';
 import { FormulasSheet } from '../knowledge/FormulasSheet';
-import {
-  Award,
-  History,
-  Calculator,
-  Ban,
-  FileText,
-  BookOpen,
-  LayoutGrid,
-} from 'lucide-react';
+import { OfficialResources } from '../knowledge/OfficialResources';
+import { GenericSubjectHubPage } from './GenericSubjectHubPage';
 
 interface SubjectHubPageProps {
-  contextControls?: React.ReactNode;
-  currentUser: User | null;
-  onNavigateHome?: () => void;
-  onStartSimulation: () => void;
-  onStartPractice: (config: PracticeConfig) => void;
-  onStartPracticeByItems?: (itemIds: number[], title: string) => void;
+  contextControls?: React.ReactNode; currentUser: User | null; route?: AppRoute; onNavigate?: (route: AppRoute) => void;
+  onNavigateHome?: () => void; onStartSimulation: () => void; onStartPractice: (config: PracticeConfig) => void;
+  onStartPracticeByItems?: (ids: number[], title: string) => void;
 }
-
-export const SubjectHubPage: React.FC<SubjectHubPageProps> = ({
-  contextControls,
-  currentUser: _currentUser,
-  onNavigateHome,
-  onStartSimulation,
-  onStartPractice,
-  onStartPracticeByItems,
-}) => {
-  const [practiceModalMode, setPracticeModalMode] = useState<'area' | 'topic' | null>(null);
-  const [activeProgram, setActiveProgram] = useState<ProgramInfo | undefined>(dataService.getCurrentProgram());
-  const [convocatoria, setConvocatoria] = useState<string>(dataService.getCurrentConvocatoriaId() || '2026-c2');
-
-  // Hub view modes: 'practice' (simulator + evaluation widgets) or 'resources' (integrated specs, terms, formulas)
-  const [activeSection, setActiveSection] = useState<'practice' | 'resources'>('practice');
-  const [resourceSubTab, setResourceSubTab] = useState<'specs' | 'terms' | 'formulas'>('specs');
-
-  useEffect(() => {
-    const updateActiveInfo = () => {
-      setActiveProgram(dataService.getCurrentProgram());
-      setConvocatoria(dataService.getCurrentConvocatoriaId() || '2026-c2');
-    };
-    updateActiveInfo();
-    const unsubscribe = dataService.subscribe(updateActiveInfo);
-    return unsubscribe;
-  }, []);
-
-  const attempts: Attempt[] = storageService.getAttempts();
-  const perfLevel = storageService.calculatePerformanceLevel(attempts);
-  const isCalcAllowed = dataService.isCalculatorAllowed();
-  const isBxm = activeProgram?.id === 'bxm';
-
-  const breadcrumbs = [
-    { label: 'Programas', onClick: () => { window.location.hash = '#/programas'; } },
-    { label: activeProgram?.name || 'Programa', onClick: onNavigateHome },
-    ...(isBxm ? [{ label: 'Matemáticas', active: true }] : []),
-  ];
-
-  if (!isBxm && activeProgram) {
-    return <GenericSubjectHubPage program={activeProgram} route={{
-      view: 'hub', programId: activeProgram.id, subjectId: dataService.getCurrentSubjectId(),
-      moduleId: dataService.getCurrentSubprogramId(), convocatoriaId: convocatoria,
-    }} onNavigate={route => { window.location.hash = routeHash(route); }} />;
-  }
-
-  return (
-    <div className="subject-hub-page max-w-7xl 2xl:max-w-[1536px] mx-auto px-3.5 sm:px-6 py-5 sm:py-8 space-y-6 text-stone-900 dark:text-slate-100 transition-colors">
-      {/* 1. Contextual Navigation Breadcrumbs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <Breadcrumbs items={breadcrumbs} />
-
-        <div className="flex items-center gap-2">
-          <ConvocatoriaBadge convocatoriaId={convocatoria} />
-          {!isCalcAllowed ? (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-500/15 text-amber-700 dark:text-amber-300 text-[11px] font-bold rounded-lg ">
-              <Ban className="w-3 h-3 text-amber-500" />
-              Calculadora Prohibida
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-slate-300 text-[11px] font-bold rounded-lg ">
-              <Calculator className="w-3 h-3 text-stone-500" />
-              Calculadora Permitida
-            </span>
-          )}
-        </div>
-      </div>
-
-      <div className="pt-2 pb-1 space-y-2">
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">Tu espacio de Matemáticas BXM</h1>
-        <p className="text-sm text-stone-600 dark:text-slate-400 max-w-2xl leading-relaxed">Refuerza un tema, consulta una fórmula o pon a prueba lo que sabes. Elige cómo quieres avanzar hoy.</p>
-      </div>
-      {contextControls}
-
-      {/* 2. Compact Readiness / Quick Stats Banner */}
-      <QuickStatsBanner
-        attempts={attempts}
-        programName={isBxm ? 'Matemáticas BXM (Convocatoria 02-2026)' : activeProgram?.name}
-      />
-
-      {/* 3. Section Segmented Switcher inside the Hub: Práctica & Simulación vs. Recursos & Especificaciones */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 ui-surface rounded-2xl p-3 sm:p-4 shadow-xs">
-        <div className="flex items-center gap-2.5">
-          <h2 className="text-xs sm:text-sm font-semibold text-stone-900 dark:text-slate-100 truncate">
-            {isBxm
-              ? 'Practicas y Simulaciones de Matemáticas BXM 2026 Convocatoria #2'
-              : `Hub Curricular: ${activeProgram?.name || 'Educación Abierta'}`}
-          </h2>
-        </div>
-
-        {/* Section Tabs */}
-        <div className="flex bg-stone-100 dark:bg-slate-800 p-1 rounded-xl gap-1 text-xs font-bold w-full sm:w-auto">
-          <button
-            type="button"
-            onClick={() => setActiveSection('practice')}
-            className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-center transition flex items-center justify-center gap-1.5 min-h-[36px] cursor-pointer ${
-              activeSection === 'practice'
-                ? 'bg-indigo-600 text-white font-semibold shadow-2xs'
-                : 'text-stone-700 dark:text-slate-300 hover:text-stone-950 dark:hover:text-white'
-            }`}
-          >
-            <LayoutGrid className="w-3.5 h-3.5 stroke-[2.2]" />
-            <span>Módulos de Práctica</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveSection('resources')}
-            className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-center transition flex items-center justify-center gap-1.5 min-h-[36px] cursor-pointer ${
-              activeSection === 'resources'
-                ? 'bg-indigo-600 text-white font-semibold shadow-2xs'
-                : 'text-stone-700 dark:text-slate-300 hover:text-stone-950 dark:hover:text-white'
-            }`}
-          >
-            <FileText className="w-3.5 h-3.5 stroke-[2.2]" />
-            <span>Especificaciones & Recursos</span>
-          </button>
-        </div>
-      </div>
-
-      {/* 4. Section Content */}
-      {activeSection === 'practice' ? (
-        /* Main Practice & Test Grid */
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Combined Practice & Test Modes Widget (7 Cols) */}
-          <EvaluationModulesWidget
-            onStartSimulation={onStartSimulation}
-            onStartPractice={onStartPractice}
-          />
-
-          {/* Stacked Performance Indicator & Recent History Widget (5 Cols) */}
-          <div className="lg:col-span-5 ui-surface rounded-2xl p-5 sm:p-6 shadow-xs space-y-5">
-            {/* Top Section: Indicador de Rendimiento */}
-            <div>
-              <div className="flex items-center justify-between gap-2 pb-3 border-b border-stone-200 dark:border-slate-800 mb-3.5">
-                <span className="text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-slate-300 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                  Rendimiento
-                </span>
-
-                {attempts.length > 0 && (
-                  <span className="text-[11px] font-bold text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-950/70 px-2.5 py-1 rounded-lg ">
-                    {attempts.length} {attempts.length === 1 ? 'intento' : 'intentos'}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex items-center gap-3.5 bg-amber-50/50 dark:bg-slate-800/50 p-3.5 rounded-xl ">
-                <div className="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-semibold text-base  shadow-xs shrink-0">
-                  {perfLevel.scoreAverage}%
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h4 className="text-xs sm:text-sm font-semibold text-stone-900 dark:text-slate-100 truncate">
-                    {attempts.length === 0 ? 'Sin datos de rendimiento' : perfLevel.description}
-                  </h4>
-                  <p className="text-[11px] text-stone-600 dark:text-slate-400 font-medium mt-0.5 leading-snug">
-                    {attempts.length === 0
-                      ? 'Completa tu primera práctica o simulación para calcular tus métricas.'
-                      : `Promedio en los últimos ${Math.min(attempts.length, 5)} intentos.`}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Section: Historial de Intentos Recientes */}
-            <div className="pt-2">
-              <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-stone-200 dark:border-slate-800 mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-slate-300 flex items-center gap-2">
-                  <History className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                  Historial Reciente
-                </span>
-              </div>
-
-              {attempts.length === 0 ? (
-                <div className="text-center py-6 text-xs font-semibold text-stone-500 dark:text-slate-400 bg-stone-100/60 dark:bg-slate-800/40  rounded-xl px-3">
-                  Aún no has realizado ningún intento. ¡Comienza con una práctica o simulación!
-                </div>
-              ) : (
-                <div className="divide-y divide-stone-200 dark:divide-slate-800 max-h-[220px] overflow-y-auto pr-1">
-                  {attempts.slice(0, 5).map((att) => (
-                    <div key={att.id} className="py-2.5 flex items-center justify-between text-xs gap-3">
-                      <div className="min-w-0 flex-1">
-                        <div className="font-semibold text-stone-900 dark:text-slate-100 truncate">
-                          {att.scopeText}
-                        </div>
-                        <div className="text-stone-500 dark:text-slate-400 font-medium mt-0.5 text-[10px] truncate">
-                          {new Date(att.timestamp).toLocaleDateString('es-CR', {
-                            day: '2-digit',
-                            month: 'short',
-                            year: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                          })}
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-2 shrink-0 text-right">
-                        <div>
-                          <span className="font-semibold text-sm text-indigo-700 dark:text-indigo-300 block leading-none">
-                            {att.scorePercentage}%
-                          </span>
-                          <div className="text-stone-500 dark:text-slate-400 text-[10px] font-bold mt-0.5">
-                            {att.correctCount} / {att.totalItems} aciertos
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* Integrated Specifications & Resources View */
-        <div className="space-y-6">
-          {/* Subtabs for Resources */}
-          <div className="flex bg-stone-100 dark:bg-slate-800 p-1.5 rounded-2xl  gap-1.5 text-xs font-bold w-full sm:w-auto self-start inline-flex">
-            <button
-              onClick={() => setResourceSubTab('specs')}
-              className={`px-4 py-2 rounded-xl text-center transition flex items-center gap-1.5 min-h-[38px] cursor-pointer ${
-                resourceSubTab === 'specs'
-                  ? 'bg-indigo-600 text-white font-semibold shadow-xs'
-                  : 'text-stone-700 dark:text-slate-300 hover:text-stone-950 dark:hover:text-white'
-              }`}
-            >
-              <FileText className="w-4 h-4 stroke-[2.2]" />
-              <span>Temario</span>
-            </button>
-
-            <button
-              onClick={() => setResourceSubTab('terms')}
-              className={`px-4 py-2 rounded-xl text-center transition flex items-center gap-1.5 min-h-[38px] cursor-pointer ${
-                resourceSubTab === 'terms'
-                  ? 'bg-indigo-600 text-white font-semibold shadow-xs'
-                  : 'text-stone-700 dark:text-slate-300 hover:text-stone-950 dark:hover:text-white'
-              }`}
-            >
-              <BookOpen className="w-4 h-4 stroke-[2.2]" />
-              <span>Diccionario de Términos</span>
-            </button>
-
-            <button
-              onClick={() => setResourceSubTab('formulas')}
-              className={`px-4 py-2 rounded-xl text-center transition flex items-center gap-1.5 min-h-[38px] cursor-pointer ${
-                resourceSubTab === 'formulas'
-                  ? 'bg-indigo-600 text-white font-semibold shadow-xs'
-                  : 'text-stone-700 dark:text-slate-300 hover:text-stone-950 dark:hover:text-white'
-              }`}
-            >
-              <Calculator className="w-4 h-4 stroke-[2.2]" />
-              <span>Fórmulas</span>
-            </button>
-          </div>
-
-          <div className="ui-surface rounded-3xl p-4 sm:p-6 shadow-xs">
-            {resourceSubTab === 'specs' && (
-              <SpecsTable onStartPracticeByItems={onStartPracticeByItems} />
-            )}
-            {resourceSubTab === 'terms' && <TermsDictionary />}
-            {resourceSubTab === 'formulas' && <FormulasSheet />}
-          </div>
-        </div>
-      )}
-
-      {/* Practice Configuration Modal */}
-      {practiceModalMode && (
-        <PracticeConfigModal
-          isOpen={true}
-          initialMode={practiceModalMode}
-          onClose={() => setPracticeModalMode(null)}
-          onStartSession={onStartPractice}
-        />
-      )}
-    </div>
-  );
-};
-
-// Backwards compatibility alias
+export function SubjectHubPage({ contextControls, currentUser, route, onNavigate, onNavigateHome, onStartPractice, onStartSimulation, onStartPracticeByItems }: SubjectHubPageProps) {
+  const [localTab, setLocalTab] = useState('practice');
+  const [localResource, setLocalResource] = useState('pdf');
+  const [revision, setRevision] = useState(0);
+  const [deleting, setDeleting] = useState<string | null>(null);
+  const [undone, setUndone] = useState<ReturnType<typeof storageService.getAttempts>[number] | null>(null);
+  const [error, setError] = useState('');
+  const program = dataService.getCurrentProgram();
+  const context = route || { view: 'hub' as const, programId: program?.id || 'bxm', subjectId: 'matematicas', convocatoriaId: dataService.getCurrentConvocatoriaId() || '2026-c2' };
+  const navigate = onNavigate || ((next: AppRoute) => { window.location.hash = routeHash(next); });
+  if (program && program.id !== 'bxm') return <GenericSubjectHubPage program={program} route={context} onNavigate={navigate} />;
+  const attempts = storageService.getContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: context.convocatoriaId }, currentUser?.id || 'guest');
+  const comparable = attempts.filter(a => a.session && isExam(a.session.config) && a.mode === 'simulation');
+  const tab = route?.tab || localTab;
+  const resource = route?.resourceTab || localResource;
+  function change(tab: string, resourceTab?: string) { if (onNavigate) navigate({ ...context, tab, resourceTab: resourceTab || context.resourceTab }); else { setLocalTab(tab); if (resourceTab) setLocalResource(resourceTab); } }
+  return <div className="subject-hub-page page-width py-8 space-y-6" data-revision={revision}>
+    <Breadcrumbs items={[{ label: 'Programas', href: '#/programas' }, { label: program?.name || 'BXM', href: routeHash({ ...context, view: 'framework', subjectId: undefined }), onClick: onNavigateHome }, { label: 'Matemáticas' }]} />
+    <header className="page-intro p-6 sm:p-8 rounded-3xl space-y-4"><p className="eyebrow">Práctica interactiva disponible</p><h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1><p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>{contextControls}</header>
+    <Tabs label="Secciones de Matemáticas" value={tab} onChange={value => change(value)} items={[{ id: 'practice', label: 'Práctica y simulación' }, { id: 'resources', label: 'Recursos' }, { id: 'progress', label: 'Mi progreso' }]}>
+      {tab === 'practice' ? <div className="grid lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,1fr)] gap-6 items-start"><EvaluationModulesWidget onStartPractice={onStartPractice} onStartSimulation={onStartSimulation} /><aside className="ui-surface rounded-2xl p-6 space-y-4"><h2 className="text-xl font-semibold">Tu próximo paso</h2><p>{comparable.length ? 'Última simulación completa: ' + comparable[0].scorePercentage + '%.' : 'Aún sin datos de simulación. Puedes empezar con una práctica corta y sin tiempo.'}</p><p className="muted">Las prácticas de aprendizaje y las simulaciones se muestran por separado. El resultado no predice una nota oficial.</p><button className="secondary-button" onClick={() => change('progress')}>Ver historial de este perfil</button><button className="secondary-button" onClick={() => change('resources', 'pdf')}>Buscar materiales oficiales</button></aside></div>
+      : tab === 'resources' ? <Tabs label="Tipo de recurso" value={resource} onChange={value => change('resources', value)} items={[{ id: 'pdf', label: 'PDF oficiales' }, { id: 'specs', label: 'Temario' }, { id: 'terms', label: 'Diccionario' }, { id: 'formulas', label: 'Fórmulas' }]}>
+        {resource === 'pdf' ? <OfficialResources programId="bxm" subjectId="matematicas" /> : resource === 'specs' ? <SpecsTable onStartPracticeByItems={onStartPracticeByItems} /> : resource === 'terms' ? <TermsDictionary onPractice={onStartPractice} /> : <FormulasSheet />}
+      </Tabs> : <section className="ui-surface rounded-2xl p-6 space-y-5"><h2 className="text-xl font-semibold">Historial de este perfil</h2><p className="muted">Solo Matemáticas BXM y esta convocatoria. Guardado en este navegador; borrar sus datos elimina el historial. Cambiar de perfil no mezcla los resultados.</p>{!attempts.length && <p>Aún sin intentos. Tu primer resultado aparecerá aquí.</p>}{attempts.map(a => <article key={a.id} className="history-row"><div><h3 className="font-semibold">{a.session ? modeLabel(a.session.config) : a.scopeText}</h3><p>{new Date(a.timestamp).toLocaleString('es-CR')} · {a.correctCount}/{a.totalItems} correctas · {a.scorePercentage}%</p></div><div className="action-row">{a.session ? <a className="text-link" href={routeHash({ ...context, view: 'results', sessionId: a.id })}>Revisar resultado</a> : <span className="muted">Registro antiguo sin detalle guardado</span>}<button className="secondary-button" onClick={() => setDeleting(a.id)}>Eliminar</button></div></article>)}{undone && <p role="status">Registro eliminado. <button className="text-link" onClick={() => { storageService.saveAttempt(undone); setUndone(null); setRevision(value => value + 1); }}>Deshacer</button></p>}{error && <p role="alert">{error}</p>}</section>}
+    </Tabs>
+    {deleting && <Dialog title="¿Eliminar este resultado?" onClose={() => setDeleting(null)}><p>Solo se eliminará este registro del perfil actual.</p><button className="primary-button" onClick={() => { const previous = attempts.find(a => a.id === deleting)!; if (storageService.deleteAttempt(deleting)) { setUndone(previous); setRevision(value => value + 1); setDeleting(null); } else setError(storageService.lastError); }}>Eliminar resultado</button></Dialog>}
+  </div>;
+}
 export const LandingPage = SubjectHubPage;

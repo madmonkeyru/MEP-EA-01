@@ -16,7 +16,7 @@ describe('WelcomePage', () => {
 
     // Hero title
     expect(
-      screen.getByText('MEP Educación Abierta — Simulador & Práctica')
+      screen.getByText('Encuentra tu programa de estudio')
     ).toBeInTheDocument();
 
     // Prominent quick entry card for MVP
@@ -25,7 +25,7 @@ describe('WelcomePage', () => {
     ).toBeInTheDocument();
 
     const enterMvpButton = screen.getByRole('button', {
-      name: /Entrar al Hub de Matemáticas/i,
+      name: /Practicar Matemáticas BXM/i,
     });
     expect(enterMvpButton).toBeInTheDocument();
     fireEvent.click(enterMvpButton);
@@ -55,7 +55,7 @@ describe('WelcomePage', () => {
       />
     );
 
-    const edadCard = screen.getByText(/Bachillerato a distancia/i).closest('div[role="button"]');
+    const edadCard = screen.getByText(/Bachillerato a distancia/i).closest('a');
     expect(edadCard).toBeInTheDocument();
 
     if (edadCard) {

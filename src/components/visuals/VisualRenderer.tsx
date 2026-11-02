@@ -1,4 +1,5 @@
-import React, { Component, type ErrorInfo, type ReactNode } from 'react';
+import React, { Component, useState, type ErrorInfo, type ReactNode } from 'react';
+import { Dialog } from '../common/Dialog';
 import type { VisualSpec } from '../../types';
 import { CartesianPlane } from './composites/CartesianPlane';
 import { FunctionPlot, MultiViewGrid, CurveRegion, TransformationOverlay } from './composites/FunctionsComposites';
@@ -55,18 +56,19 @@ class VisualErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 }
 
-export const VisualRenderer: React.FC<VisualRendererProps> = ({
+export const VisualRenderer: React.FC<VisualRendererProps> = React.memo(({
   spec,
   alt,
   itemId,
   className = '',
 }) => {
+  const [enlarged, setEnlarged] = useState(false);
   if (!spec) return null;
 
   // Unpack nested visual if present
   const activeSpec = spec.visual || spec;
   const type = activeSpec.type || 'cartesian_2d';
-  const accessibleAlt = alt || activeSpec.alt || 'Representación matemática';
+  const accessibleAlt = alt || activeSpec.alt || 'Representación';
 
   const renderComponent = () => {
     switch (type) {
@@ -117,25 +119,24 @@ export const VisualRenderer: React.FC<VisualRendererProps> = ({
         return <Solid3D {...(activeSpec as any)} />;
 
       default:
-        // Default fallback to CartesianPlane
-        return <CartesianPlane {...(activeSpec as any)} />;
+        return <p role="status">Esta representación no está disponible. Consulta el PDF de origen o prepara un reporte de contenido.</p>;
     }
   };
 
   return (
-    <VisualErrorBoundary alt={accessibleAlt} itemId={itemId}>
+    <VisualErrorBoundary key={itemId ?? JSON.stringify(activeSpec)} alt={accessibleAlt} itemId={itemId}>
       <figure
-        role="img"
+        role={type.includes('table') ? undefined : 'img'}
         aria-label={accessibleAlt}
         className={`visual-renderer my-4 w-full flex flex-col items-center justify-center overflow-x-auto ${className}`}
       >
         <div className="w-full max-w-full flex justify-center overflow-x-auto py-1">
           {renderComponent()}
         </div>
-        {accessibleAlt && (
-          <figcaption className="sr-only">{accessibleAlt}</figcaption>
-        )}
+        {accessibleAlt && <figcaption className="muted">{accessibleAlt}</figcaption>}
       </figure>
+      <button className="secondary-button" onClick={() => setEnlarged(true)}>Ampliar</button>
+      {enlarged && <Dialog title="Representación ampliada" onClose={() => setEnlarged(false)}><p>{accessibleAlt}</p><div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Figura ampliada con desplazamiento horizontal"><div style={{ minWidth: 700 }}>{renderComponent()}</div></div><p className="muted">Desplaza horizontalmente si la figura supera el ancho de la pantalla.</p></Dialog>}
     </VisualErrorBoundary>
   );
-};
+});

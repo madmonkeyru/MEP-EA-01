@@ -3,6 +3,7 @@ import { ChevronRight, Home } from 'lucide-react';
 
 export interface BreadcrumbItem {
   label: string;
+  href?: string;
   onClick?: () => void;
   active?: boolean;
 }
@@ -30,7 +31,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
                   {isFirst && <Home className="w-3.5 h-3.5" />}
                   <span>{item.label}</span>
                 </span>
-              ) : (
+              ) : item.href ? <a href={item.href} onClick={event => { if (item.onClick && !event.ctrlKey && !event.metaKey) { event.preventDefault(); item.onClick(); } }} className="text-link">{item.label}</a> : (
                 <button
                   type="button"
                   onClick={item.onClick}

@@ -14,16 +14,8 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   onSelect,
 }) => {
   return (
-    <div
-      onClick={() => onSelect(program.id)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onSelect(program.id);
-        }
-      }}
+    <a href={'#/programas/' + program.id + '?convocatoria=2026-c2'}
+      onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onSelect(program.id); } }}
       className={`group relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
     >
       <div>
@@ -37,11 +29,11 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
           {isMvp ? (
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-[10px] font-semibold rounded-full ">
               <CheckCircle className="w-3 h-3" />
-              Activo
+              Matemáticas · práctica disponible
             </span>
           ) : (
             <span className="text-[10px] font-bold text-stone-500 dark:text-slate-400 bg-stone-100 dark:bg-slate-800/80 px-2 py-0.5 rounded-full ">
-              Explorar estructura
+              PDF y vista previa
             </span>
           )}
         </div>
@@ -50,10 +42,12 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         <h3 className="text-base sm:text-lg font-semibold text-stone-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
           {program.name}
         </h3>
+        <p className="text-sm font-semibold">{program.id === 'cico' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
         <p className="text-xs text-stone-600 dark:text-slate-400 font-medium mt-1.5 leading-relaxed ">
           {program.description}
         </p>
 
+        <p className="muted mt-3">{program.id === 'cico' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
         {/* Metadata Details */}
         <div className="mt-4 pt-3.5 grid grid-cols-2 gap-2 text-[11px] font-bold">
           <div className="flex items-center gap-1.5 text-stone-700 dark:text-slate-300">
@@ -65,7 +59,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
             {program.calculatorAllowed ? (
               <>
                 <Calculator className="w-3.5 h-3.5 text-stone-500 shrink-0" />
-                <span>Calc: Permitida</span>
+                <span>Reglas por materia</span>
               </>
             ) : (
               <>
@@ -82,6 +76,6 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         <span>{'Ver asignaturas y estructura'}</span>
         <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
       </div>
-    </div>
+    </a>
   );
 };

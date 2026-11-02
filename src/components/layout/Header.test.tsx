@@ -11,11 +11,12 @@ describe('Header', () => {
       </ThemeProvider>
     );
 
+    expect(screen.getByRole('img', { name: 'Yigüirro de Costa Rica' })).toHaveAttribute('src', '/logo_yiguirro_cr_high_fidelity.svg');
     expect(screen.getByText('MEP-EA-01')).toBeInTheDocument();
-    expect(screen.getByText('PROTOTIPO')).toBeInTheDocument();
-    expect(screen.getByText('Iniciar sesión')).toBeInTheDocument();
+    expect(screen.getByText(/Preparación independiente/)).toBeInTheDocument();
+    expect(screen.getByText('Perfil local opcional')).toBeInTheDocument();
     // Program dropdown should not be present on landing view
-    expect(screen.queryByTitle('Cambiar programa oficial MEP')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Cambiar programa de estudio')).not.toBeInTheDocument();
   });
 
   it('renders user name and logout button when logged in (Private Header)', () => {
@@ -30,10 +31,10 @@ describe('Header', () => {
       </ThemeProvider>
     );
 
-    expect(screen.getByText('Estudiante Prueba')).toBeInTheDocument();
-    expect(screen.getByLabelText('Cerrar sesión')).toBeInTheDocument();
-    expect(screen.queryByText('Iniciar sesión')).not.toBeInTheDocument();
+    expect(screen.getByText(/Estudiante Prueba/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Usar modo invitado' })).toBeInTheDocument();
+    expect(screen.queryByText('Perfil local opcional')).not.toBeInTheDocument();
     // Program dropdown should be visible on hub view
-    expect(screen.getByTitle('Cambiar programa oficial MEP')).toBeInTheDocument();
+    expect(screen.getByTitle('Cambiar programa de estudio')).toBeInTheDocument();
   });
 });

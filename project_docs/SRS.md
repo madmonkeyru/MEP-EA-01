@@ -1,5 +1,7 @@
 # Software Requirements Specification (SRS)
 
+> Current behavior and availability: [Capability status](CAPABILITY_STATUS.md). UI changes and remaining validation: [Implementation ledger](UI_UX_IMPLEMENTATION.md). Older verification totals below are historical.
+
 **Project:** MEP‑EA‑01 – High‑Fidelity Mathematics Test Simulator & Practice Platform
 **Version:** 2.0
 **Date:** 2026‑10‑31

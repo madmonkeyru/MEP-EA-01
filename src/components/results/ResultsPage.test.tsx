@@ -1,152 +1,30 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { StrictMode } from 'react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ResultsPage } from './ResultsPage';
-import { TestSession } from '../../types';
-
-describe('ResultsPage', () => {
-  it('renders session summary score and retry buttons', () => {
-    const mockSession: TestSession = {
-      sessionId: 'sess-1',
-      userId: 'u1',
-      config: {
-        mode: 'simulation',
-        itemCount: 1,
-        enableTimer: false,
-        timerDurationMinutes: 30,
-      },
-      itemIds: [1],
-      currentResponseIndex: 0,
-      responses: {
-        1: { itemId: 1, selectedOption: 'B', isCorrect: true },
-      },
-      flaggedItems: {},
-      startTime: new Date().toISOString(),
-      elapsedSeconds: 60,
-      isCompleted: true,
-    };
-
-    render(
-      <ResultsPage
-        session={mockSession}
-        onRetry={vi.fn()}
-        onNewTest={vi.fn()}
-        onGoHome={vi.fn()}
-      />
-    );
-
-    expect(screen.getByText('100%')).toBeInTheDocument();
-    expect(screen.getByText('1 Correctas')).toBeInTheDocument();
-  });
-
-  it('renders performance trend graph when multiple attempts exist', () => {
-    // Pre-populate storage with an earlier attempt
-    localStorage.setItem(
-      'mep_ea_attempts',
-      JSON.stringify([
-        {
-          id: 'prev-1',
-          userId: 'u1',
-          timestamp: new Date().toISOString(),
-          mode: 'simulation',
-          scopeText: 'Simulación Completa (60 ítems)',
-          scorePercentage: 75,
-          correctCount: 45,
-          totalItems: 60,
-          durationSeconds: 3600,
-          responses: {},
-        },
-      ])
-    );
-
-    const mockSession: TestSession = {
-      sessionId: 'sess-2',
-      userId: 'u1',
-      config: {
-        mode: 'simulation',
-        itemCount: 1,
-        enableTimer: false,
-        timerDurationMinutes: 30,
-      },
-      itemIds: [1],
-      currentResponseIndex: 0,
-      responses: {
-        1: { itemId: 1, selectedOption: 'B', isCorrect: true },
-      },
-      flaggedItems: {},
-      startTime: new Date().toISOString(),
-      elapsedSeconds: 60,
-      isCompleted: true,
-    };
-
-    render(
-      <ResultsPage
-        session={mockSession}
-        onRetry={vi.fn()}
-        onNewTest={vi.fn()}
-        onGoHome={vi.fn()}
-      />
-    );
-
-    expect(screen.getByRole('heading', { name: 'Desempeño' })).toBeInTheDocument();
-    expect(screen.getByText('#1')).toBeInTheDocument();
-    expect(screen.getByText('#2')).toBeInTheDocument();
-    expect(screen.getByText('75%')).toBeInTheDocument();
-  });
-
-  it('supports global question navigator view and switching to single question detail view', async () => {
-    const { fireEvent } = await import('@testing-library/react');
-
-    const mockSession: TestSession = {
-      sessionId: 'sess-nav',
-      userId: 'u1',
-      config: {
-        mode: 'simulation',
-        itemCount: 2,
-        enableTimer: false,
-        timerDurationMinutes: 30,
-      },
-      itemIds: [1, 2],
-      currentResponseIndex: 0,
-      responses: {
-        1: { itemId: 1, selectedOption: 'B', isCorrect: true },
-        2: { itemId: 2, selectedOption: 'A', isCorrect: false },
-      },
-      flaggedItems: {},
-      startTime: new Date().toISOString(),
-      elapsedSeconds: 120,
-      isCompleted: true,
-    };
-
-    render(
-      <ResultsPage
-        session={mockSession}
-        onRetry={vi.fn()}
-        onNewTest={vi.fn()}
-        onGoHome={vi.fn()}
-      />
-    );
-
-    // Global view shows Question Navigator
-    expect(screen.getByRole('heading', { name: 'Preguntas' })).toBeInTheDocument();
-    const btnQ1 = screen.getByRole('button', { name: /^1$/ });
-    expect(btnQ1).toBeInTheDocument();
-
-    // Click on Question 1 to enter Detail View
-    fireEvent.click(btnQ1);
-
-    expect(screen.getByText('Pregunta 1 de 2')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Volver a la vista general/i })).toBeInTheDocument();
-
-    // Navigate to Question 2 via Siguiente
-    const nextBtn = screen.getByRole('button', { name: /Siguiente/i });
-    fireEvent.click(nextBtn);
-
+import { createSession } from '../../services/learningSession';
+import { storageService } from '../../services/storageService';
+afterEach(() => { cleanup(); localStorage.clear(); });
+describe('results and durable review', () => {
+  it('separates unanswered from incorrect and saves a result only once under StrictMode', () => {
+    const session = { ...createSession({ mode: 'simulation', itemCount: 2, enableTimer: false, timerDurationMinutes: 30 }), isCompleted: true };
+    session.responses[session.itemIds[0]] = { itemId: session.itemIds[0], selectedOption: session.items![0].correct_answer };
+    render(<StrictMode><ResultsPage session={session} onRetry={vi.fn()} onNewTest={vi.fn()} onGoHome={vi.fn()} /></StrictMode>);
+    expect(screen.getByRole('heading', { name: 'Tu resultado: 50%' })).toBeInTheDocument();
+    expect(screen.getByText(/1 Correctas · 0 Incorrectas · 1 Sin responder/)).toBeInTheDocument();
+    expect(storageService.getAttempts()).toHaveLength(1);
+    expect(storageService.getResult(session.sessionId)?.items).toHaveLength(2);
+    fireEvent.change(screen.getByLabelText('Filtrar revisión'), { target: { value: 'pending' } });
+    fireEvent.click(screen.getByRole('button', { name: /Pregunta 2, sin responder/ }));
     expect(screen.getByText('Pregunta 2 de 2')).toBeInTheDocument();
-
-    // Return to Global View
-    const backBtn = screen.getByRole('button', { name: /Volver a la vista general/i });
-    fireEvent.click(backBtn);
-
-    expect(screen.getByRole('heading', { name: 'Preguntas' })).toBeInTheDocument();
+    expect(screen.queryByText('Explicación de apoyo')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Ver solución paso a paso' }));
+    expect(screen.getByText('Explicación de apoyo')).toBeInTheDocument();
+  });
+  it('does not expose another local profile result or mix contextual history', () => {
+    const session = { ...createSession({ mode: 'area', programId: 'bxm', subjectId: 'matematicas', itemCount: 1, enableTimer: false, timerDurationMinutes: 30 }), userId: 'other', isCompleted: true };
+    storageService.saveResult(session);
+    expect(storageService.getResult(session.sessionId, 'guest')).toBeNull();
+    expect(storageService.getContextAttempts({ programId: 'bxm' }, 'guest')).toHaveLength(0);
   });
 });

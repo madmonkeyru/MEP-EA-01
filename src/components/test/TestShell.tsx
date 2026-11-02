@@ -1,755 +1,154 @@
-import React, { useState, useEffect } from 'react';
-import type { Item, TestSession, ItemResponse, PracticeConfig } from '../../types';
-import { dataService } from '../../services/dataService';
+import { useEffect, useRef, useState } from 'react';
+import type { PracticeConfig, TestSession } from '../../types';
 import { storageService } from '../../services/storageService';
+import { createSession, isExam, calculatorRule, modeLabel } from '../../services/learningSession';
 import { TextRenderer } from '../common/TextRenderer';
 import { VisualRenderer } from '../visuals/VisualRenderer';
 import { GroupVisual } from '../visuals/GroupVisual';
+import { FormulasSheet } from '../knowledge/FormulasSheet';
+import { Dialog } from '../common/Dialog';
 import { ThemeToggle } from '../common/ThemeToggle';
-import {
-  Clock,
-  Flag,
-  ChevronLeft,
-  ChevronRight,
-  Send,
-  AlertTriangle,
-  Menu,
-  X,
-  BookOpen,
-  CheckCircle2,
-  XCircle,
-  Ban,
-} from 'lucide-react';
 
-interface TestShellProps {
-  config: PracticeConfig;
-  onFinishTest: (session: TestSession) => void;
-}
-
-export const TestShell: React.FC<TestShellProps> = ({ config, onFinishTest }) => {
-  const [items, setItems] = useState<Item[]>([]);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [responses, setResponses] = useState<Record<number, ItemResponse>>({});
-  const [flaggedItems, setFlaggedItems] = useState<Record<number, boolean>>({});
-  const [timeLeftSeconds, setTimeLeftSeconds] = useState<number>(
-    config.timerDurationMinutes * 60
-  );
-  const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
-  const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
-  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
-  const [isFormulaOpen, setIsFormulaOpen] = useState<boolean>(false);
-  const [navFilter, setNavFilter] = useState<'all' | 'unanswered' | 'answered' | 'flagged'>('all');
-  const [showPracticeExplanation, setShowPracticeExplanation] = useState<Record<number, boolean>>({});
-
-  const isCalculatorAllowed = dataService.isCalculatorAllowed();
-  const currentProgram = dataService.getCurrentProgram();
-
-  // Keyboard Shortcuts Handler
+export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
+  config: PracticeConfig; initialSession?: TestSession; onFinishTest: (session: TestSession) => void; onLeave?: () => void;
+}) {
+  const [session, setSession] = useState<TestSession>(() => initialSession || { ...createSession(config), userId: storageService.getCurrentUser()?.id || 'guest' });
+  const latest = useRef(session); latest.current = session;
+  const finished = useRef(false);
+  const [now, setNow] = useState(Date.now());
+  const [overlay, setOverlay] = useState<'formulas' | 'submit' | 'exit' | 'navigator' | null>(null);
+  const [filter, setFilter] = useState('all');
+  const [shortcuts, setShortcuts] = useState(true);
+  const [saved, setSaved] = useState('');
+  const question = useRef<HTMLHeadingElement>(null);
+  const examHeader = useRef<HTMLElement>(null);
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) {
-        return;
-      }
-      if (isConfirmOpen || items.length === 0) return;
-
-      const key = e.key.toLowerCase();
-
-      if (key === 'a' || key === '1') {
-        handleSelectOption('A');
-      } else if (key === 'b' || key === '2') {
-        handleSelectOption('B');
-      } else if (key === 'c' || key === '3') {
-        handleSelectOption('C');
-      } else if (key === 'd' || key === '4') {
-        handleSelectOption('D');
-      } else if (key === 'arrowleft' || key === '[') {
-        setCurrentIndex((prev) => Math.max(0, prev - 1));
-      } else if (key === 'arrowright' || key === ']') {
-        setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1));
-      } else if (key === 'f' || key === 'm') {
-        setFlaggedItems((prev) => {
-          const curId = items[currentIndex]?.id;
-          if (!curId) return prev;
-          return { ...prev, [curId]: !prev[curId] };
-        });
-      } else if (key === 'escape') {
-        setIsNavOpen(false);
-      }
+    const measure = () => document.documentElement.style.setProperty('--exam-header-height', (examHeader.current?.getBoundingClientRect().height || 120) + 'px');
+    measure();
+    if (typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(measure); if (examHeader.current) observer.observe(examHeader.current);
+    return () => observer.disconnect();
+  }, []);
+  const items = session.items || [];
+  const current = items[session.currentResponseIndex];
+  const exam = isExam(config);
+  const elapsed = Math.max(0, Math.floor((now - Date.parse(session.startTime)) / 1000));
+  const remaining = config.enableTimer ? Math.max(0, Math.ceil(((session.deadline || now) - now) / 1000)) : 0;
+  const patch = (partial: Partial<TestSession>) => {
+    const next = { ...latest.current, ...partial }; latest.current = next; setSession(next);
+  };
+  const snapshot = () => ({ ...latest.current, elapsedSeconds: Math.max(latest.current.elapsedSeconds, Math.floor((Date.now() - Date.parse(latest.current.startTime)) / 1000)) });
+  const submit = () => {
+    if (finished.current) return;
+    finished.current = true;
+    const completed = { ...snapshot(), isCompleted: true, completedAt: new Date().toISOString() };
+    // Save the completed snapshot before removing the recoverable active copy.
+    if (storageService.saveResult(completed)) storageService.clearActiveSession();
+    onFinishTest(completed);
+  };
+  const choose = (letter: 'A' | 'B' | 'C' | 'D') => {
+    const active = latest.current.items?.[latest.current.currentResponseIndex];
+    if (!active || latest.current.checkedItems?.[active.id]) return;
+    patch({ responses: { ...latest.current.responses, [active.id]: { itemId: active.id, selectedOption: letter } } });
+  };
+  const move = (index: number) => patch({ currentResponseIndex: Math.max(0, Math.min(items.length - 1, index)) });
+  const flag = () => current && patch({ flaggedItems: { ...latest.current.flaggedItems, [current.id]: !latest.current.flaggedItems[current.id] } });
+  useEffect(() => {
+    const tick = () => {
+      if (config.enableTimer) setNow(Date.now());
+      if (config.enableTimer && latest.current.deadline && Date.now() >= latest.current.deadline) submit();
     };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [items, currentIndex, isConfirmOpen]);
-
-  // Initialize Items
+    const interval = window.setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', tick);
+    tick();
+    return () => { clearInterval(interval); document.removeEventListener('visibilitychange', tick); };
+  }, []);
   useEffect(() => {
-    let pool: Item[] = [];
-    if (config.mode === 'simulation') {
-      pool = dataService.getSimulationItems(config.setId || 'set_1');
-    } else if (config.mode === 'area' && config.area && config.area !== 'all') {
-      pool = dataService.getItemsByArea(config.area, config.setId);
-    } else if (config.mode === 'topic' && config.topic && config.topic !== 'all') {
-      pool = dataService.getItemsByTopic(config.topic, config.setId);
-    } else {
-      pool = dataService.getItemsBySet(config.setId || 'all');
-    }
-
-    if (config.itemCount !== 'all') {
-      pool = pool.slice(0, Number(config.itemCount));
-    }
-
-    setItems(pool);
-
-    // Check for restored active session
-    const saved = storageService.getActiveSession();
-    if (saved && saved.itemIds.length === pool.length && !saved.isCompleted) {
-      setResponses(saved.responses || {});
-      setFlaggedItems(saved.flaggedItems || {});
-      setCurrentIndex(saved.currentResponseIndex || 0);
-      setElapsedSeconds(saved.elapsedSeconds || 0);
-      if (config.enableTimer) {
-        setTimeLeftSeconds(Math.max(0, config.timerDurationMinutes * 60 - (saved.elapsedSeconds || 0)));
-      }
-    }
-  }, [config]);
-
-  // Timer Countdown and Auto-save
+    if (!items.length || finished.current) return;
+    setSaved(storageService.saveActiveSession(snapshot()) ? 'Guardado en este navegador' : storageService.lastError);
+  }, [session]);
   useEffect(() => {
-    if (items.length === 0) return;
-
-    const timer = setInterval(() => {
-      setElapsedSeconds((prev) => prev + 1);
-
-      if (config.enableTimer) {
-        setTimeLeftSeconds((prev) => {
-          if (prev <= 1) {
-            clearInterval(timer);
-            handleFinalSubmit();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [items, config.enableTimer]);
-
-  // Auto-save every 5 seconds
+    const save = () => { if (!finished.current && items.length) storageService.saveActiveSession(snapshot()); };
+    const interval = window.setInterval(save, 5000);
+    const beforeUnload = (event: BeforeUnloadEvent) => { save(); if (!finished.current) { event.preventDefault(); event.returnValue = ''; } };
+    window.addEventListener('beforeunload', beforeUnload);
+    window.addEventListener('pagehide', save);
+    return () => { clearInterval(interval); save(); window.removeEventListener('beforeunload', beforeUnload); window.removeEventListener('pagehide', save); };
+  }, []);
+  useEffect(() => { question.current?.focus(); }, [session.currentResponseIndex]);
   useEffect(() => {
-    if (items.length === 0) return;
-
-    const activeSession: TestSession = {
-      sessionId: `session-${Date.now()}`,
-      userId: storageService.getCurrentUser()?.id || 'guest',
-      config,
-      itemIds: items.map((i) => i.id),
-      currentResponseIndex: currentIndex,
-      responses,
-      flaggedItems,
-      startTime: new Date().toISOString(),
-      elapsedSeconds,
-      isCompleted: false,
+    const handler = (event: KeyboardEvent) => {
+      if (!shortcuts || overlay || event.ctrlKey || event.altKey || event.metaKey || document.querySelector('dialog[open]')) return;
+      const target = event.target as HTMLElement | null;
+      if (target instanceof HTMLElement && target.closest('input, textarea, select, button, a, [contenteditable="true"]')) return;
+      const key = event.key.toLowerCase();
+      const letter = ({ a: 'A', b: 'B', c: 'C', d: 'D', '1': 'A', '2': 'B', '3': 'C', '4': 'D' } as const)[key as 'a'];
+      if (letter && current && options(current.options).some(option => option.letter === letter)) choose(letter);
+      else if (key === 'arrowright') move(session.currentResponseIndex + 1);
+      else if (key === 'arrowleft') move(session.currentResponseIndex - 1);
+      else if (key === 'f') flag();
+      else return;
+      event.preventDefault();
     };
-
-    storageService.saveActiveSession(activeSession);
-  }, [items, currentIndex, responses, flaggedItems, elapsedSeconds]);
-
-  if (items.length === 0) {
-    return (
-      <div className="max-w-4xl mx-auto p-8 text-center text-zinc-900 dark:text-zinc-100 font-bold">
-        Cargando preguntas de la prueba...
-      </div>
-    );
-  }
-
-  const currentItem = items[currentIndex];
-  const group = currentItem.group_id
-    ? dataService.getGroupById(currentItem.group_id)
-    : null;
-
-  const handleSelectOption = (letter: 'A' | 'B' | 'C' | 'D') => {
-    const isCorrect = letter === currentItem.correct_answer;
-    setResponses((prev) => ({
-      ...prev,
-      [currentItem.id]: {
-        itemId: currentItem.id,
-        selectedOption: letter,
-        isCorrect,
-      },
-    }));
-  };
-
-  const handleToggleFlag = () => {
-    setFlaggedItems((prev) => ({
-      ...prev,
-      [currentItem.id]: !prev[currentItem.id],
-    }));
-  };
-
-  const handleFinalSubmit = () => {
-    storageService.clearActiveSession();
-
-    const finalSession: TestSession = {
-      sessionId: `session-${Date.now()}`,
-      userId: storageService.getCurrentUser()?.id || 'guest',
-      config,
-      itemIds: items.map((i) => i.id),
-      currentResponseIndex: currentIndex,
-      responses,
-      flaggedItems,
-      startTime: new Date().toISOString(),
-      elapsedSeconds,
-      isCompleted: true,
-    };
-
-    onFinishTest(finalSession);
-  };
-
-  const answeredCount = Object.keys(responses).length;
-  const progressPct = Math.round((answeredCount / items.length) * 100);
-  const flaggedCount = Object.values(flaggedItems).filter(Boolean).length;
-
-  const formatTimer = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
-
-  const getOptionArray = (item: Item): { letter: 'A' | 'B' | 'C' | 'D'; text: string }[] => {
-    if (Array.isArray(item.options)) {
-      return item.options.map((opt: any) => ({
-        letter: opt.letter || 'A',
-        text: typeof opt === 'string' ? opt : opt.text || '',
-      }));
-    }
-    return (['A', 'B', 'C', 'D'] as const).map((letKey) => ({
-      letter: letKey,
-      text: (item.options as Record<string, string>)[letKey] || '',
-    }));
-  };
-
-  return (
-    <div className="test-shell min-h-screen bg-zinc-100 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col transition-colors">
-      {/* Test Shell Header */}
-      <div className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 sticky top-0 sm:top-14 z-30 px-3.5 sm:px-6 py-2.5 sm:py-3 shadow-xs">
-        <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto flex items-center justify-between gap-3 sm:gap-6">
-          <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
-            <button
-              onClick={() => setIsNavOpen(!isNavOpen)}
-              className="lg:hidden p-2 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0 cursor-pointer"
-              aria-label="Abrir navegador de ítems"
-            >
-              <Menu className="w-5 h-5 stroke-[2.5]" />
-            </button>
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100 truncate">
-                  Pregunta {currentIndex + 1} de {items.length}
-                </span>
-                {!isCalculatorAllowed && (
-                  <span className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-semibold">
-                    <Ban className="w-2.5 h-2.5" /> Sin Calc
-                  </span>
-                )}
-              </div>
-              <div className="text-[10px] sm:text-xs text-zinc-600 dark:text-zinc-400 font-bold uppercase tracking-wider truncate">
-                {currentItem.topic || currentItem.area} ({currentProgram?.name || 'BXM'})
-              </div>
-            </div>
-          </div>
-
-          {/* Progress Bar & Timer & Actions */}
-          <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
-            {/* Theme Toggle Button for Mobile and Desktop */}
-            <ThemeToggle className="shrink-0" />
-
-            <div className="hidden md:flex flex-col items-end w-32 shrink-0">
-              <div className="text-[11px] font-semibold text-zinc-800 dark:text-zinc-200 mb-1">
-                {progressPct}% ({answeredCount}/{items.length})
-              </div>
-              <div className="w-full h-2.5 bg-zinc-200 dark:bg-zinc-800 rounded-full border border-zinc-200 dark:border-zinc-700 overflow-hidden">
-                <div
-                  className="h-full bg-zinc-950 dark:bg-zinc-100 transition-all duration-300"
-                  style={{ width: `${progressPct}%` }}
-                />
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsFormulaOpen(true)}
-              className="px-3 sm:px-3.5 py-2 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-950 dark:text-zinc-100 font-semibold rounded-xl text-xs flex items-center gap-1.5 border border-zinc-200 dark:border-zinc-700 transition min-h-[44px] cursor-pointer"
-              title="Ver fórmulas del examen"
-            >
-              <BookOpen className="w-4 h-4 stroke-[2.5] shrink-0" />
-              <span className="hidden sm:inline">Fórmulas</span>
-            </button>
-
-            {config.enableTimer && (
-              <div
-                className={`flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl text-xs font-semibold border border-zinc-200 dark:border-zinc-700 min-h-[44px] ${
-                  timeLeftSeconds < 300
-                    ? 'bg-zinc-950 text-white dark:bg-red-950 dark:text-red-100 dark:border-red-600 animate-pulse'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-zinc-100'
-                }`}
-              >
-                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5] shrink-0" />
-                <span className="text-[11px] sm:text-xs">{formatTimer(timeLeftSeconds)}</span>
-              </div>
-            )}
-
-            <button
-              onClick={() => setIsConfirmOpen(true)}
-              className="px-3.5 sm:px-4 py-2 bg-zinc-950 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-zinc-950 font-semibold rounded-xl text-xs flex items-center gap-1.5 transition min-h-[44px] cursor-pointer"
-            >
-              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5] shrink-0" />
-              <span className="hidden xs:inline sm:inline">Finalizar</span>
-            </button>
-          </div>
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [shortcuts, overlay, session]);
+  if (!current) return <section className="page-width ui-surface p-8 rounded-2xl"><h1>No hay preguntas para esta selección</h1><p>Elige otra materia, concepto o conjunto.</p><button className="primary-button" onClick={onLeave}>Volver y cambiar selección</button></section>;
+  const answered = items.filter(item => session.responses[item.id]?.selectedOption).length;
+  const flagged = Object.values(session.flaggedItems).filter(Boolean).length;
+  const checked = session.checkedItems?.[current.id];
+  const response = session.responses[current.id];
+  const correct = response?.selectedOption === current.correct_answer;
+  const group = session.groups?.find(group => group.group_id === current.group_id);
+  const navigator = <div className="space-y-4">
+    <h2 className="font-semibold">Revisar preguntas</h2>
+    <label>Mostrar<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todas</option><option value="pending">Sin responder</option><option value="flagged">Marcadas</option></select></label>
+    <div className="question-grid">{items.map((item, index) => {
+      const done = !!session.responses[item.id]?.selectedOption, marked = !!session.flaggedItems[item.id];
+      if ((filter === 'pending' && done) || (filter === 'flagged' && !marked)) return null;
+      return <button key={item.id} aria-label={'Pregunta ' + (index + 1) + ', ' + (done ? 'respondida' : 'sin responder') + (marked ? ', marcada' : '')} aria-current={index === session.currentResponseIndex ? 'step' : undefined} className={'question-cell ' + (done ? 'answered' : '')} onClick={() => { move(index); setOverlay(null); }}>{index + 1}{done && <span aria-hidden="true"> ✓</span>}{marked && <span aria-hidden="true"> ⚑</span>}</button>;
+    })}</div>
+    {!items.some(item => filter === 'all' || (filter === 'pending' ? !session.responses[item.id]?.selectedOption : session.flaggedItems[item.id])) && <p role="status">No hay preguntas con este filtro.</p>}
+    <p className="muted">✓ Respondida · ⚑ Marcada. El borde señala la pregunta actual.</p>
+  </div>;
+  return <div className="test-shell">
+    <header ref={examHeader} className="exam-header"><div className="page-width flex flex-wrap items-center justify-between gap-3">
+      <div><p className="font-semibold">{modeLabel(config)}</p><p className="text-sm">{answered}/{items.length} respondidas · {flagged} marcadas</p></div>
+      <div className="action-row"><ThemeToggle /><button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>
+        {config.enableTimer && <span className={remaining <= 300 ? 'time-warning' : 'timer'} aria-label="Tiempo restante">{Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, '0')}</span>}
+        <button className="primary-button" onClick={() => setOverlay('submit')}>Finalizar</button><button className="secondary-button" onClick={() => setOverlay('exit')}>Salir</button></div>
+    </div></header>
+    <p role="status" className="sr-only">{config.enableTimer && remaining <= 60 ? 'Queda un minuto o menos. Al terminar el tiempo se entrega la prueba automáticamente.' : config.enableTimer && remaining <= 300 ? 'Quedan cinco minutos o menos.' : ''}</p>
+    <div className="page-width py-6 grid lg:grid-cols-[240px_minmax(0,1fr)] gap-6 items-start">
+      <aside className="hidden lg:block ui-surface p-5 rounded-2xl exam-navigator">{navigator}</aside>
+      <section className="ui-surface p-5 sm:p-8 rounded-2xl space-y-6 min-w-0">
+        <div className="flex flex-wrap justify-between gap-3"><h1 ref={question} tabIndex={-1} className="text-xl font-semibold focus-heading">Pregunta {session.currentResponseIndex + 1} de {items.length}</h1><button className="secondary-button lg:hidden" onClick={() => setOverlay('navigator')}>Ver preguntas</button></div>
+        <div className="flex flex-wrap justify-between gap-3"><p className="muted">{current.topic} · {calculatorRule(config.programId || 'bxm', 'matematicas', config.subprogramId)}</p><button className="secondary-button" aria-pressed={!!session.flaggedItems[current.id]} onClick={flag}>{session.flaggedItems[current.id] ? '⚑ Marcada [F]' : 'Marcar para revisar [F]'}</button></div>
+        {group && <details open className="question-context"><summary>Contexto compartido de {group.items?.length || ''} preguntas</summary><GroupVisual group={group} /></details>}
+        <p className="question-stem"><TextRenderer content={current.stem} /></p>
+        {!group && current.visual_spec && <VisualRenderer key={current.id} spec={current.visual_spec} itemId={current.id} />}
+        <fieldset className="answer-options"><legend className="sr-only">Elige una respuesta para la pregunta {session.currentResponseIndex + 1}</legend>
+          {options(current.options).map(option => <label key={option.letter} className={'answer-option ' + (response?.selectedOption === option.letter ? 'selected' : '')}>
+            <input type="radio" name={'answer-' + current.id} value={option.letter} checked={response?.selectedOption === option.letter} disabled={!!checked} onChange={() => choose(option.letter)} />
+            <span title={'Presiona ' + option.letter} className="option-letter">{option.letter}</span><TextRenderer content={option.text} />
+          </label>)}
+        </fieldset>
+        {!exam && response?.selectedOption && !checked && <button className="secondary-button" onClick={() => patch({ checkedItems: { ...session.checkedItems, [current.id]: true } })}>Verificar respuesta y ver explicación</button>}
+        {!exam && checked && <section className="feedback-panel" aria-label="Explicación de la respuesta"><p role="status" className="font-semibold">{correct ? '✓ Respuesta correcta' : '✕ Respuesta incorrecta'} · Opción {current.correct_answer}</p><p className="muted">Se conserva tu primera respuesta verificada. Puedes volver a practicarla al terminar.</p><ol className="list-decimal pl-5 space-y-3">{current.solution_steps?.map((step, i) => <li key={i}><TextRenderer content={typeof step === 'string' ? step : step.explanation} /></li>)}</ol></section>}
+        <div className="action-row justify-between"><button className="secondary-button" disabled={session.currentResponseIndex === 0} onClick={() => move(session.currentResponseIndex - 1)}>Anterior</button>
+          {session.currentResponseIndex < items.length - 1 ? <button className="primary-button" onClick={() => move(session.currentResponseIndex + 1)}>Siguiente</button> : <button className="primary-button" onClick={() => setOverlay('submit')}>Revisar y entregar</button>}
         </div>
-      </div>
-
-      {/* Main Container */}
-      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto w-full px-3.5 sm:px-6 py-4 sm:py-6 flex-1 flex gap-6 relative">
-        {/* Mobile Backdrop Overlay for Drawer */}
-        {isNavOpen && (
-          <div
-            onClick={() => setIsNavOpen(false)}
-            className="fixed inset-0 bg-zinc-950/60 z-35 lg:hidden backdrop-blur-xs"
-          />
-        )}
-
-        {/* Navigation Sidebar (Desktop & Mobile Drawer) */}
-        <aside
-          className={`fixed inset-y-0 left-0 z-40 w-72 max-w-[85vw] bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 p-4 flex flex-col transform transition-transform lg:static lg:translate-x-0 lg:sticky lg:top-[124px] lg:self-start lg:max-h-[calc(100vh-140px)] lg:w-72 lg:shrink-0 lg:border lg:rounded-2xl lg:shadow-xs ${
-            isNavOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-        >
-          {/* Close button for Mobile Drawer only */}
-          <div className="lg:hidden flex items-center justify-end pb-2 mb-2">
-            <button
-              onClick={() => setIsNavOpen(false)}
-              className="p-2 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
-              aria-label="Cerrar navegador de ítems"
-            >
-              <X className="w-5 h-5 stroke-[2.5]" />
-            </button>
-          </div>
-
-          {/* Filter Tabs */}
-          <div className="flex bg-zinc-100 dark:bg-zinc-800 p-1 rounded-xl border border-zinc-200 dark:border-zinc-700 mb-3 gap-1 text-[11px] font-bold">
-            <button
-              onClick={() => setNavFilter('all')}
-              className={`flex-1 py-1.5 rounded-lg text-center transition min-h-[36px] cursor-pointer ${
-                navFilter === 'all'
-                  ? 'bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950'
-                  : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-              }`}
-            >
-              Todas
-            </button>
-            <button
-              onClick={() => setNavFilter('unanswered')}
-              className={`flex-1 py-1.5 rounded-lg text-center transition min-h-[36px] cursor-pointer ${
-                navFilter === 'unanswered'
-                  ? 'bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950'
-                  : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-              }`}
-            >
-              Pendientes
-            </button>
-            <button
-              onClick={() => setNavFilter('answered')}
-              className={`flex-1 py-1.5 rounded-lg text-center transition min-h-[36px] cursor-pointer ${
-                navFilter === 'answered'
-                  ? 'bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950'
-                  : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-              }`}
-            >
-              Listas
-            </button>
-            <button
-              onClick={() => setNavFilter('flagged')}
-              className={`flex-1 py-1.5 rounded-lg text-center transition min-h-[36px] cursor-pointer ${
-                navFilter === 'flagged'
-                  ? 'bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950'
-                  : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-              }`}
-            >
-              Marcadas
-            </button>
-          </div>
-
-          <div className="grid grid-cols-5 gap-2 overflow-y-auto flex-1 max-h-[calc(100vh-280px)] p-1.5">
-            {items.map((it, idx) => {
-              const isAnswered = !!responses[it.id]?.selectedOption;
-              const isFlagged = !!flaggedItems[it.id];
-              const isCurrent = idx === currentIndex;
-
-              if (navFilter === 'unanswered' && isAnswered) return null;
-              if (navFilter === 'answered' && !isAnswered) return null;
-              if (navFilter === 'flagged' && !isFlagged) return null;
-
-              let btnClass = 'bg-white dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-700';
-              if (isAnswered) btnClass = 'bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 border-zinc-200 dark:border-zinc-700 font-semibold';
-              if (isCurrent) btnClass += ' ring-2 ring-indigo-600 dark:ring-indigo-400 ring-offset-1 dark:ring-offset-zinc-900 font-semibold';
-
-              return (
-                <button
-                  key={it.id}
-                  onClick={() => {
-                    setCurrentIndex(idx);
-                    setIsNavOpen(false);
-                  }}
-                  className={`relative h-10 w-10 rounded-xl text-xs font-bold border flex items-center justify-center transition cursor-pointer ${btnClass}`}
-                >
-                  {idx + 1}
-                  {isFlagged && (
-                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-zinc-950 dark:bg-yellow-400 border border-white dark:border-zinc-900 rounded-full" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Navigator Legend */}
-          <div className="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-[11px] text-zinc-800 dark:text-zinc-200 font-bold space-y-1.5">
-            <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded bg-zinc-950 dark:bg-zinc-100 border border-zinc-200 dark:border-zinc-700 shrink-0" />
-              <span>Respondida</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shrink-0" />
-              <span>Sin responder</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-zinc-950 dark:bg-yellow-400 border border-white dark:border-zinc-900 shrink-0" />
-              <span>Marcada para revisión</span>
-            </div>
-          </div>
-        </aside>
-
-        {/* Question Area */}
-        <main className="flex-1 ui-surface rounded-2xl p-4 sm:p-8 shadow-xs flex flex-col justify-between max-w-full overflow-hidden">
-          <div className="space-y-5 sm:space-y-6">
-            {/* Question Bar Header */}
-            <div className="flex items-center justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
-              <div className="min-w-0 flex flex-col">
-                <span className="text-[11px] sm:text-xs font-semibold text-zinc-900 dark:text-zinc-100 uppercase tracking-wider truncate">
-                  {currentItem.spec?.block ? `${currentItem.spec.block}` : currentItem.area}
-                </span>
-                {currentItem.spec?.evidence_desc && (
-                  <span className="text-[10px] sm:text-[11px] font-semibold text-zinc-600 dark:text-zinc-400 mt-0.5 leading-tight">
-                    {currentItem.spec.evidence}: {currentItem.spec.evidence_desc}
-                  </span>
-                )}
-              </div>
-
-              <button
-                onClick={handleToggleFlag}
-                title="Atajo de teclado: F o M"
-                className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl text-xs font-bold border transition min-h-[44px] shrink-0 cursor-pointer ${
-                  flaggedItems[currentItem.id]
-                    ? 'bg-zinc-950 dark:bg-zinc-100 border-zinc-200 dark:border-zinc-700 text-white dark:text-zinc-950'
-                    : 'bg-zinc-100 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700'
-                }`}
-              >
-                <Flag className="w-4 h-4 fill-current shrink-0" />
-                <span className="hidden xs:inline">{flaggedItems[currentItem.id] ? 'Marcada [F]' : 'Marcar [F]'}</span>
-                <span className="xs:hidden">{flaggedItems[currentItem.id] ? 'Marcada' : 'Marcar'}</span>
-              </button>
-            </div>
-
-            {/* Shared Group Visual Context */}
-            {group && <GroupVisual group={group} />}
-
-            {/* Question Stem */}
-            <div className="text-base text-zinc-900 dark:text-zinc-100 leading-relaxed font-bold">
-              <TextRenderer content={currentItem.stem} />
-            </div>
-
-            {/* Question Direct Visual */}
-            {!group && currentItem.visual_spec && (
-              <VisualRenderer spec={currentItem.visual_spec} itemId={currentItem.id} />
-            )}
-
-            {/* Practice Mode Instant Feedback Toggle & Banner */}
-            {config.mode !== 'simulation' && responses[currentItem.id]?.selectedOption && (
-              <div className="pt-2">
-                {!showPracticeExplanation[currentItem.id] ? (
-                  <button
-                    onClick={() =>
-                      setShowPracticeExplanation((prev) => ({ ...prev, [currentItem.id]: true }))
-                    }
-                    className="px-4 py-2.5 bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold rounded-xl text-xs flex items-center gap-2 border border-zinc-200 dark:border-zinc-700 transition min-h-[44px] cursor-pointer"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-white dark:text-zinc-950" />
-                    <span>Verificar respuesta y ver explicación</span>
-                  </button>
-                ) : (
-                  <div className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 space-y-3 bg-zinc-50 dark:bg-zinc-800/60">
-                    <div className="flex items-center gap-2 font-semibold text-sm">
-                      {responses[currentItem.id]?.selectedOption === currentItem.correct_answer ? (
-                        <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
-                          <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
-                          <span>¡Respuesta Correcta! (Opción {currentItem.correct_answer})</span>
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400">
-                          <XCircle className="w-5 h-5 stroke-[2.5]" />
-                          <span>Respuesta Incorrecta. La opción correcta es {currentItem.correct_answer}.</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {currentItem.solution_steps && currentItem.solution_steps.length > 0 && (
-                      <div className="pt-2 border-t border-zinc-200 dark:border-zinc-700 text-xs space-y-2">
-                        <span className="font-semibold text-zinc-900 dark:text-zinc-100 uppercase tracking-wider block text-[11px]">
-                          Solución paso a paso:
-                        </span>
-                        {currentItem.solution_steps.map((step, sIdx) => (
-                          <div key={sIdx} className="bg-white dark:bg-zinc-900 p-3 rounded-lg font-medium">
-                            {typeof step === 'string' ? (
-                              <TextRenderer content={step} />
-                            ) : (
-                              <div>
-                                <span className="font-semibold text-zinc-900 dark:text-zinc-100">{step.title}: </span>
-                                <TextRenderer content={step.explanation} />
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Answer Options Selector */}
-            <div className="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2">
-              {getOptionArray(currentItem).map((opt) => {
-                const selected = responses[currentItem.id]?.selectedOption === opt.letter;
-
-                let optionContainerStyle = 'border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100';
-                if (selected) {
-                  optionContainerStyle = 'border-zinc-200 dark:border-zinc-700 bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 font-bold';
-                }
-
-                return (
-                  <button
-                    key={opt.letter}
-                    onClick={() => handleSelectOption(opt.letter)}
-                    className={`w-full text-left p-3 sm:p-4 rounded-xl border flex items-start gap-2.5 sm:gap-3.5 transition min-h-[52px] cursor-pointer ${optionContainerStyle}`}
-                  >
-                    <span
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg text-xs font-semibold flex items-center justify-center shrink-0 transition border ${
-                        selected
-                          ? 'bg-white dark:bg-zinc-950 text-zinc-950 dark:text-white border-white dark:border-zinc-950'
-                          : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border-zinc-200 dark:border-zinc-700'
-                      }`}
-                      title={`Presiona ${opt.letter} o ${getOptionArray(currentItem).findIndex(o => o.letter === opt.letter) + 1}`}
-                    >
-                      {opt.letter}
-                    </span>
-                    <div className="text-xs sm:text-sm pt-0.5 sm:pt-1 leading-normal flex-1 font-bold">
-                      <TextRenderer content={opt.text} />
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="flex items-center justify-between pt-5 sm:pt-8 border-t border-zinc-200 dark:border-zinc-800 mt-6 sm:mt-8 gap-3">
-            <button
-              disabled={currentIndex === 0}
-              onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
-              className="px-4 sm:px-5 py-2.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 disabled:opacity-30 text-zinc-950 dark:text-zinc-100 font-semibold rounded-xl text-xs flex items-center gap-1.5 sm:gap-2 border border-zinc-200 dark:border-zinc-700 transition min-h-[44px] cursor-pointer"
-            >
-              <ChevronLeft className="w-4 h-4 stroke-[2.5] shrink-0" />
-              <span>Anterior</span>
-            </button>
-
-            <button
-              disabled={currentIndex === items.length - 1}
-              onClick={() => setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1))}
-              className="px-4 sm:px-5 py-2.5 bg-zinc-950 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 disabled:opacity-30 text-white dark:text-zinc-950 font-semibold rounded-xl text-xs flex items-center gap-1.5 sm:gap-2 border border-zinc-200 dark:border-zinc-700 transition min-h-[44px] cursor-pointer"
-            >
-              <span>Siguiente</span>
-              <ChevronRight className="w-4 h-4 stroke-[2.5] shrink-0" />
-            </button>
-          </div>
-
-          {/* Keyboard Shortcuts Hint Bar */}
-          <div className="hidden sm:flex items-center justify-center gap-4 pt-4 text-[11px] text-zinc-600 dark:text-zinc-400 font-bold">
-            <span className="flex items-center gap-1.5">
-              <kbd className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded text-zinc-950 dark:text-zinc-100 text-[10px] font-semibold">A–D</kbd>
-              responder
-            </span>
-            <span className="flex items-center gap-1.5">
-              <kbd className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded text-zinc-950 dark:text-zinc-100 text-[10px] font-semibold">F</kbd>
-              marcar revisión
-            </span>
-            <span className="flex items-center gap-1.5">
-              <kbd className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded text-zinc-950 dark:text-zinc-100 text-[10px] font-semibold">←</kbd>
-              <kbd className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded text-zinc-950 dark:text-zinc-100 text-[10px] font-semibold">→</kbd>
-              navegar
-            </span>
-          </div>
-        </main>
-      </div>
-
-      {/* Formula Reference Modal */}
-      {isFormulaOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/70 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col border border-zinc-200 dark:border-zinc-700 shadow-2xl overflow-hidden">
-            <div className="p-4 sm:p-5 border-b border-zinc-200 dark:border-zinc-700 flex items-center justify-between bg-zinc-100 dark:bg-zinc-800">
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-5 h-5 stroke-[2.5]" />
-                <h3 className="text-base font-semibold ">
-                  {currentProgram?.id === 'bxm'
-                    ? 'Simbología y Fórmulas del Examen (BXM)'
-                    : `Simbología y Fórmulas (${currentProgram?.name || 'BXM'})`}
-                </h3>
-              </div>
-              <button
-                onClick={() => setIsFormulaOpen(false)}
-                className="p-2 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-xl transition min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
-              >
-                <X className="w-5 h-5 stroke-[2.5]" />
-              </button>
-            </div>
-
-            <div className="p-6 overflow-y-auto space-y-6 text-sm font-medium">
-              {/* Geometria */}
-              <div className="space-y-3">
-                <h4 className="font-semibold border-b border-zinc-200 dark:border-zinc-700 pb-1 text-xs">
-                  Geometría
-                </h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-xs">
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Ecuación de la Circunferencia:</span>
-                    <TextRenderer content="$(x - h)^2 + (y - k)^2 = r^2$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Área y Perímetro del Círculo:</span>
-                    <TextRenderer content="$A = \pi r^2 \quad | \quad P = 2\pi r$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Polígono Regular (Suma de Ángulos Int.):</span>
-                    <TextRenderer content="$S_i = 180^\circ (n - 2)$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Área Regular / Apotema:</span>
-                    <TextRenderer content="$A = \frac{P \cdot a}{2}$" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Funciones y Algebra */}
-              <div className="space-y-3">
-                <h4 className="font-semibold border-b border-zinc-200 dark:border-zinc-700 pb-1 text-xs">
-                  Funciones y Álgebra
-                </h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-xs">
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Función Lineal:</span>
-                    <TextRenderer content="$f(x) = mx + b \quad (m = \frac{y_2 - y_1}{x_2 - x_1})$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Vértice de Parábola (Cuadrática):</span>
-                    <TextRenderer content="$V = \left( -\frac{b}{2a}, -\frac{\Delta}{4a} \right), \quad \Delta = b^2 - 4ac$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Función Exponencial y Logarítmica:</span>
-                    <TextRenderer content="$f(x) = a^x \iff f^{-1}(x) = \log_a(x)$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Interés Compuesto:</span>
-                    <TextRenderer content="$C(t) = C_0 (1 + i)^t$" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Estadistica y Probabilidad */}
-              <div className="space-y-3">
-                <h4 className="font-semibold border-b border-zinc-200 dark:border-zinc-700 pb-1 text-xs">
-                  Estadística y Probabilidad
-                </h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-xs">
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">
-                      Media Aritmética (<TextRenderer inline content="$\bar{x}$" />):
-                    </span>
-                    <TextRenderer content="$\bar{x} = \frac{\sum x_i}{n}$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1">
-                    <span className="font-semibold block">Recorrido Intercuartílico (RIC):</span>
-                    <TextRenderer content="$RIC = Q_3 - Q_1$" />
-                  </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-800 p-3 rounded-xl space-y-1 sm:col-span-2">
-                    <span className="font-semibold block">Probabilidad Laplace:</span>
-                    <TextRenderer content="$P(A) = \frac{\text{Casos favorables}}{\text{Casos posibles}}$" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 border-t border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-right">
-              <button
-                onClick={() => setIsFormulaOpen(false)}
-                className="px-5 py-2.5 bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold rounded-xl text-xs border border-zinc-200 dark:border-zinc-700 min-h-[44px] cursor-pointer"
-              >
-                Cerrar Fórmulas
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Confirmation Modal */}
-      {isConfirmOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/70 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 rounded-2xl p-6 max-w-sm w-full text-center space-y-4 border border-zinc-200 dark:border-zinc-700 shadow-2xl">
-            <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-zinc-100 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center mx-auto">
-              <AlertTriangle className="w-6 h-6 stroke-[2.5]" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold ">¿Entregar la prueba?</h3>
-              <p className="text-xs text-zinc-700 dark:text-zinc-300 font-bold mt-1">
-                Has respondido {answeredCount} de {items.length} preguntas.
-                {items.length - answeredCount > 0 && (
-                  <span className="block text-zinc-900 dark:text-zinc-100 font-semibold mt-1">
-                    Atención: Quedan {items.length - answeredCount} preguntas sin responder.
-                  </span>
-                )}
-                {flaggedCount > 0 && (
-                  <span className="block text-zinc-800 dark:text-zinc-200 mt-1">
-                    Tienes {flaggedCount} pregunta{flaggedCount === 1 ? '' : 's'} marcada{flaggedCount === 1 ? '' : 's'} para revisión.
-                  </span>
-                )}
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <button
-                onClick={() => setIsConfirmOpen(false)}
-                className="flex-1 py-2.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-950 dark:text-zinc-100 font-semibold rounded-xl text-xs border border-zinc-200 dark:border-zinc-700 min-h-[44px] cursor-pointer"
-              >
-                Seguir respondiendo
-              </button>
-              <button
-                onClick={handleFinalSubmit}
-                className="flex-1 py-2.5 bg-zinc-950 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-zinc-950 font-semibold rounded-xl text-xs border border-zinc-200 dark:border-zinc-700 min-h-[44px] cursor-pointer"
-              >
-                Sí, entregar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+        <p className="muted" role="status">{saved}</p><label className="inline-choice"><input type="checkbox" checked={shortcuts} onChange={e => setShortcuts(e.target.checked)} />Atajos: A–D para responder, flechas para navegar, F para marcar</label>
+        <a className="text-link" href={'#/ayuda?reporte=' + encodeURIComponent(current.id + ' · ' + (config.programId || 'bxm') + ' · ' + current.topic)}>Reportar un problema con esta pregunta</a>
+      </section>
     </div>
-  );
-};
+    {overlay === 'navigator' && <Dialog title="Preguntas de la prueba" onClose={() => setOverlay(null)}>{navigator}</Dialog>}
+    {overlay === 'formulas' && <Dialog title="Fórmulas de referencia" onClose={() => setOverlay(null)}><p className="muted">Material de apoyo para estudiar. Consulta el PDF oficial para identificar los anexos del examen.</p><FormulasSheet /><button className="secondary-button" onClick={() => setOverlay(null)}>Cerrar fórmulas</button></Dialog>}
+    {overlay === 'submit' && <Dialog title="¿Entregar la prueba?" onClose={() => setOverlay(null)}><p>{answered} respondidas, {items.length - answered} sin responder y {flagged} marcadas. La entrega es definitiva para este intento.</p><div className="action-row"><button className="secondary-button" onClick={() => { setFilter('pending'); setOverlay('navigator'); }}>Revisar sin responder</button><button className="secondary-button" onClick={() => { setFilter('flagged'); setOverlay('navigator'); }}>Revisar marcadas</button><button className="primary-button" onClick={submit}>Sí, entregar</button><button className="secondary-button" onClick={() => setOverlay(null)}>Seguir respondiendo</button></div></Dialog>}
+    {overlay === 'exit' && <Dialog title="Guardar y salir" onClose={() => setOverlay(null)}><p>Podrás reanudar este intento en este navegador. En una prueba cronometrada el tiempo continúa mientras estés fuera.</p><button className="primary-button" onClick={() => { const ok = storageService.saveActiveSession(snapshot()); if (ok) onLeave?.(); else setSaved(storageService.lastError); }}>Guardar y volver a la materia</button><button className="secondary-button" onClick={() => setOverlay(null)}>Continuar respondiendo</button></Dialog>}
+    <span className="sr-only">Tiempo transcurrido: {elapsed} segundos</span>
+  </div>;
+}
+export function options(value: import('../../types').Item['options']) {
+  return Array.isArray(value) ? value.map((option, index) => ({ letter: (option.letter || 'ABCD'[index]) as 'A' | 'B' | 'C' | 'D', text: typeof option === 'string' ? option : option.text })) : (Object.entries(value).map(([letter, text]) => ({ letter: letter as 'A' | 'B' | 'C' | 'D', text })));
+}

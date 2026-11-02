@@ -1,89 +1,56 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { TestShell } from './TestShell';
-import { PracticeConfig } from '../../types';
 import { ThemeProvider } from '../../context/ThemeContext';
-
-import { fireEvent } from '@testing-library/react';
-
-describe('TestShell', () => {
-  it('renders question position indicator and timer', async () => {
-    const config: PracticeConfig = {
-      mode: 'simulation',
-      itemCount: 5,
-      enableTimer: true,
-      timerDurationMinutes: 15,
-    };
-
-    render(
-      <ThemeProvider>
-        <TestShell config={config} onFinishTest={vi.fn()} />
-      </ThemeProvider>
-    );
-
-    expect(await screen.findByText(/Pregunta 1 de 5/)).toBeInTheDocument();
+import { createSession } from '../../services/learningSession';
+import type { PracticeConfig } from '../../types';
+afterEach(() => { cleanup(); localStorage.clear(); vi.useRealTimers(); });
+const config: PracticeConfig = { mode: 'simulation', itemCount: 5, enableTimer: false, timerDurationMinutes: 15 };
+function mount(value = config, finish = vi.fn(), initial = createSession(value)) { return { finish, ...render(<ThemeProvider><TestShell config={value} initialSession={initial} onFinishTest={finish} /></ThemeProvider>) }; }
+describe('test integrity and accessible answering', () => {
+  it('submits the latest response once when the deadline expires', () => {
+    vi.useFakeTimers();
+    const timed = { ...config, enableTimer: true };
+    const initial = { ...createSession(timed), deadline: Date.now() + 2000 };
+    const { finish, container } = mount(timed, vi.fn(), initial);
+    fireEvent.click(container.querySelector('input[value="B"]')!);
+    act(() => vi.advanceTimersByTime(1000));
+    fireEvent.click(container.querySelector('input[value="A"]')!);
+    act(() => vi.advanceTimersByTime(1000));
+    expect(finish).toHaveBeenCalledTimes(1);
+    expect(finish.mock.calls[0][0].responses[initial.itemIds[0]].selectedOption).toBe('A');
+    expect(finish.mock.calls[0][0].elapsedSeconds).toBe(2);
+    act(() => vi.advanceTimersByTime(3000));
+    expect(finish).toHaveBeenCalledTimes(1);
   });
-
-  it('handles keyboard shortcuts for option selection and navigation', async () => {
-    const config: PracticeConfig = {
-      mode: 'simulation',
-      itemCount: 5,
-      enableTimer: false,
-      timerDurationMinutes: 15,
-    };
-
-    render(
-      <ThemeProvider>
-        <TestShell config={config} onFinishTest={vi.fn()} />
-      </ThemeProvider>
-    );
-
-    expect(await screen.findByText(/Pregunta 1 de 5/)).toBeInTheDocument();
-
-    // Select option A via key 'a'
+  it('does not restore a different session just because its question count matches', () => {
+    const previous = createSession(config); previous.responses[previous.itemIds[0]] = { itemId: previous.itemIds[0], selectedOption: 'A' };
+    localStorage.setItem('mep_ea_active_session', JSON.stringify(previous));
+    render(<ThemeProvider><TestShell config={config} onFinishTest={vi.fn()} /></ThemeProvider>);
+    expect(screen.getAllByRole('radio').every(radio => !(radio as HTMLInputElement).checked)).toBe(true);
+  });
+  it('suspends shortcuts during reference dialogs and restores focus', () => {
+    mount();
+    const formulas = screen.getByRole('button', { name: 'Fórmulas' });
+    formulas.focus(); fireEvent.click(formulas);
+    expect(screen.getByRole('dialog', { name: 'Fórmulas de referencia' })).toBeInTheDocument();
     fireEvent.keyDown(window, { key: 'a' });
-
-    // Navigate to next question via ArrowRight key
+    expect(screen.getAllByRole('radio', { hidden: true }).every(radio => !(radio as HTMLInputElement).checked)).toBe(true);
+    fireEvent.click(screen.getByRole('button', { name: 'Cerrar fórmulas' }));
+    expect(formulas).toHaveFocus();
     fireEvent.keyDown(window, { key: 'ArrowRight' });
-    expect(await screen.findByText(/Pregunta 2 de 5/)).toBeInTheDocument();
-
-    // Toggle flag via key 'f'
-    fireEvent.keyDown(window, { key: 'f' });
-    expect(screen.getByText(/Marcada \[F\]/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Pregunta 2 de 5' })).toBeInTheDocument();
   });
-
-  it('opens formula modal and practice mode feedback', async () => {
-    const config: PracticeConfig = {
-      mode: 'area',
-      area: 'geometry',
-      itemCount: 5,
-      enableTimer: false,
-      timerDurationMinutes: 15,
-    };
-
-    render(
-      <ThemeProvider>
-        <TestShell config={config} onFinishTest={vi.fn()} />
-      </ThemeProvider>
-    );
-
-    // Open formulas modal
-    const formulaBtn = await screen.findByTitle('Ver fórmulas del examen');
-    fireEvent.click(formulaBtn);
-    expect(screen.getByText('Simbología y Fórmulas del Examen (BXM)')).toBeInTheDocument();
-
-    // Close formulas modal
-    fireEvent.click(screen.getByText('Cerrar Fórmulas'));
-    expect(screen.queryByText('Simbología y Fórmulas del Examen (BXM)')).not.toBeInTheDocument();
-
-    // Select option A
-    fireEvent.click(screen.getByTitle(/Presiona A/));
-
-    // Verify explanation button appears
-    const verifyBtn = screen.getByText('Verificar respuesta y ver explicación');
-    expect(verifyBtn).toBeInTheDocument();
-    fireEvent.click(verifyBtn);
-
-    expect(screen.getByText(/Respuesta/)).toBeInTheDocument();
+  it('locks verified learning answers and suppresses feedback in weighted mocks', () => {
+    const learning = { ...config, mode: 'area' as const, area: 'geometry' as const };
+    const { container, unmount } = mount(learning);
+    fireEvent.click(container.querySelector('input[value="A"]')!);
+    fireEvent.click(screen.getByRole('button', { name: 'Verificar respuesta y ver explicación' }));
+    expect(screen.getAllByRole('radio').every(input => (input as HTMLInputElement).disabled)).toBe(true);
+    unmount();
+    const weighted = { ...config, mode: 'dynamic_mock' as const };
+    const next = mount(weighted);
+    fireEvent.click(next.container.querySelector('input[value="A"]')!);
+    expect(screen.queryByRole('button', { name: /Verificar respuesta/ })).not.toBeInTheDocument();
   });
 });

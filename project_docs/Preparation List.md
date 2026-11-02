@@ -1,5 +1,7 @@
 # Preparation and Execution Log
 
+> Current behavior and availability: [Capability status](CAPABILITY_STATUS.md). UI changes and remaining validation: [Implementation ledger](UI_UX_IMPLEMENTATION.md). Older verification totals below are historical.
+
 **Project:** MEP-EA-01 — Educación Abierta Test Simulator & Practice Platform
 **Updated:** 2026-10-31
 

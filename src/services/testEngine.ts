@@ -1,4 +1,4 @@
-import { Item, PracticeConfig, DomainArea, ConvocatoriaManifest } from '../types';
+import { Item, PracticeConfig, ConvocatoriaManifest } from '../types';
 
 export interface DynamicAssemblyOptions {
   totalItems?: number;
@@ -174,7 +174,10 @@ export class TestEngine {
 
     if (config.mode === 'random_practice') {
       // Deterministic pseudo-random shuffle
-      pool = [...pool].sort(() => 0.5 - Math.random());
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
     }
 
     if (config.itemCount !== 'all' && typeof config.itemCount === 'number') {

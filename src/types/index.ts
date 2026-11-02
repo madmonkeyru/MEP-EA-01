@@ -289,6 +289,9 @@ export type PracticeMode =
   | 'random_practice';
 
 export interface PracticeConfig {
+  subjectId?: string;
+  itemIds?: number[];
+  title?: string;
   mode: PracticeMode;
   programId?: string;
   subprogramId?: string;
@@ -305,6 +308,10 @@ export interface PracticeConfig {
 }
 
 export interface Attempt {
+  subjectId?: string;
+  convocatoriaId?: string;
+  scopeKey?: string;
+  session?: TestSession;
   id: string;
   userId: string;
   timestamp: string; // ISO String
@@ -319,6 +326,13 @@ export interface Attempt {
 }
 
 export interface TestSession {
+  version?: number;
+  items?: Item[];
+  groups?: Group[];
+  deadline?: number;
+  completedAt?: string;
+  checkedItems?: Record<number, boolean>;
+  passingScore?: number;
   sessionId: string;
   userId: string;
   config: PracticeConfig;

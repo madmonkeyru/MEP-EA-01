@@ -1,7 +1,7 @@
 import React from 'react';
 import { Attempt } from '../../types';
 import { storageService } from '../../services/storageService';
-import { Award, CheckCircle2, Flame, HelpCircle } from 'lucide-react';
+import { Award, CheckCircle2, Flame } from 'lucide-react';
 
 interface QuickStatsBannerProps {
   attempts: Attempt[];
@@ -15,7 +15,7 @@ export const QuickStatsBanner: React.FC<QuickStatsBannerProps> = ({
   className = '',
 }) => {
   const perfLevel = storageService.calculatePerformanceLevel(attempts);
-  const simulationAttempts = attempts.filter((a) => a.scopeText.toLowerCase().includes('simulación'));
+  const simulationAttempts = attempts.filter((a) => a.mode === 'simulation' || a.mode === 'dynamic_mock');
   const latestAttempt = attempts[0];
 
   return (

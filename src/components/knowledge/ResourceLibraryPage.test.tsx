@@ -8,8 +8,8 @@ import { ResourceLibraryPage } from './ResourceLibraryPage';
 describe('Resource Library Components', () => {
   it('renders SpecsTable with blocks and point totals', () => {
     render(<SpecsTable />);
-    expect(screen.getByText(/Tabla de Especificaciones BXM/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/1. Geometría/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Tabla de especificaciones/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Geometría/i).length).toBeGreaterThan(0);
   });
 
   it('triggers onStartPracticeByItems when practice button is clicked in SpecsTable', () => {
@@ -35,7 +35,7 @@ describe('Resource Library Components', () => {
 
   it('renders FormulasSheet and toggles filter', () => {
     render(<FormulasSheet />);
-    expect(screen.getByText(/Fórmulas y Simbología Oficial/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fórmulas y simbología de apoyo/i)).toBeInTheDocument();
 
     const geomFilterBtn = screen.getByRole('button', { name: /Geometría/i });
     fireEvent.click(geomFilterBtn);
@@ -47,11 +47,11 @@ describe('Resource Library Components', () => {
     const handleGoHome = vi.fn();
     render(<ResourceLibraryPage onGoHome={handleGoHome} />);
 
-    expect(screen.getByText(/Biblioteca de Conocimiento y Recursos BXM/i)).toBeInTheDocument();
+    expect(screen.getByText(/Biblioteca de recursos/i)).toBeInTheDocument();
 
-    const termsTab = screen.getByRole('button', { name: /Diccionario/i });
+    const termsTab = screen.getByRole('tab', { name: /Diccionario/i });
     fireEvent.click(termsTab);
 
-    expect(screen.getByText(/Diccionario de Términos y Conceptos Matemáticos/i)).toBeInTheDocument();
+    expect(screen.getByText(/Diccionario de términos y conceptos matemáticos/i)).toBeInTheDocument();
   });
 });

@@ -39,7 +39,7 @@ function isBareMath(expression: string): boolean {
   return !/[\p{L}]{2,}/u.test(withoutParentheses);
 }
 
-export const TextRenderer: React.FC<TextRendererProps> = ({
+export const TextRenderer: React.FC<TextRendererProps> = React.memo(({
   content = '',
   className = '',
   inline = false,
@@ -137,8 +137,8 @@ export const TextRenderer: React.FC<TextRendererProps> = ({
               key={index}
               className={`math-data-badge ${
                 part.isBlock
-                  ? 'block my-3 text-center p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-300 dark:border-zinc-700 shadow-2xs font-semibold text-zinc-950 dark:text-zinc-50'
-                  : 'inline-flex items-center px-1.5 py-0.5 mx-0.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60  text-indigo-950 dark:text-indigo-100 font-bold align-baseline transition-colors'
+                  ? 'math-data-block'
+                  : 'math-data-inline'
               }`}
               dangerouslySetInnerHTML={{ __html: html }}
             />
@@ -149,4 +149,4 @@ export const TextRenderer: React.FC<TextRendererProps> = ({
       })}
     </span>
   );
-};
+});

@@ -1,0 +1,33 @@
+@theme inline {
+  --color-paper: var(--helper-paper);
+  --color-ink: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-line: var(--helper-line);
+  --color-surface: var(--surface);
+  --color-primary: var(--helper-primary);
+  --color-primary-fg: #ffffff;
+  --color-primary-soft: var(--accent-soft);
+  --color-primary-strong: #4338ca;
+  --color-accent: var(--helper-primary);
+  --color-accent-soft: var(--accent-soft);
+}
+
+.helper-guide, .helper-page {
+  --helper-paper: var(--bg-primary);
+  --helper-line: #d6d3d1;
+  --helper-primary: #4f46e5;
+}
+
+.dark .helper-guide, .dark .helper-page {
+  --helper-line: #475569;
+  --helper-primary: #4f46e5;
+}
+
+.dark .helper-guide .text-primary, .dark .helper-guide .text-accent { color: #a5b4fc; }
+
+.helper-guide h1, .helper-guide h2, .helper-guide h3 { font-weight: 600; }
+.helper-guide button:not(:disabled) { cursor: pointer; }
+.helper-guide button:focus-visible, .helper-page button:focus-visible, .helper-page a:focus-visible {
+  outline: 2px solid var(--helper-primary);
+  outline-offset: 3px;
+}

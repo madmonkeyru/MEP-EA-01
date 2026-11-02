@@ -8,7 +8,7 @@ interface GroupVisualProps {
   className?: string;
 }
 
-export const GroupVisual: React.FC<GroupVisualProps> = ({ group, className = '' }) => {
+export const GroupVisual: React.FC<GroupVisualProps> = React.memo(({ group, className = '' }) => {
   if (!group) return null;
 
   return (
@@ -30,4 +30,4 @@ export const GroupVisual: React.FC<GroupVisualProps> = ({ group, className = '' 
       )}
     </div>
   );
-};
+});

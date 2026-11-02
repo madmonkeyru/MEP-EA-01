@@ -1,0 +1,61 @@
+import { chromium } from '@playwright/test';
+import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
+const base = process.env.FLOW_BASE_URL || 'http://127.0.0.1:5173';
+const browser = await chromium.launch({ channel: 'msedge', headless: true });
+const page = await browser.newPage();
+const errors = [];
+page.on('pageerror', error => errors.push(error.message));
+try {
+  await page.goto(base);
+  assert.equal(await page.locator('main').count(), 1);
+  await page.getByRole('button', { name: 'Practicar Matemáticas BXM', exact: true }).waitFor();
+  for (const program of ['cico', 'iii_ciclo', 'edad', 'bxm']) {
+    await page.goto(base + '/#/programas/' + program + '/espanol?seccion=resources');
+    await page.getByRole('heading', { name: 'Materiales oficiales en PDF' }).waitFor();
+    const href = await page.getByRole('link', { name: 'Abrir PDF (otra pestaña)' }).first().getAttribute('href');
+    const response = await page.request.get(new URL(href, base).href);
+    assert.equal(response.status(), 200);
+    assert.equal((await response.body()).subarray(0, 5).toString(), '%PDF-');
+  }
+  await page.goto(base + '/#/ayuda');
+  await page.getByRole('button', { name: 'Comenzar guía opcional' }).click();
+  await page.getByRole('button', { name: 'Omitir guía', exact: true }).click();
+  await page.getByRole('heading', { name: 'Encuentra tu programa de estudio' }).waitFor();
+  await page.goto(base + '/#/programas/bxm/matematicas?convocatoria=2026-c2');
+  await page.getByRole('button', { name: 'Iniciar práctica', exact: true }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
+  await page.getByRole('radio').first().check();
+  await page.getByRole('button', { name: 'Salir', exact: true }).click();
+  await page.getByRole('button', { name: 'Guardar y volver a la materia' }).click();
+  await page.getByRole('button', { name: 'Reanudar intento' }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
+  await page.reload();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
+  assert.equal(await page.getByRole('radio').first().isChecked(), true);
+  await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
+  await page.getByRole('button', { name: 'Sí, entregar', exact: true }).click();
+  await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
+  const resultUrl = page.url();
+  await page.reload();
+  await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
+  assert.equal(page.url(), resultUrl);
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('mep_ea_attempts')).length), 1);
+  await mkdir('artifacts/ui-validation', { recursive: true });
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    for (const theme of ['light', 'dark']) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(base + '/#/ayuda?programa=iii_ciclo');
+      await page.getByRole('heading', { name: 'Guía y recursos', exact: true }).waitFor();
+      const themeToggle = page.getByRole('switch', { name: 'Modo oscuro' });
+      if ((await themeToggle.getAttribute('aria-checked')) !== String(theme === 'dark')) await themeToggle.click();
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Body overflow at ' + width + ', ' + theme);
+      await page.screenshot({ path: 'artifacts/ui-validation/resources-' + width + '-' + theme + '.png', fullPage: true });
+    }
+  }
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+  await page.screenshot({ path: 'artifacts/ui-validation/enlarged-text.png', fullPage: true });
+  assert.deepEqual(errors, []);
+  console.log('PDF access, optional guidance, exact session recovery, durable results and layout matrix passed. Inspect screenshots and run the human accessibility checklist separately.');
+} finally { await browser.close(); }

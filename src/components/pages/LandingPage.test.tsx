@@ -1,54 +1,17 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
-import { LandingPage } from './LandingPage';
-
-describe('LandingPage', () => {
-  it('renders combined mode widget with segmented control toggle and stacked performance/history widget', () => {
-    const onStartSimulation = vi.fn();
-    const onStartPractice = vi.fn();
-
-    render(
-      <LandingPage
-        currentUser={null}
-        onStartSimulation={onStartSimulation}
-        onStartPractice={onStartPractice}
-      />
-    );
-
-    // Header title
-    expect(screen.getByText('Practicas y Simulaciones de Matemáticas BXM 2026 Convocatoria #2')).toBeInTheDocument();
-
-    // Segmented tab buttons
-    expect(screen.getByRole('button', { name: /^Simulación$/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /^Área$/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /^Tema$/i })).toBeInTheDocument();
-
-    // Stacked Widget elements
-    expect(screen.getByText('Rendimiento')).toBeInTheDocument();
-    expect(screen.getByText('Historial Reciente')).toBeInTheDocument();
-
-    // Default active tab is simulation
-    const startButton = screen.getByRole('button', { name: /Iniciar Simulación/i });
-    expect(startButton).toBeInTheDocument();
-
-    fireEvent.click(startButton);
-    expect(onStartSimulation).toHaveBeenCalledTimes(1);
-
-    // Switch tab to Por Área
-    const areaTab = screen.getByRole('button', { name: /^Área$/i });
-    fireEvent.click(areaTab);
-
-    // Integrated evaluation modules widget offers direct configuration and start
-    const startPracticeButton = screen.getByRole('button', { name: /Iniciar Práctica por Área/i });
-    expect(startPracticeButton).toBeInTheDocument();
-
-    fireEvent.click(startPracticeButton);
-    expect(onStartPractice).toHaveBeenCalledTimes(1);
-    expect(onStartPractice).toHaveBeenCalledWith(
-      expect.objectContaining({
-        mode: 'area',
-        area: 'geometry',
-      })
-    );
-  });
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, expect, it, vi } from 'vitest';
+import { SubjectHubPage } from './LandingPage';
+afterEach(cleanup);
+it('starts with untimed learning, previews the exact count and presents simulation preflight', () => {
+  const onPractice = vi.fn(), onSimulation = vi.fn();
+  render(<SubjectHubPage currentUser={null} onStartPractice={onPractice} onStartSimulation={onSimulation} />);
+  expect(screen.getByText(/Aún sin datos de simulación/)).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Iniciar práctica' }));
+  expect(onPractice).toHaveBeenCalledWith(expect.objectContaining({ mode: 'area', enableTimer: false, area: 'geometry' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Ensayar el examen' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Preparar simulación' }));
+  expect(screen.getByRole('dialog', { name: 'Antes de comenzar' })).toBeInTheDocument();
+  expect(onSimulation).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulación' }));
+  expect(onSimulation).toHaveBeenCalledOnce();
 });

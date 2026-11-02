@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LearningJourney } from '../common/LearningJourney';
 import {
   ArrowRight,
@@ -6,14 +6,17 @@ import {
 } from 'lucide-react';
 
 interface EntryLandingPageProps {
+  onOpenHelper?: () => void;
   onExplorePrograms: () => void;
   onEnterBxmHub: () => void;
 }
 
 export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
+  onOpenHelper,
   onExplorePrograms,
   onEnterBxmHub,
 }) => {
+  const [last] = useState(() => { try { const route = localStorage.getItem('mep_last_subject'); return route?.startsWith('#/programas/') ? route : null; } catch { return null; } });
   return (
     <div className="entry-page min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-20 w-full space-y-10">
@@ -21,8 +24,8 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
         {/* Core Value Statement (Simple, direct, no narrative/testimonials) */}
         <div className="space-y-4">
           <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 dark:text-indigo-300">Tu próximo paso empieza aquí</p>
-          <h1 className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
-            Preparación y Práctica para los Exámenes de Educación Abierta del MEP
+          <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+            Prepárate para tu próximo paso
           </h1>
           <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed">
             Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo. Cada práctica cuenta.
@@ -54,7 +57,7 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
               onClick={onEnterBxmHub}
               className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
             >
-              <span>Ingresar al Hub BXM</span>
+              <span>Practicar Matemáticas BXM</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -82,11 +85,18 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
               onClick={onExplorePrograms}
               className="w-full py-3 bg-stone-900 dark:bg-stone-800 hover:bg-stone-800 dark:hover:bg-stone-700 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
             >
-              <span>Ver Planes y Programas</span>
+              <span>Explorar programas</span>
               <GraduationCap className="w-4 h-4" />
             </button>
           </div>
         </div>
+        {onOpenHelper && <section className="ui-surface rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
+          <div className="space-y-2"><p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">Orientación opcional</p>
+          <h2 className="text-lg font-semibold">¿Necesitas ubicar tu próximo paso?</h2>
+          <p className="text-sm text-stone-600 dark:text-stone-400">Conoce los requisitos y recursos de cada programa, o encuentra una ruta con la guía. Puedes omitirla y volver cuando quieras.</p></div>
+          <button onClick={onOpenHelper} className="min-h-11 px-5 py-3 rounded-xl bg-indigo-600 text-white text-sm font-semibold cursor-pointer">Abrir guía y recursos</button>
+        </section>}
+        {last && <a className="text-link" href={last}>Volver a mi última materia</a>}
         <LearningJourney />
       </div>
 

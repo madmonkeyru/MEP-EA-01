@@ -15,7 +15,8 @@ const THEME_STORAGE_KEY = 'mep_ea_01_theme';
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem(THEME_STORAGE_KEY);
+    let saved: string | null = null;
+    try { saved = localStorage.getItem(THEME_STORAGE_KEY); } catch { /* System theme remains available. */ }
     if (saved === 'light' || saved === 'dark' || saved === 'system') {
       return saved;
     }
@@ -62,7 +63,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    try { localStorage.setItem(THEME_STORAGE_KEY, newTheme); } catch { /* Apply the choice for this page. */ }
   };
 
   const toggleTheme = () => {

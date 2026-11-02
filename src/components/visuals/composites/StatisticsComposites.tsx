@@ -36,7 +36,7 @@ export const TableComponent: React.FC<TableSpecProps> = ({
           <thead>
             <tr className="bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold border-b border-zinc-300 dark:border-zinc-700">
               {headerCells.map((h, i) => (
-                <th key={i} className="px-3 py-1.5 sm:px-4 sm:py-2 border-r border-zinc-300 dark:border-zinc-700 last:border-r-0">
+                <th scope="col" key={i} className="px-3 py-1.5 sm:px-4 sm:py-2 border-r border-zinc-300 dark:border-zinc-700 last:border-r-0">
                   <TextRenderer content={String(h)} />
                 </th>
               ))}

@@ -1,5 +1,7 @@
 # MEP-EA-01 — Costa Rican Educación Abierta Test Simulator & Practice Platform
 
+Current student-facing availability and persistence: [Capability status](project_docs/CAPABILITY_STATUS.md). UI/UX changes: [Implementation ledger](project_docs/UI_UX_IMPLEMENTATION.md). Browser and student validation: [Checklist](project_docs/UI_UX_VALIDATION.md). Earlier implementation descriptions and test totals below are historical.
+
 **MEP-EA-01** is a high-fidelity web-based test simulator and learning practice platform designed for students preparing for the Costa Rican *Bachillerato por Madurez Suficiente* (BXM) exam (Convocatorias 01-2026 & 02-2026) and the broader *Educación Abierta* framework (I&II Ciclo CICO, III Ciclo, EDAD, BXM).
 
 ---

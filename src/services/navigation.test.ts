@@ -3,6 +3,13 @@ import { readRoute, routeHash } from './navigation';
 import { dataService } from './dataService';
 
 describe('program navigation', () => {
+  it('round trips persisted test/result routes and resource tabs', () => {
+    for (const view of ['test', 'results'] as const) {
+      expect(readRoute(routeHash({ view, programId: 'bxm', subjectId: 'matematicas', sessionId: 'saved-123', convocatoriaId: '2026-c2' }))).toMatchObject({ view, sessionId: 'saved-123', subjectId: 'matematicas' });
+    }
+    expect(readRoute('#/programas/bxm/matematicas?seccion=resources&recurso=terms')).toMatchObject({ tab: 'resources', resourceTab: 'terms' });
+    expect(readRoute('#/programas/bxm/matematicas?seccion=bad').tab).toBeUndefined();
+  });
   it('round trips every subject route and validates level context', () => {
     for (const program of dataService.getPrograms()) {
       for (const subject of program.subjects) {
