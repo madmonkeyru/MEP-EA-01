@@ -53,6 +53,50 @@ export class TestEngine {
   }
 
   /**
+   * Assemble a high-yield, short Diagnostic session (typically 6-10 questions)
+   * designed to quickly assess learner readiness across Geometry, Functions, and Statistics.
+   */
+  public static assembleDiagnosticSession(
+    allItems: Item[],
+    totalQuestions: number = 8
+  ): Item[] {
+    const geoItems = allItems.filter((i) => i.area_id === 'geometry');
+    const algItems = allItems.filter((i) => i.area_id === 'functions');
+    const estItems = allItems.filter((i) => i.area_id === 'statistics');
+
+    // Default allocation: 3 Geometry, 3 Functions, 2 Statistics (for 8 questions)
+    const geoTarget = Math.max(1, Math.round(totalQuestions * 0.375));
+    const algTarget = Math.max(1, Math.round(totalQuestions * 0.375));
+    const estTarget = Math.max(1, totalQuestions - geoTarget - algTarget);
+
+    const pickRepresentative = (pool: Item[], count: number): Item[] => {
+      if (pool.length <= count) return [...pool];
+      // Prefer items with diverse cognitive levels or distinct topics
+      const topics = Array.from(new Set(pool.map((p) => p.topic || 'General')));
+      const selected: Item[] = [];
+      let topicIdx = 0;
+      while (selected.length < count && topicIdx < pool.length) {
+        const topic = topics[topicIdx % topics.length];
+        const match = pool.find((i) => (i.topic || 'General') === topic && !selected.some((s) => s.id === i.id));
+        if (match) {
+          selected.push(match);
+        } else {
+          const fallback = pool.find((i) => !selected.some((s) => s.id === i.id));
+          if (fallback) selected.push(fallback);
+        }
+        topicIdx++;
+      }
+      return selected.slice(0, count);
+    };
+
+    const sampledGeo = pickRepresentative(geoItems, geoTarget);
+    const sampledAlg = pickRepresentative(algItems, algTarget);
+    const sampledEst = pickRepresentative(estItems, estTarget);
+
+    return [...sampledGeo, ...sampledAlg, ...sampledEst];
+  }
+
+  /**
    * Assemble a Targeted Concept Drilldown test containing questions
    * linked directly to a specific concept ID.
    */
@@ -155,6 +199,11 @@ export class TestEngine {
 
     if (config.mode === 'concept_drilldown' && config.conceptId) {
       return this.assembleConceptDrilldown(config.conceptId, allItems, config.itemCount);
+    }
+
+    if (config.mode === 'diagnostic') {
+      const count = typeof config.itemCount === 'number' ? config.itemCount : 8;
+      return this.assembleDiagnosticSession(allItems, count);
     }
 
     if (config.mode === 'dynamic_mock') {

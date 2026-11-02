@@ -1,6 +1,6 @@
-import type { User, Attempt, TestSession, PracticeConfig } from '../types';
+import type { User, Attempt, TestSession, PracticeConfig, FunnelEvent, FunnelEventType } from '../types';
 import { scopeKey, validSession } from './learningSession';
-const KEYS = { user: 'mep_ea_user', attempts: 'mep_ea_attempts', active: 'mep_ea_active_session' };
+const KEYS = { user: 'mep_ea_user', attempts: 'mep_ea_attempts', active: 'mep_ea_active_session', telemetry: 'mep_ea_telemetry_events' };
 class StorageService {
   lastError = '';
   private read<T>(key: string, fallback: T): T {
@@ -59,6 +59,60 @@ class StorageService {
     const recent = attempts.slice(0, 5);
     const avg = recent.reduce((sum, a) => sum + a.scorePercentage, 0) / recent.length;
     return { scoreAverage: Math.round(avg), color: `hsl(${Math.round(avg / 100 * 120)}, 85%, 42%)`, description: avg < 60 ? 'Sigue reforzando tus conocimientos' : avg < 75 ? 'Progresando' : 'Buen avance' };
+  }
+
+  // --- Telemetry & Funnel Logging ---
+  getTelemetryEvents(): FunnelEvent[] {
+    const events = this.read<FunnelEvent[]>(KEYS.telemetry, []);
+    return Array.isArray(events) ? events : [];
+  }
+
+  logTelemetryEvent(
+    type: FunnelEventType,
+    metadata?: Record<string, any>,
+    programId?: string,
+    subjectId?: string,
+    mode?: any
+  ): FunnelEvent {
+    const event: FunnelEvent = {
+      id: crypto.randomUUID(),
+      type,
+      timestamp: new Date().toISOString(),
+      userId: this.getCurrentUser()?.id || 'guest',
+      programId: programId || 'bxm',
+      subjectId: subjectId || 'matematicas',
+      mode,
+      metadata
+    };
+    const current = this.getTelemetryEvents();
+    // Cap in-memory history to last 200 events
+    const updated = [event, ...current].slice(0, 200);
+    this.write(KEYS.telemetry, updated);
+    return event;
+  }
+
+  getTelemetryFunnelStats() {
+    const events = this.getTelemetryEvents();
+    const counts: Record<string, number> = {};
+    for (const e of events) {
+      counts[e.type] = (counts[e.type] || 0) + 1;
+    }
+    return {
+      totalEvents: events.length,
+      counts,
+      goalSelected: counts['goal_selected'] || 0,
+      diagnosticStarted: counts['diagnostic_started'] || 0,
+      diagnosticCompleted: counts['diagnostic_completed'] || 0,
+      remediationStarted: counts['remediation_started'] || 0,
+      retryClicked: counts['retry_clicked'] || 0,
+      sessionStarted: counts['session_started'] || 0,
+      sessionCompleted: counts['session_completed'] || 0,
+      sessionAbandoned: counts['session_abandoned'] || 0
+    };
+  }
+
+  clearTelemetryEvents() {
+    return this.write(KEYS.telemetry, []);
   }
 }
 export const storageService = new StorageService();

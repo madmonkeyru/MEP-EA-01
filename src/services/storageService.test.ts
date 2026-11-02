@@ -65,4 +65,23 @@ describe('StorageService', () => {
     const redPerf = storageService.calculatePerformanceLevel([lowAttempt]);
     expect(redPerf.color).toContain('hsl(0');
   });
+
+  it('records and summarizes telemetry funnel events', () => {
+    storageService.clearTelemetryEvents();
+    expect(storageService.getTelemetryEvents()).toHaveLength(0);
+
+    storageService.logTelemetryEvent('goal_selected', { goal: 'bxm_pass' });
+    storageService.logTelemetryEvent('diagnostic_started', { questions: 8 });
+    storageService.logTelemetryEvent('diagnostic_completed', { score: 75 });
+    storageService.logTelemetryEvent('remediation_started', { topic: 'Circunferencia' });
+    storageService.logTelemetryEvent('retry_clicked');
+
+    const stats = storageService.getTelemetryFunnelStats();
+    expect(stats.totalEvents).toBe(5);
+    expect(stats.goalSelected).toBe(1);
+    expect(stats.diagnosticStarted).toBe(1);
+    expect(stats.diagnosticCompleted).toBe(1);
+    expect(stats.remediationStarted).toBe(1);
+    expect(stats.retryClicked).toBe(1);
+  });
 });

@@ -111,4 +111,27 @@ describe('TestEngine', () => {
     expect(mock.length).toBe(4);
     expect(mock.some((i) => i.area_id === 'geometry')).toBe(true);
   });
+
+  it('assembles a balanced diagnostic session across domains', () => {
+    const pool = [
+      { id: 1, area_id: 'geometry', topic: 'Circunferencia' },
+      { id: 2, area_id: 'geometry', topic: 'Polígonos' },
+      { id: 3, area_id: 'geometry', topic: 'Transformaciones' },
+      { id: 4, area_id: 'functions', topic: 'Función Lineal' },
+      { id: 5, area_id: 'functions', topic: 'Función Cuadrática' },
+      { id: 6, area_id: 'functions', topic: 'Composición' },
+      { id: 7, area_id: 'statistics', topic: 'Medidas de Posición' },
+      { id: 8, area_id: 'statistics', topic: 'Probabilidad' },
+      { id: 9, area_id: 'statistics', topic: 'Distribuciones' }
+    ] as any[];
+
+    const session = TestEngine.assemblePracticeSession({ mode: 'diagnostic', itemCount: 8 } as any, pool);
+    expect(session).toHaveLength(8);
+    const geoCount = session.filter(i => i.area_id === 'geometry').length;
+    const algCount = session.filter(i => i.area_id === 'functions').length;
+    const estCount = session.filter(i => i.area_id === 'statistics').length;
+    expect(geoCount).toBe(3);
+    expect(algCount).toBe(3);
+    expect(estCount).toBe(2);
+  });
 });

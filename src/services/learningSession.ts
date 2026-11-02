@@ -3,7 +3,7 @@ import { dataService } from './dataService';
 import { TestEngine } from './testEngine';
 
 export const isExam = (config: PracticeConfig) => config.mode === 'simulation' || config.mode === 'dynamic_mock';
-export const modeLabel = (config: PracticeConfig) => config.title || ({ simulation: 'Simulación completa', dynamic_mock: 'Simulación con distribución curricular', area: 'Práctica por área', topic: 'Práctica por tema', concept_drilldown: 'Práctica por concepto', random_practice: 'Práctica variada' }[config.mode]);
+export const modeLabel = (config: PracticeConfig) => config.title || ({ simulation: 'Simulación completa', dynamic_mock: 'Simulación con distribución curricular', diagnostic: 'Diagnóstico Rápido', area: 'Práctica por área', topic: 'Práctica por tema', concept_drilldown: 'Práctica por concepto', random_practice: 'Práctica variada' }[config.mode]);
 export const areaLabel = (area?: string) => ({ geometry: 'Geometría', functions: 'Relaciones y álgebra', statistics: 'Estadística y probabilidad' }[area || ''] || 'Todas las áreas');
 export function scopeKey(config: PracticeConfig) {
   return JSON.stringify([config.programId || 'bxm', config.subjectId || 'matematicas', config.subprogramId || '', config.convocatoriaId || '2026-c2', config.mode, config.area || '', config.topic || '', config.conceptId || '', config.setId || '', config.itemIds || [], config.itemCount, config.enableTimer, config.timerDurationMinutes]);
@@ -28,7 +28,7 @@ export function createSession(config: PracticeConfig, snapshotItems?: Item[], sn
 }
 export function validSession(session: TestSession | null, userId: string): session is TestSession {
   return !!session && session.version === 2 && session.userId === userId && !session.isCompleted && !!session.config &&
-    ['simulation', 'dynamic_mock', 'area', 'topic', 'random_practice', 'concept_drilldown'].includes(session.config.mode) &&
+    ['simulation', 'dynamic_mock', 'diagnostic', 'area', 'topic', 'random_practice', 'concept_drilldown'].includes(session.config.mode) &&
     Array.isArray(session.items) && session.items.length > 0 && Array.isArray(session.itemIds) && session.items.length === session.itemIds.length &&
     new Set(session.itemIds).size === session.itemIds.length &&
     session.items.every((item, index) => !!item && item.id === session.itemIds[index] && typeof item.stem === 'string' && !!item.options && typeof item.options === 'object' && ['A', 'B', 'C', 'D'].includes(item.correct_answer) && Array.isArray(item.solution_steps)) &&

@@ -140,6 +140,10 @@ export interface ConvocatoriaManifest {
 
 ## 3. Ingestion Pipeline & Quality Assurance CLI
 
+### 3.0 Human-in-the-Loop (HIL) Pilot Verification Protocol
+Before automating mass PDF extractions across 47+ specification tables and sample tests, the content pipeline relies on a certified human-reviewed pilot on Convocatoria 02-2026 BXM Mathematics.
+See the dedicated verification protocol: **[PILOT_HIL_VERIFICATION_PROTOCOL_BXM_02_2026.md](PILOT_HIL_VERIFICATION_PROTOCOL_BXM_02_2026.md)**.
+
 ### 3.1 Semi-Annual Ingestion Workflow
 Every 6 months upon release of official MEP materials:
 1. **Raw PDF Intake**: Store official specification tables and sample exam PDFs in `project_docs/program_official_pdfs/`.

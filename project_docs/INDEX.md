@@ -69,7 +69,8 @@ project_docs/
 ├── 03_CONTENT_PIPELINE_AND_LEGAL_DECOUPLING.md    # Ingestion pipelines for 47+ PDFs, taxonomy, freemium & QA validation
 ├── 04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md    # Parametric SVG composites, zero static bitmaps, KaTeX LaTeX pipeline
 ├── 05_UI_UX_DESIGN_SYSTEM.md                     # Visual identity, warm beige palette, accessible tokens & custom components
-└── 06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md     # Engineering phases, video content deferral, SLA & operational runbook
+├── 06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md     # Engineering phases, video content deferral, SLA & operational runbook
+└── PILOT_HIL_VERIFICATION_PROTOCOL_BXM_02_2026.md # Human-in-the-Loop review protocol & checklist for Convocatoria 02-2026
 ```
 
 ### Document Directory & Reading Matrix
