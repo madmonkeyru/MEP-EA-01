@@ -1315,7 +1315,37 @@
         "Opción correcta: B."
       ],
       "group_id": null,
-      "visual_spec": null,
+      "visual_spec": {
+        "alt": "Corte plano en una esfera que forma la abertura circular del florero",
+        "visual": {
+          "type": "solid_3d",
+          "shape": "sphere",
+          "width": 340,
+          "height": 260,
+          "parameters": {
+            "radius": 85,
+            "distance": 50,
+            "showCenter": true,
+            "showAxis": true,
+            "showRightAngle": true
+          },
+          "labels": {
+            "center": "M",
+            "sectionCenter": "O",
+            "sectionLeft": "P",
+            "sectionRight": "N"
+          },
+          "referenceBox": {
+            "lines": [
+              "M: centro de la esfera (R = 13)",
+              "O: centro de la abertura (d = 12)",
+              "r: radio de la abertura"
+            ]
+          },
+          "showCrossSection": true,
+          "showAxes": true
+        }
+      },
       "set_id": "set_1"
     },
     {
@@ -1344,7 +1374,37 @@
         "Opción correcta: A."
       ],
       "group_id": null,
-      "visual_spec": null,
+      "visual_spec": {
+        "alt": "Esfera de radio 25 cortada por un plano a una distancia d produciendo una sección de radio 24",
+        "visual": {
+          "type": "solid_3d",
+          "shape": "sphere",
+          "width": 340,
+          "height": 260,
+          "parameters": {
+            "radius": 85,
+            "distance": 35,
+            "showCenter": true,
+            "showAxis": true,
+            "showRightAngle": true
+          },
+          "labels": {
+            "center": "M",
+            "sectionCenter": "O",
+            "sectionLeft": "A",
+            "sectionRight": "B"
+          },
+          "referenceBox": {
+            "lines": [
+              "Radio de la esfera R = 25",
+              "Radio de la sección r = 24",
+              "d: distancia del centro a la sección"
+            ]
+          },
+          "showCrossSection": true,
+          "showAxes": true
+        }
+      },
       "set_id": "set_1"
     },
     {
@@ -1374,7 +1434,34 @@
         "Opción correcta: C."
       ],
       "group_id": null,
-      "visual_spec": null,
+      "visual_spec": {
+        "alt": "Cilindro circular recto cortado por un plano perpendicular a las bases pasando por los centros",
+        "visual": {
+          "type": "solid_3d",
+          "shape": "cylinder",
+          "width": 340,
+          "height": 260,
+          "parameters": {
+            "radius": 50,
+            "height": 120,
+            "showCenter": true,
+            "showAxis": true
+          },
+          "labels": {
+            "center": "O_1",
+            "topCenter": "O_2"
+          },
+          "referenceBox": {
+            "lines": [
+              "Altura del cilindro h = 40 cm",
+              "Radio de la base r = 15 cm",
+              "Corte axial: rectángulo de 2r × h"
+            ]
+          },
+          "showCrossSection": true,
+          "crossSectionType": "axial"
+        }
+      },
       "set_id": "set_1"
     },
     {

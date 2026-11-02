@@ -108,6 +108,9 @@ Items exhibiting any of the following failure modes must be rejected and returne
 
 ---
 
+## 5.1 Certified Pilot Sign-off Report
+The formal audit and certification ledger for Convocatoria 02-2026 is published at: **[PILOT_BXM_02_2026_AUDIT_REPORT.md](PILOT_BXM_02_2026_AUDIT_REPORT.md)**.
+
 ## 6. Pilot Verification Sign-off Criteria
 
 The Convocatoria 02-2026 pilot is formally complete when:
