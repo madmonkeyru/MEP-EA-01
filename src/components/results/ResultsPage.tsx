@@ -7,6 +7,7 @@ import { TextRenderer } from '../common/TextRenderer';
 import { VisualRenderer } from '../visuals/VisualRenderer';
 import { GroupVisual } from '../visuals/GroupVisual';
 import { options } from '../test/TestShell';
+import { CustomSelect } from '../common/CustomSelect';
 
 export function ResultsPage({ session, onRetry, onNewTest, onGoHome, onPracticeMissed }: { session: TestSession; onRetry: () => void; onNewTest: () => void; onGoHome: () => void; onPracticeMissed?: (config: PracticeConfig) => void }) {
   const items = session.items || session.itemIds.map(id => dataService.getItemById(id)).filter((item): item is Item => !!item);
@@ -31,6 +32,14 @@ export function ResultsPage({ session, onRetry, onNewTest, onGoHome, onPracticeM
     const url = URL.createObjectURL(new Blob([summary], { type: 'text/plain;charset=utf-8' }));
     const link = document.createElement('a'); link.href = url; link.download = 'resumen-de-estudio.txt'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
+
+  const filterOptions = [
+    { value: 'all', label: `Todas (${total})` },
+    { value: 'correct', label: `Correctas (${correctCount})` },
+    { value: 'incorrect', label: `Incorrectas (${total - correctCount - unanswered})` },
+    { value: 'pending', label: `Sin responder (${unanswered})` },
+  ];
+
   return <div className="results-page page-width py-8 space-y-6">
     <header className="page-intro rounded-3xl p-6 sm:p-8 space-y-4"><p className="eyebrow">{modeLabel(session.config)} · Matemáticas · {session.config.convocatoriaId || '2026-c2'}</p><h1 className="text-3xl font-semibold">Tu resultado: {score}%</h1><p>{correctCount} Correctas · {total - correctCount - unanswered} Incorrectas · {unanswered} Sin responder · {Math.floor(session.elapsedSeconds / 60)} min {session.elapsedSeconds % 60} s</p>
       <p>{isExam(session.config) ? 'Nota de referencia del programa: ' + (session.passingScore || 70) + '. Este resultado corresponde a una simulación independiente.' : 'Práctica de aprendizaje: el porcentaje refleja tus primeras respuestas, no una predicción de la nota del examen.'}</p>
@@ -50,7 +59,17 @@ export function ResultsPage({ session, onRetry, onNewTest, onGoHome, onPracticeM
         <button className="secondary-button" aria-expanded={revealed} aria-controls="solution-review" onClick={() => setRevealed(!revealed)}>{revealed ? 'Ocultar explicación' : 'Ver solución paso a paso'}</button>
         {revealed && <div id="solution-review" className="feedback-panel"><h3 className="font-semibold">Explicación de apoyo</h3><p className="muted">Pregunta de los materiales de referencia; explicación de apoyo de esta plataforma. Consulta el PDF de origen para contrastar el enunciado.</p><ol className="list-decimal pl-5 space-y-3">{current.solution_steps?.map((step, index) => <li key={index}><TextRenderer content={typeof step === 'string' ? step : step.explanation} /></li>)}</ol></div>}
       </> : <>
-        <label>Filtrar revisión<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todas ({total})</option><option value="correct">Correctas ({correctCount})</option><option value="incorrect">Incorrectas ({total - correctCount - unanswered})</option><option value="pending">Sin responder ({unanswered})</option></select></label>
+        <div className="max-w-xs">
+          <label className="block text-xs uppercase tracking-wider font-semibold text-stone-600 dark:text-stone-300 mb-1">
+            Filtrar revisión
+          </label>
+          <CustomSelect
+            label="Filtrar revisión"
+            value={filter}
+            options={filterOptions}
+            onChange={setFilter}
+          />
+        </div>
         <div className="question-grid">{visible.map(item => <button className="question-cell" key={item.id} aria-label={'Pregunta ' + (items.indexOf(item) + 1) + ', ' + (!answered(item) ? 'sin responder' : correct(item) ? 'correcta' : 'incorrecta')} onClick={() => open(items.indexOf(item))}>{items.indexOf(item) + 1} <span aria-hidden="true">{!answered(item) ? '—' : correct(item) ? '✓' : '✕'}</span></button>)}</div>{!visible.length && <p role="status">No hay preguntas con este filtro.</p>}
       </>}
     </section>

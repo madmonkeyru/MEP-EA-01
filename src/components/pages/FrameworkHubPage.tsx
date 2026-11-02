@@ -3,6 +3,7 @@ import { ProgramInfo } from '../../types';
 import { calculatorRule } from '../../services/learningSession';
 import { AppRoute, routeHash } from '../../services/navigation';
 import { Breadcrumbs } from '../common/Breadcrumbs';
+import { CustomSelect } from '../common/CustomSelect';
 
 export const hubPanel = 'ui-surface rounded-2xl p-5 sm:p-6 space-y-4';
 export const hubButton = 'px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm cursor-pointer';
@@ -11,21 +12,45 @@ export function ContextControls({ program, route, onChange }: {
   program: ProgramInfo; route: AppRoute; onChange: (route: AppRoute) => void;
 }) {
   const modules = (program.subprograms || []).filter(m => typeof m !== 'string');
-  const selectClass = 'ui-select block mt-1 w-full rounded-lg bg-stone-100 dark:bg-slate-800 p-2.5 text-sm';
+  const moduleOptions = modules.map(m => ({ value: m.id, label: m.name }));
+  const convocatoriaOptions = [
+    { value: '2026-c1', label: '01-2026 · PDF / vista previa' },
+    { value: '2026-c2', label: '02-2026 · Matemáticas BXM activa' },
+  ];
+
   return <div className="flex flex-wrap items-end gap-4 text-sm">
-    {modules.length > 0 && <label className="font-bold">Nivel o parte
-      <select className={selectClass} value={route.moduleId} onChange={e => onChange({ ...route, moduleId: e.target.value })}>
-        {modules.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
-      </select>
-    </label>}
-    <label className="font-bold">Convocatoria de referencia
-      <select className={selectClass} value={route.convocatoriaId} onChange={e => onChange({ ...route, convocatoriaId: e.target.value })}>
-        <option value="2026-c1">01-2026 · PDF / vista previa</option><option value="2026-c2">02-2026 · Matemáticas BXM activa</option>
-      </select>
+    {modules.length > 0 && (
+      <label className="font-semibold text-xs uppercase tracking-wider text-stone-600 dark:text-stone-300 min-w-[170px]">
+        Nivel o parte
+        <div className="mt-1 normal-case tracking-normal text-sm font-normal">
+          <CustomSelect
+            label="Nivel o parte"
+            value={route.moduleId || modules[0]?.id}
+            options={moduleOptions}
+            onChange={val => onChange({ ...route, moduleId: val })}
+          />
+        </div>
+      </label>
+    )}
+    <label className="font-semibold text-xs uppercase tracking-wider text-stone-600 dark:text-stone-300 min-w-[220px]">
+      Convocatoria de referencia
+      <div className="mt-1 normal-case tracking-normal text-sm font-normal">
+        <CustomSelect
+          label="Convocatoria de referencia"
+          value={route.convocatoriaId || '2026-c2'}
+          options={convocatoriaOptions}
+          onChange={val => onChange({ ...route, convocatoriaId: val })}
+        />
+      </div>
     </label>
-    <span className="pb-3 text-sm">Nota mínima: <strong>{program.passingScore}</strong></span>
-    <span className="pb-3 text-sm">{calculatorRule(program.id, route.subjectId, route.moduleId)}</span>
-    <span className="pb-3 text-xs text-stone-500 dark:text-slate-400">Referencia curricular; sin inscripción al MEP.</span>
+    <div className="pb-2.5 flex items-center gap-3 text-xs text-stone-600 dark:text-stone-300 font-medium">
+      <span className="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+        Nota mínima: <strong className="text-stone-900 dark:text-stone-100">{program.passingScore}</strong>
+      </span>
+      <span className="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/40">
+        {calculatorRule(program.id, route.subjectId, route.moduleId)}
+      </span>
+    </div>
   </div>;
 }
 
