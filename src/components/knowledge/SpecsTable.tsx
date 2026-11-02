@@ -2,13 +2,28 @@ import { useState } from 'react';
 import { knowledgeService } from '../../services/knowledgeService';
 import { dataService } from '../../services/dataService';
 import { TextRenderer } from '../common/TextRenderer';
+import { CustomSelect } from '../common/CustomSelect';
+
 export function SpecsTable({ onStartPracticeByItems }: { onStartPracticeByItems?: (ids: number[], title: string) => void }) {
   const blocks = knowledgeService.getSpecificationBlocks();
   const [area, setArea] = useState('all');
   const [expanded, setExpanded] = useState(false);
   const eligible = (ids: number[]) => [...new Set(ids)].filter(id => !!dataService.getItemById(id));
+
+  const areaOptions = [
+    { value: 'all', label: 'Todas las áreas' },
+    ...blocks.map(b => ({ value: b.id, label: b.name })),
+  ];
+
   return <section className="space-y-5"><h2 className="text-xl font-semibold">Qué debo estudiar · Tabla de especificaciones {dataService.getCurrentProgram()?.name}</h2><p>El temario organiza lo que se evalúa y su peso. Abre cada objetivo para consultar sus criterios y practicar las preguntas disponibles.</p>
-    <div className="action-row"><label>Área del temario<select value={area} onChange={event => setArea(event.target.value)}><option value="all">Todas las áreas</option>{blocks.map(block => <option key={block.id} value={block.id}>{block.name}</option>)}</select></label><button className="secondary-button" aria-pressed={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? 'Contraer todo' : 'Expandir todo'}</button></div>
+    <div className="action-row items-end">
+      <label className="min-w-[220px]">Área del temario
+        <div className="mt-1">
+          <CustomSelect label="Área del temario" value={area} options={areaOptions} onChange={setArea} />
+        </div>
+      </label>
+      <button className="secondary-button" aria-pressed={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? 'Contraer todo' : 'Expandir todo'}</button>
+    </div>
     <p className="font-semibold">Total del examen: {blocks.reduce((sum, block) => sum + block.totalPoints, 0)} puntos · {blocks.length} áreas</p>
     {blocks.filter(block => area === 'all' || block.id === area).map(block => <section key={block.id} className="ui-surface rounded-2xl p-5 sm:p-6 space-y-5"><header><h3 className="text-lg font-semibold">{block.name}</h3><p>{block.totalPoints} puntos de referencia · {block.affirmations.length} afirmaciones <meter min={0} max={60} value={block.totalPoints} aria-label={'Peso de ' + block.name} /></p></header>{block.affirmations.map(affirmation => {
       const ids = eligible(affirmation.evidences.flatMap(evidence => evidence.item_ids));

@@ -4,6 +4,7 @@ import { dataService } from '../../services/dataService';
 import { knowledgeService } from '../../services/knowledgeService';
 import { prepareItems, modeLabel, isExam } from '../../services/learningSession';
 import { Dialog } from '../common/Dialog';
+import { CustomSelect } from '../common/CustomSelect';
 
 export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, initialMode = 'area' }: { initialMode?: PracticeMode; onStartSimulation: () => void; onStartPractice: (config: PracticeConfig) => void }) {
   const [mode, setMode] = useState<PracticeMode>(initialMode);
@@ -32,6 +33,42 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     const ready = { ...config, itemCount: actual };
     if (isExam(config)) setPreflight(ready); else onStartPractice(ready);
   }
+
+  const simulationOptions = [
+    { value: 'simulation', label: 'Prueba completa de referencia', description: 'Simula el examen 02-2026 oficial' },
+    { value: 'dynamic_mock', label: 'Distribución curricular: 23 / 25 / 12', description: 'Ponderado oficial MEP' },
+  ];
+
+  const practiceModeOptions = [
+    { value: 'area', label: 'Área temática', description: 'Geometría, Álgebra o Estadística' },
+    { value: 'topic', label: 'Tema específico', description: 'Práctica focalizada por tema' },
+    { value: 'random_practice', label: 'Preguntas variadas', description: 'Mezcla aleatoria' },
+    { value: 'concept_drilldown', label: 'Concepto clave', disabled: !concepts.length, description: !concepts.length ? 'Sin preguntas vinculadas' : 'Refuerzo de conceptos' },
+  ];
+
+  const setOptions = [
+    { value: 'all', label: 'Todos los conjuntos' },
+    ...dataService.getSets().map(s => ({ value: s.id, label: s.name })),
+  ];
+
+  const areaOptions = [
+    { value: 'geometry', label: 'Geometría' },
+    { value: 'functions', label: 'Relaciones y álgebra' },
+    { value: 'statistics', label: 'Estadística y probabilidad' },
+  ];
+
+  const topicOptions = [
+    { value: 'all', label: 'Todos los temas del área' },
+    ...dataService.getTopicsByArea(area, set).map(t => ({ value: t, label: t })),
+  ];
+
+  const countOptions = [
+    { value: '5', label: '5 preguntas' },
+    { value: '10', label: '10 preguntas' },
+    { value: '20', label: '20 preguntas' },
+    { value: 'all', label: 'Todas las disponibles' },
+  ];
+
   return <section className="ui-surface rounded-2xl p-5 sm:p-7 space-y-5" aria-labelledby="practice-config-title">
     <h2 id="practice-config-title" className="text-xl font-semibold">¿Cómo quieres estudiar hoy?</h2>
     <fieldset><legend className="field-legend">Tu objetivo</legend><div className="action-row">
@@ -40,17 +77,75 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     </div></fieldset>
     <form className="form-stack" onSubmit={event => { event.preventDefault(); start(); }}>
       {isExam(config) ? <>
-        <label>Tipo de simulación<select value={mode} onChange={e => selectMode(e.target.value as PracticeMode)}><option value="simulation">Prueba completa de referencia</option><option value="dynamic_mock">Distribución curricular: 23 / 25 / 12 preguntas</option></select></label>
-        <p>60 preguntas · 150 minutos · Sin respuestas ni explicaciones durante el intento.</p>
+        <label>Tipo de simulación
+          <CustomSelect
+            label="Tipo de simulación"
+            value={mode}
+            options={simulationOptions}
+            onChange={val => selectMode(val as PracticeMode)}
+          />
+        </label>
+        <p className="text-sm text-stone-600 dark:text-stone-300">60 preguntas · 150 minutos · Sin respuestas ni explicaciones durante el intento.</p>
       </> : <>
-        <label>Organizar práctica por<select value={mode} onChange={e => selectMode(e.target.value as PracticeMode)}><option value="area">Área</option><option value="topic">Tema</option><option value="random_practice">Preguntas variadas</option><option value="concept_drilldown" disabled={!concepts.length}>Concepto{!concepts.length ? ' · sin preguntas vinculadas' : ''}</option></select></label>
+        <label>Organizar práctica por
+          <CustomSelect
+            label="Organizar práctica por"
+            value={mode}
+            options={practiceModeOptions}
+            onChange={val => selectMode(val as PracticeMode)}
+          />
+        </label>
         <div className="grid sm:grid-cols-2 gap-4">
-          <label>Conjunto de preguntas<select value={set} onChange={e => { setSet(e.target.value); setTopic('all'); }}><option value="all">Todos los conjuntos</option>{dataService.getSets().map(s => <option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
-          {(mode === 'area' || mode === 'topic') && <label>Área temática<select value={area} onChange={e => { setArea(e.target.value as DomainArea); setTopic('all'); }}><option value="geometry">Geometría</option><option value="functions">Relaciones y álgebra</option><option value="statistics">Estadística y probabilidad</option></select></label>}
+          <label>Conjunto de preguntas
+            <CustomSelect
+              label="Conjunto de preguntas"
+              value={set}
+              options={setOptions}
+              onChange={val => { setSet(val); setTopic('all'); }}
+            />
+          </label>
+          {(mode === 'area' || mode === 'topic') && (
+            <label>Área temática
+              <CustomSelect
+                label="Área temática"
+                value={area}
+                options={areaOptions}
+                onChange={val => { setArea(val as DomainArea); setTopic('all'); }}
+              />
+            </label>
+          )}
         </div>
-        {mode === 'topic' && <label>Tema<select value={topic} onChange={e => setTopic(e.target.value)}><option value="all">Todos los temas del área</option>{dataService.getTopicsByArea(area, set).map(t => <option key={t}>{t}</option>)}</select></label>}
-        {mode === 'concept_drilldown' && <label>Concepto<select value={concept} onChange={e => setConcept(e.target.value)}><option value="">Elige un concepto disponible</option>{concepts.map(c => <option key={c.id} value={c.id}>{c.term}</option>)}</select></label>}
-        <label>Cantidad de preguntas<select value={count} onChange={e => setCount(e.target.value === 'all' ? 'all' : Number(e.target.value))}>{[5, 10, 20].map(n => <option key={n} value={n}>{n}</option>)}<option value="all">Todas las disponibles</option></select></label>
+        {mode === 'topic' && (
+          <label>Tema
+            <CustomSelect
+              label="Tema"
+              value={topic}
+              options={topicOptions}
+              onChange={val => setTopic(val)}
+            />
+          </label>
+        )}
+        {mode === 'concept_drilldown' && (
+          <label>Concepto
+            <CustomSelect
+              label="Concepto"
+              value={concept}
+              options={[
+                { value: '', label: 'Elige un concepto disponible' },
+                ...concepts.map(c => ({ value: c.id, label: c.term })),
+              ]}
+              onChange={val => setConcept(val)}
+            />
+          </label>
+        )}
+        <label>Cantidad de preguntas
+          <CustomSelect
+            label="Cantidad de preguntas"
+            value={String(count)}
+            options={countOptions}
+            onChange={val => setCount(val === 'all' ? 'all' : Number(val))}
+          />
+        </label>
         <label className="inline-choice"><input type="checkbox" checked={timed} onChange={e => setTimed(e.target.checked)} />Practicar con límite de tiempo</label>
         {timed && <label>Duración en minutos<input type="number" min={5} max={180} required value={minutes || ''} onChange={e => setMinutes(Number(e.target.value))} /></label>}
         <p className="muted">Puedes comprobar cada respuesta para aprender. Una vez verificada, se conserva tu primera elección.</p>

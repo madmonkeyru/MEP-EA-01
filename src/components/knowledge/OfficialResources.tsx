@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { officialDocuments, normalizeSearch } from '../../services/resourceCatalog';
+import { CustomSelect } from '../common/CustomSelect';
 
 export function OfficialResources({ programId = 'bxm', subjectId, moduleId }: { programId?: string; subjectId?: string; moduleId?: string }) {
   const params = new URLSearchParams(window.location.hash.split('?')[1]);
@@ -19,12 +20,40 @@ export function OfficialResources({ programId = 'bxm', subjectId, moduleId }: { 
     if (path) window.history.replaceState(null, '', path + (query.size ? '?' + query : ''));
   }, [search, subject, level, kind]);
   const clear = () => { setSearch(''); setSubject('all'); setLevel('all'); setKind('all'); setShortlist(false); };
+
+  const subjectOptions = [
+    { value: 'all', label: 'Todas las materias' },
+    ...[...new Map(pool.map(doc => [doc.subjectId, doc.subject])).entries()].map(([id, name]) => ({ value: id, label: name })),
+  ];
+
+  const levelOptions = [
+    { value: 'all', label: 'Todos los niveles' },
+    ...[...new Map(pool.filter(doc => doc.moduleId).map(doc => [doc.moduleId!, doc.level])).entries()].map(([id, name]) => ({ value: id, label: name })),
+  ];
+
+  const kindOptions = [
+    { value: 'all', label: 'Todos los tipos' },
+    { value: 'Práctica oficial', label: 'Práctica oficial' },
+    { value: 'Tabla de especificaciones', label: 'Tabla de especificaciones' },
+  ];
+
   return <section className="official-resources space-y-5" aria-labelledby="official-pdf-title">
     <h2 id="official-pdf-title" className="text-xl font-semibold">Materiales oficiales en PDF</h2><p className="muted">Referencia 02-2026. Comprueba el temario y las fechas de tu convocatoria en la DGEC. Abrir un PDF no realiza una matrícula.</p>
-    <div className="resource-filters"><label>Buscar materiales<input type="search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Materia, nivel o documento" /></label>
-      <label>Materia<select value={subject} onChange={e => setSubject(e.target.value)}><option value="all">Todas las materias</option>{[...new Map(pool.map(doc => [doc.subjectId, doc.subject])).entries()].map(([id, name]) => <option key={id} value={id}>{name}</option>)}</select></label>
-      {pool.some(doc => doc.moduleId) && <label>Nivel o parte<select value={level} onChange={e => setLevel(e.target.value)}><option value="all">Todos los niveles</option>{[...new Map(pool.filter(doc => doc.moduleId).map(doc => [doc.moduleId!, doc.level])).entries()].map(([id, name]) => <option key={id} value={id}>{name}</option>)}</select></label>}
-      <label>Tipo de documento<select value={kind} onChange={e => setKind(e.target.value)}><option value="all">Todos los tipos</option><option>Práctica oficial</option><option>Tabla de especificaciones</option></select></label>
+    <div className="resource-filters">
+      <label>Buscar materiales
+        <input type="search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Materia, nivel o documento" />
+      </label>
+      <label>Materia
+        <CustomSelect label="Materia" value={subject} options={subjectOptions} onChange={setSubject} />
+      </label>
+      {pool.some(doc => doc.moduleId) && (
+        <label>Nivel o parte
+          <CustomSelect label="Nivel o parte" value={level} options={levelOptions} onChange={setLevel} />
+        </label>
+      )}
+      <label>Tipo de documento
+        <CustomSelect label="Tipo de documento" value={kind} options={kindOptions} onChange={setKind} />
+      </label>
     </div>
     <div className="action-row"><button className="secondary-button" onClick={clear}>Limpiar filtros</button><button className="secondary-button" aria-pressed={shortlist} onClick={() => setShortlist(!shortlist)}>Mi lista de lectura</button><span className="muted">Lista local de este navegador, compartida entre sus perfiles.</span><a className="text-link" href="https://dgec.mep.go.cr/" target="_blank" rel="noreferrer">Consultar la DGEC (otra pestaña)</a></div>
     <p role="status">{docs.length} materiales encontrados</p>{error && <p role="alert">{error}</p>}

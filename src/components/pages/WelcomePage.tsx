@@ -45,27 +45,30 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       </div>
 
       {/* 2. Prominent Quick-Entry Card for MVP (Matemáticas — BXM) */}
-      <div className="ui-featured rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="ui-featured rounded-3xl p-6 sm:p-8 border border-indigo-200/60 dark:border-indigo-900/40 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 bg-gradient-to-br from-[var(--surface-card,#ffffff)] to-[var(--accent-soft,#eeedf9)] dark:from-[var(--surface-card,#282422)] dark:to-[var(--accent-soft,#2e2b45)]">
         <div className="space-y-2 max-w-2xl">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-stone-600 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
               Bachillerato por Madurez Suficiente
+            </span>
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300/50 dark:border-emerald-700/50">
+              Interactivo
             </span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl font-semibold text-stone-900 dark:text-slate-100 tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight font-['Outfit']">
             Matemáticas BXM (Convocatoria 02-2026)
           </h2>
 
-          <p className="text-xs sm:text-sm text-stone-700 dark:text-slate-300 font-medium leading-relaxed">
-           Prácticas, simulaciones, explicaciones y fórmulas.
+          <p className="text-sm text-stone-700 dark:text-stone-300 font-normal leading-relaxed">
+            Prácticas temáticas, simulaciones de examen completas, explicaciones paso a paso y fórmulas oficiales.
           </p>
         </div>
 
         <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5 items-stretch sm:items-center md:items-stretch">
           <button
             onClick={onEnterMvpMath}
-            className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-sm cursor-pointer min-h-[48px]"
+            className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-sm cursor-pointer min-h-[48px] hover:shadow-md"
           >
             <span>Practicar Matemáticas BXM</span>
             <ArrowRight className="w-4 h-4" />

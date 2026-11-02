@@ -21,50 +21,50 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       <div>
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-2 mb-3.5">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-slate-300 text-[10px] font-semibold rounded-lg uppercase tracking-wider ">
-            <GraduationCap className="w-3.5 h-3.5 text-indigo-500" />
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[10px] font-bold rounded-lg uppercase tracking-wider border border-stone-200/60 dark:border-stone-700/60">
+            <GraduationCap className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
             {program.id.toUpperCase()}
           </span>
 
           {isMvp ? (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-[10px] font-semibold rounded-full ">
-              <CheckCircle className="w-3 h-3" />
-              Matemáticas · práctica disponible
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-[10px] font-semibold rounded-full border border-emerald-300/40">
+              <CheckCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+              Práctica disponible
             </span>
           ) : (
-            <span className="text-[10px] font-bold text-stone-500 dark:text-slate-400 bg-stone-100 dark:bg-slate-800/80 px-2 py-0.5 rounded-full ">
-              PDF y vista previa
+            <span className="text-[10px] font-semibold text-stone-600 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded-full border border-stone-200/50 dark:border-stone-700/50">
+              PDF y estructura
             </span>
           )}
         </div>
 
         {/* Title & Description */}
-        <h3 className="text-base sm:text-lg font-semibold text-stone-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+        <h3 className="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors font-['Outfit']">
           {program.name}
         </h3>
-        <p className="text-sm font-semibold">{program.id === 'cico' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
-        <p className="text-xs text-stone-600 dark:text-slate-400 font-medium mt-1.5 leading-relaxed ">
+        <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300 mt-0.5">{program.id === 'cico' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
+        <p className="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">
           {program.description}
         </p>
 
-        <p className="muted mt-3">{program.id === 'cico' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
+        <p className="muted mt-3 text-xs leading-relaxed">{program.id === 'cico' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
         {/* Metadata Details */}
-        <div className="mt-4 pt-3.5 grid grid-cols-2 gap-2 text-[11px] font-bold">
-          <div className="flex items-center gap-1.5 text-stone-700 dark:text-slate-300">
+        <div className="mt-4 pt-3 border-t border-[var(--border-subtle,#e7e2d8)] dark:border-[var(--border-subtle,#3d3733)] grid grid-cols-2 gap-2 text-[11px] font-semibold">
+          <div className="flex items-center gap-1.5 text-stone-700 dark:text-stone-300">
             <Award className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
             <span>Mínimo: {program.passingScore} pts</span>
           </div>
 
-          <div className="flex items-center gap-1.5 text-stone-700 dark:text-slate-300">
+          <div className="flex items-center gap-1.5 text-stone-700 dark:text-stone-300">
             {program.calculatorAllowed ? (
               <>
-                <Calculator className="w-3.5 h-3.5 text-stone-500 shrink-0" />
-                <span>Reglas por materia</span>
+                <Calculator className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                <span>Por materia</span>
               </>
             ) : (
               <>
-                <Ban className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                <span className="text-amber-700 dark:text-amber-400">Sin Calc</span>
+                <Ban className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                <span className="text-amber-700 dark:text-amber-300">Sin Calc</span>
               </>
             )}
           </div>

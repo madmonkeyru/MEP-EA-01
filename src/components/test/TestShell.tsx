@@ -8,6 +8,7 @@ import { GroupVisual } from '../visuals/GroupVisual';
 import { FormulasSheet } from '../knowledge/FormulasSheet';
 import { Dialog } from '../common/Dialog';
 import { ThemeToggle } from '../common/ThemeToggle';
+import { CustomSelect } from '../common/CustomSelect';
 
 export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   config: PracticeConfig; initialSession?: TestSession; onFinishTest: (session: TestSession) => void; onLeave?: () => void;
@@ -100,9 +101,26 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   const response = session.responses[current.id];
   const correct = response?.selectedOption === current.correct_answer;
   const group = session.groups?.find(group => group.group_id === current.group_id);
+
+  const filterOptions = [
+    { value: 'all', label: 'Todas' },
+    { value: 'pending', label: 'Sin responder' },
+    { value: 'flagged', label: 'Marcadas' },
+  ];
+
   const navigator = <div className="space-y-4">
     <h2 className="font-semibold">Revisar preguntas</h2>
-    <label>Mostrar<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todas</option><option value="pending">Sin responder</option><option value="flagged">Marcadas</option></select></label>
+    <label className="text-xs uppercase tracking-wider font-semibold text-stone-600 dark:text-stone-300">
+      Mostrar
+      <div className="mt-1 normal-case tracking-normal text-sm font-normal">
+        <CustomSelect
+          label="Mostrar"
+          value={filter}
+          options={filterOptions}
+          onChange={setFilter}
+        />
+      </div>
+    </label>
     <div className="question-grid">{items.map((item, index) => {
       const done = !!session.responses[item.id]?.selectedOption, marked = !!session.flaggedItems[item.id];
       if ((filter === 'pending' && done) || (filter === 'flagged' && !marked)) return null;
