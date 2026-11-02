@@ -19,7 +19,7 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
     const observer = new ResizeObserver(measure); if (header.current) observer.observe(header.current); return () => observer.disconnect();
   }, []);
   return <><header ref={header} className="ui-header app-header"><div className="page-width flex flex-wrap items-center justify-between gap-2 py-1">
-    <a href="#/" onClick={event => { if (!event.ctrlKey && !event.metaKey && !event.shiftKey) { event.preventDefault(); onNavigateHome(); } }} className="brand-link"><img className="brand-logo" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" /><div><strong>MEP-EA-01</strong><span>Educación Abierta · Preparación independiente</span></div></a>
+    <a href="#/" onClick={event => { if (!event.ctrlKey && !event.metaKey && !event.shiftKey) { event.preventDefault(); onNavigateHome(); } }} className="brand-link"><img className="brand-logo" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" /><div><strong>MEP-EA-01</strong><span>Educación Abierta Digital</span></div></a>
     <nav aria-label="Navegación principal" className="action-row">
       {['framework', 'hub', 'resources', 'results'].includes(currentView) && <label className="header-program"><select title="Cambiar programa de estudio" value={program} onChange={event => onProgramChange?.(event.target.value)}>{dataService.getPrograms().map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>}
       <a href="#/programas" className="header-link">Programas</a>
