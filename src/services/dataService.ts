@@ -23,6 +23,10 @@ import { TestEngine } from './testEngine';
 // Glob import all json files in content directory for dynamic resolution
 const contentModules = import.meta.glob('../../content/**/*.json');
 
+// Eagerly glob all atomic items and convocatoria blueprints
+const atomicItemModules = import.meta.glob('../../content/items/math/**/*.json', { eager: true });
+const blueprintModules = import.meta.glob('../../content/programs/**/convocatorias/*.json', { eager: true });
+
 class DataService {
   private manifest: ContentManifest;
   private currentProgramId: string;
@@ -32,6 +36,8 @@ class DataService {
   private activeSets: SetInfo[];
   private itemsMap: Map<string, Item[]>; // key: setId
   private decoupledItemsMap: Map<string, Item>; // key: item code or id string
+  private atomicItemsList: Item[]; // all atomic items
+  private blueprintsMap: Map<string, ConvocatoriaManifest>; // key: convocatoriaId or path-based id
   private groupsMap: Map<string, Group>;
   private isInitialized: boolean = false;
   private loadVersion = 0;
@@ -45,10 +51,49 @@ class DataService {
     this.activeSets = [];
     this.itemsMap = new Map();
     this.decoupledItemsMap = new Map();
+    this.atomicItemsList = [];
+    this.blueprintsMap = new Map();
     this.groupsMap = new Map();
 
     // Default synchronous load of bxm/matematicas bundle so synchronous getters work immediately
     this.loadDefaultSubjectSync();
+
+    // Ingest atomic items and blueprints
+    this.loadAtomicItemsAndBlueprints();
+  }
+
+  private loadAtomicItemsAndBlueprints(): void {
+    // 1. Ingest all atomic items from content/items/math/
+    this.atomicItemsList = [];
+    for (const path in atomicItemModules) {
+      const mod: any = atomicItemModules[path];
+      const item: Item = mod.default || mod;
+      if (item && item.id) {
+        this.atomicItemsList.push(item);
+        if (item.code) {
+          this.decoupledItemsMap.set(item.code, item);
+        }
+        this.decoupledItemsMap.set(String(item.id), item);
+        const prefix =
+          item.area_id === 'functions' ? 'item-alg' : item.area_id === 'statistics' ? 'item-est' : 'item-geo';
+        this.decoupledItemsMap.set(`${prefix}-${String(item.id).padStart(3, '0')}`, item);
+      }
+    }
+
+    // 2. Ingest all convocatoria blueprints
+    for (const path in blueprintModules) {
+      const mod: any = blueprintModules[path];
+      const bp: ConvocatoriaManifest = mod.default || mod;
+      if (bp && bp.convocatoriaId) {
+        this.blueprintsMap.set(bp.convocatoriaId, bp);
+        if (bp.programId) {
+          this.blueprintsMap.set(`${bp.programId}-${bp.convocatoriaId}`, bp);
+          if (bp.subprogramId) {
+            this.blueprintsMap.set(`${bp.programId}-${bp.subprogramId}-${bp.convocatoriaId}`, bp);
+          }
+        }
+      }
+    }
   }
 
   private loadDefaultSubjectSync(): void {
@@ -72,7 +117,7 @@ class DataService {
     this.itemsMap.set('set_4', set4Data.items || []);
     this.itemsMap.set('set_5', set5Data.items || []);
 
-    // Register all items into decoupled index map
+    // Register all legacy set items into decoupled index map
     [set1Data, set2Data, set3Data, set4Data, set5Data].forEach((s) => {
       (s.items || []).forEach((item) => {
         if (item.code) this.decoupledItemsMap.set(item.code, item);
@@ -148,6 +193,25 @@ class DataService {
     this.notify();
   }
 
+  public getConvocatoriaBlueprint(convocatoriaId?: string): ConvocatoriaManifest | undefined {
+    const targetId = convocatoriaId || this.currentConvocatoriaId;
+    if (!targetId) return undefined;
+
+    const compoundKey = this.currentSubprogramId
+      ? `${this.currentProgramId}-${this.currentSubprogramId}-${targetId}`
+      : `${this.currentProgramId}-${targetId}`;
+
+    return this.blueprintsMap.get(compoundKey) || this.blueprintsMap.get(targetId);
+  }
+
+  public getDecoupledItemsMap(): Map<string, Item> {
+    return this.decoupledItemsMap;
+  }
+
+  public getAtomicItems(): Item[] {
+    return this.atomicItemsList;
+  }
+
   public isCalculatorAllowed(): boolean {
     const program = this.getCurrentProgram();
     if (program?.calculatorAllowed !== undefined) {
@@ -200,6 +264,8 @@ class DataService {
     this.decoupledItemsMap.clear();
     this.groupsMap.clear();
 
+
+
     // Load groups if path exists
     if (subject.groups) {
       const groupKey = `../../content/${subject.groups}`;
@@ -246,11 +312,32 @@ class DataService {
       }
     }
 
+    // Re-index atomic items if subject is math
+    if (subjectId === 'matematicas' || subjectId === 'matematica') {
+      this.loadAtomicItemsAndBlueprints();
+    }
+
+    if (version !== this.loadVersion) return;
     this.isInitialized = true;
     this.notify();
   }
 
   public getAllItems(): Item[] {
+    if (
+      (this.currentProgramId === 'bxm' || !this.currentProgramId) &&
+      (this.currentSubjectId === 'matematicas' || !this.currentSubjectId) &&
+      this.atomicItemsList.length > 0
+    ) {
+      return this.atomicItemsList;
+    }
+    const allItems: Item[] = [];
+    this.itemsMap.forEach((items) => {
+      allItems.push(...items);
+    });
+    return allItems;
+  }
+
+  public getLegacySetItems(): Item[] {
     const allItems: Item[] = [];
     this.itemsMap.forEach((items) => {
       allItems.push(...items);
@@ -272,15 +359,22 @@ class DataService {
     return items || [];
   }
 
-  public getSimulationItems(setId: string = 'set_1'): Item[] {
-    return this.getItemsBySet(setId);
+  public getSimulationItems(setIdOrConvocatoriaId: string = '2026-c2'): Item[] {
+    const blueprint = this.getConvocatoriaBlueprint(setIdOrConvocatoriaId);
+    if (blueprint) {
+      const assembled = TestEngine.assembleSimulationSession(blueprint, this.decoupledItemsMap);
+      if (assembled.length > 0) {
+        return assembled;
+      }
+    }
+    return this.getItemsBySet(setIdOrConvocatoriaId);
   }
 
   public getItemById(id: number | string): Item | undefined {
     if (typeof id === 'string') {
       return this.decoupledItemsMap.get(id);
     }
-    return this.getAllItems().find((item) => item.id === id);
+    return this.decoupledItemsMap.get(String(id)) || this.getAllItems().find((item) => item.id === id);
   }
 
   public getGroupById(groupId: string): Group | undefined {

@@ -1,5 +1,5 @@
 import type { LevelId, ProgramId, ScienceId, SubjectId } from "./types.ts";
-import { colones, FEE_COLONES, LEVEL_LABEL, PROGRAM_LEVELS, PROGRAM_SUBJECTS, PROGRAMS, SCIENCE_LABEL, subjectLabel } from "./catalog.ts";
+import { FEE_COLONES, LEVEL_LABEL, PROGRAM_LEVELS, PROGRAM_SUBJECTS, SCIENCE_LABEL, subjectLabel } from "./catalog.ts";
 
 /**
  * Three official equiparación pathways recognized by MEP DGEC
@@ -75,7 +75,7 @@ export interface EquiparacionEvaluationInput {
  * fees, submission channels, and legal warnings according to MEP DGEC standards.
  */
 export function evaluateEquiparacion(input: EquiparacionEvaluationInput): EquiparacionAnalysis {
-  const { pathway, targetProgram, originSystem, recognizedRecords, chosenLanguage = "ingles", chosenScience = "biologia" } = input;
+  const { pathway, targetProgram, recognizedRecords, chosenLanguage = "ingles", chosenScience = "biologia" } = input;
   const warnings: string[] = [];
 
   // 1. Validation checks

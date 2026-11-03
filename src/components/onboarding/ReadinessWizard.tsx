@@ -19,7 +19,6 @@ import {
   evaluateEquiparacion,
   type EquiparacionPathway,
   type OriginSystem,
-  type RecognizedRecord,
 } from "../../services/onboarding/equiparacion";
 import { profileFrom, scopeFrom, stepsFor, useWizard, type WizardData } from "./wizardStore";
 import type { AgeBand, Certs, CheckId, Confidence, Enroll, Fit, Hours, LevelId, ProgramId, Schooling, ScienceId, Skill, StepId, StudyStyle, SubjectId } from "../../services/onboarding/types";

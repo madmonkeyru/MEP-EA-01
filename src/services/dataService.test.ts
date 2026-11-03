@@ -2,15 +2,15 @@ import { describe, it, expect } from 'vitest';
 import { dataService } from './dataService';
 
 describe('DataService', () => {
-  it('loads items correctly from questions.json', () => {
+  it('loads all 232 atomic items across domains', () => {
     const items = dataService.getAllItems();
-    expect(items.length).toBe(200);
-    expect(items[0].id).toBe(1);
-    expect(items[169].id).toBe(170);
-    expect(items[174].id).toBe(175);
+    expect(items.length).toBe(232);
+    expect(items.find((i) => i.id === 1)).toBeDefined();
+    expect(items.find((i) => i.id === 170)).toBeDefined();
+    expect(items.find((i) => i.id === 201)).toBeDefined(); // First solid item
   });
 
-  it('manages sets correctly', () => {
+  it('manages legacy sets correctly for backwards compatibility', () => {
     const sets = dataService.getSets();
     expect(sets.length).toBe(5);
     expect(sets[0].id).toBe('set_1');
@@ -33,8 +33,8 @@ describe('DataService', () => {
     const set5Items = dataService.getItemsBySet('set_5');
     expect(set5Items.length).toBe(30);
 
-    const simulationItems = dataService.getSimulationItems('set_1');
-    expect(simulationItems.length).toBe(60);
+    const legacyItems = dataService.getLegacySetItems();
+    expect(legacyItems.length).toBe(200);
   });
 
   it('loads groups correctly from groups.json', () => {
@@ -42,6 +42,22 @@ describe('DataService', () => {
     expect(group).toBeDefined();
     expect(group?.items).toContain(53);
     expect(group?.items).toContain(54);
+  });
+
+  it('resolves blueprints dynamically for convocatoria simulations', () => {
+    const bpC2 = dataService.getConvocatoriaBlueprint('2026-c2');
+    expect(bpC2).toBeDefined();
+    expect(bpC2?.convocatoriaId).toBe('2026-c2');
+    expect(bpC2?.totalItems).toBe(60);
+
+    const bpC1 = dataService.getConvocatoriaBlueprint('2026-c1');
+    expect(bpC1).toBeDefined();
+    expect(bpC1?.convocatoriaId).toBe('2026-c1');
+    expect(bpC1?.totalItems).toBe(60);
+
+    const simulationItems = dataService.getSimulationItems('2026-c2');
+    expect(simulationItems.length).toBe(60);
+    expect(simulationItems[0].code).toBe('item-geo-001');
   });
 
   it('filters items by area and set correctly', () => {
@@ -55,13 +71,13 @@ describe('DataService', () => {
     expect(set1Stats.length).toBe(12);
 
     const allGeometry = dataService.getItemsByArea('geometry');
-    expect(allGeometry.length).toBe(94); // 23 (set1) + 27 (set2) + 7 (set3) + 7 (set4) + 30 (set5)
+    expect(allGeometry.length).toBe(124); // 94 (legacy sets) + 30 (solid items)
 
     const allFunctions = dataService.getItemsByArea('functions');
-    expect(allFunctions.length).toBe(64); // 25 (set1) + 25 (set2) + 7 (set3) + 7 (set4)
+    expect(allFunctions.length).toBe(65); // 64 (legacy sets) + 1 (item-alg-001)
 
     const allStats = dataService.getItemsByArea('statistics');
-    expect(allStats.length).toBe(42); // 12 (set1) + 18 (set2) + 6 (set3) + 6 (set4)
+    expect(allStats.length).toBe(43); // 42 (legacy sets) + 1 (item-est-001)
   });
 
   it('retrieves unique topics by area', () => {
