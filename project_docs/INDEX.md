@@ -70,6 +70,7 @@ project_docs/
 ├── 04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md    # Parametric SVG composites, zero static bitmaps, KaTeX LaTeX pipeline
 ├── 05_UI_UX_DESIGN_SYSTEM.md                     # Visual identity, warm beige palette, accessible tokens & custom components
 ├── 06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md     # Engineering phases, video content deferral, SLA & operational runbook
+├── 07_ENROLLMENT_AND_PRIOR_RECOGNITION_ENGINE.md  # Prior recognition (equiparación) engine, 3 MEP pathways & administrative flows
 ├── PILOT_HIL_VERIFICATION_PROTOCOL_BXM_02_2026.md # Human-in-the-Loop review protocol & checklist for Convocatoria 02-2026
 └── PILOT_BXM_02_2026_AUDIT_REPORT.md              # Certified audit sign-off report for BXM 02-2026 (60/60 items certified)
 ```
@@ -84,6 +85,7 @@ project_docs/
 | **[04. Visualizations & Math Engine](04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md)** | Frontend Engineers, Graphic/Math Authors | Zero-bitmap parametric SVG architecture, composite visual catalog (CartesianCanvas, Solid3D, BoxPlot, etc.), and KaTeX delimited math rendering. |
 | **[05. UI/UX Design System](05_UI_UX_DESIGN_SYSTEM.md)** | UI/UX Designers, Frontend Developers | Soft warm beige palette, typography (`Outfit` + `Plus Jakarta Sans`), accessible custom widgets (`CustomSelect`, `ThemeToggle`), WCAG 2.1 AA standards. |
 | **[06. Roadmap & Operations](06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md)** | Engineering Leadership, Project Stakeholders | Phased milestone roadmap (Prototype → MVP → Commercial Scale), video deferral rationale, monitoring, rollback, and disaster recovery. |
+| **[07. Prior Recognition & Enrollment](07_ENROLLMENT_AND_PRIOR_RECOGNITION_ENGINE.md)** | System Architects, Guidance Counselors | Detailed legal-administrative specifications for the 3 equiparación pathways, document checklists, and interactive calculation engine. |
 
 ---
 

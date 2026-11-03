@@ -15,8 +15,14 @@ import {
 import { colones, LEVEL_LABEL, PROGRAM_LEVELS, PROGRAM_SUBJECTS, PROGRAMS, SCIENCE_LABEL, subjectLabel } from "../../services/onboarding/catalog";
 import { CHECK, enrollmentLine, FIT_LABEL, narrate, REASON } from "../../services/onboarding/copy";
 import { buildReport, examPlan, programNeedsScope, scopeIsComplete } from "../../services/onboarding/evaluate";
+import {
+  evaluateEquiparacion,
+  type EquiparacionPathway,
+  type OriginSystem,
+  type RecognizedRecord,
+} from "../../services/onboarding/equiparacion";
 import { profileFrom, scopeFrom, stepsFor, useWizard, type WizardData } from "./wizardStore";
-import type { AgeBand, Certs, CheckId, Confidence, Enroll, Fit, Hours, ProgramId, Schooling, ScienceId, Skill, StepId, StudyStyle, SubjectId } from "../../services/onboarding/types";
+import type { AgeBand, Certs, CheckId, Confidence, Enroll, Fit, Hours, LevelId, ProgramId, Schooling, ScienceId, Skill, StepId, StudyStyle, SubjectId } from "../../services/onboarding/types";
 import { PROGRAM_ORDER } from "../../services/onboarding/types";
 import { Dialog } from '../common/Dialog';
 import { cn } from "./cn";
@@ -27,6 +33,7 @@ const STEP_LABEL: Record<StepId, string> = {
   meta: "Meta",
   alcance: "Materias",
   perfil: "Requisitos",
+  equiparacion: "Equiparación",
   situacion: "Expediente",
   ruta: "Ruta",
 };
@@ -121,6 +128,9 @@ function missingHint(data: WizardData): string | null {
   if (data.step === "perfil") {
     if (!data.schooling) return "Indica tu último tramo aprobado.";
     if (!data.age) return "Indica la edad de referencia para tu convocatoria.";
+  }
+  if (data.step === "equiparacion") {
+    if (!data.equiparacionPathway) return "Seleccione la vía de equiparación o reconocimiento.";
   }
 
   return null;
@@ -260,8 +270,9 @@ function SelectionStrip() {
 function Aside() {
   const step = useWizard((state) => state.step);
   const program = useWizard((state) => state.program);
+  const recognition = useWizard((state) => state.recognition);
   const patch = useWizard((state) => state.patch);
-  const steps = stepsFor(program);
+  const steps = stepsFor(program, recognition);
   const index = Math.max(0, steps.indexOf(step));
 
   return (
@@ -561,6 +572,14 @@ function PerfilStep() {
           />
         </Question>
       ) : null}
+      {data.program && data.program !== "i-ii" && data.program !== "unsure" && (
+        <Question
+          legend="¿Tiene asignaturas aprobadas que desee someter a equiparación o convalidación?"
+          hint="Si activa esta opción, se abrirá el paso interactivo de Equiparación para calcular su carga académica restante."
+        >
+          <YesNo name="recognition" value={data.recognition} onChange={(recognition) => patch({ recognition })} />
+        </Question>
+      )}
       {data.schooling === "no-primary" && <details><summary>Habilidades básicas · Opcional, por confirmar si no respondes</summary><Question legend="Lectoescritura en español" hint="Hay que poder leer y escribir. No es una materia aparte.">
         <div className="grid gap-2 sm:grid-cols-3">
           {SKILLS.map((item) => (
@@ -621,6 +640,295 @@ function YesNo({ name, value, onChange }: { name: string; value: boolean | null;
       <Choice type="radio" name={name} value="si" checked={value === true} onSelect={() => onChange(true)} title="Sí" />
       <Choice type="radio" name={name} value="no" checked={value === false} onSelect={() => onChange(false)} title="No" />
       <Choice type="radio" name={name} value="unknown" checked={value === null} onSelect={() => onChange(null)} title="No sé / Prefiero no responder" />
+    </div>
+  );
+}
+
+const EQUIPARACION_PATHWAYS: { value: EquiparacionPathway; title: string; detail: string }[] = [
+  {
+    value: "formal_to_abierta",
+    title: "Colegio formal a Educación Abierta",
+    detail: "Materias o años aprobados en Colegio Académico, Técnico, CINDEA o IPEC.",
+  },
+  {
+    value: "abierta_to_abierta",
+    title: "Entre programas de Educación Abierta",
+    detail: "Traslado de asignaturas aprobadas entre EDAD y BXM.",
+  },
+  {
+    value: "foreign_homologation",
+    title: "Estudios cursados en el extranjero",
+    detail: "Homologación de títulos o notas cursadas fuera de Costa Rica.",
+  },
+];
+
+const ORIGIN_SYSTEMS: { value: OriginSystem; title: string }[] = [
+  { value: "colegio_academico", title: "Colegio Académico" },
+  { value: "colegio_tecnico", title: "Colegio Técnico Profesional" },
+  { value: "cindea_ipec", title: "CINDEA o IPEC" },
+  { value: "edad", title: "EDAD (Educación Diversificada a Distancia)" },
+  { value: "bxm", title: "BXM (Bachillerato por Madurez)" },
+  { value: "extranjero", title: "Institución extranjera" },
+];
+
+function EquiparacionStep() {
+  const data = useWizard();
+  const patch = data.patch;
+  const program = data.program;
+
+  if (!program || program === "unsure" || program === "i-ii") {
+    return (
+      <div className="space-y-4">
+        <StepHeading
+          kicker="Equiparación"
+          title="No aplica convalidación formal"
+          lede="I y II Ciclo o metas no definidas no realizan convalidaciones de asignaturas previas."
+        />
+        <Button type="button" onClick={() => patch({ step: "situacion" })}>
+          Continuar al expediente
+        </Button>
+      </div>
+    );
+  }
+
+  const analysis = data.equiparacionPathway
+    ? evaluateEquiparacion({
+        pathway: data.equiparacionPathway,
+        targetProgram: program,
+        originSystem: data.equiparacionOrigin || "colegio_academico",
+        recognizedRecords: data.equiparacionRecords,
+        chosenLanguage: data.language || "ingles",
+        chosenScience: data.science || "biologia",
+        hasForeignResolution: data.hasForeignResolution ?? false,
+      })
+    : null;
+
+  function toggleRecord(subject: SubjectId, level?: LevelId, science?: ScienceId) {
+    const records = [...data.equiparacionRecords];
+    const index = records.findIndex(
+      (r) => r.subject === subject && r.level === level && (science ? r.science === science : true),
+    );
+    if (index >= 0) {
+      records.splice(index, 1);
+    } else {
+      records.push({ subject, level, science, recognized: true });
+    }
+    patch({ equiparacionRecords: records });
+  }
+
+  function isRecordRecognized(subject: SubjectId, level?: LevelId, science?: ScienceId): boolean {
+    return data.equiparacionRecords.some(
+      (r) => r.subject === subject && r.level === level && (science ? r.science === science : true) && r.recognized,
+    );
+  }
+
+  return (
+    <div className="space-y-8">
+      <StepHeading
+        kicker="Reconocimiento y Equiparación"
+        title="Evaluador de materias previas"
+        lede="Calcule qué materias se le reconocen formalmente según la normativa MEP DGEC, cuántas pruebas le restan y qué documentos debe consignar."
+      />
+
+      <Question legend="1. Vía oficial de equiparación">
+        <div className="grid gap-2">
+          {EQUIPARACION_PATHWAYS.map((p) => (
+            <Choice
+              key={p.value}
+              type="radio"
+              name="equiparacionPathway"
+              value={p.value}
+              checked={data.equiparacionPathway === p.value}
+              onSelect={() => patch({ equiparacionPathway: p.value })}
+              title={p.title}
+              detail={p.detail}
+            />
+          ))}
+        </div>
+      </Question>
+
+      {data.equiparacionPathway && (
+        <Question legend="2. Sistema educativo de origen">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {ORIGIN_SYSTEMS.map((s) => (
+              <Choice
+                key={s.value}
+                type="radio"
+                name="equiparacionOrigin"
+                value={s.value}
+                checked={data.equiparacionOrigin === s.value}
+                onSelect={() => patch({ equiparacionOrigin: s.value })}
+                title={s.title}
+              />
+            ))}
+          </div>
+        </Question>
+      )}
+
+      {data.equiparacionPathway === "foreign_homologation" && (
+        <Question
+          legend="¿Cuenta ya con resolución oficial emitida por el Depto. de Estudios Extranjeros de la DGEC?"
+          hint="Sin esta resolución, Yo Aplico no habilitará la matrícula de pruebas finales de bachillerato o tercer ciclo."
+        >
+          <YesNo
+            name="foreignResolution"
+            value={data.hasForeignResolution}
+            onChange={(hasForeignResolution) => patch({ hasForeignResolution })}
+          />
+        </Question>
+      )}
+
+      {data.equiparacionPathway && (
+        <div className="space-y-4">
+          <h2 className="text-lg font-semibold">3. Marque las asignaturas que ya tiene aprobadas</h2>
+          <p className="text-sm text-muted">
+            Seleccione las materias aprobadas con nota igual o superior a la mínima requerida (65 en III Ciclo, 70 en EDAD/BXM).
+          </p>
+
+          {program === "iii" && (
+            <div className="space-y-4">
+              {PROGRAM_LEVELS.iii.map((lvl) => (
+                <fieldset key={lvl} className="rounded-2xl border border-line bg-paper p-4">
+                  <legend className="px-2 font-semibold text-primary">{LEVEL_LABEL[lvl]}</legend>
+                  <div className="grid gap-2 sm:grid-cols-2 mt-2">
+                    {PROGRAM_SUBJECTS.iii.map((subj) => (
+                      <Choice
+                        key={`${lvl}-${subj}`}
+                        type="checkbox"
+                        name={`rec-${lvl}-${subj}`}
+                        value={`${lvl}-${subj}`}
+                        checked={isRecordRecognized(subj, lvl)}
+                        onSelect={() => toggleRecord(subj, lvl)}
+                        title={subjectLabel("iii", subj)}
+                      />
+                    ))}
+                  </div>
+                </fieldset>
+              ))}
+            </div>
+          )}
+
+          {program === "edad" && (
+            <div className="space-y-4">
+              {PROGRAM_LEVELS.edad.map((lvl) => (
+                <fieldset key={lvl} className="rounded-2xl border border-line bg-paper p-4">
+                  <legend className="px-2 font-semibold text-primary">{LEVEL_LABEL[lvl]}</legend>
+                  <div className="grid gap-2 sm:grid-cols-2 mt-2">
+                    {PROGRAM_SUBJECTS.edad.map((subj) => (
+                      <Choice
+                        key={`${lvl}-${subj}`}
+                        type="checkbox"
+                        name={`rec-${lvl}-${subj}`}
+                        value={`${lvl}-${subj}`}
+                        checked={isRecordRecognized(subj, lvl)}
+                        onSelect={() => toggleRecord(subj, lvl)}
+                        title={subj === "idioma" ? (data.language === "frances" ? "Francés" : "Inglés") : subjectLabel("edad", subj)}
+                      />
+                    ))}
+                    <Choice
+                      type="checkbox"
+                      name={`rec-${lvl}-ciencias`}
+                      value={`${lvl}-ciencias`}
+                      checked={isRecordRecognized("ciencias", lvl, data.science || "biologia")}
+                      onSelect={() => toggleRecord("ciencias", lvl, data.science || "biologia")}
+                      title={`Ciencias (${SCIENCE_LABEL[data.science || "biologia"]})`}
+                    />
+                  </div>
+                </fieldset>
+              ))}
+            </div>
+          )}
+
+          {program === "bxm" && (
+            <fieldset className="rounded-2xl border border-line bg-paper p-4">
+              <legend className="px-2 font-semibold text-primary">Bachillerato por Madurez</legend>
+              <div className="grid gap-2 sm:grid-cols-2 mt-2">
+                {PROGRAM_SUBJECTS.bxm.map((subj) => (
+                  <Choice
+                    key={`bxm-${subj}`}
+                    type="checkbox"
+                    name={`rec-bxm-${subj}`}
+                    value={`bxm-${subj}`}
+                    checked={isRecordRecognized(subj)}
+                    onSelect={() => toggleRecord(subj)}
+                    title={subj === "idioma" ? (data.language === "frances" ? "Francés" : "Inglés") : subjectLabel("bxm", subj)}
+                  />
+                ))}
+                <Choice
+                  type="checkbox"
+                  name="rec-bxm-ciencias"
+                  value="bxm-ciencias"
+                  checked={isRecordRecognized("ciencias", undefined, data.science || "biologia")}
+                  onSelect={() => toggleRecord("ciencias", undefined, data.science || "biologia")}
+                  title={`Ciencias (${SCIENCE_LABEL[data.science || "biologia"]})`}
+                />
+              </div>
+            </fieldset>
+          )}
+        </div>
+      )}
+
+      {analysis && (
+        <section className="rounded-3xl border border-line bg-surface p-5 space-y-4 shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line pb-3">
+            <h3 className="text-xl font-bold">Balance de Equiparación Calculado</h3>
+            <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
+              DGEC Normativa Vigente
+            </span>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3 text-sm">
+            <div className="rounded-xl bg-paper p-3 border border-line">
+              <span className="text-muted block text-xs">Materias Reconocidas</span>
+              <span className="text-2xl font-bold text-ink tabular-nums">{analysis.recognizedItems.length}</span>
+            </div>
+            <div className="rounded-xl bg-paper p-3 border border-line">
+              <span className="text-muted block text-xs">Pruebas Restantes</span>
+              <span className="text-2xl font-bold text-accent tabular-nums">{analysis.totalRemainingTests}</span>
+            </div>
+            <div className="rounded-xl bg-paper p-3 border border-line">
+              <span className="text-muted block text-xs">Costo Estimado de Matrícula</span>
+              <span className="text-2xl font-bold text-ink tabular-nums">{colones(analysis.estimatedFee)}</span>
+            </div>
+          </div>
+
+          {analysis.warnings.length > 0 && (
+            <div className="rounded-xl bg-accent-soft p-4 border border-line text-sm text-ink space-y-2">
+              <p className="font-semibold text-accent">Avisos importantes de admisibilidad:</p>
+              <ul className="list-disc list-inside space-y-1">
+                {analysis.warnings.map((w, idx) => (
+                  <li key={idx}>{w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="space-y-3 pt-2">
+            <h4 className="font-semibold text-base">Requisitos documentales obligatorios</h4>
+            <p className="text-xs text-muted">
+              {analysis.guidelines.criticalNotice} (Tiempo estimado: {analysis.guidelines.leadTimeWeeks} semanas).
+            </p>
+            <div className="space-y-2">
+              {analysis.guidelines.requiredDocuments.map((doc) => (
+                <div key={doc.code} className="rounded-xl border border-line bg-paper p-3 text-sm flex gap-3 items-start">
+                  <span className="rounded-md bg-surface px-2 py-1 text-xs font-mono font-semibold text-muted shrink-0">
+                    {doc.code}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-ink">{doc.title}</p>
+                    <p className="text-xs text-muted mt-0.5">{doc.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {analysis.guidelines.emailTarget && (
+              <p className="text-xs text-muted">
+                Canal oficial de recepción: <span className="font-mono font-semibold text-primary">{analysis.guidelines.emailTarget}</span>
+              </p>
+            )}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
@@ -995,6 +1303,7 @@ function StepBody({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
   if (step === "meta") return <MetaStep />;
   if (step === "alcance") return <AlcanceStep />;
   if (step === "perfil") return <PerfilStep />;
+  if (step === "equiparacion") return <EquiparacionStep />;
   if (step === "situacion") return <SituacionStep />;
   return <RutaStep onNavigate={onNavigate} />;
 }
@@ -1002,7 +1311,7 @@ function StepBody({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
 export function ReadinessWizard({ onSkip, onExplore, onNavigate }: { onSkip: () => void; onExplore: () => void; onNavigate: (route: AppRoute) => void }) {
   const data = useWizard();
   const hint = missingHint(data);
-  const steps = stepsFor(data.program);
+  const steps = stepsFor(data.program, data.recognition);
   const index = steps.indexOf(data.step);
 
   const bodyRef = useRef<HTMLDivElement>(null);

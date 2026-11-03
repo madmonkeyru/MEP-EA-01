@@ -17,6 +17,11 @@ import type {
   StudyStyle,
   SubjectId,
 } from "../../services/onboarding/types";
+import type {
+  EquiparacionPathway,
+  OriginSystem,
+  RecognizedRecord,
+} from "../../services/onboarding/equiparacion";
 
 export type WizardData = {
   step: StepId;
@@ -40,6 +45,11 @@ export type WizardData = {
   hasId: boolean | null;
   certificates: Certs | null;
   recognition: boolean | null;
+  // Equiparación interactive configuration
+  equiparacionPathway: EquiparacionPathway | null;
+  equiparacionOrigin: OriginSystem | null;
+  equiparacionRecords: RecognizedRecord[];
+  hasForeignResolution: boolean | null;
   hours: Hours | null;
   materials: boolean | null;
   confidence: Confidence | null;
@@ -73,6 +83,10 @@ export const initialWizard: WizardData = {
   hasId: null,
   certificates: null,
   recognition: null,
+  equiparacionPathway: null,
+  equiparacionOrigin: null,
+  equiparacionRecords: [],
+  hasForeignResolution: null,
   hours: null,
   materials: null,
   confidence: null,
@@ -111,8 +125,13 @@ export function useWizard<T = WizardStore>(selector?: (state: WizardStore) => T)
   return (selector ? selector(state) : state) as T;
 }
 
-export function stepsFor(program: WizardData["program"]): StepId[] {
-  if (program && program !== "unsure") return ["meta", "alcance", "perfil", "situacion", "ruta"];
+export function stepsFor(program: WizardData["program"], recognition?: boolean | null): StepId[] {
+  const needsEquiparacion = Boolean(recognition && program && program !== "i-ii" && program !== "unsure");
+  if (program && program !== "unsure") {
+    return needsEquiparacion
+      ? ["meta", "alcance", "perfil", "equiparacion", "situacion", "ruta"]
+      : ["meta", "alcance", "perfil", "situacion", "ruta"];
+  }
   return ["meta", "perfil", "situacion", "ruta"];
 }
 

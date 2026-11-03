@@ -84,5 +84,43 @@ describe('optional guide and resources', () => {
     expect(screen.getByRole('button', { name: 'Continuar' })).toBeEnabled();
     expect(screen.getByText(/6 pruebas · ₡48/)).toBeInTheDocument();
   });
+
+  it("navigates into interactive Equiparacion step when recognition is enabled", () => {
+    const { container } = render(
+      <WizardProvider>
+        <ReadinessWizard onNavigate={vi.fn()} onSkip={vi.fn()} onExplore={vi.fn()} />
+      </WizardProvider>,
+    );
+
+    const select = (name: string, value: string) =>
+      fireEvent.click(container.querySelector(`input[name="${name}"][value="${value}"]`)!);
+
+    // Meta step -> select EDAD
+    select("program", "edad");
+    fireEvent.click(screen.getByRole("button", { name: "Continuar" }));
+    // Alcance step requires science & language in EDAD
+    fireEvent.click(screen.getByRole("radio", { name: "Biología" }));
+    fireEvent.click(screen.getByRole("radio", { name: "Inglés" }));
+    fireEvent.click(screen.getByRole("button", { name: "Continuar" }));
+
+    // Perfil step -> select schooling & age, and enable recognition
+    select("schooling", "partial-div");
+    select("age", "16-17");
+
+    const recognitionInput = container.querySelector('input[name="recognition"][value="si"]');
+    expect(recognitionInput).not.toBeNull();
+    fireEvent.click(recognitionInput!);
+
+    fireEvent.click(screen.getByRole("button", { name: "Continuar" }));
+
+    // Should now be on the Equiparación step
+    expect(screen.getByText(/Evaluador de materias previas/i)).toBeInTheDocument();
+    expect(screen.getByText(/1\. Vía oficial de equiparación/i)).toBeInTheDocument();
+
+    // Select Formal to Abierta
+    select("equiparacionPathway", "formal_to_abierta");
+    expect(screen.getByText(/2\. Sistema educativo de origen/i)).toBeInTheDocument();
+    expect(screen.getByText(/Balance de Equiparación Calculado/i)).toBeInTheDocument();
+  });
 });
 
