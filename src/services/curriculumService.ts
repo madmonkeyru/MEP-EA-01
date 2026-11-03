@@ -128,6 +128,7 @@ class CurriculumService {
       mode: 'area',
       itemCount: selectedIds.length || itemCount,
       enableTimer: false,
+      timerDurationMinutes: 0,
       itemIds: selectedIds.length > 0 ? selectedIds : undefined,
     };
   }
