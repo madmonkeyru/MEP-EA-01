@@ -28,7 +28,7 @@ export function readRoute(hash: string): AppRoute {
   const phase = params.get('pantalla');
   return { view: subject ? (phase === 'prueba' ? 'test' : phase === 'resultado' ? 'results' : 'hub') : 'framework', programId: program.id,
     ...(params.get('intento') ? { sessionId: params.get('intento')! } : {}),
-    ...(['practice', 'resources', 'progress'].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
+    ...(['practice', 'resources', 'path', 'progress'].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
     ...(['pdf', 'specs', 'terms', 'formulas'].includes(params.get('recurso') || '') ? { resourceTab: params.get('recurso')! } : {}),
     subjectId: subject?.id, moduleId, convocatoriaId };
 }
