@@ -286,9 +286,9 @@ export const CartesianCanvas: React.FC<CartesianCanvasProps> = (props) => {
     y_range,
     grid = false,
     axes = { arrows: true },
-    _show_ticks,
-    _show_tick_labels,
-    _show_numbers,
+    show_ticks,
+    show_tick_labels,
+    show_numbers,
     x_label = 'x',
     y_label = 'y',
     children,
@@ -343,11 +343,11 @@ export const CartesianCanvas: React.FC<CartesianCanvasProps> = (props) => {
   const xTicks = niceTicks(xMin, xMax, width < 300 ? 6 : 8);
   const yTicks = niceTicks(yMin, yMax, height < 240 ? 5 : 7);
 
-  const ticksVisible = (props as any).show_ticks !== false;
+  const ticksVisible = show_ticks !== false;
   const showTickLabels =
     ticksVisible &&
-    (props as any).show_tick_labels !== false &&
-    (props as any).show_numbers !== false &&
+    show_tick_labels !== false &&
+    show_numbers !== false &&
     width >= 220;
 
   return (

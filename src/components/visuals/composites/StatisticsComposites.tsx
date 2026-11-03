@@ -237,7 +237,7 @@ export interface DistributionCurveProps {
 
 export const DistributionCurveComponent: React.FC<DistributionCurveProps> = ({
   skew = 'negative',
-  _mean,
+  mean,
   median,
   mode,
   markers: inputMarkers,
@@ -264,6 +264,9 @@ export const DistributionCurveComponent: React.FC<DistributionCurveProps> = ({
         { label: String(median), value: median, dashed: true },
         { label: String(mode), value: mode, dashed: true },
       ];
+      if (mean !== undefined) {
+        resolvedMarkers.unshift({ label: String(mean), value: mean, dashed: true });
+      }
     } else {
       resolvedMarkers = defaultMarkers;
     }
