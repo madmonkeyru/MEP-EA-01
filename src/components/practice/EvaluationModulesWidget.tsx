@@ -6,7 +6,7 @@ import { storageService } from '../../services/storageService';
 import { prepareItems, modeLabel, isExam } from '../../services/learningSession';
 import { Dialog } from '../common/Dialog';
 import { CustomSelect } from '../common/CustomSelect';
-import { Sparkles, Target, Compass, BookOpen, Clock } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, initialMode = 'area' }: { initialMode?: PracticeMode; onStartSimulation: () => void; onStartPractice: (config: PracticeConfig) => void }) {
   const [goal, setGoal] = useState<'diagnostic' | 'practice' | 'exam'>(initialMode === 'simulation' || initialMode === 'dynamic_mock' ? 'exam' : initialMode === 'diagnostic' ? 'diagnostic' : 'practice');

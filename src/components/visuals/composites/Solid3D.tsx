@@ -405,10 +405,7 @@ export const Solid3D: React.FC<Solid3DSpec> = ({
 
         // Chord cut parameters: plane perpendicular to bases at distance d from axis
         const chordDist = crossSectionOffset || parameters.chordDistance || rx * 0.6;
-        const halfChord = Math.sqrt(Math.max(0, rx * rx - chordDist * chordDist));
-        const chordX1 = cx + chordDist;
-        const chordYTop = topY + Math.sqrt(Math.max(0, 1 - (chordDist / rx) ** 2)) * ry * 0.4;
-        const chordYBot = botY + Math.sqrt(Math.max(0, 1 - (chordDist / rx) ** 2)) * ry * 0.4;
+                const chordX1 = cx + chordDist;
 
         return (
           <g className="solid-cylinder">

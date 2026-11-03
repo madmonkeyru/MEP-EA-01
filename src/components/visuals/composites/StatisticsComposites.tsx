@@ -237,7 +237,7 @@ export interface DistributionCurveProps {
 
 export const DistributionCurveComponent: React.FC<DistributionCurveProps> = ({
   skew = 'negative',
-  mean,
+  _mean,
   median,
   mode,
   markers: inputMarkers,

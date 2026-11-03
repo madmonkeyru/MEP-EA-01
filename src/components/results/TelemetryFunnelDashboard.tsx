@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Activity, ArrowRight, BarChart2, CheckCircle2, ChevronRight, RefreshCw, Sparkles, Target, Zap } from 'lucide-react';
+import { Activity, BarChart2, CheckCircle2, RefreshCw, Sparkles, Target, Zap } from 'lucide-react';
 import { storageService } from '../../services/storageService';
 
 export function TelemetryFunnelDashboard() {

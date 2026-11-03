@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, BookOpen, CheckCircle, ChevronDown, ChevronUp, FileText, Sparkles, Target } from 'lucide-react';
+import { ArrowRight, BookOpen, CheckCircle, ChevronDown, ChevronUp, Sparkles, Target } from 'lucide-react';
 import type { PracticeConfig } from '../../types';
 import type { RemediationPlan } from '../../services/remediationEngine';
 import { saveActiveRemediationPlan } from '../../services/remediationEngine';
