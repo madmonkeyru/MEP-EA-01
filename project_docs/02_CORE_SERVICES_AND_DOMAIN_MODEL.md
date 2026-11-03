@@ -89,14 +89,21 @@ Maintains the authoritative database of official MEP examination rules:
 - **Logistical Rules**: Approved examination tools (calculators allowed vs. prohibited, blue/black pen requirements, late entry cut-offs).
 - **Official Convocatoria Windows**: Registration dates, fee payment protocols (₡8,000 via BNCR/Banco Nacional), and testing dates.
 
-### 2.4 Service 4: Get Insights (Diagnóstico & Métricas)
+### 2.4 Service 4: Get Insights (Diagnóstico, Nivelación & Métricas)
 
-Longitudinal student performance tracking and diagnostic analytics:
+Longitudinal student performance tracking, diagnostic analytics, and adaptive remediation:
 - **Instant Attempt Scoring**: Immediate computation of percentage score, passing status ($\ge 70$ for BXM/EDAD, $\ge 65$ for CICO/III Ciclo), and score delta from baseline.
 - **Cognitive & Domain Breakdown**:
   - Score by Curricular Area (Geometría vs. Álgebra vs. Estadística).
   - Score by Cognitive Level (Reproducción, Conexión, Reflexión).
 - **Time Analysis**: Seconds spent per question, highlighting pacing bottlenecks (e.g., spending $>4$ minutes on 3D solid spatial problems).
+- **Diagnostic-Driven "Plan de Nivelación" (Remediation Plan Engine)**:
+  - Dynamically synthesizes diagnostic performance into actionable learning roadmaps (`src/services/remediationEngine.ts`).
+  - Pinpoints granular weak concepts (accuracy $<75\%$) prioritized by urgency (`high`, `medium`, `low`).
+  - Correlates each deficient concept with official KaTeX formula references and direct one-click practice launch buttons.
+- **Telemetry Funnel Analytics Dashboard**:
+  - Transparent client-side funnel tracking for learners and tutors: `goal_selected` $\rightarrow$ `diagnostic_started` $\rightarrow$ `diagnostic_completed` $\rightarrow$ `remediation_started` $\rightarrow$ `session_completed`.
+  - Exposes activation ratios, conversion rates, and recent local session event streams (`src/components/results/TelemetryFunnelDashboard.tsx`).
 - **Longitudinal Trend Chart**: Interactive historical progress visualization across consecutive practice sessions with visual indicator thresholds.
 
 ### 2.5 Service 5: Guidance (Orientación & Trayectoria Académica)
