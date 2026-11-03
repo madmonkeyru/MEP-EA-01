@@ -1,11 +1,35 @@
 import { StrictMode } from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import type { TestSession } from '../../types';
 import { ResultsPage } from './ResultsPage';
 import { createSession } from '../../services/learningSession';
 import { storageService } from '../../services/storageService';
 afterEach(() => { cleanup(); localStorage.clear(); });
 describe('results and durable review', () => {
+  it('renders Plan de Nivelación and Telemetry Dashboard when session is in diagnostic mode', () => {
+    const session: TestSession = {
+      ...createSession({ mode: 'diagnostic', itemCount: 2, enableTimer: false, timerDurationMinutes: 0 }),
+      isCompleted: true,
+      responses: {
+        1: { itemId: 1, selectedOption: 'B', timeSpentSeconds: 30 },
+      },
+    };
+
+    render(
+      <ResultsPage
+        session={session}
+        onRetry={vi.fn()}
+        onNewTest={vi.fn()}
+        onGoHome={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText(/Tu Plan Personalizado de Nivelación/i)).toBeInTheDocument();
+    expect(screen.getByText(/Métricas de Trayectoria del Estudiante/i)).toBeInTheDocument();
+    expect(screen.getByText(/Embudo de Nivelación y Diagnóstico/i)).toBeInTheDocument();
+  });
+
   it('separates unanswered from incorrect and saves a result only once under StrictMode', () => {
     const session = { ...createSession({ mode: 'simulation', itemCount: 2, enableTimer: false, timerDurationMinutes: 30 }), isCompleted: true };
     session.responses[session.itemIds[0]] = { itemId: session.itemIds[0], selectedOption: session.items![0].correct_answer };

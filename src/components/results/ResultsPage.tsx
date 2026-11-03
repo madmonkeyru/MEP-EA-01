@@ -8,6 +8,9 @@ import { VisualRenderer } from '../visuals/VisualRenderer';
 import { GroupVisual } from '../visuals/GroupVisual';
 import { options } from '../test/TestShell';
 import { CustomSelect } from '../common/CustomSelect';
+import { generateRemediationPlan, type RemediationPlan } from '../../services/remediationEngine';
+import { PlanDeNivelacionView } from './PlanDeNivelacionView';
+import { TelemetryFunnelDashboard } from './TelemetryFunnelDashboard';
 
 export function ResultsPage({
   session,
@@ -33,6 +36,7 @@ export function ResultsPage({
   const correct = (item: Item) => session.responses[item.id]?.selectedOption === item.correct_answer;
   const total = items.length, correctCount = items.filter(correct).length, unanswered = items.filter(item => !answered(item)).length;
   const score = total ? Math.round(correctCount / total * 100) : 0;
+  const [remediationPlan, setRemediationPlan] = useState<RemediationPlan | null>(null);
 
   useEffect(() => {
     if (!storageService.saveResult({ ...session, items })) {
@@ -40,6 +44,8 @@ export function ResultsPage({
     }
     if (session.config.mode === 'diagnostic') {
       storageService.logTelemetryEvent('diagnostic_completed', { score, total, correctCount });
+      const plan = generateRemediationPlan({ ...session, items });
+      setRemediationPlan(plan);
     } else {
       storageService.logTelemetryEvent('session_completed', { mode: session.config.mode, score, total, correctCount });
     }
@@ -109,6 +115,19 @@ export function ResultsPage({
       </div>
       {saveError && <p role="alert">{saveError}</p>}
     </header>
+
+    {/* Plan de Nivelación (if session is a diagnostic or has generated plan) */}
+    {remediationPlan && (
+      <PlanDeNivelacionView
+        plan={remediationPlan}
+        onLaunchRemediationPractice={(config) => {
+          if (onPracticeMissed) onPracticeMissed(config);
+        }}
+      />
+    )}
+
+    {/* Telemetry Funnel Dashboard for Tutors and Learners */}
+    <TelemetryFunnelDashboard />
 
     {weakest && (
       <section className="ui-surface rounded-2xl p-6 space-y-4 border border-indigo-100 dark:border-indigo-950/60 bg-gradient-to-br from-white to-indigo-50/20 dark:from-stone-900 dark:to-indigo-950/20">

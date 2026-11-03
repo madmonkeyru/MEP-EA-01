@@ -80,7 +80,7 @@ project_docs/
 | Document | Primary Audience | Key Topics Covered |
 | :--- | :--- | :--- |
 | **[01. System & Infrastructure](01_SYSTEM_AND_INFRASTRUCTURE_ARCHITECTURE.md)** | Cloud Engineers, Tech Leads, DevOps | Architecture tiers, 5,000 CCU load capacity, Redis caching, edge CDN, client-side React 19 architecture, security, and offline support. |
-| **[02. Core Services & Domain](02_CORE_SERVICES_AND_DOMAIN_MODEL.md)** | Full-stack Engineers, Product Managers | Domain entities across 4 programs (CICO, III Ciclo, EDAD, BXM), Dynamic Test Assembly Engine, Scoring Engine, and Guidance Decision Engine (EDAD vs. BXM trade-offs). |
+| **[02. Core Services & Domain](02_CORE_SERVICES_AND_DOMAIN_MODEL.md)** | Full-stack Engineers, Product Managers | Domain entities across 4 programs (CICO, III Ciclo, EDAD, BXM), Dynamic Test Assembly Engine, Scoring Engine, Diagnostic-Driven Remediation Plan Engine, Telemetry Funnel Analytics, and Guidance Decision Engine. |
 | **[03. Content Pipeline & Decoupling](03_CONTENT_PIPELINE_AND_LEGAL_DECOUPLING.md)** | Content Engineers, Curriculum Specialists | Semi-annual processing of 47+ specification PDFs and sample tests, freemium boundaries, proprietary item authoring, and schema validation CLI. |
 | **[04. Visualizations & Math Engine](04_VECTOR_VISUALIZATIONS_AND_MATH_ENGINE.md)** | Frontend Engineers, Graphic/Math Authors | Zero-bitmap parametric SVG architecture, composite visual catalog (CartesianCanvas, Solid3D, BoxPlot, etc.), and KaTeX delimited math rendering. |
 | **[05. UI/UX Design System](05_UI_UX_DESIGN_SYSTEM.md)** | UI/UX Designers, Frontend Developers | Soft warm beige palette, typography (`Outfit` + `Plus Jakarta Sans`), accessible custom widgets (`CustomSelect`, `ThemeToggle`), WCAG 2.1 AA standards. |
