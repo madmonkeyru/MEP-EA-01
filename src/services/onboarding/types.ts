@@ -92,7 +92,7 @@ export type CheckId =
   | "build-numeracy"
   | "five-tests";
 
-export type StepId = "meta" | "alcance" | "perfil" | "situacion" | "ruta";
+export type StepId = "meta" | "alcance" | "perfil" | "equiparacion" | "situacion" | "ruta";
 
 export type Profile = {
   unconfirmed?: string[];
