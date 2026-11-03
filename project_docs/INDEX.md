@@ -86,6 +86,7 @@ project_docs/
 | **[05. UI/UX Design System](05_UI_UX_DESIGN_SYSTEM.md)** | UI/UX Designers, Frontend Developers | Soft warm beige palette, typography (`Outfit` + `Plus Jakarta Sans`), accessible custom widgets (`CustomSelect`, `ThemeToggle`), WCAG 2.1 AA standards. |
 | **[06. Roadmap & Operations](06_PRODUCT_ROADMAP_AND_OPERATIONAL_PLAN.md)** | Engineering Leadership, Project Stakeholders | Phased milestone roadmap (Prototype → MVP → Commercial Scale), video deferral rationale, monitoring, rollback, and disaster recovery. |
 | **[07. Prior Recognition & Enrollment](07_ENROLLMENT_AND_PRIOR_RECOGNITION_ENGINE.md)** | System Architects, Guidance Counselors | Detailed legal-administrative specifications for the 3 equiparación pathways, document checklists, and interactive calculation engine. |
+| **[Milestone Audit Report](MILESTONE_AUDIT_REPORT_OPTIONS_A_B_C.md)** | QA Leads, Product Leadership | Formal audit and verification record for Option A (02-2026 HIL Pilot), Option B (Equiparación Engine), and Option C (Plan de Nivelación). |
 
 ---
 
