@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OfficialSpecificationTable",
+  "description": "Subject-agnostic schema for official MEP DGEC Tablas de Especificaciones",
+  "type": "object",
+  "required": ["programId", "subjectId", "convocatoriaId", "totalPoints", "passingScore", "blocks"],
+  "properties": {
+    "programId": {
+      "type": "string",
+      "description": "Program identifier: bxm, edad, iii_ciclo, cico"
+    },
+    "subprogramId": {
+      "type": "string",
+      "description": "Optional subprogram or grade level"
+    },
+    "subjectId": {
+      "type": "string",
+      "description": "Subject identifier (e.g. matematica, espanol, ciencias)"
+    },
+    "convocatoriaId": {
+      "type": "string",
+      "description": "Examination window (e.g. 02-2026, 01-2026)"
+    },
+    "title": {
+      "type": "string"
+    },
+    "totalPoints": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "passingScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "calculatorAllowed": {
+      "type": "boolean"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["blockCode", "name", "areaId", "totalPoints", "affirmations"],
+        "properties": {
+          "blockCode": { "type": "string" },
+          "name": { "type": "string" },
+          "areaId": { "type": "string" },
+          "totalPoints": { "type": "integer", "minimum": 1 },
+          "affirmations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "desc", "targetPoints", "evidences"],
+              "properties": {
+                "code": { "type": "string" },
+                "desc": { "type": "string" },
+                "targetPoints": { "type": "integer", "minimum": 0 },
+                "evidences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["code", "desc"],
+                    "properties": {
+                      "code": { "type": "string" },
+                      "desc": { "type": "string" },
+                      "cognitiveLevel": {
+                        "type": "string",
+                        "enum": ["reproduccion", "conexion", "reflexion"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
