@@ -85,8 +85,8 @@ describe('application curriculum flows', () => {
     fireEvent.change(screen.getByLabelText('Nivel o parte'), { target: { value: 'EDAD_1' } });
     await waitFor(() => expect(dataService.getCurrentSubprogramId()).toBe('EDAD_1'));
     await screen.findByRole('heading', { name: 'Matemáticas · EDAD' });
-    fireEvent.change(screen.getByLabelText('Programa'), { target: { value: 'cico' } });
-    await screen.findByRole('heading', { name: 'Matemáticas · I y II Ciclo CICO' });
+    fireEvent.change(screen.getByLabelText('Programa'), { target: { value: 'i_ii_ciclo' } });
+    await screen.findByRole('heading', { name: 'Matemáticas · I y II Ciclo' });
     expect(screen.queryByLabelText('Nivel o parte')).not.toBeInTheDocument();
     expect(dataService.getCurrentSubprogramId()).toBeUndefined();
     expect(screen.getByLabelText('Convocatoria de referencia')).toHaveValue('2026-c1');

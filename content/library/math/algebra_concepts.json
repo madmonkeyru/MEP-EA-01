@@ -5,7 +5,11 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Funciones",
     "definition": "Relación $f: A \\to B$ donde a cada valor $x$ del dominio le corresponde una única imagen $y = f(x)$.",
-    "programModules": ["EDAD_PARTE_1", "EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -14,7 +18,10 @@
         "description": "Correspondencia unívoca entre conjuntos."
       }
     ],
-    "relatedEvidence": ["A1.1", "A1.2"]
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2"
+    ]
   },
   {
     "id": "mep-alg-composicion-02",
@@ -22,7 +29,10 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Funciones",
     "definition": "Evaluación encadenada $(g \\circ f)(x) = g(f(x))$. Requiere que el ámbito de $f$ esté contenido en el dominio de $g$.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -31,7 +41,10 @@
         "description": "Aplicación sucesiva de funciones."
       }
     ],
-    "relatedEvidence": ["A1.3", "A1.4"]
+    "relatedEvidence": [
+      "A1.3",
+      "A1.4"
+    ]
   },
   {
     "id": "mep-alg-funcion-lineal-03",
@@ -39,7 +52,12 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Función Lineal",
     "definition": "Función de primer grado $f(x) = mx + b$. La pendiente $m$ mide la tasa de variación y el signo determina si es creciente, decreciente o constante.",
-    "programModules": ["III_CICLO_8", "III_CICLO_9", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_8",
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -48,7 +66,12 @@
         "description": "Variación vertical sobre horizontal."
       }
     ],
-    "relatedEvidence": ["A2.1", "A2.2", "A2.3", "A2.4"]
+    "relatedEvidence": [
+      "A2.1",
+      "A2.2",
+      "A2.3",
+      "A2.4"
+    ]
   },
   {
     "id": "mep-alg-funcion-cuadratica-04",
@@ -56,7 +79,11 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Función Cuadrática",
     "definition": "Polinomio de segundo grado $f(x) = ax^2 + bx + c$. Su gráfica es una parábola con vértice $V\\left(-\\frac{b}{2a}, -\\frac{\\Delta}{4a}\\right)$ y discriminante $\\Delta = b^2 - 4ac$.",
-    "programModules": ["III_CICLO_9", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -65,7 +92,11 @@
         "description": "Puntos extremos y raíces de la parábola."
       }
     ],
-    "relatedEvidence": ["A2.5", "A2.6", "A3.1"]
+    "relatedEvidence": [
+      "A2.5",
+      "A2.6",
+      "A3.1"
+    ]
   },
   {
     "id": "mep-alg-sistemas-ecuaciones-05",
@@ -73,7 +104,11 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Sistemas de Ecuaciones",
     "definition": "Dos ecuaciones con dos incógnitas. Puede tener solución única, infinitas soluciones o solución vacía.",
-    "programModules": ["III_CICLO_9", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -82,7 +117,10 @@
         "description": "Intersección analítica de rectas."
       }
     ],
-    "relatedEvidence": ["A3.2", "A3.3"]
+    "relatedEvidence": [
+      "A3.2",
+      "A3.3"
+    ]
   },
   {
     "id": "mep-alg-funcion-inversa-06",
@@ -90,7 +128,10 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Funciones Inversas",
     "definition": "Función $f^{-1}$ que invierte la relación original, cumpliendo $f^{-1}(f(x)) = x$. Exige biyectividad (o inyectividad restringida).",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -99,7 +140,12 @@
         "description": "Despeje algebraico de la variable independiente."
       }
     ],
-    "relatedEvidence": ["A4.1", "A4.2", "A4.3", "A4.4"]
+    "relatedEvidence": [
+      "A4.1",
+      "A4.2",
+      "A4.3",
+      "A4.4"
+    ]
   },
   {
     "id": "mep-alg-funcion-raiz-cuadrada-07",
@@ -107,7 +153,10 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Raíz Cuadrada",
     "definition": "Criterio de la forma $f(x) = a\\sqrt{x + b} + c$. Su dominio requiere $x + b \\ge 0$.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -116,7 +165,11 @@
         "description": "Vértice o punto de partida en $(-b, c)$."
       }
     ],
-    "relatedEvidence": ["A4.5", "A4.6", "A4.7"]
+    "relatedEvidence": [
+      "A4.5",
+      "A4.6",
+      "A4.7"
+    ]
   },
   {
     "id": "mep-alg-exponencial-logaritmica-08",
@@ -124,7 +177,10 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Exponenciales y Logaritmos",
     "definition": "Funciones inversas $f(x) = a^x$ y $g(x) = \\log_a(x)$ con base $a > 0, a \\neq 1$.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -133,7 +189,13 @@
         "description": "Definición de logaritmo como exponente."
       }
     ],
-    "relatedEvidence": ["A5.1", "A5.2", "A5.3", "A5.5", "A6.1"]
+    "relatedEvidence": [
+      "A5.1",
+      "A5.2",
+      "A5.3",
+      "A5.5",
+      "A6.1"
+    ]
   },
   {
     "id": "mep-alg-propiedades-logaritmos-09",
@@ -141,7 +203,10 @@
     "domain": "functions",
     "blockName": "2. Relaciones y Álgebra - Logaritmos",
     "definition": "Reglas de producto, cociente y potencia para resolver ecuaciones no algebraicas.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -150,7 +215,13 @@
         "description": "Leyes fundamentales de simplificación logarítmica."
       }
     ],
-    "relatedEvidence": ["A5.4", "A5.6", "A5.7", "A5.8", "A5.9"]
+    "relatedEvidence": [
+      "A5.4",
+      "A5.6",
+      "A5.7",
+      "A5.8",
+      "A5.9"
+    ]
   },
   {
     "id": "mep-alg-primaria-patrones-10",
@@ -158,7 +229,9 @@
     "domain": "functions",
     "blockName": "Relaciones y Álgebra Elemental",
     "definition": "Identificación de regularidades numéricas, secuencias aritméticas y tablas de proporcionalidad sin calculadora.",
-    "programModules": ["I_II_CICLO"],
+    "programModules": [
+      "I_II_CICLO"
+    ],
     "calculatorAllowed": false,
     "formulas": [
       {
@@ -166,6 +239,114 @@
         "latex": "a_n = a_1 + (n - 1)d",
         "description": "Constante de adición en sucesiones elementales."
       }
+    ]
+  },
+  {
+    "id": "mep-alg-enteros-operaciones-11",
+    "term": "Números Enteros y Operaciones Combinadas",
+    "domain": "functions",
+    "blockName": "Números - Conjunto Z",
+    "definition": "El conjunto de los números enteros $\\mathbb{Z} = \\{..., -2, -1, 0, 1, 2, ...\\}$ y reglas de signos para adición, sustracción, multiplicación, división y potencias.",
+    "programModules": [
+      "III_CICLO_7",
+      "III_CICLO_8"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "7mo",
+    "formulas": [
+      {
+        "name": "Ley de Signos en Multiplicación",
+        "latex": "(+) \\cdot (+) = +, \\quad (-) \\cdot (-) = +, \\quad (+) \\cdot (-) = -",
+        "description": "Multiplicación de factores con signos iguales o diferentes."
+      }
+    ],
+    "examples": [
+      "$(-4) \\cdot (-3) = 12$, y $(-15) \\div 3 = -5$."
+    ],
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2"
+    ]
+  },
+  {
+    "id": "mep-alg-racionales-fracciones-12",
+    "term": "Números Racionales, Fracciones y Decimales",
+    "domain": "functions",
+    "blockName": "Números - Conjunto Q",
+    "definition": "Números expresables como cociente de dos enteros $\\frac{a}{b}$ con $b \\neq 0$. Incluye simplificación, operaciones con fracciones homogéneas y heterogéneas, y notación mixta.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "primaria",
+    "formulas": [
+      {
+        "name": "Suma de Fracciones Heterogéneas",
+        "latex": "\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd}",
+        "description": "Adición mediante común denominador."
+      }
+    ],
+    "examples": [
+      "$\\frac{1}{2} + \\frac{1}{3} = \\frac{3 + 2}{6} = \\frac{5}{6}$."
+    ],
+    "relatedEvidence": [
+      "A4.1",
+      "A4.2"
+    ]
+  },
+  {
+    "id": "mep-alg-ecuaciones-lineales-13",
+    "term": "Ecuaciones de Primer Grado con una Incógnita",
+    "domain": "functions",
+    "blockName": "Relaciones y Álgebra - Ecuaciones",
+    "definition": "Igualdades algebraicas de la forma $ax + b = c$ con incógnita $x$. Se resuelven despejando mediante operaciones inversas.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "7mo",
+    "formulas": [
+      {
+        "name": "Despeje de Ecuación Lineal",
+        "latex": "ax + b = c \\implies x = \\frac{c - b}{a} \\quad (a \\neq 0)",
+        "description": "Solución algebraica de la ecuación de primer grado."
+      }
+    ],
+    "examples": [
+      "$2x + 5 = 15 \\implies 2x = 10 \\implies x = 5$."
+    ],
+    "relatedEvidence": [
+      "A1.2"
+    ]
+  },
+  {
+    "id": "mep-alg-proporcionalidad-regla3-14",
+    "term": "Razones, Proporciones y Regla de Tres",
+    "domain": "functions",
+    "blockName": "Relaciones - Proporcionalidad",
+    "definition": "Relación constante entre magnitudes directamente o inversamente proporcionales, y aplicación de la regla de tres simple.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "primaria",
+    "formulas": [
+      {
+        "name": "Regla de Tres Directa",
+        "latex": "\\frac{a}{b} = \\frac{c}{x} \\implies x = \\frac{b \\cdot c}{a}",
+        "description": "Cálculo del término desconocido en proporción directa."
+      }
+    ],
+    "examples": [
+      "Si 3 cuadernos cuestan \text{₡}1500, 5 cuadernos cuestan $\\frac{5 \\cdot 1500}{3} = \text{₡}2500$."
+    ],
+    "relatedEvidence": [
+      "A1.3"
     ]
   }
 ]

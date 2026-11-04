@@ -7,19 +7,21 @@
  * 1. JSON Schema integrity for all atomic items in content/items/math/
  * 2. Visual spec payload parameters (zero static images, valid SVG/Canvas composites)
  * 3. Concept linkages against content/library/math/*_concepts.json
- * 4. Convocatoria blueprint integrity and 100% item reference resolution
+ * 4. Multi-program Convocatoria blueprint integrity and 100% item reference resolution across all manifest programs
+ * 5. Official specification table integrity across all programs
  */
 
 import fs from 'fs';
 import path from 'path';
 
 const ROOT_DIR = process.cwd();
+const MANIFEST_PATH = path.join(ROOT_DIR, 'content/manifest.json');
 const ITEMS_DIR = path.join(ROOT_DIR, 'content/items/math');
 const LIBRARY_DIR = path.join(ROOT_DIR, 'content/library/math');
-const BLUEPRINTS_DIR = path.join(ROOT_DIR, 'content/programs/bxm/matematica/convocatorias');
+const PROGRAMS_DIR = path.join(ROOT_DIR, 'content/programs');
 
 console.log('=====================================================');
-console.log('   MEP-EA-01 Content Registry & Asset Validator      ');
+console.log('   MEP-EA-01 Multi-Program Content & Asset Validator ');
 console.log('=====================================================\n');
 
 let errorCount = 0;
@@ -125,46 +127,87 @@ for (const sub of subdirs) {
 
 console.log(`[PASS] Validated ${itemsValidated} atomic items across ${subdirs.length} domains.`);
 
-// 3. Validate Convocatoria Blueprints
-if (fs.existsSync(BLUEPRINTS_DIR)) {
-  const blueprints = fs.readdirSync(BLUEPRINTS_DIR).filter((f) => f.endsWith('.json'));
-  for (const bpFile of blueprints) {
-    const bpPath = path.join(BLUEPRINTS_DIR, bpFile);
-    try {
-      const bp = JSON.parse(fs.readFileSync(bpPath, 'utf8'));
-      if (!bp.convocatoriaId || !bp.totalItems) {
-        console.error(`[ERROR] Blueprint ${bpFile}: missing convocatoriaId or totalItems.`);
-        errorCount++;
-      }
+// 3. Find and Validate All Convocatoria Blueprints Across Programs
+function findBlueprints(dir, list = []) {
+  if (!fs.existsSync(dir)) return list;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      findBlueprints(fullPath, list);
+    } else if (entry.isFile() && entry.name.endsWith('.json') && fullPath.includes('/convocatorias/')) {
+      list.push(fullPath);
+    }
+  }
+  return list;
+}
 
-      // Verify all pool item IDs exist in decoupled item bank
-      let missingInPool = 0;
-      (bp.itemPool || []).forEach((code) => {
-        if (!itemCodes.has(code)) {
-          missingInPool++;
-        }
-      });
+const allBlueprints = findBlueprints(PROGRAMS_DIR);
+console.log(`\nValidating ${allBlueprints.length} blueprints across all programs:`);
 
-      if (missingInPool > 0) {
-        console.error(`[ERROR] Blueprint ${bpFile}: ${missingInPool} items in itemPool not resolved in item bank!`);
-        errorCount++;
-      } else {
-        console.log(`[PASS] Blueprint ${bpFile}: all ${bp.itemPool.length} items verified in item bank.`);
-      }
-    } catch (err) {
-      console.error(`[ERROR] Failed to parse blueprint: ${bpFile}`, err);
+for (const bpPath of allBlueprints) {
+  const relPath = path.relative(ROOT_DIR, bpPath);
+  try {
+    const bp = JSON.parse(fs.readFileSync(bpPath, 'utf8'));
+    if (!bp.convocatoriaId || !bp.totalItems) {
+      console.error(`[ERROR] Blueprint ${relPath}: missing convocatoriaId or totalItems.`);
       errorCount++;
     }
+
+    if (bp.passingScore === undefined || (bp.passingScore !== 65 && bp.passingScore !== 70)) {
+      console.error(`[ERROR] Blueprint ${relPath}: invalid passingScore (${bp.passingScore}). Expected 65 or 70.`);
+      errorCount++;
+    }
+
+    if (bp.calculatorAllowed === undefined) {
+      console.error(`[ERROR] Blueprint ${relPath}: missing calculatorAllowed flag.`);
+      errorCount++;
+    }
+
+    // Verify all pool item IDs exist in decoupled item bank
+    let missingInPool = 0;
+    (bp.itemPool || []).forEach((code) => {
+      if (!itemCodes.has(code)) {
+        missingInPool++;
+      }
+    });
+
+    if (missingInPool > 0) {
+      console.error(`[ERROR] Blueprint ${relPath}: ${missingInPool} items in itemPool not resolved in item bank!`);
+      errorCount++;
+    } else {
+      console.log(`[PASS] Blueprint ${relPath}: all ${bp.itemPool.length} items verified in item bank.`);
+    }
+  } catch (err) {
+    console.error(`[ERROR] Failed to parse blueprint: ${relPath}`, err);
+    errorCount++;
   }
 }
 
+// 4. Validate Manifest Convocatoria References
+if (fs.existsSync(MANIFEST_PATH)) {
+  const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+  for (const prog of manifest.programs) {
+    for (const subj of prog.subjects) {
+      for (const convPath of subj.convocatorias || []) {
+        const fullConv = path.join(ROOT_DIR, 'content', convPath);
+        if (!fs.existsSync(fullConv)) {
+          console.error(`[ERROR] Manifest references nonexistent convocatoria: ${convPath}`);
+          errorCount++;
+        }
+      }
+    }
+  }
+  console.log(`[PASS] Manifest convocatoria blueprint references verified.`);
+}
+
 console.log('\n=====================================================');
-console.log(`Summary: ${itemsValidated} items validated | ${errorCount} errors | ${warningCount} warnings`);
+console.log(`Summary: ${itemsValidated} items | ${allBlueprints.length} blueprints | ${errorCount} errors | ${warningCount} warnings`);
 console.log('=====================================================');
 
 if (errorCount > 0) {
   process.exit(1);
 } else {
-  console.log('All content registry checks passed successfully!\n');
+  console.log('All content registry and multi-program checks passed successfully!\n');
   process.exit(0);
 }

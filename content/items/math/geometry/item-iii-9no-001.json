@@ -1,0 +1,39 @@
+{
+  "id": 242,
+  "code": "item-iii-9no-001",
+  "area": "Geometría",
+  "area_id": "geometry",
+  "topic": "Teorema de Pitágoras y Distancia",
+  "spec": {
+    "block": "ÁREA 2: Geometría",
+    "affirmation": "A1",
+    "affirmation_desc": "Aplica el Teorema de Pitágoras en triángulos y planos",
+    "evidence": "A1.1",
+    "evidence_desc": "Aplicar el teorema de Pitágoras en la resolución de problemas y cálculo de distancia entre dos puntos."
+  },
+  "concept_id": "mep-geo-teorema-pitagoras-12",
+  "program_applicability": [
+    "III_CICLO_9"
+  ],
+  "calculator_allowed": true,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "Una escalera de $10\\text{ m}$ de longitud se apoya contra una pared vertical. Si la base de la escalera está a $6\\text{ m}$ de la pared, ¿a qué altura del suelo llega la parte superior de la escalera?",
+  "options": {
+    "A": "$4\\text{ m}$",
+    "B": "$8\\text{ m}$",
+    "C": "$\\sqrt{136}\\text{ m}$",
+    "D": "$16\\text{ m}$"
+  },
+  "correct_answer": "B",
+  "solution_steps": [
+    "El suelo, la pared y la escalera forman un triángulo rectángulo donde la escalera es la hipotenusa ($c = 10$) y la distancia al suelo es un cateto ($a = 6$).",
+    "Aplicamos el teorema de Pitágoras: $a^2 + b^2 = c^2 \\implies 6^2 + b^2 = 10^2$.",
+    "$36 + b^2 = 100 \\implies b^2 = 64 \\implies b = 8\\text{ m}$.",
+    "Por lo tanto, la opción correcta es B."
+  ]
+}

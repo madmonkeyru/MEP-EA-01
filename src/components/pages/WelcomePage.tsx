@@ -130,7 +130,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
               <h4 className="font-semibold text-stone-900 dark:text-slate-100">Directriz de Calculadoras</h4>
               <p className="text-[11px] text-stone-600 dark:text-slate-400 mt-1 leading-snug">
                 En III Ciclo depende de la materia y nivel: Matemáticas de séptimo sin calculadora; octavo y noveno con calculadora sencilla. Ciencias admite científica no programable. Consulta las reglas específicas de EDAD y BXM.
-                Estrictamente prohibida en I y II Ciclo (CICO).
+                Estrictamente prohibida en I y II Ciclo.
               </p>
             </div>
           </div>

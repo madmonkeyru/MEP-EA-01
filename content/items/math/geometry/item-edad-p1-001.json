@@ -1,0 +1,40 @@
+{
+  "id": 244,
+  "code": "item-edad-p1-001",
+  "area": "Geometría",
+  "area_id": "geometry",
+  "topic": "Circunferencia y Posición Relativa",
+  "spec": {
+    "block": "1. Geometría",
+    "affirmation": "A3",
+    "affirmation_desc": "Resuelve problemas sobre relaciones de posición relativa",
+    "evidence": "A3.2",
+    "evidence_desc": "Determina si una recta dada gráfica o algebraicamente es secante, tangente o exterior a una circunferencia en diversos contextos."
+  },
+  "concept_id": "mep-geo-posicion-recta-05",
+  "program_applicability": [
+    "EDAD_PARTE_1",
+    "BXM"
+  ],
+  "calculator_allowed": true,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "Considere la circunferencia $C$ dada por $x^2 + y^2 = 16$ y la recta dada por $y = 4$. Con respecto a $C$, la recta corresponde a una",
+  "options": {
+    "A": "recta tangente",
+    "B": "recta secante",
+    "C": "recta exterior",
+    "D": "recta oblicua sin puntos de corte"
+  },
+  "correct_answer": "A",
+  "solution_steps": [
+    "La circunferencia tiene centro en $(0,0)$ y radio $r = \\sqrt{16} = 4$.",
+    "La recta horizontal $y = 4$ pasa exactamente a una distancia de $4$ unidades del centro $(0,0)$.",
+    "Dado que la distancia del centro a la recta es igual al radio ($d = r = 4$), la recta interseca a la circunferencia en un único punto $(0,4)$ y por lo tanto es tangente.",
+    "Por lo tanto, la opción correcta es A."
+  ]
+}

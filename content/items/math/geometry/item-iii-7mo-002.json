@@ -1,0 +1,41 @@
+{
+  "id": 239,
+  "code": "item-iii-7mo-002",
+  "area": "Geometría",
+  "area_id": "geometry",
+  "topic": "Propiedades de Triángulos y Desigualdad",
+  "spec": {
+    "block": "ÁREA 2: Geometría",
+    "affirmation": "A1",
+    "affirmation_desc": "Identifica conceptos geométricos básicos y propiedades de triángulos",
+    "evidence": "A1.2",
+    "evidence_desc": "Aplicar la desigualdad triangular y suma de medidas de ángulos internos de un triángulo (180°)."
+  },
+  "concept_id": "mep-geo-angulos-triangulos-13",
+  "program_applicability": [
+    "III_CICLO_7"
+  ],
+  "calculator_allowed": false,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "¿Cuál de las siguientes ternas de números puede corresponder a las longitudes de los lados de un triángulo según la desigualdad triangular?",
+  "options": {
+    "A": "$3\\text{ cm},\\; 4\\text{ cm},\\; 8\\text{ cm}$",
+    "B": "$5\\text{ cm},\\; 6\\text{ cm},\\; 12\\text{ cm}$",
+    "C": "$4\\text{ cm},\\; 7\\text{ cm},\\; 9\\text{ cm}$",
+    "D": "$2\\text{ cm},\\; 3\\text{ cm},\\; 5\\text{ cm}$"
+  },
+  "correct_answer": "C",
+  "solution_steps": [
+    "Por la desigualdad triangular, la suma de las longitudes de cualesquiera dos lados debe ser estrictamente mayor que el tercer lado.",
+    "En A: $3 + 4 = 7 < 8$ (no forma triángulo).",
+    "En B: $5 + 6 = 11 < 12$ (no forma triángulo).",
+    "En D: $2 + 3 = 5 = 5$ (no es estrictamente mayor, no forma triángulo).",
+    "En C: $4 + 7 = 11 > 9$, $4 + 9 = 13 > 7$ y $7 + 9 = 16 > 4$ (cumple para todos los lados).",
+    "Por lo tanto, la opción correcta es C."
+  ]
+}

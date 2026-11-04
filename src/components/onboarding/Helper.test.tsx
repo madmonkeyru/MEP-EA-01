@@ -48,7 +48,7 @@ describe('optional guide and resources', () => {
 
   it('round trips helper links and maps prototype program and level identifiers', () => {
     for (const view of ['guide', 'helper'] as const) expect(readRoute(routeHash({ view }))).toEqual({ view });
-    expect(readRoute(routeHash(helperProgramRoute('i-ii'))).programId).toBe('cico');
+    expect(readRoute(routeHash(helperProgramRoute('i-ii'))).programId).toBe('i_ii_ciclo');
     expect(readRoute(routeHash(helperProgramRoute('iii', '9'))).moduleId).toBe('III_CICLO_9');
     expect(readRoute(routeHash(helperProgramRoute('edad', '11'))).moduleId).toBe('EDAD_2');
   });

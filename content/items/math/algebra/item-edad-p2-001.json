@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "code": "item-edad-p2-001",
+  "area": "Relaciones y Álgebra",
+  "area_id": "functions",
+  "topic": "Función Inversa",
+  "spec": {
+    "block": "2. Relaciones y Álgebra",
+    "affirmation": "A1",
+    "affirmation_desc": "Resuelve problemas relacionados con la función inversa y sus propiedades",
+    "evidence": "A1.2",
+    "evidence_desc": "Determina gráfica o algebraicamente el criterio de la función inversa."
+  },
+  "concept_id": "mep-alg-funcion-inversa-06",
+  "program_applicability": [
+    "EDAD_PARTE_2",
+    "BXM"
+  ],
+  "calculator_allowed": true,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "Sea $f: \\mathbb{R} \\to \\mathbb{R}$ la función biyectiva con criterio $f(x) = 3x - 5$. El criterio de su función inversa $f^{-1}(x)$ corresponde a",
+  "options": {
+    "A": "$f^{-1}(x) = \\frac{x - 5}{3}$",
+    "B": "$f^{-1}(x) = \\frac{x + 5}{3}$",
+    "C": "$f^{-1}(x) = 3x + 5$",
+    "D": "$f^{-1}(x) = \\frac{1}{3x - 5}$"
+  },
+  "correct_answer": "B",
+  "solution_steps": [
+    "Para hallar el criterio de la inversa, hacemos $y = 3x - 5$ y despejamos $x$.",
+    "$y + 5 = 3x \\implies x = \\frac{y + 5}{3}$.",
+    "Intercambiamos variables: $f^{-1}(x) = \\frac{x + 5}{3}$.",
+    "Por lo tanto, la opción correcta es B."
+  ]
+}

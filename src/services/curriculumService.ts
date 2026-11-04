@@ -6,7 +6,13 @@
  * Tablas de Especificaciones and available item repositories.
  */
 
-import { OfficialSpecTable, OfficialSpecBlock, OfficialSpecAffirmation, OFFICIAL_SPEC_BXM_MATH_02_2026 } from '../types/officialSpecs';
+import {
+  OfficialSpecTable,
+  OfficialSpecBlock,
+  OfficialSpecAffirmation,
+  OFFICIAL_SPEC_BXM_MATH_02_2026,
+  ALL_OFFICIAL_SPECS,
+} from '../types/officialSpecs';
 import { Item, PracticeConfig } from '../types';
 import { dataService } from './dataService';
 
@@ -41,8 +47,9 @@ class CurriculumService {
   private specTablesMap: Map<string, OfficialSpecTable> = new Map();
 
   constructor() {
-    this.specTablesMap.set('bxm-matematicas-02-2026', OFFICIAL_SPEC_BXM_MATH_02_2026);
-    this.specTablesMap.set('bxm-matematica-02-2026', OFFICIAL_SPEC_BXM_MATH_02_2026);
+    Object.entries(ALL_OFFICIAL_SPECS).forEach(([k, table]) => {
+      this.specTablesMap.set(k, table);
+    });
   }
 
   public registerSpecTable(table: OfficialSpecTable): void {
@@ -53,8 +60,13 @@ class CurriculumService {
   public getSpecTable(
     programId: string = 'bxm',
     subjectId: string = 'matematicas',
-    convocatoriaId: string = '02-2026'
+    convocatoriaId: string = '02-2026',
+    subprogramId?: string
   ): OfficialSpecTable | undefined {
+    if (subprogramId) {
+      const subKey = `${programId}-${subprogramId}-${subjectId}-${convocatoriaId}`;
+      if (this.specTablesMap.has(subKey)) return this.specTablesMap.get(subKey);
+    }
     const key = `${programId}-${subjectId}-${convocatoriaId}`;
     return this.specTablesMap.get(key) || OFFICIAL_SPEC_BXM_MATH_02_2026;
   }

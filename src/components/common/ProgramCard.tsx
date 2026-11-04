@@ -42,12 +42,12 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         <h3 className="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors font-['Outfit']">
           {program.name}
         </h3>
-        <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300 mt-0.5">{program.id === 'cico' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
+        <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300 mt-0.5">{program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
         <p className="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">
           {program.description}
         </p>
 
-        <p className="muted mt-3 text-xs leading-relaxed">{program.id === 'cico' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
+        <p className="muted mt-3 text-xs leading-relaxed">{program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
         {/* Metadata Details */}
         <div className="mt-4 pt-3 border-t border-[var(--border-subtle,#e7e2d8)] dark:border-[var(--border-subtle,#3d3733)] grid grid-cols-2 gap-2 text-[11px] font-semibold">
           <div className="flex items-center gap-1.5 text-stone-700 dark:text-stone-300">
