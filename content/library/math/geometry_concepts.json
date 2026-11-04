@@ -5,7 +5,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "Lugar geométrico de todos los puntos del plano cartesiano que equidistan de un punto fijo denominado centro $(h, k)$ a una distancia constante llamada radio $r > 0$.",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -14,8 +17,14 @@
         "description": "Representación algebraica con centro en $(h, k)$ y radio $r$."
       }
     ],
-    "examples": ["Para centro $(3, -2)$ y radio $r = 5$, la ecuación es $(x - 3)^2 + (y + 2)^2 = 25$."],
-    "relatedEvidence": ["A1.1", "A1.2", "A1.3"]
+    "examples": [
+      "Para centro $(3, -2)$ y radio $r = 5$, la ecuación es $(x - 3)^2 + (y + 2)^2 = 25$."
+    ],
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2",
+      "A1.3"
+    ]
   },
   {
     "id": "mep-geo-centro-radio-02",
@@ -23,7 +32,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "El centro es el punto $(h, k)$ desde el cual se mide la distancia hacia cualquier punto de la circunferencia. El radio $r$ representa dicha distancia fija. El diámetro es $d = 2r$.",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -32,8 +44,13 @@
         "description": "Distancia euclidiana del centro al contorno."
       }
     ],
-    "examples": ["Si la ecuación es $(x + 4)^2 + y^2 = 16$, el centro es $(-4, 0)$ y el radio es $4$."],
-    "relatedEvidence": ["A1.1", "A1.2"]
+    "examples": [
+      "Si la ecuación es $(x + 4)^2 + y^2 = 16$, el centro es $(-4, 0)$ y el radio es $4$."
+    ],
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2"
+    ]
   },
   {
     "id": "mep-geo-traslacion-03",
@@ -41,7 +58,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "Transformación rígida que desplaza el centro $(h, k)$ mediante un vector horizontal ($a$) y vertical ($b$), obteniendo el nuevo centro $(h+a, k+b)$ manteniendo invariante el radio.",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -50,8 +70,13 @@
         "description": "Desplazamiento horizontal en $a$ y vertical en $b$."
       }
     ],
-    "examples": ["Mover $(x - 1)^2 + (y - 2)^2 = 9$ tres unidades a la derecha y dos hacia abajo genera $(x - 4)^2 + y^2 = 9$."],
-    "relatedEvidence": ["A2.1", "A2.2"]
+    "examples": [
+      "Mover $(x - 1)^2 + (y - 2)^2 = 9$ tres unidades a la derecha y dos hacia abajo genera $(x - 4)^2 + y^2 = 9$."
+    ],
+    "relatedEvidence": [
+      "A2.1",
+      "A2.2"
+    ]
   },
   {
     "id": "mep-geo-posicion-punto-04",
@@ -59,7 +84,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "Clasificación de un punto $P(x_0, y_0)$ según su distancia al centro respecto al radio: Interior ($d < r$), Sobre la circunferencia ($d = r$), o Exterior ($d > r$).",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -68,7 +96,9 @@
         "description": "Comparación directa con el radio al cuadrado."
       }
     ],
-    "relatedEvidence": ["A3.1"]
+    "relatedEvidence": [
+      "A3.1"
+    ]
   },
   {
     "id": "mep-geo-posicion-recta-05",
@@ -76,7 +106,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "Intersección entre recta $y = mx + b$ y la circunferencia: Secante (2 puntos, $\\Delta > 0$), Tangente (1 punto, $\\Delta = 0$) o Exterior (0 puntos, $\\Delta < 0$).",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -85,7 +118,10 @@
         "description": "Solución de la ecuación cuadrática de intersección."
       }
     ],
-    "relatedEvidence": ["A3.2", "A3.3"]
+    "relatedEvidence": [
+      "A3.2",
+      "A3.3"
+    ]
   },
   {
     "id": "mep-geo-rectas-paralelas-perp-06",
@@ -93,7 +129,11 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Geometría Analítica",
     "definition": "Dos rectas son Paralelas si $m_1 = m_2$ y Perpendiculares si el producto de sus pendientes es $-1$ ($m_1 \\cdot m_2 = -1$).",
-    "programModules": ["III_CICLO_9", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -102,7 +142,9 @@
         "description": "Relación métrica angular entre rectas."
       }
     ],
-    "relatedEvidence": ["A3.4"]
+    "relatedEvidence": [
+      "A3.4"
+    ]
   },
   {
     "id": "mep-geo-poligono-regular-07",
@@ -110,7 +152,11 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Polígonos",
     "definition": "Figura plana con $n$ lados congruentes y ángulos congruentes. Sus elementos son radio $r$, apotema $a$, ángulo central y perímetro $P = n \\cdot l$.",
-    "programModules": ["III_CICLO_8", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_8",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -119,7 +165,9 @@
         "description": "Fórmulas elementales de polígonos regulares."
       }
     ],
-    "relatedEvidence": ["A4.1"]
+    "relatedEvidence": [
+      "A4.1"
+    ]
   },
   {
     "id": "mep-geo-poligono-irregular-08",
@@ -127,7 +175,10 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Polígonos",
     "definition": "Cálculo del área mediante descomposición en triángulos/rectángulos o la fórmula de Gauss de las coordenadas cartesianas.",
-    "programModules": ["EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -136,7 +187,10 @@
         "description": "Determinante matricial de vértices."
       }
     ],
-    "relatedEvidence": ["A4.2", "A4.3"]
+    "relatedEvidence": [
+      "A4.2",
+      "A4.3"
+    ]
   },
   {
     "id": "mep-geo-cuerpos-3d-09",
@@ -144,7 +198,11 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Visualización Espacial",
     "definition": "Cuerpos de revolución tridimensionales. Los cortes paralelos y oblicuos generan círculos o elipses.",
-    "programModules": ["III_CICLO_9", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -153,7 +211,12 @@
         "description": "Teorema de Pitágoras en cortes esféricos."
       }
     ],
-    "relatedEvidence": ["A5.1", "A5.2", "A5.3", "A5.4"]
+    "relatedEvidence": [
+      "A5.1",
+      "A5.2",
+      "A5.3",
+      "A5.4"
+    ]
   },
   {
     "id": "mep-geo-transformaciones-10",
@@ -161,7 +224,12 @@
     "domain": "geometry",
     "blockName": "1. Geometría - Transformaciones en el Plano",
     "definition": "Mapeos geométricos en el plano cartesiano que preservan formas o dimensiones.",
-    "programModules": ["III_CICLO_7", "III_CICLO_8", "EDAD_PARTE_1", "BXM"],
+    "programModules": [
+      "III_CICLO_7",
+      "III_CICLO_8",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -170,7 +238,12 @@
         "description": "Escalamiento respecto a centro $O$ y factor $k$."
       }
     ],
-    "relatedEvidence": ["A7.1", "A7.2", "A7.3", "A7.4"]
+    "relatedEvidence": [
+      "A7.1",
+      "A7.2",
+      "A7.3",
+      "A7.4"
+    ]
   },
   {
     "id": "mep-geo-primaria-perimetro-area-11",
@@ -178,7 +251,9 @@
     "domain": "geometry",
     "blockName": "Geometría Elemental",
     "definition": "Medición del contorno y superficie de triángulos, cuadriláteros y polígonos básicos sin uso de calculadora.",
-    "programModules": ["I_II_CICLO"],
+    "programModules": [
+      "I_II_CICLO"
+    ],
     "calculatorAllowed": false,
     "formulas": [
       {
@@ -187,6 +262,134 @@
         "description": "Cálculo manual y mental de áreas."
       }
     ],
-    "examples": ["Un rectángulo de base $6\\text{ cm}$ y altura $4\\text{ cm}$ tiene área $24\\text{ cm}^2$."]
+    "examples": [
+      "Un rectángulo de base $6\\text{ cm}$ y altura $4\\text{ cm}$ tiene área $24\\text{ cm}^2$."
+    ]
+  },
+  {
+    "id": "mep-geo-teorema-pitagoras-12",
+    "term": "Teorema de Pitágoras y Distancia entre Puntos",
+    "domain": "geometry",
+    "blockName": "Geometría - Triángulos y Pitágoras",
+    "definition": "En todo triángulo rectángulo, el cuadrado de la longitud de la hipotenusa es igual a la suma de los cuadrados de los catetos ($c^2 = a^2 + b^2$).",
+    "programModules": [
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
+    "calculatorAllowed": true,
+    "gradeLevel": "9no",
+    "formulas": [
+      {
+        "name": "Teorema de Pitágoras",
+        "latex": "a^2 + b^2 = c^2 \\implies c = \\sqrt{a^2 + b^2}",
+        "description": "Relación métrica fundamental en triángulos rectángulos."
+      },
+      {
+        "name": "Distancia entre dos puntos",
+        "latex": "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+        "description": "Distancia euclídea entre $(x_1, y_1)$ y $(x_2, y_2)$."
+      }
+    ],
+    "examples": [
+      "Catetos $3$ y $4$: hipotenusa $c = \\sqrt{3^2 + 4^2} = 5$."
+    ],
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2"
+    ]
+  },
+  {
+    "id": "mep-geo-angulos-triangulos-13",
+    "term": "Propiedades de Triángulos, Desigualdad Triangular y Ángulos",
+    "domain": "geometry",
+    "blockName": "Geometría Básica - Triángulos",
+    "definition": "La suma de las medidas de los ángulos internos de un triángulo es $180^\\circ$. La desigualdad triangular establece que cualquier lado es menor que la suma de los otros dos.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "7mo",
+    "formulas": [
+      {
+        "name": "Suma de ángulos internos",
+        "latex": "\\alpha + \\beta + \\gamma = 180^\\circ",
+        "description": "Suma angular interna en geometría euclidiana plana."
+      },
+      {
+        "name": "Desigualdad triangular",
+        "latex": "a < b + c, \\quad b < a + c, \\quad c < a + b",
+        "description": "Condición métrica de existencia de un triángulo."
+      }
+    ],
+    "examples": [
+      "Un triángulo con ángulos $50^\\circ$ y $70^\\circ$ tiene tercer ángulo $60^\\circ$."
+    ],
+    "relatedEvidence": [
+      "A1.2"
+    ]
+  },
+  {
+    "id": "mep-geo-solidos-primaria-14",
+    "term": "Cuerpos Sólidos: Cubos, Prismas, Cilindros y Conos",
+    "domain": "geometry",
+    "blockName": "Geometría del Espacio",
+    "definition": "Identificación de poliedros (cubos, prismas rectos, pirámides) y cuerpos redondos (cilindros, conos, esferas) junto con sus elementos: caras, aristas, vértices y bases.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8",
+      "III_CICLO_9"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "primaria",
+    "formulas": [
+      {
+        "name": "Volumen del Prisma Rectangular",
+        "latex": "V = l \\cdot w \\cdot h",
+        "description": "Producto de largo, ancho y altura."
+      }
+    ],
+    "examples": [
+      "Un cubo tiene 6 caras cuadradas congruentes, 12 aristas y 8 vértices."
+    ],
+    "relatedEvidence": [
+      "A2.1",
+      "A2.2"
+    ]
+  },
+  {
+    "id": "mep-geo-circunferencia-primaria-15",
+    "term": "Elementos de la Circunferencia y Círculo",
+    "domain": "geometry",
+    "blockName": "Geometría Plana - Círculo",
+    "definition": "Identificación de elementos de la circunferencia: centro, radio, diámetro, cuerda y arco, y estimación de perímetro y área con $\\pi$.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "primaria",
+    "formulas": [
+      {
+        "name": "Longitud de la Circunferencia",
+        "latex": "C = 2\\pi r = \\pi d",
+        "description": "Perímetro del círculo con radio $r$ o diámetro $d$."
+      },
+      {
+        "name": "Área del Círculo",
+        "latex": "A = \\pi r^2",
+        "description": "Superficie encerrada por la circunferencia."
+      }
+    ],
+    "examples": [
+      "Para radio $r = 5$, la longitud es $10\\pi$."
+    ],
+    "relatedEvidence": [
+      "A1.2",
+      "A3.2"
+    ]
   }
 ]

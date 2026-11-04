@@ -1,0 +1,38 @@
+{
+  "id": 240,
+  "code": "item-iii-8vo-001",
+  "area": "Geometría",
+  "area_id": "geometry",
+  "topic": "Homotecias y Transformaciones en el Plano",
+  "spec": {
+    "block": "ÁREA 2: Geometría",
+    "affirmation": "A1",
+    "affirmation_desc": "Aplica homotecias y criterios de semejanza",
+    "evidence": "A1.1",
+    "evidence_desc": "Reconocer puntos, ángulos y lados homólogos bajo una homotecia en el plano."
+  },
+  "concept_id": "mep-geo-transformaciones-10",
+  "program_applicability": [
+    "III_CICLO_8"
+  ],
+  "calculator_allowed": true,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "Al aplicar una homotecia con centro en el origen $(0,0)$ y razón $k = 3$ al punto $P(2, -4)$, se obtiene como punto homólogo $P'$ correspondiente a",
+  "options": {
+    "A": "$(6, -12)$",
+    "B": "$(5, -1)$",
+    "C": "$\\left(\\frac{2}{3}, -\\frac{4}{3}\\right)$",
+    "D": "$(-6, 12)$"
+  },
+  "correct_answer": "A",
+  "solution_steps": [
+    "La regla de transformación para una homotecia centrada en el origen con razón $k$ es $(x', y') = (k \\cdot x, k \\cdot y)$.",
+    "Multiplicamos cada coordenada por $k = 3$: $x' = 3(2) = 6$ e $y' = 3(-4) = -12$.",
+    "El punto resultante es $P'(6, -12)$. Por lo tanto, la opción correcta es A."
+  ]
+}

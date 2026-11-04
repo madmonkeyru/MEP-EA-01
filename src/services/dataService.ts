@@ -173,7 +173,9 @@ class DataService {
   }
 
   public getCurrentProgram(): ProgramInfo | undefined {
-    return this.manifest.programs.find((p) => p.id === this.currentProgramId);
+    return this.manifest.programs.find(
+      (p) => p.id === this.currentProgramId || (p.id === 'i_ii_ciclo' && this.currentProgramId === 'cico')
+    );
   }
 
   public getCurrentSubprogramId(): string | undefined {
@@ -234,13 +236,14 @@ class DataService {
     subprogramId?: string,
     convocatoriaId?: string
   ): Promise<void> {
-    const program = this.manifest.programs.find((p) => p.id === programId);
+    const normalizedProgramId = programId === 'cico' ? 'i_ii_ciclo' : programId;
+    const program = this.manifest.programs.find((p) => p.id === normalizedProgramId || (p.id === 'i_ii_ciclo' && programId === 'cico'));
     if (!program) {
       console.warn(`Program ${programId} not found`);
       return;
     }
 
-    this.currentProgramId = programId;
+    this.currentProgramId = program.id;
     this.currentSubprogramId = subprogramId;
     this.currentConvocatoriaId = convocatoriaId || '2026-c1';
 
@@ -250,7 +253,8 @@ class DataService {
   }
 
   public async loadSubject(programId: string, subjectId: string): Promise<void> {
-    const program = this.manifest.programs.find((p) => p.id === programId);
+    const normalizedProgramId = programId === 'cico' ? 'i_ii_ciclo' : programId;
+    const program = this.manifest.programs.find((p) => p.id === normalizedProgramId || (p.id === 'i_ii_ciclo' && programId === 'cico'));
     if (!program) throw new Error(`Program ${programId} not found`);
 
     const subject = program.subjects.find((s) => s.id === subjectId);

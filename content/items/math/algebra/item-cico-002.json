@@ -1,0 +1,39 @@
+{
+  "id": 234,
+  "code": "item-cico-002",
+  "area": "Números",
+  "area_id": "functions",
+  "topic": "Teoría de Números y Divisibilidad",
+  "spec": {
+    "block": "B1- Números",
+    "affirmation": "A2",
+    "affirmation_desc": "Resuelve problemas de teoría de números",
+    "evidence": "A2.2",
+    "evidence_desc": "Determina si un número natural es divisible por 2, 3, 5 o 10 aplicando reglas de divisibilidad."
+  },
+  "concept_id": "mep-alg-racionales-fracciones-12",
+  "program_applicability": [
+    "I_II_CICLO"
+  ],
+  "calculator_allowed": false,
+  "cognitive_level": "conexion",
+  "difficulty_tier": 2,
+  "historical_convocatoria": [
+    "2026-c1",
+    "2026-c2"
+  ],
+  "stem": "¿Cuál de los siguientes números es divisible simultáneamente por $3$ y por $5$?",
+  "options": {
+    "A": "$145$",
+    "B": "$230$",
+    "C": "$315$",
+    "D": "$410$"
+  },
+  "correct_answer": "C",
+  "solution_steps": [
+    "Un número es divisible por $5$ si termina en $0$ o en $5$. Todas las opciones cumplen esta regla.",
+    "Un número es divisible por $3$ si la suma de sus dígitos es múltiplo de $3$.",
+    "Analizamos $315$: $3 + 1 + 5 = 9$, y $9$ es divisible por $3$.",
+    "Por lo tanto, $315$ es divisible simultáneamente por $3$ y por $5$ (opción C)."
+  ]
+}

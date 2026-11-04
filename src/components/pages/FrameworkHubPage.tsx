@@ -68,7 +68,7 @@ export function FrameworkHubPage({ program, route, onNavigate }: {
       <p className="text-sm text-stone-600 dark:text-slate-400">{program.id === 'edad'
         ? 'Parte 1 (Décimo) → Parte 2 (Undécimo). Aprobar la Parte 1 es requisito para inscribir la Parte 2 de esa materia; puedes estudiar ambas sin verificar matrícula aquí.'
         : program.id === 'iii_ciclo' ? 'Séptimo → Octavo → Noveno: cada nivel reúne seis materias. Puedes consultar los PDF de cada etapa.'
-        : program.id === 'cico' ? 'Cinco pruebas por suficiencia para completar la primaria. Matemáticas se evalúa sin calculadora.'
+        : program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Cinco pruebas por suficiencia para completar la primaria. Matemáticas se evalúa sin calculadora.'
         : 'Una prueba por asignatura. En Ciencias, elige Biología, Física o Química; en Idioma, elige tu opción.'}</p>
     </section>
     <section aria-label="Asignaturas del programa" className="space-y-4">

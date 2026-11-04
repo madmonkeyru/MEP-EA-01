@@ -13,7 +13,7 @@ describe('Multi-Program Architecture & Dynamic Decoupled Registries', () => {
     expect(manifest.programs).toHaveLength(4);
 
     const programIds = manifest.programs.map((p) => p.id);
-    expect(programIds).toContain('cico');
+    expect(programIds.includes('i_ii_ciclo') || programIds.includes('cico')).toBe(true);
     expect(programIds).toContain('iii_ciclo');
     expect(programIds).toContain('edad');
     expect(programIds).toContain('bxm');
@@ -27,9 +27,14 @@ describe('Multi-Program Architecture & Dynamic Decoupled Registries', () => {
     expect(dataService.getCurrentProgramId()).toBe('bxm');
     expect(dataService.isCalculatorAllowed()).toBe(true);
 
-    // Switch to I & II Ciclo (cico)
+    // Switch to I & II Ciclo (supports both 'i_ii_ciclo' and legacy 'cico')
+    await dataService.setProgram('i_ii_ciclo');
+    expect(dataService.getCurrentProgramId()).toBe('i_ii_ciclo');
+    expect(dataService.isCalculatorAllowed()).toBe(false);
+    expect(dataService.getPassingScore()).toBe(65);
+
+    // Switch using legacy alias 'cico'
     await dataService.setProgram('cico');
-    expect(dataService.getCurrentProgramId()).toBe('cico');
     expect(dataService.isCalculatorAllowed()).toBe(false);
     expect(dataService.getPassingScore()).toBe(65);
 

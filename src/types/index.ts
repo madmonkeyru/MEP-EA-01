@@ -1,7 +1,7 @@
 export type StandardDomainArea = 'geometry' | 'functions' | 'statistics';
 export type DomainArea = StandardDomainArea | string;
 
-export type ProgramId = 'cico' | 'iii_ciclo' | 'edad' | 'bxm' | string;
+export type ProgramId = 'i_ii_ciclo' | 'cico' | 'iii_ciclo' | 'edad' | 'bxm' | string;
 
 export type ProgramModuleTag =
   | 'I_II_CICLO'

@@ -5,7 +5,12 @@
     "domain": "statistics",
     "blockName": "3. Estadística y Probabilidad - Resumen de Datos",
     "definition": "Valores de tendencia central: Media $\\bar{x}$, Mediana $Me$, Moda $Mo$ y Media Ponderada $\\bar{x}_w = \\frac{\\sum x_i w_i}{\\sum w_i}$.",
-    "programModules": ["III_CICLO_7", "EDAD_PARTE_1", "EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "III_CICLO_7",
+      "EDAD_PARTE_1",
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -14,7 +19,13 @@
         "description": "Cálculo ponderado por pesos de evaluación."
       }
     ],
-    "relatedEvidence": ["A1.1", "A1.2", "A1.3", "A1.4", "A1.5"]
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2",
+      "A1.3",
+      "A1.4",
+      "A1.5"
+    ]
   },
   {
     "id": "mep-est-eventos-probabilidad-02",
@@ -22,7 +33,13 @@
     "domain": "statistics",
     "blockName": "3. Estadística y Probabilidad - Probabilidades",
     "definition": "Subconjuntos del espacio muestral con operaciones de unión, intersección y complemento.",
-    "programModules": ["III_CICLO_8", "III_CICLO_9", "EDAD_PARTE_1", "EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "III_CICLO_8",
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -31,7 +48,13 @@
         "description": "Probabilidad total para eventos no disjuntos."
       }
     ],
-    "relatedEvidence": ["A2.1", "A2.2", "A2.3", "A2.4", "A2.5"]
+    "relatedEvidence": [
+      "A2.1",
+      "A2.2",
+      "A2.3",
+      "A2.4",
+      "A2.5"
+    ]
   },
   {
     "id": "mep-est-diagrama-cajas-ric-03",
@@ -39,7 +62,10 @@
     "domain": "statistics",
     "blockName": "3. Estadística y Probabilidad - Análisis Comparativo",
     "definition": "Resumen gráfico de 5 puntos (Mín, $Q_1$, $Me$, $Q_3$, Máx). El $RIC = Q_3 - Q_1$ mide la dispersión del 50% central.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -48,7 +74,10 @@
         "description": "Rango entre el tercer y primer cuartil."
       }
     ],
-    "relatedEvidence": ["A3.1", "A3.2"]
+    "relatedEvidence": [
+      "A3.1",
+      "A3.2"
+    ]
   },
   {
     "id": "mep-est-posicion-relativa-cv-04",
@@ -56,7 +85,10 @@
     "domain": "statistics",
     "blockName": "3. Estadística y Probabilidad - Medidas Relativas",
     "definition": "Posición Relativa $P_r = \\frac{x - \\bar{x}}{\\sigma}$ y Coeficiente de Variación $C_v = \\frac{\\sigma}{\\bar{x}} \\cdot 100\\%$ para comparar grupos heterogéneos.",
-    "programModules": ["EDAD_PARTE_2", "BXM"],
+    "programModules": [
+      "EDAD_PARTE_2",
+      "BXM"
+    ],
     "calculatorAllowed": true,
     "formulas": [
       {
@@ -65,7 +97,9 @@
         "description": "Puntaje Z estandarizado y dispersión relativa percentil."
       }
     ],
-    "relatedEvidence": ["A3.3"]
+    "relatedEvidence": [
+      "A3.3"
+    ]
   },
   {
     "id": "mep-est-primaria-tablas-graficos-05",
@@ -73,7 +107,9 @@
     "domain": "statistics",
     "blockName": "Estadística Elemental",
     "definition": "Recolección, conteo y representación gráfica de datos cualitativos y discretos elementales.",
-    "programModules": ["I_II_CICLO"],
+    "programModules": [
+      "I_II_CICLO"
+    ],
     "calculatorAllowed": false,
     "formulas": [
       {
@@ -81,6 +117,66 @@
         "latex": "f_i = \\text{Número de veces que aparece el dato}",
         "description": "Conteo elemental sin cálculo avanzado."
       }
+    ]
+  },
+  {
+    "id": "mep-est-probabilidad-clasica-06",
+    "term": "Probabilidad Clásica y Espacio Muestral",
+    "domain": "statistics",
+    "blockName": "Probabilidad - Regla de Laplace",
+    "definition": "En experimentos con resultados equiprobables, la probabilidad de un evento $A$ es el cociente entre el número de casos favorables y el número total de casos posibles: $P(A) = \\frac{\\#A}{\\#\\Omega}$.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8",
+      "III_CICLO_9",
+      "EDAD_PARTE_1",
+      "BXM"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "primaria",
+    "formulas": [
+      {
+        "name": "Regla de Laplace",
+        "latex": "P(A) = \\frac{\\text{Resultados favorables}}{\\text{Total de resultados posibles}}",
+        "description": "Probabilidad de un evento en espacio muestral equiprobable."
+      }
+    ],
+    "examples": [
+      "La probabilidad de obtener un 5 al lanzar un dado de 6 caras es $\\frac{1}{6}$."
+    ],
+    "relatedEvidence": [
+      "A1.3",
+      "A2.1"
+    ]
+  },
+  {
+    "id": "mep-est-estadistica-conceptos-07",
+    "term": "Unidad Estadística, Variables, Población y Muestra",
+    "domain": "statistics",
+    "blockName": "Estadística Descriptiva - Conceptos Fundamentales",
+    "definition": "Definición y clasificación de variables cuantitativas (discretas y continuas) y cualitativas (nominales y ordinales), y distinción entre población y muestra representativa.",
+    "programModules": [
+      "I_II_CICLO",
+      "III_CICLO_7",
+      "III_CICLO_8",
+      "III_CICLO_9"
+    ],
+    "calculatorAllowed": false,
+    "gradeLevel": "7mo",
+    "formulas": [
+      {
+        "name": "Media Aritmética Simple",
+        "latex": "\\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}",
+        "description": "Promedio de un conjunto de $n$ datos numéricos."
+      }
+    ],
+    "examples": [
+      "El número de hermanos es variable cuantitativa discreta; la estatura es cuantitativa continua."
+    ],
+    "relatedEvidence": [
+      "A1.1",
+      "A1.2"
     ]
   }
 ]

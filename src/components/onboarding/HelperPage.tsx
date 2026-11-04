@@ -8,7 +8,7 @@ import { OfficialResources } from '../knowledge/OfficialResources';
 import { dataService } from '../../services/dataService';
 
 export function helperProgramRoute(program: ProgramId, level?: LevelId): AppRoute {
-  return { view: 'framework', programId: program === 'i-ii' ? 'cico' : program === 'iii' ? 'iii_ciclo' : program,
+  return { view: 'framework', programId: program === 'i-ii' ? 'i_ii_ciclo' : program === 'iii' ? 'iii_ciclo' : program,
     moduleId: program === 'iii' ? `III_CICLO_${level || '7'}` : program === 'edad' ? (level === '11' ? 'EDAD_2' : 'EDAD_1') : undefined,
     convocatoriaId: '2026-c2' };
 }
@@ -18,10 +18,10 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
   const [program, setProgram] = useState<ProgramId>(() => {
     if (wizard.program && wizard.program !== 'unsure') return wizard.program;
     const active = route?.programId || dataService.getCurrentProgramId();
-    return active === 'cico' ? 'i-ii' : active === 'iii_ciclo' ? 'iii' : active === 'edad' ? 'edad' : 'bxm';
+    return (active === 'cico' || active === 'i_ii_ciclo') ? 'i-ii' : active === 'iii_ciclo' ? 'iii' : active === 'edad' ? 'edad' : 'bxm';
   });
 
-  useEffect(() => { const id = route?.programId; if (id) setProgram(id === 'cico' ? 'i-ii' : id === 'iii_ciclo' ? 'iii' : id === 'edad' ? 'edad' : 'bxm'); }, [route?.programId]);
+  useEffect(() => { const id = route?.programId; if (id) setProgram((id === 'cico' || id === 'i_ii_ciclo') ? 'i-ii' : id === 'iii_ciclo' ? 'iii' : id === 'edad' ? 'edad' : 'bxm'); }, [route?.programId]);
   const copy = PROGRAMS[program];
   const button = 'min-h-11 px-4 py-3 rounded-xl font-semibold text-sm cursor-pointer';
 
@@ -40,7 +40,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
     <section className="space-y-4" aria-labelledby="helper-programs">
       <h2 id="helper-programs" className="text-xl font-semibold">Conoce tus opciones</h2>
       <div className="flex flex-wrap gap-2" aria-label="Programa para consultar">
-        {PROGRAM_ORDER.map(id => <button key={id} aria-pressed={program === id} onClick={() => { setProgram(id); const query = new URLSearchParams(window.location.hash.split('?')[1]); query.set('programa', id === 'i-ii' ? 'cico' : id === 'iii' ? 'iii_ciclo' : id); for (const key of ['buscar', 'materiaFiltro', 'nivelFiltro', 'tipo']) query.delete(key); window.history.replaceState(null, '', '#/ayuda?' + query); }} className={`${button} ${program === id ? 'bg-indigo-600 text-white' : 'ui-surface'}`}>{PROGRAMS[id].name}</button>)}
+        {PROGRAM_ORDER.map(id => <button key={id} aria-pressed={program === id} onClick={() => { setProgram(id); const query = new URLSearchParams(window.location.hash.split('?')[1]); query.set('programa', id === 'i-ii' ? 'i_ii_ciclo' : id === 'iii' ? 'iii_ciclo' : id); for (const key of ['buscar', 'materiaFiltro', 'nivelFiltro', 'tipo']) query.delete(key); window.history.replaceState(null, '', '#/ayuda?' + query); }} className={`${button} ${program === id ? 'bg-indigo-600 text-white' : 'ui-surface'}`}>{PROGRAMS[id].name}</button>)}
       </div>
       <button className="secondary-button" onClick={() => { wizard.selectProgram(program); onNavigate({ view: 'guide' }); }}>Orientarme sobre {copy.name}</button>
       <article className="ui-surface p-5 sm:p-7 rounded-2xl space-y-4">
@@ -60,7 +60,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <p className="text-sm text-muted">Simulación de 60 ítems, práctica por área o tema, explicaciones, especificaciones, diccionario y fórmulas. Las demás rutas de la plataforma están en vista previa.</p>
         <button className={`${button} bg-indigo-600 text-white`} onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Abrir Matemáticas BXM</button>
       </div>
-      <OfficialResources key={program} programId={program === 'i-ii' ? 'cico' : program === 'iii' ? 'iii_ciclo' : program} subjectId={route?.subjectId} moduleId={route?.moduleId} />
+      <OfficialResources key={program} programId={program === 'i-ii' ? 'i_ii_ciclo' : program === 'iii' ? 'iii_ciclo' : program} subjectId={route?.subjectId} moduleId={route?.moduleId} />
     </section>
 
     <IssueDraft />

@@ -1,6 +1,6 @@
 import assets, { sizes } from 'virtual:official-resources';
 export const normalizeSearch = (value: string) => value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-const programFolders: Record<string, string> = { 'I&II CICLO': 'cico', 'III CICLO': 'iii_ciclo', EDAD: 'edad', BXM: 'bxm' };
+const programFolders: Record<string, string> = { 'I&II CICLO': 'i_ii_ciclo', 'III CICLO': 'iii_ciclo', EDAD: 'edad', BXM: 'bxm' };
 const subjects: [string, string, RegExp][] = [
   ['matematicas', 'Matemáticas', /matematic/], ['estudios-sociales', 'Estudios Sociales', /est.*soc|estudios.social/], ['formacion-ciudadana', 'Formación Ciudadana', /formacion|ciudadana/], ['educacion-civica', 'Educación Cívica', /civica/], ['biologia', 'Biología', /biologia/], ['fisica', 'Física', /fisica/], ['quimica', 'Química', /quimica/], ['ciencias', 'Ciencias', /ciencias/], ['espanol', 'Español', /espanol/], ['ingles', 'Inglés', /ingles/], ['frances', 'Francés', /frances/],
 ];
