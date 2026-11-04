@@ -5,6 +5,7 @@ import { calculatorRule } from '../../services/learningSession';
 import { AppRoute, routeHash } from '../../services/navigation';
 import { Breadcrumbs } from '../common/Breadcrumbs';
 import { CustomSelect } from '../common/CustomSelect';
+import { ProgramSchedulesOverview } from '../knowledge/ProgramSchedulesOverview';
 
 export const hubPanel = 'ui-surface rounded-2xl p-5 sm:p-6 space-y-4';
 export const hubButton = 'px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm cursor-pointer';
@@ -72,6 +73,10 @@ export function FrameworkHubPage({ program, route, onNavigate }: {
         : program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Cinco pruebas por suficiencia para completar la primaria. Matemáticas se evalúa sin calculadora.'
         : 'Una prueba por asignatura. En Ciencias, elige Biología, Física o Química; en Idioma, elige tu opción.'}</p>
     </section>
+
+    {/* Multiprogram DGEC Schedule Overview */}
+    <ProgramSchedulesOverview />
+
     <section aria-label="Asignaturas del programa" className="space-y-4">
       <h2 className="text-xl font-semibold">Elige una asignatura</h2>
       <p className="text-sm text-stone-600 dark:text-slate-400">Matemáticas BXM tiene prácticas disponibles en 02-2026. Las demás rutas permiten explorar su estructura.</p>

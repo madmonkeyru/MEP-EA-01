@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, BookOpen, Compass } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, FileText, CheckCircle2 } from 'lucide-react';
 import { AppRoute, routeHash } from '../../services/navigation';
 import { PROGRAMS, PROGRAM_LEVELS, PROGRAM_SUBJECTS, subjectLabel } from '../../services/onboarding/catalog';
 import { PROGRAM_ORDER, type ProgramId, type LevelId } from '../../services/onboarding/types';
@@ -29,13 +29,115 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
     <header className="page-intro rounded-3xl p-6 sm:p-8 space-y-4">
       <p className="text-xs uppercase tracking-widest font-semibold text-indigo-600 dark:text-indigo-300">A tu ritmo · Sin registro</p>
       <h1 tabIndex={-1} className="text-3xl sm:text-4xl font-semibold">Guía y recursos</h1>
-      <p className="max-w-2xl text-muted">Explora los programas y sus materiales sin responder preguntas. Si necesitas orientación, la guía te ayuda a organizar una ruta y tus trámites. Es completamente opcional.</p>
+      <p className="max-w-2xl text-muted">Te ayudamos a orientar qué programa oficial de Educación Abierta se adapta a tu situación académica, qué requisitos y formularios presentar ante el MEP, y cómo planificar tu estudio.</p>
       <div className="flex flex-wrap gap-3">
         <button className={`${button} bg-indigo-600 text-white flex items-center gap-2`} onClick={() => onNavigate({ view: 'guide' })}><Compass size={18} />{wizard.program ? 'Continuar mi guía' : 'Comenzar guía opcional'}</button>
         <button className={`${button} ui-muted-button`} onClick={() => onNavigate({ view: 'welcome' })}>Omitir e ir a programas</button>
       </div>
       <p className="text-xs text-muted">Las respuestas se conservan solo durante esta sesión de la página. No se envían al MEP ni se guardan en un perfil.</p>
     </header>
+
+    {/* Actionable Next Steps / Advice Card */}
+    <section className="rounded-3xl border border-indigo-200 bg-indigo-50/40 dark:border-indigo-900/60 dark:bg-indigo-950/20 p-6 sm:p-8 space-y-4">
+      <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-bold text-sm">
+        <CheckCircle2 className="size-4" />
+        <span>Ruta de Acción Recomendada</span>
+      </div>
+      <h2 className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
+        ¿Qué debes hacer para matricular y prepararte con éxito?
+      </h2>
+      <div className="grid sm:grid-cols-3 gap-4 pt-1">
+        <div className="rounded-2xl border border-stone-200/80 bg-white dark:border-stone-800 dark:bg-stone-900 p-4 space-y-2">
+          <span className="flex size-7 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-bold text-xs">
+            1
+          </span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Verifica tu elegibilidad</h3>
+          <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Revisa si requieres convalidación formal de materias de colegio tradicional o si puedes ingresar directamente a BXM / EDAD.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-stone-200/80 bg-white dark:border-stone-800 dark:bg-stone-900 p-4 space-y-2">
+          <span className="flex size-7 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-bold text-xs">
+            2
+          </span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Prepara formularios DGEC</h3>
+          <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Ten a mano el comprobante de arancel (₡8,000 por prueba), documento de identidad vigente y certificación de estudios previos.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-stone-200/80 bg-white dark:border-stone-800 dark:bg-stone-900 p-4 space-y-2">
+          <span className="flex size-7 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-bold text-xs">
+            3
+          </span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Ensaya con la Prueba Oficial Libre</h3>
+          <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Realiza el examen de práctica de 60 preguntas de referencia MEP para evaluar tu nivel sin costo ni límites.
+          </p>
+        </div>
+      </div>
+      <div className="pt-2 flex flex-wrap gap-3">
+        <button
+          className="px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs transition hover:bg-indigo-700"
+          onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}
+        >
+          Iniciar Prueba Oficial BXM (Gratis)
+        </button>
+        <button
+          className="px-4 py-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 font-bold text-xs transition hover:bg-stone-50"
+          onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: 'temario' })}
+        >
+          Explorar Temario Digital BXM
+        </button>
+      </div>
+    </section>
+
+    {/* Official Forms Identification */}
+    <section className="space-y-4" aria-labelledby="official-forms-title">
+      <h2 id="official-forms-title" className="text-xl font-semibold flex items-center gap-2">
+        <FileText size={20} className="text-indigo-600 dark:text-indigo-400" />
+        <span>Formularios y Trámites DGEC Oficiales</span>
+      </h2>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="ui-surface rounded-2xl p-5 space-y-2">
+          <div className="flex items-center justify-between">
+            <h3 className="font-bold text-sm">Formulario de Matrícula (F-01)</h3>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
+              Yo Aplico
+            </span>
+          </div>
+          <p className="text-xs text-muted leading-relaxed">
+            Se gestiona en línea a través de la plataforma <strong>Yo Aplico</strong> del MEP durante las fechas oficiales de inscripción de cada convocatoria.
+          </p>
+          <div className="pt-2">
+            <a
+              href="https://portaldgec.mep.go.cr/yo_aplico/Login"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-indigo-600 dark:text-indigo-400 underline font-semibold"
+            >
+              Ir a Portal Yo Aplico →
+            </a>
+          </div>
+        </div>
+
+        <div className="ui-surface rounded-2xl p-5 space-y-2">
+          <div className="flex items-center justify-between">
+            <h3 className="font-bold text-sm">Pago de Arancel (Derechos de Examen)</h3>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
+              ₡8,000 / materia
+            </span>
+          </div>
+          <p className="text-xs text-muted leading-relaxed">
+            Debe cancelarse en las cuentas oficiales del MEP (Banco Nacional de Costa Rica) indicando tu número de cédula y código del programa.
+          </p>
+          <div className="pt-2">
+            <span className="text-xs text-stone-500 dark:text-stone-400">
+              Conserva el comprobante digital para adjuntarlo en la matrícula.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section className="space-y-4" aria-labelledby="helper-programs">
       <h2 id="helper-programs" className="text-xl font-semibold">Conoce tus opciones</h2>

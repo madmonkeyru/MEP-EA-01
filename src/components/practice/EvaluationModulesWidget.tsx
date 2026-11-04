@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { DifficultyTier, DomainArea, PracticeConfig, PracticeMode } from '../../types';
 import { dataService } from '../../services/dataService';
 import { knowledgeService } from '../../services/knowledgeService';
 import { storageService } from '../../services/storageService';
+import { subscriptionService, type SubscriptionTier } from '../../services/subscriptionService';
 import { prepareItems, modeLabel, isExam } from '../../services/learningSession';
 import { Dialog } from '../common/Dialog';
 import { CustomSelect } from '../common/CustomSelect';
-import { Compass } from 'lucide-react';
+import { PaywallModal } from '../common/PaywallModal';
+import { Compass, Sparkles, ShieldCheck } from 'lucide-react';
 
 export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, initialMode = 'area' }: { initialMode?: PracticeMode; onStartSimulation: () => void; onStartPractice: (config: PracticeConfig) => void }) {
   const [goal, setGoal] = useState<'diagnostic' | 'practice' | 'exam'>(initialMode === 'simulation' || initialMode === 'dynamic_mock' ? 'exam' : initialMode === 'diagnostic' ? 'diagnostic' : 'practice');
@@ -21,6 +23,14 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   const [minutes, setMinutes] = useState(30);
   const [error, setError] = useState('');
   const [preflight, setPreflight] = useState<PracticeConfig | null>(null);
+  const [paywallOpen, setPaywallOpen] = useState(false);
+  const [paywallFeature, setPaywallFeature] = useState({ title: '', desc: '' });
+  const [tier, setTier] = useState<SubscriptionTier>(subscriptionService.getTier());
+
+  useEffect(() => {
+    return subscriptionService.subscribe(newTier => setTier(newTier));
+  }, []);
+
   const all = dataService.getAllItems();
   const concepts = knowledgeService.getTerms().filter(term => all.some(item => item.concept_id === term.id || item.linked_concepts?.includes(term.id)));
 
@@ -62,12 +72,37 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     }
   };
 
-  const selectMode = (next: PracticeMode) => { setMode(next); setError(''); };
+  const triggerPaywall = (title: string, desc: string) => {
+    setPaywallFeature({ title, desc });
+    setPaywallOpen(true);
+  };
+
+  const selectMode = (next: PracticeMode) => {
+    if (next === 'dynamic_mock' && tier !== 'premium') {
+      triggerPaywall('Simulacro Ponderado MEP Pro', 'Simula la distribución exacta de 23 ítems de Geometría, 25 de Álgebra y 12 de Estadística combinando todo el banco.');
+      return;
+    }
+    setMode(next);
+    setError('');
+  };
 
   function start() {
     if (!eligible || (mode === 'concept_drilldown' && !concept)) { setError('Elige una selección con preguntas disponibles.'); return; }
     if (config.enableTimer && (!Number.isFinite(config.timerDurationMinutes) || config.timerDurationMinutes < 5 || config.timerDurationMinutes > 180)) { setError('El tiempo debe ser de 5 a 180 minutos.'); return; }
     if (isExam(config) && actual < 60) { setError('No hay 60 preguntas disponibles para esta simulación. Cambia el conjunto.'); return; }
+
+    // If attempting premium modes while on free tier, guide user to upgrade
+    if (tier !== 'premium') {
+      if (mode === 'dynamic_mock') {
+        triggerPaywall('Simulacro Ponderado MEP Pro', 'Combina 23 ítems de Geometría, 25 de Álgebra y 12 de Estadística.');
+        return;
+      }
+      if (mode === 'concept_drilldown') {
+        triggerPaywall('Refuerzo de Conceptos Pro', 'Practica preguntas asociadas a conceptos y teoremas matemáticos clave.');
+        return;
+      }
+    }
+
     const ready = { ...config, itemCount: actual };
 
     if (mode === 'diagnostic') {
@@ -80,15 +115,15 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   }
 
   const simulationOptions = [
-    { value: 'simulation', label: 'Prueba completa de referencia', description: 'Simula el examen 02-2026 oficial (60 preguntas)' },
-    { value: 'dynamic_mock', label: 'Distribución curricular: 23 / 25 / 12', description: 'Ponderado oficial MEP (60 preguntas)' },
+    { value: 'simulation', label: 'Prueba completa de referencia (Gratis)', description: 'Simula el examen 02-2026 oficial (60 preguntas - Acceso Libre)' },
+    { value: 'dynamic_mock', label: 'Distribución curricular: 23 / 25 / 12 (PRO)', description: 'Ponderado oficial MEP (60 preguntas combinadas)' },
   ];
 
   const practiceModeOptions = [
     { value: 'area', label: 'Área temática', description: 'Geometría, Álgebra o Estadística' },
     { value: 'topic', label: 'Tema específico', description: 'Práctica focalizada por tema' },
     { value: 'random_practice', label: 'Preguntas variadas', description: 'Mezcla aleatoria' },
-    { value: 'concept_drilldown', label: 'Concepto clave', disabled: !concepts.length, description: !concepts.length ? 'Sin preguntas vinculadas' : 'Refuerzo de conceptos' },
+    { value: 'concept_drilldown', label: 'Concepto clave (PRO)', disabled: !concepts.length, description: !concepts.length ? 'Sin preguntas vinculadas' : 'Refuerzo de conceptos' },
   ];
 
   const setOptions = [
@@ -122,8 +157,21 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
             ¿Cómo quieres estudiar hoy?
           </h2>
           <p className="text-sm text-stone-600 dark:text-stone-400 mt-0.5">
-            Elige un objetivo para comenzar. Te recomendamos iniciar con un diagnóstico rápido.
+            Elige un objetivo para comenzar. Tienes acceso libre a la prueba oficial completa de referencia (60 ítems).
           </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {tier === 'premium' ? (
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+              <Sparkles className="size-3.5" />
+              <span>Modo Pro Activo</span>
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+              <ShieldCheck className="size-3.5 text-emerald-600" />
+              <span>1 Prueba Oficial Libre</span>
+            </span>
+          )}
         </div>
       </div>
 
@@ -186,7 +234,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
               />
             </label>
             <p className="text-sm text-stone-600 dark:text-stone-300">
-              60 preguntas · 150 minutos · Sin respuestas ni explicaciones durante el intento.
+              60 preguntas · 150 minutos · Sin respuestas ni explicaciones durante el intento. Intentos ilimitados en la prueba oficial de referencia.
             </p>
           </>
         )}
@@ -198,7 +246,13 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
                 label="Organizar práctica por"
                 value={mode}
                 options={practiceModeOptions}
-                onChange={val => selectMode(val as PracticeMode)}
+                onChange={val => {
+                  if (val === 'concept_drilldown' && tier !== 'premium') {
+                    triggerPaywall('Refuerzo por Concepto Clave Pro', 'Practica directamente con teoremas y conceptos matemáticos con explicaciones profundas.');
+                  } else {
+                    selectMode(val as PracticeMode);
+                  }
+                }}
               />
             </label>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -254,7 +308,10 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
                   { value: '2', label: 'Nivel 2 · Intermedio' },
                   { value: '3', label: 'Nivel 3 · Avanzado' },
                 ]}
-                onChange={value => { setDifficulty(value === 'all' ? undefined : Number(value) as DifficultyTier); setError(''); }}
+                onChange={value => {
+                  setDifficulty(value === 'all' ? undefined : Number(value) as DifficultyTier);
+                  setError('');
+                }}
               />
             </label>
             <label>Cantidad de preguntas
@@ -313,6 +370,13 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
           </button>
         </Dialog>
       )}
+
+      <PaywallModal
+        isOpen={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        featureTitle={paywallFeature.title}
+        featureDescription={paywallFeature.desc}
+      />
     </section>
   );
 }
