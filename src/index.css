@@ -334,6 +334,13 @@ select option:disabled { color: var(--text-muted); }
 @media (forced-colors: active) { select:not([multiple]) { appearance: auto; background-image: none; padding-right: .95rem; } .theme-toggle-thumb { border: 1px solid ButtonText; } }
 .group-visual-card { background: var(--surface) !important; color: var(--text-primary) !important; border: 1px solid var(--visual-grid) !important; }
 .group-visual-card h3, .group-visual-card > div { color: inherit !important; border-color: var(--visual-grid) !important; }
-@media (max-width: 640px) { .exam-header .primary-button, .exam-header .secondary-button { padding: .6rem .75rem; } .app-header nav { width: 100%; justify-content: space-between; } }
+@media (max-width: 640px) {
+  :root { --app-header-height: 64px; }
+  .exam-header .primary-button, .exam-header .secondary-button { padding: .5rem .65rem; min-height: 38px; }
+  .app-header nav { width: 100%; justify-content: space-between; gap: 0.35rem; }
+  .app-header .brand-link { gap: 0.5rem; }
+  .app-header .brand-logo { width: 42px; height: 34px; }
+  .page-width { width: calc(100% - 1.25rem); }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 @media print { .app-header, .exam-header, button, .skip-link, nav, .resume-banner { display: none !important; } .app-shell { background: white; color: black; } .ui-surface { box-shadow: none; } .page-width { width: 100%; } }

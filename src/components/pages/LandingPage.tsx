@@ -1,4 +1,5 @@
 import { PreparationPathView } from "../curriculum/PreparationPathView";
+import { DigitalTemarioView } from "../curriculum/DigitalTemarioView";
 import { useState } from 'react';
 import type { PracticeConfig, User } from '../../types';
 import { storageService } from '../../services/storageService';
@@ -13,6 +14,7 @@ import { SpecsTable } from '../knowledge/SpecsTable';
 import { TermsDictionary } from '../knowledge/TermsDictionary';
 import { FormulasSheet } from '../knowledge/FormulasSheet';
 import { OfficialResources } from '../knowledge/OfficialResources';
+import { DynamicMilestoneBanner } from '../knowledge/DynamicMilestoneBanner';
 import { GenericSubjectHubPage } from './GenericSubjectHubPage';
 
 interface SubjectHubPageProps {
@@ -38,9 +40,34 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
   function change(tab: string, resourceTab?: string) { if (onNavigate) navigate({ ...context, tab, resourceTab: resourceTab || context.resourceTab }); else { setLocalTab(tab); if (resourceTab) setLocalResource(resourceTab); } }
   return <div className="subject-hub-page page-width py-8 space-y-6" data-revision={revision}>
     <Breadcrumbs items={[{ label: 'Programas', href: '#/programas' }, { label: program?.name || 'BXM', href: routeHash({ ...context, view: 'framework', subjectId: undefined }), onClick: onNavigateHome }, { label: 'Matemáticas' }]} />
-    <header className="page-intro p-6 sm:p-8 rounded-3xl space-y-4"><p className="eyebrow">Práctica interactiva disponible</p><h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1><p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>{contextControls}</header>
-    <Tabs label="Secciones de Matemáticas" value={tab} onChange={value => change(value)} items={[{ id: 'practice', label: 'Práctica y simulación' }, { id: 'resources', label: 'Recursos' }, { id: 'path', label: 'Ruta de estudio' }, { id: 'progress', label: 'Mi progreso' }]}>
-      {tab === 'path' ? <PreparationPathView programId={context.programId || 'bxm'} subjectId={context.subjectId || 'matematicas'} convocatoriaId={context.convocatoriaId || '02-2026'} onStartQuiz={onStartPractice} />
+    <header className="page-intro p-6 sm:p-8 rounded-3xl space-y-4">
+      <p className="eyebrow">Práctica interactiva disponible</p>
+      <h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1>
+      <p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>
+      {contextControls}
+    </header>
+
+    {/* Dynamic MEP Milestones Banner */}
+    <DynamicMilestoneBanner
+      programId="bxm"
+      convocatoriaId={context.convocatoriaId || '2026-c2'}
+      subjectFilter="Matemáticas"
+    />
+
+    <Tabs
+      label="Secciones de Matemáticas"
+      value={tab}
+      onChange={value => change(value)}
+      items={[
+        { id: 'practice', label: 'Práctica y simulación' },
+        { id: 'resources', label: 'Recursos' },
+        { id: 'temario', label: 'Temario Digital' },
+        { id: 'path', label: 'Ruta de estudio' },
+        { id: 'progress', label: 'Mi progreso' },
+      ]}
+    >
+      {tab === 'temario' ? <DigitalTemarioView onStartQuiz={onStartPractice} />
+      : tab === 'path' ? <PreparationPathView programId={context.programId || 'bxm'} subjectId={context.subjectId || 'matematicas'} convocatoriaId={context.convocatoriaId || '02-2026'} onStartQuiz={onStartPractice} />
       : tab === 'practice' ? <div className="grid lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,1fr)] gap-6 items-start"><EvaluationModulesWidget onStartPractice={onStartPractice} onStartSimulation={onStartSimulation} /><aside className="ui-surface rounded-2xl p-6 space-y-4"><h2 className="text-xl font-semibold">Tu próximo paso</h2><p>{comparable.length ? 'Última simulación completa: ' + comparable[0].scorePercentage + '%.' : 'Aún sin datos de simulación. Puedes empezar con una práctica corta y sin tiempo.'}</p><p className="muted">Las prácticas de aprendizaje y las simulaciones se muestran por separado. El resultado no predice una nota oficial.</p><button className="secondary-button" onClick={() => change('progress')}>Ver historial de este perfil</button><button className="secondary-button" onClick={() => change('resources', 'pdf')}>Buscar materiales oficiales</button></aside></div>
       : tab === 'resources' ? <Tabs label="Tipo de recurso" value={resource} onChange={value => change('resources', value)} items={[{ id: 'pdf', label: 'PDF oficiales' }, { id: 'specs', label: 'Temario' }, { id: 'terms', label: 'Diccionario' }, { id: 'formulas', label: 'Fórmulas' }]}>
         {resource === 'pdf' ? <OfficialResources programId="bxm" subjectId="matematicas" /> : resource === 'specs' ? <SpecsTable onStartPracticeByItems={onStartPracticeByItems} onOpenLesson={() => change('path')} /> : resource === 'terms' ? <TermsDictionary onPractice={onStartPractice} /> : <FormulasSheet />}
