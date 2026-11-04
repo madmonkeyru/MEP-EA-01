@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import type { DomainArea, PracticeConfig, PracticeMode } from '../../types';
+import { useState } from 'react';
+import type { DifficultyTier, DomainArea, PracticeConfig, PracticeMode } from '../../types';
 import { dataService } from '../../services/dataService';
 import { knowledgeService } from '../../services/knowledgeService';
 import { storageService } from '../../services/storageService';
@@ -15,6 +15,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   const [topic, setTopic] = useState('all');
   const [set, setSet] = useState('all');
   const [concept, setConcept] = useState('');
+  const [difficulty, setDifficulty] = useState<DifficultyTier>();
   const [count, setCount] = useState<number | 'all'>(initialMode === 'diagnostic' ? 8 : 10);
   const [timed, setTimed] = useState(false);
   const [minutes, setMinutes] = useState(30);
@@ -32,12 +33,17 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     area: mode === 'area' || mode === 'topic' ? area : undefined,
     topic: mode === 'topic' ? topic : undefined,
     conceptId: mode === 'concept_drilldown' ? concept : undefined,
+    difficultyTier: goal === 'practice' ? difficulty : undefined,
     itemCount: isExam({ mode } as PracticeConfig) ? 60 : mode === 'diagnostic' ? 8 : count,
     enableTimer: isExam({ mode } as PracticeConfig) || timed,
     timerDurationMinutes: isExam({ mode } as PracticeConfig) ? 150 : minutes
   };
   // Counts are calculated without repeatedly shuffling the random practice pool.
-  const eligible = useMemo(() => prepareItems({ ...config, mode: mode === 'random_practice' ? 'area' : mode, itemCount: 'all', area: mode === 'random_practice' ? undefined : config.area }).length, [mode, area, topic, set, concept, all.length]);
+  const eligible = mode === 'concept_drilldown' && !concept ? 0 : prepareItems({
+    ...config,
+    mode: mode === 'random_practice' ? 'area' : mode,
+    itemCount: 'all',
+  }).length;
   const actual = Math.min(config.itemCount === 'all' ? eligible : config.itemCount, eligible);
 
   const selectGoal = (nextGoal: 'diagnostic' | 'practice' | 'exam') => {
@@ -238,6 +244,19 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
                 />
               </label>
             )}
+            <label>Dificultad
+              <CustomSelect
+                label="Dificultad"
+                value={difficulty === undefined ? 'all' : String(difficulty)}
+                options={[
+                  { value: 'all', label: 'Todos los niveles' },
+                  { value: '1', label: 'Nivel 1 · Básico' },
+                  { value: '2', label: 'Nivel 2 · Intermedio' },
+                  { value: '3', label: 'Nivel 3 · Avanzado' },
+                ]}
+                onChange={value => { setDifficulty(value === 'all' ? undefined : Number(value) as DifficultyTier); setError(''); }}
+              />
+            </label>
             <label>Cantidad de preguntas
               <CustomSelect
                 label="Cantidad de preguntas"

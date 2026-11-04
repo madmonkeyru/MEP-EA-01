@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, ChevronDown, ChevronRight, Compass, Flame, Play, Target } from 'lucide-react';
 import { curriculumService, PreparationBlockPath } from '../../services/curriculumService';
+import { TextRenderer } from '../common/TextRenderer';
 import { PracticeConfig } from '../../types';
 
 interface PreparationPathViewProps {
@@ -49,6 +50,26 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
           </div>
         </div>
       </div>
+
+      {programId === 'bxm' && <article className="ui-surface rounded-2xl p-6 space-y-3">
+        <h2 className="text-xl font-semibold">Del centro y el radio a la ecuación</h2>
+        <p>Geometría · Evidencia A1.2. Escribe la ecuación de una circunferencia a partir de su centro y su radio.</p>
+        <p>Todos los puntos de la circunferencia están a la misma distancia del centro. Eleva al cuadrado la distancia para obtener la ecuación.</p>
+        <TextRenderer content={String.raw`$(x-h)^2+(y-k)^2=r^2$`} />
+        <p>Ejemplo. Para el centro (−3, 2) y el radio 4, sustituye las coordenadas del centro y eleva el radio al cuadrado.</p>
+        <TextRenderer content={String.raw`$(x+3)^2+(y-2)^2=16$`} />
+        <div className="action-row">
+          <button className="primary-button" onClick={() => onStartQuiz({
+            mode: 'area', title: 'Comprobación A1.2 · Circunferencia', itemIds: [1], itemCount: 1,
+            enableTimer: false, timerDurationMinutes: 0,
+          })}>Responder comprobación</button>
+          <button className="secondary-button" onClick={() => onStartQuiz({
+            mode: 'area', title: 'Aplicar la ecuación de la circunferencia', itemIds: [2], itemCount: 1,
+            enableTimer: false, timerDurationMinutes: 0,
+          })}>Practicar en contexto</button>
+        </div>
+        <p className="text-sm muted">Consulta tus resultados en Mi progreso.</p>
+      </article>}
 
       {/* Blocks Accordion Stack */}
       <div className="space-y-4">

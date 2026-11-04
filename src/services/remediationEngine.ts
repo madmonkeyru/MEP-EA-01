@@ -1,10 +1,12 @@
 import type { TestSession, Item } from '../types';
 import { storageService } from './storageService';
 
+type RemediationDomain = 'numbers' | 'geometry' | 'measurement' | 'algebra' | 'statistics';
+
 export interface ConceptRemediationItem {
   conceptId: string;
   conceptName: string;
-  domain: 'geometry' | 'algebra' | 'statistics';
+  domain: RemediationDomain;
   totalQuestions: number;
   incorrectQuestions: number;
   accuracyPercentage: number;
@@ -14,7 +16,7 @@ export interface ConceptRemediationItem {
 }
 
 export interface DomainRemediationSummary {
-  domain: 'geometry' | 'algebra' | 'statistics';
+  domain: RemediationDomain;
   label: string;
   totalQuestions: number;
   incorrectQuestions: number;
@@ -35,8 +37,10 @@ export interface RemediationPlan {
   suggestedNextSteps: string[];
 }
 
-const DOMAIN_LABELS: Record<'geometry' | 'algebra' | 'statistics', string> = {
+const DOMAIN_LABELS: Record<RemediationDomain, string> = {
+  numbers: 'Números',
   geometry: 'Geometría',
+  measurement: 'Medidas',
   algebra: 'Relaciones y Álgebra',
   statistics: 'Estadística y Probabilidad',
 };
@@ -63,7 +67,8 @@ const FORMULA_SHEETS_MAP: Record<string, string[]> = {
   'est-cond': ['Probabilidad de eventos: Regla de la suma $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$'],
 };
 
-function resolveDomain(item: Item): 'geometry' | 'algebra' | 'statistics' {
+function resolveDomain(item: Item): RemediationDomain {
+  if (item.area_id === 'numbers' || item.area_id === 'measurement') return item.area_id;
   const code = (item.code || String(item.id) || '').toLowerCase();
   if (code.includes('geo') || item.area_id === 'geometry') return 'geometry';
   if (code.includes('alg') || code.includes('fun') || item.area_id === 'functions') return 'algebra';
@@ -87,6 +92,8 @@ function resolveConceptName(conceptId: string): string {
     'est-prob': 'Reglas Fundamentales de Probabilidad',
     'est-cond': 'Eventos Compuestos y Probabilidad Condicional',
   };
+  if (conceptId === 'numbers-general') return DOMAIN_LABELS.numbers;
+  if (conceptId === 'measurement-general') return DOMAIN_LABELS.measurement;
   return map[conceptId] || `Concepto clave (${conceptId})`;
 }
 
@@ -101,15 +108,17 @@ export function generateRemediationPlan(session: TestSession): RemediationPlan {
   // Group items by concept
   const conceptMap = new Map<string, {
     conceptId: string;
-    domain: 'geometry' | 'algebra' | 'statistics';
+    domain: RemediationDomain;
     total: number;
     incorrect: number;
     itemIds: number[];
   }>();
 
   // Group items by domain
-  const domainMap: Record<'geometry' | 'algebra' | 'statistics', { total: number; incorrect: number }> = {
+  const domainMap: Record<RemediationDomain, { total: number; incorrect: number }> = {
+    numbers: { total: 0, incorrect: 0 },
     geometry: { total: 0, incorrect: 0 },
+    measurement: { total: 0, incorrect: 0 },
     algebra: { total: 0, incorrect: 0 },
     statistics: { total: 0, incorrect: 0 },
   };
@@ -184,7 +193,10 @@ export function generateRemediationPlan(session: TestSession): RemediationPlan {
   const topPriorityDrilldowns = weakConcepts.filter((c) => c.priority === 'high' || c.priority === 'medium');
 
   // Domain summaries
-  const domainSummaries: DomainRemediationSummary[] = (['geometry', 'algebra', 'statistics'] as const).map((dom) => {
+  const domains: RemediationDomain[] = ['geometry', 'algebra', 'statistics'];
+  if (domainMap.numbers.total) domains.unshift('numbers');
+  if (domainMap.measurement.total) domains.splice(domains.indexOf('geometry') + 1, 0, 'measurement');
+  const domainSummaries: DomainRemediationSummary[] = domains.map((dom) => {
     const domData = domainMap[dom];
     const acc = domData.total > 0 ? Math.round(((domData.total - domData.incorrect) / domData.total) * 100) : 0;
     let status: 'critical' | 'needs_reinforcement' | 'mastered' = 'mastered';

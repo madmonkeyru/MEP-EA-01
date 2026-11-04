@@ -54,7 +54,7 @@ export function ResultsPage({
   const attempts = storageService.getAttempts().filter(a => a.userId === session.userId && a.mode === session.config.mode && (a.scopeKey === scopeKey(session.config) || (!a.scopeKey && !session.config.programId))).slice(0, 10);
   const visible = items.filter(item => filter === 'all' || (filter === 'correct' ? correct(item) : filter === 'pending' ? !answered(item) : answered(item) && !correct(item)));
   const missed = items.filter(item => !correct(item));
-  const domains = ['geometry', 'functions', 'statistics'].map(area => { const pool = items.filter(item => item.area_id === area); return { area, total: pool.length, correct: pool.filter(correct).length }; }).filter(d => d.total);
+  const domains = ['numbers', 'geometry', 'measurement', 'functions', 'statistics'].map(area => { const pool = items.filter(item => item.area_id === area); return { area, total: pool.length, correct: pool.filter(correct).length }; }).filter(d => d.total);
   const weakest = [...domains].sort((a, b) => a.correct / a.total - b.correct / b.total)[0];
   const current = selected !== null ? items[selected] : null;
   const open = (index: number) => { setSelected(index); setRevealed(false); };
@@ -160,7 +160,7 @@ export function ResultsPage({
               Practicar {missed.length} preguntas por reforzar
             </button>
           )}
-          <a className="text-link text-sm font-semibold" href="#/ayuda?programa=bxm">
+          <a className="text-link text-sm font-semibold" href={'#/ayuda?programa=' + (session.config.programId || 'bxm')}>
             Consultar guías y fórmulas de {areaLabel(weakest.area)} →
           </a>
         </div>
@@ -183,7 +183,11 @@ export function ResultsPage({
         <p className="muted">Antes de revelar la solución, intenta resolver la pregunta de nuevo en tu cuaderno.</p>
         <div className="space-y-3">{options(current.options).map(option => <div key={option.letter} className={`answer-option ${revealed && current.correct_answer === option.letter ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/30' : ''}`}><strong>{option.letter}</strong><div className="flex-1 overflow-x-auto"><TextRenderer content={option.text} /></div>{session.responses[current.id]?.selectedOption === option.letter && <span>Tu respuesta</span>}{revealed && current.correct_answer === option.letter && <span>✓ Correcta</span>}</div>)}</div>
         <button className="secondary-button" aria-expanded={revealed} aria-controls="solution-review" onClick={() => setRevealed(!revealed)}>{revealed ? 'Ocultar explicación' : 'Ver solución paso a paso'}</button>
-        {revealed && <div id="solution-review" className="feedback-panel space-y-3"><div className="flex items-center justify-between"><h3 className="font-semibold text-base">Explicación de apoyo</h3><span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300">Opción correcta: {current.correct_answer}</span></div><p className="muted">Pregunta de los materiales de referencia; explicación de apoyo de esta plataforma. Consulta el PDF de origen para contrastar el enunciado.</p><ol className="list-decimal pl-5 space-y-3">{current.solution_steps?.map((step, index) => <li key={index} className="overflow-x-auto"><TextRenderer content={typeof step === 'string' ? step : step.explanation} /></li>)}</ol></div>}
+        {revealed && <div id="solution-review" className="feedback-panel space-y-3"><div className="flex items-center justify-between"><h3 className="font-semibold text-base">Explicación de apoyo</h3><span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300">Opción correcta: {current.correct_answer}</span></div><p className="muted">{session.config.reviewDraft
+          ? `Ítem original en revisión · ${current.code} · ${current.spec?.block} · ${current.spec?.evidence}`
+          : current.provenance === 'original_authoring'
+            ? `Pregunta original alineada con el temario DGEC · ${current.spec?.block} · ${current.spec?.evidence}`
+            : 'Pregunta de los materiales de referencia; explicación de apoyo de esta plataforma. Consulta el PDF de origen para contrastar el enunciado.'}</p><ol className="list-decimal pl-5 space-y-3">{current.solution_steps?.map((step, index) => <li key={index} className="overflow-x-auto"><TextRenderer content={typeof step === 'string' ? step : step.explanation} /></li>)}</ol></div>}
       </> : <>
         <div className="max-w-xs">
           <label className="block text-xs uppercase tracking-wider font-semibold text-stone-600 dark:text-stone-300 mb-1">

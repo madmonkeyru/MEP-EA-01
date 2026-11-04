@@ -1,0 +1,425 @@
+{
+  "programId": "edad",
+  "subjectId": "matematica",
+  "subprogramId": "EDAD_1",
+  "convocatoriaId": "2026-c2",
+  "status": "pending_pedagogical_review",
+  "provenance": "original_authoring",
+  "structureSource": "../../specs/02-2026-p1.json",
+  "sections": [
+    {
+      "blockCode": "1. Geometría",
+      "areaId": "geometry",
+      "items": [
+        {
+          "code": "edad-p1-2026-c2-geo-01",
+          "evidence": "A1.1",
+          "stem": "¿Cuál figura muestra una circunferencia de centro (−2, 1) y radio 3?",
+          "options": {
+            "A": "La figura A",
+            "B": "La figura B",
+            "C": "La figura C",
+            "D": "La figura D"
+          },
+          "correctAnswer": "A",
+          "solution": "La figura A tiene centro (−2, 1). Su extremo derecho está en (1, 1), a tres unidades del centro.",
+          "visual_spec": {
+            "alt": "Plano cartesiano. Figura A: centro (−2, 1), extremo derecho (1, 1). B: centro (4, 1), extremo derecho (6, 1). C: centro (−2, −5), extremo derecho (0, −5). D: centro (4, −5), extremo derecho (7, −5).",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  8
+                ],
+                "y": [
+                  -9,
+                  5
+                ]
+              },
+              "grid": true,
+              "children": [
+                {
+                  "type": "circle",
+                  "center": [
+                    -2,
+                    1
+                  ],
+                  "radius": 3
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    1
+                  ],
+                  "label": "A"
+                },
+                {
+                  "type": "circle",
+                  "center": [
+                    4,
+                    1
+                  ],
+                  "radius": 2
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    1
+                  ],
+                  "label": "B"
+                },
+                {
+                  "type": "circle",
+                  "center": [
+                    -2,
+                    -5
+                  ],
+                  "radius": 2
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    -5
+                  ],
+                  "label": "C"
+                },
+                {
+                  "type": "circle",
+                  "center": [
+                    4,
+                    -5
+                  ],
+                  "radius": 3
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    -5
+                  ],
+                  "label": "D"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-02",
+          "evidence": "A1.2",
+          "stem": "¿Cuál ecuación describe una circunferencia de centro (4, −2) y radio 5?",
+          "options": {
+            "A": "(x − 4)² + (y + 2)² = 5",
+            "B": "(x − 4)² + (y + 2)² = 25",
+            "C": "(x + 4)² + (y − 2)² = 25",
+            "D": "(x − 4)² + (y − 2)² = 25"
+          },
+          "correctAnswer": "B",
+          "solution": "Resta las coordenadas del centro y coloca el cuadrado del radio a la derecha."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-03",
+          "evidence": "A1.3",
+          "stem": "Un sensor tiene alcance circular. Su centro está en (2, −1) y su límite pasa por (2, 6), en metros. ¿Cuál es su radio?",
+          "options": {
+            "A": "6 m",
+            "B": "49 m",
+            "C": "7 m",
+            "D": "5 m"
+          },
+          "correctAnswer": "C",
+          "solution": "Los puntos tienen la misma coordenada horizontal. La distancia vertical es 6 − (−1) = 7."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-04",
+          "evidence": "A2.1",
+          "stem": "La circunferencia x² + y² = 16 se traslada 3 unidades al este y 2 al sur. ¿Cuál es su nueva ecuación?",
+          "options": {
+            "A": "(x − 2)² + (y + 3)² = 16",
+            "B": "(x − 3)² + (y + 2)² = 16",
+            "C": "(x + 3)² + (y − 2)² = 16",
+            "D": "(x − 3)² + (y + 2)² = 4"
+          },
+          "correctAnswer": "B",
+          "solution": "El centro pasa a (3, −2) y el radio se conserva."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-05",
+          "evidence": "A2.1",
+          "stem": "Una circunferencia de centro (−1, 4) se traslada mediante el vector (−3, 2). ¿Cuál es el nuevo centro?",
+          "options": {
+            "A": "(−2, 7)",
+            "B": "(2, 2)",
+            "C": "(−4, 6)",
+            "D": "(−4, 2)"
+          },
+          "correctAnswer": "C",
+          "solution": "Suma el vector al centro coordenada por coordenada."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-06",
+          "evidence": "A2.2",
+          "stem": "Un aspersor cubre un círculo de radio 4 m centrado en (6, 2). Se mueve 5 m al oeste. ¿Cuál es el punto más al este de su nueva zona de cobertura?",
+          "options": {
+            "A": "(5, 2)",
+            "B": "(−3, 2)",
+            "C": "(1, 6)",
+            "D": "(10, 2)"
+          },
+          "correctAnswer": "A",
+          "solution": "El nuevo centro es (1, 2). El extremo este se obtiene sumando 4 a su coordenada horizontal."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-07",
+          "evidence": "A2.2",
+          "stem": "Una cámara de cobertura circular se desplaza del centro (−2, 1) al centro (3, −1). ¿En qué punto queda la marca de su borde que estaba en (−2, 5)?",
+          "options": {
+            "A": "(5, 3)",
+            "B": "(3, 3)",
+            "C": "(3, 7)",
+            "D": "(−7, 7)"
+          },
+          "correctAnswer": "B",
+          "solution": "La traslación es (5, −2). Al aplicarla al punto inicial se obtiene (3, 3)."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-08",
+          "evidence": "A3.1",
+          "stem": "¿Dónde está el punto (4, 2) respecto a la circunferencia (x − 1)² + (y − 2)² = 16?",
+          "options": {
+            "A": "En el exterior",
+            "B": "En el centro",
+            "C": "En la circunferencia",
+            "D": "En el interior"
+          },
+          "correctAnswer": "D",
+          "solution": "El cuadrado de la distancia al centro es 9, menor que 16."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-09",
+          "evidence": "A3.1",
+          "stem": "Una zona circular de radio 5 tiene centro (−2, 0). ¿Cuál punto está en el exterior?",
+          "options": {
+            "A": "(1, 4)",
+            "B": "(2, 4)",
+            "C": "(−5, 0)",
+            "D": "(−2, 3)"
+          },
+          "correctAnswer": "B",
+          "solution": "Para (2, 4), el cuadrado de la distancia al centro es 32, mayor que 25. El punto (1, 4) está en el borde y los otros están dentro."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-10",
+          "evidence": "A3.2",
+          "stem": "¿Qué relación tiene y = 3 con la circunferencia x² + y² = 25?",
+          "options": {
+            "A": "Es tangente",
+            "B": "Pasa por el centro",
+            "C": "Es exterior",
+            "D": "Es secante"
+          },
+          "correctAnswer": "D",
+          "solution": "Al sustituir y = 3 se obtiene x² = 16, con dos soluciones."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-11",
+          "evidence": "A3.3",
+          "stem": "¿Cuál recta es exterior a la circunferencia (x − 2)² + (y + 1)² = 9?",
+          "options": {
+            "A": "x = 0",
+            "B": "x = 5",
+            "C": "x = 4",
+            "D": "x = 6"
+          },
+          "correctAnswer": "D",
+          "solution": "La distancia horizontal de x = 6 al centro es 4, mayor que el radio 3."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-12",
+          "evidence": "A3.4",
+          "stem": "¿Cuál recta es perpendicular a y = 2x + 3?",
+          "options": {
+            "A": "y = 2x − 4",
+            "B": "y = x/2 − 4",
+            "C": "y = −2x + 4",
+            "D": "y = −x/2 + 4"
+          },
+          "correctAnswer": "D",
+          "solution": "La pendiente perpendicular es −1/2 porque 2 × (−1/2) = −1."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-13",
+          "evidence": "A3.5",
+          "stem": "El radio que llega al punto de tangencia es horizontal y el punto de tangencia es (5, 2). ¿Cuál es la recta tangente?",
+          "options": {
+            "A": "y = 5",
+            "B": "x = 5",
+            "C": "x = 2",
+            "D": "y = 2"
+          },
+          "correctAnswer": "B",
+          "solution": "La tangente es perpendicular al radio horizontal, así que es la vertical que pasa por (5, 2)."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-14",
+          "evidence": "A4.1",
+          "stem": "¿Cuál es el perímetro de un decágono regular de lado 3,5 cm?",
+          "options": {
+            "A": "17,5 cm",
+            "B": "35 cm",
+            "C": "30 cm",
+            "D": "38,5 cm"
+          },
+          "correctAnswer": "B",
+          "solution": "Un decágono tiene 10 lados. 10 × 3,5 = 35."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-15",
+          "evidence": "A4.1",
+          "stem": "Un hexágono regular tiene perímetro 42 cm y apotema de 6 cm. ¿Cuál es su área?",
+          "options": {
+            "A": "126 cm²",
+            "B": "84 cm²",
+            "C": "252 cm²",
+            "D": "144 cm²"
+          },
+          "correctAnswer": "A",
+          "solution": "Multiplica el perímetro por la apotema y divide entre 2."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-16",
+          "evidence": "A4.1",
+          "stem": "Para bordear una fuente con forma de octágono regular se tienen 48 m de cuerda. Si se usa toda la cuerda una sola vez, ¿cuánto mide cada lado?",
+          "options": {
+            "A": "12 m",
+            "B": "5 m",
+            "C": "8 m",
+            "D": "6 m"
+          },
+          "correctAnswer": "D",
+          "solution": "Divide el perímetro entre los ocho lados iguales."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-17",
+          "evidence": "A4.2",
+          "stem": "De una lámina rectangular de 10 cm por 8 cm se corta un rectángulo de 4 cm por 3 cm en una esquina. ¿Cuál es el área restante?",
+          "options": {
+            "A": "68 cm²",
+            "B": "76 cm²",
+            "C": "56 cm²",
+            "D": "92 cm²"
+          },
+          "correctAnswer": "A",
+          "solution": "Resta el área retirada de la original. 80 − 12 = 68."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-18",
+          "evidence": "A4.2",
+          "stem": "Un terreno tiene vértices consecutivos (0,0), (6,0), (6,2), (2,2), (2,5) y (0,5). ¿Cuál es su área?",
+          "options": {
+            "A": "30 unidades²",
+            "B": "16 unidades²",
+            "C": "18 unidades²",
+            "D": "20 unidades²"
+          },
+          "correctAnswer": "C",
+          "solution": "Descompón en un rectángulo de 6 × 2 y otro de 2 × 3. Sus áreas suman 18."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-19",
+          "evidence": "A4.2",
+          "stem": "Un sendero cerrado tiene vértices consecutivos (0,0), (7,0), (7,3), (4,3), (4,5) y (0,5). ¿Cuál es su perímetro?",
+          "options": {
+            "A": "20 unidades",
+            "B": "26 unidades",
+            "C": "22 unidades",
+            "D": "24 unidades"
+          },
+          "correctAnswer": "D",
+          "solution": "Las seis longitudes son 7, 3, 3, 2, 4 y 5. Su suma es 24."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-20",
+          "evidence": "A5.1",
+          "stem": "En un cilindro circular recto, ¿qué describe el eje?",
+          "options": {
+            "A": "El segmento que une dos puntos opuestos de una base",
+            "B": "La recta que une los centros de las dos bases",
+            "C": "La línea que recorre el borde de una base",
+            "D": "Una recta tangente a la superficie lateral"
+          },
+          "correctAnswer": "B",
+          "solution": "El eje pasa por ambos centros y es perpendicular a los planos de las bases."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-21",
+          "evidence": "A5.1",
+          "stem": "Un tubo cilíndrico recto tiene un diámetro exterior de 18 cm. ¿Cuál es el radio de su base exterior?",
+          "options": {
+            "A": "4,5 cm",
+            "B": "18 cm",
+            "C": "36 cm",
+            "D": "9 cm"
+          },
+          "correctAnswer": "D",
+          "solution": "El radio es la mitad del diámetro."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-22",
+          "evidence": "A5.2",
+          "stem": "Un cilindro recto tiene radio 3 cm y altura 10 cm. Un plano contiene su eje. ¿Cuáles son las dimensiones del rectángulo de la sección?",
+          "options": {
+            "A": "6 cm por 10 cm",
+            "B": "10 cm por 10 cm",
+            "C": "6 cm por 3 cm",
+            "D": "3 cm por 10 cm"
+          },
+          "correctAnswer": "A",
+          "solution": "La sección axial tiene ancho igual al diámetro y altura igual a la del cilindro."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-23",
+          "evidence": "A5.2",
+          "stem": "Una esfera de radio 10 cm se corta por un plano a 6 cm del centro. ¿Cuál es el radio del círculo de corte?",
+          "options": {
+            "A": "16 cm",
+            "B": "8 cm",
+            "C": "6 cm",
+            "D": "4 cm"
+          },
+          "correctAnswer": "B",
+          "solution": "Se forma un triángulo rectángulo. El radio de corte es √(100 − 36) = 8."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-24",
+          "evidence": "A5.3",
+          "stem": "Una fruta esférica de radio 5 cm se corta por un plano que pasa por el centro. ¿Cuál es el área de la cara circular expuesta en una mitad?",
+          "options": {
+            "A": "25π cm²",
+            "B": "10π cm²",
+            "C": "50π cm²",
+            "D": "100π cm²"
+          },
+          "correctAnswer": "A",
+          "solution": "El plano central produce una sección de radio 5. El área de una cara es π × 5²."
+        },
+        {
+          "code": "edad-p1-2026-c2-geo-25",
+          "evidence": "A5.3",
+          "stem": "Una barra cilíndrica de radio 4 cm se corta perpendicularmente a su eje. ¿Cuál es el área de la sección transversal?",
+          "options": {
+            "A": "32π cm²",
+            "B": "8π cm²",
+            "C": "16π cm²",
+            "D": "4π cm²"
+          },
+          "correctAnswer": "C",
+          "solution": "El corte perpendicular al eje produce un círculo igual a la base, con área π × 4²."
+        }
+      ]
+    }
+  ]
+}

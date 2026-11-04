@@ -4,7 +4,7 @@
  * Reusable Content Authoring Helper CLI
  *
  * Usage:
- *   node scripts/author-item.mjs --program <i_ii_ciclo|iii_ciclo|edad|bxm> --domain <geometry|algebra|statistics> --topic "Topic name" ...
+ *   node scripts/author-item.mjs --program <i_ii_ciclo|iii_ciclo|edad|bxm> --domain <numbers|geometry|measurement|algebra|statistics> --topic "Topic name" ...
  * Or run interactively with template output:
  *   node scripts/author-item.mjs --template
  */
@@ -17,7 +17,7 @@ const ITEMS_DIR = path.join(ROOT_DIR, 'content/items/math');
 
 function getNextId() {
   let maxId = 0;
-  for (const d of ['geometry', 'algebra', 'statistics']) {
+  for (const d of ['numbers', 'geometry', 'measurement', 'algebra', 'statistics']) {
     const dir = path.join(ITEMS_DIR, d);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir)) {
@@ -82,6 +82,6 @@ if (args.includes('--template') || args.length === 0) {
   };
 
   console.log(JSON.stringify(template, null, 2));
-  console.log(`\nTo save this template, pipe or write to content/items/math/{geometry|algebra|statistics}/${template.code}.json`);
+  console.log(`\nTo save this template, pipe or write to content/items/math/{numbers|geometry|measurement|algebra|statistics}/${template.code}.json`);
   process.exit(0);
 }

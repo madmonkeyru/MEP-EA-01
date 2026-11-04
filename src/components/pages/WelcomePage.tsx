@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgramInfo } from '../../types';
-import { dataService } from '../../services/dataService';
+import { programManifest } from '../../services/programCatalog';
 import { ProgramCard } from '../common/ProgramCard';
 import { ConvocatoriaBadge } from '../common/ConvocatoriaBadge';
 import {
@@ -21,7 +21,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
   onSelectProgram,
   onEnterMvpMath,
 }) => {
-  const programs: ProgramInfo[] = dataService.getPrograms();
+  const programs: ProgramInfo[] = programManifest.programs;
   const currentConvocatoria = '2026-c2';
 
   return (

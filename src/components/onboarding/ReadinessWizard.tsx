@@ -1099,7 +1099,7 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
         <p className="text-sm font-semibold text-primary">Su ruta</p>
         <h1 className="mt-2 text-3xl text-ink sm:text-4xl">{report.focus ? "Ruta sugerida: " + PROGRAMS[report.focus].name : "Confirma tu siguiente paso con la DGEC"}</h1>
         <p className="mt-3 leading-relaxed text-muted">{story.lede} Esta sugerencia es provisional; los datos omitidos requieren confirmación.</p>
-        {report.focus && <div className="action-row mt-4"><Button onClick={() => onNavigate(helperProgramRoute(report.focus!))}>Explorar mi programa</Button><Button variant="ghost" onClick={() => onNavigate({ view: "helper", programId: helperProgramRoute(report.focus!).programId })}>Recursos de mi ruta</Button></div>}
+        {report.focus && <div className="action-row mt-4"><Button onClick={() => onNavigate(helperProgramRoute(report.focus!))}>Explorar mi programa</Button><Button variant="ghost" onClick={() => onNavigate({ view: "helper", programId: helperProgramRoute(report.focus!).programId })}>Recursos de mi ruta</Button><Button variant="ghost" onClick={() => onNavigate({ ...helperProgramRoute(report.focus!), view: "calendar" })}>Consultar fechas</Button></div>}
       </header>
 
       <div

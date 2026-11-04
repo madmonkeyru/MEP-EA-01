@@ -1,27 +1,30 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { PracticeConfig, TestSession } from './types';
 import { storageService } from './services/storageService';
-import { dataService } from './services/dataService';
-import { createSession, validSession } from './services/learningSession';
+import { programManifest } from './services/programCatalog';
+import type { createSession } from './services/learningSession';
+import { validSession } from './services/sessionStorageMetadata';
 import { WizardProvider } from './components/onboarding/wizardStore';
 import { Header } from './components/layout/Header';
 import { EntryLandingPage } from './components/pages/EntryLandingPage';
 import { WelcomePage } from './components/pages/WelcomePage';
-import { SubjectHubPage } from './components/pages/LandingPage';
-import { TestShell } from './components/test/TestShell';
-import { ResultsPage } from './components/results/ResultsPage';
-import { FrameworkHubPage, ContextControls } from './components/pages/FrameworkHubPage';
-import { GenericSubjectHubPage } from './components/pages/GenericSubjectHubPage';
 import { Dialog } from './components/common/Dialog';
 import { type AppRoute, readRoute, routeHash } from './services/navigation';
+const OfficialCalendar = lazy(() => import('./components/knowledge/OfficialCalendar').then(module => ({ default: module.OfficialCalendar })));
+const SubjectHubPage = lazy(() => import('./components/pages/LandingPage').then(module => ({ default: module.SubjectHubPage })));
+const TestShell = lazy(() => import('./components/test/TestShell').then(module => ({ default: module.TestShell })));
+const ResultsPage = lazy(() => import('./components/results/ResultsPage').then(module => ({ default: module.ResultsPage })));
+const FrameworkHubPage = lazy(() => import('./components/pages/FrameworkHubPage').then(module => ({ default: module.FrameworkHubPage })));
+const ContextControls = lazy(() => import('./components/pages/FrameworkHubPage').then(module => ({ default: module.ContextControls })));
+const ExamReviewPage = lazy(() => import('./components/pages/ExamReviewPage').then(module => ({ default: module.ExamReviewPage })));
+const GenericSubjectHubPage = lazy(() => import('./components/pages/GenericSubjectHubPage').then(module => ({ default: module.GenericSubjectHubPage })));
 const HelperPage = lazy(() => import('./components/onboarding/HelperPage').then(module => ({ default: module.HelperPage })));
 const ReadinessWizard = lazy(() => import('./components/onboarding/ReadinessWizard').then(module => ({ default: module.ReadinessWizard })));
 
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => storageService.getCurrentUser());
   const [route, setRoute] = useState(() => readRoute(window.location.hash));
-  const [ready, setReady] = useState(false);
-  const [loadedContext, setLoadedContext] = useState('');
+  const [loadedContext, setLoadedContext] = useState<{ key: string; createSession: typeof createSession } | null>(null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [active, setActive] = useState<TestSession | null>(null);
@@ -31,10 +34,13 @@ export function App() {
   const [discard, setDiscard] = useState(false);
   const main = useRef<HTMLElement>(null);
   const userId = currentUser?.id || 'guest';
-  const program = dataService.getPrograms().find(program => program.id === route.programId);
+  const program = programManifest.programs.find(program => program.id === route.programId);
   const mvp = route.programId === 'bxm' && route.subjectId === 'matematicas' && route.convocatoriaId === '2026-c2';
   const contextKey = [route.programId, route.subjectId, route.moduleId, route.convocatoriaId].join('/');
-  const contextReady = ready && loadedContext === contextKey;
+  const needsContext = !!program && ['framework', 'hub', 'test', 'results'].includes(route.view);
+  const contextReady = !needsContext || loadedContext?.key === contextKey;
+  const review = route.tab === 'review' && route.programId === 'i_ii_ciclo' &&
+    route.subjectId === 'matematicas' && route.convocatoriaId === '2026-c2';
   const navigate = (next: AppRoute) => {
     const hash = routeHash(next);
     if (window.location.hash === hash) setRoute(next); else window.location.hash = hash;
@@ -46,40 +52,40 @@ export function App() {
   }, []);
   useEffect(() => {
     let cancelled = false;
-    setReady(false); setError('');
+    setError('');
+    if (!needsContext) return;
+    setLoadedContext(null);
     (async () => {
       try {
-        if (route.programId && route.view !== 'helper') {
-          await dataService.setProgram(route.programId, route.moduleId, route.convocatoriaId);
-          if (!cancelled && route.subjectId && dataService.getCurrentSubjectId() !== route.subjectId) await dataService.loadSubject(route.programId, route.subjectId);
-        }
-        if (!cancelled) {
-          setReady(true);
-          setLoadedContext(contextKey);
-          if (route.view === 'hub') try { localStorage.setItem('mep_last_subject', routeHash(route)); } catch { /* Navigation still works without storage. */ }
-        }
+        const [{ dataService }, { createSession }] = await Promise.all([
+          import('./services/dataService'),
+          import('./services/learningSession'),
+        ]);
+        if (cancelled) return;
+        await dataService.setProgram(program.id, route.moduleId, route.convocatoriaId, route.subjectId);
+        if (!cancelled) setLoadedContext({ key: contextKey, createSession });
       } catch { if (!cancelled) setError('No pudimos cargar esta materia. Reintenta o explora los recursos disponibles.'); }
     })();
     return () => { cancelled = true; };
-  }, [route.programId, route.subjectId, route.moduleId, route.convocatoriaId, retry]);
+  }, [needsContext, contextKey, retry]);
   useEffect(() => {
-    const label = route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'helper' ? 'Guía y recursos' : program?.name || 'Educación Abierta';
+    if (contextReady && route.view === 'hub') try { localStorage.setItem('mep_last_subject', routeHash(route)); } catch { /* Navigation still works without storage. */ }
+    const label = route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'calendar' ? 'Calendario DGEC' : route.view === 'helper' ? 'Guía y recursos' : program?.name || 'Educación Abierta';
     document.title = label + ' · MEP-EA-01';
-    const heading = main.current?.querySelector<HTMLElement>('h1');
-    if (contextReady && heading) { heading.tabIndex = -1; heading.focus(); }
-  }, [route.view, route.programId, route.subjectId, route.moduleId, route.convocatoriaId, route.sessionId, contextReady]);
-  const hub = () => navigate({ ...route, view: 'hub', sessionId: undefined });
-  const saved = storageService.getActiveSession();
+  }, [route.view, route.programId, route.subjectId, route.moduleId, route.convocatoriaId, route.sessionId, route.tab, route.resourceTab, contextReady]);
+  const hub = () => navigate({ ...route, view: 'hub', sessionId: undefined, tab: test?.config.reviewDraft || result?.config.reviewDraft ? 'review' : route.tab });
+  const saved = storageService.getActiveSession(userId);
   const resumable = validSession(saved, userId) ? saved : null;
   const matchesRoute = (session: TestSession | null) => session && (session.config.programId || 'bxm') === route.programId && (session.config.subjectId || 'matematicas') === route.subjectId && (session.config.convocatoriaId || '2026-c2') === route.convocatoriaId && (session.config.subprogramId || '') === (route.moduleId || '');
   const candidateTest = active && active.sessionId === route.sessionId && active.userId === userId ? active : resumable?.sessionId === route.sessionId ? resumable : null;
-  const candidateResult = completed && completed.sessionId === route.sessionId && completed.userId === userId ? completed : storageService.getResult(route.sessionId, userId);
+  const candidateResult = route.view !== 'results' ? null : completed && completed.sessionId === route.sessionId && completed.userId === userId ? completed : storageService.getResult(route.sessionId, userId);
   const test = matchesRoute(candidateTest) ? candidateTest : null;
   const result = matchesRoute(candidateResult) ? candidateResult : null;
   function begin(config: PracticeConfig, force = false, source?: TestSession | null) {
     const context = { ...config, programId: route.programId || 'bxm', subjectId: route.subjectId || 'matematicas', subprogramId: route.moduleId, convocatoriaId: route.convocatoriaId || '2026-c2' };
     if (!force && resumable) { setPending(context); setPendingSource(source || null); return; }
-    const session = { ...createSession(context, source?.items, source?.groups), userId };
+    if (loadedContext?.key !== contextKey) return;
+    const session = { ...loadedContext.createSession(context, source?.items, source?.groups), userId };
     if (!session.items?.length) { setError('No hay preguntas disponibles con esta selección.'); return; }
     storageService.saveActiveSession(session); setActive(session); setPending(null);
     navigate({ ...route, view: 'test', sessionId: session.sessionId, programId: context.programId, subjectId: context.subjectId, convocatoriaId: context.convocatoriaId });
@@ -87,27 +93,34 @@ export function App() {
   function resume() {
     if (!resumable) return;
     setActive(resumable); setPending(null);
-    navigate({ view: 'test', programId: resumable.config.programId || 'bxm', subjectId: resumable.config.subjectId || 'matematicas', convocatoriaId: resumable.config.convocatoriaId || '2026-c2', moduleId: resumable.config.subprogramId, sessionId: resumable.sessionId });
+    navigate({ view: 'test', programId: resumable.config.programId || 'bxm', subjectId: resumable.config.subjectId || 'matematicas', convocatoriaId: resumable.config.convocatoriaId || '2026-c2', moduleId: resumable.config.subprogramId, tab: resumable.config.reviewDraft ? 'review' : undefined, sessionId: resumable.sessionId });
   }
   const enterMath = () => navigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' });
   return <WizardProvider><div className="app-shell min-h-screen flex flex-col">
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); main.current?.focus(); }}>Saltar al contenido</a>
-    {route.view !== 'test' && <Header currentUser={currentUser} onUserChanged={setCurrentUser} onNavigateHome={() => navigate({ view: 'landing' })} currentView={route.view} onOpenHelper={() => navigate({ view: 'helper', programId: route.programId, subjectId: route.subjectId, moduleId: route.moduleId })} onProgramChange={programId => {
-      const target = dataService.getPrograms().find(program => program.id === programId);
+    {route.view !== 'test' && <Header currentUser={currentUser} onUserChanged={setCurrentUser} onNavigateHome={() => navigate({ view: 'landing' })} currentView={route.view} programId={route.programId} onOpenHelper={() => navigate({ view: 'helper', programId: route.programId, subjectId: route.subjectId, moduleId: route.moduleId })} onProgramChange={programId => {
+      const target = programManifest.programs.find(program => program.id === programId);
       const subjectId = target?.subjects.find(subject => subject.id === route.subjectId)?.id;
       navigate({ view: subjectId ? 'hub' : 'framework', programId, subjectId, convocatoriaId: route.convocatoriaId });
     }} />}
     <main id="main-content" ref={main} tabIndex={-1} className="flex-1 outline-none">
       {error && <section className="page-width py-6" role="alert"><h1>No se pudo completar la carga</h1><p>{error}</p><div className="action-row"><button className="primary-button" onClick={() => setRetry(value => value + 1)}>Reintentar</button><button className="secondary-button" onClick={() => navigate({ view: 'helper', programId: route.programId })}>Consultar recursos</button></div></section>}
       {!error && <Suspense fallback={<p role="status" className="page-width p-8">Cargando…</p>}>
+        {contextReady && <RouteFocus key={["focus", route.view, contextKey, route.sessionId].join(":")} main={main} />}
         {route.view !== 'test' && route.view !== 'results' && resumable && <section className="resume-banner page-width"><div><strong>Tienes un intento guardado</strong><p>{resumable.itemIds.length} preguntas · {resumable.config.enableTimer ? 'El tiempo continúa mientras estás fuera.' : 'Práctica sin límite de tiempo.'}</p></div><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar intento</button><button className="secondary-button" onClick={() => setDiscard(true)}>Descartar</button></div></section>}
         {route.view === 'landing' && <EntryLandingPage onOpenHelper={() => navigate({ view: 'helper' })} onExplorePrograms={() => navigate({ view: 'welcome' })} onEnterBxmHub={enterMath} />}
         {route.view === 'welcome' && <WelcomePage onSelectProgram={programId => navigate({ view: 'framework', programId, convocatoriaId: '2026-c2' })} onEnterMvpMath={enterMath} />}
+        {route.view === 'calendar' && <div className="page-width py-8 space-y-5">
+          <h1 className="text-3xl font-semibold">Calendario DGEC</h1>
+          <OfficialCalendar key={routeHash(route)} initialProgram={route.programId} initialConvocatoria={route.convocatoriaId} />
+        </div>}
         {route.view === 'helper' && <HelperPage route={route} onNavigate={navigate} />}
         {route.view === 'guide' && <ReadinessWizard onNavigate={navigate} onSkip={() => navigate({ view: 'welcome' })} onExplore={() => navigate({ view: 'helper' })} />}
         {!contextReady && ['framework', 'hub', 'test', 'results'].includes(route.view) && <p role="status" className="page-width p-8">Cargando programa…</p>}
         {contextReady && program && route.view === 'framework' && <FrameworkHubPage program={program} route={route} onNavigate={navigate} />}
-        {contextReady && program && route.view === 'hub' && !mvp && <GenericSubjectHubPage key={routeHash(route)} program={program} route={route} onNavigate={navigate} />}
+        {contextReady && route.view === 'hub' && review &&
+          <ExamReviewPage route={route} userId={userId} onStart={config => begin(config)} />}
+        {contextReady && program && route.view === 'hub' && !mvp && !review && <GenericSubjectHubPage key={routeHash(route)} program={program} route={route} onNavigate={navigate} onStartPractice={config => begin(config)} />}
         {contextReady && mvp && route.view === 'hub' && <SubjectHubPage contextControls={<ContextControls program={program!} route={route} onChange={navigate} />} currentUser={currentUser} route={route} onNavigate={navigate}
           onStartSimulation={() => begin({ mode: 'simulation', itemCount: 60, enableTimer: true, timerDurationMinutes: 150 })} onStartPractice={config => begin(config)}
           onStartPracticeByItems={(itemIds, title) => begin({ mode: 'area', itemIds, title, itemCount: itemIds.length, enableTimer: false, timerDurationMinutes: 30 })}
@@ -120,4 +133,12 @@ export function App() {
     {discard && <Dialog title="¿Descartar el intento guardado?" onClose={() => setDiscard(false)}><p>Se eliminarán sus respuestas sin registrar un resultado.</p><button className="primary-button" onClick={() => { storageService.clearActiveSession(); setActive(null); setDiscard(false); }}>Sí, descartar</button></Dialog>}
   </div></WizardProvider>;
 }
+function RouteFocus({ main }: { main: { current: HTMLElement | null } }) {
+  useEffect(() => {
+    const heading = main.current?.querySelector<HTMLElement>('h1');
+    if (heading) { heading.tabIndex = -1; heading.focus(); }
+  }, [main]);
+  return null;
+}
+
 export default App;

@@ -1,19 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import type { User } from '../../types';
-import { dataService } from '../../services/dataService';
+import { programManifest } from '../../services/programCatalog';
 import { storageService } from '../../services/storageService';
 import { AuthModal } from '../auth/AuthModal';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CustomSelect } from '../common/CustomSelect';
 
-export function Header({ currentUser, onUserChanged, onNavigateHome, currentView = 'landing', onProgramChange, onOpenHelper }: {
+export function Header({ currentUser, onUserChanged, onNavigateHome, currentView = 'landing', programId = programManifest.default_program, onProgramChange, onOpenHelper }: {
   currentUser: User | null; onUserChanged: (user: User | null) => void; onNavigateHome: () => void;
-  currentView?: string; onProgramChange?: (id: string) => void; onOpenHelper?: () => void;
+  currentView?: string; programId?: string; onProgramChange?: (id: string) => void; onOpenHelper?: () => void;
 }) {
   const [profile, setProfile] = useState(false);
-  const [program, setProgram] = useState(dataService.getCurrentProgramId());
   const header = useRef<HTMLElement>(null);
-  useEffect(() => dataService.subscribe(() => setProgram(dataService.getCurrentProgramId())), []);
   useEffect(() => {
     const measure = () => document.documentElement.style.setProperty('--app-header-height', (header.current?.getBoundingClientRect().height || 80) + 'px');
     measure();
@@ -21,7 +19,7 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
     const observer = new ResizeObserver(measure); if (header.current) observer.observe(header.current); return () => observer.disconnect();
   }, []);
 
-  const programOptions = dataService.getPrograms().map(p => ({
+  const programOptions = programManifest.programs.map(p => ({
     value: p.id,
     label: p.name,
     badge: !p.calculatorAllowed ? 'Sin Calc' : undefined,
@@ -58,17 +56,15 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
                   title="Cambiar programa de estudio"
                   aria-label="Programa"
                   label="Programa"
-                  value={program}
+                  value={programId || 'bxm'}
                   options={programOptions}
-                  onChange={val => {
-                    setProgram(val);
-                    onProgramChange?.(val);
-                  }}
+                  onChange={onProgramChange || (() => {})}
                   buttonClassName="!bg-stone-800/80 !border-stone-700 !text-stone-100 hover:!border-indigo-400 !py-2 !min-h-[40px] text-xs font-semibold"
                 />
               </div>
             )}
             <a href="#/programas" className="header-link px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-stone-800/70 transition">Programas</a>
+            <a href="#/calendario" className="header-link px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-stone-800/70 transition">Calendario</a>
             {onOpenHelper && <button onClick={onOpenHelper} className="header-link px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-stone-800/70 transition">Guía y recursos</button>}
             <ThemeToggle />
             {currentUser ? (

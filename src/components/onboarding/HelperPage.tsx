@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, BookOpen, Compass } from 'lucide-react';
-import { AppRoute } from '../../services/navigation';
+import { AppRoute, routeHash } from '../../services/navigation';
 import { PROGRAMS, PROGRAM_LEVELS, PROGRAM_SUBJECTS, subjectLabel } from '../../services/onboarding/catalog';
 import { PROGRAM_ORDER, type ProgramId, type LevelId } from '../../services/onboarding/types';
 import { useWizard } from './wizardStore';
@@ -49,6 +49,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <p className="text-sm text-muted">Materias: {PROGRAM_SUBJECTS[program].map(subject => subjectLabel(program, subject)).join(', ')}{program === 'bxm' || program === 'edad' ? ', y una ciencia: Biología, Física o Química.' : '.'}</p>
         <ul className="list-disc pl-5 space-y-2 text-sm text-muted">{copy.rules.map(rule => <li key={rule}>{rule}</li>)}</ul>
         <div className="flex flex-wrap gap-2">{(PROGRAM_LEVELS[program].length ? PROGRAM_LEVELS[program] : [undefined]).map(level => <button key={level || program} className={`${button} ui-muted-button inline-flex items-center gap-2`} onClick={() => onNavigate(helperProgramRoute(program, level))}>Ver asignaturas{level ? ` · ${program === 'edad' ? (level === '10' ? 'Parte 1' : 'Parte 2') : `${level}°`}` : ''}<ArrowRight size={16} /></button>)}</div>
+        <a className="text-link" href={routeHash({ ...helperProgramRoute(program), view: 'calendar' })}>Consultar fechas de este programa</a>
         <p className="text-xs text-muted">Información de referencia de Educación Abierta. Confirma requisitos, fechas y costos de tu convocatoria con la DGEC.</p>
       </article>
     </section>
@@ -57,7 +58,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
       <h2 id="available-resources" className="text-xl font-semibold flex gap-2 items-center"><BookOpen size={22} /> Recursos para estudiar</h2>
       <div className="ui-surface rounded-2xl p-5 space-y-3">
         <h3 className="font-semibold">Práctica interactiva de Matemáticas BXM · 02-2026</h3>
-        <p className="text-sm text-muted">Simulación de 60 ítems, práctica por área o tema, explicaciones, especificaciones, diccionario y fórmulas. Las demás rutas de la plataforma están en vista previa.</p>
+        <p className="text-sm text-muted">Simulación de 60 ítems, práctica por área o tema, explicaciones, especificaciones, diccionario y fórmulas. También hay muestras de Matemáticas para otros programas y materiales oficiales para las demás asignaturas.</p>
         <button className={`${button} bg-indigo-600 text-white`} onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Abrir Matemáticas BXM</button>
       </div>
       <OfficialResources key={program} programId={program === 'i-ii' ? 'i_ii_ciclo' : program === 'iii' ? 'iii_ciclo' : program} subjectId={route?.subjectId} moduleId={route?.moduleId} />

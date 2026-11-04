@@ -76,6 +76,8 @@ export interface ConvocatoriaSectionBlueprint {
 }
 
 export interface ConvocatoriaManifest {
+  coverage?: "sample" | "complete";
+  freeReference?: boolean;
   schemaVersion: string;
   convocatoriaId: string; // e.g., '2026-c2'
   year: number;
@@ -290,6 +292,7 @@ export type PracticeMode =
   | 'random_practice';
 
 export interface PracticeConfig {
+  reviewDraft?: "cico-2026-c2";
   subjectId?: string;
   itemIds?: number[];
   title?: string;

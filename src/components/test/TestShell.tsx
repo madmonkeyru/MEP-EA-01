@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { PracticeConfig, TestSession } from '../../types';
 import { storageService } from '../../services/storageService';
 import { createSession, isExam, calculatorRule, modeLabel } from '../../services/learningSession';
@@ -16,7 +16,6 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   const [session, setSession] = useState<TestSession>(() => initialSession || { ...createSession(config), userId: storageService.getCurrentUser()?.id || 'guest' });
   const latest = useRef(session); latest.current = session;
   const finished = useRef(false);
-  const [now, setNow] = useState(Date.now());
   const [overlay, setOverlay] = useState<'formulas' | 'submit' | 'exit' | 'navigator' | null>(null);
   const [filter, setFilter] = useState('all');
   const [shortcuts, setShortcuts] = useState(true);
@@ -33,20 +32,18 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   const items = session.items || [];
   const current = items[session.currentResponseIndex];
   const exam = isExam(config);
-  const elapsed = Math.max(0, Math.floor((now - Date.parse(session.startTime)) / 1000));
-  const remaining = config.enableTimer ? Math.max(0, Math.ceil(((session.deadline || now) - now) / 1000)) : 0;
   const patch = (partial: Partial<TestSession>) => {
     const next = { ...latest.current, ...partial }; latest.current = next; setSession(next);
   };
-  const snapshot = () => ({ ...latest.current, elapsedSeconds: Math.max(latest.current.elapsedSeconds, Math.floor((Date.now() - Date.parse(latest.current.startTime)) / 1000)) });
-  const submit = () => {
+  const snapshot = useCallback(() => ({ ...latest.current, elapsedSeconds: Math.max(latest.current.elapsedSeconds, Math.floor((Date.now() - Date.parse(latest.current.startTime)) / 1000)) }), []);
+  const submit = useCallback(() => {
     if (finished.current) return;
     finished.current = true;
     const completed = { ...snapshot(), isCompleted: true, completedAt: new Date().toISOString() };
     // Save the completed snapshot before removing the recoverable active copy.
     if (storageService.saveResult(completed)) storageService.clearActiveSession();
     onFinishTest(completed);
-  };
+  }, [onFinishTest, snapshot]);
   const choose = (letter: 'A' | 'B' | 'C' | 'D') => {
     const active = latest.current.items?.[latest.current.currentResponseIndex];
     if (!active || latest.current.checkedItems?.[active.id]) return;
@@ -54,16 +51,6 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   };
   const move = (index: number) => patch({ currentResponseIndex: Math.max(0, Math.min(items.length - 1, index)) });
   const flag = () => current && patch({ flaggedItems: { ...latest.current.flaggedItems, [current.id]: !latest.current.flaggedItems[current.id] } });
-  useEffect(() => {
-    const tick = () => {
-      if (config.enableTimer) setNow(Date.now());
-      if (config.enableTimer && latest.current.deadline && Date.now() >= latest.current.deadline) submit();
-    };
-    const interval = window.setInterval(tick, 1000);
-    document.addEventListener('visibilitychange', tick);
-    tick();
-    return () => { clearInterval(interval); document.removeEventListener('visibilitychange', tick); };
-  }, []);
   useEffect(() => {
     if (!items.length || finished.current) return;
     setSaved(storageService.saveActiveSession(snapshot()) ? 'Guardado en este navegador' : storageService.lastError);
@@ -133,10 +120,9 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
     <header ref={examHeader} className="exam-header"><div className="page-width flex flex-wrap items-center justify-between gap-3">
       <div><p className="font-semibold">{modeLabel(config)}</p><p className="text-sm">{answered}/{items.length} respondidas · {flagged} marcadas</p></div>
       <div className="action-row"><ThemeToggle /><button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>
-        {config.enableTimer && <span className={remaining <= 300 ? 'time-warning' : 'timer'} aria-label="Tiempo restante">{Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, '0')}</span>}
+        <ExamClock enabled={config.enableTimer} deadline={session.deadline} startTime={session.startTime} onExpire={submit} />
         <button className="primary-button" onClick={() => setOverlay('submit')}>Finalizar</button><button className="secondary-button" onClick={() => setOverlay('exit')}>Salir</button></div>
     </div></header>
-    <p role="status" className="sr-only">{config.enableTimer && remaining <= 60 ? 'Queda un minuto o menos. Al terminar el tiempo se entrega la prueba automáticamente.' : config.enableTimer && remaining <= 300 ? 'Quedan cinco minutos o menos.' : ''}</p>
     <div className="page-width py-6 grid lg:grid-cols-[240px_minmax(0,1fr)] gap-6 items-start">
       <aside className="hidden lg:block ui-surface p-5 rounded-2xl exam-navigator">{navigator}</aside>
       <section className="ui-surface p-5 sm:p-8 rounded-2xl space-y-6 min-w-0">
@@ -164,9 +150,34 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
     {overlay === 'formulas' && <Dialog title="Fórmulas de referencia" onClose={() => setOverlay(null)}><p className="muted">Material de apoyo para estudiar. Consulta el PDF oficial para identificar los anexos del examen.</p><FormulasSheet /><button className="secondary-button" onClick={() => setOverlay(null)}>Cerrar fórmulas</button></Dialog>}
     {overlay === 'submit' && <Dialog title="¿Entregar la prueba?" onClose={() => setOverlay(null)}><p>{answered} respondidas, {items.length - answered} sin responder y {flagged} marcadas. La entrega es definitiva para este intento.</p><div className="action-row"><button className="secondary-button" onClick={() => { setFilter('pending'); setOverlay('navigator'); }}>Revisar sin responder</button><button className="secondary-button" onClick={() => { setFilter('flagged'); setOverlay('navigator'); }}>Revisar marcadas</button><button className="primary-button" onClick={submit}>Sí, entregar</button><button className="secondary-button" onClick={() => setOverlay(null)}>Seguir respondiendo</button></div></Dialog>}
     {overlay === 'exit' && <Dialog title="Guardar y salir" onClose={() => setOverlay(null)}><p>Podrás reanudar este intento en este navegador. En una prueba cronometrada el tiempo continúa mientras estés fuera.</p><button className="primary-button" onClick={() => { const ok = storageService.saveActiveSession(snapshot()); if (ok) onLeave?.(); else setSaved(storageService.lastError); }}>Guardar y volver a la materia</button><button className="secondary-button" onClick={() => setOverlay(null)}>Continuar respondiendo</button></Dialog>}
-    <span className="sr-only">Tiempo transcurrido: {elapsed} segundos</span>
   </div>;
 }
+function ExamClock({ enabled, deadline, startTime, onExpire }: {
+  enabled: boolean; deadline?: number; startTime: string; onExpire: () => void;
+}) {
+  const [now, setNow] = useState(Date.now);
+  useEffect(() => {
+    if (!enabled) return;
+    const tick = () => {
+      const currentTime = Date.now();
+      setNow(currentTime);
+      if (deadline && currentTime >= deadline) onExpire();
+    };
+    tick();
+    const interval = window.setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', tick);
+    return () => { window.clearInterval(interval); document.removeEventListener('visibilitychange', tick); };
+  }, [enabled, deadline, onExpire]);
+
+  const remaining = Math.max(0, Math.ceil(((deadline || now) - now) / 1000));
+  const elapsed = Math.max(0, Math.floor((now - Date.parse(startTime)) / 1000));
+  return <>
+    {enabled && <span className={remaining <= 300 ? 'time-warning' : 'timer'} aria-label="Tiempo restante">{Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, '0')}</span>}
+    <span role="status" className="sr-only">{enabled && remaining <= 60 ? 'Queda un minuto o menos. Al terminar el tiempo se entrega la prueba automáticamente.' : enabled && remaining <= 300 ? 'Quedan cinco minutos o menos.' : ''}</span>
+    <span className="sr-only">Tiempo transcurrido: {elapsed} segundos</span>
+  </>;
+}
+
 export function options(value: import('../../types').Item['options']) {
   return Array.isArray(value) ? value.map((option, index) => ({ letter: (option.letter || 'ABCD'[index]) as 'A' | 'B' | 'C' | 'D', text: typeof option === 'string' ? option : option.text })) : (Object.entries(value).map(([letter, text]) => ({ letter: letter as 'A' | 'B' | 'C' | 'D', text })));
 }

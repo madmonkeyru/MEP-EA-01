@@ -1,14 +1,18 @@
 import type { Group, Item, PracticeConfig, TestSession } from '../types';
 import { dataService } from './dataService';
+import { getReviewItems } from './reviewDraft';
 import { TestEngine } from './testEngine';
 
 export const isExam = (config: PracticeConfig) => config.mode === 'simulation' || config.mode === 'dynamic_mock';
 export const modeLabel = (config: PracticeConfig) => config.title || ({ simulation: 'Simulación completa', dynamic_mock: 'Simulación con distribución curricular', diagnostic: 'Diagnóstico Rápido', area: 'Práctica por área', topic: 'Práctica por tema', concept_drilldown: 'Práctica por concepto', random_practice: 'Práctica variada' }[config.mode]);
-export const areaLabel = (area?: string) => ({ geometry: 'Geometría', functions: 'Relaciones y álgebra', statistics: 'Estadística y probabilidad' }[area || ''] || 'Todas las áreas');
-export function scopeKey(config: PracticeConfig) {
-  return JSON.stringify([config.programId || 'bxm', config.subjectId || 'matematicas', config.subprogramId || '', config.convocatoriaId || '2026-c2', config.mode, config.area || '', config.topic || '', config.conceptId || '', config.setId || '', config.itemIds || [], config.itemCount, config.enableTimer, config.timerDurationMinutes]);
-}
+export const areaLabel = (area?: string) => ({ numbers: 'Números', measurement: 'Medidas', geometry: 'Geometría', functions: 'Relaciones y álgebra', statistics: 'Estadística y probabilidad' }[area || ''] || 'Todas las áreas');
+export { scopeKey, validSession } from './sessionStorageMetadata';
+
 export function prepareItems(config: PracticeConfig): Item[] {
+  if (config.reviewDraft) {
+    const items = getReviewItems(config);
+    return config.itemIds ? config.itemIds.flatMap(id => items.filter(item => item.id === id)) : items;
+  }
   if (config.itemIds) return [...new Set(config.itemIds)].map(id => dataService.getItemById(id)).filter((item): item is Item => !!item);
   if (config.mode === 'simulation') {
     const pool = dataService.getSimulationItems(config.setId === 'all' ? 'set_1' : config.setId || 'set_1');
@@ -25,17 +29,6 @@ export function createSession(config: PracticeConfig, snapshotItems?: Item[], sn
     itemIds: items.map(item => item.id), responses: {}, flaggedItems: {}, checkedItems: {}, currentResponseIndex: 0,
     startTime: new Date(now).toISOString(), elapsedSeconds: 0, isCompleted: false,
     deadline: config.enableTimer ? now + config.timerDurationMinutes * 60000 : undefined, passingScore: dataService.getPassingScore() };
-}
-export function validSession(session: TestSession | null, userId: string): session is TestSession {
-  return !!session && session.version === 2 && session.userId === userId && !session.isCompleted && !!session.config &&
-    ['simulation', 'dynamic_mock', 'diagnostic', 'area', 'topic', 'random_practice', 'concept_drilldown'].includes(session.config.mode) &&
-    Array.isArray(session.items) && session.items.length > 0 && Array.isArray(session.itemIds) && session.items.length === session.itemIds.length &&
-    new Set(session.itemIds).size === session.itemIds.length &&
-    session.items.every((item, index) => !!item && item.id === session.itemIds[index] && typeof item.stem === 'string' && !!item.options && typeof item.options === 'object' && ['A', 'B', 'C', 'D'].includes(item.correct_answer) && Array.isArray(item.solution_steps)) &&
-    Number.isInteger(session.currentResponseIndex) && session.currentResponseIndex >= 0 && session.currentResponseIndex < session.items.length &&
-    !!session.responses && typeof session.responses === 'object' && !!session.flaggedItems && typeof session.flaggedItems === 'object' &&
-    Object.entries(session.responses).every(([id, response]) => session.itemIds.includes(Number(id)) && response && response.itemId === Number(id) && (response.selectedOption === null || ['A', 'B', 'C', 'D'].includes(response.selectedOption))) &&
-    Number.isFinite(Date.parse(session.startTime)) && (!session.config.enableTimer || Number.isFinite(session.deadline));
 }
 export function calculatorRule(program: string, subject?: string, level?: string) {
   if (program === 'cico' || program === 'i_ii_ciclo') return subject === 'matematicas' ? 'Calculadora prohibida' : 'Matemáticas se evalúa sin calculadora';

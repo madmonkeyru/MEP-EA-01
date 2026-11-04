@@ -1,3 +1,4 @@
+import { getPublishedCicoItems } from './reviewDraft';
 import {
   Item,
   Group,
@@ -11,7 +12,7 @@ import {
   PracticeConfig,
 } from '../types';
 
-import manifestJson from '../../content/manifest.json';
+import { programManifest } from './programCatalog';
 import set1Json from '../../content/bxm/matematicas/set_1.json';
 import set2Json from '../../content/bxm/matematicas/set_2.json';
 import set3Json from '../../content/bxm/matematicas/set_3.json';
@@ -20,8 +21,14 @@ import set5Json from '../../content/bxm/matematicas/set_5.json';
 import groupsJson from '../../content/bxm/matematicas/groups.json';
 import { TestEngine } from './testEngine';
 
-// Glob import all json files in content directory for dynamic resolution
-const contentModules = import.meta.glob('../../content/**/*.json');
+// Resolve manifest set and group files without creating separate chunks for indexed items.
+const contentModules = import.meta.glob([
+  '../../content/**/*.json',
+  '!../../content/items/math/**/*.json',
+  '!../../content/programs/**/convocatorias/*.json',
+  '!../../content/programs/**/drafts/*.json',
+  '!../../content/manifest.json',
+]);
 
 // Eagerly glob all atomic items and convocatoria blueprints
 const atomicItemModules = import.meta.glob('../../content/items/math/**/*.json', { eager: true });
@@ -44,7 +51,7 @@ class DataService {
   private listeners: Array<() => void> = [];
 
   constructor() {
-    this.manifest = manifestJson as unknown as ContentManifest;
+    this.manifest = programManifest;
     this.currentProgramId = this.manifest.default_program || 'bxm';
     this.currentSubjectId = this.manifest.default_subject || 'matematicas';
     this.currentConvocatoriaId = '2026-c2';
@@ -80,18 +87,18 @@ class DataService {
       }
     }
 
+    // Keep the released program-specific pool out of the shared BXM practice bank.
+    for (const item of getPublishedCicoItems()) {
+      this.decoupledItemsMap.set(item.code!, item);
+      this.decoupledItemsMap.set(String(item.id), item);
+    }
+
     // 2. Ingest all convocatoria blueprints
     for (const path in blueprintModules) {
       const mod: any = blueprintModules[path];
       const bp: ConvocatoriaManifest = mod.default || mod;
       if (bp && bp.convocatoriaId) {
-        this.blueprintsMap.set(bp.convocatoriaId, bp);
-        if (bp.programId) {
-          this.blueprintsMap.set(`${bp.programId}-${bp.convocatoriaId}`, bp);
-          if (bp.subprogramId) {
-            this.blueprintsMap.set(`${bp.programId}-${bp.subprogramId}-${bp.convocatoriaId}`, bp);
-          }
-        }
+        this.blueprintsMap.set(JSON.stringify([bp.programId, bp.subjectId, bp.subprogramId, bp.convocatoriaId]), bp);
       }
     }
   }
@@ -196,14 +203,13 @@ class DataService {
   }
 
   public getConvocatoriaBlueprint(convocatoriaId?: string): ConvocatoriaManifest | undefined {
-    const targetId = convocatoriaId || this.currentConvocatoriaId;
-    if (!targetId) return undefined;
+    return this.findConvocatoriaBlueprint(this.currentProgramId, this.currentSubjectId, this.currentSubprogramId, convocatoriaId || this.currentConvocatoriaId);
+  }
 
-    const compoundKey = this.currentSubprogramId
-      ? `${this.currentProgramId}-${this.currentSubprogramId}-${targetId}`
-      : `${this.currentProgramId}-${targetId}`;
-
-    return this.blueprintsMap.get(compoundKey) || this.blueprintsMap.get(targetId);
+  public findConvocatoriaBlueprint(programId?: string, subjectId?: string, moduleId?: string, convocatoriaId?: string): ConvocatoriaManifest | undefined {
+    const program = programId === 'cico' ? 'i_ii_ciclo' : programId;
+    const subject = subjectId === 'matematicas' ? 'matematica' : subjectId;
+    return this.blueprintsMap.get(JSON.stringify([program, subject, moduleId, convocatoriaId]));
   }
 
   public getDecoupledItemsMap(): Map<string, Item> {
@@ -234,7 +240,8 @@ class DataService {
   public async setProgram(
     programId: string,
     subprogramId?: string,
-    convocatoriaId?: string
+    convocatoriaId?: string,
+    subjectId?: string
   ): Promise<void> {
     const normalizedProgramId = programId === 'cico' ? 'i_ii_ciclo' : programId;
     const program = this.manifest.programs.find((p) => p.id === normalizedProgramId || (p.id === 'i_ii_ciclo' && programId === 'cico'));
@@ -243,13 +250,12 @@ class DataService {
       return;
     }
 
-    this.currentProgramId = program.id;
     this.currentSubprogramId = subprogramId;
     this.currentConvocatoriaId = convocatoriaId || '2026-c1';
 
-    const subject = program.subjects[0];
-    if (subject) await this.loadSubject(programId, subject.id);
-    else this.notify();
+    const selectedSubjectId = subjectId || program.subjects[0]?.id;
+    if (selectedSubjectId) await this.loadSubject(programId, selectedSubjectId);
+    else { this.currentProgramId = program.id; this.notify(); }
   }
 
   public async loadSubject(programId: string, subjectId: string): Promise<void> {
@@ -260,7 +266,13 @@ class DataService {
     const subject = program.subjects.find((s) => s.id === subjectId);
     if (!subject) throw new Error(`Subject ${subjectId} not found in program ${programId}`);
 
+    if (this.isInitialized && this.currentProgramId === programId && this.currentSubjectId === subjectId) {
+      this.notify();
+      return;
+    }
+
     const version = ++this.loadVersion;
+    this.isInitialized = false;
     this.currentProgramId = programId;
     this.currentSubjectId = subjectId;
     this.activeSets = subject.sets || [];
@@ -268,62 +280,44 @@ class DataService {
     this.decoupledItemsMap.clear();
     this.groupsMap.clear();
 
+    const [groupData, sets] = await Promise.all([
+      this.loadContent<GroupBankData>(subject.groups),
+      Promise.all(this.activeSets.map(set => this.loadContent<QuestionSetData>(set.file))),
+    ]);
+    if (version !== this.loadVersion) return;
 
-
-    // Load groups if path exists
-    if (subject.groups) {
-      const groupKey = `../../content/${subject.groups}`;
-      const groupModuleLoader = contentModules[groupKey];
-      if (groupModuleLoader) {
-        try {
-          const groupModule: any = await groupModuleLoader();
-          if (version !== this.loadVersion) return;
-          const groupData: GroupBankData = groupModule.default || groupModule;
-          if (groupData && Array.isArray(groupData.groups)) {
-            groupData.groups.forEach((g) => {
-              this.groupsMap.set(g.group_id, g);
-            });
-          }
-        } catch (err) {
-          console.warn(`Failed to dynamically load groups for ${subject.groups}:`, err);
-        }
-      }
+    for (const group of groupData?.groups || []) {
+      this.groupsMap.set(group.group_id, group);
     }
-
-    // Load each set
-    for (const setInfo of subject.sets || []) {
-      if (setInfo.file) {
-        const setKey = `../../content/${setInfo.file}`;
-        const setModuleLoader = contentModules[setKey];
-        if (setModuleLoader) {
-          try {
-            const setModule: any = await setModuleLoader();
-            if (version !== this.loadVersion) return;
-            const setData: QuestionSetData = setModule.default || setModule;
-            const items = setData.items || [];
-            this.itemsMap.set(setInfo.id, items);
-            items.forEach((item) => {
-              if (item.code) this.decoupledItemsMap.set(item.code, item);
-              this.decoupledItemsMap.set(String(item.id), item);
-              const prefix =
-                item.area_id === 'functions' ? 'item-alg' : item.area_id === 'statistics' ? 'item-est' : 'item-geo';
-              this.decoupledItemsMap.set(`${prefix}-${String(item.id).padStart(3, '0')}`, item);
-            });
-          } catch (err) {
-            console.warn(`Failed to dynamically load set file ${setInfo.file}:`, err);
-          }
-        }
-      }
-    }
+    this.activeSets.forEach((set, index) => {
+      const items = sets[index]?.items || [];
+      this.itemsMap.set(set.id, items);
+      items.forEach(item => {
+        if (item.code) this.decoupledItemsMap.set(item.code, item);
+        this.decoupledItemsMap.set(String(item.id), item);
+        const prefix =
+          item.area_id === 'functions' ? 'item-alg' : item.area_id === 'statistics' ? 'item-est' : 'item-geo';
+        this.decoupledItemsMap.set(`${prefix}-${String(item.id).padStart(3, '0')}`, item);
+      });
+    });
 
     // Re-index atomic items if subject is math
     if (subjectId === 'matematicas' || subjectId === 'matematica') {
       this.loadAtomicItemsAndBlueprints();
     }
 
-    if (version !== this.loadVersion) return;
     this.isInitialized = true;
     this.notify();
+  }
+
+  private async loadContent<T>(file?: string): Promise<T | undefined> {
+    const load = file && contentModules[`../../content/${file}`];
+    if (!load) return;
+    try {
+      return (await load() as { default: T }).default;
+    } catch (error) {
+      console.warn(`Failed to dynamically load ${file}:`, error);
+    }
   }
 
   public getAllItems(): Item[] {

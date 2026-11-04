@@ -47,7 +47,7 @@ const itemCodes = new Set();
 const itemNumericIds = new Set();
 let itemsValidated = 0;
 
-const subdirs = ['geometry', 'algebra', 'statistics'];
+const subdirs = ['numbers', 'geometry', 'measurement', 'algebra', 'statistics'];
 for (const sub of subdirs) {
   const dirPath = path.join(ITEMS_DIR, sub);
   if (!fs.existsSync(dirPath)) continue;
@@ -64,6 +64,10 @@ for (const sub of subdirs) {
         console.error(`[ERROR] Item ${file}: missing valid numeric id.`);
         errorCount++;
       } else {
+        if (itemNumericIds.has(item.id)) {
+          console.error(`[ERROR] Duplicate numeric item ID: ${item.id}`);
+          errorCount++;
+        }
         itemNumericIds.add(item.id);
       }
 
@@ -78,7 +82,7 @@ for (const sub of subdirs) {
         itemCodes.add(item.code);
       }
 
-      if (!item.area_id || !['geometry', 'functions', 'statistics'].includes(item.area_id)) {
+      if (!item.area_id || !['numbers', 'geometry', 'measurement', 'functions', 'statistics'].includes(item.area_id)) {
         console.error(`[ERROR] Item ${file}: invalid or missing area_id.`);
         errorCount++;
       }
@@ -125,7 +129,76 @@ for (const sub of subdirs) {
   }
 }
 
-console.log(`[PASS] Validated ${itemsValidated} atomic items across ${subdirs.length} domains.`);
+console.log(`[PASS] Validated ${itemsValidated} atomic items in the item bank.`);
+
+// Validate the I & II Ciclo review draft separately from playable blueprints.
+const draftPath = path.join(PROGRAMS_DIR, 'i_ii_ciclo/matematica/drafts/2026-c2.json');
+try {
+  const draft = JSON.parse(fs.readFileSync(draftPath, 'utf8'));
+  const specification = JSON.parse(fs.readFileSync(path.resolve(path.dirname(draftPath), draft.structureSource), 'utf8'));
+  const draftItems = draft.sections.flatMap(section => section.items);
+  const draftCodes = new Set();
+  const publicIds = new Set();
+  const stems = new Set();
+  const issues = [];
+
+  if (draft.status !== 'released' || draft.review?.status !== 'complete' ||
+      draft.programId !== specification.programId || draft.subjectId !== specification.subjectId ||
+      draft.convocatoriaId !== '2026-c2' || specification.convocatoriaId !== '02-2026' ||
+      draft.calculatorAllowed !== specification.calculatorAllowed ||
+      !Number.isInteger(draft.timeLimitMinutes) || draft.timeLimitMinutes < 1 ||
+      !draft.scheduleSourceUrl?.startsWith('https://dgec.mep.go.cr/') ||
+      draft.totalItems !== specification.totalPoints || draftItems.length !== draft.totalItems ||
+      draft.sections.length !== specification.blocks.length) {
+    issues.push('draft metadata or total differs from the review requirements');
+  }
+
+  for (const [index, section] of draft.sections.entries()) {
+    const block = specification.blocks[index];
+    if (section.blockCode !== block?.blockCode || section.items.length !== block.totalPoints) {
+      issues.push(`incorrect block or item count for ${section.blockCode}`);
+      continue;
+    }
+    const expectedEvidence = new Set();
+    for (const affirmation of block.affirmations) {
+      const evidenceCodes = new Set(affirmation.evidences.map(evidence => evidence.code));
+      evidenceCodes.forEach(code => expectedEvidence.add(code));
+      const matched = section.items.filter(item => evidenceCodes.has(item.evidence));
+      if (matched.length !== affirmation.targetPoints ||
+          [...evidenceCodes].some(code => !matched.some(item => item.evidence === code))) {
+        issues.push(`incorrect evidence coverage for ${section.blockCode} / ${affirmation.code}`);
+      }
+    }
+    for (const item of section.items) {
+      const options = Object.values(item.options);
+      if (!Number.isInteger(item.publicId) || item.publicId < 1 || publicIds.has(item.publicId) ||
+          itemNumericIds.has(item.publicId) || itemCodes.has(item.code) ||
+          !item.code?.trim() || draftCodes.has(item.code) || !item.stem?.trim() || stems.has(item.stem) ||
+          !expectedEvidence.has(item.evidence) || !item.solution?.trim() ||
+          options.length !== 4 || new Set(options).size !== 4 ||
+          !['A', 'B', 'C', 'D'].every(key => item.options[key]?.trim()) ||
+          !['A', 'B', 'C', 'D'].includes(item.correctAnswer)) {
+        issues.push(`invalid or duplicate review item ${item.code}`);
+      }
+      publicIds.add(item.publicId);
+      draftCodes.add(item.code);
+      stems.add(item.stem);
+    }
+  }
+  for (const issue of issues) console.error(`[ERROR] I & II Ciclo review draft: ${issue}.`);
+  errorCount += issues.length;
+  if (!issues.length) {
+    for (const item of draftItems) {
+      itemCodes.add(item.code);
+      itemNumericIds.add(item.publicId);
+    }
+    itemsValidated += draftItems.length;
+    console.log(`[PASS] I & II Ciclo released bank: ${draftItems.length} items match the specification.`);
+  }
+} catch (error) {
+  console.error('[ERROR] Could not validate I & II Ciclo review draft:', error);
+  errorCount++;
+}
 
 // 3. Find and Validate All Convocatoria Blueprints Across Programs
 function findBlueprints(dir, list = []) {
@@ -135,7 +208,7 @@ function findBlueprints(dir, list = []) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       findBlueprints(fullPath, list);
-    } else if (entry.isFile() && entry.name.endsWith('.json') && fullPath.includes('/convocatorias/')) {
+    } else if (entry.isFile() && entry.name.endsWith('.json') && path.basename(dir) === 'convocatorias') {
       list.push(fullPath);
     }
   }
@@ -145,6 +218,7 @@ function findBlueprints(dir, list = []) {
 const allBlueprints = findBlueprints(PROGRAMS_DIR);
 console.log(`\nValidating ${allBlueprints.length} blueprints across all programs:`);
 
+const freeReferences = new Set();
 for (const bpPath of allBlueprints) {
   const relPath = path.relative(ROOT_DIR, bpPath);
   try {
@@ -164,20 +238,50 @@ for (const bpPath of allBlueprints) {
       errorCount++;
     }
 
-    // Verify all pool item IDs exist in decoupled item bank
-    let missingInPool = 0;
-    (bp.itemPool || []).forEach((code) => {
-      if (!itemCodes.has(code)) {
-        missingInPool++;
-      }
-    });
-
-    if (missingInPool > 0) {
-      console.error(`[ERROR] Blueprint ${relPath}: ${missingInPool} items in itemPool not resolved in item bank!`);
-      errorCount++;
-    } else {
-      console.log(`[PASS] Blueprint ${relPath}: all ${bp.itemPool.length} items verified in item bank.`);
+    const issues = [];
+    const pool = bp.itemPool || [];
+    const sections = bp.sections || [];
+    const sectionItems = sections.flatMap(section => section.itemIds);
+    if (!['sample', 'complete'].includes(bp.coverage)) issues.push('missing sample or complete coverage');
+    if (!Number.isInteger(bp.totalItems) || bp.totalItems < 1 || pool.length !== bp.totalItems) {
+      issues.push('item pool length differs from declared total');
     }
+    if (new Set(pool).size !== pool.length || new Set(sectionItems).size !== sectionItems.length) {
+      issues.push('duplicate item reference');
+    }
+    if (sectionItems.length !== pool.length || sectionItems.some(code => !pool.includes(code))) {
+      issues.push('section references differ from item pool');
+    }
+    if (pool.some(code => !itemCodes.has(code))) issues.push('unresolved item reference');
+    let nextPosition = 1;
+    for (const section of sections) {
+      const count = section.itemIds.length;
+      if (!count || section.totalItems !== count ||
+          section.itemRange?.[0] !== nextPosition || section.itemRange?.[1] !== nextPosition + count - 1) {
+        issues.push(`invalid count or range in section ${section.id}`);
+      }
+      nextPosition += count;
+    }
+
+    if (bp.coverage === 'complete') {
+      const source = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content', bp.structureSource), 'utf8'));
+      if (source.programId !== bp.programId || source.subjectId !== bp.subjectId ||
+          source.totalPoints !== bp.totalItems || source.blocks.length !== sections.length ||
+          source.blocks.some((block, index) =>
+            (sections[index].specBlockCode
+              ? block.blockCode !== sections[index].specBlockCode
+              : block.areaId !== sections[index].id) || block.totalPoints !== sections[index].totalItems)) {
+        issues.push('complete exam differs from its specification');
+      }
+    }
+    if (bp.freeReference) {
+      const key = JSON.stringify([bp.programId, bp.subjectId, bp.subprogramId]);
+      if (bp.coverage !== 'complete' || freeReferences.has(key)) issues.push('invalid or duplicate free reference');
+      freeReferences.add(key);
+    }
+    for (const issue of issues) console.error(`[ERROR] Blueprint ${relPath}: ${issue}.`);
+    errorCount += issues.length;
+    if (!issues.length) console.log(`[PASS] Blueprint ${relPath}: ${bp.coverage}, ${pool.length} items.`);
   } catch (err) {
     console.error(`[ERROR] Failed to parse blueprint: ${relPath}`, err);
     errorCount++;
@@ -200,6 +304,78 @@ if (fs.existsSync(MANIFEST_PATH)) {
   }
   console.log(`[PASS] Manifest convocatoria blueprint references verified.`);
 }
+
+// Check the authored EDAD Geometry slice without registering it as playable content.
+const edadDraftPath = path.join(PROGRAMS_DIR, 'edad/matematica/parte-1-10mo/drafts/2026-c2-geometry.json');
+try {
+  const draft = JSON.parse(fs.readFileSync(edadDraftPath, 'utf8'));
+  const specification = JSON.parse(fs.readFileSync(path.resolve(path.dirname(edadDraftPath), draft.structureSource), 'utf8'));
+  const [section] = draft.sections;
+  const block = specification.blocks.find(entry => entry.blockCode === section.blockCode);
+  const codes = section.items.map(item => item.code);
+  const keys = ['A', 'B', 'C', 'D'];
+  if (draft.status !== 'pending_pedagogical_review' || draft.programId !== specification.programId ||
+      draft.subjectId !== specification.subjectId || draft.subprogramId !== 'EDAD_1' ||
+      draft.convocatoriaId !== '2026-c2' || draft.sections.length !== 1 || !block ||
+      section.areaId !== block.areaId || section.items.length !== block.totalPoints ||
+      new Set(codes).size !== codes.length ||
+      section.items.some(item => !item.code?.trim() || !item.stem?.trim() || !item.solution?.trim() ||
+        !keys.includes(item.correctAnswer) || Object.keys(item.options).length !== keys.length ||
+        new Set(Object.values(item.options)).size !== keys.length || !keys.every(key => item.options[key]?.trim()))) {
+    throw new Error('Geometry draft metadata, item count or item structure is invalid.');
+  }
+  for (const affirmation of block.affirmations) {
+    const evidence = affirmation.evidences.map(entry => entry.code);
+    const matched = section.items.filter(item => evidence.includes(item.evidence));
+    if (matched.length !== affirmation.targetPoints || evidence.some(code => !matched.some(item => item.evidence === code))) {
+      throw new Error(`Geometry draft evidence coverage differs from ${affirmation.code}.`);
+    }
+  }
+  console.log(`[PASS] EDAD Prueba 1 Geometry draft: ${section.items.length} items match the specification.`);
+} catch (error) {
+  console.error('[ERROR] Could not validate EDAD Prueba 1 Geometry draft:', error);
+  errorCount++;
+}
+
+// Validate calendar records before a new year or revision is published.
+const calendarDir = path.join(ROOT_DIR, 'content/calendar');
+const calendarPrograms = ['bxm', 'i_ii_ciclo', 'iii_ciclo', 'edad'];
+const calendarTypes = ['registration', 'sites', 'exam', 'results'];
+const isCalendarDay = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
+  Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+const isClockTime = value => typeof value === 'string' && /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value);
+let calendarEvents = 0;
+for (const file of fs.readdirSync(calendarDir).filter(name => name.endsWith('.json'))) {
+  try {
+    const events = JSON.parse(fs.readFileSync(path.join(calendarDir, file), 'utf8'));
+    const year = file.slice(0, -5);
+    const eventKeys = new Set();
+    if (!/^\d{4}$/.test(year) || !Array.isArray(events) || !events.length) throw new Error('Expected a non-empty YYYY.json calendar.');
+    for (const event of events) {
+      const key = JSON.stringify([event.programId, event.moduleId, event.convocatoriaId, event.type, event.start]);
+      const source = new URL(event.sourceUrl);
+      const hasValidModule = event.programId === 'edad' ? ['EDAD_1', 'EDAD_2'].includes(event.moduleId) : event.moduleId === undefined;
+      if (eventKeys.has(key) || !calendarPrograms.includes(event.programId) || !hasValidModule ||
+          ![`${year}-c1`, `${year}-c2`].includes(event.convocatoriaId) ||
+          !calendarTypes.includes(event.type) || !isCalendarDay(event.verifiedOn) ||
+          source.protocol !== 'https:' || !['dgec.mep.go.cr', 'portaldgec.mep.go.cr'].includes(source.hostname) ||
+          (event.start !== undefined && (!isCalendarDay(event.start) || !event.start.startsWith(year + '-'))) ||
+          (event.end !== undefined && (!isCalendarDay(event.end) || !event.start || event.end < event.start)) ||
+          (event.sessions !== undefined && (event.type !== 'exam' || !event.start || !Array.isArray(event.sessions) ||
+            event.sessions.some(session => !session.subject?.trim() || !isClockTime(session.startTime) ||
+              !isClockTime(session.endTime) || session.startTime >= session.endTime)))) {
+        console.error(`[ERROR] Calendar ${file}: invalid or duplicate event ${key}.`);
+        errorCount++;
+      }
+      eventKeys.add(key);
+      calendarEvents++;
+    }
+  } catch (error) {
+    console.error(`[ERROR] Could not validate calendar ${file}:`, error);
+    errorCount++;
+  }
+}
+if (calendarEvents) console.log(`[PASS] Checked ${calendarEvents} calendar events.`);
 
 console.log('\n=====================================================');
 console.log(`Summary: ${itemsValidated} items | ${allBlueprints.length} blueprints | ${errorCount} errors | ${warningCount} warnings`);

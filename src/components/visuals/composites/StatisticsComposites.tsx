@@ -26,12 +26,8 @@ export const TableComponent: React.FC<TableSpecProps> = ({
 
   return (
     <div className="table-visual-component my-2 w-full max-w-full overflow-x-auto flex flex-col items-center">
-      {title && (
-        <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 text-center mb-2">
-          {title}
-        </div>
-      )}
       <table className="min-w-0 border-collapse border border-zinc-300 dark:border-zinc-700 text-xs sm:text-sm bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 text-center shadow-xs rounded-xl overflow-hidden transition-colors">
+        {title && <caption className="mb-2 text-sm font-bold text-zinc-900 dark:text-zinc-100">{title}</caption>}
         {headerCells.length > 0 && (
           <thead>
             <tr className="bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 font-semibold border-b border-zinc-300 dark:border-zinc-700">

@@ -195,12 +195,6 @@ export class TestEngine {
     config: PracticeConfig,
     allItems: Item[]
   ): Item[] {
-    let pool = [...allItems];
-
-    if (config.mode === 'concept_drilldown' && config.conceptId) {
-      return this.assembleConceptDrilldown(config.conceptId, allItems, config.itemCount);
-    }
-
     if (config.mode === 'diagnostic') {
       const count = typeof config.itemCount === 'number' ? config.itemCount : 8;
       return this.assembleDiagnosticSession(allItems, count);
@@ -209,6 +203,14 @@ export class TestEngine {
     if (config.mode === 'dynamic_mock') {
       const count = config.itemCount === 'all' ? 60 : Number(config.itemCount) || 60;
       return this.assembleWeightedMockExam(allItems, count);
+    }
+
+    let pool = config.difficultyTier === undefined
+      ? [...allItems]
+      : allItems.filter(item => item.difficulty_tier === config.difficultyTier);
+
+    if (config.mode === 'concept_drilldown' && config.conceptId) {
+      return this.assembleConceptDrilldown(config.conceptId, pool, config.itemCount);
     }
 
     if (config.area && config.area !== 'all') {

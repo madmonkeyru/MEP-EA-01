@@ -1,8 +1,25 @@
-import { afterEach, describe, expect, it } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { cleanup, configure, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { App } from './App';
 import { ThemeProvider } from './context/ThemeContext';
 import { dataService } from './services/dataService';
+import { storageService } from './services/storageService';
+
+configure({ asyncUtilTimeout: 5000 });
+vi.setConfig({ testTimeout: 15000 });
+
+// Transform lazy screens before testing their navigation and interactions.
+beforeAll(async () => {
+  await Promise.all([
+    import('./components/pages/LandingPage'),
+    import('./components/pages/ExamReviewPage'),
+    import('./components/test/TestShell'),
+    import('./components/results/ResultsPage'),
+    import('./components/knowledge/OfficialCalendar'),
+    import('./components/onboarding/HelperPage'),
+    import('./components/onboarding/ReadinessWizard'),
+  ]);
+}, 60000);
 
 afterEach(async () => {
   cleanup();
@@ -17,6 +34,100 @@ function mount(hash = '#/') {
 }
 
 describe('application curriculum flows', () => {
+  it('finds a curriculum evidence and opens its linked lesson', async () => {
+    mount('#/programas/bxm/matematicas?convocatoria=2026-c2&seccion=resources&recurso=specs');
+    const search = await screen.findByRole('searchbox', { name: 'Buscar en el temario' });
+    fireEvent.change(search, { target: { value: 'geometria A1.2' } });
+    expect(screen.getByRole('heading', { name: 'Evidencia A1.2' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Evidencia A1.1' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Ver explicación y ejemplo de circunferencia' }));
+    await screen.findByRole('heading', { name: 'Del centro y el radio a la ecuación' });
+  });
+
+  it('starts only questions in the requested difficulty tier and uses the preview count', async () => {
+    mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
+    await screen.findByRole('button', { name: 'Iniciar práctica' });
+    fireEvent.change(screen.getByLabelText('Dificultad'), { target: { value: '3' } });
+    const eligible = dataService.getAllItems().filter(item => item.area_id === 'geometry' && item.difficulty_tier === 3).length;
+    expect(eligible).toBeGreaterThan(0);
+    const count = Math.min(10, eligible);
+    expect(screen.getByRole('status')).toHaveTextContent(`${eligible} preguntas en banco. Este intento tendrá ${count}`);
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar práctica' }));
+    await screen.findByRole('heading', { name: `Pregunta 1 de ${count}` });
+    const attempt = storageService.getActiveSession();
+    expect(attempt?.items?.every(item => item.difficulty_tier === 3)).toBe(true);
+    expect(attempt?.items).toHaveLength(count);
+  });
+
+  it('starts the released I & II Ciclo exam from the public catalogue', async () => {
+    mount('#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2');
+    expect(await screen.findByText(/60 preguntas · Referencia gratuita/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Preparar simulación' }));
+    const dialog = screen.getByRole('dialog', { name: 'Antes de comenzar' });
+    expect(within(dialog).getByText(/180 minutos · Calculadora prohibida/)).toBeInTheDocument();
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Iniciar simulación' }));
+    await screen.findByRole('heading', { name: 'Pregunta 1 de 60' });
+    const attempt = storageService.getActiveSession();
+    expect(attempt?.items).toHaveLength(60);
+    expect(attempt?.items?.every(item => item.id > 0)).toBe(true);
+    expect(attempt?.config.reviewDraft).toBeUndefined();
+    expect(attempt?.deadline).toBe(Date.parse(attempt?.startTime ?? '') + 180 * 60_000);
+  });
+
+  it('recovers the timed review draft and keeps its results separate from public samples', async () => {
+    const review = '#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2&seccion=review';
+    const view = mount(review);
+    fireEvent.click(await screen.findByRole('button', { name: 'Iniciar examen de revisión' }));
+    await screen.findByRole('heading', { name: 'Pregunta 1 de 60' });
+    expect(screen.getByText(/Calculadora prohibida/)).toBeInTheDocument();
+    fireEvent.click(screen.getAllByRole('radio')[0]);
+    const testUrl = window.location.hash;
+    view.unmount();
+    mount(testUrl);
+    await screen.findByRole('heading', { name: 'Pregunta 1 de 60' });
+    expect(screen.getAllByRole('radio')[0]).toBeChecked();
+    fireEvent.click(screen.getByRole('button', { name: 'Finalizar' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Sí, entregar' }));
+    await screen.findByRole('heading', { name: /Tu resultado:/ });
+    expect(screen.getByText('Medidas', { exact: true })).toBeInTheDocument();
+    expect(screen.getAllByText('Números', { exact: true }).length).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole('button', { name: 'Pregunta 1, incorrecta' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Ver solución paso a paso' }));
+    expect(screen.getByText(/Ítem original en revisión/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Volver a la vista general' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Pregunta 54, sin responder' }));
+    expect(screen.getByRole('columnheader', { name: 'Préstamos' })).toBeInTheDocument();
+    const reviewSession = JSON.parse(localStorage.getItem('mep_ea_attempts')!)[0].session;
+    expect(reviewSession.deadline - Date.parse(reviewSession.startTime)).toBe(180 * 60_000);
+    expect(reviewSession.passingScore).toBe(65);
+    fireEvent.click(screen.getByRole('button', { name: 'Practicar 60 preguntas por reforzar' }));
+    await screen.findByRole('heading', { name: 'Pregunta 1 de 60' });
+    expect(screen.getByText(/Calculadora prohibida/)).toBeInTheDocument();
+    cleanup();
+    mount('#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2&seccion=progress');
+    await screen.findByText('Aún no hay intentos en esta asignatura.');
+    expect(screen.queryByRole('link', { name: 'Revisar resultado' })).not.toBeInTheDocument();
+  });
+
+  it('launches only the selected level’s sample', async () => {
+    mount('#/programas/edad/matematicas?convocatoria=2026-c2&nivel=EDAD_2');
+    await screen.findByRole('heading', { name: 'Muestra interactiva' });
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar muestra' }));
+    await screen.findByRole('heading', { name: 'Pregunta 1 de 2' });
+    expect(window.location.hash).toContain('nivel=EDAD_2');
+  });
+
+  it('filters the official calendar by convocatoria and links to the revised EDAD schedules', async () => {
+    mount('#/calendario?programa=edad&convocatoria=2026-c2');
+    const calendar = within(await screen.findByRole('region', { name: 'Calendario oficial de Educación Abierta' }));
+    expect(calendar.getByRole('heading', { name: /Inscripción.*Prueba 1/ })).toBeInTheDocument();
+    expect(calendar.getByRole('heading', { name: /Inscripción.*Prueba 2/ })).toBeInTheDocument();
+    expect(calendar.getAllByRole('link', { name: 'Fuente DGEC' }).some(link =>
+      link.getAttribute('href')?.includes('V.2-PRUEBA-2-CALENDARIO-CONVOC-02-2026.pdf'))).toBe(true);
+    fireEvent.change(calendar.getByLabelText('Convocatoria'), { target: { value: '2026-c1' } });
+    expect(calendar.queryByRole('heading', { name: /Resultados/ })).not.toBeInTheDocument();
+  });
+
   it('restores exact active answers and reopens completed results through their URLs', async () => {
     let view = mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
     fireEvent.click(await screen.findByRole('button', { name: 'Iniciar práctica' }));
@@ -93,13 +204,13 @@ describe('application curriculum flows', () => {
     expect(screen.getByText('Calculadora prohibida')).toBeInTheDocument();
   });
 
-  it('keeps BXM practice functional and previews an unpublished convocatoria', async () => {
+  it('keeps BXM practice functional and labels the 01-2026 review simulation', async () => {
     mount();
     fireEvent.click(screen.getByRole('button', { name: 'Practicar Matemáticas BXM' }));
     await screen.findByRole('button', { name: 'Ensayar el examen' });
     expect(dataService.getAllItems().length).toBeGreaterThan(0);
     fireEvent.change(screen.getByLabelText('Convocatoria de referencia'), { target: { value: '2026-c1' } });
-    await screen.findByRole('heading', { name: 'Banco de preguntas en preparación' });
+    await screen.findByRole('heading', { name: 'Simulación completa' });
     expect(screen.getByRole('button', { name: 'Consultar materiales oficiales' })).toBeEnabled();
     fireEvent.click(screen.getByRole('button', { name: 'Practicar Matemáticas BXM' }));
     await screen.findByRole('button', { name: 'Ensayar el examen' });

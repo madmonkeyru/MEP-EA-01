@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
 const base = process.env.FLOW_BASE_URL || 'http://127.0.0.1:5173';
-const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox', '--disable-gpu'] });
+const browser = await chromium.launch({ executablePath: process.env.FLOW_CHROME_PATH, headless: true, args: ['--no-sandbox', '--disable-gpu'] });
 const page = await browser.newPage();
 const errors = [];
 page.on('pageerror', error => errors.push(error.message));
@@ -10,7 +10,7 @@ try {
   await page.goto(base);
   assert.equal(await page.locator('main').count(), 1);
   await page.getByRole('button', { name: 'Practicar Matemáticas BXM', exact: true }).waitFor();
-  for (const program of ['cico', 'iii_ciclo', 'edad', 'bxm']) {
+  for (const program of ['i_ii_ciclo', 'iii_ciclo', 'edad', 'bxm']) {
     await page.goto(base + '/#/programas/' + program + '/espanol?seccion=resources');
     await page.getByRole('heading', { name: 'Materiales oficiales en PDF' }).waitFor();
     const href = await page.getByRole('link', { name: 'Abrir PDF (otra pestaña)' }).first().getAttribute('href');
@@ -18,6 +18,12 @@ try {
     assert.equal(response.status(), 200);
     assert.equal((await response.body()).subarray(0, 5).toString(), '%PDF-');
   }
+  await page.goto(base + '/#/calendario?programa=edad&convocatoria=2026-c2');
+  const calendar = page.getByRole('region', { name: 'Calendario oficial de Educación Abierta' });
+  await calendar.getByRole('heading', { name: /Inscripción.*Prueba 1/ }).waitFor();
+  await calendar.getByRole('heading', { name: /Inscripción.*Prueba 2/ }).waitFor();
+  await calendar.getByLabel('Convocatoria').selectOption('2026-c1');
+  assert.equal(await calendar.getByRole('heading', { name: /Resultados/ }).count(), 0);
   await page.goto(base + '/#/ayuda');
   await page.getByRole('button', { name: 'Comenzar guía opcional' }).click();
   await page.getByRole('button', { name: 'Omitir guía', exact: true }).click();
@@ -41,6 +47,53 @@ try {
   await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
   assert.equal(page.url(), resultUrl);
   assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('mep_ea_attempts')).length), 1);
+  await page.goto(base + '/#/programas/edad/matematicas?convocatoria=2026-c2&nivel=EDAD_2');
+  await page.getByRole('button', { name: 'Iniciar muestra' }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 2' }).waitFor();
+  await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
+  await page.getByRole('button', { name: 'Sí, entregar', exact: true }).click();
+  await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
+  await page.goto(base + '/#/programas/edad/matematicas?convocatoria=2026-c2&nivel=EDAD_2&seccion=progress');
+  await page.getByRole('link', { name: 'Revisar resultado' }).waitFor();
+  await page.goto(base + '/#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2');
+  await page.getByRole('button', { name: 'Preparar simulación' }).click();
+  const preflight = page.getByRole('dialog', { name: 'Antes de comenzar' });
+  await preflight.getByText(/180 minutos · Calculadora prohibida/).waitFor();
+  await preflight.getByRole('button', { name: 'Iniciar simulación' }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 60' }).waitFor();
+  await page.getByRole('radio').first().check();
+  await page.reload();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 60' }).waitFor();
+  assert.equal(await page.getByRole('radio').first().isChecked(), true);
+  await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
+  await page.getByRole('button', { name: 'Sí, entregar', exact: true }).click();
+  await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.getByRole('button', { name: 'Pregunta 54, sin responder' }).focus();
+  await page.keyboard.press('Enter');
+  const table = page.getByRole('table', { name: 'Préstamos por día' });
+  await table.getByRole('columnheader', { name: 'Préstamos' }).waitFor();
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto(base + '/#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2&seccion=review');
+  await page.getByRole('button', { name: 'Iniciar examen de revisión' }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 60' }).waitFor();
+  await page.getByText(/Calculadora prohibida/).waitFor();
+  await page.getByRole('radio').first().check();
+  await page.reload();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 60' }).waitFor();
+  assert.equal(await page.getByRole('radio').first().isChecked(), true);
+  await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
+  await page.getByRole('button', { name: 'Sí, entregar', exact: true }).click();
+  await page.getByRole('heading', { name: /Tu resultado:/ }).waitFor();
+  await page.getByRole('button', { name: 'Pregunta 54, sin responder' }).click();
+  await page.getByRole('columnheader', { name: 'Préstamos' }).waitFor();
+  await page.goto(base + '/#/programas/bxm/matematicas?convocatoria=2026-c2&seccion=resources&recurso=specs');
+  await page.getByRole('searchbox', { name: 'Buscar en el temario' }).fill('geometria A1.2');
+  await page.getByRole('button', { name: 'Ver explicación y ejemplo de circunferencia' }).click();
+  await page.getByRole('heading', { name: 'Del centro y el radio a la ecuación' }).waitFor();
+  await page.getByRole('button', { name: 'Responder comprobación' }).click();
+  await page.getByRole('heading', { name: 'Pregunta 1 de 1' }).waitFor();
   await mkdir('artifacts/ui-validation', { recursive: true });
   for (const width of [320, 390, 768, 1024, 1440]) {
     for (const theme of ['light', 'dark']) {

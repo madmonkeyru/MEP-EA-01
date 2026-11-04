@@ -1,3 +1,4 @@
+import { dataService } from '../../services/dataService';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { ProgramInfo } from '../../types';
 import { calculatorRule } from '../../services/learningSession';
@@ -74,8 +75,14 @@ export function FrameworkHubPage({ program, route, onNavigate }: {
     <section aria-label="Asignaturas del programa" className="space-y-4">
       <h2 className="text-xl font-semibold">Elige una asignatura</h2>
       <p className="text-sm text-stone-600 dark:text-slate-400">Matemáticas BXM tiene prácticas disponibles en 02-2026. Las demás rutas permiten explorar su estructura.</p>
-      {[['Materias del programa', program.subjects.filter(subject => !['biologia', 'fisica', 'quimica', 'ingles', 'frances'].includes(subject.id))], ['Elige una ciencia', program.subjects.filter(subject => ['biologia', 'fisica', 'quimica'].includes(subject.id))], [program.id === 'iii_ciclo' ? 'Idioma: Inglés' : 'Elige un idioma', program.subjects.filter(subject => ['ingles', 'frances'].includes(subject.id))]].map(([label, entries]) => (entries as typeof program.subjects).length > 0 && <div key={label as string} className="space-y-3"><h3 className="font-semibold">{label as string}</h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{(entries as typeof program.subjects).map(subject => <a key={subject.id} className={hubPanel + ' subject-card text-left ui-lift'} href={routeHash({ ...route, view: 'hub', subjectId: subject.id })} onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onNavigate({ ...route, view: 'hub', subjectId: subject.id }); } }}><span className="subject-icon"><BookOpen size={21} aria-hidden="true" /></span><h4 className="text-lg font-semibold">{subject.name}</h4><p>{program.id === 'bxm' && subject.id === 'matematicas' && route.convocatoriaId === '2026-c2' ? 'Práctica interactiva disponible' : 'PDF oficiales disponibles · Práctica interactiva en preparación'}</p><span className="text-link">Ver materia y recursos <ArrowRight size={16} aria-hidden="true" /></span></a>)}</div></div>)}
+      {[['Materias del programa', program.subjects.filter(subject => !['biologia', 'fisica', 'quimica', 'ingles', 'frances'].includes(subject.id))], ['Elige una ciencia', program.subjects.filter(subject => ['biologia', 'fisica', 'quimica'].includes(subject.id))], [program.id === 'iii_ciclo' ? 'Idioma: Inglés' : 'Elige un idioma', program.subjects.filter(subject => ['ingles', 'frances'].includes(subject.id))]].map(([label, entries]) => (entries as typeof program.subjects).length > 0 && <div key={label as string} className="space-y-3"><h3 className="font-semibold">{label as string}</h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{(entries as typeof program.subjects).map(subject => <a key={subject.id} className={hubPanel + ' subject-card text-left ui-lift'} href={routeHash({ ...route, view: 'hub', subjectId: subject.id })} onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onNavigate({ ...route, view: 'hub', subjectId: subject.id }); } }}><span className="subject-icon"><BookOpen size={21} aria-hidden="true" /></span><h4 className="text-lg font-semibold">{subject.name}</h4><p>{catalogueLabel(dataService.findConvocatoriaBlueprint(program.id, subject.id, route.moduleId, route.convocatoriaId)?.coverage)}</p><span className="text-link">Ver materia y recursos <ArrowRight size={16} aria-hidden="true" /></span></a>)}</div></div>)}
 
     </section>
   </div>;
+}
+
+function catalogueLabel(coverage?: 'complete' | 'sample') {
+  if (coverage === 'complete') return 'Simulación completa disponible';
+  if (coverage === 'sample') return 'Muestra interactiva disponible';
+  return 'PDF oficiales disponibles · Práctica interactiva en preparación';
 }

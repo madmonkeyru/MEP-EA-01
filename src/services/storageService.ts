@@ -1,5 +1,5 @@
 import type { User, Attempt, TestSession, PracticeConfig, FunnelEvent, FunnelEventType } from '../types';
-import { scopeKey, validSession } from './learningSession';
+import { scopeKey, validSession } from './sessionStorageMetadata';
 const KEYS = { user: 'mep_ea_user', attempts: 'mep_ea_attempts', active: 'mep_ea_active_session', telemetry: 'mep_ea_telemetry_events' };
 class StorageService {
   lastError = '';
@@ -42,6 +42,7 @@ class StorageService {
       durationSeconds: session.elapsedSeconds, responses: session.responses, session });
   }
   getResult(id?: string, userId = this.getCurrentUser()?.id || 'guest') {
+    if (!id) return null;
     const session = this.getAttempts().find(a => a.id === id && a.userId === userId)?.session;
     return session?.isCompleted && validSession({ ...session, isCompleted: false }, userId) ? session : null;
   }
