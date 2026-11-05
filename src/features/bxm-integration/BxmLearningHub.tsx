@@ -268,7 +268,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
 
       {/* Prominent Decision Card: Tu siguiente paso recomendado */}
       {recommendation && (
-        <section className="ui-surface p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-amber-50/40 dark:bg-amber-950/20 space-y-3">
+        <section className="ui-surface p-5 sm:p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-amber-50/40 dark:bg-amber-950/20 space-y-3 min-w-0 overflow-hidden">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
             <h2 className="text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">Tu siguiente paso recomendado</h2>
@@ -323,7 +323,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
 
       {/* Retest Recovery and Mastery Update Card */}
       {retestRecoveryStatus && (
-        <section className={`ui-surface p-6 rounded-2xl border-2 space-y-3 ${
+        <section className={`ui-surface p-5 sm:p-6 rounded-2xl border-2 space-y-3 min-w-0 overflow-hidden ${
           retestRecoveryStatus.isRecovered
             ? 'border-emerald-500 bg-emerald-50/40 dark:bg-emerald-950/20'
             : 'border-amber-400 bg-amber-50/40 dark:bg-amber-950/20'
