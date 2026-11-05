@@ -35,6 +35,13 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     return saved && saved.sessionId === route.sessionId && route.tab === 'assessment' ? SessionRunner.restore(saved) : null;
   });
   const tab = route.tab || 'diagnostic';
+  const activePillar = useMemo<'inicio' | 'aprender' | 'practicar' | 'simular'>(() => {
+    if (tab === 'temario') return 'aprender';
+    if (tab === 'practice') return 'practicar';
+    if (tab === 'simulation') return 'simular';
+    return 'inicio';
+  }, [tab]);
+
   const go = useCallback((nextTab: string, evidenceKey?: string, sessionId?: string) => onNavigate({
     view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: nextTab, evidenceKey, sessionId,
   }), [onNavigate]);
@@ -196,20 +203,259 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           </p>
         </div>
         <nav aria-label="Aprendizaje BXM" className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
-          {([['diagnostic','Diagnóstico'],['temario','Temario de aprendizaje'],['practice','Práctica de autor'],['simulation','Simulación'],['path','Mi plan'],['progress','Mi preparación']] as const).map(([id, label]) =>
-            <button key={id} aria-current={tab === id ? 'page' : undefined} className="secondary-button text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 whitespace-nowrap shrink-0" onClick={() => go(id)}>{label}</button>)}
+          {([
+            ['inicio', 'Inicio', 'diagnostic'],
+            ['aprender', 'Aprender', 'temario'],
+            ['practicar', 'Practicar', 'practice'],
+            ['simular', 'Simular', 'simulation'],
+          ] as const).map(([pillarId, label, targetTab]) => {
+            const isCurrent = activePillar === pillarId;
+            return (
+              <button
+                key={pillarId}
+                aria-current={isCurrent ? 'page' : undefined}
+                className={`text-xs px-3 sm:px-3.5 py-1.5 rounded-xl font-bold whitespace-nowrap shrink-0 transition-colors ${
+                  isCurrent
+                    ? 'bg-amber-400 text-stone-950 shadow-xs'
+                    : 'bg-stone-100 dark:bg-stone-850 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-800'
+                }`}
+                onClick={() => go(targetTab)}
+              >
+                {label}
+              </button>
+            );
+          })}
+          <div className="h-4 w-px bg-stone-300 dark:bg-stone-700 mx-1 shrink-0" />
+          <button
+            aria-current={tab === 'progress' || tab === 'path' ? 'page' : undefined}
+            className={`text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg whitespace-nowrap shrink-0 font-medium transition-colors ${
+              tab === 'progress' || tab === 'path'
+                ? 'bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-100 font-bold'
+                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100'
+            }`}
+            onClick={() => go('progress')}
+          >
+            Mi preparación
+          </button>
           <button className="text-link text-xs whitespace-nowrap shrink-0 ml-1" onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Volver a Matemáticas</button>
         </nav>
       </header>
     )}
     {message && <div role="alert" className="feedback-panel space-y-2"><p>{message}</p>{store.lastError && <button className="secondary-button" onClick={() => { store.retrySave(); setMessage(store.lastError); }}>Reintentar guardado</button>}</div>}
     {active && tab !== 'assessment' && <section className="feedback-panel"><h2>Actividad de aprendizaje guardada</h2><p>{active.items.length} preguntas. {active.deadline ? 'El tiempo sigue corriendo al salir.' : 'Sin límite de tiempo.'}</p><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar aprendizaje</button><button className="secondary-button" onClick={() => setDiscard(true)}>Descartar actividad</button></div></section>}
-    {tab === 'diagnostic' && <section className="ui-surface p-5 rounded-2xl space-y-4">
-      <h2 className="text-xl font-semibold">¿Qué necesitas repasar?</h2>
-      <p>Diagnóstico gratuito: hasta 20 preguntas / 30 minutos. La muestra abarca las tres áreas, pero no evalúa todas las evidencias. Verás la cobertura antes de empezar.</p>
-      <button className="primary-button" onClick={() => request({ kind: 'diagnostic' })}>Preparar diagnóstico</button>
-      <p>La prueba oficial de referencia se conserva separada y gratuita.</p><button className="secondary-button" onClick={onOfficialSimulation}>Examen oficial de referencia · 60 preguntas</button>
-    </section>}
+    {(tab === 'diagnostic' || tab === 'inicio') && <div className="space-y-5">
+      {/* Tu preparación & Siguiente paso Dashboard */}
+      {(() => {
+        const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
+        const measured = masteryRecords.filter(r => r.totalQualifyingCount > 0);
+        const weak = masteryRecords.filter(r => r.status === 'needs_reinforcement');
+        const inProgress = masteryRecords.filter(r => r.status === 'in_progress');
+        const candidateForNext = weak[0] || inProgress[0] || masteryRecords.find(r => (inventory[r.evidenceKey]?.totalItems || 0) > 0);
+
+        const domainNames: Record<string, string> = {
+          geometry: 'Geometría',
+          functions: 'Relaciones y Álgebra (Funciones)',
+          statistics: 'Estadística y Probabilidad',
+        };
+
+        return (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* Main Journey Card: Tu preparación & Siguiente Paso */}
+            <section className="lg:col-span-2 ui-surface p-5 sm:p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 space-y-4">
+              <div className="flex items-center justify-between gap-2 border-b border-stone-100 dark:border-stone-800 pb-3">
+                <div className="space-y-0.5">
+                  <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                    Tu preparación formativa
+                  </span>
+                  <h2 className="text-lg sm:text-xl font-extrabold text-stone-900 dark:text-stone-100">
+                    {events.length > 0
+                      ? `Has trabajado en ${measured.length} de las 71 habilidades oficiales`
+                      : 'Comienza tu ruta de preparación'}
+                  </h2>
+                </div>
+                {events.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => go('progress')}
+                    className="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline shrink-0"
+                  >
+                    Ver detalle completo →
+                  </button>
+                )}
+              </div>
+
+              {/* Siguiente Paso Hero Card */}
+              {candidateForNext && events.length > 0 ? (
+                <div className="p-4 sm:p-5 rounded-xl border-2 border-amber-400 dark:border-amber-500/80 bg-amber-50/50 dark:bg-amber-950/20 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-amber-400 text-stone-950">
+                      Siguiente paso recomendado
+                    </span>
+                    <span className="text-xs font-semibold text-stone-500 capitalize">
+                      {domainNames[candidateForNext.domain] || candidateForNext.domain}
+                    </span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <h3 className="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100">
+                      Practicar: {domainNames[candidateForNext.domain] || candidateForNext.domain}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+                      {candidateForNext.description || `Habilidad ${candidateForNext.rawCode}`}
+                    </p>
+                    <div className="flex items-center gap-3 text-xs text-stone-600 dark:text-stone-400 pt-1">
+                      <span>Tu dominio actual: <strong className="text-stone-900 dark:text-stone-100">{candidateForNext.accuracyPercentage}%</strong></span>
+                      <span>·</span>
+                      <span>Estado: <strong className={candidateForNext.status === 'needs_reinforcement' ? 'text-rose-600 dark:text-rose-400' : 'text-amber-600 dark:text-amber-400'}>{candidateForNext.statusLabelEs}</strong></span>
+                    </div>
+                  </div>
+
+                  <div className="action-row pt-1">
+                    <button
+                      type="button"
+                      className="primary-button cursor-pointer"
+                      onClick={() => request({ kind: 'evidence_practice', evidenceKey: candidateForNext.evidenceKey })}
+                    >
+                      Practicar ahora
+                    </button>
+                    {lessons.some(l => l.evidenceKey === candidateForNext.evidenceKey) && (
+                      <button
+                        type="button"
+                        className="secondary-button cursor-pointer"
+                        onClick={() => openLesson(candidateForNext.evidenceKey)}
+                      >
+                        Estudiar lección
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className="p-4 sm:p-5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-850/60 space-y-3">
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                      Primer paso recomendado
+                    </span>
+                    <h3 className="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100">
+                      Diagnóstico Rápido de 20 preguntas
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                      El diagnóstico identifica tus fortalezas y debilidades en Geometría, Funciones y Estadística para diseñar tu plan de nivelación personalizado.
+                    </p>
+                  </div>
+                  <div className="action-row pt-1">
+                    <button
+                      type="button"
+                      className="primary-button cursor-pointer"
+                      onClick={() => request({ kind: 'diagnostic' })}
+                    >
+                      Iniciar evaluación diagnóstica
+                    </button>
+                    <button
+                      type="button"
+                      className="secondary-button cursor-pointer"
+                      onClick={() => go('temario')}
+                    >
+                      Explorar el Temario Digital
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Study Mode Sessions / ¿Cuánto tiempo tienes hoy? */}
+              <div className="pt-2 border-t border-stone-100 dark:border-stone-800 space-y-2">
+                <span className="text-xs font-bold text-stone-700 dark:text-stone-300">
+                  ¿Cuánto tiempo tienes para estudiar hoy?
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const target = candidateForNext?.evidenceKey || [...sampleLessonKeys][0];
+                      request({ kind: 'evidence_practice', evidenceKey: target });
+                    }}
+                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
+                  >
+                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">15 min</div>
+                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Reforzar una habilidad</div>
+                    <div className="text-[11px] text-stone-500 mt-0.5">Práctica enfocada de autor</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (results.length > 0) go('practice');
+                      else request({ kind: 'diagnostic' });
+                    }}
+                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
+                  >
+                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">30 min</div>
+                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Sesión de práctica</div>
+                    <div className="text-[11px] text-stone-500 mt-0.5">Diagnóstico o práctica variada</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => go('simulation')}
+                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
+                  >
+                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">45-60 min</div>
+                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Simulacro de examen</div>
+                    <div className="text-[11px] text-stone-500 mt-0.5">Simulacro formativo o benchmark</div>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            {/* Side Column: Secondary Actions & Official Reference */}
+            <div className="space-y-4">
+              {/* Diagnostic Quick Card */}
+              <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
+                    ¿Qué necesitas repasar?
+                  </h3>
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                    Gratis
+                  </span>
+                </div>
+                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                  Diagnóstico rápido: 20 preguntas / 30 minutos. Evalúa Geometría, Funciones y Estadística.
+                </p>
+                <button
+                  type="button"
+                  className="primary-button w-full cursor-pointer text-xs"
+                  onClick={() => request({ kind: 'diagnostic' })}
+                >
+                  Preparar diagnóstico
+                </button>
+              </section>
+
+              {/* Official Benchmark Quick Card */}
+              <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
+                    Examen Oficial de Referencia
+                  </h3>
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
+                    MEP Oficial
+                  </span>
+                </div>
+                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                  60 preguntas completas · 150 minutos. Convocatoria oficial de referencia conservada independiente y gratuita.
+                </p>
+                <button
+                  type="button"
+                  className="secondary-button w-full cursor-pointer text-xs"
+                  onClick={onOfficialSimulation}
+                >
+                  Examen oficial de referencia · 60 preguntas
+                </button>
+              </section>
+            </div>
+          </div>
+        );
+      })()}
+    </div>}
     {tab === 'temario' && <BxmDigitalTemario key={route.evidenceKey || 'catalog'} initialEvidenceKey={route.evidenceKey} onEvidenceChange={key => go('temario', key)} capabilities={{ isPremium: capabilities.getTier() === 'premium' }} callbacks={{
       onRequestDiagnostic: () => request({ kind: 'diagnostic' }),
       onStartTargetedPractice: key => request({ kind: 'evidence_practice', evidenceKey: key }),
@@ -236,47 +482,72 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     </section>}
     {tab === 'simulation' && <section className="space-y-6">
       <div className="ui-surface p-6 rounded-2xl space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 font-mono">
+            Modalidades de evaluación
+          </span>
+        </div>
         <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">Simulación de Examen BXM</h2>
-        <p className="text-sm text-stone-600 dark:text-stone-400">
-          Elige entre el simulacro formativo de autor para evaluar tus habilidades y generar un plan de nivelación, o la prueba oficial de referencia conservada intacta.
+        <p className="text-sm text-stone-600 dark:text-stone-400 max-w-3xl leading-relaxed">
+          Diseñamos dos experiencias con propósitos pedagógicos diferentes: utiliza el <strong>Simulacro de Práctica</strong> para detectar tus oportunidades de mejora con retroalimentación, o la prueba oficial para medir tu condición general en las condiciones exactas del MEP.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Modalidad A: Simulacro formativo de autor */}
-        <article className="ui-surface p-6 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900 flex flex-col justify-between gap-4">
-          <div className="space-y-3">
+        <article className="ui-surface p-6 rounded-2xl border-2 border-indigo-300 dark:border-indigo-800 bg-indigo-50/20 dark:bg-indigo-950/20 flex flex-col justify-between gap-5 shadow-xs">
+          <div className="space-y-3.5">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300">
-                Formativo de Autor
+              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-800">
+                Simulacro de práctica
               </span>
-              <span className="text-xs font-semibold text-stone-500">20 preguntas · 45 min</span>
+              <span className="text-xs font-bold text-indigo-900 dark:text-indigo-300 font-mono">
+                20 preguntas · ~45 min
+              </span>
             </div>
-            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulacro Formativo de Autor</h3>
-            <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Evalúa proporcionalmente las tres áreas de BXM (Geometría, Funciones y Estadística). Cronometrado, sin pistas durante el examen. Al finalizar, genera un <strong>Plan de Nivelación</strong> con recomendaciones de estudio y opciones de retest.
-            </p>
+            <div className="space-y-1">
+              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulacro Formativo de Autor</h3>
+              <p className="text-xs text-indigo-700 dark:text-indigo-300 font-medium">
+                Diseñado para practicar y detectar oportunidades de mejora antes de la prueba real.
+              </p>
+            </div>
+            <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
+              <li>Muestra representativa de Geometría, Funciones y Estadística.</li>
+              <li>Al finalizar genera tu <strong>Plan de Nivelación</strong> personalizado.</li>
+              <li>Calcula recomendaciones de estudio directas y opciones de retest.</li>
+              <li>Permite calibrar y registrar tu dominio de habilidades.</li>
+            </ul>
           </div>
-          <button className="primary-button w-full cursor-pointer" onClick={() => request({ kind: 'mock_exam' })}>
+          <button className="primary-button w-full cursor-pointer py-2.5 text-xs font-black uppercase tracking-wider" onClick={() => request({ kind: 'mock_exam' })}>
             Iniciar Simulacro Formativo
           </button>
         </article>
 
         {/* Modalidad B: Simulación oficial de referencia */}
-        <article className="ui-surface p-6 rounded-2xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between gap-4">
-          <div className="space-y-3">
+        <article className="ui-surface p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-850 flex flex-col justify-between gap-5 shadow-xs">
+          <div className="space-y-3.5">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
-                Oficial MEP · Gratuito
+              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border border-stone-300 dark:border-stone-700">
+                Simulación oficial de referencia
               </span>
-              <span className="text-xs font-semibold text-stone-500">60 preguntas · 150 min</span>
+              <span className="text-xs font-bold text-stone-600 dark:text-stone-400 font-mono">
+                60 preguntas · 150 min
+              </span>
             </div>
-            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Examen Oficial de Referencia</h3>
-            <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Prueba completa basada en la convocatoria oficial 2026-c2. Permanece completamente gratuita e independiente. No contamina ni altera tus registros de dominio de autor.
-            </p>
+            <div className="space-y-1">
+              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Examen Oficial de Referencia</h3>
+              <p className="text-xs text-stone-600 dark:text-stone-400 font-medium">
+                Basado en el formato de referencia oficial del MEP para medir tu preparación integral.
+              </p>
+            </div>
+            <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
+              <li>Prueba completa e íntegra de la Convocatoria Oficial 2026-c2.</li>
+              <li>100% gratuita y libre de límites para todos los estudiantes.</li>
+              <li>Totalmente independiente: no contamina ni altera tus registros de dominio de autor.</li>
+              <li>Recomendada como ensayo general previo al examen formal del MEP.</li>
+            </ul>
           </div>
-          <button className="secondary-button w-full cursor-pointer" onClick={onOfficialSimulation}>
+          <button className="secondary-button w-full cursor-pointer py-2.5 text-xs font-bold" onClick={onOfficialSimulation}>
             Iniciar Examen Oficial (60 ítems)
           </button>
         </article>
@@ -291,6 +562,93 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     {tab === 'result' && (result ? <>
       <BxmSessionResultBreakdownView result={result} onExit={() => go('diagnostic')} />
 
+      {/* Actionable Launchpad: Lo que ya dominas vs Lo que necesitas reforzar */}
+      {(() => {
+        const measured = Object.values(result.evidenceBreakdowns).filter(e => e.totalItems > 0);
+        const mastered = measured.filter(e => (e.correctFirstResponseCount / e.totalItems) >= 0.75);
+        const inProgress = measured.filter(e => {
+          const acc = e.correctFirstResponseCount / e.totalItems;
+          return acc >= 0.60 && acc < 0.75;
+        });
+        const needReinforcement = measured.filter(e => (e.correctFirstResponseCount / e.totalItems) < 0.60);
+
+        const domainNames: Record<string, string> = {
+          geometry: 'Geometría',
+          functions: 'Funciones y Álgebra',
+          statistics: 'Estadística y Probabilidad',
+        };
+
+        return (
+          <section className="ui-surface p-5 sm:p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 space-y-4">
+            <div className="space-y-1">
+              <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                Diagnóstico de habilidades
+              </span>
+              <h2 className="text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100">
+                Tu diagnóstico: ¿dónde estás y qué sigue?
+              </h2>
+              <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
+                Identificamos claramente las áreas consolidadas y las habilidades prioritarias para tu plan de estudio.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              {/* Columna A: Lo que ya dominas */}
+              <div className="p-4 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-800 dark:text-emerald-300">
+                  <span className="font-bold">✓</span>
+                  <span>Lo que ya dominas ({mastered.length})</span>
+                </div>
+                {mastered.length > 0 ? (
+                  <ul className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300">
+                    {mastered.map(m => (
+                      <li key={m.evidenceId} className="flex items-center justify-between">
+                        <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
+                        <span className="font-bold text-emerald-700 dark:text-emerald-400">
+                          {Math.round((m.correctFirstResponseCount / m.totalItems) * 100)}%
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-xs text-stone-500 italic">
+                    Continúa practicando para certificar tus primeras habilidades dominadas (≥75%).
+                  </p>
+                )}
+              </div>
+
+              {/* Columna B: Necesitas reforzar */}
+              <div className="p-4 rounded-xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/20 space-y-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-rose-800 dark:text-rose-300">
+                  <span>⚠</span>
+                  <span>Necesitas reforzar ({needReinforcement.length + inProgress.length})</span>
+                </div>
+                {needReinforcement.length + inProgress.length > 0 ? (
+                  <ul className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300">
+                    {[...needReinforcement, ...inProgress].map(m => {
+                      const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
+                      const isLow = acc < 60;
+                      return (
+                        <li key={m.evidenceId} className="flex items-center justify-between">
+                          <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
+                          <span className={`font-bold ${isLow ? 'text-rose-700 dark:text-rose-400' : 'text-amber-700 dark:text-amber-400'}`}>
+                            {acc}% {isLow ? '(Prioritario)' : '(En progreso)'}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="text-xs text-emerald-700 dark:text-emerald-400 font-medium">
+                    ¡Excelente! No se detectaron debilidades críticas en esta sesión.
+                  </p>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Prominent Decision Card: Tu siguiente paso recomendado */}
       {recommendation && (
         <section className="ui-surface p-5 sm:p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-amber-50/40 dark:bg-amber-950/20 space-y-3 min-w-0 overflow-hidden">
@@ -304,7 +662,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             </h3>
             <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
               {recommendation.accuracy < 75
-                ? `Tu resultado muestra dificultad en esta evidencia (${recommendation.correct}/${recommendation.total} aciertos en primera respuesta, ${recommendation.accuracy}%).`
+                ? `Tu resultado muestra dificultad en esta evidencia (${recommendation.correct}/${recommendation.total} aciertos en primera respuesta, ${recommendation.accuracy}%). Te sugerimos comenzar por aquí.`
                 : `Demostraste buen avance en esta evidencia (${recommendation.correct}/${recommendation.total} aciertos, ${recommendation.accuracy}%).`}
             </p>
           </div>

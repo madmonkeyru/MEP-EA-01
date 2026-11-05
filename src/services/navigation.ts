@@ -32,7 +32,7 @@ export function readRoute(hash: string): AppRoute {
   return { view: subject ? (learning ? 'learning' : phase === 'prueba' ? 'test' : phase === 'resultado' ? 'results' : 'hub') : 'framework', programId: program.id,
     ...(learning && params.get('evidencia') ? { evidenceKey: params.get('evidencia')! } : {}),
     ...(params.get('intento') ? { sessionId: params.get('intento')! } : {}),
-    ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['diagnostic','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
+    ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
     ...(['pdf', 'specs', 'terms', 'formulas'].includes(params.get('recurso') || '') ? { resourceTab: params.get('recurso')! } : {}),
     subjectId: subject?.id, moduleId, convocatoriaId };
 }

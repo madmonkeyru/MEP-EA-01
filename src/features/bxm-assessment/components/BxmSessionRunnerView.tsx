@@ -291,39 +291,82 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
           )}
 
           {showExplanation && runner.policy.allowImmediateFeedback && currentFeedback && (
-            <div className={`p-4 rounded-lg border text-sm ${
+            <div className={`p-4 sm:p-5 rounded-xl border text-sm space-y-3 ${
               currentFeedback.isCorrect
-                ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-100'
-                : 'bg-rose-50 dark:bg-rose-950/30 border-rose-200 dark:border-rose-800 text-rose-900 dark:text-rose-100'
+                ? 'bg-emerald-50/80 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-800 text-emerald-950 dark:text-emerald-100'
+                : 'bg-rose-50/80 dark:bg-rose-950/30 border-rose-300 dark:border-rose-800 text-rose-950 dark:text-rose-100'
             }`}>
-              <div className="font-bold mb-1">
-                {currentFeedback.isCorrect ? '¡Correcto!' : 'Respuesta incorrecta'} (Opción {currentItem.correctAnswer})
+              <div className="flex items-center justify-between gap-2 border-b border-current/15 pb-2">
+                <span className="font-bold text-base flex items-center gap-1.5">
+                  {currentFeedback.isCorrect ? '✓ ¡Excelente, respuesta correcta!' : '✗ Respuesta incorrecta'}
+                </span>
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-white/70 dark:bg-stone-900/60 border border-current/20">
+                  Opción correcta: {currentItem.correctAnswer}
+                </span>
               </div>
 
-              {currentFeedback.authoredMisconception && (
-                <div className="mt-2 text-xs">
-                  <span className="font-semibold">Interpretación del error:</span> <TextRenderer content={currentFeedback.authoredMisconception.explanation} inline />
-                </div>
-              )}
-
-              {currentFeedback.learnerReportedReason && (
-                <div className="mt-2 text-xs italic">
-                  Motivo reportado por el estudiante: {currentFeedback.learnerReportedReason}
+              {/* Qué ocurrió pedagógicamente */}
+              {!currentFeedback.isCorrect && (
+                <div className="space-y-1 text-xs sm:text-sm">
+                  <div className="font-bold uppercase tracking-wider text-[11px] text-rose-800 dark:text-rose-300">
+                    ¿Qué ocurrió?
+                  </div>
+                  {currentFeedback.authoredMisconception ? (
+                    <div className="leading-relaxed">
+                      <TextRenderer content={currentFeedback.authoredMisconception.explanation} inline />
+                    </div>
+                  ) : currentFeedback.learnerReportedReason ? (
+                    <div className="leading-relaxed italic">
+                      Causa reportada: {currentFeedback.learnerReportedReason}
+                    </div>
+                  ) : (
+                    <div className="leading-relaxed">
+                      Tu selección no coincide con el procedimiento matemático esperado para esta habilidad.
+                    </div>
+                  )}
                 </div>
               )}
 
               {currentItem.solutionSteps && currentItem.solutionSteps.length > 0 && (
-                <div className="mt-3 pt-2 border-t border-current/20">
-                  <div className="font-semibold text-xs mb-1">Paso a paso:</div>
-                  <ol className="list-decimal list-inside space-y-1 text-xs">
+                <div className="pt-2 border-t border-current/15 space-y-2">
+                  <div className="font-bold text-xs uppercase tracking-wider">
+                    Paso a paso de la resolución:
+                  </div>
+                  <ol className="list-decimal list-inside space-y-1.5 text-xs sm:text-sm leading-relaxed">
                     {currentItem.solutionSteps.map((step, sIdx) => (
-                      <li key={sIdx}>
+                      <li key={sIdx} className="pl-1">
                         <TextRenderer content={typeof step === 'string' ? step : `${step.title}: ${step.explanation}`} inline />
                       </li>
                     ))}
                   </ol>
                 </div>
               )}
+
+              {/* Actionable Next Step CTA inside immediate feedback */}
+              <div className="pt-2 border-t border-current/15 flex items-center justify-between gap-2">
+                <span className="text-xs font-medium">
+                  {currentIndex < runner.items.length - 1
+                    ? '¿Listo para continuar?'
+                    : 'Has llegado a la última pregunta.'}
+                </span>
+                {currentIndex < runner.items.length - 1 ? (
+                  <button
+                    type="button"
+                    onClick={() => setCurrentIndex(i => Math.min(runner.items.length - 1, i + 1))}
+                    className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 hover:opacity-90 transition-opacity cursor-pointer shadow-xs"
+                  >
+                    Siguiente pregunta →
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleManualFinalize}
+                    className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-stone-950 hover:bg-amber-400 transition-colors cursor-pointer shadow-xs"
+                  >
+                    Ver resultados finales
+                  </button>
+                )}
+              </div>
             </div>
           )}
         </div>
