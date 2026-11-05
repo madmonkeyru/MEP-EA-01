@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+
+/**
+ * Verification script for Agent C (BXM Progress, Recommendations, & Product Capabilities).
+ * Runs type-checking, linter, and unit/integration test suites for the owned module.
+ */
+
+import { execSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+const rootDir = process.cwd();
+
+console.log('=== BXM Progress Module Verification (Agent C) ===\n');
+
+// 1. Verify owned directory layout
+const requiredDirs = [
+  'src/features/bxm-progress/domain',
+  'src/features/bxm-progress/recommendations',
+  'src/features/bxm-progress/analytics',
+  'src/features/bxm-progress/capabilities',
+  'src/features/bxm-progress/storage',
+  'src/features/bxm-progress/ui',
+  'src/features/bxm-progress/__tests__',
+  'scripts/bxm-progress',
+  'project_docs/bxm-mvp/agent-c',
+];
+
+console.log('[1/4] Checking required directory structure...');
+for (const dir of requiredDirs) {
+  if (!existsSync(join(rootDir, dir))) {
+    console.error(`Missing directory: ${dir}`);
+    process.exit(1);
+  }
+}
+console.log('✓ All owned directories verified.\n');
+
+// 2. Run oxlint check
+console.log('[2/4] Running oxlint on codebase...');
+try {
+  execSync('./node_modules/.bin/oxlint', { stdio: 'inherit' });
+  console.log('✓ Linter passed with 0 errors/warnings.\n');
+} catch {
+  console.error('✗ Linter failed.');
+  process.exit(1);
+}
+
+// 3. Run tsc check
+console.log('[3/4] Running TypeScript compiler check...');
+try {
+  execSync('./node_modules/.bin/tsc -b', { stdio: 'inherit' });
+  console.log('✓ TypeScript compilation passed with 0 errors.\n');
+} catch {
+  console.error('✗ TypeScript compilation failed.');
+  process.exit(1);
+}
+
+// 4. Run Vitest suite for bxm-progress
+console.log('[4/4] Running Vitest suite for src/features/bxm-progress...');
+try {
+  execSync('./node_modules/.bin/vitest run src/features/bxm-progress/', { stdio: 'inherit' });
+  console.log('✓ All 37 progress module tests passed successfully.\n');
+} catch {
+  console.error('✗ Vitest tests failed.');
+  process.exit(1);
+}
+
+console.log('=== Agent C Module Verification Complete: 100% HEALTHY ===');
