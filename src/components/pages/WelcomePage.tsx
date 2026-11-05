@@ -4,7 +4,7 @@ import { programManifest } from '../../services/programCatalog';
 import { ProgramCard } from '../common/ProgramCard';
 import { ConvocatoriaBadge } from '../common/ConvocatoriaBadge';
 import { ProgramSchedulesOverview } from '../knowledge/ProgramSchedulesOverview';
-import { CostaRicaPlate } from '../maps/CostaRicaPlate';
+import { provinces, provinceBorders, coast } from '../maps/map-geometry';
 import {
   ArrowRight,
   ShieldCheck,
@@ -31,8 +31,24 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       {/* 1. Header Hero / Welcome Portal Banner */}
       <div className="page-intro rounded-3xl p-6 sm:p-10 relative overflow-hidden">
         {/* Faded Costa Rica map watermark */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-15 dark:opacity-20 select-none z-0">
-          <CostaRicaPlate minimalWatermark={true} framing="bleed" interactive={false} />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-15 dark:opacity-20 select-none z-0" aria-hidden="true">
+          <svg
+            viewBox="0 0 1000 1000"
+            className="w-full h-full stroke-stone-900 dark:stroke-stone-100 stroke-[1.2] fill-stone-800/5 dark:fill-stone-200/5"
+            style={{ strokeLinejoin: 'round', strokeLinecap: 'round' }}
+          >
+            <defs>
+              <pattern id="welcome-carto-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.25" />
+              </pattern>
+            </defs>
+            <rect width="1000" height="1000" fill="url(#welcome-carto-grid)" opacity="0.3" />
+            {provinces.map((prov) => (
+              <path key={prov.id} d={prov.d} />
+            ))}
+            <path d={provinceBorders} className="stroke-stone-700/60 dark:stroke-stone-300/60 stroke-[1] stroke-dasharray-[2,2] fill-none" />
+            <path d={coast} className="stroke-stone-900 dark:stroke-stone-100 stroke-[1.5] fill-none" />
+          </svg>
         </div>
 
         <div className="relative z-10 max-w-3xl space-y-3">
