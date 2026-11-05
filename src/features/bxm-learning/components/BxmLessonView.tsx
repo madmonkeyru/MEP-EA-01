@@ -254,13 +254,14 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
       <section className="p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-gradient-to-br from-amber-50/50 to-amber-100/30 dark:from-amber-950/30 dark:to-stone-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div className="space-y-1">
           <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">
-            <span>Siguiente paso</span>
+            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            <span>Siguiente paso recomendado</span>
           </div>
           <h3 className="text-base font-extrabold text-stone-900 dark:text-stone-100">
-            ¿Listo para poner a prueba esta evidencia?
+            ¿Listo para poner a prueba esta habilidad?
           </h3>
           <p className="text-xs text-stone-600 dark:text-stone-400 max-w-xl">
-            Aplica lo aprendido en esta lección con preguntas de autor diseñadas específicamente para la evidencia {lesson.evidenceCode}.
+            Aplica lo aprendido en esta lección con ejercicios de autor diseñados específicamente para la habilidad {lesson.evidenceCode}. Al completar la práctica, podrás comprobar tu dominio.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2.5 shrink-0">
@@ -270,7 +271,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
               onClick={() => callbacks.onStartTargetedPractice!(lesson.evidenceKey)}
               className="px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-sm cursor-pointer"
             >
-              Practicar esta evidencia
+              Practicar esta habilidad
             </button>
           ) : callbacks?.onRequestDiagnostic ? (
             <button
