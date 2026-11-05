@@ -50,18 +50,50 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   };
   const move = (index: number) => patch({ currentResponseIndex: Math.max(0, Math.min(items.length - 1, index)) });
   const flag = () => current && patch({ flaggedItems: { ...latest.current.flaggedItems, [current.id]: !latest.current.flaggedItems[current.id] } });
+  // Debounce background persistence slightly so radio selections and rapid hotkeys don't block the UI thread
+  const pendingSaveTimeout = useRef<number | null>(null);
   useEffect(() => {
     if (!items.length || finished.current) return;
-    storageService.saveActiveSession(snapshot());
-  }, [session]);
+    if (pendingSaveTimeout.current !== null) {
+      window.clearTimeout(pendingSaveTimeout.current);
+    }
+    pendingSaveTimeout.current = window.setTimeout(() => {
+      pendingSaveTimeout.current = null;
+      if (!finished.current && items.length) {
+        storageService.saveActiveSession(snapshot());
+      }
+    }, 150);
+
+    return () => {
+      if (pendingSaveTimeout.current !== null) {
+        window.clearTimeout(pendingSaveTimeout.current);
+      }
+    };
+  }, [session, items.length, snapshot]);
+
   useEffect(() => {
-    const save = () => { if (!finished.current && items.length) storageService.saveActiveSession(snapshot()); };
+    const save = () => {
+      if (!finished.current && items.length) {
+        storageService.saveActiveSession(snapshot());
+      }
+    };
     const interval = window.setInterval(save, 5000);
-    const beforeUnload = (event: BeforeUnloadEvent) => { save(); if (!finished.current) { event.preventDefault(); event.returnValue = ''; } };
+    const beforeUnload = (event: BeforeUnloadEvent) => {
+      save();
+      if (!finished.current) {
+        event.preventDefault();
+        event.returnValue = '';
+      }
+    };
     window.addEventListener('beforeunload', beforeUnload);
     window.addEventListener('pagehide', save);
-    return () => { clearInterval(interval); save(); window.removeEventListener('beforeunload', beforeUnload); window.removeEventListener('pagehide', save); };
-  }, []);
+    return () => {
+      clearInterval(interval);
+      save();
+      window.removeEventListener('beforeunload', beforeUnload);
+      window.removeEventListener('pagehide', save);
+    };
+  }, [items.length, snapshot]);
   useEffect(() => { question.current?.focus(); }, [session.currentResponseIndex]);
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
