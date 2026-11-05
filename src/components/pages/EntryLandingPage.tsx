@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LearningJourney } from '../common/LearningJourney';
-import { CostaRicaPlate } from '../maps/CostaRicaPlate';
+import { provinces, provinceBorders, coast } from '../maps/map-geometry';
 import {
   ArrowRight,
   GraduationCap,
@@ -22,40 +22,45 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
   return (
     <div className="entry-page min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-20 w-full space-y-10">
-        {/* Simple Top Badge */}
-        {/* Core Value Statement & Interactive Hero Visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-4">
-            <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 dark:text-indigo-300">Tu próximo paso empieza aquí</p>
+        {/* Hero Section with Cartographic Costa Rica Background */}
+        <div className="relative rounded-3xl p-6 sm:p-12 overflow-hidden border border-stone-200/80 dark:border-stone-800/80 bg-stone-50/60 dark:bg-stone-900/40 backdrop-blur-xs">
+          {/* Faded Cartographic Map Background */}
+          <div
+            className="absolute -right-16 -bottom-16 sm:-right-8 sm:-bottom-12 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] pointer-events-none select-none opacity-[0.07] dark:opacity-[0.09] transition-opacity duration-300"
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="0 0 1000 1000"
+              className="w-full h-full stroke-stone-900 dark:stroke-stone-100 stroke-[1.2] fill-stone-800/5 dark:fill-stone-200/5"
+              style={{ strokeLinejoin: 'round', strokeLinecap: 'round' }}
+            >
+              {/* Cartographic graticule grid lines */}
+              <defs>
+                <pattern id="carto-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.3" />
+                </pattern>
+              </defs>
+              <rect width="1000" height="1000" fill="url(#carto-grid)" opacity="0.4" />
+              {/* Province Outlines & borders */}
+              {provinces.map((prov) => (
+                <path key={prov.id} d={prov.d} />
+              ))}
+              <path d={provinceBorders} className="stroke-stone-700/60 dark:stroke-stone-300/60 stroke-[1] stroke-dasharray-[2,2] fill-none" />
+              <path d={coast} className="stroke-stone-900 dark:stroke-stone-100 stroke-[1.5] fill-none" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/50">
+              <MapPin className="w-3.5 h-3.5 text-indigo-500" />
+              <span>Educación Abierta Costa Rica</span>
+            </div>
             <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
               Prepárate para tu próximo paso
             </h1>
-            <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed">
-              Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo. Práctica oficial e interactiva para toda Costa Rica.
+            <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+              Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo con simulaciones de examen oficiales para toda Costa Rica.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
-              <MapPin className="size-4 text-indigo-600 dark:text-indigo-400" />
-              <span>Sedes y convocatorias activas en las 7 provincias</span>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-xs sm:max-w-sm rounded-3xl p-4 ui-surface border border-stone-200/80 dark:border-stone-800 shadow-sm overflow-hidden group">
-              <div className="flex items-center justify-between pb-2 border-b border-stone-100 dark:border-stone-800/80 text-[11px] font-semibold text-stone-500 dark:text-stone-400">
-                <span className="uppercase tracking-wider">Costa Rica · Mapa Interactivo</span>
-                <span className="text-indigo-600 dark:text-indigo-400 font-bold">7 Provincias</span>
-              </div>
-              <div className="relative pt-2">
-                <CostaRicaPlate
-                  className="w-full h-auto max-h-[250px]"
-                  framing="bleed"
-                  interactive={true}
-                />
-              </div>
-              <p className="text-[10px] text-center text-stone-400 dark:text-stone-500 pt-2">
-                Pasa el cursor sobre cada provincia para explorar la cobertura territorial
-              </p>
-            </div>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useId } from "react";
 import {
   GEO,
   coast,
@@ -10,6 +10,7 @@ import {
   provinceBorders,
   provinces,
   rivers,
+  PlateProvince,
 } from "./map-geometry";
 
 export type PlateFraming = "sheet" | "bleed";
@@ -127,7 +128,7 @@ function Star({ x, y }: { x: number; y: number }) {
     const rad = i % 2 === 0 ? outer : inner;
     pts.push(`${(x + Math.cos(ang) * rad).toFixed(2)},${(y + Math.sin(ang) * rad).toFixed(2)}`);
   }
-  return <polygon points={pts.join(" ")} className="fill-current" />;
+  return <polygon points={pts.join(" ")} className="plate-star" />;
 }
 
 function Stacked({
@@ -172,7 +173,7 @@ function ScaleBar({
   const parts = ticks.length - 1;
   const step = width / parts;
   return (
-    <g className="text-[8.5px] tracking-[0.08em] font-medium fill-current">
+    <g className="plate-scale">
       {Array.from({ length: parts }, (_, i) => (
         <rect
           key={i}
@@ -180,8 +181,8 @@ function ScaleBar({
           y={y}
           width={step}
           height={5.5}
-          fill={i % 2 === 0 ? "currentColor" : "none"}
-          stroke="currentColor"
+          fill={i % 2 === 0 ? "var(--color-ink)" : "var(--color-panel)"}
+          stroke="var(--color-ink)"
           strokeWidth={0.6}
         />
       ))}
@@ -197,27 +198,9 @@ function ScaleBar({
   );
 }
 
-export interface CostaRicaPlateProps {
-  framing?: PlateFraming;
-  className?: string;
-  interactive?: boolean;
-  onSelectProvince?: (provinceId: string, name: string) => void;
-  selectedProvinceId?: string | null;
-  minimalWatermark?: boolean;
-}
-
-export function CostaRicaPlate({
-  framing = "bleed",
-  className = "",
-  interactive = true,
-  onSelectProvince,
-  selectedProvinceId,
-  minimalWatermark = false,
-}: CostaRicaPlateProps) {
+export function CostaRicaPlate({ framing = "sheet" }: { framing?: PlateFraming }) {
   const uid = useId().replace(/:/g, "");
   const clipId = `${uid}-frame`;
-  const [hoveredProvince, setHoveredProvince] = useState<string | null>(null);
-
   const view =
     framing === "bleed"
       ? `${MAP_X} ${MAP_Y} ${GEO.mapW} ${GEO.mapH}`
@@ -226,22 +209,23 @@ export function CostaRicaPlate({
   const panelTop = xy(0, 9)[1];
   const panelRight = xy(-84.58, 0)[0];
 
+  const degreesX = [-86, -85, -84, -83];
+  const degreesY = [11, 10, 9, 8];
+
   return (
     <svg
-      className={`costa-rica-map-svg block ${className}`}
+      className="plate-svg"
       viewBox={view}
       role="img"
       aria-labelledby={`${uid}-title ${uid}-desc`}
     >
-      <title id={`${uid}-title`}>Mapa de Costa Rica (División Territorial)</title>
+      <title id={`${uid}-title`}>Administrative map of Costa Rica, 1950</title>
       <desc id={`${uid}-desc`}>
-        Mapa vectorial de Costa Rica con sus 7 provincias, costas, ríos y división territorial.
+        Vector plate in the manner of the 1950 Map Division sheet: seven provinces,
+        rivers, and the neighboring coasts of Nicaragua and Panama.
       </desc>
 
-      {/* Sheet background if framed as sheet and not minimal */}
-      {framing === "sheet" && !minimalWatermark && (
-        <rect width={SHEET_W} height={SHEET_H} className="fill-stone-100 dark:fill-stone-900" />
-      )}
+      <rect width={SHEET_W} height={SHEET_H} fill="var(--color-paper)" />
 
       <g transform={`translate(${MAP_X} ${MAP_Y})`}>
         <clipPath id={clipId}>
@@ -249,197 +233,268 @@ export function CostaRicaPlate({
         </clipPath>
 
         <g clipPath={`url(#${clipId})`}>
-          {/* Water background */}
-          {!minimalWatermark && (
-            <rect className="fill-sky-100/60 dark:fill-sky-950/20" width={GEO.mapW} height={GEO.mapH} />
-          )}
-
-          {/* Foreign Land (Nicaragua & Panama) */}
-          <path className="fill-stone-200/50 dark:fill-stone-800/40" d={nicaragua} />
-          <path className="fill-stone-200/50 dark:fill-stone-800/40" d={panama} />
-          <path
-            className="fill-sky-100/60 dark:fill-sky-950/20 stroke-stone-400 dark:stroke-stone-600 stroke-[1.15]"
-            d={lakeNicaragua}
-          />
-          {nicaraguaIslands ? <path className="fill-stone-200/50 dark:fill-stone-800/40" d={nicaraguaIslands} /> : null}
-
-          {/* Costa Rica Provinces */}
-          {provinces.map((province) => {
-            const isHovered = hoveredProvince === province.id;
-            const isSelected = selectedProvinceId === province.id;
-            return (
-              <path
-                key={province.id}
-                d={province.d}
-                className={`transition-colors duration-150 ${
-                  minimalWatermark
-                    ? "fill-stone-400/20 stroke-stone-400/40 stroke-[0.8]"
-                    : isSelected
-                    ? "fill-indigo-500/30 stroke-indigo-600 stroke-[1.5]"
-                    : isHovered
-                    ? "fill-amber-200/60 dark:fill-amber-900/40 stroke-stone-600 dark:stroke-stone-400 stroke-1 cursor-pointer"
-                    : "fill-stone-50 dark:fill-stone-800/80 stroke-stone-300 dark:stroke-stone-700 stroke-[0.75] hover:fill-amber-100/50 dark:hover:fill-amber-950/30 cursor-pointer"
-                }`}
-                onMouseEnter={() => interactive && setHoveredProvince(province.id)}
-                onMouseLeave={() => interactive && setHoveredProvince(null)}
-                onClick={() => {
-                  if (interactive && onSelectProvince) {
-                    onSelectProvince(province.id, province.name);
-                  }
-                }}
-              >
-                <title>{`${province.numeral}. ${province.name}`}</title>
-              </path>
-            );
-          })}
-
-          {!minimalWatermark && (
-            <>
-              <path className="fill-sky-200/70 dark:fill-sky-900/50 stroke-sky-400/70 stroke-[0.7]" d={ring(ARENAL)} />
-              <path className="fill-sky-200/70 dark:fill-sky-900/50 stroke-sky-400/70 stroke-[0.7]" d={ring(TORTUGAL)} />
-              <path className="fill-none stroke-sky-500/60 dark:stroke-sky-400/40 stroke-[0.85] stroke-linecap-round stroke-linejoin-round" d={rivers} />
-            </>
-          )}
-
-          {/* Provincial Borders */}
-          <path
-            className="fill-none stroke-amber-600/70 dark:stroke-amber-400/60 stroke-[1.3] stroke-linecap-round stroke-dasharray-[0.4_3]"
-            d={provinceBorders}
-          />
-
-          {/* Coast & International Borders */}
-          <path className="fill-none stroke-stone-600 dark:stroke-stone-400 stroke-[1.05] stroke-linejoin-round stroke-linecap-round" d={coast} />
-          <path className="fill-none stroke-stone-400 dark:stroke-stone-600 stroke-[0.8] stroke-linejoin-round stroke-linecap-round" d={nicaragua} />
-          <path className="fill-none stroke-stone-400 dark:stroke-stone-600 stroke-[0.8] stroke-linejoin-round stroke-linecap-round" d={panama} />
-          <path className="fill-none stroke-stone-700 dark:stroke-stone-300 stroke-[2] stroke-linejoin-round stroke-linecap-round stroke-dasharray-[6_3]" d={international} />
+          <rect className="plate-water" width={GEO.mapW} height={GEO.mapH} />
+          <path className="plate-foreign" d={nicaragua} />
+          <path className="plate-foreign" d={panama} />
+          <path className="plate-lake" d={lakeNicaragua} />
+          {nicaraguaIslands ? <path className="plate-foreign" d={nicaraguaIslands} /> : null}
+          {provinces.map((province: PlateProvince) => (
+            <path key={province.id} className="plate-land" d={province.d}>
+              <title>{`${province.numeral}. ${province.name}`}</title>
+            </path>
+          ))}
+          <path className="plate-lake-minor" d={ring(ARENAL)} />
+          <path className="plate-lake-minor" d={ring(TORTUGAL)} />
+          <path className="plate-river" d={rivers} />
+          <g className="plate-grid">
+            {degreesX.map((lon) => {
+              const x = xy(lon, 0)[0];
+              return <line key={`v${lon}`} x1={x} x2={x} y1={0} y2={GEO.mapH} />;
+            })}
+            {degreesY.map((lat) => {
+              const y = xy(0, lat)[1];
+              return <line key={`h${lat}`} y1={y} y2={y} x1={0} x2={GEO.mapW} />;
+            })}
+          </g>
+          <path className="plate-gold" d={provinceBorders} />
+          <path className="plate-coast" d={coast} />
+          <path className="plate-coast" d={nicaragua} />
+          <path className="plate-coast" d={panama} />
+          <path className="plate-intl" d={international} />
         </g>
 
-        {!minimalWatermark && (
-          <>
-            {/* Numerals for provinces */}
-            {NUMERALS.map(([n, lon, lat], i) => {
-              const [x, y] = xy(lon, lat);
-              return (
-                <text
-                  key={`${n}-${i}`}
-                  className="text-[13px] italic font-semibold fill-stone-700 dark:fill-stone-300 pointer-events-none select-none"
-                  x={x}
-                  y={y}
-                  textAnchor="middle"
-                >
-                  {n}
-                </text>
-              );
-            })}
-
-            {/* Major cities */}
-            {CITIES.map((city) => {
-              const [x, y] = xy(city.lon, city.lat);
-              const lines = city.lines ?? [city.name];
-              return (
-                <g key={city.name} className="pointer-events-none select-none fill-stone-800 dark:fill-stone-200">
-                  {city.kind === "capital" ? (
-                    <Star x={x} y={y} />
-                  ) : (
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r={city.kind === "province" ? 2.5 : 1.3}
-                      className={
-                        city.kind === "province"
-                          ? "fill-stone-100 stroke-stone-900 dark:stroke-stone-100 stroke-[0.85]"
-                          : "fill-stone-800 dark:fill-stone-200"
-                      }
-                    />
-                  )}
-                  <text
-                    className={
-                      city.kind === "capital"
-                        ? "text-[12px] font-bold tracking-[0.14em]"
-                        : "text-[10px] font-medium"
-                    }
-                    x={x + city.dx}
-                    y={y + city.dy}
-                    textAnchor={city.dx < 0 ? "end" : "start"}
-                  >
-                    {lines.map((line, i) => (
-                      <tspan key={line} x={x + city.dx} dy={i === 0 ? 0 : 11}>
-                        {line}
-                      </tspan>
-                    ))}
+        <g className="plate-degree">
+          {degreesX.map((lon) => {
+            const x = xy(lon, 0)[0];
+            if (x < 28 || x > GEO.mapW - 18) return null;
+            return (
+              <text key={`top${lon}`} x={x} y={14} textAnchor="middle">
+                {Math.abs(lon)}
+              </text>
+            );
+          })}
+          {degreesY.map((lat) => {
+            const y = xy(0, lat)[1];
+            return (
+              <g key={`lat${lat}`}>
+                {y < panelTop - 8 ? (
+                  <text x={12} y={y + 3} textAnchor="middle">
+                    {lat}
                   </text>
-                </g>
-              );
-            })}
-
-            {/* River names */}
-            {RIVER_NAMES.map(([name, lon, lat, rotate]) => {
-              const [x, y] = xy(lon, lat);
-              return (
-                <text
-                  key={name}
-                  className="text-[9.5px] italic font-medium fill-sky-800/80 dark:fill-sky-300/80 pointer-events-none select-none"
-                  x={x}
-                  y={y}
-                  textAnchor="middle"
-                  transform={`rotate(${rotate} ${x} ${y})`}
-                >
-                  {name}
+                ) : null}
+                <text x={GEO.mapW - 12} y={y + 3} textAnchor="middle">
+                  {lat}
                 </text>
-              );
-            })}
+              </g>
+            );
+          })}
+        </g>
 
-            <Stacked
-              className="text-[14px] font-semibold tracking-[0.3em] fill-stone-600 dark:fill-stone-400 pointer-events-none select-none"
-              x={xy(-83.15, 10.35)[0]}
-              y={xy(-83.15, 10.35)[1]}
-              lines={["MAR", "CARIBE"]}
-              leading={22}
-            />
-            <text
-              className="text-[14px] font-semibold tracking-[0.3em] fill-stone-600 dark:fill-stone-400 pointer-events-none select-none"
-              x={xy(-85, 0)[0]}
-              y={xy(0, 9.34)[1]}
-              textAnchor="middle"
-            >
-              OCÉANO PACÍFICO
+        {NUMERALS.map(([n, lon, lat], i) => {
+          const [x, y] = xy(lon, lat);
+          return (
+            <text key={`${n}-${i}`} className="plate-numeral" x={x} y={y} textAnchor="middle">
+              {n}
             </text>
-          </>
-        )}
+          );
+        })}
 
-        {/* Minimal Sheet Panel Details if framed as sheet */}
-        {framing === "sheet" && !minimalWatermark && (
-          <>
-            <rect
-              className="fill-stone-50/90 dark:fill-stone-900/90 stroke-stone-700 dark:stroke-stone-300 stroke-[1.15]"
-              x={6}
-              y={panelTop}
-              width={panelRight - 6}
-              height={GEO.mapH - panelTop - 8}
-            />
-            <text
-              className="text-[28px] font-bold tracking-[0.3em] fill-stone-900 dark:fill-stone-100"
-              x={(6 + panelRight) / 2}
-              y={panelTop + 46}
-              textAnchor="middle"
-            >
-              COSTA RICA
-            </text>
+        {CITIES.map((city) => {
+          const [x, y] = xy(city.lon, city.lat);
+          const lines = city.lines ?? [city.name];
+          return (
+            <g key={city.name}>
+              {city.kind === "capital" ? (
+                <Star x={x} y={y} />
+              ) : (
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={city.kind === "province" ? 2.5 : 1.25}
+                  className={city.kind === "province" ? "plate-capital" : "plate-town"}
+                />
+              )}
+              <text
+                className={city.kind === "capital" ? "plate-city-capital" : "plate-city"}
+                x={x + city.dx}
+                y={y + city.dy}
+                textAnchor={city.dx < 0 ? "end" : "start"}
+              >
+                {lines.map((line, i) => (
+                  <tspan key={line} x={x + city.dx} dy={i === 0 ? 0 : 11}>
+                    {line}
+                  </tspan>
+                ))}
+              </text>
+            </g>
+          );
+        })}
 
+        {RIVER_NAMES.map(([name, lon, lat, rotate]) => {
+          const [x, y] = xy(lon, lat);
+          return (
             <text
-              className="text-[9px] font-semibold tracking-[0.1em] fill-stone-600 dark:fill-stone-400"
-              x={168}
-              y={panelTop + 140}
+              key={name}
+              className="plate-river-name"
+              x={x}
+              y={y}
               textAnchor="middle"
+              transform={`rotate(${rotate} ${x} ${y})`}
             >
-              ESCALA 1:1,350,000
+              {name}
             </text>
-            <ScaleBar x={64} y={panelTop + 160} kilometers={75} ticks={[0, 25, 50, 75]} label="KILÓMETROS" />
-          </>
-        )}
+          );
+        })}
+
+        <Stacked
+          className="plate-water-name"
+          x={xy(-85.45, 11.38)[0]}
+          y={xy(-85.45, 11.38)[1]}
+          lines={["LAGO DE NICARAGUA"]}
+          leading={14}
+        />
+        <text className="plate-country" x={xy(-84.35, 11.45)[0]} y={xy(-84.35, 11.45)[1]} textAnchor="middle">
+          NICARAGUA
+        </text>
+        <Stacked
+          className="plate-water-name"
+          x={xy(-83.35, 11.28)[0]}
+          y={xy(-83.35, 11.28)[1]}
+          lines={["BAHÍA DE", "SAN JUAN", "DEL NORTE"]}
+        />
+        <Stacked
+          className="plate-water-name"
+          x={xy(-85.95, 10.55)[0]}
+          y={xy(-85.95, 10.55)[1]}
+          lines={["GOLFO DEL", "PAPAGAYO"]}
+        />
+        <Stacked
+          className="plate-sea"
+          x={xy(-83.15, 10.35)[0]}
+          y={xy(-83.15, 10.35)[1]}
+          lines={["CARIBBEAN", "SEA"]}
+          leading={26}
+        />
+        <text className="plate-sea" x={xy(-85, 0)[0] - 16} y={xy(0, 9.34)[1]} textAnchor="end">
+          PACIFIC
+        </text>
+        <text className="plate-sea" x={xy(-85, 0)[0] + 16} y={xy(0, 9.34)[1]} textAnchor="start">
+          OCEAN
+        </text>
+        <Stacked
+          className="plate-water-name"
+          x={xy(-84.95, 9.78)[0]}
+          y={xy(-84.95, 9.78)[1]}
+          lines={["GOLFO", "DE", "NICOYA"]}
+          leading={14}
+        />
+        <text className="plate-water-name" x={xy(-84.95, 10.22)[0]} y={xy(-84.95, 10.22)[1]} textAnchor="middle">
+          LAGO ARENAL
+        </text>
+        <text className="plate-water-name" x={xy(-85.28, 10.34)[0]} y={xy(-85.28, 10.34)[1]} textAnchor="start">
+          LAGO TORTUGAL
+        </text>
+        <text className="plate-country" x={xy(-82.72, 8.95)[0]} y={xy(-82.72, 8.95)[1]} textAnchor="middle">
+          PANAMA
+        </text>
+        <Stacked
+          className="plate-water-name"
+          x={xy(-84.05, 8.72)[0]}
+          y={xy(-84.05, 8.72)[1]}
+          lines={["BAHÍA DE", "CORONADO"]}
+        />
+        <Stacked
+          className="plate-water-name"
+          x={xy(-83.28, 8.52)[0]}
+          y={xy(-83.28, 8.52)[1]}
+          lines={["GOLFO", "DULCE"]}
+          leading={14}
+        />
+        <Stacked
+          className="plate-water-name"
+          x={xy(-82.62, 8.12)[0]}
+          y={xy(-82.62, 8.12)[1]}
+          lines={["BAHÍA", "CHARCO AZUL"]}
+          leading={13}
+        />
+
+        <g className="plate-index-item">
+          <text className="plate-index-title" x={760} y={78}>
+            INDEX TO PROVINCES
+          </text>
+          {provinces.map((province: PlateProvince, i: number) => (
+            <text key={province.id} x={772} y={100 + i * 16.5}>
+              {`${province.numeral}.  ${province.name}`}
+            </text>
+          ))}
+        </g>
+
+        <rect className="plate-panel" x={6} y={panelTop} width={panelRight - 6} height={GEO.mapH - panelTop - 8} />
+        <text className="plate-sheet-title" x={(6 + panelRight) / 2} y={panelTop + 46} textAnchor="middle">
+          COSTA RICA
+        </text>
+
+        <g className="plate-legend">
+          <line
+            x1={36}
+            x2={78}
+            y1={panelTop + 150}
+            y2={panelTop + 150}
+            stroke="var(--color-ink)"
+            strokeWidth={2}
+            strokeDasharray="7 3.5"
+          />
+          <text x={86} y={panelTop + 154}>
+            International Boundary
+          </text>
+          <line
+            x1={36}
+            x2={78}
+            y1={panelTop + 170}
+            y2={panelTop + 170}
+            stroke="var(--color-ochre)"
+            strokeWidth={1.6}
+            strokeLinecap="round"
+            strokeDasharray="0.4 3.2"
+          />
+          <text x={86} y={panelTop + 174}>
+            Province Boundary
+          </text>
+          <g transform={`translate(${panelRight - 168} ${panelTop + 138})`}>
+            <Star x={4} y={4} />
+            <text x={16} y={8}>
+              Capital of Country
+            </text>
+            <circle cx={4} cy={24} r={2.6} className="plate-capital" />
+            <text x={16} y={28}>
+              Capital of Province
+            </text>
+            <circle cx={4} cy={44} r={1.4} className="plate-town" />
+            <text x={16} y={48}>
+              Other City
+            </text>
+          </g>
+        </g>
+
+        <text className="plate-scale" x={168} y={panelTop + 208} textAnchor="middle" letterSpacing="0.12em">
+          SCALE 1:1,350,000
+        </text>
+        <ScaleBar x={36} y={panelTop + 222} kilometers={120.701} ticks={[0, 25, 50, 75]} label="MILES" />
+        <ScaleBar x={64} y={panelTop + 252} kilometers={75} ticks={[0, 25, 50, 75]} label="KILOMETERS" />
+        <text className="plate-degree" x={xy(-85, 0)[0]} y={panelTop + 12} textAnchor="middle">
+          85
+        </text>
       </g>
+
+      <text className="plate-credit" x={SHEET_W - 58} y={24} textAnchor="end">
+        11215
+      </text>
+      <text className="plate-credit" x={MAP_X} y={SHEET_H - 16}>
+        11215  Map Division, CIA, 4-50
+      </text>
+
+      <rect className="plate-frame" x={MAP_X - 5} y={MAP_Y - 5} width={GEO.mapW + 10} height={GEO.mapH + 10} strokeWidth={3.4} />
+      <rect className="plate-frame" x={MAP_X} y={MAP_Y} width={GEO.mapW} height={GEO.mapH} strokeWidth={0.7} />
     </svg>
   );
 }
-
-export { provinces } from "./map-geometry";
