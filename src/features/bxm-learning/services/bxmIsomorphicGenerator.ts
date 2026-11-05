@@ -1,12 +1,35 @@
 import { BxmAuthoredItem } from '../types';
+import templates from '../../../../content/bxm-mvp-learning/isomorphic-templates.json';
 
 export class BxmIsomorphicGenerator {
+  private static validate(family: string, values: Record<string, number>): void {
+    const template = templates.templates.find(t => t.familyId === family)!;
+    const ranges = template.parameterRanges as unknown as Record<string, { min: number; max: number; step?: number; exclude?: number[] }>;
+    for (const [key, value] of Object.entries(values)) {
+      const range = ranges[key];
+      if (!range || !Number.isFinite(value) || value < range.min || value > range.max ||
+        !Number.isInteger(value) || range.exclude?.includes(value) || (value - range.min) % (range.step || 1) !== 0) {
+        throw new RangeError(`Invalid ${family} parameter: ${key}`);
+      }
+    }
+  }
+  private static finish(item: BxmAuthoredItem): BxmAuthoredItem {
+    if (new Set(Object.values(item.options)).size !== 4) throw new Error('Non-unique generated options');
+    const identity = Object.entries(item.generatedParams || {}).sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, value]) => `${key}=${encodeURIComponent(String(value))}`).join('&');
+    item.id = `${item.familyId}:1.1.0:${identity}`;
+    item.code = item.id;
+    item.templateVersion = '1.1.0';
+    return item;
+  }
+
   /**
    * Generates a deterministic circle canonical equation item from parameters (h, k, r).
    * E.g. (x - h)^2 + (y - k)^2 = r^2
    */
   static generateCircleCanonicalItem(params: { h: number; k: number; r: number; seed?: string }): BxmAuthoredItem {
     const { h, k, r, seed = 'seed-01' } = params;
+    this.validate('bxm-iso-geo-circ-canon', { h, k, r });
     const rSq = r * r;
     const hTerm = h === 0 ? 'x^2' : h > 0 ? `(x - ${h})^2` : `(x + ${Math.abs(h)})^2`;
     const kTerm = k === 0 ? 'y^2' : k > 0 ? `(y - ${k})^2` : `(y + ${Math.abs(k)})^2`;
@@ -19,7 +42,7 @@ export class BxmIsomorphicGenerator {
     const distractorC = `$${hTerm} + ${kTerm} = ${r}$`;
     const distractorD = `$${oppHTerm} + ${oppKTerm} = ${r}$`;
 
-    return {
+    return this.finish({
       id: `bxm-authored-gen-circle-${seed}`,
       code: `bxm-authored-gen-circle-${seed}`,
       familyId: 'bxm-iso-geo-circ-canon',
@@ -51,7 +74,7 @@ export class BxmIsomorphicGenerator {
         `Sustituyendo $h = ${h}$, $k = ${k}$ y $r = ${r}$ obtenemos $r^2 = ${rSq}$.`,
         `Ecuación final: ${correctEq}.`
       ]
-    };
+    });
   }
 
   /**
@@ -60,17 +83,18 @@ export class BxmIsomorphicGenerator {
    */
   static generateLinearEquationItem(params: { m: number; x1: number; y1: number; seed?: string }): BxmAuthoredItem {
     const { m, x1, y1, seed = 'seed-01' } = params;
+    this.validate('bxm-iso-func-slope-intercept', { m, x1, y1 });
     const b = y1 - m * x1;
     const bSign = b >= 0 ? `+ ${b}` : `- ${Math.abs(b)}`;
     const correctEq = `$y = ${m}x ${bSign}$`;
 
-    const wrongB = y1 + m * x1;
+    const wrongB = b + 1;
     const wrongBSign = wrongB >= 0 ? `+ ${wrongB}` : `- ${Math.abs(wrongB)}`;
     const distractorB = `$y = ${m}x ${wrongBSign}$`;
     const distractorC = `$y = ${-m}x ${bSign}$`;
-    const distractorD = `$y = ${m}x + ${y1}$`;
+    const distractorD = `$y = ${m}x ${b - 1 >= 0 ? '+' : '-'} ${Math.abs(b - 1)}$`;
 
-    return {
+    return this.finish({
       id: `bxm-authored-gen-linear-${seed}`,
       code: `bxm-authored-gen-linear-${seed}`,
       familyId: 'bxm-iso-func-slope-intercept',
@@ -93,9 +117,9 @@ export class BxmIsomorphicGenerator {
       },
       correctOption: 'A',
       distractorRationale: {
-        B: 'Error de signos al despejar el intercepto $b = y_1 - mx_1$.',
+        B: 'Error al calcular el intercepto $b = y_1 - mx_1$.',
         C: 'Invirtió el signo de la pendiente $m$.',
-        D: 'Tomó directamente la ordenada del punto como intercepto.'
+        D: 'Restó una unidad adicional al intercepto.'
       },
       solutionSteps: [
         'Utilizando la forma punto-pendiente: $y - y_1 = m(x - x_1)$.',
@@ -103,7 +127,7 @@ export class BxmIsomorphicGenerator {
         `$b = ${y1} - (${m * x1}) = ${b}$.`,
         `Por ende, ${correctEq}.`
       ]
-    };
+    });
   }
 
   /**
@@ -112,16 +136,17 @@ export class BxmIsomorphicGenerator {
   static generateRicBoxItem(params: { q1: number; q3: number; seed?: string }): BxmAuthoredItem {
     const { q1, q3, seed = 'seed-01' } = params;
     const ric = q3 - q1;
+    this.validate('bxm-iso-stat-ric-box', { q1, ric });
     const sum = q3 + q1;
     const half = (ric / 2).toFixed(1);
 
-    return {
+    return this.finish({
       id: `bxm-authored-gen-ric-${seed}`,
       code: `bxm-authored-gen-ric-${seed}`,
       familyId: 'bxm-iso-stat-ric-box',
       domain: 'statistics',
-      evidenceKey: 'bxm/matematica/02-2026/statistics/A3.2',
-      evidenceCode: 'A3.2',
+      evidenceKey: 'bxm/matematica/02-2026/statistics/A3.1',
+      evidenceCode: 'A3.1',
       conceptId: 'mep-est-diagrama-cajas-ric-03',
       cognitiveLevel: 'reproduccion',
       difficulty: 1,
@@ -146,6 +171,23 @@ export class BxmIsomorphicGenerator {
         'Por definición, $\\text{RIC} = Q_3 - Q_1$.',
         `$\\text{RIC} = ${q3} - ${q1} = ${ric}$.`
       ]
-    };
+    });
+  }
+  static generateSphereCrossSectionItem(params: { tripletIndex: number; seed?: string }): BxmAuthoredItem {
+    const { tripletIndex, seed = 'seed-01' } = params;
+    this.validate('bxm-iso-geo-sphere-cut', { tripletIndex });
+    const [R, d, r] = [[10,6,8], [13,5,12], [15,9,12], [17,8,15], [25,7,24]][tripletIndex];
+    if (r * r !== R * R - d * d) throw new Error('Invalid section geometry');
+    return this.finish({
+      id: '', code: '', familyId: 'bxm-iso-geo-sphere-cut', domain: 'geometry',
+      evidenceKey: 'bxm/matematica/02-2026/geometry/A5.3', evidenceCode: 'A5.3',
+      conceptId: 'mep-geo-cuerpos-3d-09', cognitiveLevel: 'conexion', difficulty: 2,
+      calculatorAllowed: true, provenance: 'authored_isomorphic_variant', reviewStatus: 'authored_computationally_checked',
+      generatedParams: { tripletIndex, R, d, r, seed },
+      stem: `Una esfera de radio $${R}$ se corta con un plano a distancia $${d}$ del centro. ¿Cuál es el radio de la sección?`,
+      options: { A: `$${r}$`, B: `$${R-d}$`, C: `$${R+d}$`, D: `$${R}$` }, correctOption: 'A',
+      distractorRationale: { B: 'Restó longitudes en lugar de sus cuadrados.', C: 'Sumó radio y distancia.', D: 'Usó el radio de la esfera.' },
+      solutionSteps: [`Por Pitágoras: $r^2=${R}^2-${d}^2=${r*r}$; por tanto $r=${r}$.`],
+    });
   }
 }

@@ -1,0 +1,86 @@
+{
+  "clientDate": "2026-11-05",
+  "timezone": "America/Costa_Rica",
+  "baseCommit": "abd8fc8",
+  "status": "automated-integration-checks-passed",
+  "entryPoint": "BXM Mathematics 2026-c2 hub > Abrir aprendizaje guiado",
+  "route": "#/programas/bxm/matematicas?convocatoria=2026-c2&pantalla=aprendizaje&seccion=diagnostic",
+  "fullSuite": {
+    "files": 48,
+    "tests": 240,
+    "result": "passed",
+    "command": "node node_modules/vitest/vitest.mjs run --pool=threads --maxWorkers=1"
+  },
+  "focusedPostIntegration": {
+    "files": 4,
+    "tests": 36,
+    "result": "passed"
+  },
+  "featureSuite": {
+    "files": 13,
+    "tests": 89,
+    "result": "passed"
+  },
+  "build": {
+    "result": "passed",
+    "warnings": "Bundler size and ineffective dynamic import warnings remain."
+  },
+  "lint": {
+    "result": "passed",
+    "warnings": 0
+  },
+  "contentValidator": {
+    "result": "passed",
+    "canonicalEvidences": 71,
+    "baseItemAnswerChecks": 30,
+    "lessons": 4,
+    "templates": 4,
+    "parsedMathExpressions": 614
+  },
+  "assessmentValidator": {
+    "result": "passed",
+    "command": "node scripts/bxm-assessment/validate-assessment.cjs"
+  },
+  "browserJourney": {
+    "status": "passed",
+    "checks": [
+      "Free diagnostic, shuffled drafts/review flags and original deadline survive reload",
+      "Completed result persists; unanswered items produce no fabricated responses",
+      "Free complete sample lesson, real math, activity-only quiz retries, paid practice gate",
+      "Explicit partial acceptance, study retries and save/exit/resume preserve first wrong score",
+      "Live premium dashboard receives canonical 71-evidence catalog and persisted history",
+      "Generated practice, mastery check, retest and authored mock use the live bank with distinct policies and provenance",
+      "Switching local learner profiles hides guest attempts and results",
+      "The guided host launches the unchanged 60-item, 150-minute official-reference exam separately",
+      "320px circle/sphere lessons and desktop dashboard render correctly; exterior sphere-plane case has no section"
+    ],
+    "errors": []
+  },
+  "referenceBrowserRegression": {
+    "status": "passed",
+    "checks": [
+      "Free diagnostic, shuffled drafts/review flags and original deadline survive reload",
+      "Completed result persists; unanswered items produce no fabricated responses",
+      "Free complete sample lesson, real math, activity-only quiz retries, paid practice gate",
+      "Explicit partial acceptance, study retries and save/exit/resume preserve first wrong score",
+      "Live premium dashboard receives canonical 71-evidence catalog and persisted history",
+      "Switching local learner profiles hides guest attempts and results",
+      "320px lesson layout and desktop dashboard render without horizontal overflow",
+      "Existing reference exams, PDFs, saved results, other programs and responsive layout matrix pass"
+    ],
+    "errors": []
+  },
+  "browserCommand": "node scripts/bxm-integration/validate-learning-journey.mjs --start-server --reference",
+  "screenshots": [
+    "artifacts/bxm-integration/mobile-lesson.png",
+    "artifacts/bxm-integration/desktop-dashboard.png",
+    "artifacts/ui-validation/"
+  ],
+  "remainingManualReview": [
+    "Human mathematical and provenance review of authored content",
+    "Assistive-technology and manual accessibility review"
+  ],
+  "deploymentPerformed": false,
+  "commitsOrPushesPerformed": false,
+  "runnerNote": "Use the configured thread pool in Windows sandboxes. Explicit fork workers failed to read sandbox-isolated transform temp paths; earlier npm flag forwarding did not reliably select the requested pool."
+}

@@ -9,13 +9,20 @@ export type CognitiveLevel = 'reproduccion' | 'conexion' | 'reflexion';
 
 export type DifficultyTier = 1 | 2 | 3;
 
-export type ItemProvenance = 'official_reference' | 'authored_mastery' | 'isomorphic_generated' | 'legacy_unknown';
+export type ItemProvenance = 'official_reference' | 'official_past' | 'authored_mastery' | 'isomorphic_generated' | 'legacy_unknown';
 
 export type MasteryStatus = 'mastered' | 'in_progress' | 'needs_reinforcement' | 'insufficient_data';
 
-export type SessionKind = 'diagnostic' | 'practice_topic' | 'practice_evidence' | 'simulation_benchmark' | 'simulation_mock' | 'micro_quiz';
+export type SessionKind = 'diagnostic' | 'practice_topic' | 'practice_evidence' | 'simulation_benchmark' | 'simulation_mock' | 'micro_quiz' | 'mastery_check' | 'retest';
 
 export type SessionMode = 'study' | 'exam';
+
+export interface LearningCompletion {
+  sessionId: string;
+  completedAt: string;
+  answeredCount: number;
+  status: 'completed' | 'timed_out' | 'abandoned';
+}
 
 export interface BxmSpecContext {
   programId: 'bxm';
@@ -47,6 +54,12 @@ export interface QualifiedEvidenceInfo {
  * Follows the attempt envelope agreed in CONSOLIDATED DECISIONS Section 8.
  */
 export interface AttemptEvent {
+  userId?: string;
+  programId?: 'bxm';
+  subjectId?: 'matematica';
+  specId?: '02-2026';
+  sessionStatus?: 'completed' | 'timed_out' | 'abandoned';
+  sessionCompletedAt?: string;
   schemaVersion: '1.0.0';
   eventId: string;
   sessionId: string;
@@ -81,4 +94,4 @@ export interface AttemptEvent {
  */
 export type ObservationQualification =
   | { eligible: true; reason: 'unassisted_first_response' }
-  | { eligible: false; reason: 'hint_used' | 'retry_after_first' | 'benchmark_item' | 'legacy_unknown' | 'window_expired' };
+  | { eligible: false; reason: 'hint_used' | 'retry_after_first' | 'benchmark_item' | 'legacy_unknown' | 'window_expired' | 'invalid_metadata' | 'unreviewed' };

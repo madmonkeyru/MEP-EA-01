@@ -1,3 +1,4 @@
+import { LearningText as TextRenderer } from './LearningText';
 import React from 'react';
 import {
   BxmLesson,
@@ -7,6 +8,7 @@ import {
 import { InteractiveCircleVisual } from './visuals/InteractiveCircleVisual';
 import { InteractiveSphereCrossSection } from './visuals/InteractiveSphereCrossSection';
 import { BxmMicroQuiz } from './BxmMicroQuiz';
+import { BxmContentService } from '../services/bxmContentService';
 
 export interface BxmLessonViewProps {
   lesson: BxmLesson;
@@ -19,10 +21,18 @@ export interface BxmLessonViewProps {
 export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
   lesson,
   callbacks,
-  capabilities = { isPremium: true },
+  capabilities = { isPremium: false },
   onBackToTemario,
   className = ''
 }) => {
+  const sampleId = BxmContentService.getAllLessons().find(l => l.domain === lesson.domain)?.id;
+  if (!capabilities.isPremium && sampleId !== lesson.id) return (
+    <section className="p-5 space-y-3">
+      <h1>{lesson.title}</h1>
+      <p>Esta lección ampliada requiere Premium. La lección de muestra de cada área está disponible gratis.</p>
+      <button onClick={onBackToTemario}>Volver al Temario Digital</button>
+    </section>
+  );
   return (
     <article className={`space-y-8 max-w-4xl mx-auto ${className}`}>
       {/* Header & Navigation Breadcrumb */}
@@ -48,10 +58,11 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
           {lesson.title}
         </h1>
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed">
-          {lesson.subtitle}
+          <TextRenderer content={lesson.subtitle} inline />
         </p>
       </div>
 
+      <p className="text-xs text-stone-500">Contenido de autor revisado mediante controles automáticos; revisión matemática humana pendiente.</p>
       {/* Prerequisites Section */}
       {lesson.prerequisites.length > 0 && (
         <section className="p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/70 dark:bg-stone-900/40">
@@ -60,7 +71,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
           </h2>
           <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
             {lesson.prerequisites.map((p, idx) => (
-              <li key={idx}>{p}</li>
+              <li key={idx}><TextRenderer content={p} inline /></li>
             ))}
           </ul>
         </section>
@@ -70,7 +81,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
       {lesson.formulas.length > 0 && (
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
-            Fórmulas Clave Oficiales
+            Fórmulas Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {lesson.formulas.map((f, idx) => (
@@ -79,14 +90,14 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
                 className="p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-850 shadow-sm"
               >
                 <div className="text-xs font-bold text-amber-700 dark:text-amber-400 mb-1">
-                  {f.name}
+                  <TextRenderer content={f.name} inline />
                 </div>
                 <div className="text-sm font-mono font-bold text-stone-900 dark:text-stone-100 my-1 bg-stone-50 dark:bg-stone-900 px-2 py-1.5 rounded border border-stone-200 dark:border-stone-800">
-                  ${f.latex}$
+                  <TextRenderer content={`$${f.latex}$`} inline />
                 </div>
                 {f.notes && (
                   <div className="text-xs text-stone-500 dark:text-stone-400 mt-1">
-                    {f.notes}
+                    <TextRenderer content={f.notes} inline />
                   </div>
                 )}
               </div>
@@ -100,7 +111,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
         <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
           Fundamento Teórico y Geométrico
         </h2>
-        <p>{lesson.coreExplanation}</p>
+        <p><TextRenderer content={lesson.coreExplanation} inline /></p>
       </section>
 
       {/* Interactive Visual Section */}
@@ -131,13 +142,13 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
                 className="p-4 rounded-xl border border-rose-200 dark:border-rose-950/60 bg-rose-50/50 dark:bg-rose-950/20 space-y-1.5 text-xs sm:text-sm"
               >
                 <div className="font-bold text-rose-900 dark:text-rose-300">
-                  {m.mistake}
+                  <TextRenderer content={m.mistake} inline />
                 </div>
                 <div className="text-stone-700 dark:text-stone-300">
-                  <span className="font-semibold text-rose-800 dark:text-rose-400">Error típico:</span> {m.description}
+                  <span className="font-semibold text-rose-800 dark:text-rose-400">Error típico:</span> <TextRenderer content={m.description} inline />
                 </div>
                 <div className="text-stone-700 dark:text-stone-300">
-                  <span className="font-semibold text-emerald-700 dark:text-emerald-400">Cómo evitarlo:</span> {m.correction}
+                  <span className="font-semibold text-emerald-700 dark:text-emerald-400">Cómo evitarlo:</span> <TextRenderer content={m.correction} inline />
                 </div>
               </div>
             ))}
@@ -152,16 +163,16 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
         </h2>
         <div className="p-5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 shadow-sm space-y-4">
           <div className="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40 text-sm text-stone-900 dark:text-stone-100 font-medium">
-            <strong className="text-amber-800 dark:text-amber-400">Problema:</strong> {lesson.workedExample.statement}
+            <strong className="text-amber-800 dark:text-amber-400">Problema:</strong> <TextRenderer content={lesson.workedExample.statement} inline />
           </div>
 
           <div className="space-y-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-stone-500">
-              {lesson.workedExample.primaryMethod.name}
+              <TextRenderer content={lesson.workedExample.primaryMethod.name} inline />
             </h3>
             <div className="space-y-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300 pl-2 border-l-2 border-amber-400">
               {lesson.workedExample.primaryMethod.steps.map((s, idx) => (
-                <div key={idx} className="whitespace-pre-line">{s}</div>
+                <div key={idx} className="whitespace-pre-line"><TextRenderer content={s} inline /></div>
               ))}
             </div>
           </div>
@@ -169,11 +180,11 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
           {lesson.workedExample.alternativeMethod && (
             <div className="space-y-2 pt-3 border-t border-stone-200 dark:border-stone-800">
               <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                {lesson.workedExample.alternativeMethod.name} (Método Alternativo)
+                <TextRenderer content={lesson.workedExample.alternativeMethod.name} inline /> (Método Alternativo)
               </h3>
               <div className="space-y-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300 pl-2 border-l-2 border-indigo-400">
                 {lesson.workedExample.alternativeMethod.steps.map((s, idx) => (
-                  <div key={idx} className="whitespace-pre-line">{s}</div>
+                  <div key={idx} className="whitespace-pre-line"><TextRenderer content={s} inline /></div>
                 ))}
               </div>
             </div>
@@ -220,7 +231,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
               Practicar Evidencia
             </button>
           )}
-          {callbacks?.onRequestDiagnostic && capabilities.isPremium && (
+          {callbacks?.onRequestDiagnostic && (
             <button
               type="button"
               onClick={callbacks.onRequestDiagnostic}

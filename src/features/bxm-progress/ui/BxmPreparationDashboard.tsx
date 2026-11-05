@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { AttemptEvent, QualifiedEvidenceInfo } from '../domain/types';
+import type { AttemptEvent, QualifiedEvidenceInfo, LearningCompletion } from '../domain/types';
 import {
   computeEvidenceMasteryRecords,
   computeDomainMasterySummaries,
@@ -18,7 +18,11 @@ import { createCapabilityProvider } from '../capabilities/capabilityModel';
 import { BXM_OFFICIAL_EVIDENCES_FIXTURE } from './evidenceCatalogFixture';
 
 export interface BxmPreparationDashboardProps {
+  initialTab?: 'overview' | 'evidences' | 'queue' | 'analytics' | 'history';
   events?: AttemptEvent[];
+  completions?: LearningCompletion[];
+  availableInventoryByEvidence?: Record<string, { totalItems: number }>;
+  availableLessonKeys?: string[];
   evidenceCatalog?: QualifiedEvidenceInfo[];
   capabilityProvider?: CapabilityProvider;
   referenceDateUtc?: Date;
@@ -28,16 +32,20 @@ export interface BxmPreparationDashboardProps {
 }
 
 export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = ({
+  initialTab = 'overview',
   events = [],
+  completions = [],
+  availableInventoryByEvidence = {},
+  availableLessonKeys = [],
   evidenceCatalog = BXM_OFFICIAL_EVIDENCES_FIXTURE,
-  capabilityProvider = createCapabilityProvider('premium'),
+  capabilityProvider = createCapabilityProvider('free'),
   referenceDateUtc = new Date(),
   onNavigateToPractice,
   onNavigateToLesson,
   onOpenUpgradeModal,
 }) => {
   const [selectedDomain, setSelectedDomain] = useState<'all' | 'geometry' | 'functions' | 'statistics'>('all');
-  const [activeTab, setActiveTab] = useState<'overview' | 'evidences' | 'queue' | 'analytics' | 'history'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'evidences' | 'queue' | 'analytics' | 'history'>(initialTab);
 
   const canAccessDashboard = capabilityProvider.canAccess('longitudinal_mastery_dashboard');
   const canAccessQueue = capabilityProvider.canAccess('personalized_practice_queue');
@@ -51,13 +59,13 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
   const readiness = computeReadinessOverview(evidenceRecords, events, referenceDateUtc);
 
   // Recommendations
-  const queue = generatePersonalPracticeQueue(evidenceRecords, evidenceCatalog, { limit: 6 });
-  const studyPlan = generateStructuredStudyPlan(evidenceRecords, evidenceCatalog);
+  const queue = generatePersonalPracticeQueue(evidenceRecords, evidenceCatalog, { limit: 6, availableInventoryByEvidence });
+  const studyPlan = generateStructuredStudyPlan(evidenceRecords, evidenceCatalog, { availableInventoryByEvidence, availableLessonKeys, now: referenceDateUtc });
   const retestRec = evaluateRetestRecommendation(evidenceRecords, readiness.totalAuthoredQualifyingResponses);
 
   // Analytics
-  const sevenDayReport = generateSevenDayReport(events, referenceDateUtc);
-  const streak = calculateActivityStreak(events, referenceDateUtc);
+  const sevenDayReport = generateSevenDayReport(events, referenceDateUtc, 'America/Costa_Rica', completions);
+  const streak = calculateActivityStreak(events, referenceDateUtc, 'America/Costa_Rica', completions);
 
   const filteredEvidences = selectedDomain === 'all'
     ? evidenceRecords
@@ -73,7 +81,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
               BXM Matemática 02-2026
             </span>
             <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">
-              Convocatoria Oficial DGEC
+              Preparación independiente
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-stone-950 dark:text-stone-50">
@@ -112,7 +120,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
       <div className="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-3 sm:p-4 rounded-r-md text-xs sm:text-sm text-amber-900 dark:text-amber-200 flex items-start gap-3">
         <span className="text-lg leading-none select-none">ℹ️</span>
         <div>
-          <p className="font-bold">Aviso Oficial de Evaluación Formativa:</p>
+          <p className="font-bold">Indicador de estudio:</p>
           <p className="mt-0.5 leading-relaxed">{readiness.disclaimerEs}</p>
         </div>
       </div>
@@ -463,7 +471,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                     </td>
                     <td className="p-3 text-right whitespace-nowrap">
                       <div className="flex items-center justify-end gap-1.5">
-                        {onNavigateToLesson && (
+                        {onNavigateToLesson && availableLessonKeys.includes(ev.evidenceKey) && (
                           <button
                             onClick={() => onNavigateToLesson(ev.evidenceKey)}
                             className="px-2 py-1 rounded bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 font-semibold"
@@ -471,7 +479,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                             Lección
                           </button>
                         )}
-                        {onNavigateToPractice && (
+                        {onNavigateToPractice && (availableInventoryByEvidence[ev.evidenceKey]?.totalItems ?? 0) > 0 && (
                           <button
                             onClick={() => onNavigateToPractice(ev.evidenceKey, ev.recommendedDifficultyTier)}
                             className="px-2 py-1 rounded bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold"
@@ -533,7 +541,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                   <span className="text-xs text-stone-500">
                     {item.isAvailableInAuthoredInventory ? 'Ejercicios disponibles' : 'Próximamente en banco'}
                   </span>
-                  {onNavigateToPractice && (
+                  {onNavigateToPractice && item.isAvailableInAuthoredInventory && (
                     <button
                       onClick={() => onNavigateToPractice(item.evidenceKey, item.targetDifficulty)}
                       className="px-3 py-1.5 text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-stone-950"
@@ -627,7 +635,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
               <span className="text-xs text-stone-400">en esta semana</span>
             </div>
             <div className="bg-white dark:bg-stone-850 p-4 rounded-lg border border-stone-200 dark:border-stone-800">
-              <span className="text-xs text-stone-500">Precisión semanal</span>
+              <span className="text-xs text-stone-500">Precisión de respuestas (incluye reintentos)</span>
               <div className="text-2xl font-black text-amber-600 dark:text-amber-400 mt-1">
                 {sevenDayReport.overallAccuracyPercentage}%
               </div>

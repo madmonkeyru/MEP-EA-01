@@ -39,14 +39,16 @@
         "Sustituyendo $h = 3$, $k = -4$ y $r = 5$:",
         "$(x - 3)^2 + (y - (-4))^2 = 5^2$",
         "$(x - 3)^2 + (y + 4)^2 = 25$."
-      ]
+      ],
+      "familyId": "bxm-iso-geo-circ-canon",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-002",
       "code": "bxm-authored-v1-geo-002",
       "domain": "geometry",
-      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.2",
-      "evidenceCode": "A1.2",
+      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.3",
+      "evidenceCode": "A1.3",
       "conceptId": "mep-geo-centro-radio-02",
       "cognitiveLevel": "reproduccion",
       "difficulty": 1,
@@ -71,14 +73,16 @@
         "Por tanto el centro es $(-2, 7)$.",
         "El radio satisface $r^2 = 49 \\Rightarrow r = 7$.",
         "El diámetro es $d = 2r = 2 \\cdot 7 = 14$."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-002",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-003",
       "code": "bxm-authored-v1-geo-003",
       "domain": "geometry",
-      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.1",
-      "evidenceCode": "A1.1",
+      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.3",
+      "evidenceCode": "A1.3",
       "conceptId": "mep-geo-circunferencia-01",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -102,14 +106,16 @@
         "El radio es la distancia del centro $(0,0)$ al punto $P(3,4)$: $r = \\sqrt{(3-0)^2 + (4-0)^2} = \\sqrt{9 + 16} = 5$.",
         "La ecuación canónica con centro en el origen es $x^2 + y^2 = r^2$.",
         "Sustituyendo $r = 5$: $x^2 + y^2 = 25$."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-003",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-004",
       "code": "bxm-authored-v1-geo-004",
       "domain": "geometry",
-      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.2",
-      "evidenceCode": "A1.2",
+      "evidenceKey": "bxm/matematica/02-2026/geometry/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-geo-posicion-punto-04",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -133,7 +139,9 @@
         "Evaluamos las coordenadas de $Q(3,2)$ en la expresión $(x - 1)^2 + (y + 2)^2$:",
         "$(3 - 1)^2 + (2 + 2)^2 = (2)^2 + (4)^2 = 4 + 16 = 20$.",
         "Como el resultado $20$ es exactamente igual al miembro derecho $r^2 = 20$, el punto pertenece a la circunferencia."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-004",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-005",
@@ -147,7 +155,7 @@
       "calculatorAllowed": true,
       "provenance": "authored_proprietary",
       "reviewStatus": "authored_computationally_checked",
-      "stem": "Si se interseca una esfera con un plano que no pasa por su centro pero corta la superficie esférica en más de un punto, ¿qué figura geométrica se obtiene como sección plana?",
+      "stem": "Si se interseca la superficie de una esfera con un plano que no pasa por su centro pero corta la superficie esférica en más de un punto, ¿qué figura geométrica se obtiene como curva de intersección?",
       "options": {
         "A": "Una circunferencia",
         "B": "Una elipse no circular",
@@ -163,7 +171,9 @@
       "solutionSteps": [
         "Por propiedad fundamental de la esfera, cualquier corte plano que interseca a la esfera genera un círculo (o su contorno, una circunferencia).",
         "Si el plano pasa por el centro, se llama círculo máximo; si no pasa por el centro, se llama círculo menor."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-005",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-006",
@@ -195,7 +205,9 @@
         "$R^2 = d^2 + r^2$",
         "$10^2 = 6^2 + r^2 \\Rightarrow 100 = 36 + r^2$",
         "$r^2 = 100 - 36 = 64 \\Rightarrow r = \\sqrt{64} = 8\\text{ cm}$."
-      ]
+      ],
+      "familyId": "bxm-iso-geo-sphere-cut",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-007",
@@ -227,7 +239,9 @@
         "Por la relación pitagórica en la esfera: $R^2 = d^2 + r^2$.",
         "$13^2 = d^2 + 5^2 \\Rightarrow 169 = d^2 + 25$.",
         "$d^2 = 169 - 25 = 144 \\Rightarrow d = 12\\text{ cm}$."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-007",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-008",
@@ -256,14 +270,16 @@
       },
       "solutionSteps": [
         "Cualquier plano paralelo a las bases de un cilindro circular recto genera una sección plana idéntica (congruente) a las bases circulares del cilindro."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-008",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-009",
       "code": "bxm-authored-v1-geo-009",
       "domain": "geometry",
-      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.1",
-      "evidenceCode": "A1.1",
+      "evidenceKey": "bxm/matematica/02-2026/geometry/A1.3",
+      "evidenceCode": "A1.3",
       "conceptId": "mep-geo-circunferencia-01",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -287,7 +303,9 @@
         "El centro es el punto medio del diámetro: $M = \\left(\\frac{-1 + 5}{2}, \\frac{2 + 2}{2}\\right) = (2, 2)$.",
         "El diámetro mide la distancia entre $A$ y $B$: $d = 5 - (-1) = 6$. Por ende, el radio es $r = 6/2 = 3$.",
         "La ecuación es $(x - 2)^2 + (y - 2)^2 = 3^2 = 9$."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-009",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-geo-010",
@@ -319,7 +337,9 @@
         "Por Pitágoras: $r^2 = R^2 - d^2 = 17^2 - 15^2 = 289 - 225 = 64$.",
         "El radio de la sección plana es $r = \\sqrt{64} = 8\\text{ cm}$.",
         "El perímetro de la circunferencia es $P = 2\\pi r = 2\\pi(8) = 16\\pi\\text{ cm}$."
-      ]
+      ],
+      "familyId": "bxm-fixed-geo-010",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-001",
@@ -349,7 +369,9 @@
       "solutionSteps": [
         "La fórmula de la pendiente es $m = \\frac{y_2 - y_1}{x_2 - x_1}$.",
         "Sustituyendo los puntos: $m = \\frac{5 - (-3)}{6 - 2} = \\frac{5 + 3}{4} = \\frac{8}{4} = 2$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-001",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-002",
@@ -380,7 +402,9 @@
         "La intersección con el eje $x$ ocurre cuando $y = 0$.",
         "Sustituyendo $y = 0$: $3x + 2(0) - 12 = 0 \\Rightarrow 3x = 12 \\Rightarrow x = 4$.",
         "Por tanto el punto es $(4, 0)$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-002",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-003",
@@ -411,7 +435,9 @@
         "Usamos la forma punto-pendiente $y - y_1 = m(x - x_1)$.",
         "$y - 1 = -3(x - 2) \\Rightarrow y - 1 = -3x + 6$.",
         "$y = -3x + 7$."
-      ]
+      ],
+      "familyId": "bxm-iso-func-slope-intercept",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-004",
@@ -442,7 +468,9 @@
         "Primero calculamos la pendiente: $m = \\frac{-2 - 4}{2 - (-1)} = \\frac{-6}{3} = -2$.",
         "Ahora calculamos el intercepto $b = y_1 - m x_1 = 4 - (-2)(-1) = 4 - 2 = 2$.",
         "La ecuación es $y = -2x + 2$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-004",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-005",
@@ -473,7 +501,9 @@
         "Intersección con el eje $y$: $(0, -6)$.",
         "Intersección con el eje $x$: $0 = \\frac{3}{4}x - 6 \\Rightarrow \\frac{3}{4}x = 6 \\Rightarrow x = 8$, punto $(8, 0)$.",
         "Distancia entre $(8,0)$ y $(0,-6)$: $d = \\sqrt{(8-0)^2 + (0 - (-6))^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-005",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-006",
@@ -505,14 +535,16 @@
         "Su pendiente es $m_1 = \\frac{2}{5}$ y su intersección con el eje $y$ es $(0, 2)$, por lo que $b = 2$.",
         "Como $L_2 \\perp L_1$, su pendiente es el opuesto recíproco: $m_2 = -\\frac{1}{m_1} = -\\frac{5}{2}$.",
         "La ecuación de $L_2$ es $y = -\\frac{5}{2}x + 2$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-006",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-007",
       "code": "bxm-authored-v1-func-007",
       "domain": "functions",
-      "evidenceKey": "bxm/matematica/02-2026/functions/A2.3",
-      "evidenceCode": "A2.3",
+      "evidenceKey": "bxm/matematica/02-2026/functions/A2.1",
+      "evidenceCode": "A2.1",
       "conceptId": "mep-alg-funcion-lineal-03",
       "cognitiveLevel": "reproduccion",
       "difficulty": 1,
@@ -535,14 +567,16 @@
       "solutionSteps": [
         "Por definición, una función lineal es estrictamente decreciente si y solo si su pendiente es negativa: $m < 0$.",
         "Dado que pasa por $(0, -4)$, su intersección con el eje de las ordenadas es $b = -4$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-007",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-008",
       "code": "bxm-authored-v1-func-008",
       "domain": "functions",
-      "evidenceKey": "bxm/matematica/02-2026/functions/A2.4",
-      "evidenceCode": "A2.4",
+      "evidenceKey": "bxm/matematica/02-2026/functions/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-alg-funcion-lineal-03",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -566,14 +600,16 @@
         "Tenemos los pares ordenados $(10, 15000)$ y $(25, 30000)$.",
         "La pendiente (costo variable por unidad) es $m = \\frac{30000 - 15000}{25 - 10} = \\frac{15000}{15} = 1000$.",
         "El costo fijo es $b = C(x) - mx$: $b = 15000 - 1000(10) = 15000 - 10000 = 5000$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-008",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-009",
       "code": "bxm-authored-v1-func-009",
       "domain": "functions",
-      "evidenceKey": "bxm/matematica/02-2026/functions/A2.3",
-      "evidenceCode": "A2.3",
+      "evidenceKey": "bxm/matematica/02-2026/functions/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-alg-funcion-lineal-03",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -598,7 +634,9 @@
         "Al pasar por el origen, su ecuación es $y = -3x$.",
         "Para encontrar la abscisa cuando $y = -15$: $-15 = -3x \\Rightarrow x = \\frac{-15}{-3} = 5$.",
         "El punto de intersección es $(5, -15)$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-009",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-func-010",
@@ -632,7 +670,9 @@
         "$m = \\frac{8 - 0}{4 - 3} = \\frac{8}{1} = 8$.",
         "Calculamos $b$: $0 = 8(3) + b \\Rightarrow b = -24$.",
         "La ecuación es $y = 8x - 24$."
-      ]
+      ],
+      "familyId": "bxm-fixed-func-010",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-001",
@@ -663,7 +703,9 @@
         "Los datos ya están ordenados en forma ascendente: $68, 72, 75, 80, 85, 90, 94$.",
         "Al ser $n = 7$ (número impar), la mediana corresponde exactamente al dato central en la posición $\\frac{7+1}{2} = 4$.",
         "El cuarto dato es $80$."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-001",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-002",
@@ -694,14 +736,16 @@
         "La suma de los primeros 5 datos es $S_5 = 5 \\cdot 14 = 70$.",
         "Con el nuevo número $x$, la suma de los 6 datos es $S_6 = 6 \\cdot 15 = 90$.",
         "Por lo tanto, el nuevo dato es $x = S_6 - S_5 = 90 - 70 = 20$."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-002",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-003",
       "code": "bxm-authored-v1-stat-003",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.2",
-      "evidenceCode": "A3.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-est-diagrama-cajas-ric-03",
       "cognitiveLevel": "reproduccion",
       "difficulty": 1,
@@ -724,14 +768,16 @@
       "solutionSteps": [
         "Por definición, el recorrido intercuartílico es la diferencia entre el tercer y el primer cuartil:",
         "$\\text{RIC} = Q_3 - Q_1 = 68 - 42 = 26$."
-      ]
+      ],
+      "familyId": "bxm-iso-stat-ric-box",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-004",
       "code": "bxm-authored-v1-stat-004",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.2",
-      "evidenceCode": "A3.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.2",
+      "evidenceCode": "A1.2",
       "conceptId": "mep-est-diagrama-cajas-ric-03",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -754,7 +800,9 @@
       "solutionSteps": [
         "$Q_1 = 450$ deja por debajo al $25\\%$ de los datos más bajos.",
         "Por lo tanto, desde $Q_1$ hasta el máximo se concentra el $100\\% - 25\\% = 75\\%$ restante de la distribución."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-004",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-005",
@@ -784,21 +832,23 @@
       "solutionSteps": [
         "La mediana de la Sección B es $80$. Por definición de mediana, al menos el $50\\%$ de las observaciones es mayor o igual a este valor.",
         "Todas las demás opciones contradicen los valores numéricos dados."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-005",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-006",
       "code": "bxm-authored-v1-stat-006",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.2",
-      "evidenceCode": "A1.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.3",
+      "evidenceCode": "A1.3",
       "conceptId": "mep-est-medidas-posicion-01",
       "cognitiveLevel": "reflexion",
       "difficulty": 3,
       "calculatorAllowed": true,
       "provenance": "authored_proprietary",
       "reviewStatus": "authored_computationally_checked",
-      "stem": "En una distribución unimodal de estaturas de 100 personas, se determinó que la media es $165\\text{ cm}$ y la mediana es $170\\text{ cm}$. ¿Qué tipo de asimetría presenta esta distribución?",
+      "stem": "Una distribución unimodal de estaturas presenta una cola más extendida hacia los valores pequeños. ¿Qué tipo de asimetría describe esta forma?",
       "options": {
         "A": "Asimetría negativa (o con sesgo a la izquierda)",
         "B": "Asimetría positiva (o con sesgo a la derecha)",
@@ -812,16 +862,18 @@
         "D": "El enunciado establece explícitamente que es unimodal."
       },
       "solutionSteps": [
-        "Cuando la media es menor que la mediana ($\\bar{x} < \\text{Med}$), los datos extremos hacia la izquierda (valores bajos) desplazan la media hacia abajo.",
-        "Esto genera una distribución con asimetría negativa o sesgo hacia la izquierda."
-      ]
+        "Una cola extendida hacia los valores pequeños define asimetría negativa (hacia la izquierda).",
+        "La comparación de media y mediana por sí sola no demuestra la forma de una distribución."
+      ],
+      "familyId": "bxm-fixed-stat-006",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-007",
       "code": "bxm-authored-v1-stat-007",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.2",
-      "evidenceCode": "A1.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.4",
+      "evidenceCode": "A1.4",
       "conceptId": "mep-est-medidas-posicion-01",
       "cognitiveLevel": "reproduccion",
       "difficulty": 1,
@@ -844,14 +896,16 @@
       "solutionSteps": [
         "La media ponderada es $\\bar{x}_p = \\sum (x_i \\cdot w_i) = (90 \\cdot 0.20) + (80 \\cdot 0.30) + (70 \\cdot 0.50)$.",
         "$\\bar{x}_p = 18 + 24 + 35 = 77$."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-007",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-008",
       "code": "bxm-authored-v1-stat-008",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.2",
-      "evidenceCode": "A3.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-est-diagrama-cajas-ric-03",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
@@ -877,47 +931,50 @@
         "Límite superior: $Q_3 + 30 = 70 + 30 = 100$.",
         "Límite inferior: $Q_1 - 30 = 50 - 30 = 20$.",
         "Cualquier valor mayor a $100$ o menor a $20$ es atípico. Por ende, $105 > 100$ es un dato atípico."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-008",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-009",
       "code": "bxm-authored-v1-stat-009",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A1.2",
-      "evidenceCode": "A1.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-est-medidas-posicion-01",
       "cognitiveLevel": "conexion",
       "difficulty": 2,
       "calculatorAllowed": true,
       "provenance": "authored_proprietary",
       "reviewStatus": "authored_computationally_checked",
-      "stem": "En un grupo de 8 personas, las edades son: $18, 19, 20, 22, 24, 25, 28, 36$. ¿Cuál es la diferencia entre el rango total y el recorrido intercuartílico aproximado?",
+      "stem": "En un grupo de 8 personas, las edades son: $18, 19, 20, 22, 24, 25, 28, 36$. Usando la mediana de cada mitad para calcular los cuartiles, ¿cuál es la diferencia entre el rango total y el recorrido intercuartílico?",
       "options": {
-        "A": "$12.5$",
+        "A": "$11$",
         "B": "$18$",
-        "C": "$5.5$",
-        "D": "$22$"
+        "C": "$7$",
+        "D": "$25$"
       },
       "correctOption": "A",
       "distractorRationale": {
         "B": "Tomó únicamente el rango total $36 - 18 = 18$.",
-        "C": "Tomó únicamente el RIC.",
-        "D": "Sumó ambas medidas."
+        "C": "Usó solo el RIC, sin restarlo del rango.",
+        "D": "Sumó el rango y el RIC."
       },
       "solutionSteps": [
-        "Rango total: $\\text{Máx} - \\text{Mín} = 36 - 18 = 18$.",
-        "Mitad inferior de los datos: $18, 19, 20, 22 \\Rightarrow Q_1 = \\frac{19+20}{2} = 19.5$.",
-        "Mitad superior de los datos: $24, 25, 28, 36 \\Rightarrow Q_3 = \\frac{25+28}{2} = 26.5$.",
-        "$\\text{RIC} = 26.5 - 19.5 = 7.0$ (o $5.5$ según método de interpolación; en el estándar continuo $\\text{RIC} = 25 - 19.5 = 5.5$).",
-        "Diferencia: $18 - 5.5 = 12.5$."
-      ]
+        "Rango: $36 - 18 = 18$.",
+        "Mitad inferior: $18,19,20,22$; $Q_1=(19+20)/2=19.5$.",
+        "Mitad superior: $24,25,28,36$; $Q_3=(25+28)/2=26.5$.",
+        "$\\mathrm{RIC}=26.5-19.5=7$. Diferencia: $18-7=11$."
+      ],
+      "familyId": "bxm-fixed-stat-009",
+      "templateVersion": "1.1.0"
     },
     {
       "id": "bxm-authored-v1-stat-010",
       "code": "bxm-authored-v1-stat-010",
       "domain": "statistics",
-      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.2",
-      "evidenceCode": "A3.2",
+      "evidenceKey": "bxm/matematica/02-2026/statistics/A3.1",
+      "evidenceCode": "A3.1",
       "conceptId": "mep-est-diagrama-cajas-ric-03",
       "cognitiveLevel": "reflexion",
       "difficulty": 3,
@@ -940,7 +997,9 @@
       "solutionSteps": [
         "La longitud del segmento que une $Q_1$ con la mediana representa la dispersión del $25\\%$ de los datos situados justo debajo de la mediana.",
         "Si $(\\text{Med} - Q_1) > (Q_3 - \\text{Med})$, ese $25\\%$ inferior está más disperso y extendido que el $25\\%$ superior, lo que refleja asimetría hacia la izquierda en el cuerpo central."
-      ]
+      ],
+      "familyId": "bxm-fixed-stat-010",
+      "templateVersion": "1.1.0"
     }
   ]
 }

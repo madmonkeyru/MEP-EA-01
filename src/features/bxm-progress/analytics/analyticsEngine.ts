@@ -1,4 +1,4 @@
-import type { AttemptEvent, BxmDomain } from '../domain/types';
+import type { AttemptEvent, BxmDomain, LearningCompletion } from '../domain/types';
 
 export interface DailyActivityBucket {
   dateIso: string; // YYYY-MM-DD in specified timezone
@@ -21,6 +21,8 @@ export interface SevenDayLearningReport {
   totalCompletedSessions: number;
   overallAccuracyExactRatio: number;
   overallAccuracyPercentage: number;
+  firstResponseAccuracyPercentage: number;
+  firstResponseCount: number;
   comparisonWithPriorWeek?: {
     priorTotalResponses: number;
     priorAccuracyPercentage: number;
@@ -67,7 +69,8 @@ function addDays(date: Date, days: number): Date {
 export function generateSevenDayReport(
   events: AttemptEvent[],
   referenceDateUtc: Date,
-  timeZone = 'America/Costa_Rica'
+  timeZone = 'America/Costa_Rica',
+  completions: LearningCompletion[] = []
 ): SevenDayLearningReport {
   // Compute the 7 calendar dates: [ref - 6, ..., ref]
   const targetDates: string[] = [];
@@ -85,6 +88,21 @@ export function generateSevenDayReport(
 
   const currentWindowSet = new Set(targetDates);
   const priorWindowSet = new Set(priorDates);
+  const completionsByDate = new Map<string, Set<string>>();
+  for (const completion of completions) {
+    const time = Date.parse(completion.completedAt);
+    if (!['completed','timed_out'].includes(completion.status) || !Number.isFinite(time) || time > referenceDateUtc.getTime()) continue;
+    const date = formatDateInTimeZone(new Date(time), timeZone);
+    const ids = completionsByDate.get(date) || new Set<string>();
+    ids.add(completion.sessionId); completionsByDate.set(date, ids);
+  }
+  for (const event of events) {
+    const completed = Date.parse(event.sessionCompletedAt || '');
+    if (!['completed', 'timed_out'].includes(event.sessionStatus || '') || !Number.isFinite(completed) || completed > referenceDateUtc.getTime()) continue;
+    const date = formatDateInTimeZone(new Date(completed), timeZone);
+    const ids = completionsByDate.get(date) || new Set<string>();
+    ids.add(event.sessionId); completionsByDate.set(date, ids);
+  }
 
   // Group events by local date
   const eventsByDate = new Map<string, AttemptEvent[]>();
@@ -110,7 +128,8 @@ export function generateSevenDayReport(
       questionIds.add(ev.itemId);
       const famKey = ev.familyId && ev.familyId.trim().length > 0 ? ev.familyId : `item:${ev.itemId}`;
       familyIds.add(famKey);
-      sessionIds.add(ev.sessionId);
+      if (['completed', 'timed_out'].includes(ev.sessionStatus || '') && ev.sessionCompletedAt &&
+        formatDateInTimeZone(new Date(ev.sessionCompletedAt), timeZone) === dateIso) sessionIds.add(ev.sessionId);
       if (ev.isCorrect) correct++;
     }
 
@@ -122,7 +141,7 @@ export function generateSevenDayReport(
       responseEventsCount: total,
       uniqueQuestionsCount: questionIds.size,
       distinctTemplateFamiliesCount: familyIds.size,
-      completedSessionsCount: sessionIds.size,
+      completedSessionsCount: completionsByDate.get(dateIso)?.size || 0,
       correctResponsesCount: correct,
       accuracyExactRatio: ratio,
       accuracyPercentage: Math.round(ratio * 100),
@@ -151,7 +170,8 @@ export function generateSevenDayReport(
     currentQuestions.add(ev.itemId);
     const famKey = ev.familyId && ev.familyId.trim().length > 0 ? ev.familyId : `item:${ev.itemId}`;
     currentFamilies.add(famKey);
-    currentSessions.add(ev.sessionId);
+    if (['completed', 'timed_out'].includes(ev.sessionStatus || '') && ev.sessionCompletedAt &&
+      currentWindowSet.has(formatDateInTimeZone(new Date(ev.sessionCompletedAt), timeZone))) currentSessions.add(ev.sessionId);
     if (ev.isCorrect) currentCorrect++;
 
     const dom = ev.domain || 'geometry';
@@ -179,7 +199,7 @@ export function generateSevenDayReport(
 
   let comparison: SevenDayLearningReport['comparisonWithPriorWeek'];
 
-  if (allPriorEvents.length > 0) {
+  if (allPriorEvents.length > 0 && currentTotal > 0) {
     let priorCorrect = 0;
     for (const ev of allPriorEvents) {
       if (ev.isCorrect) priorCorrect++;
@@ -202,9 +222,11 @@ export function generateSevenDayReport(
     totalResponseEvents: currentTotal,
     totalUniqueQuestions: currentQuestions.size,
     totalDistinctFamilies: currentFamilies.size,
-    totalCompletedSessions: currentSessions.size,
+    totalCompletedSessions: new Set(targetDates.flatMap(date => [...(completionsByDate.get(date) || [])])).size,
     overallAccuracyExactRatio: currentOverallRatio,
     overallAccuracyPercentage: currentAccuracyPercentage,
+    firstResponseCount: allCurrentWindowEvents.filter(e => e.responseIndex === 0).length,
+    firstResponseAccuracyPercentage: (() => { const first = allCurrentWindowEvents.filter(e => e.responseIndex === 0); return first.length ? Math.round(100 * first.filter(e => e.isCorrect).length / first.length) : 0; })(),
     comparisonWithPriorWeek: comparison,
     domainActivityBreakdown: domainBreakdown,
   };
@@ -216,9 +238,10 @@ export function generateSevenDayReport(
 export function calculateActivityStreak(
   events: AttemptEvent[],
   referenceDateUtc: Date,
-  timeZone = 'America/Costa_Rica'
+  timeZone = 'America/Costa_Rica',
+  completions: LearningCompletion[] = []
 ): StreakSummary {
-  if (events.length === 0) {
+  if (events.length === 0 && completions.length === 0) {
     return {
       currentStreakDays: 0,
       longestStreakDays: 0,
@@ -229,9 +252,14 @@ export function calculateActivityStreak(
 
   // Extract unique active days
   const activeDaysSet = new Set<string>();
+  for (const completion of completions) {
+    const time = Date.parse(completion.completedAt);
+    if (completion.answeredCount > 0 && ['completed','timed_out'].includes(completion.status) && Number.isFinite(time) && time <= referenceDateUtc.getTime()) activeDaysSet.add(formatDateInTimeZone(new Date(time), timeZone));
+  }
   for (const ev of events) {
-    const d = new Date(ev.timestamp);
-    if (!Number.isNaN(d.getTime())) {
+    if (!['completed', 'timed_out'].includes(ev.sessionStatus || '') || !ev.sessionCompletedAt) continue;
+    const d = new Date(ev.sessionCompletedAt);
+    if (!Number.isNaN(d.getTime()) && d.getTime() <= referenceDateUtc.getTime()) {
       activeDaysSet.add(formatDateInTimeZone(d, timeZone));
     }
   }

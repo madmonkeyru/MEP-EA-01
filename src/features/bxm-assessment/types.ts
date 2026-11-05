@@ -47,6 +47,7 @@ export interface AssessmentItemOption {
 }
 
 export interface AssessmentItem {
+  hasSeenExplanationBefore?: boolean;
   id: string | number;
   code?: string;
   familyId?: string;
@@ -93,6 +94,7 @@ export interface ItemSelectionShortfall {
 }
 
 export interface BlueprintSelectionResult {
+  benchmarkExposed?: boolean;
   items: AssessmentItem[];
   shortfalls: ItemSelectionShortfall[];
   isPartial: boolean;
@@ -103,6 +105,7 @@ export interface BlueprintSelectionResult {
 }
 
 export interface ResponseAttemptEvent {
+  hasSeenExplanationBefore?: boolean;
   eventId: string;
   attemptIndex: number; // 0 = first response, 1 = retry 1, etc.
   selectedOption: OptionLetter | null;
@@ -167,6 +170,9 @@ export interface EvidenceScoreBreakdown {
 }
 
 export interface SessionResultExport {
+  isFinalized: boolean;
+  itemSnapshots: AssessmentItem[];
+  deadline?: string;
   schemaVersion: '1.0.0';
   sessionId: string;
   kind: SessionKind;

@@ -125,7 +125,7 @@ describe('BXM Progress - Recommendations & Personal Queue', () => {
         accuracyPercentage: 65,
       });
 
-      const plan = generateStructuredStudyPlan([recInProgress, recWeak], BXM_OFFICIAL_EVIDENCES_FIXTURE);
+      const plan = generateStructuredStudyPlan([recInProgress, recWeak], BXM_OFFICIAL_EVIDENCES_FIXTURE, { availableLessonKeys: [recWeak.evidenceKey, recInProgress.evidenceKey], availableInventoryByEvidence: { [recWeak.evidenceKey]: { totalItems: 10 }, [recInProgress.evidenceKey]: { totalItems: 10 } } });
 
       expect(plan.steps.length).toBeGreaterThan(0);
       expect(plan.steps[0].evidenceKey).toBe(recWeak.evidenceKey);

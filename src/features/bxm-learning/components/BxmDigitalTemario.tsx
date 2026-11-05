@@ -13,17 +13,20 @@ export interface BxmDigitalTemarioProps {
   capabilities?: BxmCapabilityContext;
   className?: string;
   initialEvidenceKey?: string;
+  onEvidenceChange?: (key: string | undefined) => void;
 }
 
 export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
   callbacks,
-  capabilities = { isPremium: true },
+  capabilities = { isPremium: false },
   className = '',
-  initialEvidenceKey
+  initialEvidenceKey,
+  onEvidenceChange,
 }) => {
   const [selectedDomain, setSelectedDomain] = useState<BxmDomain | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeEvidenceKey, setActiveEvidenceKey] = useState<string | null>(initialEvidenceKey || null);
+  function selectEvidence(key: string | null) { setActiveEvidenceKey(key); onEvidenceChange?.(key || undefined); }
 
   const allEvidences = useMemo(() => BxmContentService.getAllEvidences(), []);
 
@@ -89,7 +92,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
           lesson={activeLesson}
           callbacks={callbacks}
           capabilities={capabilities}
-          onBackToTemario={() => setActiveEvidenceKey(null)}
+          onBackToTemario={() => selectEvidence(null)}
         />
       </div>
     );
@@ -190,7 +193,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
             </div>
             <button
               type="button"
-              onClick={() => setActiveEvidenceKey(null)}
+              onClick={() => selectEvidence(null)}
               className="text-xs font-bold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200"
             >
               Cerrar ✕
@@ -254,7 +257,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                       return (
                         <div
                           key={ev.key}
-                          onClick={() => setActiveEvidenceKey(ev.key)}
+                          onClick={() => selectEvidence(ev.key)}
                           className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex flex-col justify-between gap-2 ${
                             isComplete
                               ? 'border-amber-300 dark:border-amber-800/80 bg-amber-50/40 dark:bg-amber-950/20 hover:border-amber-500 hover:shadow-xs'

@@ -1,3 +1,4 @@
+import { LearningText } from '../LearningText';
 import React, { useState, useId } from 'react';
 
 export interface InteractiveCircleVisualProps {
@@ -93,7 +94,7 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
           </h4>
         </div>
         <div className="px-3 py-1.5 rounded-lg border bg-stone-50 dark:bg-stone-850 font-mono text-sm font-semibold text-stone-800 dark:text-stone-200">
-          ${equationText}$
+          <LearningText content={`$${equationText}$`} inline />
         </div>
       </div>
 
@@ -205,7 +206,7 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
           <div>
             <div className="flex justify-between items-center mb-1">
               <label htmlFor={sliderHId} className="font-medium text-stone-700 dark:text-stone-300">
-                Centro $h$ (abscisa X): <strong className="font-mono text-amber-600">{h}</strong>
+                Centro h (abscisa X): <strong className="font-mono text-amber-600">{h}</strong>
               </label>
             </div>
             <input
@@ -227,7 +228,7 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
           <div>
             <div className="flex justify-between items-center mb-1">
               <label htmlFor={sliderKId} className="font-medium text-stone-700 dark:text-stone-300">
-                Centro $k$ (ordenada Y): <strong className="font-mono text-amber-600">{k}</strong>
+                Centro k (ordenada Y): <strong className="font-mono text-amber-600">{k}</strong>
               </label>
             </div>
             <input
@@ -249,7 +250,7 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
           <div>
             <div className="flex justify-between items-center mb-1">
               <label htmlFor={sliderRId} className="font-medium text-stone-700 dark:text-stone-300">
-                Radio $r$: <strong className="font-mono text-amber-600">{r}</strong> (diámetro $d = {2 * r}$)
+                Radio r: <strong className="font-mono text-amber-600">{r}</strong> (diámetro d = {2 * r})
               </label>
             </div>
             <input
@@ -270,12 +271,12 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
 
           <div className="pt-2 border-t border-stone-200 dark:border-stone-800">
             <p className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">
-              Probar Punto de Prueba $P(x, y)$
+              Probar Punto de Prueba P(x, y)
             </p>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label htmlFor={sliderPxId} className="text-xs text-stone-600 dark:text-stone-400 block mb-1">
-                  Punto $x$: <strong className="font-mono">{px}</strong>
+                  Punto x: <strong className="font-mono">{px}</strong>
                 </label>
                 <input
                   id={sliderPxId}
@@ -294,7 +295,7 @@ export const InteractiveCircleVisual: React.FC<InteractiveCircleVisualProps> = (
               </div>
               <div>
                 <label htmlFor={sliderPyId} className="text-xs text-stone-600 dark:text-stone-400 block mb-1">
-                  Punto $y$: <strong className="font-mono">{py}</strong>
+                  Punto y: <strong className="font-mono">{py}</strong>
                 </label>
                 <input
                   id={sliderPyId}

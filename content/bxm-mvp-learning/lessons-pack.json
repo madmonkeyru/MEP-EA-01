@@ -130,7 +130,7 @@
           "notes": "Si $d = 0$, el plano pasa por el centro y genera el círculo máximo de radio $r = R$."
         }
       ],
-      "coreExplanation": "Cuando un plano interseca una **esfera** de radio $R$, la sección plana resultante es **siempre una circunferencia** (o círculo). Si trazamos un segmento perpendicular desde el centro de la esfera hasta el plano de corte, este segmento tiene longitud $d$ y cae exactamente en el centro de la sección circular pequeña.\n\nUniendo el centro de la esfera con cualquier punto de la circunferencia de corte, se forma un triángulo rectángulo perfecto donde la hipotenusa es el radio esférico $R$, un cateto es la distancia $d$, y el otro cateto es el radio de la sección $r$. Por ende, se cumple rigurosamente: $$R^2 = d^2 + r^2$$\nEn el caso del **cilindro circular recto**:\n- Plano paralelo a las bases: genera un círculo congruente con las bases.\n- Plano perpendicular a las bases (axial): genera un rectángulo de lados $2r$ y altura $h$.\n- Plano oblicuo que no corte las bases: genera una elipse.",
+      "coreExplanation": "Cuando un plano interseca una **esfera** de radio $R$, si $d<R$ se obtiene una sección circular; si $d=R$, un punto de tangencia; si $d>R$, no hay intersección. Si trazamos un segmento perpendicular desde el centro de la esfera hasta el plano de corte, este segmento tiene longitud $d$ y cae exactamente en el centro de la sección circular pequeña.\n\nUniendo el centro de la esfera con cualquier punto de la circunferencia de corte, se forma un triángulo rectángulo perfecto donde la hipotenusa es el radio esférico $R$, un cateto es la distancia $d$, y el otro cateto es el radio de la sección $r$. Por ende, se cumple rigurosamente: $$R^2 = d^2 + r^2$$\nEn el caso del **cilindro circular recto**:\n- Plano paralelo a las bases: genera un círculo congruente con las bases.\n- Plano perpendicular a las bases (axial): genera un rectángulo de lados $2r$ y altura $h$.\n- Plano oblicuo que no corte las bases: genera una elipse.",
       "commonMistakes": [
         {
           "mistake": "Restar linealmente el radio y la distancia",
@@ -190,7 +190,7 @@
       "formulas": [
         {
           "name": "Pendiente de la recta dados dos puntos $(x_1, y_1)$ y $(x_2, y_2)$",
-          "latex": "m = \\frac{y_2 - y_1}{x_2 - x_1}, \\quad x_1 \\ne x_2",
+          "latex": "m = \\frac{y_2 - y_1}{x_2 - x_1}, \\quad x_1 \ne x_2",
           "notes": "Si $m > 0$ es creciente; si $m < 0$ es decreciente; si $m = 0$ es horizontal constante."
         },
         {
@@ -200,7 +200,7 @@
         },
         {
           "name": "Intersección con el eje de las abscisas ($x$)",
-          "latex": "\\left(-\\frac{b}{m}, 0\\right), \\quad m \\ne 0",
+          "latex": "\\left(-\\frac{b}{m}, 0\\right), \\quad m \ne 0",
           "notes": "Se obtiene haciendo $y = 0$ y despejando la variable $x$."
         },
         {
@@ -209,7 +209,7 @@
           "notes": "Rectas perpendiculares tienen pendientes opuestas y recíprocas."
         }
       ],
-      "coreExplanation": "La **función lineal** describe una relación de proporcionalidad y variación constante entre dos magnitudes. Geométricamente se representa como una línea recta ininterrumpida.\n\nLa **pendiente** ($m$) mide la inclinación o razón de cambio vertical por cada unidad de desplazamiento horizontal. El valor $b$ es el corte con el eje $y$, que representa el estado inicial cuando $x = 0$.\n\nPara determinar la ecuación completa de una recta basta con conocer:\n1. Dos puntos cualesquiera, o bien\n2. Un punto y el valor de su pendiente (o la relación de paralelismo/perpendicularidad con otra recta dada).",
+      "coreExplanation": "La **función lineal** describe una relación de variación constante (proporcional solo si el intercepto es cero) entre dos magnitudes. Geométricamente se representa como una línea recta ininterrumpida.\n\nLa **pendiente** ($m$) mide la inclinación o razón de cambio vertical por cada unidad de desplazamiento horizontal. El valor $b$ es el corte con el eje $y$, que representa el estado inicial cuando $x = 0$.\n\nPara determinar la ecuación completa de una recta basta con conocer:\n1. Dos puntos cualesquiera, o bien\n2. Un punto y el valor de su pendiente (o la relación de paralelismo/perpendicularidad con otra recta dada).",
       "commonMistakes": [
         {
           "mistake": "Invertir numerador y denominador en la pendiente",
@@ -290,7 +290,7 @@
           "notes": "Cualquier dato fuera de este intervalo se considera un valor atípico (outlier)."
         }
       ],
-      "coreExplanation": "Las **medidas de posición** permiten sintetizar y describir el comportamiento central y la división porcentual de una distribución de datos.\n\n- **Media ($\\\\bar{x}$)**: Centro de masa aritmético.\n- **Mediana (\\\\text{Med} o $Q_2$)**: Valor que divide a la muestra ordenada exactamente en dos partes iguales ($50\\%$ inferior y $50\\%$ superior).\n- **Cuartiles ($Q_1, Q_2, Q_3$)**: Dividen la muestra en 4 segmentos de $25\\%$ cada uno.\n\nEl **Diagrama de Caja y Bigotes (Box Plot)** visualiza el resumen de los 5 números: $\\text{Mínimo}$, $Q_1$, $\\text{Mediana}$, $Q_3$, y $\\text{Máximo}$. La longitud de la caja es el $\\text{RIC} = Q_3 - Q_1$, dentro de la cual se ubica el $50\\%$ central de las observaciones.",
+      "coreExplanation": "Las **medidas de posición** permiten sintetizar y describir el comportamiento central y la división porcentual de una distribución de datos.\n\n- **Media ($\\bar{x}$)**: Centro de masa aritmético.\n- **Mediana (\\text{Med} o $Q_2$)**: Valor que divide a la muestra ordenada exactamente en dos partes iguales ($50\\%$ inferior y $50\\%$ superior).\n- **Cuartiles ($Q_1, Q_2, Q_3$)**: Dividen la muestra en 4 segmentos de $25\\%$ cada uno.\n\nEl **Diagrama de Caja y Bigotes (Box Plot)** visualiza el resumen de los 5 números: $\\text{Mínimo}$, $Q_1$, $\\text{Mediana}$, $Q_3$, y $\\text{Máximo}$. La longitud de la caja es el $\\text{RIC} = Q_3 - Q_1$, dentro de la cual se ubica el $50\\%$ central de las observaciones.",
       "commonMistakes": [
         {
           "mistake": "Calcular la mediana sin ordenar previamente los datos",
@@ -312,7 +312,7 @@
             "2. Primer cuartil ($Q_1$): Mediana de la mitad inferior ($45, 50, 60, 65, 70$):\n   $$Q_1 = 60$$",
             "3. Tercer cuartil ($Q_3$): Mediana de la mitad superior ($75, 80, 85, 90, 95$):\n   $$Q_3 = 85$$",
             "4. Recorrido Intercuartílico: $\\text{RIC} = Q_3 - Q_1 = 85 - 60 = 25$.",
-            "5. Simetría: $\\text{Med} - Q_1 = 72.5 - 60 = 12.5$ y $Q_3 - \\text{Med} = 85 - 72.5 = 12.5$.\n   Como ambas distancias son exactamente iguales, la distribución central es perfectamente **simétrica**."
+            "Las distancias de la mediana a ambos extremos de la caja son $12.5$. Las dos mitades de la caja tienen igual amplitud; esto no demuestra simetría de toda la distribución."
           ]
         }
       },
@@ -320,7 +320,7 @@
       "microQuiz": [
         {
           "id": "quiz-stat-01",
-          "question": "En un diagrama de cajas, ¿qué porcentaje de los datos se ubica estrictamente entre el valor Mínimo y el tercer cuartil $Q_3$?",
+          "question": "En la lectura aproximada de un diagrama de cajas, ¿qué porcentaje acumulado corresponde al tercer cuartil $Q_3$?",
           "options": {
             "A": "El $75\\%$",
             "B": "El $25\\%$",
@@ -328,7 +328,7 @@
             "D": "El $100\\%$"
           },
           "correctOption": "A",
-          "explanation": "Por definición de cuartiles, desde el mínimo hasta $Q_3$ se acumula el $75\\%$ de la distribución."
+          "explanation": "El tercer cuartil corresponde aproximadamente al percentil 75; los empates pueden afectar las proporciones estrictas."
         }
       ]
     }

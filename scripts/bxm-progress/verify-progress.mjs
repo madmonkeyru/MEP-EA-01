@@ -5,7 +5,7 @@
  * Runs type-checking, linter, and unit/integration test suites for the owned module.
  */
 
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -38,7 +38,7 @@ console.log('✓ All owned directories verified.\n');
 // 2. Run oxlint check
 console.log('[2/4] Running oxlint on codebase...');
 try {
-  execSync('./node_modules/.bin/oxlint', { stdio: 'inherit' });
+  execSync('npm run lint', { stdio: 'inherit' });
   console.log('✓ Linter passed with 0 errors/warnings.\n');
 } catch {
   console.error('✗ Linter failed.');
@@ -48,7 +48,7 @@ try {
 // 3. Run tsc check
 console.log('[3/4] Running TypeScript compiler check...');
 try {
-  execSync('./node_modules/.bin/tsc -b', { stdio: 'inherit' });
+  execSync('npm run build', { stdio: 'inherit' });
   console.log('✓ TypeScript compilation passed with 0 errors.\n');
 } catch {
   console.error('✗ TypeScript compilation failed.');
@@ -58,11 +58,11 @@ try {
 // 4. Run Vitest suite for bxm-progress
 console.log('[4/4] Running Vitest suite for src/features/bxm-progress...');
 try {
-  execSync('./node_modules/.bin/vitest run src/features/bxm-progress/', { stdio: 'inherit' });
-  console.log('✓ All 37 progress module tests passed successfully.\n');
+  execFileSync(process.execPath, ['node_modules/vitest/vitest.mjs', 'run', 'src/features/bxm-progress/', '--pool=threads', '--maxWorkers=1'], { stdio: 'inherit' });
+  console.log('✓ Progress module tests passed successfully.\n');
 } catch {
   console.error('✗ Vitest tests failed.');
   process.exit(1);
 }
 
-console.log('=== Agent C Module Verification Complete: 100% HEALTHY ===');
+console.log('=== Agent C Module Verification Complete ===');

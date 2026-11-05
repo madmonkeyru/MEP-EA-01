@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { TextRenderer } from '../../../components/common/TextRenderer';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import type {
   AssessmentItem,
   LearnerReportedReason,
@@ -12,12 +13,16 @@ export interface BxmSessionRunnerViewProps {
   runner: SessionRunner;
   onFinish: (result: SessionResultExport) => void;
   onExit?: () => void;
+  formulaSheet?: React.ReactNode;
+  onStateChange?: (runner: SessionRunner) => void;
 }
 
 export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
   runner,
   onFinish,
   onExit,
+  formulaSheet,
+  onStateChange,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(runner.getCurrentIndex());
   const [selectedOption, setSelectedOption] = useState<OptionLetter | null>(null);
@@ -31,20 +36,33 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
   const isExam = runner.isExamMode();
   const currentItem: AssessmentItem | undefined = runner.items[currentIndex];
   const currentState = currentItem ? runner.getItemState(currentItem.id) : undefined;
+  const currentFeedback = currentState?.retryAttempts.at(-1) || currentState?.firstResponse;
 
   // Sync draft selection on item change
   useEffect(() => {
     if (currentItem && currentState) {
       setSelectedOption(currentState.draftOption);
-      setShowExplanation(currentState.isFinalAnswerSubmitted);
+      setShowExplanation(!runner.isExamMode() && runner.policy.allowImmediateFeedback && currentState.isFinalAnswerSubmitted);
       setCurrentHint(null);
     }
   }, [currentIndex, currentItem, currentState]);
 
+  const finishDelivered = useRef(false);
   const handleFinish = useCallback((exportData: SessionResultExport) => {
+    if (finishDelivered.current) return;
+    finishDelivered.current = true;
     setResult(exportData);
     onFinish(exportData);
   }, [onFinish]);
+
+  const persist = useCallback(() => {
+    if (runner.isFinished()) handleFinish(runner.exportResults());
+    else onStateChange?.(runner);
+  }, [runner, handleFinish, onStateChange]);
+  useEffect(() => {
+    runner.setCurrentIndex(currentIndex);
+    persist();
+  }, [currentIndex, runner, persist]);
 
   // Timer tick for exam mode
   const deadline = runner.getDeadline();
@@ -94,15 +112,18 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
   const handleOptionSelect = (letter: OptionLetter) => {
     setSelectedOption(letter);
     runner.selectDraftOption(letter, currentItem.id);
+    persist();
   };
 
   const handleToggleFlag = () => {
     runner.toggleReviewFlag(currentItem.id);
+    persist();
     setFlagRevision((r) => r + 1);
   };
 
   const handleRevealHint = () => {
     const hintRes = runner.revealHint(currentItem.id);
+    persist();
     if (hintRes.hint) {
       setCurrentHint(hintRes.hint);
     }
@@ -110,21 +131,26 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
   const handleVerifyStudyAnswer = () => {
     if (!selectedOption) return;
-    const isCorrect = selectedOption === currentItem.correctAnswer;
+    const verification = runner.verifyStudyAnswer(currentItem.id);
+    persist();
+    setFlagRevision(value => value + 1);
+    if (!verification) return;
+    const isCorrect = verification.isCorrect;
 
     if (!isCorrect && (!currentItem.distractorExplanations || !currentItem.distractorExplanations[selectedOption])) {
       // Invite learner-reported reason
       setShowLearnerReasonModal(true);
     } else {
-      runner.verifyStudyAnswer(currentItem.id);
-      setShowExplanation(true);
+      setShowExplanation(runner.policy.allowImmediateFeedback);
     }
   };
 
   const handleConfirmLearnerReason = (reason: LearnerReportedReason) => {
-    runner.verifyStudyAnswer(currentItem.id, reason);
+    runner.reportLearnerReason(currentItem.id, reason);
+    persist();
+    setFlagRevision(value => value + 1);
     setShowLearnerReasonModal(false);
-    setShowExplanation(true);
+    setShowExplanation(runner.policy.allowImmediateFeedback);
   };
 
   const handleManualFinalize = () => {
@@ -157,6 +183,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
         </div>
 
         <div className="flex items-center gap-4">
+          {onExit && <button onClick={() => { persist(); onExit(); }} className="secondary-button">Guardar y salir</button>}
           {remainingSeconds !== null && (
             <div className={`text-sm font-mono font-bold ${remainingSeconds < 300 ? 'text-red-600 animate-pulse' : 'text-stone-600 dark:text-stone-300'}`}>
               Tiempo: {formatTimer(remainingSeconds)}
@@ -184,6 +211,8 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
       </div>
 
       {/* Item Metadata */}
+      {runner.policy.allowFormulaSheet && formulaSheet && <details className="mb-4"><summary>Hoja de fórmulas permitida</summary>{formulaSheet}</details>}
+      {runner.policy.allowCalculator && <p className="text-xs mb-3">Puede utilizar la calculadora permitida para esta actividad.</p>}
       <div className="flex flex-wrap gap-2 text-xs text-stone-500 dark:text-stone-400 mb-4">
         <span>Área: <strong className="capitalize">{currentItem.domain}</strong></span>
         <span>•</span>
@@ -196,7 +225,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
       {/* Stem */}
       <div className="text-base sm:text-lg mb-6 leading-relaxed font-serif">
-        {currentItem.stem}
+        <TextRenderer content={currentItem.stem} inline />
       </div>
 
       {/* Options */}
@@ -206,6 +235,9 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
           return (
             <button
               key={opt.letter}
+              aria-label={`Opción ${opt.letter}`}
+              aria-describedby={`bxm-option-description-${opt.letter}`}
+              aria-pressed={isSelected}
               onClick={() => handleOptionSelect(opt.letter)}
               className={`w-full text-left p-3.5 rounded-lg border text-sm sm:text-base flex items-start gap-3 transition ${
                 isSelected
@@ -218,7 +250,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
               }`}>
                 {opt.letter}
               </span>
-              <span className="flex-1">{opt.text}</span>
+              <span id={`bxm-option-description-${opt.letter}`} className="flex-1"><TextRenderer content={opt.text} inline /></span>
             </button>
           );
         })}
@@ -252,29 +284,29 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
           {currentHint && (
             <div className="p-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded text-xs text-amber-900 dark:text-amber-200">
-              <strong>Pista:</strong> {currentHint}
+              <strong>Pista:</strong> <TextRenderer content={currentHint} inline />
             </div>
           )}
 
-          {showExplanation && currentState?.firstResponse && (
+          {showExplanation && runner.policy.allowImmediateFeedback && currentFeedback && (
             <div className={`p-4 rounded-lg border text-sm ${
-              currentState.firstResponse.isCorrect
+              currentFeedback.isCorrect
                 ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-100'
                 : 'bg-rose-50 dark:bg-rose-950/30 border-rose-200 dark:border-rose-800 text-rose-900 dark:text-rose-100'
             }`}>
               <div className="font-bold mb-1">
-                {currentState.firstResponse.isCorrect ? '¡Correcto!' : 'Respuesta incorrecta'} (Opción {currentItem.correctAnswer})
+                {currentFeedback.isCorrect ? '¡Correcto!' : 'Respuesta incorrecta'} (Opción {currentItem.correctAnswer})
               </div>
 
-              {currentState.firstResponse.authoredMisconception && (
+              {currentFeedback.authoredMisconception && (
                 <div className="mt-2 text-xs">
-                  <span className="font-semibold">Interpretación del error:</span> {currentState.firstResponse.authoredMisconception.explanation}
+                  <span className="font-semibold">Interpretación del error:</span> <TextRenderer content={currentFeedback.authoredMisconception.explanation} inline />
                 </div>
               )}
 
-              {currentState.firstResponse.learnerReportedReason && (
+              {currentFeedback.learnerReportedReason && (
                 <div className="mt-2 text-xs italic">
-                  Motivo reportado por el estudiante: {currentState.firstResponse.learnerReportedReason}
+                  Motivo reportado por el estudiante: {currentFeedback.learnerReportedReason}
                 </div>
               )}
 
@@ -284,7 +316,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
                   <ol className="list-decimal list-inside space-y-1 text-xs">
                     {currentItem.solutionSteps.map((step, sIdx) => (
                       <li key={sIdx}>
-                        {typeof step === 'string' ? step : `${step.title}: ${step.explanation}`}
+                        <TextRenderer content={typeof step === 'string' ? step : `${step.title}: ${step.explanation}`} inline />
                       </li>
                     ))}
                   </ol>
@@ -413,9 +445,9 @@ export const BxmSessionResultBreakdownView: React.FC<{
           <div className="text-xs text-stone-500">Estado: {result.status}</div>
         </div>
         <div className="p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
-          <div className="text-xs text-stone-500">Benchmark oficial</div>
-          <div className="text-2xl font-black">{result.benchmarkExposed ? 'Expuesto' : 'Limpio'}</div>
-          <div className="text-xs text-stone-500">No contamina simulación</div>
+          <div className="text-xs text-stone-500">Material oficial en esta actividad</div>
+          <div className="text-2xl font-black">{result.benchmarkExposed ? 'Incluido' : 'No incluido'}</div>
+          <div className="text-xs text-stone-500">El examen de referencia se ofrece por separado.</div>
         </div>
       </div>
 

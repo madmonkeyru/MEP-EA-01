@@ -57,7 +57,7 @@ export interface RetestRecommendation {
 
 export interface QueueGenerationOptions {
   limit?: number;
-  availableInventoryByEvidence?: Record<string, { totalItems: number; tiers: DifficultyTier[] }>;
+  availableInventoryByEvidence?: Record<string, { totalItems: number; tiers?: DifficultyTier[] }>;
 }
 
 /**
@@ -88,7 +88,9 @@ export function generatePersonalPracticeQueue(
     const info = evidenceMap.get(rec.evidenceKey);
     const officialWeight = info?.weightOfficialPercent ?? 1.0;
     const invInfo = inventory[rec.evidenceKey];
-    const isAvailable = invInfo ? invInfo.totalItems > 0 : true;
+    const isAvailable = !!invInfo && invInfo.totalItems > 0;
+    const targetDifficulty = invInfo?.tiers?.length && !invInfo.tiers.includes(rec.recommendedDifficultyTier)
+      ? [...invInfo.tiers].sort()[0] : rec.recommendedDifficultyTier;
 
     // 1. Insufficient data: Calibration needed
     if (rec.status === 'insufficient_data') {
@@ -103,7 +105,7 @@ export function generatePersonalPracticeQueue(
         domain: rec.domain,
         rawCode: rec.rawCode,
         evidenceDescription: rec.description,
-        targetDifficulty: rec.recommendedDifficultyTier,
+        targetDifficulty,
         reason: 'calibration_needed',
         reasonLabelEs: `Calibración formativa: ${rec.sampleSizeLabel}`,
         priorityScore,
@@ -126,7 +128,7 @@ export function generatePersonalPracticeQueue(
         domain: rec.domain,
         rawCode: rec.rawCode,
         evidenceDescription: rec.description,
-        targetDifficulty: rec.recommendedDifficultyTier,
+        targetDifficulty,
         reason: 'weak_performance',
         reasonLabelEs: `Refuerzo prioritario (${rec.accuracyPercentage}% de precisión)`,
         priorityScore,
@@ -147,7 +149,7 @@ export function generatePersonalPracticeQueue(
         domain: rec.domain,
         rawCode: rec.rawCode,
         evidenceDescription: rec.description,
-        targetDifficulty: rec.recommendedDifficultyTier,
+        targetDifficulty,
         reason: 'weak_performance',
         reasonLabelEs: `Alineación hacia dominio (${rec.accuracyPercentage}%)`,
         priorityScore,
@@ -168,7 +170,7 @@ export function generatePersonalPracticeQueue(
         domain: rec.domain,
         rawCode: rec.rawCode,
         evidenceDescription: rec.description,
-        targetDifficulty: rec.recommendedDifficultyTier,
+        targetDifficulty,
         reason: 'progression_next_tier',
         reasonLabelEs: `Desafío avanzado: Nivel ${rec.recommendedDifficultyTier}`,
         priorityScore,
@@ -180,11 +182,18 @@ export function generatePersonalPracticeQueue(
   }
 
   // Stable sort by priority score ascending, then by evidenceKey ascending
+  const records = new Map(evidenceRecords.map(r => [r.evidenceKey, r]));
   queueCandidates.sort((a, b) => {
-    if (a.priorityScore !== b.priorityScore) {
-      return a.priorityScore - b.priorityScore;
-    }
-    return a.evidenceKey.localeCompare(b.evidenceKey);
+    const availability = Number(b.isAvailableInAuthoredInventory) - Number(a.isAvailableInAuthoredInventory);
+    if (availability) return availability;
+    const ar = records.get(a.evidenceKey)!; const br = records.get(b.evidenceKey)!;
+    const calibration = Number(br.status === 'insufficient_data') - Number(ar.status === 'insufficient_data');
+    if (calibration) return calibration;
+    if (ar.status !== 'insufficient_data' && ar.accuracyExactRatio !== br.accuracyExactRatio) return ar.accuracyExactRatio - br.accuracyExactRatio;
+    const weight = (evidenceMap.get(b.evidenceKey)?.weightOfficialPercent ?? 0) - (evidenceMap.get(a.evidenceKey)?.weightOfficialPercent ?? 0);
+    if (weight) return weight;
+    const recent = (Date.parse(br.lastIncorrectAt || '') || 0) - (Date.parse(ar.lastIncorrectAt || '') || 0);
+    return (Number.isFinite(recent) ? recent : 0) || a.evidenceKey.localeCompare(b.evidenceKey);
   });
 
   return queueCandidates.slice(0, limit);
@@ -195,11 +204,13 @@ export function generatePersonalPracticeQueue(
  */
 export function generateStructuredStudyPlan(
   evidenceRecords: EvidenceMasteryRecord[],
-  _evidenceCatalog?: QualifiedEvidenceInfo[]
+  _evidenceCatalog?: QualifiedEvidenceInfo[],
+  options: { availableInventoryByEvidence?: Record<string, { totalItems: number }>; availableLessonKeys?: string[]; now?: Date } = {}
 ): StructuredStudyPlan {
   const steps: StudyPlanStep[] = [];
   const weakRecords = evidenceRecords.filter(
-    (r) => r.status === 'needs_reinforcement' || r.status === 'in_progress'
+    (r) => (r.status === 'needs_reinforcement' || r.status === 'in_progress' || r.status === 'insufficient_data') &&
+      ((options.availableInventoryByEvidence?.[r.evidenceKey]?.totalItems ?? 0) > 0 || options.availableLessonKeys?.includes(r.evidenceKey))
   );
 
   // Sort: needs_reinforcement first (by lowest accuracy), then in_progress
@@ -223,16 +234,17 @@ export function generateStructuredStudyPlan(
       evidenceKey: rec.evidenceKey,
       domain: rec.domain,
       targetDifficulty: rec.recommendedDifficultyTier,
-      recommendedActivity: isCritical ? 'lesson' : 'targeted_practice',
+      recommendedActivity: options.availableLessonKeys?.includes(rec.evidenceKey) ? 'lesson' : 'targeted_practice',
       urgency: isCritical ? 'high' : 'medium',
     });
   });
 
-  if (steps.length > 0) {
+  const retestInventory = selected.reduce((count, rec) => count + (options.availableInventoryByEvidence?.[rec.evidenceKey]?.totalItems ?? 0), 0);
+  if (steps.length > 0 && retestInventory >= 5) {
     steps.push({
       stepNumber: steps.length + 1,
       title: 'Comprobación de retención y retest',
-      description: 'Realizar una prueba de 10 a 15 preguntas sobre las evidencias repasadas.',
+      description: `Realizar una prueba de hasta ${Math.min(10, retestInventory)} preguntas disponibles sobre las evidencias repasadas.`,
       evidenceKey: steps[0].evidenceKey,
       domain: steps[0].domain,
       targetDifficulty: 2,
@@ -244,12 +256,12 @@ export function generateStructuredStudyPlan(
   const totalMinutes = steps.length * 15;
   const focusSummary =
     steps.length === 0
-      ? 'No se identifican debilidades críticas en el conjunto evaluado. Continúa con simulacros completos.'
-      : `Plan enfocado en ${selected.length} indicadores prioritarios para alcanzar el umbral de dominio MEP.`;
+      ? 'No hay actividades disponibles para este plan. Consulta la cobertura y reúne más datos antes de valorar el dominio.'
+      : `Plan enfocado en ${selected.length} indicadores prioritarios para alcanzar el umbral formativo interno.`;
 
   return {
-    planId: `plan-${Date.now()}`,
-    generatedAt: new Date().toISOString(),
+    planId: `plan-${(options.now || new Date()).toISOString()}`,
+    generatedAt: (options.now || new Date()).toISOString(),
     totalSteps: steps.length,
     estimatedTotalMinutes: totalMinutes,
     steps,
@@ -299,6 +311,8 @@ export function evaluateRetestRecommendation(
       rationaleEs: 'Varios indicadores están cerca del dominio (60% - 74%). Comprueba tu avance con una prueba breve.',
     };
   }
+
+  if (mastered.length === 0) return { shouldRetest: false, recommendedSessionKind: 'practice_evidence', recommendedItemCount: 5, targetEvidenceKeys: [], rationaleEs: 'Faltan familias independientes para valorar el avance. Completa práctica disponible para calibrar.' };
 
   return {
     shouldRetest: true,

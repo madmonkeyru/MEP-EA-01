@@ -23,6 +23,7 @@ export interface EvidenceMasteryRecord {
   statusLabelEs: string;
   sampleSizeLabel: string; // e.g. "3/5 familias evaluadas (datos insuficientes)"
   lastAttemptAt?: string;
+  lastIncorrectAt?: string;
   recommendedDifficultyTier: DifficultyTier;
   observedDifficulties: Record<DifficultyTier, { correct: number; total: number }>;
 }
@@ -208,15 +209,13 @@ export function computeEvidenceMasteryRecords(
     // Recommend tier 2 after at least 5 qualifying families at tier 1 with >= 75% accuracy;
     // recommend tier 3 after at least 5 qualifying families at tier 2 with >= 75% accuracy.
     let recommendedDifficultyTier: DifficultyTier = 1;
-    const tier1 = observedDifficulties[1];
-    const tier2 = observedDifficulties[2];
-
-    if (tier1.total >= 5 && tier1.correct / tier1.total >= 0.75) {
-      recommendedDifficultyTier = 2;
-      if (tier2.total >= 5 && tier2.correct / tier2.total >= 0.75) {
-        recommendedDifficultyTier = 3;
-      }
-    }
+    const tierObservation = (tier: DifficultyTier) => aggregateQualifyingObservationsByFamily(
+      events.filter(e => e.difficulty === tier), nowUtc, windowDays,
+    ).get(evInfo.key) || [];
+    const tier1 = tierObservation(1);
+    const tier2 = tierObservation(2);
+    if (tier1.length >= 5 && tier1.filter(e => e.isCorrect).length / tier1.length >= 0.75) recommendedDifficultyTier = 2;
+    if (tier2.length >= 5 && tier2.filter(e => e.isCorrect).length / tier2.length >= 0.75) recommendedDifficultyTier = 3;
 
     return {
       evidenceKey: evInfo.key,
@@ -233,6 +232,8 @@ export function computeEvidenceMasteryRecords(
       statusLabelEs,
       sampleSizeLabel,
       lastAttemptAt: lastAttemptIso,
+      lastIncorrectAt: events.filter(e => e.primaryEvidenceKey === evInfo.key && !e.isCorrect && qualifyAttemptObservation(e, nowUtc, windowDays).eligible)
+        .map(e => e.timestamp).sort().at(-1),
       recommendedDifficultyTier,
       observedDifficulties,
     };

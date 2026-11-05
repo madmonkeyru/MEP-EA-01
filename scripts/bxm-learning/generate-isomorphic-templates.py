@@ -93,6 +93,14 @@ templates = [
     }
 ]
 
+for template in templates:
+    template['templateVersion'] = '1.1.0'
+    if template['domain'] == 'statistics':
+        template['evidenceCode'] = 'A3.1'
+        template['evidenceKey'] = 'bxm/matematica/02-2026/statistics/A3.1'
+        template['parameterRanges']['ric']['max'] = 45
+        template['sampleParameters'][-1] = {'q1':50, 'q3':75, 'ric':25}
+
 output = {
     "version": "v1.0.0",
     "totalTemplates": len(templates),

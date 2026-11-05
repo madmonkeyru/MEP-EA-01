@@ -25,14 +25,15 @@ describe('BXM Progress - Domain & Measurement Policy', () => {
       primaryEvidenceKey: 'bxm/matematica/02-2026/geometry/A1.1',
       domain: 'geometry',
       provenance: 'authored_mastery',
-      reviewStatus: 'computationally_checked',
       cognitiveLevel: 'reproduccion',
       difficulty: 1,
-      selectedOption: 'A',
+      selectedOption: overrides.isCorrect === false ? 'B' : 'A',
       correctAnswer: 'A',
       isCorrect: true,
       responseIndex: 0,
       hintsUsedBeforeResponse: 0,
+      reviewStatus: 'computationally_checked',
+      exposureFlags: { isBenchmarkItem: false, hasSeenExplanationBefore: false },
       ...overrides,
     };
   }

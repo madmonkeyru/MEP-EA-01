@@ -220,7 +220,7 @@ describe('Agent A: BXM Learning Content & Digital Temario', () => {
 
       expect(screen.getByText(lesson.title)).toBeInTheDocument();
       expect(screen.getByText(/Prerrequisitos necesarios/i)).toBeInTheDocument();
-      expect(screen.getByText(/Fórmulas Clave Oficiales/i)).toBeInTheDocument();
+      expect(screen.getByText(/Fórmulas Clave/i)).toBeInTheDocument();
       expect(screen.getByText(/Errores Comunes en el Examen de Bachillerato/i)).toBeInTheDocument();
       expect(screen.getByText(/Ejemplo Resuelto Paso a Paso/i)).toBeInTheDocument();
       expect(screen.getByText(lesson.workedExample.primaryMethod.name)).toBeInTheDocument();

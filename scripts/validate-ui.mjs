@@ -32,8 +32,8 @@ try {
   await page.getByRole('button', { name: 'Iniciar práctica', exact: true }).click();
   await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
   await page.getByRole('radio').first().check();
-  await page.getByRole('button', { name: 'Salir', exact: true }).click();
-  await page.getByRole('button', { name: 'Guardar y volver a la materia' }).click();
+  await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
+  await page.getByRole('button', { name: 'Guardar y salir', exact: true }).click();
   await page.getByRole('button', { name: 'Reanudar intento' }).click();
   await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
   await page.reload();

@@ -11,7 +11,7 @@ describe('SelectionEngine (Agent B)', () => {
     expect(res1.items.length).toBe(res2.items.length);
     expect(res1.items.map((i) => i.id)).toEqual(res2.items.map((i) => i.id));
     expect(res1.seed).toBe(12345);
-    expect(res1.policyVersion).toBe('bxm-diag-v1.0');
+    expect(res1.policyVersion).toBe('bxm-diag-v1.1');
   });
 
   it('generates different order/selection when seed varies', () => {

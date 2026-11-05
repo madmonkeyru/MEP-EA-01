@@ -23,17 +23,19 @@ describe('BXM Progress - BxmPreparationDashboard UI Component', () => {
       provenance: 'authored_mastery',
       cognitiveLevel: 'reproduccion',
       difficulty: 1,
-      selectedOption: 'A',
+      selectedOption: overrides.isCorrect === false ? 'B' : 'A',
       correctAnswer: 'A',
       isCorrect: true,
       responseIndex: 0,
       hintsUsedBeforeResponse: 0,
+      reviewStatus: 'computationally_checked',
+      exposureFlags: { isBenchmarkItem: false, hasSeenExplanationBefore: false },
       ...overrides,
     };
   }
 
   it('renders clean empty state with mandatory disclaimer and zero values', () => {
-    render(<BxmPreparationDashboard events={[]} referenceDateUtc={refDate} />);
+    render(<BxmPreparationDashboard events={[]} referenceDateUtc={refDate} capabilityProvider={createCapabilityProvider('premium')} />);
 
     expect(screen.getByText('Panel de Preparación Formativa')).toBeDefined();
     expect(

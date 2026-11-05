@@ -1,3 +1,4 @@
+import { LearningText } from '../LearningText';
 import React, { useState, useId } from 'react';
 
 export interface InteractiveSphereCrossSectionProps {
@@ -79,11 +80,11 @@ export const InteractiveSphereCrossSection: React.FC<InteractiveSphereCrossSecti
             Geometría 3D Interactiva
           </span>
           <h4 className="text-base font-bold text-stone-900 dark:text-stone-100 mt-1.5">
-            Sección Plana de una Esfera ($R^2 = d^2 + r^2$)
+            Sección Plana de una Esfera
           </h4>
         </div>
         <div className="px-3 py-1.5 rounded-lg border bg-stone-50 dark:bg-stone-850 font-mono text-sm font-semibold text-stone-800 dark:text-stone-200">
-          $R = {R}, \\; d = {d} \\implies r = {sectionRadius.toFixed(2)}$
+          {d > R ? 'No existe sección circular' : <LearningText content={String.raw`$R=${R},\ d=${d} \implies r=${sectionRadius.toFixed(2)}$`} inline />}
         </div>
       </div>
 
@@ -178,7 +179,7 @@ export const InteractiveSphereCrossSection: React.FC<InteractiveSphereCrossSecti
           <div>
             <div className="flex justify-between items-center mb-1">
               <label htmlFor={sliderRId} className="font-medium text-stone-700 dark:text-stone-300">
-                Radio de la esfera ($R$): <strong className="font-mono text-indigo-600">{R} cm</strong>
+                Radio de la esfera (R): <strong className="font-mono text-indigo-600">{R} cm</strong>
               </label>
             </div>
             <input
@@ -200,7 +201,7 @@ export const InteractiveSphereCrossSection: React.FC<InteractiveSphereCrossSecti
           <div>
             <div className="flex justify-between items-center mb-1">
               <label htmlFor={sliderDId} className="font-medium text-stone-700 dark:text-stone-300">
-                Distancia del plano al centro ($d$): <strong className="font-mono text-emerald-600">{d} cm</strong>
+                Distancia del plano al centro (d): <strong className="font-mono text-emerald-600">{d} cm</strong>
               </label>
             </div>
             <input
@@ -224,19 +225,19 @@ export const InteractiveSphereCrossSection: React.FC<InteractiveSphereCrossSecti
             <div className="font-sans font-bold text-stone-900 dark:text-stone-100 text-sm mb-1">
               Ecuación Pitagórica en la Esfera:
             </div>
-            <div>$R^2 = d^2 + r^2$</div>
-            <div>${R}^2 = {d}^2 + r^2 \implies {R * R} = {d * d} + r^2$</div>
+            <LearningText content="$R^2 = d^2 + r^2$" />
+            <LearningText content={String.raw`$${R}^2 = ${d}^2 + r^2 \implies ${R * R} = ${d * d} + r^2$`} />
             {intersectionState === 'secant' ? (
               <div className="text-amber-700 dark:text-amber-400 font-bold">
-                $r^2 = {R * R} - {d * d} = {R * R - d * d} \implies r = \sqrt{'{'}{R * R - d * d}{'}'} \approx {sectionRadius.toFixed(2)}$
+                <LearningText content={String.raw`$r^2 = ${R * R} - ${d * d} = ${R * R - d * d} \implies r = \sqrt{${R * R - d * d}} \approx ${sectionRadius.toFixed(2)}$`} />
               </div>
             ) : intersectionState === 'tangent' ? (
               <div className="text-blue-700 dark:text-blue-400 font-bold">
-                $d = R \implies r = 0$ (Plano Tangente en 1 punto)
+                <LearningText content="$d = R \implies r = 0$" inline /> (Plano tangente en un punto)
               </div>
             ) : (
               <div className="text-rose-700 dark:text-rose-400 font-bold">
-                $d &gt; R \implies$ El plano no interseca a la esfera
+                <LearningText content="$d > R$" inline />: el plano no interseca a la esfera
               </div>
             )}
           </div>

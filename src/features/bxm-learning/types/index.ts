@@ -69,6 +69,7 @@ export interface BxmLesson {
 }
 
 export interface BxmAuthoredItem {
+  templateVersion?: string;
   id: string;
   code: string;
   domain: BxmDomain;
@@ -111,6 +112,10 @@ export interface BxmAssessmentCallbacks {
     selectedOption: string;
     isCorrect: boolean;
     timestamp: string;
+    eventId?: string;
+    responseIndex?: number;
+    hintsUsedBeforeResponse?: number;
+    hasSeenExplanationBefore?: boolean;
   }) => void;
   onStartTargetedPractice?: (evidenceKey: string) => void;
   onRequestDiagnostic?: () => void;

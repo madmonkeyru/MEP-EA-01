@@ -365,6 +365,9 @@ lessons = [
     }
 ]
 
+from content_repairs import repair_lessons
+repair_lessons(lessons)
+
 output = {
     "version": "v1.0.0",
     "totalLessons": len(lessons),

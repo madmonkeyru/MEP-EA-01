@@ -20,6 +20,7 @@ const ExamReviewPage = lazy(() => import('./components/pages/ExamReviewPage').th
 const GenericSubjectHubPage = lazy(() => import('./components/pages/GenericSubjectHubPage').then(module => ({ default: module.GenericSubjectHubPage })));
 const HelperPage = lazy(() => import('./components/onboarding/HelperPage').then(module => ({ default: module.HelperPage })));
 const ReadinessWizard = lazy(() => import('./components/onboarding/ReadinessWizard').then(module => ({ default: module.ReadinessWizard })));
+const BxmLearningHub = lazy(() => import('./features/bxm-integration/BxmLearningHub').then(module => ({ default: module.BxmLearningHub })));
 
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => storageService.getCurrentUser());
@@ -37,7 +38,7 @@ export function App() {
   const program = programManifest.programs.find(program => program.id === route.programId);
   const mvp = route.programId === 'bxm' && route.subjectId === 'matematicas' && route.convocatoriaId === '2026-c2';
   const contextKey = [route.programId, route.subjectId, route.moduleId, route.convocatoriaId].join('/');
-  const needsContext = !!program && ['framework', 'hub', 'test', 'results'].includes(route.view);
+  const needsContext = !!program && ['framework', 'hub', 'test', 'results', 'learning'].includes(route.view);
   const contextReady = !needsContext || loadedContext?.key === contextKey;
   const review = route.tab === 'review' && route.programId === 'i_ii_ciclo' &&
     route.subjectId === 'matematicas' && route.convocatoriaId === '2026-c2';
@@ -70,7 +71,7 @@ export function App() {
   }, [needsContext, contextKey, retry]);
   useEffect(() => {
     if (contextReady && route.view === 'hub') try { localStorage.setItem('mep_last_subject', routeHash(route)); } catch { /* Navigation still works without storage. */ }
-    const label = route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'calendar' ? 'Calendario DGEC' : route.view === 'helper' ? 'Guía y recursos' : program?.name || 'Educación Abierta';
+    const label = route.view === 'learning' ? 'Aprendizaje guiado BXM' : route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'calendar' ? 'Calendario DGEC' : route.view === 'helper' ? 'Guía y recursos' : program?.name || 'Educación Abierta';
     document.title = label + ' · MEP-EA-01';
   }, [route.view, route.programId, route.subjectId, route.moduleId, route.convocatoriaId, route.sessionId, route.tab, route.resourceTab, contextReady]);
   const hub = () => navigate({ ...route, view: 'hub', sessionId: undefined, tab: test?.config.reviewDraft || result?.config.reviewDraft ? 'review' : route.tab });
@@ -106,7 +107,7 @@ export function App() {
     <main id="main-content" ref={main} tabIndex={-1} className="flex-1 outline-none">
       {error && <section className="page-width py-6" role="alert"><h1>No se pudo completar la carga</h1><p>{error}</p><div className="action-row"><button className="primary-button" onClick={() => setRetry(value => value + 1)}>Reintentar</button><button className="secondary-button" onClick={() => navigate({ view: 'helper', programId: route.programId })}>Consultar recursos</button></div></section>}
       {!error && <Suspense fallback={<p role="status" className="page-width p-8">Cargando…</p>}>
-        {contextReady && <RouteFocus key={["focus", route.view, contextKey, route.sessionId].join(":")} main={main} />}
+        {contextReady && <RouteFocus key={["focus", route.view, contextKey, route.sessionId, route.tab, route.evidenceKey].join(":")} main={main} />}
         {route.view !== 'test' && route.view !== 'results' && resumable && <section className="resume-banner page-width"><div><strong>Tienes un intento guardado</strong><p>{resumable.itemIds.length} preguntas · {resumable.config.enableTimer ? 'El tiempo continúa mientras estás fuera.' : 'Práctica sin límite de tiempo.'}</p></div><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar intento</button><button className="secondary-button" onClick={() => setDiscard(true)}>Descartar</button></div></section>}
         {route.view === 'landing' && <EntryLandingPage onOpenHelper={() => navigate({ view: 'helper' })} onExplorePrograms={() => navigate({ view: 'welcome' })} onEnterBxmHub={enterMath} />}
         {route.view === 'welcome' && <WelcomePage onSelectProgram={programId => navigate({ view: 'framework', programId, convocatoriaId: '2026-c2' })} onEnterMvpMath={enterMath} />}
@@ -116,7 +117,8 @@ export function App() {
         </div>}
         {route.view === 'helper' && <HelperPage route={route} onNavigate={navigate} />}
         {route.view === 'guide' && <ReadinessWizard onNavigate={navigate} onSkip={() => navigate({ view: 'welcome' })} onExplore={() => navigate({ view: 'helper' })} />}
-        {!contextReady && ['framework', 'hub', 'test', 'results'].includes(route.view) && <p role="status" className="page-width p-8">Cargando programa…</p>}
+        {!contextReady && ['framework', 'hub', 'test', 'results', 'learning'].includes(route.view) && <p role="status" className="page-width p-8">Cargando programa…</p>}
+        {contextReady && mvp && route.view === 'learning' && <BxmLearningHub key={userId} userId={userId} route={route} onNavigate={navigate} onOfficialSimulation={() => begin({ mode: 'simulation', itemCount: 60, enableTimer: true, timerDurationMinutes: 150 })} />}
         {contextReady && program && route.view === 'framework' && <FrameworkHubPage program={program} route={route} onNavigate={navigate} />}
         {contextReady && route.view === 'hub' && review &&
           <ExamReviewPage route={route} userId={userId} onStart={config => begin(config)} />}

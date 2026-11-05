@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import { TextRenderer } from '../../../components/common/TextRenderer';
+import React, { useId, useMemo, useState } from 'react';
 import { BxmMicroQuizItem } from '../types';
+import { MicroQuizEngine } from '../../bxm-assessment/microQuizEngine';
+import type { AssessmentItem, OptionLetter } from '../../bxm-assessment/types';
 
 export interface BxmMicroQuizProps {
   quiz: BxmMicroQuizItem;
@@ -10,6 +13,11 @@ export interface BxmMicroQuizProps {
     selectedOption: string;
     isCorrect: boolean;
     timestamp: string;
+    eventId: string;
+    responseIndex: number;
+    hintsUsedBeforeResponse: number;
+    hasSeenExplanationBefore: boolean;
+    reviewStatus: 'unreviewed';
   }) => void;
   className?: string;
 }
@@ -22,6 +30,14 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const questionId = useId();
+  const engine = useMemo(() => new MicroQuizEngine(quiz.id, [{
+    id: quiz.id, provenance: 'authored', reviewStatus: 'unreviewed',
+    domain: evidenceKey.split('/')[3] as AssessmentItem['domain'], evidenceId: evidenceKey,
+    evidenceCode: evidenceKey.split('/').at(-1)!, cognitiveLevel: 'reproduccion', difficultyTier: 1,
+    stem: quiz.question, options: quiz.options as AssessmentItem['options'], correctAnswer: quiz.correctOption as OptionLetter,
+    solutionSteps: [quiz.explanation],
+  }]), [quiz, evidenceKey]);
 
   const handleSelect = (key: string) => {
     if (isSubmitted) return;
@@ -30,15 +46,22 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
 
   const handleSubmit = () => {
     if (!selectedOption || isSubmitted) return;
+    const response = engine.submitAnswer(quiz.id, selectedOption as OptionLetter);
+    if (!response) return;
     setIsSubmitted(true);
-    const isCorrect = selectedOption === quiz.correctOption;
+    const isCorrect = response.isCorrect;
     if (onAnswered) {
       onAnswered({
         quizId: quiz.id,
         evidenceKey,
         selectedOption,
         isCorrect,
-        timestamp: new Date().toISOString()
+        timestamp: response.attemptEvent.timestamp,
+        eventId: response.attemptEvent.eventId,
+        responseIndex: response.attemptEvent.attemptIndex,
+        hintsUsedBeforeResponse: response.attemptEvent.hintsUsedBeforeResponse,
+        hasSeenExplanationBefore: !!response.attemptEvent.hasSeenExplanationBefore,
+        reviewStatus: 'unreviewed',
       });
     }
   };
@@ -49,7 +72,7 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
   };
 
   return (
-    <div className={`p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 ${className}`}>
+    <div role="region" aria-label="Comprobación de aprendizaje" aria-describedby={questionId} data-quiz-id={quiz.id} className={`p-4 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 ${className}`}>
       <div className="flex items-center justify-between gap-2 mb-3">
         <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/60 px-2.5 py-0.5 rounded-full">
           Micro-Quiz de Comprobación
@@ -67,8 +90,8 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
         )}
       </div>
 
-      <div className="text-sm font-semibold text-stone-900 dark:text-stone-100 mb-3">
-        {quiz.question}
+      <div id={questionId} className="text-sm font-semibold text-stone-900 dark:text-stone-100 mb-3">
+        <TextRenderer content={quiz.question} inline />
       </div>
 
       <div className="space-y-2 mb-4">
@@ -96,7 +119,7 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
               <span className="font-bold font-mono px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-xs text-stone-700 dark:text-stone-300">
                 {key}
               </span>
-              <span className="flex-1">{text}</span>
+              <span className="flex-1"><TextRenderer content={text} inline /></span>
             </button>
           );
         })}
@@ -114,7 +137,7 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
       ) : (
         <div className="space-y-3 pt-2 border-t border-stone-200 dark:border-stone-800">
           <p className="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-            <strong className="text-stone-900 dark:text-stone-100">Explicación:</strong> {quiz.explanation}
+            <strong className="text-stone-900 dark:text-stone-100">Explicación:</strong> <TextRenderer content={quiz.explanation} inline />
           </p>
           <button
             type="button"

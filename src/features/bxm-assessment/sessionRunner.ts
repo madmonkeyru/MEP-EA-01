@@ -50,6 +50,20 @@ export interface SessionRunnerOptions {
   startTime?: string;
 }
 
+export interface SessionSnapshot {
+  version: 1;
+  sessionId: string;
+  policy: AssessmentPolicy;
+  items: AssessmentItem[];
+  shortfalls: ItemSelectionShortfall[];
+  benchmarkExposed: boolean;
+  startTime: string;
+  deadline?: number;
+  currentIndex: number;
+  eventCounter: number;
+  states: Array<Omit<ItemSessionState, 'item'> & { itemId: string | number }>;
+}
+
 export class SessionRunner {
   public readonly sessionId: string;
   public readonly policy: AssessmentPolicy;
@@ -66,11 +80,18 @@ export class SessionRunner {
   private completedAt?: string;
   private terminationStatus: 'completed' | 'timed_out' | 'abandoned' = 'completed';
   private eventCounter: number = 0;
+  private finalResult?: SessionResultExport;
 
   constructor(options: SessionRunnerOptions) {
     this.sessionId = options.sessionId || `session-${Math.random().toString(36).substring(2, 9)}`;
-    this.policy = options.policy;
-    this.items = [...options.items];
+    this.policy = Object.freeze({ ...options.policy });
+    this.items = structuredClone(options.items);
+    if (new Set(this.items.map(i => String(i.id))).size !== this.items.length) throw new Error('Duplicate assessment item IDs');
+    for (const item of this.items) {
+      Object.freeze(item.options);
+      Object.freeze(item);
+    }
+    if (this.policy.maxRetriesPerItem !== undefined && (!Number.isInteger(this.policy.maxRetriesPerItem) || this.policy.maxRetriesPerItem < 0)) throw new RangeError('Invalid retry limit');
     this.shortfalls = options.shortfalls || [];
     this.benchmarkExposed = options.benchmarkExposed || false;
     this.clock = options.clock || new SystemClock();
@@ -79,7 +100,7 @@ export class SessionRunner {
     this.startTime = options.startTime || new Date(initialNow).toISOString();
 
     if (this.policy.enableTimer && this.policy.timeLimitMinutes && this.policy.timeLimitMinutes > 0) {
-      this.deadline = initialNow + this.policy.timeLimitMinutes * 60 * 1000;
+      this.deadline = Date.parse(this.startTime) + this.policy.timeLimitMinutes * 60 * 1000;
     }
 
     this.itemStates = new Map();
@@ -102,7 +123,69 @@ export class SessionRunner {
     return this.currentIndex;
   }
 
+  public snapshot(): SessionSnapshot {
+    if (this.isSubmitted) throw new Error('Cannot save a completed session as active');
+    return structuredClone({
+      version: 1, sessionId: this.sessionId, policy: this.policy, items: this.items,
+      shortfalls: this.shortfalls, benchmarkExposed: this.benchmarkExposed, startTime: this.startTime,
+      deadline: this.deadline, currentIndex: this.currentIndex, eventCounter: this.eventCounter,
+      states: this.getAllItemStates().map(({ item, ...state }) => ({ ...state, itemId: item.id })),
+    });
+  }
+
+  public static restore(snapshot: SessionSnapshot, clock?: ClockProvider): SessionRunner {
+    if (!snapshot || snapshot.version !== 1 || typeof snapshot.sessionId !== 'string' ||
+      !Number.isFinite(Date.parse(snapshot.startTime)) || !Array.isArray(snapshot.items) || !snapshot.items.length ||
+      !Array.isArray(snapshot.states) || snapshot.states.length !== snapshot.items.length ||
+      !Number.isInteger(snapshot.currentIndex) || snapshot.currentIndex < 0 || snapshot.currentIndex >= snapshot.items.length ||
+      !Number.isInteger(snapshot.eventCounter) || snapshot.eventCounter < 0) throw new Error('Invalid active session');
+    const policy = snapshot.policy;
+    if (!policy || !['study', 'exam'].includes(policy.mode) ||
+      !['diagnostic','topic_practice','evidence_practice','mastery_check','retest','mock_exam','micro_quiz'].includes(policy.kind) ||
+      ['enableTimer','allowHints','allowRetries','allowImmediateFeedback','allowFormulaSheet','allowCalculator'].some(k => typeof policy[k as keyof AssessmentPolicy] !== 'boolean') ||
+      (policy.enableTimer && (!Number.isFinite(policy.timeLimitMinutes) || policy.timeLimitMinutes! <= 0))) throw new Error('Invalid saved policy');
+    const runner = new SessionRunner({ ...snapshot, clock });
+    if (snapshot.deadline !== runner.deadline) throw new Error('Saved deadline does not match policy');
+    const seen = new Set<string | number>();
+    const eventNumbers = new Set<number>();
+    let eventCount = 0;
+    for (const state of snapshot.states) {
+      const item = runner.items.find(i => i.id === state.itemId);
+      if (!item || seen.has(item.id) || !Array.isArray(state.retryAttempts) ||
+        !Number.isInteger(state.hintsRevealed) || state.hintsRevealed < 0 ||
+        state.hintsRevealed > (item.hints?.length || 0) ||
+        typeof state.flaggedForReview !== 'boolean' || typeof state.isUnanswered !== 'boolean' ||
+        typeof state.isFinalAnswerSubmitted !== 'boolean' || typeof state.isCorrectFinal !== 'boolean' ||
+        state.isUnanswered !== (state.firstResponse === null) ||
+        state.isCorrectFinal !== (state.retryAttempts.at(-1)?.isCorrect ?? state.firstResponse?.isCorrect ?? false) ||
+        (policy.mode === 'exam' && (state.firstResponse !== null || state.retryAttempts.length || state.hintsRevealed))) throw new Error('Invalid saved item state');
+      seen.add(item.id);
+      const options = Array.isArray(item.options) ? item.options.map(o => o.letter) : Object.keys(item.options);
+      if (state.draftOption !== null && !options.includes(state.draftOption)) throw new Error('Invalid saved answer');
+      for (const [index, response] of [state.firstResponse, ...state.retryAttempts].entries()) {
+        if (response === null && index === 0 && !state.retryAttempts.length) continue;
+        if (!response || response.attemptIndex !== index || !options.includes(response.selectedOption!) ||
+          response.isCorrect !== (response.selectedOption === item.correctAnswer) ||
+          !Number.isFinite(Date.parse(response.timestamp)) || !Number.isInteger(response.hintsUsedBeforeResponse) ||
+          response.hintsUsedBeforeResponse < 0 || typeof response.hasSeenExplanationBefore !== 'boolean' ||
+          response.eventId !== `${runner.sessionId}-evt-${Number(response.eventId.split('-evt-').at(-1))}`) throw new Error('Invalid saved response');
+        const number = Number(response.eventId.split('-evt-').at(-1));
+        if (!Number.isInteger(number) || number < 1 || number > snapshot.eventCounter || eventNumbers.has(number)) throw new Error('Duplicate or invalid saved event ID');
+        eventNumbers.add(number);
+        eventCount++;
+      }
+      const { itemId: _, ...savedState } = state;
+      runner.itemStates.set(item.id, { ...structuredClone(savedState), item });
+    }
+    if (eventCount !== snapshot.eventCounter) throw new Error('Invalid saved event counter');
+    runner.currentIndex = snapshot.currentIndex;
+    runner.eventCounter = snapshot.eventCounter;
+    return runner;
+  }
+
   public setCurrentIndex(index: number): void {
+    this.checkTimeout();
+    if (this.isSubmitted) return;
     if (index >= 0 && index < this.items.length) {
       this.currentIndex = index;
     }
@@ -142,6 +225,7 @@ export class SessionRunner {
   }
 
   public toggleReviewFlag(itemId?: string | number): boolean {
+    this.checkTimeout();
     if (this.isSubmitted) return false;
     const targetId = itemId ?? this.getCurrentItem()?.id;
     if (!targetId) return false;
@@ -157,6 +241,7 @@ export class SessionRunner {
    * Reveal next available hint (Study Mode only)
    */
   public revealHint(itemId?: string | number): { hint: string | null; count: number } {
+    this.checkTimeout();
     if (this.isSubmitted || this.isExamMode() || !this.policy.allowHints) {
       return { hint: null, count: 0 };
     }
@@ -198,6 +283,9 @@ export class SessionRunner {
     const state = this.itemStates.get(targetId);
     if (!state) return;
 
+    const validOptions = Array.isArray(state.item.options) ? state.item.options.map(o => o.letter) : Object.keys(state.item.options);
+    if (!validOptions.includes(option)) throw new Error('Invalid selected option');
+
     state.draftOption = option;
   }
 
@@ -222,6 +310,8 @@ export class SessionRunner {
 
     const state = this.itemStates.get(targetId);
     if (!state || !state.draftOption) return null;
+    if (state.firstResponse && (!this.policy.allowRetries ||
+      (this.policy.maxRetriesPerItem !== undefined && state.retryAttempts.length >= this.policy.maxRetriesPerItem))) return null;
 
     const chosenOption = state.draftOption;
     const isCorrect = chosenOption === state.item.correctAnswer;
@@ -239,7 +329,9 @@ export class SessionRunner {
     const attemptIndex = isFirstAttempt ? 0 : state.retryAttempts.length + 1;
 
     // A response is unassisted if NO hints, reveals, or solutions were accessed prior to this response
-    const isUnassisted = isFirstAttempt && state.hintsRevealed === 0;
+    const hasSeenExplanationBefore = !!state.item.hasSeenExplanationBefore ||
+      (!!state.firstResponse && this.policy.allowImmediateFeedback);
+    const isUnassisted = isFirstAttempt && state.hintsRevealed === 0 && !hasSeenExplanationBefore;
 
     const attemptEvent: ResponseAttemptEvent = {
       eventId,
@@ -250,6 +342,7 @@ export class SessionRunner {
       timeSpentSeconds: Math.max(1, Math.floor((now - Date.parse(this.startTime)) / 1000)),
       timestamp: isoTimestamp,
       isUnassisted,
+      hasSeenExplanationBefore,
       learnerReportedReason: !isCorrect ? learnerReason : undefined,
       authoredMisconception: distractorInfo
         ? {
@@ -270,12 +363,22 @@ export class SessionRunner {
     state.isFinalAnswerSubmitted = true;
     state.isCorrectFinal = isCorrect;
 
+    if (!this.policy.allowImmediateFeedback) return null;
+
     return {
       isCorrect,
       attemptEvent,
       authoredMisconception: attemptEvent.authoredMisconception,
       explanationSteps: state.item.solutionSteps,
     };
+  }
+
+  public reportLearnerReason(itemId: string | number, reason: LearnerReportedReason): void {
+    this.checkTimeout();
+    if (this.isSubmitted || this.isExamMode()) return;
+    const state = this.itemStates.get(itemId);
+    const response = state?.retryAttempts.at(-1) || state?.firstResponse;
+    if (response && !response.isCorrect) response.learnerReportedReason = reason;
   }
 
   /**
@@ -287,7 +390,7 @@ export class SessionRunner {
     }
 
     this.isSubmitted = true;
-    this.terminationStatus = status;
+    this.terminationStatus = this.deadline !== undefined && this.clock.now() >= this.deadline ? 'timed_out' : status;
     const now = this.clock.now();
     this.completedAt = new Date(now).toISOString();
 
@@ -309,7 +412,8 @@ export class SessionRunner {
             hintsUsedBeforeResponse: 0,
             timeSpentSeconds: Math.max(1, Math.floor((now - Date.parse(this.startTime)) / 1000)),
             timestamp: this.completedAt,
-            isUnassisted: true,
+            isUnassisted: !item.hasSeenExplanationBefore,
+            hasSeenExplanationBefore: !!item.hasSeenExplanationBefore,
           };
           state.isUnanswered = false;
           state.isFinalAnswerSubmitted = true;
@@ -329,13 +433,15 @@ export class SessionRunner {
       }
     }
 
-    return this.exportResults();
+    this.finalResult = this.exportResults();
+    return structuredClone(this.finalResult);
   }
 
   /**
    * Generate comprehensive SessionResultExport for Agent C and UI consumers.
    */
   public exportResults(): SessionResultExport {
+    if (this.finalResult) return structuredClone(this.finalResult);
     const completedTime = this.completedAt || new Date(this.clock.now()).toISOString();
     const durationSeconds = Math.max(0, Math.floor((Date.parse(completedTime) - Date.parse(this.startTime)) / 1000));
 
@@ -540,6 +646,9 @@ export class SessionRunner {
     const firstResponseScorePercentage = calcPct(firstResponseCorrectCount, totalActual);
 
     return {
+      isFinalized: this.isSubmitted,
+      itemSnapshots: structuredClone(this.items),
+      deadline: this.deadline === undefined ? undefined : new Date(this.deadline).toISOString(),
       schemaVersion: '1.0.0',
       sessionId: this.sessionId,
       kind: this.policy.kind,

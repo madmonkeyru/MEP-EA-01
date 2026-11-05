@@ -1,4 +1,5 @@
 import type { AttemptEvent, ObservationQualification } from './types';
+import { isAttemptEvent } from './validateAttempt';
 
 /**
  * Evaluates whether an attempt event is a qualifying observation for evidence mastery.
@@ -17,6 +18,7 @@ export function qualifyAttemptObservation(
   nowUtc: Date,
   windowDays = 30
 ): ObservationQualification {
+  if (!isAttemptEvent(event)) return { eligible: false, reason: 'invalid_metadata' };
   if (event.responseIndex > 0) {
     return { eligible: false, reason: 'retry_after_first' };
   }
@@ -32,6 +34,14 @@ export function qualifyAttemptObservation(
   if (event.provenance === 'legacy_unknown') {
     return { eligible: false, reason: 'legacy_unknown' };
   }
+
+  if (!['authored_mastery', 'isomorphic_generated'].includes(event.provenance)) {
+    return { eligible: false, reason: 'legacy_unknown' };
+  }
+  if (!['computationally_checked', 'human_reviewed'].includes(event.reviewStatus || '')) {
+    return { eligible: false, reason: 'unreviewed' };
+  }
+  if (!event.exposureFlags) return { eligible: false, reason: 'invalid_metadata' };
 
   const eventTime = new Date(event.timestamp).getTime();
   if (Number.isNaN(eventTime)) {

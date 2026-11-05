@@ -33,7 +33,7 @@ describe('BxmSessionRunnerView Component (Agent B)', () => {
     expect(screen.getByText(/Considere la circunferencia/i)).toBeDefined();
 
     // Select option A
-    const optionA = screen.getByText('$(3, -2)$');
+    const optionA = screen.getByRole('button', { name: 'Opción A' });
     fireEvent.click(optionA);
 
     expect(runner.getItemState(sampleAuthoredItems[0].id)?.draftOption).toBe('A');

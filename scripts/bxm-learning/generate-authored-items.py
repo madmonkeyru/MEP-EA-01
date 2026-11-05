@@ -959,6 +959,10 @@ authored_items.extend(geo_items)
 authored_items.extend(func_items)
 authored_items.extend(stat_items)
 
+from content_repairs import apply_repairs, normalize_text
+apply_repairs(authored_items)
+authored_items = normalize_text(authored_items)
+
 output = {
     "packVersion": "v1.0.0",
     "totalItems": len(authored_items),

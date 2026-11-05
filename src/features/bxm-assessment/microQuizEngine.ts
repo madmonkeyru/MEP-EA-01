@@ -59,7 +59,7 @@ export class MicroQuizEngine {
     };
 
     this.runner = new SessionRunner({
-      sessionId: `microquiz-${quizId}`,
+      sessionId: `microquiz-${quizId}-${crypto.randomUUID()}`,
       items,
       policy,
       clock: options.clock || new SystemClock(),

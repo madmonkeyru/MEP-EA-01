@@ -1,198 +1,120 @@
 import type { AttemptEvent } from '../domain/types';
+import { isAttemptEvent } from '../domain/validateAttempt';
 
 export const PROGRESS_STORAGE_NAMESPACE = 'bxm-mvp-progress';
 export const PROGRESS_EVENTS_KEY = `${PROGRESS_STORAGE_NAMESPACE}:v1:events`;
 export const PROGRESS_ACTIVE_PROFILE_KEY = `${PROGRESS_STORAGE_NAMESPACE}:v1:active_profile`;
-
 export interface StorageAdapter {
   getItem: (key: string) => string | null;
   setItem: (key: string, value: string) => void;
   removeItem: (key: string) => void;
 }
-
+export interface ProgressScope { userId: string }
 export function createBrowserStorageAdapter(): StorageAdapter {
   return {
-    getItem: (key: string) => {
-      try {
-        return typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
-      } catch {
-        return null;
-      }
+    getItem: key => typeof localStorage === 'undefined' ? null : localStorage.getItem(key),
+    setItem: (key, value) => {
+      if (typeof localStorage === 'undefined') throw new Error('Storage unavailable');
+      localStorage.setItem(key, value);
     },
-    setItem: (key: string, value: string) => {
-      try {
-        if (typeof localStorage !== 'undefined') {
-          localStorage.setItem(key, value);
-        }
-      } catch {
-        // storage quota exceeded or disabled
-      }
-    },
-    removeItem: (key: string) => {
-      try {
-        if (typeof localStorage !== 'undefined') {
-          localStorage.removeItem(key);
-        }
-      } catch {
-        // ignore
-      }
-    },
+    removeItem: key => { if (typeof localStorage !== 'undefined') localStorage.removeItem(key); },
   };
 }
-
 export function createMemoryStorageAdapter(initialData: Record<string, string> = {}): StorageAdapter {
-  const store = new Map<string, string>(Object.entries(initialData));
-  return {
-    getItem: (key: string) => store.get(key) ?? null,
-    setItem: (key: string, value: string) => store.set(key, value),
-    removeItem: (key: string) => store.delete(key),
-  };
+  const store = new Map(Object.entries(initialData));
+  return { getItem: key => store.get(key) ?? null, setItem: (key, value) => { store.set(key, value); }, removeItem: key => { store.delete(key); } };
 }
-
 export class BxmProgressStorage {
-  private adapter: StorageAdapter;
-
-  constructor(adapter?: StorageAdapter) {
-    this.adapter = adapter || createBrowserStorageAdapter();
+  lastError = '';
+  rejectedRecordCount = 0;
+  lastImport = { imported: 0, skipped: 0, summaryOnly: 0 };
+  private key: string;
+  private quarantined: unknown[] = [];
+  constructor(private adapter: StorageAdapter = createBrowserStorageAdapter(), private scope: ProgressScope = { userId: 'guest' }) {
+    if (!scope.userId) throw new Error('A learner scope is required');
+    this.key = scope.userId === 'guest' ? PROGRESS_EVENTS_KEY : `${PROGRESS_EVENTS_KEY}:user:${encodeURIComponent(scope.userId)}`;
   }
-
-  /**
-   * Retrieves all persisted attempt events, deduplicated by eventId.
-   */
   getEvents(): AttemptEvent[] {
-    const raw = this.adapter.getItem(PROGRESS_EVENTS_KEY);
-    if (!raw) return [];
-
+    this.lastError = ''; this.quarantined = []; this.rejectedRecordCount = 0;
     try {
-      const parsed = JSON.parse(raw);
-      if (!Array.isArray(parsed)) return [];
-
-      // Deduplicate exact event IDs defensively
+      const raw = this.adapter.getItem(this.key);
+      if (!raw) return [];
+      const parsed: unknown = JSON.parse(raw);
+      if (!Array.isArray(parsed)) throw new Error('Invalid progress storage format');
       const seen = new Set<string>();
-      const valid: AttemptEvent[] = [];
-
-      for (const item of parsed) {
-        if (
-          item &&
-          typeof item.eventId === 'string' &&
-          typeof item.primaryEvidenceKey === 'string' &&
-          typeof item.timestamp === 'string'
-        ) {
-          if (!seen.has(item.eventId)) {
-            seen.add(item.eventId);
-            valid.push(item as AttemptEvent);
-          }
+      const events: AttemptEvent[] = [];
+      for (const value of parsed) {
+        if (!isAttemptEvent(value) || (value.userId ?? 'guest') !== this.scope.userId) {
+          this.quarantined.push(value); this.rejectedRecordCount++; continue;
         }
+        if (!seen.has(value.eventId)) { seen.add(value.eventId); events.push({ ...value, userId: this.scope.userId }); }
       }
-
-      return valid;
+      return events;
     } catch {
+      this.lastError = 'No se pudo leer el progreso local. Los datos existentes se conservan.';
       return [];
     }
   }
-
-  /**
-   * Appends one or more attempt events, deduplicating against existing events.
-   */
-  recordEvents(newEvents: AttemptEvent[]): void {
-    if (newEvents.length === 0) return;
-
+  recordEvents(newEvents: AttemptEvent[]): boolean {
     const existing = this.getEvents();
-    const existingMap = new Map<string, AttemptEvent>();
-
-    for (const ev of existing) {
-      existingMap.set(ev.eventId, ev);
+    if (this.lastError) return false;
+    if (newEvents.some(e => !isAttemptEvent(e) || (e.userId ?? 'guest') !== this.scope.userId)) {
+      this.lastError = 'No se guardaron respuestas con metadatos o perfil inválidos.'; return false;
     }
-
-    for (const ev of newEvents) {
-      existingMap.set(ev.eventId, ev);
+    const events = new Map(existing.map(e => [e.eventId, e]));
+    for (const event of newEvents) {
+      const scoped = { ...event, userId: this.scope.userId };
+      const previous = events.get(event.eventId);
+      if (previous && JSON.stringify(previous) !== JSON.stringify(scoped)) {
+        this.lastError = 'Se detectó un identificador de respuesta en conflicto.'; return false;
+      }
+      events.set(event.eventId, scoped);
     }
-
-    // Sort chronologically ascending
-    const combined = Array.from(existingMap.values()).sort(
-      (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
-    );
-
-    this.adapter.setItem(PROGRESS_EVENTS_KEY, JSON.stringify(combined));
-  }
-
-  /**
-   * Clears namespaced progress events without touching baseline keys.
-   */
-  clearEvents(): void {
-    this.adapter.removeItem(PROGRESS_EVENTS_KEY);
-  }
-
-  /**
-   * Legacy import adapter:
-   * Inspects baseline 'mep_ea_attempts' from localStorage, converting sessions into
-   * AttemptEvent records tagged with provenance: 'legacy_unknown' and eligibility: 'unknown'.
-   * This makes historical sessions visible in history without contaminating official mastery indices.
-   */
-  importLegacyBaselineAttempts(baselineAttemptsKey = 'mep_ea_attempts'): number {
-    const raw = this.adapter.getItem(baselineAttemptsKey);
-    if (!raw) return 0;
-
     try {
-      const parsed = JSON.parse(raw);
-      if (!Array.isArray(parsed)) return 0;
-
-      const importedEvents: AttemptEvent[] = [];
-
-      for (const att of parsed) {
-        if (!att || typeof att.id !== 'string') continue;
-        const session = att.session;
-        if (!session || !session.responses) continue;
-
-        const items = session.items || [];
-        const responses = session.responses || {};
-
-        for (const item of items) {
-          const resp = responses[item.id];
-          if (!resp || !resp.selectedOption) continue;
-
-          const isCorrect = resp.selectedOption === item.correct_answer;
-          const domain = (item.area_id === 'geometry' || item.area_id === 'functions' || item.area_id === 'statistics')
-            ? item.area_id
-            : (item.code?.toLowerCase().includes('geo') ? 'geometry' : item.code?.toLowerCase().includes('alg') ? 'functions' : 'statistics');
-
-          const rawCode = item.spec?.evidence || 'general';
-          const primaryEvidenceKey = `bxm/matematica/02-2026/${domain}/${rawCode}`;
-
-          importedEvents.push({
-            schemaVersion: '1.0.0',
-            eventId: `legacy-import-${att.id}-${item.id}`,
-            sessionId: att.id,
-            sessionKind: att.mode === 'simulation' ? 'simulation_benchmark' : 'practice_topic',
-            mode: att.mode === 'simulation' ? 'exam' : 'study',
-            timestamp: att.timestamp || new Date().toISOString(),
-            itemId: String(item.id),
-            primaryEvidenceKey,
-            domain,
-            provenance: 'legacy_unknown', // Excluded from official mastery per CONSOLIDATED DECISIONS
-            reviewStatus: 'unreviewed',
-            cognitiveLevel: item.cognitive_level || 'reproduccion',
-            difficulty: (item.difficulty_tier as 1 | 2 | 3) || 1,
-            selectedOption: resp.selectedOption,
-            correctAnswer: item.correct_answer,
-            isCorrect,
-            responseIndex: 0,
-            hintsUsedBeforeResponse: 0,
-            exposureFlags: {
-              isBenchmarkItem: att.convocatoriaId === '2026-c2',
-              hasSeenExplanationBefore: false,
-            },
-          });
+      const sorted = [...events.values()].sort((a, b) => Date.parse(a.timestamp) - Date.parse(b.timestamp) || a.eventId.localeCompare(b.eventId));
+      this.adapter.setItem(this.key, JSON.stringify([...this.quarantined, ...sorted]));
+      return true;
+    } catch { this.lastError = 'No se pudo guardar el progreso en este navegador.'; return false; }
+  }
+  clearEvents(): boolean {
+    try { this.adapter.removeItem(this.key); this.lastError = ''; return true; }
+    catch { this.lastError = 'No se pudo borrar el progreso de este perfil.'; return false; }
+  }
+  importLegacyBaselineAttempts(baselineAttemptsKey = 'mep_ea_attempts'): number {
+    this.lastImport = { imported: 0, skipped: 0, summaryOnly: 0 };
+    try {
+      const raw = this.adapter.getItem(baselineAttemptsKey);
+      if (!raw) return 0;
+      const attempts = JSON.parse(raw);
+      if (!Array.isArray(attempts)) return 0;
+      const events: AttemptEvent[] = [];
+      for (const att of attempts) {
+        if (!att || (att.userId ?? 'guest') !== this.scope.userId || att.programId !== 'bxm' ||
+          !['matematica', 'matematicas'].includes(att.subjectId) || att.convocatoriaId !== '2026-c2' ||
+          !Number.isFinite(Date.parse(att.timestamp)) || typeof att.id !== 'string') { this.lastImport.skipped++; continue; }
+        if (!att.session?.items || !att.session?.responses) { this.lastImport.summaryOnly++; continue; }
+        for (const item of att.session.items) {
+          const response = att.session.responses[item.id];
+          if (!response?.selectedOption) continue;
+          const event: AttemptEvent = {
+            schemaVersion: '1.0.0', userId: this.scope.userId, programId: 'bxm', subjectId: 'matematica', specId: '02-2026',
+            eventId: `legacy-import-${att.id}-${item.id}`, sessionId: att.id,
+            sessionKind: att.mode === 'simulation' ? 'simulation_benchmark' : 'practice_topic', mode: att.mode === 'simulation' ? 'exam' : 'study',
+            timestamp: att.timestamp, itemId: String(item.id), primaryEvidenceKey: `bxm/matematica/02-2026/${item.area_id}/${item.spec?.evidence}`,
+            domain: item.area_id, provenance: 'legacy_unknown', reviewStatus: 'unreviewed',
+            cognitiveLevel: item.cognitive_level || 'reproduccion', difficulty: item.difficulty_tier || 1,
+            selectedOption: response.selectedOption, correctAnswer: item.correct_answer, isCorrect: response.selectedOption === item.correct_answer,
+            responseIndex: 0, hintsUsedBeforeResponse: 0,
+            // Assistance was not captured in legacy sessions; legacy_unknown excludes mastery.
+          };
+          if (isAttemptEvent(event)) events.push(event); else this.lastImport.skipped++;
         }
       }
-
-      if (importedEvents.length > 0) {
-        this.recordEvents(importedEvents);
-      }
-
-      return importedEvents.length;
-    } catch {
-      return 0;
-    }
+      const oldIds = new Set(this.getEvents().map(e => e.eventId));
+      const fresh = events.filter(e => !oldIds.has(e.eventId));
+      if (fresh.length && !this.recordEvents(fresh)) return 0;
+      this.lastImport.imported = fresh.length;
+      return fresh.length;
+    } catch { this.lastError = 'No se pudo importar el historial anterior.'; return 0; }
   }
 }

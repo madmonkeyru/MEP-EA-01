@@ -24,9 +24,10 @@ describe('BXM Progress - Analytics, 7-Day Reports & Streaks', () => {
       provenance: 'authored_mastery',
       cognitiveLevel: 'reproduccion',
       difficulty: 1,
-      selectedOption: 'A',
+      selectedOption: isCorrect ? 'A' : 'B',
       correctAnswer: 'A',
       isCorrect,
+      sessionStatus: 'completed', sessionCompletedAt: timestampIso,
       responseIndex: 0,
       hintsUsedBeforeResponse: 0,
     };
