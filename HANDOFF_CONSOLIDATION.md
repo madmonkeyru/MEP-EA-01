@@ -1,20 +1,25 @@
 # HANDOFF_CONSOLIDATION: BXM Mathematics MVP
 
 **Fecha:** 2025-05-18
-**Sesión de trabajo:** Consolidación Sprint 1, Sprint 2, Sprint 3 y Sprint 4 (Simulation Loop)
-**Estado de la suite de pruebas:** 52/52 archivos de test (265/265 pruebas pasando, 100% verde), `oxlint` 0 advertencias / 0 errores, `npm run build` exitoso (0 errores TS).
+**Sesión de trabajo:** Consolidación Sprint 1, Sprint 2, Sprint 3, Sprint 4 y Sprint 5 (Product Boundary / Freemium Matrix)
+**Estado de la suite de pruebas:** 53/53 archivos de test (270/270 pruebas pasando, 100% verde), `oxlint` 0 advertencias / 0 errores, `npm run build` exitoso (0 errores TS).
 
 ---
 
 ## 1. Resumen Ejecutivo y Alcance de la Sesión
 
-En esta sesión se ejecutó de forma continua e incremental la consolidación de los primeros cuatro sprints definidos en `MVP Consolidation.md`:
+En esta sesión se ejecutó de forma continua e incremental la consolidación de los primeros cinco sprints definidos en `MVP Consolidation.md`:
 1. **Sprint 1 (Contratos y Catálogo Canónico):** Catálogo canónico de 71 evidencias, unificación de contratos entre Learning (A), Assessment (B) y Progress (C), aislamiento del benchmark oficial de convocatoria.
-2. **Sprint 2 (Certificación Matemática y Generadores Isomórficos):** Verificación matemática de los 30 ítems de autor, corrección/ratificación del ítem estadístico `bxm-authored-v1-stat-009` (convención mediana-de-mitades que resulta en 11), y validación de las 4 familias isomórficas con tripletes pitagóricos exactos y opciones únicas.
+2. **Sprint 2 (Certificación Matemática y Generadores Isomórficos):** Verificación matemática de los 30 ítems de autor, ratificación del ítem estadístico `bxm-authored-v1-stat-009` (convención mediana-de-mitades que resulta en 11), y validación de las 4 familias isomórficas con tripletes pitagóricos exactos y opciones únicas.
 3. **Sprint 3 (BXM MVP Host Experience):** Conexión sin fisuras del bucle formativo del estudiante:
    $$\text{Diagnóstico} \longrightarrow \text{Resultados} \longrightarrow \text{Siguiente paso recomendado} \longrightarrow \text{Temario / Lección} \longrightarrow \text{Práctica por evidencia} \longrightarrow \text{Mastery Check} \longrightarrow \text{Progreso}$$
 4. **Sprint 4 (Simulation Loop & Plan de Nivelación):**
    $$\text{Práctica} \longrightarrow \text{Simulacro formativo (mock\_exam)} \longrightarrow \text{Resultados} \longrightarrow \text{Plan de Nivelación} \longrightarrow \text{Práctica focalizada} \longrightarrow \text{Retest} \longrightarrow \text{Actualización de Dominio (75\%)}$$
+5. **Sprint 5 (Product Boundary / Freemium Matrix):**
+   - Formalización estricta de la frontera Free vs. Pro/Premium en todas las superficies sin simular cobros ficticios.
+   - Regla de oro de capabilities: degradación determinística a `free` ante cualquier ausencia, error o dato corrupto de suscripción.
+   - Activación consistente y no agresiva de `PaywallModal` cuando un usuario gratuito intenta acceder a funciones Pro.
+   - Muestras gratuitas en el Temario Digital (Circunferencia, Función Lineal y Medidas de Posición) 100% funcionales, con vista previa y llamada a desbloquear en lecciones ampliadas.
 
 ---
 
@@ -40,20 +45,25 @@ En esta sesión se ejecutó de forma continua e incremental la consolidación de
 - **Práctica $\rightarrow$ Comprobación de Dominio:** Evaluación post-práctica para ofrecer *"Comprobar dominio ahora"* (`kind: 'mastery_check'`) cuando el alumno cumple los criterios ($\ge 75\%$ y familias suficientes).
 
 ### D. Sprint 4: Simulation Loop & Plan de Nivelación
-1. **Pestaña Explícita de Simulación (`tab: 'simulation'` en `BxmLearningHub.tsx`):**
-   - Agregada a la barra de navegación: `[Diagnóstico, Temario, Práctica, Simulación, Mi plan, Mi preparación]`.
-   - Presenta dos tarjetas claramente diferenciadas:
-     - **Modalidad A: Simulacro Formativo de Autor (`kind: 'mock_exam'`):** 20 preguntas seleccionadas por área y dificultad, 45 min, cronometrado, retroalimentación post-examen, genera Plan de Nivelación.
-     - **Modalidad B: Examen Oficial de Referencia (60 ítems, 150 min):** Convocatoria oficial 2026-c2, gratuito, aislado de las métricas de dominio de autor.
-2. **Resultados de Simulación $\rightarrow$ Plan de Nivelación (`PlanDeNivelacionView.tsx` / `remediationEngine.ts`):**
-   - Implementada la función `generateRemediationPlanFromSessionResult` en `remediationEngine.ts` que permite a los resultados de `mock_exam` y `diagnostic` alimentar de forma idéntica el Plan de Nivelación.
-   - Clasifica los conceptos fallados en urgencia alta, media o baja, asociando las fórmulas oficiales del MEP pertinentes.
-   - Cada concepto en el acordeón ofrece la acción de drilldown focalizado hacia la práctica.
-3. **Plan de Nivelación $\rightarrow$ Retest:**
-   - La tarjeta de decisión en los resultados del simulacro ofrece *"Preparar Retest"* (`kind: 'retest'`), priorizando preguntas no vistas y variantes isomórficas sobre la evidencia remediada.
-4. **Retest $\rightarrow$ Actualización Inmediata de Dominio:**
-   - Al finalizar un `retest`, se presenta la tarjeta destacada de recuperación de evidencia que compara el puntaje del retest, el dominio actualizado y el progreso hacia el umbral del 75%, con enlace directo a *"Ver mi preparación actualizada"*.
-   - Pruebas de integración completas en `src/features/bxm-integration/__tests__/BxmSimulationLoop.test.tsx`.
+- **Pestaña Explícita de Simulación (`tab: 'simulation'` en `BxmLearningHub.tsx`):**
+  - Dos modalidades claramente diferenciadas: Simulacro Formativo de Autor (20 ítems, cronometrado, retroalimentación post-examen) vs. Examen Oficial de Referencia (60 ítems, 150 min, gratuito, aislado de métricas de autor).
+- **Resultados de Simulación $\rightarrow$ Plan de Nivelación (`PlanDeNivelacionView.tsx` / `remediationEngine.ts`):**
+  - `generateRemediationPlanFromSessionResult` implementado para alimentar de forma idéntica el Plan de Nivelación con clasificación de urgencia alta/media/baja y fórmulas oficiales del MEP.
+- **Plan de Nivelación $\rightarrow$ Retest $\rightarrow$ Recuperación de Dominio:**
+  - El resultado del retest presenta una tarjeta destacada de comparación que muestra el puntaje del retest, el dominio actualizado y el avance hacia el umbral del 75%.
+
+### E. Sprint 5: Product Boundary / Freemium Matrix
+1. **Regla de Oro de Capabilities (`createCapabilityProvider` en `capabilityModel.ts`):**
+   - Ante valores `undefined`, `null`, tipos inválidos o no reconocidos, el proveedor resuelve estrictamente a `free`.
+2. **Matriz de Producto Unificada:**
+   - **Free (Siempre Gratuito):** Recursos oficiales MEP, tablas curriculares, simulación oficial de referencia (60 ítems / 150 min), diagnóstico rápido (20 preguntas / 30 min) con resultados básicos, 3 lecciones completas de muestra (una por área), práctica exploratoria básica.
+   - **Premium (Planes Pro):** Ruta completa con lecciones ampliadas, práctica ilimitada por evidencia y variantes isomórficas, simulacro formativo de autor (`mock_exam`), dashboard longitudinal de maestría (`longitudinal_mastery_dashboard`), retests y nivelación avanzada.
+3. **Muestras Gratuitas vs. Previews Pro en el Temario:**
+   - Las tres lecciones de muestra (Circunferencia, Función Lineal, Medidas de Posición) son 100% funcionales para todos los usuarios.
+   - Las lecciones ampliadas muestran una tarjeta de vista previa informativa con la insignia "Contenido Pro", explicando qué se aprende y cómo desbloquearlo con Plan Pro, sin romper la navegación.
+4. **Tooling de Desarrollo:**
+   - El toggle `subscriptionService.toggleTier()` se conserva estrictamente para pruebas/QA en desarrollo, sin persistencia como estado de facturación.
+   - Suite de pruebas de la matriz freemium en `src/features/bxm-integration/__tests__/BxmFreemiumMatrix.test.tsx`.
 
 ---
 
@@ -65,16 +75,18 @@ En esta sesión se ejecutó de forma continua e incremental la consolidación de
 | **Sprint 2 (Certificación & Generadores)** | **Completado al 100%** | 30 ítems revisados, consistencia matemática ratificada, 4 generadores activos |
 | **Sprint 3 (BXM MVP Host Loop)** | **Completado al 100%** | Diagnóstico $\rightarrow$ Resultados $\rightarrow$ Temario $\rightarrow$ Práctica $\rightarrow$ Mastery Check |
 | **Sprint 4 (Bucle de Simulación)** | **Completado al 100%** | Mock exam $\rightarrow$ Plan de Nivelación $\rightarrow$ Retest $\rightarrow$ Recuperación de dominio |
-| **Sprint 5 (Límites Freemium)** | **Siguiente Hito** | Auditoría y confirmación de la frontera Free vs. Premium en todas las superficies |
-| **Sprint 6 (Hardening de Lanzamiento)** | Preparado | Suite 100% verde; auditoría E2E móvil y accesibilidad final |
+| **Sprint 5 (Límites Freemium)** | **Completado al 100%** | Frontera Free vs. Pro consolidada, regla de oro, gating determinista, 0 cobros simulados |
+| **Sprint 6 (Hardening de Lanzamiento)** | **Siguiente Hito** | Pruebas de recorrido completo del usuario, responsive móvil (320px), accesibilidad y QA final |
 
 ---
 
 ## 4. Archivos Modificados / Creados
 
-- `src/features/bxm-integration/BxmLearningHub.tsx` (pestaña 'simulation', integración de PlanDeNivelacionView, flujo de retest y tarjeta de recuperación de dominio)
-- `src/services/remediationEngine.ts` (`generateRemediationPlanFromSessionResult` para reutilizar la lógica de nivelación desde `SessionResultExport`)
-- `src/features/bxm-learning/components/BxmLessonView.tsx` (CTA directo lección $\rightarrow$ práctica)
+- `src/features/bxm-progress/capabilities/capabilityModel.ts` (regla de oro: degradación estricta de cualquier tier inválido a 'free')
+- `src/features/bxm-integration/__tests__/BxmFreemiumMatrix.test.tsx` (pruebas de matriz freemium, regla de oro y gating de PaywallModal)
+- `src/features/bxm-learning/components/BxmLessonView.tsx` (preview amigable y badge Pro para lecciones no muestra)
+- `src/features/bxm-integration/BxmLearningHub.tsx` (pestaña 'simulation', gating de capacidades, Plan de Nivelación y tarjetas de decisión)
+- `src/services/remediationEngine.ts` (`generateRemediationPlanFromSessionResult`)
 - `src/features/bxm-learning/services/bxmIsomorphicGenerator.ts` (import de tipos)
 - `src/features/bxm-learning/bxmLearning.test.tsx` (prueba de corte de esfera)
 - `src/features/bxm-integration/__tests__/BxmHostJourney.test.tsx` (pruebas de integración del flujo de host)
@@ -94,7 +106,7 @@ En esta sesión se ejecutó de forma continua e incremental la consolidación de
 2. **`npm run build` (`tsc -b && vite build`):**
    - 0 errores de TypeScript, compilación exitosa.
 3. **`npx vitest run`:**
-   - 52 archivos de prueba, 265 pruebas ejecutadas, **265 pasadas (0 fallos)**.
+   - 53 archivos de prueba, 270 pruebas ejecutadas, **270 pasadas (0 fallos, 100% verde)**.
 4. **Validadores de Contenido y Progreso:**
    - `node scripts/bxm-learning/validate-learning-content.mjs`: PASS
    - `node scripts/bxm-progress/verify-progress.mjs`: PASS
@@ -103,18 +115,12 @@ En esta sesión se ejecutó de forma continua e incremental la consolidación de
 
 ---
 
-## 6. Próximo Paso: Sprint 5 (Product Boundary / Freemium Matrix)
+## 6. Próximo Paso: Sprint 6 (Release Hardening)
 
-Para la siguiente sesión de desarrollo, las tareas para Sprint 5 son:
-1. **Regla de oro de capacidades:** Garantizar que si falta información de suscripción, el sistema siempre asuma `free` por defecto (nunca premium).
-2. **Frontera Free:**
-   - Benchmark oficial 60/150 gratis e ilimitado.
-   - Diagnóstico rápido (20 preguntas) y resultados básicos gratis.
-   - Una lección completa de muestra por área temática (Geometría: Circunferencia, Álgebra: Función Lineal, Estadística: Medidas de posición) gratis.
-   - Recursos oficiales y especificaciones oficiales gratis.
-3. **Frontera Premium:**
-   - Práctica por evidencia ilimitada con variantes isomórficas.
-   - Dashboard longitudinal completo de preparación y mastery.
-   - Simulacros formativos de autor múltiples.
-   - Lecciones ampliadas más allá de las muestras gratuitas.
-   - Activación controlada del `PaywallModal` sin bloqueo hostil ni cobro fingido.
+Para la siguiente sesión de desarrollo, las tareas de cierre para Sprint 6 son:
+1. **Auditoría de Jornada Completa (Gate 3 - UX):**
+   - Recorrer el camino completo del estudiante desde el landing de entrada, bienvenida, diagnóstico rápido, resultados con recomendación, lectura en temario, micro-quiz, práctica por evidencia, simulación formativa, plan de nivelación, retest y visualización de progreso.
+2. **Validación en Pantallas Pequeñas y Mobile (320px - 640px):**
+   - Verificar que tablas, tarjetas de recomendación, fórmulas en KaTeX y visuales interactivos SVG se adapten limpiamente sin desbordamientos horizontales ni cortes de texto.
+3. **Comprobación de Accesibilidad Básica:**
+   - Verificación de contraste semántico en modo claro y oscuro, navegación completa por teclado y etiquetas `aria-*` en diálogos y modales.

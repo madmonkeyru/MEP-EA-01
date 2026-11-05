@@ -137,8 +137,9 @@ export interface CapabilityProvider {
 /**
  * Creates an injectable capability provider for testing and presentation gating.
  */
-export function createCapabilityProvider(initialTier: UserTier = 'free'): CapabilityProvider {
-  let currentTier = initialTier;
+export function createCapabilityProvider(initialTier?: unknown): CapabilityProvider {
+  // Golden rule: Any unknown, undefined, null, or corrupted tier resolves strictly to 'free'
+  const currentTier: UserTier = initialTier === 'premium' ? 'premium' : 'free';
 
   return {
     getTier: () => currentTier,

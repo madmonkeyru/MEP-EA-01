@@ -27,11 +27,47 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
 }) => {
   const sampleId = BxmContentService.getAllLessons().find(l => l.domain === lesson.domain)?.id;
   if (!capabilities.isPremium && sampleId !== lesson.id) return (
-    <section className="p-5 space-y-3">
-      <h1>{lesson.title}</h1>
-      <p>Esta lección ampliada requiere Premium. La lección de muestra de cada área está disponible gratis.</p>
-      <button onClick={onBackToTemario}>Volver al Temario Digital</button>
-    </section>
+    <article className="space-y-6 max-w-4xl mx-auto p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 bg-surface">
+      {onBackToTemario && (
+        <button
+          type="button"
+          onClick={onBackToTemario}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+        >
+          ← Volver al Temario Digital
+        </button>
+      )}
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-amber-400 text-stone-950">
+            Contenido Pro
+          </span>
+          <span className="text-xs font-mono text-stone-500">Evidencia {lesson.evidenceCode}</span>
+        </div>
+        <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{lesson.title}</h1>
+        <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+          <TextRenderer content={lesson.subtitle} inline />
+        </p>
+      </div>
+
+      <div className="p-5 rounded-xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/50 dark:bg-amber-950/20 space-y-3">
+        <h2 className="text-sm font-bold text-amber-900 dark:text-amber-200">
+          Esta lección ampliada está disponible con el Plan Pro
+        </h2>
+        <p className="text-xs text-stone-700 dark:text-stone-300">
+          La lección completa de muestra de cada área temática (Circunferencia, Función Lineal y Medidas de Posición) permanece 100% gratuita. Para acceder a las lecciones ampliadas de todo el temario, activa el Plan Pro.
+        </p>
+        <div className="action-row pt-1">
+          <button
+            type="button"
+            onClick={onBackToTemario}
+            className="secondary-button"
+          >
+            Ver lecciones gratuitas
+          </button>
+        </div>
+      </div>
+    </article>
   );
   return (
     <article className={`space-y-8 max-w-4xl mx-auto ${className}`}>
