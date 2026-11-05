@@ -167,16 +167,41 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     };
   }, [result, events]);
 
-  return <div className="page-width py-6 space-y-5 min-w-0" data-revision={revision}>
-    <header className="ui-surface rounded-2xl p-5 space-y-3">
-      <h1 className="text-2xl font-semibold">Aprendizaje guiado · Matemáticas BXM</h1>
-      <p>Diagnóstico, lecciones y práctica de autor. El paquete inicial incluye cuatro lecciones y 30 ejercicios en tres áreas; cubre una parte de las 71 evidencias.</p>
-      <nav aria-label="Aprendizaje BXM" className="flex flex-wrap gap-2">
-        {([['diagnostic','Diagnóstico'],['temario','Temario de aprendizaje'],['practice','Práctica de autor'],['simulation','Simulación'],['path','Mi plan'],['progress','Mi preparación']] as const).map(([id, label]) =>
-          <button key={id} aria-current={tab === id ? 'page' : undefined} className="secondary-button" onClick={() => go(id)}>{label}</button>)}
-        <button className="text-link" onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Volver a Matemáticas</button>
-      </nav>
-    </header>
+  return <div className="page-width py-4 sm:py-6 space-y-4 sm:space-y-5 min-w-0" data-revision={revision}>
+    {tab === 'assessment' ? (
+      /* Minimal compact header bar during active practice session */
+      <header className="ui-surface rounded-xl px-4 py-2.5 flex items-center justify-between gap-3 shadow-xs">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-xs font-bold text-amber-500 uppercase tracking-wider font-mono">BXM</span>
+          <span className="text-stone-300 dark:text-stone-700">·</span>
+          <span className="text-xs font-semibold text-stone-800 dark:text-stone-200 truncate">Sesión de Evaluación en Curso</span>
+        </div>
+        <button
+          type="button"
+          onClick={() => go('diagnostic')}
+          className="text-xs font-bold px-3 py-1 rounded-lg border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors shrink-0"
+        >
+          Salir de la práctica
+        </button>
+      </header>
+    ) : (
+      /* Standard compact header for navigation tabs */
+      <header className="ui-surface rounded-2xl p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+        <div className="space-y-1">
+          <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
+            Aprendizaje guiado · Matemáticas BXM
+          </h1>
+          <p className="hidden sm:block text-xs sm:text-sm text-stone-600 dark:text-stone-400">
+            Diagnóstico, lecciones y práctica de autor. El paquete inicial incluye cuatro lecciones y 30 ejercicios en tres áreas; cubre una parte de las 71 evidencias.
+          </p>
+        </div>
+        <nav aria-label="Aprendizaje BXM" className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+          {([['diagnostic','Diagnóstico'],['temario','Temario de aprendizaje'],['practice','Práctica de autor'],['simulation','Simulación'],['path','Mi plan'],['progress','Mi preparación']] as const).map(([id, label]) =>
+            <button key={id} aria-current={tab === id ? 'page' : undefined} className="secondary-button text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 whitespace-nowrap shrink-0" onClick={() => go(id)}>{label}</button>)}
+          <button className="text-link text-xs whitespace-nowrap shrink-0 ml-1" onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Volver a Matemáticas</button>
+        </nav>
+      </header>
+    )}
     {message && <div role="alert" className="feedback-panel space-y-2"><p>{message}</p>{store.lastError && <button className="secondary-button" onClick={() => { store.retrySave(); setMessage(store.lastError); }}>Reintentar guardado</button>}</div>}
     {active && tab !== 'assessment' && <section className="feedback-panel"><h2>Actividad de aprendizaje guardada</h2><p>{active.items.length} preguntas. {active.deadline ? 'El tiempo sigue corriendo al salir.' : 'Sin límite de tiempo.'}</p><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar aprendizaje</button><button className="secondary-button" onClick={() => setDiscard(true)}>Descartar actividad</button></div></section>}
     {tab === 'diagnostic' && <section className="ui-surface p-5 rounded-2xl space-y-4">

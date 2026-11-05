@@ -9,6 +9,7 @@ import { InteractiveCircleVisual } from './visuals/InteractiveCircleVisual';
 import { InteractiveSphereCrossSection } from './visuals/InteractiveSphereCrossSection';
 import { BxmMicroQuiz } from './BxmMicroQuiz';
 import { BxmContentService } from '../services/bxmContentService';
+import { AlertTriangle } from 'lucide-react';
 
 export interface BxmLessonViewProps {
   lesson: BxmLesson;
@@ -169,7 +170,8 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
       {lesson.commonMistakes.length > 0 && (
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-            <span>⚠️</span> Errores Comunes en el Examen de Bachillerato
+            <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0" aria-hidden="true" />
+            <span>Errores Comunes en el Examen de Bachillerato</span>
           </h2>
           <div className="space-y-3">
             {lesson.commonMistakes.map((m, idx) => (
@@ -198,29 +200,30 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
           Ejemplo Resuelto Paso a Paso
         </h2>
         <div className="p-5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 shadow-sm space-y-4">
-          <div className="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40 text-sm text-stone-900 dark:text-stone-100 font-medium">
-            <strong className="text-amber-800 dark:text-amber-400">Problema:</strong> <TextRenderer content={lesson.workedExample.statement} inline />
+          <div className="p-3.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-sm text-stone-900 dark:text-stone-100 font-medium leading-relaxed">
+            <strong className="text-amber-800 dark:text-amber-300 font-bold">Problema:</strong>{' '}
+            <TextRenderer content={lesson.workedExample.statement} inline />
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-stone-500">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
               <TextRenderer content={lesson.workedExample.primaryMethod.name} inline />
             </h3>
-            <div className="space-y-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300 pl-2 border-l-2 border-amber-400">
+            <div className="space-y-2 text-xs sm:text-sm text-stone-800 dark:text-stone-200 pl-3 border-l-2 border-amber-500 dark:border-amber-400">
               {lesson.workedExample.primaryMethod.steps.map((s, idx) => (
-                <div key={idx} className="whitespace-pre-line"><TextRenderer content={s} inline /></div>
+                <div key={idx} className="whitespace-pre-line leading-relaxed"><TextRenderer content={s} inline /></div>
               ))}
             </div>
           </div>
 
           {lesson.workedExample.alternativeMethod && (
             <div className="space-y-2 pt-3 border-t border-stone-200 dark:border-stone-800">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
                 <TextRenderer content={lesson.workedExample.alternativeMethod.name} inline /> (Método Alternativo)
               </h3>
-              <div className="space-y-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300 pl-2 border-l-2 border-indigo-400">
+              <div className="space-y-2 text-xs sm:text-sm text-stone-800 dark:text-stone-200 pl-3 border-l-2 border-indigo-500 dark:border-indigo-400">
                 {lesson.workedExample.alternativeMethod.steps.map((s, idx) => (
-                  <div key={idx} className="whitespace-pre-line"><TextRenderer content={s} inline /></div>
+                  <div key={idx} className="whitespace-pre-line leading-relaxed"><TextRenderer content={s} inline /></div>
                 ))}
               </div>
             </div>
