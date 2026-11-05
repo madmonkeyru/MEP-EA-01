@@ -211,35 +211,37 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
         </section>
       )}
 
-      {/* Related Practice CTA */}
-      <section className="p-5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-850 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
+      {/* Direct Transition CTA: Lección -> Práctica */}
+      <section className="p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-gradient-to-br from-amber-50/50 to-amber-100/30 dark:from-amber-950/30 dark:to-stone-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+        <div className="space-y-1">
+          <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">
+            <span>Siguiente paso</span>
+          </div>
+          <h3 className="text-base font-extrabold text-stone-900 dark:text-stone-100">
             ¿Listo para poner a prueba esta evidencia?
           </h3>
-          <p className="text-xs text-stone-600 dark:text-stone-400">
-            Practique preguntas de autor con distractores analizados para la evidencia {lesson.evidenceCode}.
+          <p className="text-xs text-stone-600 dark:text-stone-400 max-w-xl">
+            Aplica lo aprendido en esta lección con preguntas de autor diseñadas específicamente para la evidencia {lesson.evidenceCode}.
           </p>
         </div>
-        <div className="flex gap-2">
-          {callbacks?.onStartTargetedPractice && (
+        <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          {callbacks?.onStartTargetedPractice ? (
             <button
               type="button"
               onClick={() => callbacks.onStartTargetedPractice!(lesson.evidenceKey)}
-              className="px-4 py-2 rounded-xl text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-sm"
+              className="px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-sm cursor-pointer"
             >
-              Practicar Evidencia
+              Practicar esta evidencia
             </button>
-          )}
-          {callbacks?.onRequestDiagnostic && (
+          ) : callbacks?.onRequestDiagnostic ? (
             <button
               type="button"
               onClick={callbacks.onRequestDiagnostic}
-              className="px-4 py-2 rounded-xl text-xs font-bold text-stone-800 dark:text-stone-200 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:bg-stone-50 transition-colors"
+              className="px-5 py-3 rounded-xl text-xs font-bold text-stone-800 dark:text-stone-200 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:bg-stone-50 transition-colors cursor-pointer"
             >
               Diagnóstico General
             </button>
-          )}
+          ) : null}
         </div>
       </section>
     </article>
