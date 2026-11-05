@@ -3,6 +3,8 @@ import { ProgramInfo } from '../../types';
 import { programManifest } from '../../services/programCatalog';
 import { ProgramCard } from '../common/ProgramCard';
 import { ConvocatoriaBadge } from '../common/ConvocatoriaBadge';
+import { ProgramSchedulesOverview } from '../knowledge/ProgramSchedulesOverview';
+import { CostaRicaPlate } from '../maps/CostaRicaPlate';
 import {
   ArrowRight,
   ShieldCheck,
@@ -28,6 +30,11 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
     <div className="welcome-page max-w-7xl 2xl:max-w-[1536px] mx-auto px-3.5 sm:px-6 py-6 sm:py-10 space-y-8 text-stone-900 dark:text-slate-100 transition-colors">
       {/* 1. Header Hero / Welcome Portal Banner */}
       <div className="page-intro rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        {/* Faded Costa Rica map watermark */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-15 dark:opacity-20 select-none z-0">
+          <CostaRicaPlate minimalWatermark={true} framing="bleed" interactive={false} />
+        </div>
+
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="flex flex-wrap items-center gap-2">
             <ConvocatoriaBadge convocatoriaId={currentConvocatoria} />
@@ -40,8 +47,6 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             Hay distintas rutas para seguir estudiando. Explora tu programa y encuentra el siguiente paso en tu preparación.
           </p>
         </div>
-
-
       </div>
 
       {/* 2. Prominent Quick-Entry Card for MVP (Matemáticas — BXM) */}
@@ -98,6 +103,9 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
           ))}
         </div>
       </div>
+
+      {/* Multiprogram DGEC Schedule Overview - General Portal Placement */}
+      <ProgramSchedulesOverview />
 
       <details className="ui-surface rounded-2xl p-5"><summary>Comparar las rutas educativas</summary><div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Comparación de programas"><table className="data-table"><caption>Elige una ruta según los estudios que deseas completar; confirma requisitos con la DGEC.</caption><thead><tr><th scope="col">Programa</th><th scope="col">Estudios previos de referencia</th><th scope="col">Meta</th></tr></thead><tbody><tr><th scope="row">I y II Ciclo</th><td>Primaria incompleta</td><td>Completar primaria</td></tr><tr><th scope="row">III Ciclo</th><td>Primaria completa</td><td>Completar noveno</td></tr><tr><th scope="row">EDAD</th><td>Noveno aprobado</td><td>Bachillerato en dos partes</td></tr><tr><th scope="row">BXM</th><td>Noveno aprobado</td><td>Bachillerato por suficiencia</td></tr></tbody></table></div></details>
       <a href="#/guia" className="text-link">No sé qué programa elegir · Abrir guía opcional</a>

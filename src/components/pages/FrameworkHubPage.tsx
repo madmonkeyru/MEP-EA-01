@@ -5,7 +5,8 @@ import { calculatorRule } from '../../services/learningSession';
 import { AppRoute, routeHash } from '../../services/navigation';
 import { Breadcrumbs } from '../common/Breadcrumbs';
 import { CustomSelect } from '../common/CustomSelect';
-import { ProgramSchedulesOverview } from '../knowledge/ProgramSchedulesOverview';
+import { DynamicMilestoneBanner } from '../knowledge/DynamicMilestoneBanner';
+import { SubjectMotif } from '../common/SubjectMotif';
 
 export const hubPanel = 'ui-surface rounded-2xl p-5 sm:p-6 space-y-4';
 export const hubButton = 'px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm cursor-pointer';
@@ -74,13 +75,27 @@ export function FrameworkHubPage({ program, route, onNavigate }: {
         : 'Una prueba por asignatura. En Ciencias, elige Biología, Física o Química; en Idioma, elige tu opción.'}</p>
     </section>
 
-    {/* Multiprogram DGEC Schedule Overview */}
-    <ProgramSchedulesOverview />
+    {/* Program-Aware Schedule & Milestones */}
+    <DynamicMilestoneBanner
+      programId={program.id}
+      convocatoriaId={route.convocatoriaId || '2026-c2'}
+      subjectFilter="Matemáticas"
+    />
 
     <section aria-label="Asignaturas del programa" className="space-y-4">
       <h2 className="text-xl font-semibold">Elige una asignatura</h2>
       <p className="text-sm text-stone-600 dark:text-slate-400">Matemáticas BXM tiene prácticas disponibles en 02-2026. Las demás rutas permiten explorar su estructura.</p>
-      {[['Materias del programa', program.subjects.filter(subject => !['biologia', 'fisica', 'quimica', 'ingles', 'frances'].includes(subject.id))], ['Elige una ciencia', program.subjects.filter(subject => ['biologia', 'fisica', 'quimica'].includes(subject.id))], [program.id === 'iii_ciclo' ? 'Idioma: Inglés' : 'Elige un idioma', program.subjects.filter(subject => ['ingles', 'frances'].includes(subject.id))]].map(([label, entries]) => (entries as typeof program.subjects).length > 0 && <div key={label as string} className="space-y-3"><h3 className="font-semibold">{label as string}</h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{(entries as typeof program.subjects).map(subject => <a key={subject.id} className={hubPanel + ' subject-card text-left ui-lift'} href={routeHash({ ...route, view: 'hub', subjectId: subject.id })} onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onNavigate({ ...route, view: 'hub', subjectId: subject.id }); } }}><span className="subject-icon"><BookOpen size={21} aria-hidden="true" /></span><h4 className="text-lg font-semibold">{subject.name}</h4><p>{catalogueLabel(dataService.findConvocatoriaBlueprint(program.id, subject.id, route.moduleId, route.convocatoriaId)?.coverage)}</p><span className="text-link">Ver materia y recursos <ArrowRight size={16} aria-hidden="true" /></span></a>)}</div></div>)}
+      {[['Materias del programa', program.subjects.filter(subject => !['biologia', 'fisica', 'quimica', 'ingles', 'frances'].includes(subject.id))], ['Elige una ciencia', program.subjects.filter(subject => ['biologia', 'fisica', 'quimica'].includes(subject.id))], [program.id === 'iii_ciclo' ? 'Idioma: Inglés' : 'Elige un idioma', program.subjects.filter(subject => ['ingles', 'frances'].includes(subject.id))]].map(([label, entries]) => (entries as typeof program.subjects).length > 0 && <div key={label as string} className="space-y-3"><h3 className="font-semibold">{label as string}</h3><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{(entries as typeof program.subjects).map(subject => <a key={subject.id} className="relative overflow-hidden rounded-2xl p-5 sm:p-6 space-y-4 subject-card text-left ui-lift border border-stone-200/80 dark:border-stone-800 bg-white/70 dark:bg-stone-900/60 backdrop-blur-md transition-all group" href={routeHash({ ...route, view: 'hub', subjectId: subject.id })} onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onNavigate({ ...route, view: 'hub', subjectId: subject.id }); } }}>
+        <div className="absolute right-0 bottom-0 translate-x-4 translate-y-4 w-32 h-32 opacity-10 dark:opacity-15 group-hover:opacity-20 text-stone-700 dark:text-stone-300 transition-opacity">
+          <SubjectMotif subjectId={subject.id} className="w-full h-full" />
+        </div>
+        <div className="relative z-10 space-y-3">
+          <span className="subject-icon"><BookOpen size={21} aria-hidden="true" /></span>
+          <h4 className="text-lg font-semibold text-stone-900 dark:text-stone-100">{subject.name}</h4>
+          <p className="text-sm text-stone-600 dark:text-stone-400">{catalogueLabel(dataService.findConvocatoriaBlueprint(program.id, subject.id, route.moduleId, route.convocatoriaId)?.coverage)}</p>
+          <span className="text-link inline-flex items-center gap-1.5 pt-1">Ver materia y recursos <ArrowRight size={16} aria-hidden="true" /></span>
+        </div>
+      </a>)}</div></div>)}
 
     </section>
   </div>;

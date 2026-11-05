@@ -8,7 +8,7 @@ import { prepareItems, modeLabel, isExam } from '../../services/learningSession'
 import { Dialog } from '../common/Dialog';
 import { CustomSelect } from '../common/CustomSelect';
 import { PaywallModal } from '../common/PaywallModal';
-import { Compass, Sparkles, ShieldCheck } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, initialMode = 'area' }: { initialMode?: PracticeMode; onStartSimulation: () => void; onStartPractice: (config: PracticeConfig) => void }) {
   const [goal, setGoal] = useState<'diagnostic' | 'practice' | 'exam'>(initialMode === 'simulation' || initialMode === 'dynamic_mock' ? 'exam' : initialMode === 'diagnostic' ? 'diagnostic' : 'practice');
@@ -162,14 +162,12 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
         </div>
         <div className="flex items-center gap-2">
           {tier === 'premium' ? (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
-              <Sparkles className="size-3.5" />
-              <span>Modo Pro Activo</span>
+            <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-black tracking-wider uppercase bg-amber-400 text-stone-950 shadow-2xs">
+              Modo Pro Activo
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300">
-              <ShieldCheck className="size-3.5 text-emerald-600" />
-              <span>1 Prueba Oficial Libre</span>
+            <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
+              1 Prueba Oficial Libre
             </span>
           )}
         </div>

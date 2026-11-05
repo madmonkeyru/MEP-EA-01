@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Check, Sparkles, X, ShieldCheck, Zap } from 'lucide-react';
+import { Check, X, ShieldCheck, Zap } from 'lucide-react';
 import { subscriptionService, PLANS, SubscriptionTier } from '../../services/subscriptionService';
 
 interface PaywallModalProps {
@@ -44,24 +44,23 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-xs animate-in fade-in"
     >
       <div className="relative w-full max-w-2xl bg-white dark:bg-stone-900 rounded-3xl shadow-2xl border border-stone-200 dark:border-stone-800 overflow-hidden max-h-[90vh] flex flex-col">
-        {/* Header decoration */}
-        <div className="bg-gradient-to-r from-amber-500 via-indigo-600 to-indigo-700 p-6 text-white text-center relative shrink-0">
+        {/* Header decoration - aligned with warm stone / quiet educational DNA */}
+        <div className="bg-stone-100 dark:bg-stone-850 p-6 sm:p-7 text-stone-900 dark:text-stone-100 text-center relative shrink-0 border-b border-stone-200 dark:border-stone-800">
           <button
             type="button"
             onClick={onClose}
             aria-label="Cerrar ventana de planes"
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 transition-colors cursor-pointer"
           >
             <X className="size-5" />
           </button>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-xs font-semibold uppercase tracking-wider mb-2">
-            <Sparkles className="size-3.5" />
-            <span>Educación Abierta Premium</span>
+          <div className="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider mb-2 bg-amber-400 text-stone-950">
+            <span>Educación Abierta Pro</span>
           </div>
-          <h2 id="paywall-title" className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          <h2 id="paywall-title" className="text-2xl sm:text-3xl font-bold tracking-tight">
             {featureTitle}
           </h2>
-          <p className="text-sm sm:text-base text-indigo-100 mt-1 max-w-md mx-auto">
+          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-1 max-w-md mx-auto">
             {featureDescription}
           </p>
         </div>
@@ -73,13 +72,13 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
             <div className="flex items-center gap-2">
               <span className="font-semibold text-stone-700 dark:text-stone-300">Nivel actual de cuenta:</span>
               <span
-                className={`px-2.5 py-0.5 rounded-full font-bold uppercase text-xs ${
+                className={`px-2.5 py-0.5 rounded font-bold uppercase text-xs ${
                   currentTier === 'premium'
-                    ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
+                    ? 'bg-amber-400 text-stone-950'
                     : 'bg-stone-200 text-stone-700 dark:bg-stone-700 dark:text-stone-300'
                 }`}
               >
-                {currentTier === 'premium' ? 'Plan Premium Activo' : 'Acceso Gratuito (Freemium)'}
+                {currentTier === 'premium' ? 'Plan Pro Activo' : 'Acceso Gratuito (Freemium)'}
               </span>
             </div>
             <button
@@ -104,7 +103,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                 }`}
               >
                 {plan.badge && (
-                  <span className="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-indigo-600 text-white text-[11px] font-bold uppercase tracking-wider shadow-xs">
+                  <span className="absolute -top-3 right-4 px-2.5 py-0.5 rounded bg-indigo-600 text-white text-[11px] font-bold uppercase tracking-wider shadow-xs">
                     {plan.badge}
                   </span>
                 )}
