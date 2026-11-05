@@ -14,6 +14,7 @@ import { BXM_OFFICIAL_EVIDENCES_FIXTURE as catalog } from '../bxm-progress/ui/ev
 import { useSubscriptionCapabilities } from './capabilities';
 import { BxmLearningStore } from './learningStore';
 import { inventory, lessons, policyFor, preparePresentation, sampleLessonKeys, selectActivity, type ActivityRequest } from './providers';
+import { computeEvidenceMasteryRecords } from '../bxm-progress/domain/masteryEngine';
 
 interface Props { userId: string; route: AppRoute; onNavigate: (route: AppRoute) => void; onOfficialSimulation: () => void }
 interface Pending { request: ActivityRequest; selection: BlueprintSelectionResult; seed: number }
@@ -78,6 +79,60 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   function openLesson(key: string) { go('temario', key); }
   const results = store.getResults();
   const legacy = storageService.getContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' }, userId);
+
+  // Compute prioritized recommendation from the active result
+  const recommendation = useMemo(() => {
+    if (!result || !result.evidenceBreakdowns) return null;
+    const measuredBreakdowns = Object.values(result.evidenceBreakdowns).filter(e => e.totalItems > 0);
+    if (!measuredBreakdowns.length) return null;
+
+    // Prioritize evidence with errors in first response (lowest accuracy first)
+    const sorted = [...measuredBreakdowns].sort((a, b) => {
+      const accA = a.totalItems > 0 ? a.correctFirstResponseCount / a.totalItems : 1;
+      const accB = b.totalItems > 0 ? b.correctFirstResponseCount / b.totalItems : 1;
+      if (accA !== accB) return accA - accB;
+      return (b.totalItems - b.correctFirstResponseCount) - (a.totalItems - a.correctFirstResponseCount);
+    });
+
+    // Check inventory availability (lesson or authored practice)
+    for (const item of sorted) {
+      const hasLesson = lessons.some(l => l.evidenceKey === item.evidenceId);
+      const hasPractice = (inventory[item.evidenceId]?.totalItems || 0) > 0;
+      if (hasLesson || hasPractice) {
+        const accuracy = item.totalItems > 0 ? Math.round((item.correctFirstResponseCount / item.totalItems) * 100) : 0;
+        return {
+          evidenceId: item.evidenceId,
+          evidenceCode: item.evidenceCode,
+          domain: item.domain,
+          accuracy,
+          hasLesson,
+          hasPractice,
+          correct: item.correctFirstResponseCount,
+          total: item.totalItems,
+        };
+      }
+    }
+    return null;
+  }, [result]);
+
+  // Compute post-practice mastery eligibility for single-evidence practice
+  const practiceMasteryStatus = useMemo(() => {
+    if (!result || result.kind !== 'evidence_practice' || !events.length) return null;
+    const targetKey = Object.keys(result.evidenceBreakdowns)[0];
+    if (!targetKey) return null;
+    const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
+    const targetRecord = masteryRecords.find(r => r.evidenceKey === targetKey);
+    const hasEnoughFamilies = (targetRecord?.qualifyingFamiliesCount || 0) >= (targetRecord?.minRequiredFamilies || 5);
+    const isMastered = targetRecord?.status === 'mastered' || (result.firstResponseScorePercentage >= 75 && (targetRecord?.qualifyingFamiliesCount || 0) >= 3);
+    return {
+      evidenceKey: targetKey,
+      record: targetRecord,
+      isEligibleForMasteryCheck: isMastered || hasEnoughFamilies,
+      qualifyingCount: targetRecord?.qualifyingFamiliesCount || 0,
+      minRequired: targetRecord?.minRequiredFamilies || 5,
+    };
+  }, [result, events]);
+
   return <div className="page-width py-6 space-y-5 min-w-0" data-revision={revision}>
     <header className="ui-surface rounded-2xl p-5 space-y-3">
       <h1 className="text-2xl font-semibold">Aprendizaje guiado · Matemáticas BXM</h1>
@@ -129,10 +184,75 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       : <section className="feedback-panel"><h2>Actividad no disponible en este perfil</h2><p>Busca el intento guardado o inicia otra actividad.</p><button onClick={() => go('diagnostic')}>Volver al diagnóstico</button></section>)}
     {tab === 'result' && (result ? <>
       <BxmSessionResultBreakdownView result={result} onExit={() => go('diagnostic')} />
-      <section className="ui-surface p-5 rounded-2xl space-y-3"><h2 className="text-xl font-semibold">Qué estudiar después</h2><p>Las evidencias sin preguntas en este intento permanecen sin medir.</p>
+
+      {/* Prominent Decision Card: Tu siguiente paso recomendado */}
+      {recommendation && (
+        <section className="ui-surface p-6 rounded-2xl border-2 border-amber-400 dark:border-amber-500/80 bg-amber-50/40 dark:bg-amber-950/20 space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+            <h2 className="text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">Tu siguiente paso recomendado</h2>
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">
+              {recommendation.accuracy < 75 ? 'Reforzar:' : 'Continuar con:'} Evidencia {recommendation.evidenceCode} ({recommendation.domain})
+            </h3>
+            <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+              {recommendation.accuracy < 75
+                ? `Tu resultado muestra dificultad en esta evidencia (${recommendation.correct}/${recommendation.total} aciertos en primera respuesta, ${recommendation.accuracy}%).`
+                : `Demostraste buen avance en esta evidencia (${recommendation.correct}/${recommendation.total} aciertos, ${recommendation.accuracy}%).`}
+            </p>
+          </div>
+          <div className="action-row pt-1">
+            {recommendation.hasLesson ? (
+              <button className="primary-button" onClick={() => openLesson(recommendation.evidenceId)}>
+                Estudiar este tema en el Temario
+              </button>
+            ) : recommendation.hasPractice ? (
+              <button className="primary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: recommendation.evidenceId })}>
+                Practicar esta evidencia
+              </button>
+            ) : null}
+            {recommendation.hasLesson && recommendation.hasPractice && (
+              <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: recommendation.evidenceId })}>
+                Practicar directamente
+              </button>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Post-practice Mastery Eligibility Decision */}
+      {practiceMasteryStatus && (
+        <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
+          <h2 className="text-base font-bold text-stone-900 dark:text-stone-100">Comprobación de Dominio</h2>
+          {practiceMasteryStatus.isEligibleForMasteryCheck ? (
+            <div className="space-y-2">
+              <p className="text-xs sm:text-sm text-emerald-800 dark:text-emerald-400 font-medium">
+                ¡Excelente práctica! Has alcanzado el criterio para comprobar tu dominio en esta evidencia.
+              </p>
+              <button className="primary-button" onClick={() => request({ kind: 'mastery_check', evidenceKey: practiceMasteryStatus.evidenceKey })}>
+                Comprobar dominio ahora
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
+                Llevas {practiceMasteryStatus.qualifyingCount} de {practiceMasteryStatus.minRequired} familias evaluadas. Continúa reforzando antes del Mastery Check oficial.
+              </p>
+              <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: practiceMasteryStatus.evidenceKey })}>
+                Seguir practicando esta evidencia
+              </button>
+            </div>
+          )}
+        </section>
+      )}
+
+      <section className="ui-surface p-5 rounded-2xl space-y-3"><h2 className="text-xl font-semibold">Desglose completo de evidencias</h2><p>Las evidencias sin preguntas en este intento permanecen sin medir.</p>
         {Object.values(result.evidenceBreakdowns).map(e => <div key={e.evidenceId} className="flex flex-wrap gap-3 items-center"><span>{e.domain} · {e.evidenceCode}: {e.correctFirstResponseCount}/{e.totalItems}</span><button className="text-link" onClick={() => openLesson(e.evidenceId)}>Estudiar evidencia {e.evidenceCode}</button></div>)}
-        <button className="secondary-button" onClick={() => go('progress')}>Ver mi preparación</button>
-        <button className="secondary-button" onClick={() => downloadResult(result)}>Descargar resultado</button>
+        <div className="action-row pt-2">
+          <button className="secondary-button" onClick={() => go('progress')}>Ver mi preparación</button>
+          <button className="secondary-button" onClick={() => downloadResult(result)}>Descargar resultado</button>
+        </div>
       </section>
       <ResultReview result={result} onExpose={id => { if (!store.markExposed(id)) setMessage(store.lastError); }} />
     </> : <p role="status">No hay un resultado para esta dirección en el perfil actual.</p>)}
