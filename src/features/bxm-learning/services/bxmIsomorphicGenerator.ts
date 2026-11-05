@@ -1,4 +1,4 @@
-import { BxmAuthoredItem } from '../types';
+import type { BxmAuthoredItem } from '../types';
 import templates from '../../../../content/bxm-mvp-learning/isomorphic-templates.json';
 
 export class BxmIsomorphicGenerator {

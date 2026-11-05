@@ -118,6 +118,17 @@ describe('Agent A: BXM Learning Content & Digital Temario', () => {
       expect(item.options.B).toBe('$105$');
       expect(item.correctOption).toBe('A');
     });
+
+    it('generates sphere cross section item correctly with Pythagorean triplet', () => {
+      const item = BxmIsomorphicGenerator.generateSphereCrossSectionItem({
+        tripletIndex: 1, // R=13, d=5, r=12
+        seed: 'test-seed-4'
+      });
+
+      expect(item.familyId).toBe('bxm-iso-geo-sphere-cut');
+      expect(item.options.A).toBe('$12$');
+      expect(item.correctOption).toBe('A');
+    });
   });
 
   describe('Interactive Visual Components', () => {
