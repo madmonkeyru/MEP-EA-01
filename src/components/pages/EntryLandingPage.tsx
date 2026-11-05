@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { LearningJourney } from '../common/LearningJourney';
+import { CostaRicaPlate } from '../maps/CostaRicaPlate';
 import {
   ArrowRight,
   GraduationCap,
+  MapPin,
 } from 'lucide-react';
 
 interface EntryLandingPageProps {
@@ -21,15 +23,40 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
     <div className="entry-page min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-20 w-full space-y-10">
         {/* Simple Top Badge */}
-        {/* Core Value Statement (Simple, direct, no narrative/testimonials) */}
-        <div className="space-y-4">
-          <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 dark:text-indigo-300">Tu próximo paso empieza aquí</p>
-          <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
-            Prepárate para tu próximo paso
-          </h1>
-          <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed">
-            Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo. Cada práctica cuenta.
-          </p>
+        {/* Core Value Statement & Interactive Hero Visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4">
+            <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 dark:text-indigo-300">Tu próximo paso empieza aquí</p>
+            <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+              Prepárate para tu próximo paso
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed">
+              Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo. Práctica oficial e interactiva para toda Costa Rica.
+            </p>
+            <div className="pt-2 flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+              <MapPin className="size-4 text-indigo-600 dark:text-indigo-400" />
+              <span>Sedes y convocatorias activas en las 7 provincias</span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="relative w-full max-w-xs sm:max-w-sm rounded-3xl p-4 ui-surface border border-stone-200/80 dark:border-stone-800 shadow-sm overflow-hidden group">
+              <div className="flex items-center justify-between pb-2 border-b border-stone-100 dark:border-stone-800/80 text-[11px] font-semibold text-stone-500 dark:text-stone-400">
+                <span className="uppercase tracking-wider">Costa Rica · Mapa Interactivo</span>
+                <span className="text-indigo-600 dark:text-indigo-400 font-bold">7 Provincias</span>
+              </div>
+              <div className="relative pt-2">
+                <CostaRicaPlate
+                  className="w-full h-auto max-h-[250px]"
+                  framing="bleed"
+                  interactive={true}
+                />
+              </div>
+              <p className="text-[10px] text-center text-stone-400 dark:text-stone-500 pt-2">
+                Pasa el cursor sobre cada provincia para explorar la cobertura territorial
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Action Pathway Cards for User Flow Validation */}

@@ -41,7 +41,7 @@ describe('PaywallModal', () => {
     fireEvent.click(toggleBtn);
 
     expect(subscriptionService.isPremium()).toBe(true);
-    expect(screen.getByText('Plan Premium Activo')).toBeInTheDocument();
+    expect(screen.getByText('Plan Pro Activo')).toBeInTheDocument();
   });
 
   it('allows simulating upgrade by selecting a plan and closes dialog', () => {

@@ -7,7 +7,6 @@ import { AuthModal } from '../auth/AuthModal';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CustomSelect } from '../common/CustomSelect';
 import { PaywallModal } from '../common/PaywallModal';
-import { Sparkles, Crown } from 'lucide-react';
 
 export function Header({ currentUser, onUserChanged, onNavigateHome, currentView = 'landing', programId = programManifest.default_program, onProgramChange, onOpenHelper }: {
   currentUser: User | null; onUserChanged: (user: User | null) => void; onNavigateHome: () => void;
@@ -49,9 +48,9 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
                 onNavigateHome();
               }
             }}
-            className="brand-link group flex items-center gap-2.5"
+            className="brand-link flex items-center gap-2.5"
           >
-            <img className="brand-logo h-8 sm:h-9 w-auto transition-transform duration-200 group-hover:scale-105" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" />
+            <img className="brand-logo h-8 sm:h-9 w-auto rounded-xl shadow-xs" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" />
             <div>
               <div className="flex items-center gap-1.5">
                 <strong className="tracking-wide text-sm sm:text-base font-bold text-stone-100 font-['Outfit']">MEP-EA-01</strong>
@@ -83,23 +82,17 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
             <button
               type="button"
               onClick={() => setPaywallOpen(true)}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition shadow-2xs ${
+              className={`flex items-center px-2.5 py-1 rounded text-xs font-black tracking-wider transition uppercase cursor-pointer ${
                 tier === 'premium'
-                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 hover:bg-amber-500/30'
-                  : 'bg-indigo-600/30 text-indigo-200 border border-indigo-500/40 hover:bg-indigo-600/50'
+                  ? 'bg-amber-400 text-stone-950 hover:bg-amber-300 shadow-2xs'
+                  : 'bg-stone-800 text-stone-300 border border-stone-700 hover:border-amber-400 hover:text-stone-100'
               }`}
               title="Gestionar plan de estudio y funciones avanzadas"
             >
               {tier === 'premium' ? (
-                <>
-                  <Crown className="size-3 text-amber-400" />
-                  <span>PRO</span>
-                </>
+                <span>PRO</span>
               ) : (
-                <>
-                  <Sparkles className="size-3 text-indigo-400" />
-                  <span className="hidden sm:inline">Planes</span> Pro
-                </>
+                <span><span className="hidden sm:inline">Planes </span>Pro</span>
               )}
             </button>
 
