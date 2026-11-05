@@ -114,3 +114,36 @@ describe("evaluateEquiparacion", () => {
     expect(result.estimatedFee).toBe(12 * 8000);
   });
 });
+
+
+describe("approval safety and selected scope", () => {
+  it("does not count an isolated EDAD part as a complete BXM subject", () => {
+    const result = evaluateEquiparacion({ pathway: "abierta_to_abierta", targetProgram: "bxm", originSystem: "edad", recognizedRecords: [{ subject: "matematica", level: "10", recognized: true }] });
+    expect(result.recognizedItems).toHaveLength(0);
+    expect(result.totalRemainingTests).toBe(6);
+  });
+  it("recognizes both EDAD parts together and limits the estimate to selected subjects", () => {
+    const result = evaluateEquiparacion({ pathway: "abierta_to_abierta", targetProgram: "bxm", originSystem: "edad", recognizedRecords: [{ subject: "matematica", level: "10", recognized: true }, { subject: "matematica", level: "11", recognized: true }], scope: { subjects: ["matematica"], levels: [], includeScience: false } });
+    expect(result.recognizedItems).toHaveLength(1);
+    expect(result.totalRemainingTests).toBe(0);
+    expect(result.estimatedFee).toBe(0);
+  });
+  it("does not deduct unresolved foreign credits or credits for a different science", () => {
+    const foreign = evaluateEquiparacion({ pathway: "foreign_homologation", targetProgram: "bxm", originSystem: "extranjero", hasForeignResolution: false, recognizedRecords: [{ subject: "matematica", recognized: true }] });
+    expect(foreign.recognizedItems).toHaveLength(0);
+    const science = evaluateEquiparacion({ pathway: "same_program", targetProgram: "bxm", originSystem: "bxm", chosenScience: "fisica", recognizedRecords: [{ subject: "ciencias", science: "biologia", recognized: true }] });
+    expect(science.recognizedItems).toHaveLength(0);
+  });
+  it("retains primary program approvals without requiring new paperwork", () => {
+    const result = evaluateEquiparacion({ pathway: "same_program", targetProgram: "i-ii", originSystem: "bxm", recognizedRecords: [{ subject: "matematica", recognized: true }], scope: { subjects: ["matematica", "espanol"], levels: [], includeScience: false } });
+    expect(result.totalRemainingTests).toBe(1);
+    expect(result.guidelines.requiredDocuments).toEqual([]);
+  });
+});
+
+
+it("transfers a complete BXM subject to both EDAD parts", () => {
+  const result = evaluateEquiparacion({ pathway: "abierta_to_abierta", targetProgram: "edad", originSystem: "bxm", recognizedRecords: [{ subject: "matematica", recognized: true }], scope: { subjects: ["matematica"], levels: ["10", "11"], includeScience: false } });
+  expect(result.recognizedItems.map(item => item.level)).toEqual(["10", "11"]);
+  expect(result.totalRemainingTests).toBe(0);
+});

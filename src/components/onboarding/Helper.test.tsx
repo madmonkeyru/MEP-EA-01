@@ -42,7 +42,7 @@ describe('optional guide and resources', () => {
       fireEvent.click(screen.getByRole('button', { name }));
       expect(screen.getAllByRole('link').filter(link => link.getAttribute('href')?.endsWith('.pdf')).length).toBeGreaterThan(0);
     }
-    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'no such resource' } });
+    fireEvent.change(screen.getByRole('searchbox', { name: 'Buscar materiales' }), { target: { value: 'no such resource' } });
     expect(screen.getByRole('status')).toHaveTextContent('0 materiales');
   });
 
@@ -62,7 +62,7 @@ describe('optional guide and resources', () => {
     select('age', '18-plus'); select('schooling', 'ninth');
     select('foreign', 'no'); select('style', 'self'); next();
     select('enrolled', 'not-yet'); select('certs', 'missing'); select('hours', '3-5'); select('confidence', 'mid');
-    for (const name of ['first', 'window', 'id', 'recognition', 'materials']) select(name, 'no');
+    for (const name of ['first', 'id', 'recordOnFile', 'materials']) select(name, 'no');
     fireEvent.click(screen.getByRole('button', { name: 'Ver mi ruta' }));
     expect(screen.getByRole('heading', { name: 'Ruta sugerida: BXM' })).toBeInTheDocument();
     expect(screen.queryByText('Preparación del expediente')).not.toBeInTheDocument();
@@ -115,7 +115,7 @@ describe('optional guide and resources', () => {
 
     // Should now be on the Equiparación step
     expect(screen.getByText(/Evaluador de materias previas/i)).toBeInTheDocument();
-    expect(screen.getByText(/1\. Vía oficial de equiparación/i)).toBeInTheDocument();
+    expect(screen.getByText(/1\. Procedencia de las aprobaciones/i)).toBeInTheDocument();
 
     // Select Formal to Abierta
     select("equiparacionPathway", "formal_to_abierta");

@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { colones, LEVEL_LABEL, PROGRAM_LEVELS, PROGRAM_SUBJECTS, PROGRAMS, SCIENCE_LABEL, subjectLabel } from "../../services/onboarding/catalog";
 import { CHECK, enrollmentLine, FIT_LABEL, narrate, REASON } from "../../services/onboarding/copy";
-import { buildReport, examPlan, programNeedsScope, scopeIsComplete } from "../../services/onboarding/evaluate";
+import { buildReport, examPlan, fullScope, programNeedsScope, scopeIsComplete } from "../../services/onboarding/evaluate";
 import {
   evaluateEquiparacion,
   type EquiparacionPathway,
@@ -23,6 +23,9 @@ import {
 import { profileFrom, scopeFrom, stepsFor, useWizard, type WizardData } from "./wizardStore";
 import type { AgeBand, Certs, CheckId, Confidence, Enroll, Fit, Hours, LevelId, ProgramId, Schooling, ScienceId, Skill, StepId, StudyStyle, SubjectId } from "../../services/onboarding/types";
 import { PROGRAM_ORDER } from "../../services/onboarding/types";
+import { formatCalendarDay, wizardCalendar } from "../../services/onboarding/calendar";
+import { WizardDates } from "./WizardDates";
+import { FormHelper } from "./FormHelper";
 import { Dialog } from '../common/Dialog';
 import { cn } from "./cn";
 import { helperProgramRoute } from './HelperPage';
@@ -129,7 +132,8 @@ function missingHint(data: WizardData): string | null {
     if (!data.age) return "Indica la edad de referencia para tu convocatoria.";
   }
   if (data.step === "equiparacion") {
-    if (!data.equiparacionPathway) return "Seleccione la vía de equiparación o reconocimiento.";
+    if (!data.equiparacionPathway) return "Seleccione la procedencia de sus aprobaciones.";
+    if (data.equiparacionPathway !== "same_program" && !data.equiparacionOrigin) return "Seleccione el sistema educativo de origen.";
   }
 
   return null;
@@ -571,10 +575,10 @@ function PerfilStep() {
           />
         </Question>
       ) : null}
-      {data.program && data.program !== "i-ii" && data.program !== "unsure" && (
+      {data.program && data.program !== "unsure" && (
         <Question
-          legend="¿Tiene asignaturas aprobadas que desee someter a equiparación o convalidación?"
-          hint="Si activa esta opción, se abrirá el paso interactivo de Equiparación para calcular su carga académica restante."
+          legend="¿Ya tiene asignaturas aprobadas de este programa o de otro sistema?"
+          hint="Podrá distinguir aprobaciones del mismo programa de estudios que necesitan reconocimiento. Lo ya aprobado no debe pagarse de nuevo."
         >
           <YesNo name="recognition" value={data.recognition} onChange={(recognition) => patch({ recognition })} />
         </Question>
@@ -644,6 +648,7 @@ function YesNo({ name, value, onChange }: { name: string; value: boolean | null;
 }
 
 const EQUIPARACION_PATHWAYS: { value: EquiparacionPathway; title: string; detail: string }[] = [
+  { value: "same_program", title: "Ya aprobadas en este mismo programa", detail: "Consulta del registro de calificaciones. No requiere una nueva solicitud de equiparación por esas pruebas." },
   {
     value: "formal_to_abierta",
     title: "Colegio formal a Educación Abierta",
@@ -675,7 +680,7 @@ function EquiparacionStep() {
   const patch = data.patch;
   const program = data.program;
 
-  if (!program || program === "unsure" || program === "i-ii") {
+  if (!program || program === "unsure") {
     return (
       <div className="space-y-4">
         <StepHeading
@@ -690,15 +695,18 @@ function EquiparacionStep() {
     );
   }
 
+  const fromBxm = data.equiparacionPathway === "abierta_to_abierta" && data.equiparacionOrigin === "bxm";
   const analysis = data.equiparacionPathway
     ? evaluateEquiparacion({
         pathway: data.equiparacionPathway,
         targetProgram: program,
         originSystem: data.equiparacionOrigin || "colegio_academico",
         recognizedRecords: data.equiparacionRecords,
+        scope: scopeIsComplete(program, scopeFrom(data)) ? scopeFrom(data) : fullScope(program),
         chosenLanguage: data.language || "ingles",
         chosenScience: data.science || "biologia",
         hasForeignResolution: data.hasForeignResolution ?? false,
+        hasRecognition: data.equiparacionPathway === "same_program" || (data.equiparacionPathway === "foreign_homologation" ? data.hasForeignResolution === true : data.recognitionResolved === true),
       })
     : null;
 
@@ -726,12 +734,12 @@ function EquiparacionStep() {
       <StepHeading
         kicker="Reconocimiento y Equiparación"
         title="Evaluador de materias previas"
-        lede="Calcule qué materias se le reconocen formalmente según la normativa MEP DGEC, cuántas pruebas le restan y qué documentos debe consignar."
+        lede="Marca lo que ya aprobaste o lo que consta reconocido en tu expediente. El cálculo es una estimación basada en tus respuestas; no concede equivalencias ni verifica el registro del MEP."
       />
 
-      <Question legend="1. Vía oficial de equiparación">
+      <Question legend="1. Procedencia de las aprobaciones">
         <div className="grid gap-2">
-          {EQUIPARACION_PATHWAYS.map((p) => (
+          {EQUIPARACION_PATHWAYS.filter(p => program === "i-ii" ? p.value === "same_program" : program === "iii" ? p.value !== "abierta_to_abierta" : true).map((p) => (
             <Choice
               key={p.value}
               type="radio"
@@ -746,23 +754,27 @@ function EquiparacionStep() {
         </div>
       </Question>
 
-      {data.equiparacionPathway && (
+      {data.equiparacionPathway && data.equiparacionPathway !== "same_program" && (
         <Question legend="2. Sistema educativo de origen">
           <div className="grid gap-2 sm:grid-cols-2">
-            {ORIGIN_SYSTEMS.map((s) => (
+            {ORIGIN_SYSTEMS.filter(origin => data.equiparacionPathway === "foreign_homologation" ? origin.value === "extranjero" : data.equiparacionPathway === "abierta_to_abierta" ? origin.value === (program === "edad" ? "bxm" : "edad") : ["colegio_academico", "colegio_tecnico", "cindea_ipec"].includes(origin.value)).map((s) => (
               <Choice
                 key={s.value}
                 type="radio"
                 name="equiparacionOrigin"
                 value={s.value}
                 checked={data.equiparacionOrigin === s.value}
-                onSelect={() => patch({ equiparacionOrigin: s.value })}
+                onSelect={() => patch({ equiparacionOrigin: s.value, equiparacionRecords: [], recognitionResolved: null })}
                 title={s.title}
               />
             ))}
           </div>
         </Question>
       )}
+
+      {data.equiparacionPathway && data.equiparacionPathway !== "same_program" && data.equiparacionPathway !== "foreign_homologation" && <Question legend="¿La DGEC ya aprobó el reconocimiento de estas equivalencias?" hint="Si el trámite sigue pendiente o no lo sabes, las materias no se descuentan del plan. Puedes encontrar el formulario y preparar la solicitud abajo.">
+        <YesNo name="recognitionResolved" value={data.recognitionResolved} onChange={recognitionResolved => patch({ recognitionResolved })} />
+      </Question>}
 
       {data.equiparacionPathway === "foreign_homologation" && (
         <Question
@@ -781,9 +793,10 @@ function EquiparacionStep() {
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">3. Marque las asignaturas que ya tiene aprobadas</h2>
           <p className="text-sm text-muted">
-            Seleccione las materias aprobadas con nota igual o superior a la mínima requerida (65 en III Ciclo, 70 en EDAD/BXM).
+            Marca las materias y niveles aprobados que quieres revisar. Para estudios externos, solo se descuentan si indicas que la DGEC ya aprobó las equivalencias. Cursar 10° u 11° no equivale a aprobar una prueba de bachillerato. En traslados de EDAD a BXM, una materia completa exige ambas partes; Prueba 1 sola no basta.
           </p>
 
+          {(program === "edad" || program === "bxm") && (!data.science || !data.language) && <p className="text-sm text-muted">Para registrar aprobaciones de idioma o ciencias, elige primero el idioma y la ciencia en Materias. Las opciones sin elegir siguen pendientes.</p>}
           {program === "iii" && (
             <div className="space-y-4">
               {PROGRAM_LEVELS.iii.map((lvl) => (
@@ -807,13 +820,13 @@ function EquiparacionStep() {
             </div>
           )}
 
-          {program === "edad" && (
+          {program === "edad" && !fromBxm && (
             <div className="space-y-4">
               {PROGRAM_LEVELS.edad.map((lvl) => (
                 <fieldset key={lvl} className="rounded-2xl border border-line bg-paper p-4">
                   <legend className="px-2 font-semibold text-primary">{LEVEL_LABEL[lvl]}</legend>
                   <div className="grid gap-2 sm:grid-cols-2 mt-2">
-                    {PROGRAM_SUBJECTS.edad.map((subj) => (
+                    {PROGRAM_SUBJECTS.edad.filter(subj => subj !== "idioma" || data.language !== null).map((subj) => (
                       <Choice
                         key={`${lvl}-${subj}`}
                         type="checkbox"
@@ -824,25 +837,25 @@ function EquiparacionStep() {
                         title={subj === "idioma" ? (data.language === "frances" ? "Francés" : "Inglés") : subjectLabel("edad", subj)}
                       />
                     ))}
-                    <Choice
+                    {data.science && <Choice
                       type="checkbox"
                       name={`rec-${lvl}-ciencias`}
                       value={`${lvl}-ciencias`}
                       checked={isRecordRecognized("ciencias", lvl, data.science || "biologia")}
                       onSelect={() => toggleRecord("ciencias", lvl, data.science || "biologia")}
                       title={`Ciencias (${SCIENCE_LABEL[data.science || "biologia"]})`}
-                    />
+                    />}
                   </div>
                 </fieldset>
               ))}
             </div>
           )}
 
-          {program === "bxm" && (
+          {(program === "bxm" || program === "i-ii" || (program === "edad" && fromBxm)) && (
             <fieldset className="rounded-2xl border border-line bg-paper p-4">
-              <legend className="px-2 font-semibold text-primary">Bachillerato por Madurez</legend>
+              <legend className="px-2 font-semibold text-primary">{fromBxm ? "Materias completas de BXM · satisfacen ambas partes de EDAD" : PROGRAMS[program].name}</legend>
               <div className="grid gap-2 sm:grid-cols-2 mt-2">
-                {PROGRAM_SUBJECTS.bxm.map((subj) => (
+                {PROGRAM_SUBJECTS[program].filter(subj => subj !== "idioma" || data.language !== null).map((subj) => (
                   <Choice
                     key={`bxm-${subj}`}
                     type="checkbox"
@@ -850,35 +863,36 @@ function EquiparacionStep() {
                     value={`bxm-${subj}`}
                     checked={isRecordRecognized(subj)}
                     onSelect={() => toggleRecord(subj)}
-                    title={subj === "idioma" ? (data.language === "frances" ? "Francés" : "Inglés") : subjectLabel("bxm", subj)}
+                    title={subj === "idioma" ? (data.language === "frances" ? "Francés" : "Inglés") : subjectLabel(program, subj)}
                   />
                 ))}
-                <Choice
+                {(program === "bxm" || program === "edad") && data.science && <Choice
                   type="checkbox"
                   name="rec-bxm-ciencias"
                   value="bxm-ciencias"
                   checked={isRecordRecognized("ciencias", undefined, data.science || "biologia")}
                   onSelect={() => toggleRecord("ciencias", undefined, data.science || "biologia")}
                   title={`Ciencias (${SCIENCE_LABEL[data.science || "biologia"]})`}
-                />
+                />}
               </div>
             </fieldset>
           )}
         </div>
       )}
 
+      {data.equiparacionPathway && data.equiparacionPathway !== "same_program" && <FormHelper key={program} program={program} initialProcess={data.equiparacionPathway === "foreign_homologation" ? "foreign" : "recognition"} />}
       {analysis && (
         <section className="rounded-3xl border border-line bg-surface p-5 space-y-4 shadow-xs">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line pb-3">
             <h3 className="text-xl font-bold">Balance de Equiparación Calculado</h3>
             <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
-              DGEC Normativa Vigente
+              Estimación autodeclarada
             </span>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3 text-sm">
             <div className="rounded-xl bg-paper p-3 border border-line">
-              <span className="text-muted block text-xs">Materias Reconocidas</span>
+              <span className="text-muted block text-xs">Aprobaciones indicadas</span>
               <span className="text-2xl font-bold text-ink tabular-nums">{analysis.recognizedItems.length}</span>
             </div>
             <div className="rounded-xl bg-paper p-3 border border-line">
@@ -903,9 +917,9 @@ function EquiparacionStep() {
           )}
 
           <div className="space-y-3 pt-2">
-            <h4 className="font-semibold text-base">Requisitos documentales obligatorios</h4>
+            <h4 className="font-semibold text-base">Documentos y siguiente paso</h4>
             <p className="text-xs text-muted">
-              {analysis.guidelines.criticalNotice} (Tiempo estimado: {analysis.guidelines.leadTimeWeeks} semanas).
+              {analysis.guidelines.criticalNotice} Consulta los plazos con la DGEC.
             </p>
             <div className="space-y-2">
               {analysis.guidelines.requiredDocuments.map((doc) => (
@@ -959,22 +973,20 @@ function SituacionStep() {
           ))}
         </div>
       </Question>
-      <Question
+      {data.recordOnFile !== true && <Question
         legend="¿Es la primera vez que se matricula en este programa?"
         hint="Los documentos dependen del programa y de la prueba. EDAD pide acreditar III Ciclo para prueba 1 y las materias aprobadas de prueba 1 para prueba 2."
       >
-        <YesNo name="first" value={data.firstEnrollment} onChange={(firstEnrollment) => patch({ firstEnrollment })} />
-      </Question>
-      <Question
-        legend="¿Conoce las fechas de la convocatoria en la que quiere presentarse?"
-        hint="Cada convocatoria abre y cierra por su lado."
-      >
-        <YesNo name="window" value={data.knowsWindow} onChange={(knowsWindow) => patch({ knowsWindow })} />
+        <YesNo name="first" value={data.firstEnrollment} onChange={(firstEnrollment) => patch({ firstEnrollment, ...(firstEnrollment === true ? { recordOnFile: false } : {}) })} />
+      </Question>}
+      {data.program && data.program !== "unsure" && <WizardDates program={data.program} levels={data.levels} />}
+      <Question legend="¿Su expediente de este programa ya fue aceptado por la DGEC?" hint="Haber aprobado una prueba puede indicar que ya tiene expediente. Confírmelo en Yo Aplico. Un expediente previo no sustituye la matrícula de una nueva convocatoria.">
+        <YesNo name="recordOnFile" value={data.recordOnFile} onChange={recordOnFile => patch({ recordOnFile, ...(recordOnFile === true ? { firstEnrollment: false } : {}) })} />
       </Question>
       <Question legend="¿Tiene documento de identidad vigente?">
         <YesNo name="id" value={data.hasId} onChange={(hasId) => patch({ hasId })} />
       </Question>
-      <Question
+      {data.recordOnFile !== true && data.enrolled !== "enrolled" && data.program !== "i-ii" && <Question
         legend="Certificaciones de estudio"
         hint="En primaria por suficiencia no se usan para convalidar. En III Ciclo, EDAD y BXM, sí."
       >
@@ -992,13 +1004,7 @@ function SituacionStep() {
             />
           ))}
         </div>
-      </Question>
-      <Question
-        legend="¿Necesita reconocer materias ya aprobadas?"
-        hint="Colegio, IPEC, CINDEA u otro. El reconocimiento no es automático."
-      >
-        <YesNo name="recognition" value={data.recognition} onChange={(recognition) => patch({ recognition })} />
-      </Question>
+      </Question>}
       <Question legend="Horas de estudio por semana">
         <div className="grid gap-2 sm:grid-cols-2">
           {HOURS.map((item) => (
@@ -1037,11 +1043,13 @@ function SituacionStep() {
   );
 }
 
-function CheckCopy({ id }: { id: CheckId }) {
+function CheckCopy({ id, interactive = false }: { id: CheckId; interactive?: boolean }) {
+  const data = useWizard();
+  const checked = data.completedActions.includes(id);
   const item = CHECK[id];
   return (
     <div>
-      <p className="font-semibold">{item.title}</p>
+      {interactive ? <label className="flex items-start gap-3 font-semibold"><input type="checkbox" checked={checked} onChange={() => data.patch({ completedActions: checked ? data.completedActions.filter(action => action !== id) : [...data.completedActions, id] })} />{item.title}<span className="text-xs text-muted">{checked ? "Listo, según mi reporte" : "Marcar como listo"}</span></label> : <p className="font-semibold">{item.title}</p>}
       <p className="text-sm leading-relaxed text-muted">{item.detail}</p>
       {item.href ? (
         <a
@@ -1089,9 +1097,43 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
     chosen: data.program,
     scope: data.program === "unsure" || !scopeIsComplete(data.program, scopeFrom(data)) ? null : scopeFrom(data),
   });
+  const approvalAnalysis = report.focus && report.focus === data.program && data.recognition && data.equiparacionPathway
+    ? evaluateEquiparacion({ pathway: data.equiparacionPathway, targetProgram: report.focus,
+        originSystem: data.equiparacionOrigin || "colegio_academico", recognizedRecords: data.equiparacionRecords,
+        chosenLanguage: data.language || "ingles", chosenScience: data.science || "biologia",
+        hasForeignResolution: data.hasForeignResolution ?? false,
+        hasRecognition: data.equiparacionPathway === "same_program" || (data.equiparacionPathway === "foreign_homologation" ? data.hasForeignResolution === true : data.recognitionResolved === true), scope: scopeIsComplete(report.focus, scopeFrom(data)) ? scopeFrom(data) : fullScope(report.focus) }) : null;
+  if (approvalAnalysis && report.plan) {
+    report.plan = { ...report.plan, items: approvalAnalysis.remainingItems.map(item => ({
+        label: item.subject === "idioma" && !data.language ? `Idioma · aún sin elegir${item.level ? ' · ' + LEVEL_LABEL[item.level] : ''}` : item.subject === "ciencias" && !data.science && (report.focus === "edad" || report.focus === "bxm") ? `Ciencias · aún sin elegir${item.level ? ' · ' + LEVEL_LABEL[item.level] : ''}` : item.label,
+        tests: item.tests })),
+      totalTests: approvalAnalysis.totalRemainingTests, fee: approvalAnalysis.estimatedFee };
+    if (!approvalAnalysis.totalRemainingTests) report.actions = report.actions.filter(id => !["enroll", "yo-aplico", "payment", "photo-new"].includes(id));
+  }
+  const dates = report.focus ? wizardCalendar(report.focus, report.focus === data.program ? data.levels : []) : null;
+  const dateSummary = dates ? `Fechas consultadas al ${formatCalendarDay(dates.today)} (Costa Rica). ${dates.registration ? `Inscripción: ${dates.registration.start} a ${dates.registration.end || dates.registration.start}.` : 'Sin próxima inscripción en los datos incorporados.'} ${dates.exams.length ? `Pruebas: ${dates.exams.map(event => event.start).join(', ')}.` : 'Sin próximas pruebas en los datos incorporados.'} Fuente: ${dates.registration?.sourceUrl || dates.exams[0]?.sourceUrl || 'https://dgec.mep.go.cr/'}` : '';
   const story = narrate(report);
   const chosenOpen = report.chosenFit === "eligible" || report.chosenFit === "conditional";
   const schooling = SCHOOLING.find((item) => item.value === profile.schooling);
+  function downloadSummary() {
+    const summary = [
+      'Orientación provisional de Educación Abierta', story.title,
+      'Datos autodeclarados. Confirma requisitos, fechas y costos con la DGEC.',
+      ...(report.plan ? [`Plan seleccionado: ${report.plan.totalTests} pruebas pendientes · ${colones(report.plan.fee)} de referencia`, ...report.plan.items.map(item => `${item.label}: ${item.tests} prueba(s)`)] : []),
+      ...(dates ? [dateSummary] : []),
+      ...(approvalAnalysis ? [approvalAnalysis.guidelines.criticalNotice, ...approvalAnalysis.warnings] : []),
+      ...report.actions.map(id => `${data.completedActions.includes(id) ? '[Listo según mi reporte]' : '[Pendiente]'} ${CHECK[id].title}: ${CHECK[id].detail}${CHECK[id].href ? ' ' + CHECK[id].href : ''}`),
+      ...report.rules.map(id => CHECK[id].title + ': ' + CHECK[id].detail),
+      'Formularios y canales de entrega: https://dgec.mep.go.cr/tramites/',
+    ].join('\n\n');
+    const url = URL.createObjectURL(new Blob([summary], { type: 'text/plain;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'mi-orientacion.txt';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
 
   return (
     <div className="space-y-8">
@@ -1110,7 +1152,7 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
       >
         <p className="font-semibold">
           {profile.enrolled === "enrolled"
-            ? "Inscripción activa"
+            ? "Indica que ya está inscrito"
             : profile.enrolled === "in-process"
               ? "Inscripción en trámite"
               : profile.enrolled === "unsure"
@@ -1129,12 +1171,17 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
         <h2 className="text-xl">Sus pendientes, según sus respuestas</h2>
         <p className="mt-2 text-sm text-muted">Esta orientación no verifica documentos ni confirma admisión. Puede explorar y practicar aunque aún falten trámites.</p>
         <dl className="mt-4 grid gap-4 sm:grid-cols-3 text-sm">
-          <div><dt className="text-muted">Identificación</dt><dd>{profile.hasId ? "Indica que la tiene" : "Por reunir"}</dd></div>
-          <div><dt className="text-muted">Fechas de matrícula</dt><dd>{profile.knowsWindow ? "Indica que las conoce" : "Por consultar"}</dd></div>
-          <div><dt className="text-muted">Materiales de estudio</dt><dd>{profile.materials ? "Indica que los tiene" : "Por explorar"}</dd></div>
+          <div><dt className="text-muted">Identificación</dt><dd>{data.hasId === null ? "Por confirmar" : profile.hasId ? "Indica que la tiene" : "Por reunir"}</dd></div>
+          <div><dt className="text-muted">Expediente previo</dt><dd>{data.recordOnFile === null ? "Por confirmar" : data.recordOnFile ? "Indica que fue aceptado" : "Por completar"}</dd></div>
+          <div><dt className="text-muted">Materiales de estudio</dt><dd>{data.materials === null ? "Por confirmar" : profile.materials ? "Indica que los tiene" : "Por explorar"}</dd></div>
         </dl>
       </section>
 
+      {report.focus && <WizardDates program={report.focus} levels={report.focus === data.program ? data.levels : []} />}
+      {report.focus && <FormHelper key={report.focus} program={report.focus} initialProcess={approvalAnalysis?.totalRemainingTests === 0 ? "conclusion" : profile.foreignStudies ? "foreign" : profile.recognition ? "recognition" : "all"} />}
+      {data.program === "unsure" && report.focus && <Button onClick={() => { data.selectProgram(report.focus!); patch({ step: "alcance" }); }}>Personalizar materias y aprobaciones de mi ruta</Button>}
+      {approvalAnalysis && <p role="status">{approvalAnalysis.recognizedItems.length} aprobaciones indicadas descontadas del plan seleccionado. {approvalAnalysis.totalRemainingTests === 0 ? "No quedan pruebas en esta selección. Si completaste todo el programa, consulta el formulario de conclusión o título." : "Consulta el registro antes de matricular las pruebas restantes."}</p>}
+      {approvalAnalysis?.warnings.map(warning => <p key={warning} className="text-sm text-accent">{warning}</p>)}
       <details>
         <summary>Comparar las cuatro ofertas</summary>
         <ol className="mt-4">
@@ -1226,18 +1273,18 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
 
       {report.actions.length > 0 ? (
         <section>
-          <h2 className="text-xl">Qué hacer ahora</h2>
+          <h2 className="text-xl">Qué hacer ahora</h2><p className="text-sm text-muted" aria-live="polite">{report.actions.filter(id => data.completedActions.includes(id)).length} de {report.actions.length} pendientes marcados como listos por ti. No verifica trámites oficiales.</p>
           <ol className="mt-4 space-y-3">
             {report.actions.slice(0, 3).map((id, index) => (
               <li key={id} className="flex gap-3">
                 <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-fg tabular-nums">
                   {index + 1}
                 </span>
-                <CheckCopy id={id} />
+                <CheckCopy id={id} interactive />
               </li>
             ))}
           </ol>
-          {report.actions.length > 3 && <details className="mt-4"><summary>Ver otros pendientes ({report.actions.length - 3})</summary><ul className="space-y-4">{report.actions.slice(3).map(id => <li key={id}><CheckCopy id={id} /></li>)}</ul></details>}
+          {report.actions.length > 3 && <details className="mt-4"><summary>Ver otros pendientes ({report.actions.length - 3})</summary><ul className="space-y-4">{report.actions.slice(3).map(id => <li key={id}><CheckCopy id={id} interactive /></li>)}</ul></details>}
         </section>
       ) : null}
 
@@ -1277,7 +1324,7 @@ function RutaStep({ onNavigate }: { onNavigate: (route: AppRoute) => void }) {
       </details>
 
       {confirmReset && <Dialog title="¿Borrar las respuestas de la guía?" onClose={() => setConfirmReset(false)}><p>Se reinicia la orientación de esta sesión.</p><button className="primary-button" onClick={() => { data.reset(); setConfirmReset(false); }}>Sí, empezar de nuevo</button></Dialog>}
-      <div className="action-row"><button className="secondary-button" onClick={() => window.print()}>Imprimir o guardar mi orientación en PDF</button><button className="secondary-button" onClick={() => { const summary = ['Orientación provisional de Educación Abierta', story.title, 'Confirma requisitos, fechas y costos con la DGEC.', ...report.actions.map(id => CHECK[id].title + ': ' + CHECK[id].detail), ...report.rules.map(id => CHECK[id].title + ': ' + CHECK[id].detail)].join('\n\n'); const url = URL.createObjectURL(new Blob([summary], {type: 'text/plain;charset=utf-8'})); const link = document.createElement('a'); link.href = url; link.download = 'mi-orientacion.txt'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }}>Descargar pendientes completos</button></div>
+      <div className="action-row"><button className="secondary-button" onClick={() => window.print()}>Imprimir o guardar mi orientación en PDF</button><button className="secondary-button" onClick={downloadSummary}>Descargar pendientes completos</button></div>
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         <Button type="button" variant="ghost" onClick={() => patch({ step: "meta" })}>
           Cambiar meta

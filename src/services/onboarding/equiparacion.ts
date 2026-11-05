@@ -5,6 +5,7 @@ import { FEE_COLONES, LEVEL_LABEL, PROGRAM_LEVELS, PROGRAM_SUBJECTS, SCIENCE_LAB
  * Three official equiparación pathways recognized by MEP DGEC
  */
 export type EquiparacionPathway =
+  | "same_program"         // Existing approvals in the selected program; no new recognition request
   | "formal_to_abierta"    // Colegio Académico / Técnico / CINDEA / IPEC -> Abierta (III Ciclo, EDAD, BXM)
   | "abierta_to_abierta"   // Transfers between Educación Abierta programs (EDAD <-> BXM)
   | "foreign_homologation"; // Estudios en el extranjero con resolución DGEC / Dirección Regional
@@ -65,9 +66,11 @@ export interface EquiparacionEvaluationInput {
   targetProgram: ProgramId;
   originSystem: OriginSystem;
   recognizedRecords: RecognizedRecord[];
+  scope?: { subjects: SubjectId[]; levels: LevelId[]; includeScience: boolean };
   chosenLanguage?: "ingles" | "frances";
   chosenScience?: ScienceId;
   hasForeignResolution?: boolean;
+  hasRecognition?: boolean;
 }
 
 /**
@@ -87,6 +90,25 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
     warnings.push("Los estudios cursados en el exterior requieren de previo acuerdo de homologación y resolución oficial expedida por el Departamento de Estudios Extranjeros de la DGEC antes de matricular.");
   }
 
+  // A foreign record cannot clear local tests without a resolution. Partial EDAD
+  // credits cannot clear the combined BXM test; records without levels represent
+  // a complete subject already accredited by DGEC, as requested by the UI.
+  if (pathway !== "same_program" && pathway !== "foreign_homologation" && input.hasRecognition === false) {
+    warnings.push("El reconocimiento está pendiente de confirmación. Las materias marcadas no se descuentan del total hasta que indiques que la DGEC aprobó su equivalencia.");
+  }
+  const usableRecords = recognizedRecords.filter(record =>
+    !(pathway !== "same_program" && input.hasRecognition === false) &&
+    !(pathway === "foreign_homologation" && !input.hasForeignResolution) &&
+    !(targetProgram === "i-ii" && pathway !== "same_program") &&
+    !(record.subject === "ciencias" && record.science && record.science !== chosenScience)
+  );
+  const approved = (subject: SubjectId, level?: LevelId) => {
+    const has = (grade?: LevelId) => usableRecords.some(record => record.subject === subject && record.recognized && record.level === grade);
+    if (pathway === "abierta_to_abierta" && input.originSystem === "edad" && targetProgram === "bxm") return has() || (has("10") && has("11"));
+    if (pathway === "abierta_to_abierta" && input.originSystem === "bxm" && targetProgram === "edad") return has();
+    return has(level);
+  };
+
   // 2. Identify recognized vs remaining
   const recognizedItems: EquiparacionAnalysis["recognizedItems"] = [];
   const remainingItems: EquiparacionAnalysis["remainingItems"] = [];
@@ -98,9 +120,7 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
 
     levels.forEach((lvl) => {
       subjects.forEach((subj) => {
-        const isRecognized = recognizedRecords.some(
-          (r) => r.subject === subj && r.level === lvl && r.recognized,
-        );
+        const isRecognized = approved(subj, lvl);
         const label = `${subjectLabel("iii", subj)} (${LEVEL_LABEL[lvl]})`;
         if (isRecognized) {
           recognizedItems.push({ label, subject: subj, level: lvl });
@@ -116,9 +136,7 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
 
     levels.forEach((lvl) => {
       baseSubjects.forEach((subj) => {
-        const isRecognized = recognizedRecords.some(
-          (r) => r.subject === subj && r.level === lvl && r.recognized,
-        );
+        const isRecognized = approved(subj, lvl);
         const name = subj === "idioma" ? (chosenLanguage === "ingles" ? "Inglés" : "Francés") : subjectLabel("edad", subj);
         const label = `${name} (${LEVEL_LABEL[lvl]})`;
         if (isRecognized) {
@@ -129,9 +147,7 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
       });
 
       // Science for this level
-      const isScienceRecognized = recognizedRecords.some(
-        (r) => r.subject === "ciencias" && r.level === lvl && r.recognized,
-      );
+      const isScienceRecognized = approved("ciencias", lvl);
       const sciLabel = `Ciencias (${SCIENCE_LABEL[chosenScience]}) (${LEVEL_LABEL[lvl]})`;
       if (isScienceRecognized) {
         recognizedItems.push({ label: sciLabel, subject: "ciencias", level: lvl, science: chosenScience });
@@ -140,6 +156,12 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
       }
     });
 
+    if (input.scope?.levels.includes("11")) {
+      const selectedSubjects = [...input.scope.subjects, ...(input.scope.includeScience ? ["ciencias" as SubjectId] : [])];
+      if (selectedSubjects.some(subject => !approved(subject, "10") && !approved(subject, "11"))) {
+        warnings.push("El total pendiente no significa que puedas matricular ambas partes a la vez. Para cada materia de Prueba 2 seleccionada, primero debes tener aprobada o reconocida la Prueba 1.");
+      }
+    }
     // Check Parte 1 gate warning
     const part2WithoutPart1 = baseSubjects.some((subj) => {
       const part1Done = recognizedRecords.some((r) => r.subject === subj && r.level === "10" && r.recognized);
@@ -154,9 +176,7 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
     const baseSubjects = PROGRAM_SUBJECTS.bxm;
 
     baseSubjects.forEach((subj) => {
-      const isRecognized = recognizedRecords.some(
-        (r) => r.subject === subj && r.recognized,
-      );
+      const isRecognized = approved(subj);
       const name = subj === "idioma" ? (chosenLanguage === "ingles" ? "Inglés" : "Francés") : subjectLabel("bxm", subj);
       const label = `${name} (Bachillerato)`;
       if (isRecognized) {
@@ -166,9 +186,7 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
       }
     });
 
-    const isScienceRecognized = recognizedRecords.some(
-      (r) => r.subject === "ciencias" && r.recognized,
-    );
+    const isScienceRecognized = approved("ciencias");
     const sciLabel = `Ciencias (${SCIENCE_LABEL[chosenScience]}) (Bachillerato)`;
     if (isScienceRecognized) {
       recognizedItems.push({ label: sciLabel, subject: "ciencias", science: chosenScience });
@@ -192,13 +210,19 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
   // 3. Assemble submission guidelines based on pathway and origin
   let guidelines: EquiparacionSubmissionGuideline;
 
-  if (pathway === "foreign_homologation") {
+  if (pathway === "same_program") {
+    guidelines = {
+      channel: "dgec_consultas", portalUrl: "https://portaldgec.mep.go.cr/yo_aplico/Login", leadTimeWeeks: 0,
+      criticalNotice: "Las pruebas ya aprobadas en este mismo programa no requieren una nueva equiparación. Consulta el registro de calificaciones y matricula solo las pendientes. Si falta una aprobación en el registro, consulta a la DGEC antes de pagar.",
+      requiredDocuments: [],
+    };
+  } else if (pathway === "foreign_homologation") {
     guidelines = {
       channel: "foreign_resolution",
       emailTarget: "dgec.reconocimientos@mep.go.cr",
       portalUrl: "https://www.dgec.mep.go.cr/certificacion-extranjera",
       leadTimeWeeks: 6,
-      criticalNotice: "El trámite de reconocimiento de títulos extranjeros debe iniciarse con al menos 6 semanas de antelación al periodo oficial de matrícula en Yo Aplico.",
+      criticalNotice: "Consulta los requisitos y los plazos vigentes para el reconocimiento de estudios extranjeros antes de la matrícula. Esta guía no garantiza un tiempo de resolución.",
       requiredDocuments: [
         {
           code: "DOC-EXT-01",
@@ -230,9 +254,9 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
       requiredDocuments: [
         {
           code: "DOC-AA-01",
-          title: "Formulario de Traslado Interno de Asignaturas",
-          description: "Solicitud de convalidación entre programas de Educación Abierta con indicación de convocatoria de aprobación.",
-          mandatory: true,
+          title: "Consulta sobre traslado de asignaturas",
+          description: "Indica el programa, las asignaturas y la convocatoria de aprobación. Confirma con la DGEC si procede una solicitud adicional; esta guía no incorpora un formulario específico de traslado.",
+          mandatory: false,
         },
         {
           code: "DOC-AA-02",
@@ -280,6 +304,14 @@ export function evaluateEquiparacion(input: EquiparacionEvaluationInput): Equipa
     };
   }
 
+  // The estimate is for the selected subjects and levels, not the entire curriculum.
+  if (input.scope) {
+    const inScope = (item: { subject: SubjectId; level?: LevelId }) =>
+      (item.subject === "ciencias" && (targetProgram === "edad" || targetProgram === "bxm") ? input.scope!.includeScience : input.scope!.subjects.includes(item.subject)) &&
+      (!item.level || input.scope!.levels.includes(item.level));
+    for (let index = remainingItems.length - 1; index >= 0; index--) if (!inScope(remainingItems[index])) remainingItems.splice(index, 1);
+    for (let index = recognizedItems.length - 1; index >= 0; index--) if (!inScope(recognizedItems[index])) recognizedItems.splice(index, 1);
+  }
   const totalRemainingTests = remainingItems.reduce((acc, curr) => acc + curr.tests, 0);
   const estimatedFee = totalRemainingTests * FEE_COLONES;
 

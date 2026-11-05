@@ -257,3 +257,20 @@ describe("exam plan", () => {
 });
 
 
+
+
+describe("existing enrollment paperwork", () => {
+  it("does not ask for entry certification again with an accepted expediente", () => {
+    const report = buildReport({ profile: profile({ schooling: "ninth", firstEnrollment: false, recordOnFile: true }), chosen: "bxm", scope: readyScope });
+    assert.ok(!report.actions.includes("certificates"));
+    assert.ok(!report.actions.includes("regional-signature"));
+    assert.ok(!report.actions.includes("photo-new"));
+    assert.ok(report.actions.includes("grade-record"));
+  });
+  it("does not direct an in-process candidate to pay and enroll again", () => {
+    const report = buildReport({ profile: profile({ enrolled: "in-process" }), chosen: "iii", scope: readyScope });
+    assert.ok(!report.actions.includes("yo-aplico"));
+    assert.ok(!report.actions.includes("payment"));
+    assert.ok(report.actions.includes("track-window"));
+  });
+});

@@ -2,6 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from "react";
 import { PROGRAM_LEVELS, PROGRAM_SUBJECTS } from "../../services/onboarding/catalog";
 import type {
   AgeBand,
+  CheckId,
   Certs,
   Confidence,
   Enroll,
@@ -25,6 +26,7 @@ import type {
 
 export type WizardData = {
   step: StepId;
+  completedActions: CheckId[];
   program: ProgramId | "unsure" | null;
   subjects: SubjectId[];
   levels: LevelId[];
@@ -45,6 +47,8 @@ export type WizardData = {
   hasId: boolean | null;
   certificates: Certs | null;
   recognition: boolean | null;
+  recordOnFile: boolean | null;
+  recognitionResolved: boolean | null;
   // Equiparación interactive configuration
   equiparacionPathway: EquiparacionPathway | null;
   equiparacionOrigin: OriginSystem | null;
@@ -63,6 +67,7 @@ type WizardStore = WizardData & {
 
 export const initialWizard: WizardData = {
   step: "meta",
+  completedActions: [],
   program: null,
   subjects: [],
   levels: [],
@@ -83,6 +88,8 @@ export const initialWizard: WizardData = {
   hasId: null,
   certificates: null,
   recognition: null,
+  recordOnFile: null,
+  recognitionResolved: null,
   equiparacionPathway: null,
   equiparacionOrigin: null,
   equiparacionRecords: [],
@@ -110,8 +117,18 @@ export function WizardProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<WizardData>(initialWizard);
   const value: WizardStore = {
     ...data,
-    patch: partial => setData(previous => ({ ...previous, ...partial })),
-    selectProgram: program => setData(previous => ({ ...previous, program,
+    patch: partial => setData(previous => ({ ...previous,
+      ...(partial.equiparacionPathway !== undefined && partial.equiparacionPathway !== previous.equiparacionPathway ? { equiparacionRecords: [], equiparacionOrigin: null, hasForeignResolution: null, recognitionResolved: null } : {}),
+      ...partial,
+      ...(partial.equiparacionRecords === undefined &&
+        ((partial.language !== undefined && partial.language !== previous.language) || (partial.science !== undefined && partial.science !== previous.science))
+        ? { equiparacionRecords: previous.equiparacionRecords.filter(record =>
+            !(partial.language !== undefined && partial.language !== previous.language && record.subject === "idioma") &&
+            !(partial.science !== undefined && partial.science !== previous.science && record.subject === "ciencias")) } : {}),
+    })),
+    selectProgram: program => setData(previous => previous.program === program ? previous : ({ ...previous, program, step: "meta",
+      completedActions: [], enrolled: null, firstEnrollment: null, recordOnFile: null, certificates: null, recognition: null,
+      equiparacionPathway: null, equiparacionOrigin: null, equiparacionRecords: [], hasForeignResolution: null, recognitionResolved: null,
       ...(program === "unsure" ? { subjects: [], levels: [], includeScience: false, science: null, language: null } : scopeFor(program)),
     })),
     reset: () => setData({ ...initialWizard }),
@@ -126,7 +143,7 @@ export function useWizard<T = WizardStore>(selector?: (state: WizardStore) => T)
 }
 
 export function stepsFor(program: WizardData["program"], recognition?: boolean | null): StepId[] {
-  const needsEquiparacion = Boolean(recognition && program && program !== "i-ii" && program !== "unsure");
+  const needsEquiparacion = Boolean(recognition && program && program !== "unsure");
   if (program && program !== "unsure") {
     return needsEquiparacion
       ? ["meta", "alcance", "perfil", "equiparacion", "situacion", "ruta"]
@@ -151,7 +168,9 @@ export function profileFrom(data: WizardData): Profile | null {
     age: data.age, schooling: data.schooling, adolescentMother: data.adolescentMother ?? false, formalBachillerato: data.formalBachillerato ?? false,
     literacy: data.literacy || 'basic', numeracy: data.numeracy || 'basic', foreignStudies: data.foreignStudies ?? false, studyStyle: data.studyStyle || 'unsure',
     enrolled: data.enrolled || 'unsure', firstEnrollment: data.firstEnrollment ?? true, knowsWindow: data.knowsWindow ?? false, hasId: data.hasId ?? false,
-    certificates: data.certificates || 'missing', recognition: data.recognition ?? false, hours: data.hours || '0-2', materials: data.materials ?? false, confidence: data.confidence || 'mid',
+    certificates: data.certificates || 'missing', recognition: Boolean(data.recognition && data.equiparacionPathway !== "same_program" && data.recognitionResolved !== true && !(data.equiparacionPathway === "foreign_homologation" && data.hasForeignResolution === true)), hours: data.hours || '0-2', materials: data.materials ?? false, confidence: data.confidence || 'mid',
+    recordOnFile: data.recordOnFile,
+    hasForeignResolution: data.hasForeignResolution,
     unconfirmed: Object.entries(data).filter(([, value]) => value === null).map(([key]) => key),
   };
 }

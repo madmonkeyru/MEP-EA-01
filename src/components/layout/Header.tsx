@@ -81,9 +81,8 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
                 <strong className="tracking-wide text-sm sm:text-base font-bold text-stone-100 font-['Outfit'] truncate">MEP-EA-01</strong>
-                <span className="text-[9px] uppercase font-bold tracking-widest px-1.5 py-0.2 rounded bg-indigo-950/80 text-indigo-300 border border-indigo-700/50 shrink-0">PROTOTIPO</span>
               </div>
-              <span className="text-xs text-stone-400 font-medium truncate block max-w-[200px] sm:max-w-none">Educación Abierta Digital · Preparación independiente</span>
+              <span className="text-xs text-stone-400 font-medium truncate block max-w-[200px] sm:max-w-none">Educación Abierta Digital </span>
             </div>
           </a>
 

@@ -40,12 +40,36 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
   function change(tab: string, resourceTab?: string) { if (onNavigate) navigate({ ...context, tab, resourceTab: resourceTab || context.resourceTab }); else { setLocalTab(tab); if (resourceTab) setLocalResource(resourceTab); } }
   return <div className="subject-hub-page page-width py-8 space-y-6" data-revision={revision}>
     <Breadcrumbs items={[{ label: 'Programas', href: '#/programas' }, { label: program?.name || 'BXM', href: routeHash({ ...context, view: 'framework', subjectId: undefined }), onClick: onNavigateHome }, { label: 'Matemáticas' }]} />
-    <header className="page-intro p-6 sm:p-8 rounded-3xl space-y-4">
-      <p className="eyebrow">Práctica interactiva disponible</p>
-      <h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1>
-      <p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>
-      {context.convocatoriaId === '2026-c2' && <button className="primary-button" onClick={() => navigate({ ...context, view: 'learning', tab: 'diagnostic', sessionId: undefined })}>Abrir aprendizaje guiado</button>}
-      {contextControls}
+    <header className="page-intro relative isolate overflow-hidden p-6 sm:p-8 rounded-3xl">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 480 260"
+        preserveAspectRatio="xMaxYMid slice"
+        className="absolute inset-y-0 right-0 h-full w-[min(60%,32rem)] text-indigo-950/15 dark:text-indigo-100/10 pointer-events-none select-none"
+        fill="none"
+      >
+        <g stroke="currentColor" strokeWidth="1">
+          <path d="M170 220H470M205 245V20" opacity=".35" />
+          <path d="M205 190C245 190 265 42 310 42S365 190 435 190" opacity=".75" />
+          <path d="M250 220V42M295 220V42M340 220V42M385 220V42M430 220V42M205 85H470M205 130H470M205 175H470" strokeDasharray="3 7" opacity=".3" />
+          <path d="M330 188 375 105 420 188Z" opacity=".65" />
+          <circle cx="375" cy="145" r="44" opacity=".6" />
+        </g>
+        <g fill="currentColor" fontFamily="ui-sans-serif, system-ui, sans-serif" fontSize="18" opacity=".65">
+          <text x="360" y="52">x² + y²</text>
+          <text x="425" y="112">π</text>
+          <text x="270" y="210">∑</text>
+          <text x="225" y="58">f(x)</text>
+        </g>
+      </svg>
+      <div className="relative z-10 space-y-4">
+        <p className="eyebrow">Práctica interactiva disponible</p>
+        <h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1>
+        <p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>
+        {context.convocatoriaId === '2026-c2' && <button className="primary-button" onClick={() => navigate({ ...context, view: 'learning', tab: 'diagnostic', sessionId: undefined })}>Abrir aprendizaje guiado</button>}
+        {contextControls}
+      </div>
     </header>
 
     {/* Dynamic MEP Milestones Banner */}

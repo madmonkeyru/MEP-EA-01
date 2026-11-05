@@ -95,6 +95,8 @@ export type CheckId =
 export type StepId = "meta" | "alcance" | "perfil" | "equiparacion" | "situacion" | "ruta";
 
 export type Profile = {
+  recordOnFile?: boolean | null;
+  hasForeignResolution?: boolean | null;
   unconfirmed?: string[];
   age: AgeBand;
   adolescentMother: boolean;

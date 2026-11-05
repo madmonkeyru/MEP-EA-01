@@ -38,10 +38,6 @@ export const ProgramSchedulesOverview: React.FC = () => {
     <section className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8 shadow-xs dark:border-stone-800 dark:bg-stone-900 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-stone-100 dark:border-stone-800 pb-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950 text-xs font-semibold text-indigo-700 dark:text-indigo-300 mb-1">
-            <Calendar className="size-3.5" />
-            <span>Calendario Multiprograma DGEC</span>
-          </div>
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
             Cronograma Oficial de Pruebas y Matrícula
           </h2>

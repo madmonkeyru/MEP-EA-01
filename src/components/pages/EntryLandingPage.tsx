@@ -56,10 +56,10 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
               <span>Educación Abierta Costa Rica</span>
             </div>
             <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
-              Prepárate para tu próximo paso
+              Prepárate para cualquier materia
             </h1>
             <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
-              Encuentra tu programa, refuerza lo que sabes y prepárate a tu ritmo con simulaciones de examen oficiales para toda Costa Rica.
+              Refuerza lo que sabes y prepárate a tu ritmo
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
                   Activo
                 </span>
                 <span className="text-xs font-semibold text-stone-500 dark:text-stone-400">
-                  10° y 11° Año
+                  Bachillerato
                 </span>
               </div>
               <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
@@ -102,14 +102,14 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
                   Portal
                 </span>
                 <span className="text-xs font-semibold text-stone-500 dark:text-stone-400">
-                  4 Programas MEP
+                  4 Programas
                 </span>
               </div>
               <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                Explorar Programas MEP
+                Explorar Programas
               </h2>
               <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                Consulta los 4 planes de estudio (CICO, III Ciclo, EDAD, BXM), reglas de calculadora,
+                Consulta los 4 planes de estudio (I&II CICLO, III Ciclo, EDAD, BXM), reglas de calculadora,
                 notas mínimas y convocatorias de referencia.
               </p>
             </div>

@@ -181,13 +181,14 @@ function buildLists(
   const rules: CheckId[] = ["align-topology"];
 
   if (!profile.hasId) actions.push("bring-id");
-  if (program !== "i-ii" && profile.certificates !== "ready") actions.push("certificates");
-  if ((program === "edad" || program === "bxm") && profile.certificates !== "ready") {
+  const needsEntryDocuments = profile.recordOnFile !== true && profile.enrolled !== "enrolled";
+  if (needsEntryDocuments && program !== "i-ii" && profile.certificates !== "ready") actions.push("certificates");
+  if (needsEntryDocuments && (program === "edad" || program === "bxm") && profile.certificates !== "ready") {
     actions.push("regional-signature");
   }
   if (profile.recognition && program !== "i-ii") actions.push("recognition");
   if (profile.recognition && program === "i-ii") rules.push("no-recognition");
-  if (profile.foreignStudies && program !== "i-ii") actions.push("foreign-dgec");
+  if (needsEntryDocuments && profile.foreignStudies && profile.hasForeignResolution !== true && program !== "i-ii") actions.push("foreign-dgec");
   if (
     program === "bxm" &&
     (fits.bxm.reasons.includes("bxm-mother") || fits.bxm.reasons.includes("bxm-formal"))
@@ -197,9 +198,9 @@ function buildLists(
 
   if (profile.enrolled === "enrolled" || profile.enrolled === "in-process") actions.push("track-window");
   else actions.push("enroll");
-  if (profile.enrolled !== "enrolled") actions.push("yo-aplico", "payment", "grade-record");
-  if ((profile.firstEnrollment || program === 'edad') && profile.enrolled !== "enrolled") actions.push("photo-new");
-  if (profile.firstEnrollment && program === "iii") actions.push("email");
+  if (profile.enrolled === "not-yet" || profile.enrolled === "unsure") actions.push("yo-aplico", "payment", "grade-record");
+  if (needsEntryDocuments && (profile.firstEnrollment || program === 'edad') && profile.enrolled !== "in-process") actions.push("photo-new");
+  if (needsEntryDocuments && profile.firstEnrollment && program === "iii") actions.push("email");
 
   if (profile.hours === "0-2") actions.push("hours");
   if (!profile.materials) actions.push("materials");

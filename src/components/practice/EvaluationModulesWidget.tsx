@@ -163,11 +163,11 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
         <div className="flex items-center gap-2">
           {tier === 'premium' ? (
             <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-black tracking-wider uppercase bg-amber-400 text-stone-950 shadow-2xs">
-              Modo Pro Activo
+              Pro
             </span>
           ) : (
             <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
-              1 Prueba Oficial Libre
+              1 Practica Oficial Gratis
             </span>
           )}
         </div>

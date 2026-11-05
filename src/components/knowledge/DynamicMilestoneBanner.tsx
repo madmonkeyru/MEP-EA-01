@@ -60,9 +60,6 @@ export const DynamicMilestoneBanner: React.FC<{
             Hitos y Fechas Oficiales MEP · Convocatoria {convocatoriaId.replace(/^(\d{4})-c(\d)$/, '0$2-$1')}
           </h2>
         </div>
-        <span className="text-[11px] font-medium text-stone-500 dark:text-stone-400">
-          Hora de Costa Rica · Verificado con DGEC
-        </span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

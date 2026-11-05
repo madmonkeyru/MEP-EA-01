@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, BookOpen, Compass, FileText, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, CheckCircle2 } from 'lucide-react';
 import { AppRoute, routeHash } from '../../services/navigation';
 import { PROGRAMS, PROGRAM_LEVELS, PROGRAM_SUBJECTS, subjectLabel } from '../../services/onboarding/catalog';
 import { PROGRAM_ORDER, type ProgramId, type LevelId } from '../../services/onboarding/types';
 import { useWizard } from './wizardStore';
+import { FormHelper } from './FormHelper';
 import { OfficialResources } from '../knowledge/OfficialResources';
 import { dataService } from '../../services/dataService';
 
@@ -60,9 +61,9 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
           <span className="flex size-7 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-bold text-xs">
             2
           </span>
-          <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Prepara formularios DGEC</h3>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Revisa tu expediente y trámite</h3>
           <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-            Ten a mano el comprobante de arancel (₡8,000 por prueba), documento de identidad vigente y certificación de estudios previos.
+            Consulta tus aprobaciones y el aviso de matrícula. Un expediente aceptado puede evitar repetir documentos de ingreso; usa el buscador para identificar el trámite que sí necesitas.
           </p>
         </div>
         <div className="rounded-2xl border border-stone-200/80 bg-white dark:border-stone-800 dark:bg-stone-900 p-4 space-y-2">
@@ -71,7 +72,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
           </span>
           <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">Ensaya con la Prueba Oficial Libre</h3>
           <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-            Realiza el examen de práctica de 60 preguntas de referencia MEP para evaluar tu nivel sin costo ni límites.
+            Explora los materiales oficiales de tu programa. En Matemáticas BXM puedes practicar el formato de 60 preguntas y revisar explicaciones.
           </p>
         </div>
       </div>
@@ -91,53 +92,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
       </div>
     </section>
 
-    {/* Official Forms Identification */}
-    <section className="space-y-4" aria-labelledby="official-forms-title">
-      <h2 id="official-forms-title" className="text-xl font-semibold flex items-center gap-2">
-        <FileText size={20} className="text-indigo-600 dark:text-indigo-400" />
-        <span>Formularios y Trámites DGEC Oficiales</span>
-      </h2>
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div className="ui-surface rounded-2xl p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <h3 className="font-bold text-sm">Formulario de Matrícula (F-01)</h3>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
-              Yo Aplico
-            </span>
-          </div>
-          <p className="text-xs text-muted leading-relaxed">
-            Se gestiona en línea a través de la plataforma <strong>Yo Aplico</strong> del MEP durante las fechas oficiales de inscripción de cada convocatoria.
-          </p>
-          <div className="pt-2">
-            <a
-              href="https://portaldgec.mep.go.cr/yo_aplico/Login"
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs text-indigo-600 dark:text-indigo-400 underline font-semibold"
-            >
-              Ir a Portal Yo Aplico →
-            </a>
-          </div>
-        </div>
-
-        <div className="ui-surface rounded-2xl p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <h3 className="font-bold text-sm">Pago de Arancel (Derechos de Examen)</h3>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
-              ₡8,000 / materia
-            </span>
-          </div>
-          <p className="text-xs text-muted leading-relaxed">
-            Debe cancelarse en las cuentas oficiales del MEP (Banco Nacional de Costa Rica) indicando tu número de cédula y código del programa.
-          </p>
-          <div className="pt-2">
-            <span className="text-xs text-stone-500 dark:text-stone-400">
-              Conserva el comprobante digital para adjuntarlo en la matrícula.
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <FormHelper key={program} program={program} />
 
     <section className="space-y-4" aria-labelledby="helper-programs">
       <h2 id="helper-programs" className="text-xl font-semibold">Conoce tus opciones</h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgramInfo } from '../../types';
-import { GraduationCap, ArrowRight, Calculator, Ban, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Calculator, Ban, CheckCircle } from 'lucide-react';
 
 interface ProgramCardProps {
   program: ProgramInfo;
@@ -21,8 +21,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       <div>
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-2 mb-3.5">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[10px] font-bold rounded-lg uppercase tracking-wider border border-stone-200/60 dark:border-stone-700/60">
-            <GraduationCap className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+          <span className="inline-flex items-center px-2.5 py-1 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[10px] font-bold rounded-lg uppercase tracking-wider border border-stone-200/60 dark:border-stone-700/60">
             {program.id.toUpperCase()}
           </span>
 
@@ -32,7 +31,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
               Práctica disponible
             </span>
           ) : (
-            <span className="text-[10px] font-semibold text-stone-600 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded-full border border-stone-200/50 dark:border-stone-700/50">
+            <span className="text-[10px] font-semibold text-stone-600 dark:text-stone-400">
               PDF y estructura
             </span>
           )}
@@ -50,8 +49,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
         <p className="muted mt-3 text-xs leading-relaxed">{program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Para completar primaria. Consulta la edad y habilidades de ingreso en la guía.' : program.id === 'iii_ciclo' ? 'Requiere primaria completa; prepara séptimo, octavo y noveno.' : program.id === 'edad' ? 'Requiere noveno; décimo y undécimo se evalúan por separado.' : 'Requiere noveno; consulta la edad ordinaria y las excepciones.'}</p>
         {/* Metadata Details */}
         <div className="mt-4 pt-3 border-t border-[var(--border-subtle,#e7e2d8)] dark:border-[var(--border-subtle,#3d3733)] grid grid-cols-2 gap-2 text-[11px] font-semibold">
-          <div className="flex items-center gap-1.5 text-stone-700 dark:text-stone-300">
-            <Award className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+          <div className="text-stone-700 dark:text-stone-300">
             <span>Mínimo: {program.passingScore} pts</span>
           </div>
 

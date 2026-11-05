@@ -201,7 +201,7 @@ export const CHECK: Record<CheckId, { title: string; detail: string; href?: stri
   },
   enroll: {
     title: "Inscríbase antes del cierre",
-    detail: "Sin inscripción no hay prueba, aunque el estudio ya esté avanzado.",
+    detail: "Cuando se publique y abra el periodo de tu convocatoria, matricula las pruebas pendientes. Una fecha pasada no habilita la inscripción; puedes estudiar mientras esperas el próximo aviso.",
   },
   hours: {
     title: "Organice un horario de estudio realista",

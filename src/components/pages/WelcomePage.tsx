@@ -60,7 +60,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             Encuentra tu programa de estudio
           </h1>
           <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 max-w-xl leading-relaxed">
-            Hay distintas rutas para seguir estudiando. Explora tu programa y encuentra el siguiente paso en tu preparación.
+            Hay distintas opciones para completar la escuela, el noveno grado, y obtener el bachillerato. Explora el programa que mejor te ayuda a obtener tu titulo.
           </p>
         </div>
       </div>
@@ -72,9 +72,6 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
               Bachillerato por Madurez Suficiente
             </span>
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300/50 dark:border-emerald-700/50">
-              Interactivo
-            </span>
           </div>
 
           <h2 className="text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight font-['Outfit']">
@@ -82,7 +79,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
           </h2>
 
           <p className="text-sm text-stone-700 dark:text-stone-300 font-normal leading-relaxed">
-            Prácticas temáticas, simulaciones de examen completas, explicaciones paso a paso y fórmulas oficiales.
+            Prácticas completas, simulaciones de examen, explicaciones con pasos y fórmulas oficiales.
           </p>
         </div>
 
@@ -91,7 +88,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
             onClick={onEnterMvpMath}
             className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-sm cursor-pointer min-h-[48px] hover:shadow-md"
           >
-            <span>Practicar Matemáticas BXM</span>
+            <span>Practicar</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
