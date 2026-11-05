@@ -117,11 +117,11 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
       </header>
 
       {/* Mandatory MEP Formative Disclaimer */}
-      <div className="bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500 p-3 sm:p-4 rounded-r-md text-xs sm:text-sm text-amber-900 dark:text-amber-200 flex items-start gap-3">
+      <div className="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-500 p-3 sm:p-4 rounded-r-xl text-xs sm:text-sm text-amber-950 dark:text-amber-100 flex items-start gap-3 border-y border-r border-amber-200 dark:border-amber-900/60 shadow-xs">
         <span className="text-lg leading-none select-none">ℹ️</span>
         <div>
-          <p className="font-bold">Indicador de estudio:</p>
-          <p className="mt-0.5 leading-relaxed">{readiness.disclaimerEs}</p>
+          <p className="font-bold text-amber-950 dark:text-amber-200">Indicador de estudio:</p>
+          <p className="mt-0.5 leading-relaxed text-stone-750 dark:text-stone-300">{readiness.disclaimerEs}</p>
         </div>
       </div>
 

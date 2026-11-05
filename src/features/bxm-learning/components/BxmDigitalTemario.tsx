@@ -7,6 +7,7 @@ import {
 } from '../types';
 import { BxmContentService } from '../services/bxmContentService';
 import { BxmLessonView } from './BxmLessonView';
+import { Sliders } from 'lucide-react';
 
 export interface BxmDigitalTemarioProps {
   callbacks?: BxmAssessmentCallbacks;
@@ -181,40 +182,40 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
 
       {/* Active Modal / Detail for scaffolded node without rich lesson */}
       {activeEvidenceKey && !activeLesson && activeEvidenceNode && (
-        <div className="p-5 rounded-2xl border border-amber-300 dark:border-amber-800 bg-amber-50/70 dark:bg-amber-950/30 space-y-3">
+        <div className="p-5 rounded-2xl border border-amber-300 dark:border-amber-700/80 bg-amber-50/80 dark:bg-amber-950/40 space-y-3 shadow-sm">
           <div className="flex justify-between items-start">
             <div>
-              <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200">
+              <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-200 dark:bg-amber-900/80 text-amber-950 dark:text-amber-200">
                 Evidencia {activeEvidenceNode.evidenceCode}
               </span>
-              <h3 className="text-base font-bold text-stone-900 dark:text-stone-100 mt-1">
+              <h3 className="text-base font-bold text-stone-900 dark:text-stone-50 mt-1">
                 {activeEvidenceNode.evidenceDesc}
               </h3>
             </div>
             <button
               type="button"
               onClick={() => selectEvidence(null)}
-              className="text-xs font-bold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200"
+              className="text-xs font-bold text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 cursor-pointer p-1"
             >
               Cerrar ✕
             </button>
           </div>
-          <div className="text-xs text-stone-600 dark:text-stone-400 space-y-1">
+          <div className="text-xs text-stone-700 dark:text-stone-300 space-y-1.5 leading-relaxed">
             <p>
-              <strong>Bloque:</strong> {activeEvidenceNode.blockName} ({activeEvidenceNode.affirmationCode})
+              <strong className="text-stone-900 dark:text-stone-100">Bloque:</strong> {activeEvidenceNode.blockName} ({activeEvidenceNode.affirmationCode})
             </p>
             <p>
-              <strong>Afirmación:</strong> {activeEvidenceNode.affirmationDesc}
+              <strong className="text-stone-900 dark:text-stone-100">Afirmación:</strong> {activeEvidenceNode.affirmationDesc}
             </p>
             <p>
-              <strong>Estado pedagógico:</strong> Nodo curricular oficial mapeado. La mini-lección completa con ejemplos resueltos e interactivos está programada para la siguiente fase de expansión de contenido.
+              <strong className="text-stone-900 dark:text-stone-100">Estado pedagógico:</strong> Nodo curricular oficial mapeado. La lección completa con ejemplos interactivos se encuentra en el plan de expansión de contenidos.
             </p>
           </div>
           {callbacks?.onStartTargetedPractice && (
             <button
               type="button"
               onClick={() => callbacks.onStartTargetedPractice!(activeEvidenceNode.key)}
-              className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors"
+              className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors cursor-pointer"
             >
               Practicar ítems relacionados
             </button>
@@ -286,7 +287,12 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
 
                           <div className="flex items-center justify-between pt-1 border-t border-stone-100 dark:border-stone-800 text-[11px] font-medium text-amber-700 dark:text-amber-400">
                             <span>{isComplete ? 'Abrir lección e interactivo →' : 'Ver detalles →'}</span>
-                            {ev.hasInteractiveVisual && <span>🎛️ SVG</span>}
+                            {ev.hasInteractiveVisual && (
+                              <span className="inline-flex items-center gap-1 font-semibold text-amber-600 dark:text-amber-400">
+                                <Sliders className="w-3.5 h-3.5" aria-hidden="true" />
+                                <span>SVG</span>
+                              </span>
+                            )}
                           </div>
                         </div>
                       );

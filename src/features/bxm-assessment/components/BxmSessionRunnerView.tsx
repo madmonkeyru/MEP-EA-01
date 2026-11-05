@@ -229,7 +229,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
       </div>
 
       {/* Options */}
-      <div className="space-y-3 mb-6">
+      <div className="space-y-2 sm:space-y-3 mb-6">
         {optionsList.map((opt) => {
           const isSelected = selectedOption === opt.letter;
           return (
@@ -239,18 +239,20 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
               aria-describedby={`bxm-option-description-${opt.letter}`}
               aria-pressed={isSelected}
               onClick={() => handleOptionSelect(opt.letter)}
-              className={`w-full text-left p-3.5 rounded-lg border text-sm sm:text-base flex items-start gap-3 transition ${
+              className={`w-full text-left p-2.5 sm:p-3.5 rounded-xl border text-xs sm:text-base flex items-start gap-2.5 sm:gap-3 transition cursor-pointer min-w-0 ${
                 isSelected
                   ? 'border-blue-600 bg-blue-50/50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100 font-medium'
-                  : 'border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/50'
+                  : 'border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/50 text-stone-800 dark:text-stone-200'
               }`}
             >
-              <span className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold shrink-0 ${
-                isSelected ? 'bg-blue-600 text-white' : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
+              <span className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 sm:mt-0 ${
+                isSelected ? 'bg-blue-600 text-white' : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300'
               }`}>
                 {opt.letter}
               </span>
-              <span id={`bxm-option-description-${opt.letter}`} className="flex-1"><TextRenderer content={opt.text} inline /></span>
+              <span id={`bxm-option-description-${opt.letter}`} className="flex-1 min-w-0 break-words leading-relaxed">
+                <TextRenderer content={opt.text} inline />
+              </span>
             </button>
           );
         })}
