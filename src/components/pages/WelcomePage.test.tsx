@@ -25,7 +25,7 @@ describe('WelcomePage', () => {
     ).toBeInTheDocument();
 
     const enterMvpButton = screen.getByRole('button', {
-      name: /Practicar Matemáticas BXM/i,
+      name: /^Practicar$/i,
     });
     expect(enterMvpButton).toBeInTheDocument();
     fireEvent.click(enterMvpButton);

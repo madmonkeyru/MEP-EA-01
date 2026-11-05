@@ -14,9 +14,9 @@ describe('EntryLandingPage', () => {
       />
     );
 
-    expect(screen.getByText(/Prepárate para tu próximo paso/i)).toBeInTheDocument();
+    expect(screen.getByText(/Prepárate para cualquier materia/i)).toBeInTheDocument();
     expect(screen.getByText('Matemáticas BXM')).toBeInTheDocument();
-    expect(screen.getByText('Explorar Programas MEP')).toBeInTheDocument();
+    expect(screen.getByText('Explorar Programas')).toBeInTheDocument();
 
     const enterBxmBtn = screen.getByText('Practicar Matemáticas BXM');
     fireEvent.click(enterBxmBtn);

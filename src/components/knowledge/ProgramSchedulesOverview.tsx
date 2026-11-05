@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface CalendarEvent {
   programId: string;

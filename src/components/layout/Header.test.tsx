@@ -13,7 +13,7 @@ describe('Header', () => {
 
     expect(screen.getByRole('img', { name: 'Yigüirro de Costa Rica' })).toHaveAttribute('src', '/logo_yiguirro_cr_high_fidelity.svg');
     expect(screen.getByText('MEP-EA-01')).toBeInTheDocument();
-    expect(screen.getByText(/Preparación independiente/)).toBeInTheDocument();
+    expect(screen.getByText(/Educación Abierta Digital/)).toBeInTheDocument();
     expect(screen.getByText('Perfil local opcional')).toBeInTheDocument();
     // Program dropdown should not be present on landing view
     expect(screen.queryByTitle('Cambiar programa de estudio')).not.toBeInTheDocument();
