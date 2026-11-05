@@ -31,7 +31,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       {/* 1. Header Hero / Welcome Portal Banner */}
       <div className="page-intro rounded-3xl p-6 sm:p-10 relative overflow-hidden">
         {/* Faded Costa Rica map watermark */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-15 dark:opacity-20 select-none z-0" aria-hidden="true">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-10 dark:opacity-[0.13] select-none z-0" aria-hidden="true">
           <svg
             viewBox="0 0 1000 1000"
             className="w-full h-full stroke-stone-900 dark:stroke-stone-100 stroke-[1.2] fill-stone-800/5 dark:fill-stone-200/5"

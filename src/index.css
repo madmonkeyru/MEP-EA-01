@@ -102,7 +102,42 @@ h1, h2, h3, h4, .brand-logo-text, .display-heading {
   }
 }
 
-.page-intro { background: var(--intro-bg); }
+.page-intro {
+  isolation: isolate;
+  background-color: #e9e7df;
+  background-image:
+    radial-gradient(ellipse at 18% 48%, rgba(144, 151, 132, 0.16), transparent 58%),
+    linear-gradient(110deg, #ecebe4 0%, #e7e5dd 64%, #e3e1d9 100%);
+}
+.page-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: repeating-linear-gradient(
+    164deg,
+    transparent 0 25px,
+    rgba(102, 100, 88, 0.14) 25.5px,
+    transparent 26px 54px
+  );
+  mask-image: linear-gradient(90deg, #000 0%, #000 44%, transparent 82%);
+}
+.dark .page-intro {
+  background-color: #2d2a27;
+  background-image:
+    radial-gradient(ellipse at 18% 48%, rgba(123, 135, 118, 0.11), transparent 58%),
+    linear-gradient(110deg, #302c29 0%, #2d2926 64%, #292624 100%);
+}
+.dark .page-intro::before {
+  background-image: repeating-linear-gradient(
+    164deg,
+    transparent 0 25px,
+    rgba(220, 213, 199, 0.11) 25.5px,
+    transparent 26px 54px
+  );
+}
 .ui-header {
   background: #23201e;
   border-bottom: 1px solid #38332f;
