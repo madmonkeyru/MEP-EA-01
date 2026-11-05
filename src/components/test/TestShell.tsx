@@ -19,7 +19,6 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   const [overlay, setOverlay] = useState<'formulas' | 'submit' | 'exit' | 'navigator' | null>(null);
   const [filter, setFilter] = useState('all');
   const [shortcuts, setShortcuts] = useState(true);
-  const [saved, setSaved] = useState('');
   const question = useRef<HTMLHeadingElement>(null);
   const examHeader = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -53,7 +52,7 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   const flag = () => current && patch({ flaggedItems: { ...latest.current.flaggedItems, [current.id]: !latest.current.flaggedItems[current.id] } });
   useEffect(() => {
     if (!items.length || finished.current) return;
-    setSaved(storageService.saveActiveSession(snapshot()) ? 'Guardado en este navegador' : storageService.lastError);
+    storageService.saveActiveSession(snapshot());
   }, [session]);
   useEffect(() => {
     const save = () => { if (!finished.current && items.length) storageService.saveActiveSession(snapshot()); };
@@ -119,15 +118,37 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   return <div className="test-shell">
     <header ref={examHeader} className="exam-header"><div className="page-width flex flex-wrap items-center justify-between gap-3">
       <div><p className="font-semibold">{modeLabel(config)}</p><p className="text-sm">{answered}/{items.length} respondidas · {flagged} marcadas</p></div>
-      <div className="action-row"><ThemeToggle /><button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>
+      <div className="action-row items-center"><ThemeToggle /><button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>
         <ExamClock enabled={config.enableTimer} deadline={session.deadline} startTime={session.startTime} onExpire={submit} />
-        <button className="primary-button" onClick={() => setOverlay('submit')}>Finalizar</button><button className="secondary-button" onClick={() => setOverlay('exit')}>Salir</button></div>
+        <button className="primary-button" onClick={() => setOverlay('submit')}>Finalizar</button></div>
     </div></header>
     <div className="page-width py-6 grid lg:grid-cols-[240px_minmax(0,1fr)] gap-6 items-start">
       <aside className="hidden lg:block ui-surface p-5 rounded-2xl exam-navigator">{navigator}</aside>
       <section className="ui-surface p-5 sm:p-8 rounded-2xl space-y-6 min-w-0">
-        <div className="flex flex-wrap justify-between gap-3"><h1 ref={question} tabIndex={-1} className="text-xl font-semibold focus-heading">Pregunta {session.currentResponseIndex + 1} de {items.length}</h1><button className="secondary-button lg:hidden" onClick={() => setOverlay('navigator')}>Ver preguntas</button></div>
-        <div className="flex flex-wrap justify-between gap-3"><p className="muted">{current.topic} · {calculatorRule(config.programId || 'bxm', 'matematicas', config.subprogramId)}</p><button className="secondary-button" aria-pressed={!!session.flaggedItems[current.id]} onClick={flag}>{session.flaggedItems[current.id] ? '⚑ Marcada [F]' : 'Marcar para revisar [F]'}</button></div>
+        <div className="flex items-center justify-between gap-3">
+          <h1 ref={question} tabIndex={-1} className="text-xl font-semibold focus-heading">Pregunta {session.currentResponseIndex + 1} de {items.length}</h1>
+          <div className="flex items-center gap-2">
+            <button
+              className={`p-2 rounded-xl border transition-all inline-flex items-center justify-center text-sm font-medium ${
+                session.flaggedItems[current.id]
+                  ? 'bg-amber-500/15 border-amber-500/40 text-amber-700 dark:text-amber-300 ring-1 ring-amber-500/30'
+                  : 'bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-750 border-stone-200 dark:border-stone-700 text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+              }`}
+              aria-pressed={!!session.flaggedItems[current.id]}
+              aria-label={session.flaggedItems[current.id] ? 'Pregunta marcada para revisar [F]' : 'Marcar pregunta para revisar [F]'}
+              title={session.flaggedItems[current.id] ? 'Pregunta marcada (F)' : 'Marcar para revisar (F)'}
+              onClick={flag}
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill={session.flaggedItems[current.id] ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" y1="22" x2="4" y2="15" />
+              </svg>
+              <span className="sr-only">{session.flaggedItems[current.id] ? 'Marcada para revisar [F]' : 'Marcar para revisar [F]'}</span>
+            </button>
+            <button className="secondary-button lg:hidden" onClick={() => setOverlay('navigator')}>Ver preguntas</button>
+          </div>
+        </div>
+        <p className="muted text-sm">{current.topic} · {calculatorRule(config.programId || 'bxm', 'matematicas', config.subprogramId)}</p>
         {group && <details open className="question-context"><summary>Contexto compartido de {group.items?.length || ''} preguntas</summary><GroupVisual group={group} /></details>}
         <p className="question-stem"><TextRenderer content={current.stem} /></p>
         {!group && current.visual_spec && <VisualRenderer key={current.id} spec={current.visual_spec} itemId={current.id} />}
@@ -142,14 +163,36 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
         <div className="action-row justify-between"><button className="secondary-button" disabled={session.currentResponseIndex === 0} onClick={() => move(session.currentResponseIndex - 1)}>Anterior</button>
           {session.currentResponseIndex < items.length - 1 ? <button className="primary-button" onClick={() => move(session.currentResponseIndex + 1)}>Siguiente</button> : <button className="primary-button" onClick={() => setOverlay('submit')}>Revisar y entregar</button>}
         </div>
-        <p className="muted" role="status">{saved}</p><label className="inline-choice"><input type="checkbox" checked={shortcuts} onChange={e => setShortcuts(e.target.checked)} />Atajos: A–D para responder, flechas para navegar, F para marcar</label>
-        <a className="text-link" href={'#/ayuda?reporte=' + encodeURIComponent(current.id + ' · ' + (config.programId || 'bxm') + ' · ' + current.topic)}>Reportar un problema con esta pregunta</a>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-2 border-t border-stone-200/60 dark:border-stone-800/60">
+          <label className="inline-flex items-center gap-2 text-xs text-stone-400 dark:text-stone-500 font-normal cursor-pointer select-none hover:text-stone-600 dark:hover:text-stone-400 transition-colors">
+            <input
+              type="checkbox"
+              className="w-3.5 h-3.5 rounded border-stone-300 dark:border-stone-700 text-stone-500 focus:ring-0 opacity-60 hover:opacity-100 transition-opacity cursor-pointer"
+              checked={shortcuts}
+              onChange={e => setShortcuts(e.target.checked)}
+            />
+            <span>Atajos: A–D para responder, flechas para navegar, F para marcar</span>
+          </label>
+          <a className="text-xs text-stone-400 dark:text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 underline underline-offset-2 transition-colors" href={'#/ayuda?reporte=' + encodeURIComponent(current.id + ' · ' + (config.programId || 'bxm') + ' · ' + current.topic)}>Reportar un problema</a>
+        </div>
       </section>
     </div>
     {overlay === 'navigator' && <Dialog title="Preguntas de la prueba" onClose={() => setOverlay(null)}>{navigator}</Dialog>}
     {overlay === 'formulas' && <Dialog title="Fórmulas de referencia" onClose={() => setOverlay(null)}><p className="muted">Material de apoyo para estudiar. Consulta el PDF oficial para identificar los anexos del examen.</p><FormulasSheet /><button className="secondary-button" onClick={() => setOverlay(null)}>Cerrar fórmulas</button></Dialog>}
-    {overlay === 'submit' && <Dialog title="¿Entregar la prueba?" onClose={() => setOverlay(null)}><p>{answered} respondidas, {items.length - answered} sin responder y {flagged} marcadas. La entrega es definitiva para este intento.</p><div className="action-row"><button className="secondary-button" onClick={() => { setFilter('pending'); setOverlay('navigator'); }}>Revisar sin responder</button><button className="secondary-button" onClick={() => { setFilter('flagged'); setOverlay('navigator'); }}>Revisar marcadas</button><button className="primary-button" onClick={submit}>Sí, entregar</button><button className="secondary-button" onClick={() => setOverlay(null)}>Seguir respondiendo</button></div></Dialog>}
-    {overlay === 'exit' && <Dialog title="Guardar y salir" onClose={() => setOverlay(null)}><p>Podrás reanudar este intento en este navegador. En una prueba cronometrada el tiempo continúa mientras estés fuera.</p><button className="primary-button" onClick={() => { const ok = storageService.saveActiveSession(snapshot()); if (ok) onLeave?.(); else setSaved(storageService.lastError); }}>Guardar y volver a la materia</button><button className="secondary-button" onClick={() => setOverlay(null)}>Continuar respondiendo</button></Dialog>}
+    {overlay === 'submit' && <Dialog title="Finalizar o pausar prueba" onClose={() => setOverlay(null)}>
+      <p>{answered} respondidas, {items.length - answered} sin responder y {flagged} marcadas.</p>
+      <div className="space-y-3">
+        <div className="flex flex-wrap gap-2">
+          <button className="secondary-button" onClick={() => { setFilter('pending'); setOverlay('navigator'); }}>Revisar sin responder</button>
+          <button className="secondary-button" onClick={() => { setFilter('flagged'); setOverlay('navigator'); }}>Revisar marcadas</button>
+        </div>
+        <div className="action-row flex-wrap pt-2 border-t border-stone-200 dark:border-stone-700">
+          <button className="primary-button" onClick={submit}>Sí, entregar</button>
+          <button className="secondary-button" onClick={() => { const ok = storageService.saveActiveSession(snapshot()); if (ok) onLeave?.(); }}>Guardar y salir</button>
+          <button className="secondary-button" onClick={() => setOverlay(null)}>Seguir respondiendo</button>
+        </div>
+      </div>
+    </Dialog>}
   </div>;
 }
 function ExamClock({ enabled, deadline, startTime, onExpire }: {
