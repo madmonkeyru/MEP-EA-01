@@ -1,4 +1,5 @@
 import type { TestSession, Item } from '../types';
+import type { SessionResultExport } from '../features/bxm-assessment/types';
 import { storageService } from './storageService';
 
 type RemediationDomain = 'numbers' | 'geometry' | 'measurement' | 'algebra' | 'statistics';
@@ -239,6 +240,104 @@ export function generateRemediationPlan(session: TestSession): RemediationPlan {
   };
 
   return plan;
+}
+
+/**
+ * Builds a structured RemediationPlan directly from a BXM assessment SessionResultExport.
+ * Allows mock_exam and diagnostic sessions to reuse the exact same remediation logic.
+ */
+export function generateRemediationPlanFromSessionResult(result: SessionResultExport): RemediationPlan {
+  const items: Item[] = (result.itemSnapshots || []).map((snapshot) => {
+    const numId = typeof snapshot.id === 'number' ? snapshot.id : Math.abs(hashString(String(snapshot.id)));
+    const domainStr = snapshot.domain === 'functions' ? 'algebra' : snapshot.domain;
+    const rawSteps = snapshot.solutionSteps || [];
+    return {
+      id: numId,
+      code: snapshot.code || String(snapshot.id),
+      area: domainStr,
+      topic: snapshot.evidenceCode,
+      stem: snapshot.stem,
+      options: Array.isArray(snapshot.options)
+        ? snapshot.options.map((o) => ({ letter: o.letter, text: o.text }))
+        : Object.entries(snapshot.options).map(([letter, text]) => ({ letter: letter as Item['correct_answer'], text })),
+      correct_answer: snapshot.correctAnswer as Item['correct_answer'],
+      solution_steps: rawSteps.map((s) => (typeof s === 'string' ? { step: 1, title: 'Paso 1', explanation: s } : s)),
+      concept_id: mapConceptId(snapshot.conceptId, snapshot.domain),
+      area_id: domainStr,
+      difficulty: snapshot.difficultyTier,
+      cognitive_level: snapshot.cognitiveLevel,
+      program_id: 'bxm',
+      subject_id: 'matematica',
+      convocatoria_id: '2026-c2',
+    };
+  });
+
+  const responses: Record<number, { itemId: number; selectedOption: Item['correct_answer'] | null; isCorrect: boolean; timeSpentSeconds: number }> = {};
+  for (const snapshot of result.itemSnapshots || []) {
+    const numId = typeof snapshot.id === 'number' ? snapshot.id : Math.abs(hashString(String(snapshot.id)));
+    const attempt = result.attempts[String(snapshot.id)] || result.attempts[numId];
+    if (attempt?.firstResponse?.selectedOption) {
+      responses[numId] = {
+        itemId: numId,
+        selectedOption: attempt.firstResponse.selectedOption as Item['correct_answer'],
+        isCorrect: attempt.firstResponse.isCorrect,
+        timeSpentSeconds: 15,
+      };
+    }
+  }
+
+  const pseudoSession: TestSession = {
+    sessionId: result.sessionId,
+    userId: 'learner',
+    config: {
+      mode: 'concept_drilldown',
+      programId: result.programId,
+      subjectId: result.subjectId,
+      itemCount: items.length,
+      enableTimer: false,
+      timerDurationMinutes: 0,
+    },
+    itemIds: items.map((i) => i.id),
+    items,
+    responses,
+    currentResponseIndex: 0,
+    flaggedItems: {},
+    startTime: result.startTime,
+    elapsedSeconds: result.durationSeconds,
+    isCompleted: true,
+  };
+
+  return generateRemediationPlan(pseudoSession);
+}
+
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return hash;
+}
+
+function mapConceptId(id?: string, domain?: string): string {
+  if (!id) {
+    if (domain === 'geometry') return 'geo-circ';
+    if (domain === 'functions') return 'alg-fun-lin';
+    return 'est-pos';
+  }
+  const clean = id.toLowerCase();
+  if (clean.includes('circ') || clean.includes('triang')) return 'geo-circ';
+  if (clean.includes('pos-rel') || clean.includes('secant')) return 'geo-pos-rel';
+  if (clean.includes('polig') || clean.includes('area')) return 'geo-polig';
+  if (clean.includes('3d') || clean.includes('cuerpo') || clean.includes('esfera')) return 'geo-3d';
+  if (clean.includes('lin') || clean.includes('recta')) return 'alg-fun-lin';
+  if (clean.includes('cuad') || clean.includes('vertice')) return 'alg-fun-cuad';
+  if (clean.includes('exp')) return 'alg-fun-exp';
+  if (clean.includes('log')) return 'alg-fun-log';
+  if (clean.includes('ric') || clean.includes('caja') || clean.includes('posicion') || clean.includes('medida')) return 'est-pos';
+  if (clean.includes('disp') || clean.includes('var')) return 'est-disp';
+  if (clean.includes('prob')) return 'est-prob';
+  return clean;
 }
 
 const ACTIVE_PLAN_KEY = 'mep_ea_active_remediation_plan';

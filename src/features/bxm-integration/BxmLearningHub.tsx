@@ -15,6 +15,8 @@ import { useSubscriptionCapabilities } from './capabilities';
 import { BxmLearningStore } from './learningStore';
 import { inventory, lessons, policyFor, preparePresentation, sampleLessonKeys, selectActivity, type ActivityRequest } from './providers';
 import { computeEvidenceMasteryRecords } from '../bxm-progress/domain/masteryEngine';
+import { PlanDeNivelacionView } from '../../components/results/PlanDeNivelacionView';
+import { generateRemediationPlanFromSessionResult } from '../../services/remediationEngine';
 
 interface Props { userId: string; route: AppRoute; onNavigate: (route: AppRoute) => void; onOfficialSimulation: () => void }
 interface Pending { request: ActivityRequest; selection: BlueprintSelectionResult; seed: number }
@@ -115,6 +117,16 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     return null;
   }, [result]);
 
+  // Compute remediation plan for mock_exam or diagnostic results
+  const remediationPlan = useMemo(() => {
+    if (!result || !['mock_exam', 'diagnostic'].includes(result.kind) || !result.itemSnapshots?.length) return null;
+    try {
+      return generateRemediationPlanFromSessionResult(result);
+    } catch {
+      return null;
+    }
+  }, [result]);
+
   // Compute post-practice mastery eligibility for single-evidence practice
   const practiceMasteryStatus = useMemo(() => {
     if (!result || result.kind !== 'evidence_practice' || !events.length) return null;
@@ -133,12 +145,34 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     };
   }, [result, events]);
 
+  // Compute retest outcome and mastery recovery state
+  const retestRecoveryStatus = useMemo(() => {
+    if (!result || result.kind !== 'retest' || !events.length) return null;
+    const targetKey = Object.keys(result.evidenceBreakdowns)[0];
+    if (!targetKey) return null;
+    const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
+    const targetRecord = masteryRecords.find(r => r.evidenceKey === targetKey);
+    const accuracy = targetRecord?.accuracyPercentage || result.firstResponseScorePercentage;
+    const isRecovered = (targetRecord?.status === 'mastered') || (result.firstResponseScorePercentage >= 75);
+    return {
+      evidenceKey: targetKey,
+      evidenceCode: result.evidenceBreakdowns[targetKey]?.evidenceCode || 'A',
+      domain: result.evidenceBreakdowns[targetKey]?.domain || 'geometry',
+      retestScore: result.firstResponseScorePercentage,
+      overallAccuracy: accuracy,
+      status: targetRecord?.status || (isRecovered ? 'mastered' : 'needs_reinforcement'),
+      statusLabel: targetRecord?.statusLabelEs || (isRecovered ? 'Dominio alcanzado' : 'Requiere refuerzo adicional'),
+      isRecovered,
+      qualifyingCount: targetRecord?.qualifyingFamiliesCount || 0,
+    };
+  }, [result, events]);
+
   return <div className="page-width py-6 space-y-5 min-w-0" data-revision={revision}>
     <header className="ui-surface rounded-2xl p-5 space-y-3">
       <h1 className="text-2xl font-semibold">Aprendizaje guiado · Matemáticas BXM</h1>
       <p>Diagnóstico, lecciones y práctica de autor. El paquete inicial incluye cuatro lecciones y 30 ejercicios en tres áreas; cubre una parte de las 71 evidencias.</p>
       <nav aria-label="Aprendizaje BXM" className="flex flex-wrap gap-2">
-        {([['diagnostic','Diagnóstico'],['temario','Temario de aprendizaje'],['practice','Práctica de autor'],['path','Mi plan'],['progress','Mi preparación']] as const).map(([id, label]) =>
+        {([['diagnostic','Diagnóstico'],['temario','Temario de aprendizaje'],['practice','Práctica de autor'],['simulation','Simulación'],['path','Mi plan'],['progress','Mi preparación']] as const).map(([id, label]) =>
           <button key={id} aria-current={tab === id ? 'page' : undefined} className="secondary-button" onClick={() => go(id)}>{label}</button>)}
         <button className="text-link" onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Volver a Matemáticas</button>
       </nav>
@@ -172,9 +206,56 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         <button className="secondary-button" onClick={() => request({ kind: 'mastery_check', evidenceKey: selectedEvidence })}>Comprobar aprendizaje</button>
         <button className="secondary-button" onClick={() => request({ kind: 'retest', evidenceKey: selectedEvidence })}>Preparar retest</button>
         <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, generated: true })}>Practicar variantes</button>
-        <button className="secondary-button" onClick={() => request({ kind: 'mock_exam' })}>Simulacro formativo · 20 preguntas</button>
       </div>
       <button className="text-link" onClick={() => openLesson(selectedEvidence)}>Ver esta evidencia en el temario</button>
+    </section>}
+    {tab === 'simulation' && <section className="space-y-6">
+      <div className="ui-surface p-6 rounded-2xl space-y-2">
+        <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100">Simulación de Examen BXM</h2>
+        <p className="text-sm text-stone-600 dark:text-stone-400">
+          Elige entre el simulacro formativo de autor para evaluar tus habilidades y generar un plan de nivelación, o la prueba oficial de referencia conservada intacta.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Modalidad A: Simulacro formativo de autor */}
+        <article className="ui-surface p-6 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900 flex flex-col justify-between gap-4">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300">
+                Formativo de Autor
+              </span>
+              <span className="text-xs font-semibold text-stone-500">20 preguntas · 45 min</span>
+            </div>
+            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulacro Formativo de Autor</h3>
+            <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+              Evalúa proporcionalmente las tres áreas de BXM (Geometría, Funciones y Estadística). Cronometrado, sin pistas durante el examen. Al finalizar, genera un <strong>Plan de Nivelación</strong> con recomendaciones de estudio y opciones de retest.
+            </p>
+          </div>
+          <button className="primary-button w-full cursor-pointer" onClick={() => request({ kind: 'mock_exam' })}>
+            Iniciar Simulacro Formativo
+          </button>
+        </article>
+
+        {/* Modalidad B: Simulación oficial de referencia */}
+        <article className="ui-surface p-6 rounded-2xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between gap-4">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
+                Oficial MEP · Gratuito
+              </span>
+              <span className="text-xs font-semibold text-stone-500">60 preguntas · 150 min</span>
+            </div>
+            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Examen Oficial de Referencia</h3>
+            <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+              Prueba completa basada en la convocatoria oficial 2026-c2. Permanece completamente gratuita e independiente. No contamina ni altera tus registros de dominio de autor.
+            </p>
+          </div>
+          <button className="secondary-button w-full cursor-pointer" onClick={onOfficialSimulation}>
+            Iniciar Examen Oficial (60 ítems)
+          </button>
+        </article>
+      </div>
     </section>}
     {(tab === 'progress' || tab === 'path') && (capabilities.canAccess('longitudinal_mastery_dashboard')
       ? <BxmPreparationDashboard key={tab} initialTab={tab === 'path' ? 'queue' : 'overview'} events={events} completions={store.getCompletions()} capabilityProvider={capabilities} availableInventoryByEvidence={inventory} availableLessonKeys={lessons.map(l => l.evidenceKey)}
@@ -215,6 +296,65 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             {recommendation.hasLesson && recommendation.hasPractice && (
               <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: recommendation.evidenceId })}>
                 Practicar directamente
+              </button>
+            )}
+            {recommendation.hasPractice && (
+              <button className="secondary-button" onClick={() => request({ kind: 'retest', evidenceKey: recommendation.evidenceId })}>
+                Preparar Retest
+              </button>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Plan de Nivelación: Rendered when a mock_exam or diagnostic yields areas needing remediation */}
+      {remediationPlan && remediationPlan.topPriorityDrilldowns.length > 0 && (
+        <PlanDeNivelacionView
+          plan={remediationPlan}
+          onLaunchRemediationPractice={() => {
+            if (recommendation?.evidenceId) {
+              request({ kind: 'evidence_practice', evidenceKey: recommendation.evidenceId });
+            } else {
+              go('practice');
+            }
+          }}
+        />
+      )}
+
+      {/* Retest Recovery and Mastery Update Card */}
+      {retestRecoveryStatus && (
+        <section className={`ui-surface p-6 rounded-2xl border-2 space-y-3 ${
+          retestRecoveryStatus.isRecovered
+            ? 'border-emerald-500 bg-emerald-50/40 dark:bg-emerald-950/20'
+            : 'border-amber-400 bg-amber-50/40 dark:bg-amber-950/20'
+        }`}>
+          <div className="flex items-center gap-2">
+            <span className={`w-2.5 h-2.5 rounded-full ${retestRecoveryStatus.isRecovered ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+            <h2 className={`text-xs font-black uppercase tracking-wider ${
+              retestRecoveryStatus.isRecovered ? 'text-emerald-800 dark:text-emerald-300' : 'text-amber-800 dark:text-amber-300'
+            }`}>
+              Resultado del Retest · Recuperación de Evidencia {retestRecoveryStatus.evidenceCode}
+            </h2>
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">
+              {retestRecoveryStatus.isRecovered
+                ? `¡Evidencia Recuperada con Éxito! (${retestRecoveryStatus.retestScore}%)`
+                : `Retest Completado (${retestRecoveryStatus.retestScore}%) · Continúa reforzando`}
+            </h3>
+            <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+              {retestRecoveryStatus.isRecovered
+                ? `Has superado el umbral del 75% requerido para certificar el dominio en esta habilidad. Estado actualizado: ${retestRecoveryStatus.statusLabel}.`
+                : `Tu puntaje actual es ${retestRecoveryStatus.overallAccuracy}% hacia el 75% requerido. Te recomendamos realizar otra práctica o repasar el tema en el temario.`}
+            </p>
+          </div>
+          <div className="action-row pt-1">
+            <button className="primary-button" onClick={() => go('progress')}>
+              Ver mi preparación actualizada
+            </button>
+            {!retestRecoveryStatus.isRecovered && (
+              <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: retestRecoveryStatus.evidenceKey })}>
+                Volver a practicar
               </button>
             )}
           </div>
