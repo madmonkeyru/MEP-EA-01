@@ -335,11 +335,11 @@ select option:disabled { color: var(--text-muted); }
 .group-visual-card { background: var(--surface) !important; color: var(--text-primary) !important; border: 1px solid var(--visual-grid) !important; }
 .group-visual-card h3, .group-visual-card > div { color: inherit !important; border-color: var(--visual-grid) !important; }
 @media (max-width: 640px) {
-  :root { --app-header-height: 64px; }
+  html {
+    font-size: 90%;
+  }
+  :root { --app-header-height: 56px; }
   .exam-header .primary-button, .exam-header .secondary-button { padding: .5rem .65rem; min-height: 38px; }
-  .app-header nav { width: 100%; justify-content: space-between; gap: 0.35rem; }
-  .app-header .brand-link { gap: 0.5rem; }
-  .app-header .brand-logo { width: 42px; height: 34px; }
   .page-width { width: calc(100% - 1.25rem); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { Header } from './Header';
 import { ThemeProvider } from '../../context/ThemeContext';
@@ -36,5 +36,30 @@ describe('Header', () => {
     expect(screen.queryByText('Perfil local opcional')).not.toBeInTheDocument();
     // Program dropdown should be visible on hub view
     expect(screen.getByTitle('Cambiar programa de estudio')).toBeInTheDocument();
+  });
+
+  it('toggles mobile sidebar navigation when hamburger button is clicked', () => {
+    render(
+      <ThemeProvider>
+        <Header currentUser={null} onUserChanged={vi.fn()} onNavigateHome={vi.fn()} currentView="landing" />
+      </ThemeProvider>
+    );
+
+    // Initial state: hamburger button has aria-label="Abrir menú" and sidebar drawer is not in DOM
+    const openButton = screen.getByRole('button', { name: 'Abrir menú' });
+    expect(openButton).toBeInTheDocument();
+    expect(screen.queryByRole('dialog', { name: 'Menú de navegación' })).not.toBeInTheDocument();
+
+    // Click hamburger to open sidebar
+    fireEvent.click(openButton);
+
+    // Now drawer dialog is visible
+    expect(screen.getByRole('dialog', { name: 'Menú de navegación' })).toBeInTheDocument();
+    const closeButtons = screen.getAllByRole('button', { name: 'Cerrar menú' });
+    expect(closeButtons.length).toBeGreaterThan(0);
+
+    // Click close button inside drawer
+    fireEvent.click(closeButtons[0]);
+    expect(screen.queryByRole('dialog', { name: 'Menú de navegación' })).not.toBeInTheDocument();
   });
 });
