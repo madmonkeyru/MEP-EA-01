@@ -1,0 +1,300 @@
+import React, { useState, useMemo } from 'react';
+import {
+  BxmDomain,
+  BxmEvidenceNode,
+  BxmAssessmentCallbacks,
+  BxmCapabilityContext
+} from '../types';
+import { BxmContentService } from '../services/bxmContentService';
+import { BxmLessonView } from './BxmLessonView';
+
+export interface BxmDigitalTemarioProps {
+  callbacks?: BxmAssessmentCallbacks;
+  capabilities?: BxmCapabilityContext;
+  className?: string;
+  initialEvidenceKey?: string;
+}
+
+export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
+  callbacks,
+  capabilities = { isPremium: true },
+  className = '',
+  initialEvidenceKey
+}) => {
+  const [selectedDomain, setSelectedDomain] = useState<BxmDomain | 'all'>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [activeEvidenceKey, setActiveEvidenceKey] = useState<string | null>(initialEvidenceKey || null);
+
+  const allEvidences = useMemo(() => BxmContentService.getAllEvidences(), []);
+
+  // Filtered evidences
+  const filteredEvidences = useMemo(() => {
+    return allEvidences.filter((ev) => {
+      const matchDomain = selectedDomain === 'all' || ev.domain === selectedDomain;
+      const q = searchQuery.toLowerCase().trim();
+      const matchQuery =
+        !q ||
+        ev.evidenceCode.toLowerCase().includes(q) ||
+        ev.evidenceDesc.toLowerCase().includes(q) ||
+        ev.affirmationDesc.toLowerCase().includes(q) ||
+        ev.blockName.toLowerCase().includes(q);
+      return matchDomain && matchQuery;
+    });
+  }, [allEvidences, selectedDomain, searchQuery]);
+
+  // Group filtered evidences by block and affirmation
+  const groupedTree = useMemo(() => {
+    const map = new Map<string, { blockCode: string; blockName: string; affirmations: Map<string, { code: string; desc: string; evidences: BxmEvidenceNode[] }> }>();
+
+    for (const ev of filteredEvidences) {
+      if (!map.has(ev.blockCode)) {
+        map.set(ev.blockCode, {
+          blockCode: ev.blockCode,
+          blockName: ev.blockName,
+          affirmations: new Map()
+        });
+      }
+      const bObj = map.get(ev.blockCode)!;
+      if (!bObj.affirmations.has(ev.affirmationCode)) {
+        bObj.affirmations.set(ev.affirmationCode, {
+          code: ev.affirmationCode,
+          desc: ev.affirmationDesc,
+          evidences: []
+        });
+      }
+      bObj.affirmations.get(ev.affirmationCode)!.evidences.push(ev);
+    }
+
+    return Array.from(map.values()).map((b) => ({
+      ...b,
+      affirmations: Array.from(b.affirmations.values())
+    }));
+  }, [filteredEvidences]);
+
+  // If viewing a lesson
+  const activeLesson = useMemo(() => {
+    if (!activeEvidenceKey) return null;
+    return BxmContentService.getLessonByEvidenceKey(activeEvidenceKey);
+  }, [activeEvidenceKey]);
+
+  const activeEvidenceNode = useMemo(() => {
+    if (!activeEvidenceKey) return null;
+    return BxmContentService.getEvidenceByKey(activeEvidenceKey);
+  }, [activeEvidenceKey]);
+
+  if (activeEvidenceKey && activeLesson) {
+    return (
+      <div className={`p-4 sm:p-6 lg:p-8 ${className}`}>
+        <BxmLessonView
+          lesson={activeLesson}
+          callbacks={callbacks}
+          capabilities={capabilities}
+          onBackToTemario={() => setActiveEvidenceKey(null)}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className={`p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto space-y-6 ${className}`}>
+      {/* Temario Hero Header */}
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-0.5 rounded-md text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300">
+            BXM Bachillerato por Madurez 02-2026
+          </span>
+          <span className="text-xs font-semibold text-stone-500">
+            71 Evidencias Oficiales MEP
+          </span>
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
+          Temario Digital Interactivo
+        </h1>
+        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 max-w-3xl">
+          Navegue por la taxonomía oficial de evaluación: Bloque → Afirmación → Evidencia → Lección.
+          Consulte definiciones, fórmulas, errores típicos, ejemplos resueltos y laboratorios interactivos.
+        </p>
+      </div>
+
+      {/* Domain Filters & Search Bar */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-stone-100 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-xs font-semibold">
+          <button
+            type="button"
+            onClick={() => setSelectedDomain('all')}
+            className={`px-3 py-1.5 rounded-lg transition-colors ${
+              selectedDomain === 'all'
+                ? 'bg-white dark:bg-stone-750 text-stone-900 dark:text-stone-100 shadow-xs'
+                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
+            }`}
+          >
+            Todas (71)
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedDomain('geometry')}
+            className={`px-3 py-1.5 rounded-lg transition-colors ${
+              selectedDomain === 'geometry'
+                ? 'bg-white dark:bg-stone-750 text-stone-900 dark:text-stone-100 shadow-xs'
+                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
+            }`}
+          >
+            Geometría (24)
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedDomain('functions')}
+            className={`px-3 py-1.5 rounded-lg transition-colors ${
+              selectedDomain === 'functions'
+                ? 'bg-white dark:bg-stone-750 text-stone-900 dark:text-stone-100 shadow-xs'
+                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
+            }`}
+          >
+            Álgebra (34)
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedDomain('statistics')}
+            className={`px-3 py-1.5 rounded-lg transition-colors ${
+              selectedDomain === 'statistics'
+                ? 'bg-white dark:bg-stone-750 text-stone-900 dark:text-stone-100 shadow-xs'
+                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
+            }`}
+          >
+            Estadística (13)
+          </button>
+        </div>
+
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Buscar evidencia, concepto o tema..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full sm:w-72 px-3.5 py-1.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-xs text-stone-900 dark:text-stone-100 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+          />
+        </div>
+      </div>
+
+      {/* Active Modal / Detail for scaffolded node without rich lesson */}
+      {activeEvidenceKey && !activeLesson && activeEvidenceNode && (
+        <div className="p-5 rounded-2xl border border-amber-300 dark:border-amber-800 bg-amber-50/70 dark:bg-amber-950/30 space-y-3">
+          <div className="flex justify-between items-start">
+            <div>
+              <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200">
+                Evidencia {activeEvidenceNode.evidenceCode}
+              </span>
+              <h3 className="text-base font-bold text-stone-900 dark:text-stone-100 mt-1">
+                {activeEvidenceNode.evidenceDesc}
+              </h3>
+            </div>
+            <button
+              type="button"
+              onClick={() => setActiveEvidenceKey(null)}
+              className="text-xs font-bold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200"
+            >
+              Cerrar ✕
+            </button>
+          </div>
+          <div className="text-xs text-stone-600 dark:text-stone-400 space-y-1">
+            <p>
+              <strong>Bloque:</strong> {activeEvidenceNode.blockName} ({activeEvidenceNode.affirmationCode})
+            </p>
+            <p>
+              <strong>Afirmación:</strong> {activeEvidenceNode.affirmationDesc}
+            </p>
+            <p>
+              <strong>Estado pedagógico:</strong> Nodo curricular oficial mapeado. La mini-lección completa con ejemplos resueltos e interactivos está programada para la siguiente fase de expansión de contenido.
+            </p>
+          </div>
+          {callbacks?.onStartTargetedPractice && (
+            <button
+              type="button"
+              onClick={() => callbacks.onStartTargetedPractice!(activeEvidenceNode.key)}
+              className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 transition-colors"
+            >
+              Practicar ítems relacionados
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Curriculum Tree Accordion / List */}
+      <div className="space-y-6">
+        {groupedTree.map((block) => (
+          <div
+            key={block.blockCode}
+            className="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden shadow-xs"
+          >
+            <div className="p-4 sm:p-5 bg-stone-50/80 dark:bg-stone-850/80 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
+              <h2 className="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100">
+                {block.blockName}
+              </h2>
+              <span className="text-xs font-semibold text-stone-500">
+                {block.affirmations.reduce((acc, a) => acc + a.evidences.length, 0)} evidencias
+              </span>
+            </div>
+
+            <div className="divide-y divide-stone-100 dark:divide-stone-800/60">
+              {block.affirmations.map((aff) => (
+                <div key={aff.code} className="p-4 sm:p-5 space-y-3">
+                  <div className="space-y-0.5">
+                    <div className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                      Afirmación {aff.code}
+                    </div>
+                    <div className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+                      {aff.desc}
+                    </div>
+                  </div>
+
+                  {/* Evidences Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
+                    {aff.evidences.map((ev) => {
+                      const isComplete = ev.status === 'complete';
+                      return (
+                        <div
+                          key={ev.key}
+                          onClick={() => setActiveEvidenceKey(ev.key)}
+                          className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex flex-col justify-between gap-2 ${
+                            isComplete
+                              ? 'border-amber-300 dark:border-amber-800/80 bg-amber-50/40 dark:bg-amber-950/20 hover:border-amber-500 hover:shadow-xs'
+                              : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-850/50 hover:border-stone-300 dark:hover:border-stone-700'
+                          }`}
+                        >
+                          <div className="space-y-1">
+                            <div className="flex items-center justify-between gap-1">
+                              <span className="font-mono text-xs font-bold text-stone-900 dark:text-stone-100">
+                                {ev.evidenceCode}
+                              </span>
+                              {isComplete ? (
+                                <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                                  Lección completa
+                                </span>
+                              ) : (
+                                <span className="text-[10px] font-medium text-stone-500 dark:text-stone-400">
+                                  Disponible pronto
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-stone-600 dark:text-stone-300 line-clamp-2">
+                              {ev.evidenceDesc}
+                            </p>
+                          </div>
+
+                          <div className="flex items-center justify-between pt-1 border-t border-stone-100 dark:border-stone-800 text-[11px] font-medium text-amber-700 dark:text-amber-400">
+                            <span>{isComplete ? 'Abrir lección e interactivo →' : 'Ver detalles →'}</span>
+                            {ev.hasInteractiveVisual && <span>🎛️ SVG</span>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
