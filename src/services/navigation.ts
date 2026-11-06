@@ -1,5 +1,12 @@
 import { programManifest } from './programCatalog';
 
+export type LearningContextReason =
+  | 'diagnostic_weakness'
+  | 'temario_exploration'
+  | 'remediation'
+  | 'study_session'
+  | 'direct';
+
 export interface AppRoute {
   view: 'landing' | 'welcome' | 'framework' | 'hub' | 'guide' | 'helper' | 'calendar' | 'test' | 'results' | 'learning';
   evidenceKey?: string;
@@ -10,6 +17,7 @@ export interface AppRoute {
   subjectId?: string;
   moduleId?: string;
   convocatoriaId?: string;
+  contextReason?: LearningContextReason;
 }
 
 export function readRoute(hash: string): AppRoute {
@@ -29,9 +37,14 @@ export function readRoute(hash: string): AppRoute {
   const subject = program.subjects.find(s => s.id === (program.id === 'bxm' && parts[2] === 'matematica' ? 'matematicas' : parts[2]));
   const phase = params.get('pantalla');
   const learning = phase === 'aprendizaje' && program.id === 'bxm' && subject?.id === 'matematicas' && convocatoriaId === '2026-c2';
+  const rawContext = params.get('motivo');
+  const validContexts: LearningContextReason[] = ['diagnostic_weakness', 'temario_exploration', 'remediation', 'study_session', 'direct'];
+  const contextReason: LearningContextReason | undefined = validContexts.includes(rawContext as LearningContextReason) ? (rawContext as LearningContextReason) : undefined;
+
   return { view: subject ? (learning ? 'learning' : phase === 'prueba' ? 'test' : phase === 'resultado' ? 'results' : 'hub') : 'framework', programId: program.id,
     ...(learning && params.get('evidencia') ? { evidenceKey: params.get('evidencia')! } : {}),
     ...(params.get('intento') ? { sessionId: params.get('intento')! } : {}),
+    ...(contextReason ? { contextReason } : {}),
     ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
     ...(['pdf', 'specs', 'terms', 'formulas'].includes(params.get('recurso') || '') ? { resourceTab: params.get('recurso')! } : {}),
     subjectId: subject?.id, moduleId, convocatoriaId };
@@ -46,7 +59,12 @@ export function routeHash(route: AppRoute): string {
   const params = new URLSearchParams();
   if (route.moduleId) params.set('nivel', route.moduleId);
   params.set('convocatoria', route.convocatoriaId || '2026-c2');
-  if (route.view === 'learning') { params.set('pantalla', 'aprendizaje'); if (route.sessionId) params.set('intento', route.sessionId); if (route.evidenceKey) params.set('evidencia', route.evidenceKey); }
+  if (route.view === 'learning') {
+    params.set('pantalla', 'aprendizaje');
+    if (route.sessionId) params.set('intento', route.sessionId);
+    if (route.evidenceKey) params.set('evidencia', route.evidenceKey);
+    if (route.contextReason) params.set('motivo', route.contextReason);
+  }
   if (route.view === 'test' || route.view === 'results') { params.set('pantalla', route.view === 'test' ? 'prueba' : 'resultado'); if (route.sessionId) params.set('intento', route.sessionId); }
   if (route.tab) params.set('seccion', route.tab);
   if (route.resourceTab) params.set('recurso', route.resourceTab);

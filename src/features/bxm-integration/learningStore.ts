@@ -14,6 +14,13 @@ export interface LessonActivity {
   timestamp: string;
   responseIndex?: number;
 }
+
+export interface StoredLessonCompletion {
+  lessonId: string;
+  completedAt: string;
+  quizPassed?: boolean;
+}
+
 interface LearningDocument {
   version: 1;
   userId: string;
@@ -22,6 +29,7 @@ interface LearningDocument {
   active?: SessionSnapshot;
   results: SessionResultExport[];
   activities: LessonActivity[];
+  completedLessons?: StoredLessonCompletion[];
   exposedItemIds?: string[];
 }
 export const learningKey = (userId: string) => `bxm-mvp-progress:v1:learning:${encodeURIComponent(userId)}`;
@@ -90,6 +98,25 @@ export class BxmLearningStore {
   recordActivity(activity: LessonActivity): boolean {
     if (!validActivity(activity)) { this.lastError = 'No se registró una comprobación con metadatos incompletos.'; return false; }
     if (!this.document.activities.some(a => a.eventId === activity.eventId)) this.document.activities.push(structuredClone(activity));
+    return this.write();
+  }
+  getCompletedLessons(): StoredLessonCompletion[] {
+    return structuredClone(this.document.completedLessons || []);
+  }
+  isLessonCompleted(lessonId: string): boolean {
+    return (this.document.completedLessons || []).some(l => l.lessonId === lessonId);
+  }
+  recordLessonCompletion(lessonId: string, quizPassed = true): boolean {
+    if (!lessonId) return false;
+    const existing = (this.document.completedLessons || []).filter(l => l.lessonId !== lessonId);
+    this.document.completedLessons = [
+      ...existing,
+      {
+        lessonId,
+        completedAt: new Date().toISOString(),
+        quizPassed,
+      },
+    ];
     return this.write();
   }
   /** Replays persisted results after a previous interruption between journal and event writes. */

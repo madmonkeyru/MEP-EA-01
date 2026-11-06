@@ -151,7 +151,7 @@ describe('BXM handoff repair regressions', () => {
     render(<BxmMicroQuiz evidenceKey={catalog[0].key} quiz={{ id: 'repair-check', question: '$2+2$', options: { A: '$4$', B: '$5$', C: '$6$', D: '$7$' }, correctOption: 'A', explanation: '$2+2=4$' }} onAnswered={e => responses.push(e)} />);
     expect(document.querySelector('.katex')).not.toBeNull();
     fireEvent.click(screen.getAllByRole('button')[0]); fireEvent.click(screen.getByText('Comprobar respuesta'));
-    fireEvent.click(screen.getByText('Reintentar pregunta'));
+    fireEvent.click(screen.getByText(/Intentar de nuevo|Reintentar pregunta/i));
     fireEvent.click(screen.getAllByRole('button')[0]); fireEvent.click(screen.getByText('Comprobar respuesta'));
     expect(responses.map(e => e.responseIndex)).toEqual([0, 1]);
   });

@@ -9,11 +9,16 @@ import { BxmContentService } from '../services/bxmContentService';
 import { BxmLessonView } from './BxmLessonView';
 import { Sliders } from 'lucide-react';
 
+import type { LearningContextReason } from '../../../services/navigation';
+
 export interface BxmDigitalTemarioProps {
   callbacks?: BxmAssessmentCallbacks;
   capabilities?: BxmCapabilityContext;
   className?: string;
   initialEvidenceKey?: string;
+  contextReason?: LearningContextReason;
+  completedLessonIds?: string[];
+  onMarkLessonCompleted?: (lessonId: string) => void;
   onEvidenceChange?: (key: string | undefined) => void;
 }
 
@@ -22,6 +27,9 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
   capabilities = { isPremium: false },
   className = '',
   initialEvidenceKey,
+  contextReason,
+  completedLessonIds = [],
+  onMarkLessonCompleted,
   onEvidenceChange,
 }) => {
   const [selectedDomain, setSelectedDomain] = useState<BxmDomain | 'all'>('all');
@@ -93,6 +101,9 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
           lesson={activeLesson}
           callbacks={callbacks}
           capabilities={capabilities}
+          contextReason={contextReason}
+          isCompleted={completedLessonIds.includes(activeLesson.id)}
+          onMarkLessonCompleted={onMarkLessonCompleted}
           onBackToTemario={() => selectEvidence(null)}
         />
       </div>
@@ -272,7 +283,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                               </span>
                               {isComplete ? (
                                 <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-                                  Lección completa
+                                  {ev.lessonId && completedLessonIds.includes(ev.lessonId) ? '✓ Completada' : 'Lección completa'}
                                 </span>
                               ) : (
                                 <span className="text-[10px] font-medium text-stone-500 dark:text-stone-400">
