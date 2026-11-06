@@ -21,6 +21,8 @@ import { RecommendationCard } from '../../components/common/RecommendationCard';
 import { StudentMasteryBadge } from '../../components/common/StudentMasteryBadge';
 import { deriveCanonicalRecommendation } from '../bxm-progress/recommendations/recommendationsEngine';
 import type { CanonicalRecommendation } from '../../types/recommendation';
+import { telemetryService } from '../../services/telemetryService';
+import { persistenceService } from '../../services/persistenceService';
 
 interface Props { userId: string; route: AppRoute; onNavigate: (route: AppRoute) => void; onOfficialSimulation: () => void }
 interface Pending { request: ActivityRequest; selection: BlueprintSelectionResult; seed: number }
@@ -60,8 +62,48 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     setMessage(saved ? '' : store.lastError);
     setRevision(value => value + 1);
     setRunner(null);
+
+    // M7 & M8 Integration: record attempt and emit learning/assessment telemetry
+    try {
+      persistenceService.saveAttempt({
+        attempt_id: `att_${result.sessionId}`,
+        session_id: result.sessionId,
+        learner_id: userId,
+        program_id: 'bxm',
+        subject_id: 'matematica',
+        activity_type: result.kind === 'mock_exam' ? 'mock_exam' : result.kind === 'diagnostic' ? 'diagnostic' : 'practice',
+        score_percentage: result.firstResponseScorePercentage,
+        correct_count: result.firstResponseCorrectCount,
+        total_questions: result.totalActualItems,
+        time_spent_seconds: result.durationSeconds,
+        completed_at: result.completedAt || new Date().toISOString(),
+      });
+
+      if (result.kind === 'diagnostic') {
+        telemetryService.trackActivation('diagnostic_completed', {
+          score_percentage: result.firstResponseScorePercentage,
+          total_questions: result.totalActualItems,
+          attempt_id: result.sessionId,
+        });
+      } else if (result.kind === 'mock_exam') {
+        telemetryService.trackAssessment('simulation_completed', {
+          score_percentage: result.firstResponseScorePercentage,
+          total_questions: result.totalActualItems,
+          attempt_id: result.sessionId,
+        });
+      } else {
+        telemetryService.trackLearning('practice_completed', {
+          score_percentage: result.firstResponseScorePercentage,
+          total_questions: result.totalActualItems,
+          attempt_id: result.sessionId,
+        });
+      }
+    } catch {
+      // Non-blocking telemetry and persistence
+    }
+
     go('result', undefined, result.sessionId);
-  }, [store, go]);
+  }, [store, go, userId]);
   const active = store.getActive();
   const result = store.getResult(route.sessionId);
   const events = store.progress.getEvents();
@@ -84,6 +126,20 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     const next = new SessionRunner({ sessionId: `bxm-${crypto.randomUUID()}`, items: preparePresentation(pending.selection.items, pending.seed, store.getExposedItemIds()),
       policy: policyFor(pending.request.kind), shortfalls: pending.selection.shortfalls, benchmarkExposed: pending.selection.benchmarkExposed });
     persist(next); setRunner(next); setPending(null); setMessage(store.lastError);
+
+    // M8 Telemetry: session start
+    try {
+      if (pending.request.kind === 'diagnostic') {
+        telemetryService.trackActivation('diagnostic_started', { attempt_id: next.sessionId });
+      } else if (pending.request.kind === 'mock_exam') {
+        telemetryService.trackAssessment('simulation_started', { attempt_id: next.sessionId });
+      } else {
+        telemetryService.trackLearning('practice_started', { attempt_id: next.sessionId, evidence_id: pending.request.evidenceKey });
+      }
+    } catch {
+      // Non-blocking telemetry
+    }
+
     go('assessment', pending.request.evidenceKey, next.sessionId);
   }
   function resume() {
