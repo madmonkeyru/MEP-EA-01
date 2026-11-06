@@ -1,21 +1,26 @@
 import { LearningText as TextRenderer } from './LearningText';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BxmLesson,
   BxmAssessmentCallbacks,
   BxmCapabilityContext
 } from '../types';
+import type { LearningContextReason } from '../../../services/navigation';
+import { getLessonContextBanner } from '../utils/lessonContext';
 import { InteractiveCircleVisual } from './visuals/InteractiveCircleVisual';
 import { InteractiveSphereCrossSection } from './visuals/InteractiveSphereCrossSection';
 import { BxmMicroQuiz } from './BxmMicroQuiz';
 import { BxmContentService } from '../services/bxmContentService';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Sparkles, BookOpen } from 'lucide-react';
 
 export interface BxmLessonViewProps {
   lesson: BxmLesson;
   callbacks?: BxmAssessmentCallbacks;
   capabilities?: BxmCapabilityContext;
   onBackToTemario?: () => void;
+  contextReason?: LearningContextReason;
+  isCompleted?: boolean;
+  onMarkLessonCompleted?: (lessonId: string) => void;
   className?: string;
 }
 
@@ -24,8 +29,23 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
   callbacks,
   capabilities = { isPremium: false },
   onBackToTemario,
+  contextReason,
+  isCompleted: initialCompleted = false,
+  onMarkLessonCompleted,
   className = ''
 }) => {
+  const [completed, setCompleted] = useState<boolean>(initialCompleted);
+  const domainReadable = lesson.domain === 'geometry' ? 'Geometría' : lesson.domain === 'functions' ? 'Relaciones y Álgebra' : 'Estadística y Probabilidad';
+  const banner = getLessonContextBanner(contextReason, lesson.title, domainReadable);
+
+  const handleMicroQuizAnswered = (payload: Parameters<NonNullable<BxmAssessmentCallbacks['onMicroQuizAnswered']>>[0]) => {
+    callbacks?.onMicroQuizAnswered?.(payload);
+    if (!completed) {
+      setCompleted(true);
+      onMarkLessonCompleted?.(lesson.id);
+    }
+  };
+
   const sampleId = BxmContentService.getAllLessons().find(l => l.domain === lesson.domain)?.id;
   if (!capabilities.isPremium && sampleId !== lesson.id) return (
     <article className="space-y-6 max-w-4xl mx-auto p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 bg-surface">
@@ -73,22 +93,66 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
   return (
     <article className={`space-y-8 max-w-4xl mx-auto ${className}`}>
       {/* Header & Navigation Breadcrumb */}
-      <div className="space-y-3">
-        {onBackToTemario && (
-          <button
-            type="button"
-            onClick={onBackToTemario}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
-          >
-            ← Volver al Temario Digital
-          </button>
-        )}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between gap-3">
+          {onBackToTemario ? (
+            <button
+              type="button"
+              onClick={onBackToTemario}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+            >
+              ← Volver al Temario Digital
+            </button>
+          ) : <div />}
+
+          {completed && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/60">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>Lección completada</span>
+            </span>
+          )}
+        </div>
+
+        {/* Contextual "Why am I here?" ribbon */}
+        <section aria-label="Motivo de estudio" className={`p-4 rounded-xl border flex items-start gap-3 transition-colors ${
+          banner.badgeStyle === 'rose'
+            ? 'bg-rose-50/70 border-rose-200 text-rose-950 dark:bg-rose-950/20 dark:border-rose-900/40 dark:text-rose-200'
+            : banner.badgeStyle === 'indigo'
+            ? 'bg-indigo-50/70 border-indigo-200 text-indigo-950 dark:bg-indigo-950/20 dark:border-indigo-900/40 dark:text-indigo-200'
+            : banner.badgeStyle === 'emerald'
+            ? 'bg-emerald-50/70 border-emerald-200 text-emerald-950 dark:bg-emerald-950/20 dark:border-emerald-900/40 dark:text-emerald-200'
+            : 'bg-amber-50/80 border-amber-200 text-amber-950 dark:bg-amber-950/30 dark:border-amber-900/40 dark:text-amber-200'
+        }`}>
+          <div className="mt-0.5 shrink-0">
+            {banner.badgeStyle === 'rose' ? (
+              <AlertTriangle className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+            ) : banner.badgeStyle === 'emerald' ? (
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+            ) : banner.badgeStyle === 'indigo' ? (
+              <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+            ) : (
+              <BookOpen className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            )}
+          </div>
+          <div className="space-y-0.5 text-xs sm:text-sm">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider block opacity-75">
+              {banner.tag}
+            </span>
+            <div className="font-bold text-stone-900 dark:text-stone-100">
+              {banner.headline}
+            </div>
+            <p className="text-stone-600 dark:text-stone-400 text-xs">
+              {banner.description}
+            </p>
+          </div>
+        </section>
+
         <div className="flex flex-wrap items-center gap-2">
           <span className="px-2.5 py-0.5 rounded-md text-xs font-bold uppercase tracking-wider bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
-            {lesson.domain === 'geometry' ? 'Geometría' : lesson.domain === 'functions' ? 'Relaciones y Álgebra' : 'Estadística'}
+            {domainReadable}
           </span>
-          <span className="px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60">
-            Evidencia {lesson.evidenceCode}
+          <span className="px-2.5 py-0.5 rounded-md text-xs font-medium text-stone-600 dark:text-stone-400 bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+            Habilidad formativa oficial
           </span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
@@ -234,16 +298,23 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
       {/* Embedded Micro-Quiz */}
       {lesson.microQuiz.length > 0 && (
         <section className="space-y-4">
-          <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
-            Comprobación de Aprendizaje
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
+              Comprobación de Aprendizaje
+            </h2>
+            {completed && (
+              <span className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                <CheckCircle2 className="w-4 h-4" /> Actividad registrada
+              </span>
+            )}
+          </div>
           <div className="space-y-4">
             {lesson.microQuiz.map((quiz) => (
               <BxmMicroQuiz
                 key={quiz.id}
                 quiz={quiz}
                 evidenceKey={lesson.evidenceKey}
-                onAnswered={callbacks?.onMicroQuizAnswered}
+                onAnswered={handleMicroQuizAnswered}
               />
             ))}
           </div>
@@ -258,10 +329,10 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
             <span>Siguiente paso recomendado</span>
           </div>
           <h3 className="text-base font-extrabold text-stone-900 dark:text-stone-100">
-            ¿Listo para poner a prueba esta habilidad?
+            {completed ? '¡Lección completada! Ahora demuestra lo aprendido' : '¿Listo para poner a prueba esta habilidad?'}
           </h3>
           <p className="text-xs text-stone-600 dark:text-stone-400 max-w-xl">
-            Aplica lo aprendido en esta lección con ejercicios de autor diseñados específicamente para la habilidad {lesson.evidenceCode}. Al completar la práctica, podrás comprobar tu dominio.
+            Aplica lo aprendido en esta lección con ejercicios diseñados para {lesson.title}. Al completar la práctica, actualizarás tu indicador de dominio.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2.5 shrink-0">

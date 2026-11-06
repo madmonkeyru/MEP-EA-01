@@ -493,15 +493,27 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         );
       })()}
     </div>}
-    {tab === 'temario' && <BxmDigitalTemario key={route.evidenceKey || 'catalog'} initialEvidenceKey={route.evidenceKey} onEvidenceChange={key => go('temario', key)} capabilities={{ isPremium: capabilities.getTier() === 'premium' }} callbacks={{
-      onRequestDiagnostic: () => request({ kind: 'diagnostic' }),
-      onStartTargetedPractice: key => request({ kind: 'evidence_practice', evidenceKey: key }),
-      onMicroQuizAnswered: activity => {
-        if (!activity.eventId) return;
-        if (!store.recordActivity({ ...activity, eventId: activity.eventId })) setMessage(store.lastError);
+    {tab === 'temario' && <BxmDigitalTemario
+      key={route.evidenceKey || 'catalog'}
+      initialEvidenceKey={route.evidenceKey}
+      contextReason={route.contextReason}
+      completedLessonIds={store.getCompletedLessons().map(l => l.lessonId)}
+      onMarkLessonCompleted={lessonId => {
+        store.recordLessonCompletion(lessonId);
         setRevision(value => value + 1);
-      },
-    }} />}
+      }}
+      onEvidenceChange={key => go('temario', key)}
+      capabilities={{ isPremium: capabilities.getTier() === 'premium' }}
+      callbacks={{
+        onRequestDiagnostic: () => request({ kind: 'diagnostic' }),
+        onStartTargetedPractice: key => request({ kind: 'evidence_practice', evidenceKey: key }),
+        onMicroQuizAnswered: activity => {
+          if (!activity.eventId) return;
+          if (!store.recordActivity({ ...activity, eventId: activity.eventId })) setMessage(store.lastError);
+          setRevision(value => value + 1);
+        },
+      }}
+    />}
     {tab === 'practice' && <section className="ui-surface p-5 rounded-2xl space-y-4">
       <h2 className="text-xl font-semibold">Práctica por evidencia</h2>
       <label className="block">Evidencia<select aria-label="Evidencia" className="w-full" value={selectedEvidence} onChange={e => setSelectedEvidence(e.target.value)}>

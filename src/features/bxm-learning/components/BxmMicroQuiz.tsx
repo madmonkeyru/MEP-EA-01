@@ -130,22 +130,36 @@ export const BxmMicroQuiz: React.FC<BxmMicroQuizProps> = ({
           type="button"
           onClick={handleSubmit}
           disabled={!selectedOption}
-          className="px-4 py-1.5 rounded-lg text-sm font-semibold text-stone-950 bg-amber-400 hover:bg-amber-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           Comprobar respuesta
         </button>
       ) : (
-        <div className="space-y-3 pt-2 border-t border-stone-200 dark:border-stone-800">
-          <p className="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-            <strong className="text-stone-900 dark:text-stone-100">Explicación:</strong> <TextRenderer content={quiz.explanation} inline />
-          </p>
-          <button
-            type="button"
-            onClick={handleReset}
-            className="text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline"
-          >
-            Reintentar pregunta
-          </button>
+        <div className="space-y-3 pt-3 border-t border-stone-200 dark:border-stone-800">
+          <div className={`p-3.5 rounded-xl border text-xs sm:text-sm leading-relaxed ${
+            selectedOption === quiz.correctOption
+              ? 'bg-emerald-50/70 border-emerald-200 text-emerald-950 dark:bg-emerald-950/30 dark:border-emerald-800/60 dark:text-emerald-200'
+              : 'bg-rose-50/70 border-rose-200 text-rose-950 dark:bg-rose-950/30 dark:border-rose-800/60 dark:text-rose-200'
+          }`}>
+            <div className="font-bold flex items-center gap-1.5 mb-1">
+              <span>{selectedOption === quiz.correctOption ? '¡Excelente razonamiento!' : 'Atención al razonamiento:'}</span>
+            </div>
+            <p className="text-stone-800 dark:text-stone-200">
+              <strong className="font-semibold">Explicación paso a paso:</strong> <TextRenderer content={quiz.explanation} inline />
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleReset}
+              className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-stone-800 dark:text-stone-200 bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 transition-colors"
+            >
+              ← Intentar de nuevo
+            </button>
+            <span className="text-[11px] text-stone-500">
+              Puedes reintentar las veces que necesites para asegurar el concepto.
+            </span>
+          </div>
         </div>
       )}
     </div>
