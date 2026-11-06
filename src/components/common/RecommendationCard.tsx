@@ -55,7 +55,7 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
       data-activity-type={recommendation.activityType}
       data-reason={recommendation.reason}
       className={`rounded-2xl border-2 transition-all min-w-0 overflow-hidden ${
-        reason === 'diagnostic_weakness' || reason === 'remediation_pending'
+        reason === 'diagnostic_weakness' || reason === 'simulation_weakness' || reason === 'remediation_pending'
           ? 'border-amber-400 dark:border-amber-500/80 bg-amber-50/50 dark:bg-amber-950/25'
           : reason === 'simulation_recommended'
           ? 'border-indigo-300 dark:border-indigo-700 bg-indigo-50/40 dark:bg-indigo-950/20'

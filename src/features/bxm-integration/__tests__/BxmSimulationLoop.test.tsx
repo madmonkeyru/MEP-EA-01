@@ -39,6 +39,10 @@ describe('BxmLearningHub - Sprint 4 Simulation Loop Integration', () => {
 
     const officialBtn = screen.getByRole('button', { name: /Iniciar Examen Oficial/i });
     fireEvent.click(officialBtn);
+    // Opens briefing dialog
+    expect(screen.getByText(/Preparación para el Examen Oficial de Referencia/i)).toBeInTheDocument();
+    const startOfficialBtn = screen.getByRole('button', { name: /Comenzar Simulación Oficial/i });
+    fireEvent.click(startOfficialBtn);
     expect(handleSimulation).toHaveBeenCalledTimes(1);
   });
 
@@ -77,7 +81,7 @@ describe('BxmLearningHub - Sprint 4 Simulation Loop Integration', () => {
 
     expect(screen.getByText(/Tu Plan Personalizado de Nivelación/i)).toBeInTheDocument();
     expect(screen.getByText(/Ruta de Refuerzo Prioritaria/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Preparar Retest/i })).toBeInTheDocument();
+    expect(screen.getByText(/Plan de Nivelación/i)).toBeInTheDocument();
   });
 
   it('renders Retest Recovery and Mastery Update Card after a successful retest', () => {

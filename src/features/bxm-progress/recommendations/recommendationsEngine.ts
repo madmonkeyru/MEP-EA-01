@@ -6,6 +6,7 @@ import type {
   LearningCompletion,
 } from '../domain/types';
 import type { EvidenceMasteryRecord } from '../domain/masteryEngine';
+import type { SessionKind } from '../../bxm-assessment/types';
 import type { CanonicalRecommendation } from '../../../types/recommendation';
 
 export * from '../../../types/recommendation';
@@ -73,6 +74,7 @@ export interface RecommendationEngineContext {
   availableLessons?: { evidenceKey: string; title?: string }[];
   availableInventory?: Record<string, { totalItems: number; tiers?: DifficultyTier[] }>;
   pendingRemediationEvidenceKey?: string;
+  sourceActivityKind?: SessionKind;
 }
 
 const DOMAIN_FRIENDLY_NAMES: Record<string, string> = {
@@ -142,15 +144,18 @@ export function deriveCanonicalRecommendation(
     const domainName = rec ? getFriendlyDomainName(rec.domain) : 'Matemáticas';
     const code = rec?.rawCode || pendingRemediationEvidenceKey.split('/').pop() || '';
     const hasLesson = availableLessons.some(l => l.evidenceKey === pendingRemediationEvidenceKey);
+    const isFromSimulation = context.sourceActivityKind === 'mock_exam';
 
     return {
       activityType: hasLesson ? 'lesson' : 'practice',
       targetId: pendingRemediationEvidenceKey,
-      reason: 'diagnostic_weakness',
+      reason: isFromSimulation ? 'simulation_weakness' : 'diagnostic_weakness',
       priority: 'p0',
-      title: `Reforzar: Evidencia ${code} (${domainName})`,
+      title: isFromSimulation
+        ? `Nivelación del Simulacro: Evidencia ${code} (${domainName})`
+        : `Reforzar: Evidencia ${code} (${domainName})`,
       description: rec?.description
-        ? `${rec.description}. Concentra tu práctica para superar los errores detectados.`
+        ? `${rec.description}. ${isFromSimulation ? 'Tu simulacro detectó oportunidad de mejora aquí.' : 'Concentra tu práctica para superar los errores detectados.'}`
         : `Refuerza los conceptos prioritarios identificados en tu última evaluación de ${domainName}.`,
       domainLabel: domainName,
       currentAccuracyPercentage: rec?.accuracyPercentage,
@@ -182,15 +187,18 @@ export function deriveCanonicalRecommendation(
     const domainName = getFriendlyDomainName(target.domain);
     const hasLesson = availableLessons.some(l => l.evidenceKey === target.evidenceKey);
 
+    const isFromSimulation = context.sourceActivityKind === 'mock_exam';
     return {
       activityType: hasLesson ? 'lesson' : 'practice',
       targetId: target.evidenceKey,
-      reason: 'diagnostic_weakness',
+      reason: isFromSimulation ? 'simulation_weakness' : 'diagnostic_weakness',
       priority: 'p1',
-      title: `Reforzar: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`,
+      title: isFromSimulation
+        ? `Nivelación del Simulacro: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`
+        : `Reforzar: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`,
       description: target.description
-        ? `${target.description}. Tu diagnóstico detectó una oportunidad de mejora aquí.`
-        : `Tu diagnóstico detectó una oportunidad de mejora en ${domainName}.`,
+        ? `${target.description}. ${isFromSimulation ? 'Tu simulacro detectó oportunidad de mejora aquí.' : 'Tu diagnóstico detectó una oportunidad de mejora aquí.'}`
+        : `Oportunidad de mejora en ${domainName}.`,
       domainLabel: domainName,
       currentAccuracyPercentage: target.accuracyPercentage,
       statusLabel: target.statusLabelEs,

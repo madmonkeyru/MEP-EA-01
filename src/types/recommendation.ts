@@ -14,6 +14,7 @@ export type ActivityType =
 export type RecommendationReason =
   | 'no_diagnostic_yet'
   | 'diagnostic_weakness'
+  | 'simulation_weakness'
   | 'remediation_pending'
   | 'unfinished_lesson'
   | 'retest_available'

@@ -30,6 +30,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   const [revision, setRevision] = useState(0);
   const [message, setMessage] = useState(store.lastError);
   const [paywall, setPaywall] = useState(false);
+  const [showOfficialBriefing, setShowOfficialBriefing] = useState(false);
   const [discard, setDiscard] = useState(false);
   const [pending, setPending] = useState<Pending | null>(null);
   const [selectedEvidence, setSelectedEvidence] = useState(route.evidenceKey || [...sampleLessonKeys][0]);
@@ -131,6 +132,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       pendingRemediationEvidenceKey: target.evidenceId,
       availableLessons: lessons.map(l => ({ evidenceKey: l.evidenceKey })),
       availableInventory: inventory,
+      sourceActivityKind: result.kind,
     });
   }, [result, events, store]);
 
@@ -146,7 +148,18 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         break;
       case 'lesson':
         if (targetId) {
-          openLesson(targetId, rec.reason === 'diagnostic_weakness' ? 'diagnostic_weakness' : rec.reason === 'remediation_pending' ? 'remediation' : undefined);
+          openLesson(
+            targetId,
+            rec.reason === 'simulation_weakness'
+              ? 'simulation_weakness'
+              : rec.reason === 'diagnostic_weakness'
+              ? 'diagnostic_weakness'
+              : rec.reason === 'remediation_pending'
+              ? 'remediation'
+              : rec.reason === 'retest_available'
+              ? 'remediation_retest'
+              : undefined
+          );
         } else {
           go('temario');
         }
@@ -597,7 +610,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
               <li>Recomendada como ensayo general previo al examen formal del MEP.</li>
             </ul>
           </div>
-          <button className="secondary-button w-full cursor-pointer py-2.5 text-xs font-bold" onClick={onOfficialSimulation}>
+          <button className="secondary-button w-full cursor-pointer py-2.5 text-xs font-bold" onClick={() => setShowOfficialBriefing(true)}>
             Iniciar Examen Oficial (60 ítems)
           </button>
         </article>
@@ -605,6 +618,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     </section>}
     {(tab === 'progress' || tab === 'path') && (capabilities.canAccess('longitudinal_mastery_dashboard')
       ? <BxmPreparationDashboard key={tab} initialTab={tab === 'path' ? 'queue' : 'overview'} events={events} completions={store.getCompletions()} capabilityProvider={capabilities} availableInventoryByEvidence={inventory} availableLessonKeys={lessons.map(l => l.evidenceKey)}
+        canonicalRecommendation={canonicalHomeRecommendation} onRecommendationAction={handleRecommendationAction}
         onNavigateToLesson={openLesson} onNavigateToPractice={(key, tier) => request({ kind: 'evidence_practice', evidenceKey: key, difficulty: tier as DifficultyTier })} onOpenUpgradeModal={() => setPaywall(true)} />
       : <section className="feedback-panel space-y-3"><h2>Seguimiento personalizado Premium</h2><p>El diagnóstico, sus resultados básicos y una lección completa por área siguen disponibles gratis.</p><button className="primary-button" onClick={() => setPaywall(true)}>Ver opciones Premium</button></section>)}
     {tab === 'assessment' && (runner && runner.sessionId === route.sessionId ? <BxmSessionRunnerView key={runner.sessionId} runner={runner} onFinish={finish} onStateChange={persist} onExit={() => go('diagnostic')} formulaSheet={<FormulasSheet />} />
@@ -632,13 +646,15 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           <section className="ui-surface p-5 sm:p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 space-y-4">
             <div className="space-y-1">
               <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                Diagnóstico de habilidades
+                {result.kind === 'mock_exam' ? 'Análisis del Simulacro Formativo' : 'Diagnóstico de habilidades'}
               </span>
               <h2 className="text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100">
-                Tu diagnóstico: ¿dónde estás y qué sigue?
+                {result.kind === 'mock_exam' ? 'Resultados del Simulacro: ¿Dónde estás y qué sigue?' : 'Tu diagnóstico: ¿dónde estás y qué sigue?'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
-                Identificamos claramente las áreas consolidadas y las habilidades prioritarias para tu plan de estudio.
+                {result.kind === 'mock_exam'
+                  ? '¿Cómo te fue? → ¿Qué debes mejorar? → ¿Qué haces ahora? Revisa tus fortalezas y tu plan de nivelación recomendado.'
+                  : 'Identificamos claramente las áreas consolidadas y las habilidades prioritarias para tu plan de estudio.'}
               </p>
             </div>
 
@@ -814,6 +830,83 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       <button className="primary-button" onClick={begin}>{pending.selection.isPartial ? 'Aceptar actividad limitada' : 'Comenzar actividad'}</button>
     </Dialog>}
     {discard && <Dialog title="¿Descartar la actividad de aprendizaje?" onClose={() => setDiscard(false)}><p>No se registrará un resultado; se conservan las exposiciones a explicaciones ya mostradas.</p><button className="primary-button" onClick={() => { const ok = store.discardActive(); setRunner(null); setDiscard(false); setMessage(ok ? '' : store.lastError); setRevision(value => value+1); go('diagnostic'); }}>Sí, descartar actividad</button></Dialog>}
+    {showOfficialBriefing && (
+      <Dialog
+        title="Preparación para el Examen Oficial de Referencia (60 ítems)"
+        onClose={() => setShowOfficialBriefing(false)}
+      >
+        <div className="space-y-4 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+          <div className="p-3.5 rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50/60 dark:bg-amber-950/20 space-y-1.5">
+            <span className="font-bold text-amber-900 dark:text-amber-200 uppercase tracking-wide text-[11px] block">
+              Condiciones Reales del Examen MEP
+            </span>
+            <p className="text-xs leading-relaxed">
+              Estás a punto de iniciar la <strong>Simulación Oficial de Referencia</strong> correspondiente a la convocatoria 2026-c2.
+              Esta evaluación consta de <strong>60 preguntas</strong> con un temporizador estricto de <strong>150 minutos (2 horas y media)</strong>.
+            </p>
+          </div>
+
+          {(() => {
+            const records = computeEvidenceMasteryRecords(catalog, events, new Date());
+            const masteredCount = records.filter(r => r.status === 'mastered').length;
+            const inProgressCount = records.filter(r => r.status === 'in_progress').length;
+            const needsWorkCount = records.filter(r => r.status === 'needs_reinforcement').length;
+            return (
+              <div className="space-y-2">
+                <h4 className="font-bold text-stone-900 dark:text-stone-100 text-xs uppercase tracking-wider">
+                  Estado de tu preparación actual
+                </h4>
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50">
+                    <span className="text-lg font-black text-emerald-700 dark:text-emerald-300 block">{masteredCount}</span>
+                    <span className="text-[10px] text-emerald-800 dark:text-emerald-400 font-medium">Dominadas</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50">
+                    <span className="text-lg font-black text-amber-700 dark:text-amber-300 block">{inProgressCount}</span>
+                    <span className="text-[10px] text-amber-800 dark:text-amber-400 font-medium">En progreso</span>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50">
+                    <span className="text-lg font-black text-rose-700 dark:text-rose-300 block">{needsWorkCount}</span>
+                    <span className="text-[10px] text-rose-800 dark:text-rose-400 font-medium">Necesitan práctica</span>
+                  </div>
+                </div>
+                <p className="text-[11px] text-stone-500 italic">
+                  {needsWorkCount > 0
+                    ? 'Recomendación: Puedes repasar las áreas con oportunidad de mejora antes del ensayo general o continuar para medir tu preparación integral.'
+                    : 'Listo para medir tu preparación integral bajo condiciones de examen.'}
+                </p>
+              </div>
+            );
+          })()}
+
+          <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
+            <li>El benchmark no contamina ni sobreescribe tus registros de dominio de autor.</li>
+            <li>Asegúrate de disponer de 150 minutos continuos sin interrupciones.</li>
+            <li>Calculadora científica básica permitida según normativa DGEC.</li>
+          </ul>
+
+          <div className="action-row pt-2">
+            <button
+              type="button"
+              className="primary-button py-2 px-4 text-xs font-bold"
+              onClick={() => {
+                setShowOfficialBriefing(false);
+                onOfficialSimulation();
+              }}
+            >
+              Comenzar Simulación Oficial (150 min)
+            </button>
+            <button
+              type="button"
+              className="secondary-button py-2 px-4 text-xs"
+              onClick={() => setShowOfficialBriefing(false)}
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </Dialog>
+    )}
     <PaywallModal isOpen={paywall} onClose={() => setPaywall(false)} />
   </div>;
 }

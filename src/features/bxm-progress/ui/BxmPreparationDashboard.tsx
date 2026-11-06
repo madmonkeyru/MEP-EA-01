@@ -17,6 +17,9 @@ import type { CapabilityProvider } from '../capabilities/capabilityModel';
 import { createCapabilityProvider } from '../capabilities/capabilityModel';
 import { BXM_OFFICIAL_EVIDENCES_FIXTURE } from './evidenceCatalogFixture';
 
+import type { CanonicalRecommendation } from '../../../types/recommendation';
+import { RecommendationCard } from '../../../components/common/RecommendationCard';
+
 export interface BxmPreparationDashboardProps {
   initialTab?: 'overview' | 'evidences' | 'queue' | 'analytics' | 'history';
   events?: AttemptEvent[];
@@ -26,6 +29,8 @@ export interface BxmPreparationDashboardProps {
   evidenceCatalog?: QualifiedEvidenceInfo[];
   capabilityProvider?: CapabilityProvider;
   referenceDateUtc?: Date;
+  canonicalRecommendation?: CanonicalRecommendation;
+  onRecommendationAction?: (rec: CanonicalRecommendation, isSecondary?: boolean) => void;
   onNavigateToPractice?: (evidenceKey: string, difficultyTier: number) => void;
   onNavigateToLesson?: (evidenceKey: string) => void;
   onOpenUpgradeModal?: () => void;
@@ -40,6 +45,8 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
   evidenceCatalog = BXM_OFFICIAL_EVIDENCES_FIXTURE,
   capabilityProvider = createCapabilityProvider('free'),
   referenceDateUtc = new Date(),
+  canonicalRecommendation,
+  onRecommendationAction,
   onNavigateToPractice,
   onNavigateToLesson,
   onOpenUpgradeModal,
@@ -349,31 +356,42 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             </div>
           </section>
 
-          {/* Next Recommended Activity Widget */}
-          <section className="bg-stone-50 dark:bg-stone-850 p-5 rounded-lg border border-stone-200 dark:border-stone-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div>
-              <span className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
-                Siguiente Paso Recomendado
-              </span>
-              <h3 className="text-base sm:text-lg font-bold text-stone-950 dark:text-stone-50 mt-0.5">
-                {queue.length > 0 ? queue[0].reasonLabelEs : 'Explorar el Temario Digital'}
-              </h3>
-              <p className="text-xs text-stone-600 dark:text-stone-400 mt-1 max-w-xl">
-                {queue.length > 0
-                  ? `${queue[0].rawCode}: ${queue[0].evidenceDescription || queue[0].evidenceKey}`
-                  : 'Comienza realizando ejercicios o un diagnóstico rápido para calibrar tus indicadores.'}
-              </p>
-            </div>
+          {/* Next Recommended Activity Widget / Canonical Decision Surface */}
+          {canonicalRecommendation ? (
+            <section className="space-y-2">
+              <RecommendationCard
+                recommendation={canonicalRecommendation}
+                onPrimaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, false) : (rec.cta.targetId && onNavigateToPractice ? onNavigateToPractice(rec.cta.targetId, 1) : null)}
+                onSecondaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, true) : null}
+                variant="hero"
+              />
+            </section>
+          ) : (
+            <section className="bg-stone-50 dark:bg-stone-850 p-5 rounded-lg border border-stone-200 dark:border-stone-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
+                  Siguiente Paso Recomendado
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-stone-950 dark:text-stone-50 mt-0.5">
+                  {queue.length > 0 ? queue[0].reasonLabelEs : 'Explorar el Temario Digital'}
+                </h3>
+                <p className="text-xs text-stone-600 dark:text-stone-400 mt-1 max-w-xl">
+                  {queue.length > 0
+                    ? `${queue[0].rawCode}: ${queue[0].evidenceDescription || queue[0].evidenceKey}`
+                    : 'Comienza realizando ejercicios o un diagnóstico rápido para calibrar tus indicadores.'}
+                </p>
+              </div>
 
-            {queue.length > 0 && onNavigateToPractice && (
-              <button
-                onClick={() => onNavigateToPractice(queue[0].evidenceKey, queue[0].targetDifficulty)}
-                className="px-4 py-2 text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-stone-950 transition-colors shadow-sm whitespace-nowrap"
-              >
-                Comenzar Ejercicio →
-              </button>
-            )}
-          </section>
+              {queue.length > 0 && onNavigateToPractice && (
+                <button
+                  onClick={() => onNavigateToPractice(queue[0].evidenceKey, queue[0].targetDifficulty)}
+                  className="px-4 py-2 text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-stone-950 transition-colors shadow-sm whitespace-nowrap"
+                >
+                  Comenzar Ejercicio →
+                </button>
+              )}
+            </section>
+          )}
         </div>
       )}
 
