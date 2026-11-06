@@ -1,0 +1,836 @@
+MEP-EA-01 — Next Milestone Backlog
+
+Milestone objective
+
+Transform the expanded Math MVP from a collection of working capabilities into a coherent preparation journey, while hardening the content pipeline and preparing the product for monetization.
+
+Recommended sequence
+
+M1. Product Journey Foundation
+        ↓
+M2. Content → Learning Experience
+        ↓
+M3. Assessment → Remediation Loop
+        ↓
+M4. Freemium / Persistence Foundation
+        ↓
+M5. Product Analytics + Release Hardening
+
+These should be treated as implementation milestones, not documentation exercises.
+
+
+---
+
+M1 — Product Journey Foundation
+
+Priority: P0
+
+Goal
+
+Make the existing functionality feel like one product.
+
+M1.1 — Implement learner home / “Tu preparación”
+
+Build:
+
+A learner dashboard that surfaces:
+
+- current program
+- current preparation status
+- diagnostic status
+- recommended next activity
+- mastery/progress summary
+- last activity
+- active remediation
+- simulation status
+
+Primary CTA must always represent the highest-value next action.
+
+Acceptance criteria
+
+- Existing users can enter the product and immediately see what to do next.
+- Recommendation is derived from existing learner state rather than hardcoded UI text.
+- No internal evidence IDs/taxonomy terminology is exposed.
+- Empty/new-user state is explicitly implemented.
+- Mobile layout has the next action prominently available.
+- Existing diagnostic/practice/simulation functionality remains accessible.
+
+
+---
+
+M1.2 — Implement recommendation card
+
+Create a reusable recommendation component:
+
+Recomendado para ti
+
+[reason]
+
+[primary action]
+
+It should support reasons such as:
+
+- diagnostic weakness
+- unfinished lesson
+- remediation pending
+- retest available
+- no diagnostic yet
+- simulation recommended
+
+Acceptance criteria
+
+The recommendation engine returns:
+
+{
+  activityType,
+  targetId,
+  reason,
+  priority,
+  cta
+}
+
+The UI does not independently determine recommendation logic.
+
+This keeps the product logic reusable across Home, Results and future study sessions.
+
+
+---
+
+M1.3 — Simplify primary navigation
+
+Move toward:
+
+Inicio · Aprender · Practicar · Simular
+
+Do not delete existing functionality merely to achieve this.
+
+Instead:
+
+- consolidate entry points
+- preserve deep links
+- preserve existing routes
+- move secondary functionality into contextual locations
+
+Acceptance criteria
+
+A learner can reach all current capabilities without exposing a long list of internal modules.
+
+
+---
+
+M2 — Content → Learning Experience
+
+Priority: P0
+
+This is where the recently expanded content architecture starts producing visible product value.
+
+M2.1 — Create canonical lesson experience
+
+Take the existing four Math lessons and establish the canonical implementation pattern.
+
+Each lesson should support:
+
+Concept
+  ↓
+Explanation
+  ↓
+Visual / example
+  ↓
+Worked solution
+  ↓
+Micro-question
+  ↓
+Feedback
+  ↓
+Practice CTA
+
+Acceptance criteria
+
+The four existing lessons use the same structural contract.
+
+The implementation should support:
+
+- KaTeX
+- examples
+- visual content
+- micro-questions
+- feedback
+- evidence association
+- completion state
+- transition to practice
+
+Future lessons should be able to reuse the same component/data contract.
+
+
+---
+
+M2.2 — Connect lessons to canonical evidence
+
+Every learning unit should identify its underlying evidence/skill.
+
+Student sees:
+
+> Esta lección fortalece: Funciones
+
+
+
+Internal system retains:
+
+evidenceId
+domain
+skill
+source
+provenance
+
+Acceptance criteria
+
+A lesson can be launched from:
+
+- Temario
+- Diagnostic recommendation
+- Results
+- Practice remediation
+
+without duplicating lesson logic.
+
+
+---
+
+M2.3 — Build contextual “Why am I here?” messaging
+
+Introduce contextual explanation at major transitions.
+
+Examples:
+
+Before practice
+
+> Tu diagnóstico mostró una oportunidad en Funciones.
+
+
+
+Inside lesson
+
+> Esta lección fortalece Funciones.
+
+
+
+After completion
+
+> Has completado esta lección. Ahora demuestra lo aprendido.
+
+
+
+Acceptance criteria
+
+The reason is dynamically generated from learner state/content metadata where applicable.
+
+No generic “personalized” copy pretending to be personalized.
+
+
+---
+
+M3 — Assessment → Remediation Loop
+
+Priority: P0
+
+This is arguably the most important educational milestone.
+
+M3.1 — Redesign diagnostic results as an action surface
+
+Results must contain:
+
+Result
+
+Overall score/performance.
+
+Strengths
+
+What is performing well.
+
+Opportunities
+
+Evidence/skills requiring attention.
+
+Recommendation
+
+Highest-priority next action.
+
+CTA
+
+Direct transition into learning/practice.
+
+
+---
+
+Acceptance criteria
+
+At least one diagnostic result produces a deterministic recommendation.
+
+The recommendation can launch:
+
+Result → Lesson
+Result → Practice
+Result → Remediation
+
+depending on the evidence state.
+
+
+---
+
+M3.2 — Implement question feedback model
+
+Replace generic correctness feedback with structured pedagogical feedback.
+
+The assessment result should support something like:
+
+{
+  correctness,
+  selectedAnswer,
+  correctAnswer,
+  explanation,
+  misconception?,
+  keyRule?,
+  evidenceId,
+  retryAvailable
+}
+
+The UI can then render:
+
+> Incorrecto
+
+
+
+> Qué ocurrió
+Confundiste radio y diámetro.
+
+
+
+> Recuerda
+d = 2r
+
+
+
+> [Intentar una variación]
+
+
+
+
+---
+
+M3.3 — Connect incorrect responses to remediation
+
+An incorrect response should be capable of producing:
+
+Question
+   ↓
+Evidence
+   ↓
+Misconception / weakness
+   ↓
+Recommended lesson/practice
+   ↓
+Retry
+
+Do not implement this as a hardcoded topic map.
+
+Use the existing evidence/content relationships.
+
+
+---
+
+M3.4 — Implement student-facing mastery states
+
+Internal model can remain quantitative.
+
+UI exposes:
+
+🟢 Dominada
+🟡 En progreso
+🔴 Necesita práctica
+
+and optionally:
+
+> Dominio: 72%
+
+
+
+Acceptance criteria
+
+The same mastery state is rendered consistently in:
+
+- Home
+- Results
+- Practice
+- Lesson completion
+- Progress
+
+
+---
+
+M4 — Simulation + Study Orchestration
+
+Priority: P0/P1
+
+M4.1 — Explicitly separate assessment types
+
+Implement two distinct visual/product identities:
+
+Official/reference
+
+Simulación oficial de referencia
+
+60 preguntas · 150 min
+
+Purpose:
+
+> Medir tu preparación.
+
+
+
+Formative
+
+Simulacro de práctica
+
+Purpose:
+
+> Practicar y detectar oportunidades de mejora.
+
+
+
+Acceptance criteria
+
+The underlying assessment type is represented in the data model.
+
+The UI does not infer the distinction from question count alone.
+
+
+---
+
+M4.2 — Simulation completion → remediation
+
+Current flow should become:
+
+Simulation
+    ↓
+Results
+    ↓
+Weak evidence
+    ↓
+Recommended remediation
+    ↓
+Practice
+    ↓
+Retest
+
+The final screen should not terminate at “score.”
+
+It should answer:
+
+> ¿Qué hago después?
+
+
+
+
+---
+
+M4.3 — Implement Study Session orchestration
+
+Introduce:
+
+15 minutes
+
+Reforzar una habilidad
+
+30 minutes
+
+Sesión de práctica
+
+60 minutes
+
+Simulacro
+
+The session engine chooses activities based on learner state.
+
+For MVP, this can be deterministic rather than AI-driven.
+
+Example:
+
+15 min
+→ weakest evidence
+→ lesson
+→ 3 practice items
+
+30 min
+→ weakest evidence
+→ 8 practice items
+→ mastery check
+
+60 min
+→ formative mock
+→ results
+→ remediation
+
+This gives you the beginning of a genuine learning orchestration layer.
+
+
+---
+
+M5 — Content Quality / Release Gates
+
+Priority: P0
+
+This should run in parallel with M1–M4.
+
+The QBE work makes this possible.
+
+M5.1 — Establish content lifecycle
+
+Every asset/question should have a lifecycle similar to:
+
+raw
+ ↓
+ingested
+ ↓
+parsed
+ ↓
+mapped
+ ↓
+validated
+ ↓
+reviewed
+ ↓
+approved
+ ↓
+published
+
+Do not allow “ingested” to implicitly mean “production-ready.”
+
+
+---
+
+M5.2 — Add publication eligibility validator
+
+Before content can enter a released exam or learning experience, validate:
+
+- provenance
+- answer
+- question integrity
+- evidence mapping
+- metadata
+- duplicate status
+- review status
+- required fields
+- asset references
+- exam completeness
+
+Output should distinguish:
+
+PASS
+WARNING
+BLOCKER
+
+
+---
+
+M5.3 — Enforce exam completeness
+
+For every released program:
+
+expected questions
+actual questions
+missing questions
+invalid references
+duplicate questions
+unreviewed questions
+
+A partial blueprint must never silently appear as a complete exam.
+
+
+---
+
+M6 — Freemium Foundation
+
+Priority: P0/P1
+
+Do this before implementing a large amount of billing UI.
+
+M6.1 — Define capability entitlements
+
+Create a central entitlement model.
+
+Conceptually:
+
+type Entitlement =
+  | "official_resources"
+  | "diagnostic"
+  | "reference_exam"
+  | "basic_results"
+  | "lesson_library"
+  | "practice_bank"
+  | "adaptive_practice"
+  | "mock_exams"
+  | "advanced_progress"
+  | "study_sessions";
+
+Then:
+
+FREE
+→ selected entitlements
+
+PREMIUM
+→ expanded entitlements
+
+The UI should query entitlements rather than contain scattered:
+
+if (isPremium)
+
+conditions.
+
+
+---
+
+M6.2 — Design graceful premium boundaries
+
+Do not interrupt the learning flow unnecessarily.
+
+Instead of:
+
+> Access denied.
+
+
+
+use:
+
+> Has completado esta práctica.
+
+Continúa con práctica personalizada y simulacros para seguir mejorando.
+
+
+
+[Ver Premium]
+
+The product should demonstrate value before asking for payment.
+
+
+---
+
+M7 — Persistence & Identity
+
+Priority: P1
+
+The existing local/browser state is acceptable for MVP experimentation.
+
+It becomes a limitation for a real product.
+
+Implement in stages:
+
+Local learner state
+       ↓
+Authenticated user
+       ↓
+Cloud learner profile
+       ↓
+Attempts/history
+       ↓
+Mastery history
+       ↓
+Entitlements
+
+Important
+
+Do not rewrite the entire application around authentication immediately.
+
+First define stable domain contracts for:
+
+- learner
+- attempt
+- mastery
+- recommendation
+- entitlement
+- activity history
+
+Then persistence can evolve underneath them.
+
+
+---
+
+M8 — Product Analytics
+
+Priority: P1/P2
+
+Track the actual learning funnel.
+
+Activation
+
+Landing
+→ onboarding
+→ diagnostic
+→ first practice
+
+Learning
+
+lesson started
+→ lesson completed
+→ practice started
+→ practice completed
+→ mastery changed
+
+Assessment
+
+simulation started
+→ completed
+→ remediation launched
+→ retest completed
+
+Commercial
+
+premium viewed
+→ checkout
+→ subscription
+→ continued usage
+
+This creates the feedback loop needed to determine which UX improvements actually matter.
+
+
+---
+
+Recommended GitHub issue structure
+
+I would create issues using implementation units, not broad initiatives.
+
+For example:
+
+EPIC: Learner Journey Foundation
+
+MEP-101 Implement learner preparation dashboard
+MEP-102 Implement recommendation domain model
+MEP-103 Implement recommendation card
+MEP-104 Integrate diagnostic recommendation
+MEP-105 Integrate remediation recommendation
+MEP-106 Simplify primary navigation
+MEP-107 Implement empty/new learner state
+MEP-108 Mobile next-action optimization
+
+Then:
+
+EPIC: Canonical Learning Experience
+
+MEP-120 Lesson shell
+MEP-121 Lesson content contract
+MEP-122 Evidence association
+MEP-123 Micro-quiz component
+MEP-124 Pedagogical feedback component
+MEP-125 Lesson completion state
+MEP-126 Lesson → practice transition
+
+And:
+
+EPIC: Assessment Remediation
+
+MEP-140 Results redesign
+MEP-141 Question feedback model
+MEP-142 Evidence-driven remediation
+MEP-143 Retry/isomorphic question transition
+MEP-144 Mastery presentation
+MEP-145 Simulation → remediation
+MEP-146 Remediation → retest
+
+This makes the work independently implementable and testable.
+
+
+---
+
+Dependency order
+
+The important dependency chain is:
+
+┌─────────────────┐
+                    │ QBE / Content   │
+                    │ Quality Gates   │
+                    └────────┬────────┘
+                             │
+                             ▼
+┌──────────────────┐   ┌──────────────────┐
+│ Evidence / Skill │──▶│ Recommendation   │
+│ Relationships    │   │ Engine           │
+└──────────────────┘   └────────┬─────────┘
+                                │
+                ┌───────────────┼───────────────┐
+                ▼               ▼               ▼
+             Home           Results         Study Session
+                │               │               │
+                └───────┬───────┘               │
+                        ▼                         │
+                   Lesson ──▶ Practice ◀─────────┘
+                        │          │
+                        └────┬─────┘
+                             ▼
+                         Mastery
+                             │
+                             ▼
+                        Simulation
+                             │
+                             ▼
+                        Remediation
+                             │
+                             ▼
+                           Retest
+
+Do not build the dashboard as a visual shell first.
+
+Build the underlying recommendation/activity contracts first, then the dashboard becomes a consumer of real product logic.
+
+
+---
+
+What I would NOT put into the next sprint
+
+To protect the team from scope creep, explicitly defer:
+
+- AI tutor
+- gamification
+- video lessons
+- native mobile app
+- advanced social features
+- elaborate dashboards
+- sophisticated predictive ML
+- large-scale visual redesign
+- billing-provider integration before entitlement architecture
+- massive content expansion without publication gates
+
+
+---
+
+Definition of success for this phase
+
+At the end of this next phase, a student should be able to do this:
+
+1. Enter MEP
+        ↓
+2. Understand where they are
+        ↓
+3. Receive a reasoned recommendation
+        ↓
+4. Open the recommended lesson
+        ↓
+5. Learn + interact
+        ↓
+6. Practice
+        ↓
+7. Receive meaningful feedback
+        ↓
+8. Build/update mastery
+        ↓
+9. Take a simulation
+        ↓
+10. Receive remediation
+        ↓
+11. Practice weaknesses
+        ↓
+12. Retest
+
+without ever needing to understand how the underlying modules are implemented.
+
+That is the milestone I would optimize for.
+
+And there is a useful strategic boundary here: the six completed sprints proved that the underlying MVP architecture works; this next phase should prove that the architecture produces a coherent learner outcome.
