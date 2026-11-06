@@ -57,11 +57,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -86,8 +86,8 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -100,7 +100,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -111,7 +111,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -122,7 +122,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -133,7 +133,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -144,7 +144,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -155,7 +155,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -166,7 +166,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -177,7 +177,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -188,7 +188,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           }
         ]
       }
@@ -259,11 +259,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Rectas secantes, tangentes o exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -288,8 +288,8 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -302,7 +302,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           }
         ]
       }
@@ -322,8 +322,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x^2+y^2=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)^2+(y+1)^2=4\nDe ellas son verdaderas",
+        "stem_raw": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x^2+y^2=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)^2+(y+1)^2=4\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -360,11 +360,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -389,32 +389,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nConsidere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x^2+y^2=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)^2+(y+1)^2=4\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x²+y²=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)²+(y+1)²=4\nDe ellas son verdaderas",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- El punto (0,3) se encuentra en el interior de la circunferencia definida por x^2+y^2=8\nII- El punto (1,1) se ubica al exterior de la circunferencia definida por (x+1)^2+(y+1)^2=4\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.740Z"
           }
         ]
       }
@@ -434,8 +434,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?",
+        "stem_raw": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?*",
+        "stem_cleaned": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?",
         "options": [
           {
             "id": "A",
@@ -485,11 +485,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Rectas secantes, tangentes o exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -514,21 +514,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?",
+            "original_text": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?*",
+            "normalized_text": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\n¿Cuál de las siguientes rectas es tangente a la circunferencia anterior?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -539,7 +539,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -550,7 +550,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -561,7 +561,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -572,7 +572,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           }
         ]
       }
@@ -592,8 +592,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas",
+        "stem_raw": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -647,7 +647,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -673,20 +673,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas",
+            "original_text": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           }
         ]
       }
@@ -706,8 +706,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nAnalice la siguiente información sobre una circunferencia y dos líneas",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nAnalice la siguiente información sobre una circunferencia y dos líneas",
+        "stem_raw": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nAnalice la siguiente información sobre una circunferencia y dos líneas",
+        "stem_cleaned": "Para responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nAnalice la siguiente información sobre una circunferencia y dos líneas",
         "options": [],
         "detected_answer": null,
         "explanation_raw": null,
@@ -748,7 +748,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -798,8 +798,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x^2+(y-1)^2=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
+        "stem_raw": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro*",
+        "stem_cleaned": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x^2+(y-1)^2=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
         "options": [
           {
             "id": "A",
@@ -830,20 +830,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -853,12 +840,12 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -888,24 +875,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
+            "original_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro*",
+            "normalized_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x^2+(y-1)^2=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
+            "original_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x²+(y-1)²=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
+            "normalized_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nA una circunferencia dada por x^2+(y-1)^2=16, se le aplica una traslación de 2 unidades hacia arriba (paralelo al eje Y), entonces la nueva circunferencia tiene por centro",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           }
         ]
       }
@@ -925,8 +912,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x^2+y^2=9 se obtiene una nueva circunferencia C' x^2+(y+1)^2=9. Entonces C se trasladó una unidad hacia",
+        "stem_raw": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia*",
+        "stem_cleaned": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x^2+y^2=9 se obtiene una nueva circunferencia C' x^2+(y+1)^2=9. Entonces C se trasladó una unidad hacia",
         "options": [
           {
             "id": "A",
@@ -957,35 +944,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Traslaciones de circunferencias"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1007,7 +981,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -1015,24 +989,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia",
+            "original_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia*",
+            "normalized_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x^2+y^2=9 se obtiene una nueva circunferencia C' x^2+(y+1)^2=9. Entonces C se trasladó una unidad hacia",
+            "original_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x²+y²=9 se obtiene una nueva circunferencia C' x²+(y+1)²=9. Entonces C se trasladó una unidad hacia",
+            "normalized_text": "Con base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nAl trasladar la circunferencia C x^2+y^2=9 se obtiene una nueva circunferencia C' x^2+(y+1)^2=9. Entonces C se trasladó una unidad hacia",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.741Z"
           }
         ]
       }
@@ -1052,31 +1026,31 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?",
+        "stem_raw": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?*",
+        "stem_cleaned": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?",
         "options": [
           {
             "id": "A",
             "text_raw": "12√3̅",
-            "text_cleaned": "12\\sqrt{3}̅",
+            "text_cleaned": "12\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "16√3̅",
-            "text_cleaned": "16\\sqrt{3}̅",
+            "text_cleaned": "16\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "24√3̅",
-            "text_cleaned": "24\\sqrt{3}̅",
+            "text_cleaned": "24\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "36√3̅",
-            "text_cleaned": "36\\sqrt{3}̅",
+            "text_cleaned": "36\\sqrt{3}",
             "visuals": []
           }
         ],
@@ -1085,18 +1059,6 @@
         "explanation_cleaned": null
       },
       "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
         {
           "id": "vis-97bf3c176c",
           "original_filename": "image7.jpg",
@@ -1119,12 +1081,12 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1154,57 +1116,57 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?",
+            "original_text": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?*",
+            "normalized_text": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el perímetro del cuadrilátero ⃞ ABGH?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
             "original_text": "12√3̅",
-            "normalized_text": "12\\sqrt{3}̅",
+            "normalized_text": "12\\sqrt{3}",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
             "original_text": "16√3̅",
-            "normalized_text": "16\\sqrt{3}̅",
+            "normalized_text": "16\\sqrt{3}",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
             "original_text": "24√3̅",
-            "normalized_text": "24\\sqrt{3}̅",
+            "normalized_text": "24\\sqrt{3}",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
             "original_text": "36√3̅",
-            "normalized_text": "36\\sqrt{3}̅",
+            "normalized_text": "36\\sqrt{3}",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -1224,8 +1186,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?",
+        "stem_raw": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?*",
+        "stem_cleaned": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?",
         "options": [
           {
             "id": "A",
@@ -1242,13 +1204,13 @@
           {
             "id": "C",
             "text_raw": "24√3̅",
-            "text_cleaned": "24\\sqrt{3}̅",
+            "text_cleaned": "24\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "72√3̅",
-            "text_cleaned": "72\\sqrt{3}̅",
+            "text_cleaned": "72\\sqrt{3}",
             "visuals": []
           }
         ],
@@ -1257,168 +1219,6 @@
         "explanation_cleaned": null
       },
       "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
-      "classification": {
-        "topic": "geometry"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?",
-            "correction_type": "formatting",
-            "semantic_change": false,
-            "reason": "Removed trailing asterisk exam artifact",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "24√3̅",
-            "normalized_text": "24\\sqrt{3}̅",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "72√3̅",
-            "normalized_text": "72\\sqrt{3}̅",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.638Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2019-c2-geometry-2-q11",
-      "source": {
-        "asset_id": "bxm-raw-2019-c2-geometry-2",
-        "filename": "BXM Math GEO 02 C2019.docx",
-        "convocatoria": "2019-c2",
-        "area": "geometry",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
-      },
-      "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el perímetro del polígono ABCDE?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el perímetro del polígono ABCDE?",
-        "options": [
-          {
-            "id": "A",
-            "text_raw": "17",
-            "text_cleaned": "17",
-            "visuals": []
-          },
-          {
-            "id": "B",
-            "text_raw": "18",
-            "text_cleaned": "18",
-            "visuals": []
-          },
-          {
-            "id": "C",
-            "text_raw": "20",
-            "text_cleaned": "20",
-            "visuals": []
-          },
-          {
-            "id": "D",
-            "text_raw": "21",
-            "text_cleaned": "21",
-            "visuals": []
-          }
-        ],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
         {
           "id": "vis-97bf3c176c",
           "original_filename": "image7.jpg",
@@ -1453,12 +1253,12 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1488,13 +1288,136 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el perímetro del polígono ABCDE?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el perímetro del polígono ABCDE?",
+            "original_text": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?*",
+            "normalized_text": "Para responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\n¿Cuál es el área del hexágono BCDEFG?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "24√3̅",
+            "normalized_text": "24\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.742Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "72√3̅",
+            "normalized_text": "72\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.742Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2019-c2-geometry-2-q11",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
+      },
+      "content": {
+        "stem_raw": "¿Cuál es el perímetro del polígono ABCDE?*",
+        "stem_cleaned": "¿Cuál es el perímetro del polígono ABCDE?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "17",
+            "text_cleaned": "17",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "18",
+            "text_cleaned": "18",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "20",
+            "text_cleaned": "20",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "21",
+            "text_cleaned": "21",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0.82,
+        "content_confidence": 0.9
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "¿Cuál es el perímetro del polígono ABCDE?*",
+            "normalized_text": "¿Cuál es el perímetro del polígono ABCDE?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -1514,8 +1437,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el área del polígono ABCDE?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el área del polígono ABCDE?",
+        "stem_raw": "¿Cuál es el área del polígono ABCDE?*",
+        "stem_cleaned": "¿Cuál es el área del polígono ABCDE?",
         "options": [
           {
             "id": "A",
@@ -1548,42 +1471,6 @@
       },
       "visuals": [
         {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-660509fa29",
           "original_filename": "image8.jpg",
           "stored_filename": "bxm-raw-2019-c2-geometry-2-image8-660509fa.jpg",
@@ -1601,11 +1488,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1613,11 +1500,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -1632,21 +1517,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.82,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el área del polígono ABCDE?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el área del polígono ABCDE?",
+            "original_text": "¿Cuál es el área del polígono ABCDE?*",
+            "normalized_text": "¿Cuál es el área del polígono ABCDE?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -1666,8 +1551,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl eje de simetría de la figura R es*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl eje de simetría de la figura R es",
+        "stem_raw": "El eje de simetría de la figura R es*",
+        "stem_cleaned": "El eje de simetría de la figura R es",
         "options": [
           {
             "id": "A",
@@ -1698,67 +1583,30 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
+          "missing_answer_key",
+          "missing_visual"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
+          "Missing explicit answer key from source asset",
+          "Stem text references visual diagram but no visual asset is linked"
         ]
       },
       "review": {
@@ -1772,7 +1620,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1780,13 +1628,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl eje de simetría de la figura R es*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl eje de simetría de la figura R es",
+            "original_text": "El eje de simetría de la figura R es*",
+            "normalized_text": "El eje de simetría de la figura R es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1797,7 +1645,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1808,7 +1656,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1819,7 +1667,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1830,7 +1678,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -1850,8 +1698,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl total de ejes de simetría de la figura P es igual a*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl total de ejes de simetría de la figura P es igual a",
+        "stem_raw": "El total de ejes de simetría de la figura P es igual a*",
+        "stem_cleaned": "El total de ejes de simetría de la figura P es igual a",
         "options": [
           {
             "id": "A",
@@ -1882,67 +1730,30 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
+          "missing_answer_key",
+          "missing_visual"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
+          "Missing explicit answer key from source asset",
+          "Stem text references visual diagram but no visual asset is linked"
         ]
       },
       "review": {
@@ -1956,7 +1767,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1964,13 +1775,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl total de ejes de simetría de la figura P es igual a*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl total de ejes de simetría de la figura P es igual a",
+            "original_text": "El total de ejes de simetría de la figura P es igual a*",
+            "normalized_text": "El total de ejes de simetría de la figura P es igual a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -1990,8 +1801,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3  de la figura Q?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?",
+        "stem_raw": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3  de la figura Q?*",
+        "stem_cleaned": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?",
         "options": [
           {
             "id": "A",
@@ -2024,42 +1835,6 @@
       },
       "visuals": [
         {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-8cb81f148a",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2019-c2-geometry-2-image4-8cb81f14.jpg",
@@ -2077,11 +1852,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -2089,11 +1864,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2108,32 +1881,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3  de la figura Q?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?*",
+            "original_text": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3  de la figura Q?*",
+            "normalized_text": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?",
+            "original_text": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?*",
+            "normalized_text": "¿Cuál es el homólogo del punto (1,-1) para el eje de simetría x=3 de la figura Q?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2153,8 +1926,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre A para obtener C?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre A para obtener C?",
+        "stem_raw": "¿Cuál es la transformación que se aplica sobre A para obtener C?*",
+        "stem_cleaned": "¿Cuál es la transformación que se aplica sobre A para obtener C?",
         "options": [
           {
             "id": "A",
@@ -2185,54 +1958,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2240,11 +1976,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2259,21 +1993,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre A para obtener C?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre A para obtener C?",
+            "original_text": "¿Cuál es la transformación que se aplica sobre A para obtener C?*",
+            "normalized_text": "¿Cuál es la transformación que se aplica sobre A para obtener C?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2293,8 +2027,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre B para obtener C?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre B para obtener C?",
+        "stem_raw": "¿Cuál es la transformación que se aplica sobre B para obtener C?*",
+        "stem_cleaned": "¿Cuál es la transformación que se aplica sobre B para obtener C?",
         "options": [
           {
             "id": "A",
@@ -2325,54 +2059,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2380,11 +2077,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2399,21 +2094,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre B para obtener C?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\n¿Cuál es la transformación que se aplica sobre B para obtener C?",
+            "original_text": "¿Cuál es la transformación que se aplica sobre B para obtener C?*",
+            "normalized_text": "¿Cuál es la transformación que se aplica sobre B para obtener C?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2433,8 +2128,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?",
+        "stem_raw": "El triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?*",
+        "stem_cleaned": "El triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?",
         "options": [
           {
             "id": "A",
@@ -2465,44 +2160,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -2512,20 +2170,20 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
+          "missing_answer_key",
+          "missing_visual"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
+          "Missing explicit answer key from source asset",
+          "Stem text references visual diagram but no visual asset is linked"
         ]
       },
       "review": {
@@ -2547,13 +2205,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nEl triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?",
+            "original_text": "El triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?*",
+            "normalized_text": "El triángulo A produce el D en una transformación con eje y=1. ¿Cuál es la imagen del punto (-2,4) en dicha transformación?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2573,8 +2231,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?",
+        "stem_raw": "Considere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?*",
+        "stem_cleaned": "Considere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?",
         "options": [
           {
             "id": "A",
@@ -2605,54 +2263,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2660,11 +2281,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2679,21 +2298,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?",
+            "original_text": "Considere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?*",
+            "normalized_text": "Considere la siguiente información sobre la sección plana producto de la intersección de un cono circular recto y un plano que es perpendicular a la base y que no pasa por el vértice. ¿Cuál es el nombre del perímetro de esta sección plana?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2713,8 +2332,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nLa medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nLa medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?",
+        "stem_raw": "La medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?*",
+        "stem_cleaned": "La medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?",
         "options": [
           {
             "id": "A",
@@ -2745,54 +2364,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2800,11 +2382,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2819,21 +2399,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nLa medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nLa medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?",
+            "original_text": "La medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?*",
+            "normalized_text": "La medida de la altura de un cono recto es de 12 y el diámetro de su base de 8. Si al cono se le realiza un corte a la mitad de la altura con un plano paralelo a su base, entonces, ¿cuál es el radio de la sección circular plana formada?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2853,8 +2433,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nSe realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nSe realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?",
+        "stem_raw": "Se realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?*",
+        "stem_cleaned": "Se realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?",
         "options": [
           {
             "id": "A",
@@ -2885,54 +2465,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2940,11 +2483,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -2959,21 +2500,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nSe realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nSe realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?",
+            "original_text": "Se realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?*",
+            "normalized_text": "Se realiza el corte de un cilindro recto, con un plano paralelo a la base. Si el radio de la base del cilindro mide 10, ¿cuál es la circunferencia de la sección plana generada?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }
@@ -2993,8 +2534,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math GEO 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?*",
-        "stem_cleaned": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?",
+        "stem_raw": "Considere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?*",
+        "stem_cleaned": "Considere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?",
         "options": [
           {
             "id": "A",
@@ -3027,42 +2568,6 @@
       },
       "visuals": [
         {
-          "id": "vis-8a4444c0a6",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image6-8a4444c0.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "8a4444c0a64352df15e05af8bfaf4b2b19b3af2b529ca0fd674101c7d58d6a6c",
-          "byte_size": 7924,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-97bf3c176c",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image7-97bf3c17.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "97bf3c176c9ba5c032ddd8b0a7cad763b6a9176e730d08e2b686dacc28d1b389",
-          "byte_size": 5578,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0d8c03672c",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-geometry-2-image2-0d8c0367.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0d8c03672c63586619d169714523de20656830cb005e8c66892a11631c5c8dff",
-          "byte_size": 13204,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-1e5d5e601c",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2019-c2-geometry-2-image5-1e5d5e60.jpg",
@@ -3080,11 +2585,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -3092,11 +2597,9 @@
         "gate_b_quality_passed": true,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "ambiguous_math",
           "missing_answer_key"
         ],
         "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
           "Missing explicit answer key from source asset"
         ]
       },
@@ -3111,21 +2614,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?*",
-            "normalized_text": "Considere la siguiente información para responder los ítems 1 y 2.\nLa longitud del radio de la circunferencia C es de 3 unidades y su centro corresponde al punto (0,-3)\nPara responder las preguntas 4 a 5, analice la siguiente circunferencia de radio 2 y centro (2,-2)\nCon base en la información anterior considere las siguientes proposiciones\nI- Con certeza, el radio O̅P̅ es perpendicular a la recta s.\nII- Con certeza, el radio O̅P̅ es perpendicular a la recta m.\nDe ellas son verdaderas*\nA) ambas\nB) ninguna\nC) solo la I\nD) solo la II\nPara responder las preguntas 9 y 10 considere la siguiente figura formada por la unión de un cuadrado y un hexágono.\nConsidere la siguiente figura para responder las preguntas 11 y 12\nConsidere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?",
+            "original_text": "Considere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?*",
+            "normalized_text": "Considere la siguiente esfera con centro M y un corte.\n¿Cuál es la circunferencia de la sección plana?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.639Z"
+            "timestamp": "2026-11-06T02:56:40.742Z"
           }
         ]
       }

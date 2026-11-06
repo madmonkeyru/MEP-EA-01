@@ -19,8 +19,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c de centro Q. La ecuación de esta circunferencia es*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c de centro Q. La ecuación de esta circunferencia es",
+        "stem_raw": "Analice la circunferencia c de centro Q. La ecuación de esta circunferencia es*",
+        "stem_cleaned": "Analice la circunferencia c de centro Q. La ecuación de esta circunferencia es",
         "options": [
           {
             "id": "A",
@@ -64,11 +64,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -95,7 +95,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -103,13 +103,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c de centro Q. La ecuación de esta circunferencia es*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c de centro Q. La ecuación de esta circunferencia es",
+            "original_text": "Analice la circunferencia c de centro Q. La ecuación de esta circunferencia es*",
+            "normalized_text": "Analice la circunferencia c de centro Q. La ecuación de esta circunferencia es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -120,7 +120,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -131,7 +131,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -142,7 +142,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -153,7 +153,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -164,7 +164,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -175,7 +175,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -195,8 +195,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a",
+        "stem_raw": "La ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a*",
+        "stem_cleaned": "La ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a",
         "options": [
           {
             "id": "A",
@@ -227,11 +227,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -258,7 +258,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -266,13 +266,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a",
+            "original_text": "La ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a*",
+            "normalized_text": "La ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -283,7 +283,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -294,7 +294,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -305,7 +305,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -316,7 +316,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -327,7 +327,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -338,7 +338,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -358,8 +358,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)^2+(y-1)^2=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
+        "stem_raw": "Considere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas*",
+        "stem_cleaned": "Considere la circunferencia c y su ecuación: (x+2)^2+(y-1)^2=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
         "options": [
           {
             "id": "A",
@@ -390,11 +390,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -421,7 +421,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -429,24 +429,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
+            "original_text": "Considere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas*",
+            "normalized_text": "Considere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c y su ecuación: (x+2)^2+(y-1)^2=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
+            "original_text": "Considere la circunferencia c y su ecuación: (x+2)²+(y-1)²=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
+            "normalized_text": "Considere la circunferencia c y su ecuación: (x+2)^2+(y-1)^2=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -466,8 +466,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x^2+(y+1)^2=4. La recta x=-2 es__________ a la circunferencia c.",
+        "stem_raw": "Considere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.*",
+        "stem_cleaned": "Considere la circunferencia c que tiene la siguiente ecuación: x^2+(y+1)^2=4. La recta x=-2 es__________ a la circunferencia c.",
         "options": [
           {
             "id": "A",
@@ -498,11 +498,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -529,7 +529,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -537,24 +537,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.",
+            "original_text": "Considere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.*",
+            "normalized_text": "Considere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: x^2+(y+1)^2=4. La recta x=-2 es__________ a la circunferencia c.",
+            "original_text": "Considere la circunferencia c que tiene la siguiente ecuación: x²+(y+1)²=4. La recta x=-2 es__________ a la circunferencia c.",
+            "normalized_text": "Considere la circunferencia c que tiene la siguiente ecuación: x^2+(y+1)^2=4. La recta x=-2 es__________ a la circunferencia c.",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -574,8 +574,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)^2+(y-3)^2=1. La recta y=-x es__________ a la circunferencia c.",
+        "stem_raw": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.*",
+        "stem_cleaned": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)^2+(y-3)^2=1. La recta y=-x es__________ a la circunferencia c.",
         "options": [
           {
             "id": "A",
@@ -606,11 +606,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -637,7 +637,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -645,24 +645,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.",
+            "original_text": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.*",
+            "normalized_text": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c que tiene la siguiente ecuación: (x-2)^2+(y-3)^2=1. La recta y=-x es__________ a la circunferencia c.",
+            "original_text": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)²+(y-3)²=1. La recta y=-x es__________ a la circunferencia c.",
+            "normalized_text": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)^2+(y-3)^2=1. La recta y=-x es__________ a la circunferencia c.",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -682,8 +682,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál afirmación es correcta para la siguiente figura?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál afirmación es correcta para la siguiente figura?",
+        "stem_raw": "¿Cuál afirmación es correcta para la siguiente figura?*",
+        "stem_cleaned": "¿Cuál afirmación es correcta para la siguiente figura?",
         "options": [
           {
             "id": "A",
@@ -731,7 +731,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -766,13 +766,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál afirmación es correcta para la siguiente figura?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál afirmación es correcta para la siguiente figura?",
+            "original_text": "¿Cuál afirmación es correcta para la siguiente figura?*",
+            "normalized_text": "¿Cuál afirmación es correcta para la siguiente figura?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -792,8 +792,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es",
+        "stem_raw": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es*",
+        "stem_cleaned": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es",
         "options": [
           {
             "id": "A",
@@ -841,7 +841,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -876,13 +876,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es",
+            "original_text": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es*",
+            "normalized_text": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -902,8 +902,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento",
+        "stem_raw": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento*",
+        "stem_cleaned": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento",
         "options": [
           {
             "id": "A",
@@ -951,7 +951,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -986,13 +986,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento",
+            "original_text": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento*",
+            "normalized_text": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia B, se debe producir el siguiente desplazamiento",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1012,8 +1012,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es el área del polígono BAEDC?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es el área del polígono BAEDC?",
+        "stem_raw": "¿Cuál es el área del polígono BAEDC?*",
+        "stem_cleaned": "¿Cuál es el área del polígono BAEDC?",
         "options": [
           {
             "id": "A",
@@ -1040,18 +1040,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-954c243ca0",
           "original_filename": "image8.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image8-954c243c.jpg",
@@ -1069,11 +1057,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1100,7 +1088,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1108,13 +1096,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es el área del polígono BAEDC?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es el área del polígono BAEDC?",
+            "original_text": "¿Cuál es el área del polígono BAEDC?*",
+            "normalized_text": "¿Cuál es el área del polígono BAEDC?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.714Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1134,8 +1122,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nConsidere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nConsidere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?",
+        "stem_raw": "Considere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?*",
+        "stem_cleaned": "Considere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?",
         "options": [
           {
             "id": "A",
@@ -1160,20 +1148,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -1183,7 +1158,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1218,13 +1193,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nConsidere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nConsidere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?",
+            "original_text": "Considere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?*",
+            "normalized_text": "Considere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1244,8 +1219,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a",
+        "stem_raw": "Si el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a*",
+        "stem_cleaned": "Si el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a",
         "options": [
           {
             "id": "A",
@@ -1270,30 +1245,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1320,7 +1282,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1328,13 +1290,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a",
+            "original_text": "Si el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a*",
+            "normalized_text": "Si el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1354,25 +1316,25 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a",
+        "stem_raw": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a*",
+        "stem_cleaned": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2\\sqrt{3} , entonces, el área de dicho polígono corresponde es igual a",
         "options": [
           {
             "id": "A",
             "text_raw": "30√̅3̅",
-            "text_cleaned": "30√̅3̅",
+            "text_cleaned": "30\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "36√̅3̅",
-            "text_cleaned": "36√̅3̅",
+            "text_cleaned": "36\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "27√̅3̅",
-            "text_cleaned": "27√̅3̅",
+            "text_cleaned": "27\\sqrt{3}",
             "visuals": []
           }
         ],
@@ -1380,30 +1342,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1432,7 +1381,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1440,13 +1389,57 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a",
+            "original_text": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a*",
+            "normalized_text": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2√̅3̅ , entonces, el área de dicho polígono corresponde es igual a",
+            "normalized_text": "Si el ángulo interno de un polígono regular mide 60° y su apotema es de2\\sqrt{3} , entonces, el área de dicho polígono corresponde es igual a",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.795Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "30√̅3̅",
+            "normalized_text": "30\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.795Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "36√̅3̅",
+            "normalized_text": "36\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.795Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "27√̅3̅",
+            "normalized_text": "27\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1466,8 +1459,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuántos ejes de simetría tiene la siguiente figura?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuántos ejes de simetría tiene la siguiente figura?",
+        "stem_raw": "¿Cuántos ejes de simetría tiene la siguiente figura?*",
+        "stem_cleaned": "¿Cuántos ejes de simetría tiene la siguiente figura?",
         "options": [
           {
             "id": "A",
@@ -1494,18 +1487,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-fbc3f5ea94",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image3-fbc3f5ea.jpg",
@@ -1523,11 +1504,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1554,7 +1535,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1562,13 +1543,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuántos ejes de simetría tiene la siguiente figura?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuántos ejes de simetría tiene la siguiente figura?",
+            "original_text": "¿Cuántos ejes de simetría tiene la siguiente figura?*",
+            "normalized_text": "¿Cuántos ejes de simetría tiene la siguiente figura?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1588,8 +1569,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es un eje de simetría para la siguiente figura?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es un eje de simetría para la siguiente figura?",
+        "stem_raw": "¿Cuál es un eje de simetría para la siguiente figura?*",
+        "stem_cleaned": "¿Cuál es un eje de simetría para la siguiente figura?",
         "options": [
           {
             "id": "A",
@@ -1616,18 +1597,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-ca70fb27d9",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image1-ca70fb27.jpg",
@@ -1645,11 +1614,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1676,7 +1645,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1684,13 +1653,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es un eje de simetría para la siguiente figura?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\n¿Cuál es un eje de simetría para la siguiente figura?",
+            "original_text": "¿Cuál es un eje de simetría para la siguiente figura?*",
+            "normalized_text": "¿Cuál es un eje de simetría para la siguiente figura?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1701,7 +1670,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1712,7 +1681,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1723,7 +1692,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1743,8 +1712,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nLos vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?\n*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nLos vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?",
+        "stem_raw": "Los vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?\n*",
+        "stem_cleaned": "Los vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?",
         "options": [
           {
             "id": "A",
@@ -1769,30 +1738,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1801,11 +1757,13 @@
         "gate_c_internalization_passed": false,
         "review_flags": [
           "missing_answer_key",
-          "incomplete_options"
+          "incomplete_options",
+          "missing_visual"
         ],
         "issues": [
           "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
+          "Incomplete option count: 3 of 4 options present",
+          "Stem text references visual diagram but no visual asset is linked"
         ]
       },
       "review": {
@@ -1819,7 +1777,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1827,13 +1785,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nLos vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?\n*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nLos vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?",
+            "original_text": "Los vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?\n*",
+            "normalized_text": "Los vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1844,7 +1802,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1855,7 +1813,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1866,7 +1824,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.795Z"
           }
         ]
       }
@@ -1886,8 +1844,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?",
+        "stem_raw": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?*",
+        "stem_cleaned": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?",
         "options": [
           {
             "id": "A",
@@ -1914,18 +1872,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-61e4cd80ec",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
@@ -1947,7 +1893,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1982,13 +1928,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?",
+            "original_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?*",
+            "normalized_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2008,8 +1954,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?",
+        "stem_raw": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?*",
+        "stem_cleaned": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?",
         "options": [
           {
             "id": "A",
@@ -2036,18 +1982,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-61e4cd80ec",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
@@ -2065,11 +1999,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2096,7 +2030,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.87,
         "content_confidence": 0.75
       },
       "history": {
@@ -2104,13 +2038,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?",
+            "original_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?*",
+            "normalized_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2130,8 +2064,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?",
+        "stem_raw": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?*",
+        "stem_cleaned": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?",
         "options": [
           {
             "id": "A",
@@ -2158,18 +2092,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-61e4cd80ec",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
@@ -2187,11 +2109,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Traslaciones de circunferencias"
       },
       "quality": {
         "status": "needs_review",
@@ -2218,7 +2140,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2226,13 +2148,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?",
+            "original_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?*",
+            "normalized_text": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2252,8 +2174,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nAnalice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nAnalice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?",
+        "stem_raw": "Analice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?*",
+        "stem_cleaned": "Analice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?",
         "options": [
           {
             "id": "A",
@@ -2280,30 +2202,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-61e4cd80ec",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "61e4cd80ec4f7a9d56e0e6271a6c24669705f36247a5bfd9b7dd6ca10c31d516",
-          "byte_size": 15731,
-          "relationship_id": "rId13",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-886bf16a45",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image5-886bf16a.jpg",
@@ -2321,11 +2219,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2352,7 +2250,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2360,13 +2258,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nAnalice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nAnalice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?",
+            "original_text": "Analice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?*",
+            "normalized_text": "Analice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2386,8 +2284,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nUna esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nUna esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a",
+        "stem_raw": "Una esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a*",
+        "stem_cleaned": "Una esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a",
         "options": [
           {
             "id": "A",
@@ -2412,42 +2310,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-61e4cd80ec",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "61e4cd80ec4f7a9d56e0e6271a6c24669705f36247a5bfd9b7dd6ca10c31d516",
-          "byte_size": 15731,
-          "relationship_id": "rId13",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2474,7 +2347,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2482,13 +2355,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nUna esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nUna esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a",
+            "original_text": "Una esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a*",
+            "normalized_text": "Una esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2508,8 +2381,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nLa sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nLa sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una",
+        "stem_raw": "La sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una*",
+        "stem_cleaned": "La sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una",
         "options": [
           {
             "id": "A",
@@ -2534,42 +2407,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-61e4cd80ec",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "61e4cd80ec4f7a9d56e0e6271a6c24669705f36247a5bfd9b7dd6ca10c31d516",
-          "byte_size": 15731,
-          "relationship_id": "rId13",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2596,7 +2444,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2604,13 +2452,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nLa sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nLa sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una",
+            "original_text": "La sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una*",
+            "normalized_text": "La sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }
@@ -2630,8 +2478,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
       },
       "content": {
-        "stem_raw": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nEn la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?*",
-        "stem_cleaned": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nEn la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?",
+        "stem_raw": "En la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?*",
+        "stem_cleaned": "En la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?",
         "options": [
           {
             "id": "A",
@@ -2658,30 +2506,6 @@
       },
       "visuals": [
         {
-          "id": "vis-54422050d8",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image4-54422050.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "54422050d88bb18f1859ab265db12479c9d72da3853dd49c2848421fddf20953",
-          "byte_size": 17870,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-61e4cd80ec",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-geometry-1-image7-61e4cd80.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "61e4cd80ec4f7a9d56e0e6271a6c24669705f36247a5bfd9b7dd6ca10c31d516",
-          "byte_size": 15731,
-          "relationship_id": "rId13",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0871da37fa",
           "original_filename": "image9.jpg",
           "stored_filename": "bxm-raw-2025-c1-geometry-1-image9-0871da37.jpg",
@@ -2699,11 +2523,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2730,7 +2554,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2738,13 +2562,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nEn la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?*",
-            "normalized_text": "Geo01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nResponda las preguntas 16, 17 y 18 con base en la siguiente figura:\nEn la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?",
+            "original_text": "En la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?*",
+            "normalized_text": "En la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.715Z"
+            "timestamp": "2026-11-06T02:56:40.796Z"
           }
         ]
       }

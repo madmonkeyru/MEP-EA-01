@@ -19,8 +19,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:",
+        "stem_raw": "La ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:*",
+        "stem_cleaned": "La ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:",
         "options": [
           {
             "id": "A",
@@ -57,11 +57,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -86,21 +86,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:",
+            "original_text": "La ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:*",
+            "normalized_text": "La ecuación de la circunferencia con centro (-2,0) y radio de 5 unidades es:",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -111,7 +111,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -122,7 +122,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -133,7 +133,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -144,7 +144,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -155,7 +155,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -166,7 +166,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -177,7 +177,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -188,7 +188,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -208,8 +208,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?\n*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?",
+        "stem_raw": "¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?\n*",
+        "stem_cleaned": "¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?",
         "options": [
           {
             "id": "A",
@@ -263,7 +263,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -289,20 +289,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?\n*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?",
+            "original_text": "¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?\n*",
+            "normalized_text": "¿Cuál de las siguientes circunferencias corresponde a un círculo de centro (4,0) y radio 4?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -322,8 +322,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)^2 + (y+4)^2= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
+        "stem_raw": "Considere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere las siguientes proposiciones sobre la circunferencia (x-2)^2 + (y+4)^2= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -360,11 +360,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -389,32 +389,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas*",
+            "normalized_text": "Considere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones sobre la circunferencia (x-2)^2 + (y+4)^2= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones sobre la circunferencia (x-2)² + (y+4)²= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
+            "normalized_text": "Considere las siguientes proposiciones sobre la circunferencia (x-2)^2 + (y+4)^2= 25:\nI. (2,4) es un punto externo a la circunferencia.\nII. (0,-4) es un punto ubicado en el interior de la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -434,8 +434,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?",
+        "stem_raw": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?*",
+        "stem_cleaned": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?",
         "options": [
           {
             "id": "A",
@@ -485,11 +485,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Rectas secantes, tangentes o exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -514,21 +514,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?",
+            "original_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?*",
+            "normalized_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\n¿Cuál de las siguientes rectas es tangente a la circunferencia o?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -539,7 +539,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -550,7 +550,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -561,7 +561,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -572,7 +572,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -592,8 +592,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas",
+        "stem_raw": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -643,11 +643,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Rectas secantes, tangentes o exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -672,21 +672,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas*",
+            "normalized_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es externa a la circunferencia o.\nIi. La recta y=-2 es secante a la circunferencia o.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -706,8 +706,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas",
+        "stem_raw": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -761,7 +761,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -787,20 +787,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas*",
+            "normalized_text": "Responda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nAnalice las siguientes proposiciones:\nI. La recta r es paralela a la recta que contiene los puntos A y C.\nII. la recta r es perpendicular a la recta que contienes los puntos A y B.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -820,8 +820,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a",
+        "stem_raw": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a*",
+        "stem_cleaned": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a",
         "options": [
           {
             "id": "A",
@@ -854,18 +854,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-b60bb218b4",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
@@ -883,11 +871,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -912,21 +900,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a",
+            "original_text": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a*",
+            "normalized_text": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi la circunferencia C se traslada al desplazar su centro cuatro unidades a la izquierda (paralelo al eje X), entonces, se obtiene una nueva circunferencia cuya ecuación corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -937,7 +925,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -948,7 +936,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -959,7 +947,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -970,7 +958,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -981,7 +969,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -992,7 +980,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1003,7 +991,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1014,7 +1002,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -1034,8 +1022,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
+        "stem_raw": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a*",
+        "stem_cleaned": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
         "options": [
           {
             "id": "A",
@@ -1068,18 +1056,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-b60bb218b4",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
@@ -1097,11 +1073,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -1126,21 +1102,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
+            "original_text": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a*",
+            "normalized_text": "Responda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nSi C se traslada desplazando su centro una unidad a la derecha (paralelo a X) y luego dos unidades hacia abajo (paralelo a Y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1151,7 +1127,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1162,7 +1138,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1173,7 +1149,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1184,7 +1160,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1195,7 +1171,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.672Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1206,7 +1182,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1217,7 +1193,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1228,7 +1204,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -1248,8 +1224,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas*",
+        "stem_cleaned": "Analice la siguiente figura donde DE=5 unidades y BC=\\sqrt{13unidades}.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + \\sqrt{13}\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1282,30 +1258,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-4b1ecd598d",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image3-4b1ecd59.jpg",
@@ -1323,16 +1275,16 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1354,7 +1306,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1362,13 +1314,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas*",
+            "normalized_text": "Analice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Analice la siguiente figura donde DE=5 unidades y BC=√̅1̅3̅unidades.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + √̅1̅3̅\nDe ellas son verdaderas",
+            "normalized_text": "Analice la siguiente figura donde DE=5 unidades y BC=\\sqrt{13unidades}.\nAnalice las siguientes proposiciones:\nI. El área del polígono ABCDEF corresponde a 25.\nII. El perímetro del polígono corresponde a 25 + \\sqrt{13}\nDe ellas son verdaderas",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -1388,8 +1351,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅  y cuya suma de ángulos internos es de 360º; es igual a  5√̅3̅ .\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas",
+        "stem_raw": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅  y cuya suma de ángulos internos es de 360º; es igual a  5√̅3̅ .\nDe ellas son verdaderas*",
+        "stem_cleaned": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5\\sqrt{3} y cuya suma de ángulos internos es de 360º; es igual a 5\\sqrt{3} .\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1420,47 +1383,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1482,7 +1420,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1490,24 +1428,35 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅  y cuya suma de ángulos internos es de 360º; es igual a  5√̅3̅ .\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas*",
+            "original_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅  y cuya suma de ángulos internos es de 360º; es igual a  5√̅3̅ .\nDe ellas son verdaderas*",
+            "normalized_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nAnalice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas",
+            "original_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas*",
+            "normalized_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5√̅3̅ y cuya suma de ángulos internos es de 360º; es igual a 5√̅3̅ .\nDe ellas son verdaderas",
+            "normalized_text": "Analice las siguientes proposiciones:\nI. El perímetro de un polígono regular que posee un ángulo central de 36° y cuyos lados miden 3 unidades es igual a 30 unidades.\nII. El área de un polígono; cuya diagonal mide 5\\sqrt{3} y cuya suma de ángulos internos es de 360º; es igual a 5\\sqrt{3} .\nDe ellas son verdaderas",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.764Z"
           }
         ]
       }
@@ -1527,31 +1476,31 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?",
+        "stem_raw": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?*",
+        "stem_cleaned": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4\\sqrt{3} ?",
         "options": [
           {
             "id": "A",
             "text_raw": "48√̅3̅",
-            "text_cleaned": "48√̅3̅",
+            "text_cleaned": "48\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "72√̅3̅",
-            "text_cleaned": "72√̅3̅",
+            "text_cleaned": "72\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "96√̅3̅",
-            "text_cleaned": "96√̅3̅",
+            "text_cleaned": "96\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "192√̅3̅",
-            "text_cleaned": "192√̅3̅",
+            "text_cleaned": "192\\sqrt{3}",
             "visuals": []
           }
         ],
@@ -1559,47 +1508,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1621,7 +1545,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1629,13 +1553,68 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?",
+            "original_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?*",
+            "normalized_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.764Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4√̅3̅ ?",
+            "normalized_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\n¿Cuál es el área del polígono si la apotema mide 4\\sqrt{3} ?",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.764Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "48√̅3̅",
+            "normalized_text": "48\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.764Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "72√̅3̅",
+            "normalized_text": "72\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.765Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "96√̅3̅",
+            "normalized_text": "96\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.765Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "192√̅3̅",
+            "normalized_text": "192\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -1655,8 +1634,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?",
+        "stem_raw": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?*",
+        "stem_cleaned": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?",
         "options": [
           {
             "id": "A",
@@ -1687,42 +1666,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1747,21 +1701,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.82,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?",
+            "original_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?*",
+            "normalized_text": "Para responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nSi el radio mide 5 unidades, ¿cuál es el perímetro de ese polígono?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -1781,8 +1735,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1815,30 +1769,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-5e55e9fc8f",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
@@ -1856,16 +1786,16 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1887,7 +1817,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1895,13 +1825,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nAnalice las siguientes proposiciones a partir del eje del simetría y=3\nI. B es homólogo a D.\nII. A̅B̅ es homólogo a A̅D̅\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -1921,8 +1851,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a",
+        "stem_raw": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a*",
+        "stem_cleaned": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a",
         "options": [
           {
             "id": "A",
@@ -1955,30 +1885,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-5e55e9fc8f",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
@@ -1996,11 +1902,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -2025,21 +1931,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a",
+            "original_text": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a*",
+            "normalized_text": "Para responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nLa cantidad total de ejes de simetría que se pueden trazar en un triángulo equilátero corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2059,8 +1965,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2093,42 +1999,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-fe1d614ba6",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
@@ -2150,7 +2020,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2176,20 +2046,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nConsidere que la figura C se obtiene a partir de la B por medio de una traslación. Analice las siguientes proposiciones:\nI. La imagen del punto azul es el punto rojo a través de esta traslación.\nII. La traslación aplicada corresponde a T(x+8,y+4)\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2209,8 +2079,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2243,42 +2113,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-fe1d614ba6",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
@@ -2296,11 +2130,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2325,21 +2159,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Es posible obtener la figura B al aplicarle a la A una reflexión sobre el eje Y.\nII. Una forma de obtener la figura A es aplicarle a la B una rotación de 90º en la dirección antihoraria y sobre el origen de coordenadas.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2359,8 +2193,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2393,42 +2227,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-fe1d614ba6",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
@@ -2446,11 +2244,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2475,21 +2273,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nAnalice las siguientes proposiciones:\nI. Una forma de obtener la figura C consiste en aplicarle a la figura B una homotecia con centro el origen de coordenadas y con una razón de k=-1.\nII. Una forma de obtener la figura C consiste en aplicarle a la figura B una rotación de 180º en la dirección antihoraria con centro en el origen de coordenadas.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2509,8 +2307,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nCuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nCuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una",
+        "stem_raw": "Cuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una*",
+        "stem_cleaned": "Cuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una",
         "options": [
           {
             "id": "A",
@@ -2541,66 +2339,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-fe1d614ba6",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "fe1d614ba6d246da6fa4be693b6414115980b9e679657b40fbef50277ae958f4",
-          "byte_size": 19472,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2625,21 +2374,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nCuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nCuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una",
+            "original_text": "Cuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una*",
+            "normalized_text": "Cuando un plano corta oblicuamente a un cilindro sin tocar su base, el resultado es una",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2659,8 +2408,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nUna esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nUna esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a",
+        "stem_raw": "Una esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a*",
+        "stem_cleaned": "Una esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a",
         "options": [
           {
             "id": "A",
@@ -2691,66 +2440,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-fe1d614ba6",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "fe1d614ba6d246da6fa4be693b6414115980b9e679657b40fbef50277ae958f4",
-          "byte_size": 19472,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2775,21 +2475,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nUna esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nUna esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a",
+            "original_text": "Una esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a*",
+            "normalized_text": "Una esfera con radio de 13 unidades es cortada por un plano que se encuentra a 5 unidades del centro de la esfera. El perímetro de la sección formada es igual a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2809,8 +2509,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?",
+        "stem_raw": "Para responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?*",
+        "stem_cleaned": "Para responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?",
         "options": [
           {
             "id": "A",
@@ -2843,54 +2543,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-fe1d614ba6",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "fe1d614ba6d246da6fa4be693b6414115980b9e679657b40fbef50277ae958f4",
-          "byte_size": 19472,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-3d63990cab",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image5-3d63990c.jpg",
@@ -2908,11 +2560,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2937,21 +2589,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?",
+            "original_text": "Para responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?*",
+            "normalized_text": "Para responder las preguntas 21 y 22, considere la siguiente información:\n¿Cuál punto representa el vértice del cono?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
@@ -2971,8 +2623,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math GEO 01 C22)"
       },
       "content": {
-        "stem_raw": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?*",
-        "stem_cleaned": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?",
+        "stem_raw": "Para responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?*",
+        "stem_cleaned": "Para responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?",
         "options": [
           {
             "id": "A",
@@ -3005,54 +2657,6 @@
       },
       "visuals": [
         {
-          "id": "vis-5c370aad6f",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image1-5c370aad.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5c370aad6f1c12176634d4463475452a9f07e5427abb8cf22d9062c9c72ba20f",
-          "byte_size": 13004,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-b60bb218b4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image7-b60bb218.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b60bb218b428832df95d510bbe8e831cfcfc01792a202c491ee271c9ea27af3c",
-          "byte_size": 22899,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-5e55e9fc8f",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image6-5e55e9fc.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "5e55e9fc8fb7b8f8cb2d30ae756728cf4c340761da547a263861241abf0be036",
-          "byte_size": 15688,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-fe1d614ba6",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2022-c1-geometry-1-image4-fe1d614b.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "fe1d614ba6d246da6fa4be693b6414115980b9e679657b40fbef50277ae958f4",
-          "byte_size": 19472,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-3d63990cab",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2022-c1-geometry-1-image5-3d63990c.jpg",
@@ -3070,11 +2674,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -3099,21 +2703,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?*",
-            "normalized_text": "BxM_ 01 C 2022\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 4, 5 y 6 con base en el siguiente gráfico, donde se muestra una circunferencia o y una recta r.\nResponda las preguntas 7 y 8 con base en la siguiente circunferencia C de centro O:\nPara responder las preguntas 11 y 12 considere un polígono regular que tiene un ángulo interno de 120°.\nPara responder los ítems 13 y 14 considere la siguiente gráfica:\n¿Cuántos ejes de simetría posee el polígono ABCD?*\nA) 1\nB) 2\nC) 3\nD) 4\nPara responder los ítems 16, 17 y 18 considere la información de las siguientes figuras A, B y C:\nPara responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?",
+            "original_text": "Para responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?*",
+            "normalized_text": "Para responder las preguntas 21 y 22, considere la siguiente información:\nSi al cono se le realiza un corte a la mitad de su altura con un plano paralelo a su base, entonces, ¿cuál es la longitud de la sección?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.673Z"
+            "timestamp": "2026-11-06T02:56:40.765Z"
           }
         ]
       }
