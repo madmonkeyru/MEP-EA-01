@@ -1,0 +1,3509 @@
+{
+  "asset_id": "bxm-raw-2021-c1-geometry-1",
+  "convocatoria": "2021-c1",
+  "area": "geometry",
+  "total_questions": 22,
+  "questions": [
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q01",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "El radio de una circunferencia C es igual a 4 y su centro se encuentra en (0,-1). Por tanto, la ecuación de C corresponde a*",
+        "stem_cleaned": "El radio de una circunferencia C es igual a 4 y su centro se encuentra en (0,-1). Por tanto, la ecuación de C corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(x-1)²+y²=16",
+            "text_cleaned": "$(x-1)^2 + y^2 = 16$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(x+1)²+y²=16",
+            "text_cleaned": "$(x + 1)^2 + y^2 = 16$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "x²+(y-1)²=16",
+            "text_cleaned": "$x^2 + (y-1)^2 = 16$",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "x²+(y+1)²=16",
+            "text_cleaned": "$x^2 + (y + 1)^2 = 16$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "El radio de una circunferencia C es igual a 4 y su centro se encuentra en (0,-1). Por tanto, la ecuación de C corresponde a*",
+            "normalized_text": "El radio de una circunferencia C es igual a 4 y su centro se encuentra en (0,-1). Por tanto, la ecuación de C corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "(x-1)²+y²=16",
+            "normalized_text": "(x-1)^2+y^2=16",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x-1)^2+y^2=16",
+            "normalized_text": "$(x-1)^2 + y^2 = 16$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "(x+1)²+y²=16",
+            "normalized_text": "(x+1)^2+y^2=16",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x+1)^2+y^2=16",
+            "normalized_text": "$(x + 1)^2 + y^2 = 16$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "x²+(y-1)²=16",
+            "normalized_text": "x^2+(y-1)^2=16",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x^2+(y-1)^2=16",
+            "normalized_text": "$x^2 + (y-1)^2 = 16$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "x²+(y+1)²=16",
+            "normalized_text": "x^2+(y+1)^2=16",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x^2+(y+1)^2=16",
+            "normalized_text": "$x^2 + (y + 1)^2 = 16$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q02",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi el radio de la circunferencia C es de 3, analice las siguientes proposiciones:\nI- P se clasifica como interior.\nII- R se clasifica como exterior.\n¿Cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi el radio de la circunferencia C es de 3, analice las siguientes proposiciones:\nI- P se clasifica como interior.\nII- R se clasifica como exterior.\n¿Cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi el radio de la circunferencia C es de 3, analice las siguientes proposiciones:\nI- P se clasifica como interior.\nII- R se clasifica como exterior.\n¿Cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi el radio de la circunferencia C es de 3, analice las siguientes proposiciones:\nI- P se clasifica como interior.\nII- R se clasifica como exterior.\n¿Cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q03",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi Q̅P̅ es el radio de C, entonces la ecuación de C corresponde a*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi Q̅P̅ es el radio de C, entonces la ecuación de C corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "x²+(y-2)²=5",
+            "text_cleaned": "$x^2 + (y-2)^2 = 5$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "x²+(y+2)²=5",
+            "text_cleaned": "$x^2 + (y + 2)^2 = 5$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(x+2)²+y²=5",
+            "text_cleaned": "$(x + 2)^2 + y^2 = 5$",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "(x-2)²+y²=5",
+            "text_cleaned": "$(x-2)^2 + y^2 = 5$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi Q̅P̅ es el radio de C, entonces la ecuación de C corresponde a*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nSi Q̅P̅ es el radio de C, entonces la ecuación de C corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "x²+(y-2)²=5",
+            "normalized_text": "x^2+(y-2)^2=5",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x^2+(y-2)^2=5",
+            "normalized_text": "$x^2 + (y-2)^2 = 5$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "x²+(y+2)²=5",
+            "normalized_text": "x^2+(y+2)^2=5",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x^2+(y+2)^2=5",
+            "normalized_text": "$x^2 + (y + 2)^2 = 5$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "(x+2)²+y²=5",
+            "normalized_text": "(x+2)^2+y^2=5",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x+2)^2+y^2=5",
+            "normalized_text": "$(x + 2)^2 + y^2 = 5$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "(x-2)²+y²=5",
+            "normalized_text": "(x-2)^2+y^2=5",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x-2)^2+y^2=5",
+            "normalized_text": "$(x-2)^2 + y^2 = 5$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q04",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es  tangente a C\nDe ellas son verdaderas*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es tangente a C\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es  tangente a C\nDe ellas son verdaderas*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es tangente a C\nDe ellas son verdaderas*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es tangente a C\nDe ellas son verdaderas*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta y=x es secante a C\nII La recta x=0 es tangente a C\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q05",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Solo la I",
+            "text_cleaned": "Solo la I",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Solo la II",
+            "text_cleaned": "Solo la II",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Solo la III",
+            "text_cleaned": "Solo la III",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "Solo la I y la II.",
+            "text_cleaned": "Solo la I y la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere las siguientes proposiciones:\nI. y=4 es una recta exterior a C.\nII. x=4 es tangente a C.\nIII. y=-x+2 es secante a C.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q06",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas.",
+            "text_cleaned": "ambas.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna.",
+            "text_cleaned": "ninguna.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nAnalice las siguientes proposiciones:\nI. La recta n es paralela a r.\nII La recta que contiene los puntos O y M es perpendicular a r.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q07",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)^2+ (y+4)^2=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas.",
+            "text_cleaned": "ambas.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna.",
+            "text_cleaned": "ninguna.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)²+ (y+4)²=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere una circunferencia C descripta por la ecuación (x-3)^2+ (y+4)^2=8. C se traslada dos unidades hacia la izquierda paralelo al eje X y se convierte en C'. Analice las siguientes proposiciones:\nI. El centro de C' es (-5,2)\nII. La medida del radio de C' es 10.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q08",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x^2+(y+1)^2=5. Se traslada y se convierte en C' dada por x^2+y^2=5. La traslación corresponde a una unidad hacia:",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "arriba, paralelo al eje Y.",
+            "text_cleaned": "arriba, paralelo al eje Y.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "abajo, paralelo al eje Y.",
+            "text_cleaned": "abajo, paralelo al eje Y.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "la derecha, paralelo al eje X.",
+            "text_cleaned": "la derecha, paralelo al eje X.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "a la izquierda, paralelo al eje X.",
+            "text_cleaned": "a la izquierda, paralelo al eje X.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x²+(y+1)²=5. Se traslada y se convierte en C' dada por x²+y²=5. La traslación corresponde a una unidad hacia:",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nConsidere la circunferencia C descrita por x^2+(y+1)^2=5. Se traslada y se convierte en C' dada por x^2+y^2=5. La traslación corresponde a una unidad hacia:",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q09",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "12",
+            "text_cleaned": "12",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "18",
+            "text_cleaned": "18",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "6√3̅",
+            "text_cleaned": "6\\sqrt{3}̅",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "9√3̅",
+            "text_cleaned": "9\\sqrt{3}̅",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el área del triángulo CDE?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "6√3̅",
+            "normalized_text": "6\\sqrt{3}̅",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "9√3̅",
+            "normalized_text": "9\\sqrt{3}̅",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q10",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del  pentágono ABCEF?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del pentágono ABCEF?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "20",
+            "text_cleaned": "20",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "28",
+            "text_cleaned": "28",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "30",
+            "text_cleaned": "30",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "36",
+            "text_cleaned": "36",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del  pentágono ABCEF?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del pentágono ABCEF?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del pentágono ABCEF?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\n¿Cuál es el perímetro del pentágono ABCEF?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q11",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "19+√1̅8̅",
+            "text_cleaned": "19+\\sqrt{1}̅8̅",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "24+√̅1̅3̅",
+            "text_cleaned": "24+√̅1̅3̅",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "12+√̅5+√̅1̅3̅",
+            "text_cleaned": "12+√̅5+√̅1̅3̅",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "13+√̅5+√̅1̅3̅",
+            "text_cleaned": "13+√̅5+√̅1̅3̅",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el perímetro de la figura ABCDEFG?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "19+√1̅8̅",
+            "normalized_text": "19+\\sqrt{1}̅8̅",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q12",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "10",
+            "text_cleaned": "10",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "12",
+            "text_cleaned": "12",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "14",
+            "text_cleaned": "14",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "15",
+            "text_cleaned": "15",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\n¿Cuál es el área de la figura ABCDEFG?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q13",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "1",
+            "text_cleaned": "1",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "2",
+            "text_cleaned": "2",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "4",
+            "text_cleaned": "4",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "6",
+            "text_cleaned": "6",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\n¿Cuántos ejes de simetría posee el cuadrilátero EFHQ?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q14",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nConsidere las siguientes proposiciones respecto al eje de simetría x=4\nI. F es homólogo de H.\nII. E̅Q es homólogo de ̄F̄H.\n¿De ellas, cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q15",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "y=1",
+            "text_cleaned": "$y = 1$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "x=1",
+            "text_cleaned": "$x = 1$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "y=3",
+            "text_cleaned": "$y = 3$",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "x=3",
+            "text_cleaned": "$x = 3$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-3001cc70e6",
+          "original_filename": "image6.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image6-3001cc70.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image6-3001cc70.png",
+          "content_type": "image/png",
+          "sha256": "3001cc70e68c666e1533899230fb4a174cd7fdf570369b71749de5dd004fea94",
+          "byte_size": 29397,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nEn el siguiente gráfico se muestran los triángulos ABC y FED\nEl triángulo ABC presenta simetría axial respecto al triángulo FED, respecto a la recta",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "y=1",
+            "normalized_text": "$y = 1$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x=1",
+            "normalized_text": "$x = 1$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "y=3",
+            "normalized_text": "$y = 3$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "x=3",
+            "normalized_text": "$x = 3$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q16",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(2,2)",
+            "text_cleaned": "(2,2)",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(2,-2)",
+            "text_cleaned": "(2,-2)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(-2,2)",
+            "text_cleaned": "(-2,2)",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "(-2-2)",
+            "text_cleaned": "(-2-2)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una homotecia sobre el polígono ABCDEF centrada en el origen y con k=-0.5, entonces la imagen de F se encuentra en",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q17",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(1,-4)",
+            "text_cleaned": "(1,-4)",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(2,-3)",
+            "text_cleaned": "(2,-3)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(-3,2)",
+            "text_cleaned": "(-3,2)",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "(-4,1)",
+            "text_cleaned": "(-4,1)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi se aplica una reflexión con simetría en x=-1 al polígono ABCDEF, entonces la imagen de C se encuentra en",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q18",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(1,-3)",
+            "text_cleaned": "(1,-3)",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(-3,1)",
+            "text_cleaned": "(-3,1)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(-1,-3)",
+            "text_cleaned": "(-1,-3)",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "(-3,-1)",
+            "text_cleaned": "(-3,-1)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi al polígono ABCDEF se le aplica una rotación de 180° con centro en el origen del plano cartesiano y contraria al movimiento del reloj, ¿cuál es la imagen de B?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q19",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "elipse",
+            "text_cleaned": "elipse",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "parábola",
+            "text_cleaned": "parábola",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "hipérbola",
+            "text_cleaned": "hipérbola",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "circunferencia",
+            "text_cleaned": "circunferencia",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi un cono circular recto es intersecado por un plano perpendicular a la base sin pasar por el vértice, la figura plana resultante es una",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q20",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas.",
+            "text_cleaned": "ambas.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna.",
+            "text_cleaned": "ninguna.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nConsidere las siguientes proposiciones sobre planos que cortan un cilindro recto circular:\nI. Un corte de un plano paralelo a la base de un cilindro circular recto genera como sección plana un rectángulo.\nII. Un corte con un plano que no es perpendicular ni paralelo ni corta a la base de un cilindro circular genera como sección plana una elipse.\nDe ellas, ¿cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q21",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "100 000",
+            "text_cleaned": "100 000",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "170 000",
+            "text_cleaned": "170 000",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "283 000",
+            "text_cleaned": "283 000",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "453 000",
+            "text_cleaned": "453 000",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-e4a5a8e973",
+          "original_filename": "image1.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image1-e4a5a8e9.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image1-e4a5a8e9.png",
+          "content_type": "image/png",
+          "sha256": "e4a5a8e9737b871e5a6f66c0dce0f413a7f0f101cd4ba9d5af2eefeb832b7516",
+          "byte_size": 25517,
+          "relationship_id": "rId12",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nLa siguiente figura representa un trozo de madera con forma de un cilindro circular recto del cual se va a obtener una pieza con forma de prisma de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza de madera obtenida es aproximadamente igual a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2021-c1-geometry-1-q22",
+      "source": {
+        "asset_id": "bxm-raw-2021-c1-geometry-1",
+        "filename": "BXM Math GEO 01 C21.docx",
+        "convocatoria": "2021-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-1 (BXM Math GEO 01 C21)"
+      },
+      "content": {
+        "stem_raw": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a*",
+        "stem_cleaned": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "12π",
+            "text_cleaned": "12π",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "16π",
+            "text_cleaned": "16π",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "20π",
+            "text_cleaned": "20π",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "26π",
+            "text_cleaned": "26π",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-c56c0b018b",
+          "original_filename": "image5.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image5-c56c0b01.png",
+          "content_type": "image/png",
+          "sha256": "c56c0b018ba5eacc16b62523058b5cc2d337bcfdc1ddad9f1b3524701747cb1d",
+          "byte_size": 96089,
+          "relationship_id": "rId6",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-2e2620c549",
+          "original_filename": "image2.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image2-2e2620c5.png",
+          "content_type": "image/png",
+          "sha256": "2e2620c549aba7da52a2267fcba9b2987e050ed7f774a9c4acd034430ae364dc",
+          "byte_size": 13283,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-abf115c674",
+          "original_filename": "image3.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image3-abf115c6.png",
+          "content_type": "image/png",
+          "sha256": "abf115c67491705962a23236102705787c178e557ffc830f8b7863696a1790b2",
+          "byte_size": 22409,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fb0c45b017",
+          "original_filename": "image7.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image7-fb0c45b0.png",
+          "content_type": "image/png",
+          "sha256": "fb0c45b01704510a41d1d7b2ea54a161bf89422d19ebf4291c695cc8da26b9a3",
+          "byte_size": 18182,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-b67807f4f4",
+          "original_filename": "image4.png",
+          "stored_filename": "bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c1-geometry-1-image4-b67807f4.png",
+          "content_type": "image/png",
+          "sha256": "b67807f4f4b34047f7d320f73b537f9890b1ce1d971ce280d316442b20fa0939",
+          "byte_size": 25140,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "geometry"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y  6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a*",
+            "normalized_text": "Responda las preguntas 2 y 3 con base en la siguiente información:\nConsidere una circunferencia C con centro Q(2,0) y los puntos P(1,-2) y R(-1,1)\nPara responder las preguntas 4, 5 y 6 analice la siguiente circunferencia C y las rectas n y r.\nResponda las preguntas 9 y 10 con base en la figura del pentágono ABCEF y el triángulo equilátero CDE\nCon base en el siguiente gráfico conteste las preguntes 11 y 12.\nCon base en el siguiente gráfico conteste las preguntas 13 y 14.\nCon base en el polígono ABCDEF responda las preguntas 16, 17 y 18.\nSi una esfera, cuyo diámetro mide 20 unidades, es intersecada por un plano a una distancia de 6 unidades de su centro, entonces, la longitud de la sección plana producto de esa intersección corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.650Z"
+          }
+        ]
+      }
+    }
+  ]
+}

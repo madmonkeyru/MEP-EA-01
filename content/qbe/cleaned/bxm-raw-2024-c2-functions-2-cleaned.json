@@ -1,0 +1,2835 @@
+{
+  "asset_id": "bxm-raw-2024-c2-functions-2",
+  "convocatoria": "2024-c2",
+  "area": "functions",
+  "total_questions": 23,
+  "questions": [
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q01",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x²+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x^2+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la III.",
+            "text_cleaned": "solo la III.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I y la II",
+            "text_cleaned": "solo la I y la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x²+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x²+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x²+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la función f:\nf: D→{0}, con f(x)=(-x^2+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q02",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál opción NO es una función?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál opción NO es una función?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "",
+            "text_cleaned": "",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "",
+            "text_cleaned": "",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }",
+            "text_cleaned": "Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-ae6aba60bd",
+          "original_filename": "image8.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image8-ae6aba60.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image8-ae6aba60.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "ae6aba60bd63c2ec1299642cd99edc5ad9ac8627017fb7ce791ee254fdbb7c58",
+          "byte_size": 4500,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-4d5a927394",
+          "original_filename": "image5.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image5-4d5a9273.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image5-4d5a9273.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "4d5a927394c25c1f672e07f7501d9d79edb81984972b1ff6fefc7100c07f740b",
+          "byte_size": 3342,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál opción NO es una función?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál opción NO es una función?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }",
+            "normalized_text": "Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q03",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\n¿Cuál de las opciones es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\n¿Cuál de las opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Un intervalo del dominio de f es [-1,1]",
+            "text_cleaned": "Un intervalo del dominio de f es [-1,1]",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }",
+            "text_cleaned": "El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[",
+            "text_cleaned": "Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-7e97fa39a8",
+          "original_filename": "image7.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image7-7e97fa39.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image7-7e97fa39.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "7e97fa39a86c6bb9c16f50a44c85c78923fa3f94d88166c0485996e96e7f4489",
+          "byte_size": 16798,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\n¿Cuál de las opciones es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\n¿Cuál de las opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }",
+            "normalized_text": "El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q04",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "a=-3 y b=2",
+            "text_cleaned": "$a = -3 y b = 2$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "a=3 y b=-2",
+            "text_cleaned": "$a = 3 y b = -2$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "a=-3 y b=-2",
+            "text_cleaned": "$a = -3 y b = -2$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.703Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a=-3 y b=2",
+            "normalized_text": "$a = -3 y b = 2$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a=3 y b=-2",
+            "normalized_text": "$a = 3 y b = -2$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a=-3 y b=-2",
+            "normalized_text": "$a = -3 y b = -2$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q05",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[  → P, con f(x)=2 √̅x̅+̅1̅   - 3\nEntonces, el ámbito de la inversa de f corresponde a\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=2 √̅x̅+̅1̅ - 3\nEntonces, el ámbito de la inversa de f corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "[8, + ∞[",
+            "text_cleaned": "[8, + ∞[",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "[3, + ∞[",
+            "text_cleaned": "[3, + ∞[",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "[15, + ∞[",
+            "text_cleaned": "[15, + ∞[",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[  → P, con f(x)=2 √̅x̅+̅1̅   - 3\nEntonces, el ámbito de la inversa de f corresponde a\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=2 √̅x̅+̅1̅ - 3\nEntonces, el ámbito de la inversa de f corresponde a\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=2 √̅x̅+̅1̅ - 3\nEntonces, el ámbito de la inversa de f corresponde a\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=2 √̅x̅+̅1̅ - 3\nEntonces, el ámbito de la inversa de f corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q06",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál es el valor de (p o f)(3)?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál es el valor de (p o f)(3)?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "6",
+            "text_cleaned": "6",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "5",
+            "text_cleaned": "5",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "4",
+            "text_cleaned": "4",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál es el valor de (p o f)(3)?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál es el valor de (p o f)(3)?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q07",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál de las siguientes afirmaciones es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál de las siguientes afirmaciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(h o p)(0)=2",
+            "text_cleaned": "$(h o p)(0) = 2$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "es factible efectuar (r o p)(x)",
+            "text_cleaned": "es factible efectuar (r o p)(x)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Es factible efectuar (p o r)(x)",
+            "text_cleaned": "Es factible efectuar (p o r)(x)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál de las siguientes afirmaciones es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\n¿Cuál de las siguientes afirmaciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(h o p)(0)=2",
+            "normalized_text": "$(h o p)(0) = 2$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q08",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :",
+        "options": [],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": false,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Insufficient options detected: found 0",
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 0 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.65,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.5
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q01",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.",
+        "options": [],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": false,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Insufficient options detected: found 0",
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 0 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.65,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.5
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q02",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.",
+        "options": [],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": false,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Insufficient options detected: found 0",
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 0 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.65,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.5
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q03",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "solo la 1.",
+            "text_cleaned": "solo la 1.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la 2.",
+            "text_cleaned": "solo la 2.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la 3.",
+            "text_cleaned": "solo la 3.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nLa gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q09",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál opción es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál opción es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "f NO tiene raíces reales.",
+            "text_cleaned": "f NO tiene raíces reales.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "f posee dos raíces reales.",
+            "text_cleaned": "f posee dos raíces reales.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "f posee solo una raíz real.",
+            "text_cleaned": "f posee solo una raíz real.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál opción es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál opción es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q10",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál de las siguientes opciones es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál de las siguientes opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "a<0",
+            "text_cleaned": "a<0",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "el eje de simetría es igual a x=-3",
+            "text_cleaned": "el eje de simetría es igual a x=-3",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "f>0 si x∈ ]-6,0[",
+            "text_cleaned": "f>0 si x∈ ]-6,0[",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál de las siguientes opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q11",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nConsidere una recta con y=(2/3x)+1. La intersección con el eje x es\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nConsidere una recta con y=(2/3x)+1. La intersección con el eje x es",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(-3/2,0)",
+            "text_cleaned": "(-3/2,0)",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(2/3,0)",
+            "text_cleaned": "(2/3,0)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(1,0)",
+            "text_cleaned": "(1,0)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nConsidere una recta con y=(2/3x)+1. La intersección con el eje x es\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nConsidere una recta con y=(2/3x)+1. La intersección con el eje x es",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q12",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾¹(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾¹(x)?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾^1(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾^1(x)?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(3,5)",
+            "text_cleaned": "(3,5)",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(4,16)",
+            "text_cleaned": "(4,16)",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "(5,10)",
+            "text_cleaned": "(5,10)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾¹(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾¹(x)?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾¹(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾¹(x)?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾¹(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾¹(x)?",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nSea g una función de la forma g‾^1(x)=\nlogₐ(x) y g(8)=3. ¿Cuál opción representa un punto de la función inversa g ‾^1(x)?",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q13",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nAnalice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nAnalice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "La inversa h‾¹ es igual a logₐ(x) con a>1",
+            "text_cleaned": "La inversa h‾^1 es igual a logₐ(x) con a>1",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Un elemento del ámbito de la función h es -2.",
+            "text_cleaned": "Un elemento del ámbito de la función h es -2.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "h(x)>1 si x<0.",
+            "text_cleaned": "h(x)>1 si x<0.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nAnalice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nAnalice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "La inversa h‾¹ es igual a logₐ(x) con a>1",
+            "normalized_text": "La inversa h‾^1 es igual a logₐ(x) con a>1",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q14",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x^2. ¿Cuál es la utilidad máxima de esta empresa?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "5000",
+            "text_cleaned": "5000",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "4000",
+            "text_cleaned": "4000",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "1000",
+            "text_cleaned": "1000",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x^2. ¿Cuál es la utilidad máxima de esta empresa?",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q15",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "9000",
+            "text_cleaned": "9000",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "6000",
+            "text_cleaned": "6000",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "10 125",
+            "text_cleaned": "10 125",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLas entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q16",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)=  64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "La cantidad inicial del medicamentes fue de 128 mg.",
+            "text_cleaned": "La cantidad inicial del medicamentes fue de 128 mg.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Para t= 3h se han eliminado 56 mg del cuerpo.",
+            "text_cleaned": "Para t= 3h se han eliminado 56 mg del cuerpo.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Para t=4 h se redujo una cuarta parte el medicamento inicial.",
+            "text_cleaned": "Para t=4 h se redujo una cuarta parte el medicamento inicial.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)=  64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLa fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q17",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLos costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLos costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "250",
+            "text_cleaned": "250",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "21",
+            "text_cleaned": "21",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "80",
+            "text_cleaned": "80",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLos costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\nLos costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q18",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál grupo de datos representa un modelo logarítmico?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál grupo de datos representa un modelo logarítmico?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "",
+            "text_cleaned": "",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "",
+            "text_cleaned": "",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "",
+            "text_cleaned": "",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-1b0c3475f1",
+          "original_filename": "image9.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image9-1b0c3475.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image9-1b0c3475.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1b0c3475f1a62d0e5e86eacfb42bf686afc4b834f78810e13d42a32c99c9a707",
+          "byte_size": 4918,
+          "relationship_id": "rId12",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-f5614d0d44",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image1-f5614d0d.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image1-f5614d0d.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "f5614d0d444bbdf06f47370b786cc1a28d8a496e40232f60b448ea874e4db799",
+          "byte_size": 4644,
+          "relationship_id": "rId13",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-bb7d21f9ce",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image6-bb7d21f9.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image6-bb7d21f9.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "bb7d21f9cef5a3e1d063f6f9e545bc1beaf968945c81c5935041dd0b77b242d6",
+          "byte_size": 4776,
+          "relationship_id": "rId14",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál grupo de datos representa un modelo logarítmico?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál grupo de datos representa un modelo logarítmico?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q19",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál son las funciones que representan los datos I, II y III respectivamente?\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál son las funciones que representan los datos I, II y III respectivamente?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "I. raíz cuadrada, II. cuadrática y III. exponencial.",
+            "text_cleaned": "I. raíz cuadrada, II. cuadrática y III. exponencial.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "I. exponencial, II raíz cuadrada y III. cuadrática.",
+            "text_cleaned": "I. exponencial, II raíz cuadrada y III. cuadrática.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "I. raíz cuadrada, II. exponencial y III cuadrática.",
+            "text_cleaned": "I. raíz cuadrada, II. exponencial y III cuadrática.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-24e66a0e12",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image2-24e66a0e.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image2-24e66a0e.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "24e66a0e1233ace54717cfd36aff7ac932db6e8f0aaafe516521ec03ffc86ef8",
+          "byte_size": 24876,
+          "relationship_id": "rId15",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál son las funciones que representan los datos I, II y III respectivamente?\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n¿Cuál son las funciones que representan los datos I, II y III respectivamente?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c2-functions-2-q20",
+      "source": {
+        "asset_id": "bxm-raw-2024-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2024.docx",
+        "convocatoria": "2024-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
+      },
+      "content": {
+        "stem_raw": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\n*",
+        "stem_cleaned": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "s(x)=20-1000",
+            "text_cleaned": "$s(x) = 20-1000$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "s(x)=1000-20x",
+            "text_cleaned": "$s(x) = 1000-20x$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "s(x)=1000x-10",
+            "text_cleaned": "$s(x) = 1000x-10$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-085efd9c58",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
+          "byte_size": 18386,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-fe75953950",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
+          "byte_size": 7054,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\n*",
+            "normalized_text": "Funciones 02C24bxm\nMatemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nResponda las preguntas 9 y 10 con base en la siguiente parábola\n1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "s(x)=20-1000",
+            "normalized_text": "$s(x) = 20-1000$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "s(x)=1000-20x",
+            "normalized_text": "$s(x) = 1000-20x$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "s(x)=1000x-10",
+            "normalized_text": "$s(x) = 1000x-10$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.704Z"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2132 @@
+{
+  "asset_id": "bxm-raw-2025-c1-statistics-1",
+  "convocatoria": "2025-c1",
+  "area": "statistics",
+  "total_questions": 18,
+  "questions": [
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q43",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente  Porcentaje   Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?\n*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente Porcentaje Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "90",
+            "text_cleaned": "90",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "80",
+            "text_cleaned": "80",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "83",
+            "text_cleaned": "83",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente  Porcentaje   Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente Porcentaje Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente Porcentaje Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAxa asiste a un curso en el cual la nota mínima para aprobar es de 80 en la escala del 1 al 100. El curso consta de tres componentes que se detallan en la siguiente tabla, así como las calificaciones obtenidas por el estudiante:\n________________________________________\nComponente Porcentaje Calificación\n________________________________________\n_______________________________________\n¿Cuánto obtuvo en el proyecto si la calificación final de Axa fue de 80?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q44",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "al menos el 75% de las truchas pesan 700 g o más.",
+            "text_cleaned": "al menos el 75% de las truchas pesan 700 g o más.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Con certeza, existe al menos una trucha con un peso de 1200 g",
+            "text_cleaned": "Con certeza, existe al menos una trucha con un peso de 1200 g",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Con certeza, la mayoría de las truchas tienen una masa de 800 g.",
+            "text_cleaned": "Con certeza, la mayoría de las truchas tienen una masa de 800 g.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\n¿Cuál de las siguientes afirmaciones es verdadera?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q45",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "simetría",
+            "text_cleaned": "simetría",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "asimetría positiva",
+            "text_cleaned": "asimetría positiva",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "asimetría negativa",
+            "text_cleaned": "asimetría negativa",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa distribución de los datos sobre las masas de las truchas del cultivo en cuestión presenta_____________.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q46",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín.  Q₁      Me   Q₃    Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?\n*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín. Q₁ Me Q₃ Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "los grupos A y B presentan la misma variabilidad.",
+            "text_cleaned": "los grupos A y B presentan la misma variabilidad.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "El grupo A presenta menor variabilidad que el grupo B.",
+            "text_cleaned": "El grupo A presenta menor variabilidad que el grupo B.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "El grupo A presenta mayor variabilidad que el grupo B",
+            "text_cleaned": "El grupo A presenta mayor variabilidad que el grupo B",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín.  Q₁      Me   Q₃    Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín. Q₁ Me Q₃ Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín. Q₁ Me Q₃ Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nConsidere la siguiente información sobre las masas, en kg de dos grupos de personas denominados como A y B. A continuación se muestran sus estadísticas:\nGrupo A\nMín. Q₁ Me Q₃ Máx.\nGrupo B: 49, 65, 74, 74, 74, 77, 86, 86 , 86, 91, 95, 95, 95, 98 y 100\n¿Cuál afirmación es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q47",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo  Mín.  Q₁      Me    Q₃    Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?\n*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo Mín. Q₁ Me Q₃ Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Ambos grupos presentan al menos un estudiante aplazado.",
+            "text_cleaned": "Ambos grupos presentan al menos un estudiante aplazado.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "La mayor cantidad de estudiantes aprobados se encuentra en el grupo A.",
+            "text_cleaned": "La mayor cantidad de estudiantes aprobados se encuentra en el grupo A.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "La mayor cantidad de estudiantes aprobados se encuentra en el grupo B.",
+            "text_cleaned": "La mayor cantidad de estudiantes aprobados se encuentra en el grupo B.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo  Mín.  Q₁      Me    Q₃    Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo Mín. Q₁ Me Q₃ Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo Mín. Q₁ Me Q₃ Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nA continuación se muestran los datos estadísticos de un curso de árabe para los grupos A y B. Se pasa con 70 en la escala del 1 a al 100.\nGrupo Mín. Q₁ Me Q₃ Máx.\nEl recorrido intercuartílico de A es de 20 y para B el recorrido de las notas es de 20.\n¿Cuál opción es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q48",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3   σ\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3 σ\n¿Cuál de las siguientes afirmaciones son correctas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Ana y Ruth tienen en sus tiempos la misma variabilidad.",
+            "text_cleaned": "Ana y Ruth tienen en sus tiempos la misma variabilidad.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Ana muestra en sus tiempos una mayor variabilidad que Ruth.",
+            "text_cleaned": "Ana muestra en sus tiempos una mayor variabilidad que Ruth.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Ruth muestra en sus tiempos una mayor variabilidad que Ana.",
+            "text_cleaned": "Ruth muestra en sus tiempos una mayor variabilidad que Ana.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3   σ\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3 σ\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3 σ\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nLa siguiente tabla muestra los tiempos, en segundos, obtenidos por Ana y Ruth en 3 competencias de 200 m planos.\nAtleta Carrera 1 Carrera 2 Carrera 3 σ\n¿Cuál de las siguientes afirmaciones son correctas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q49",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Con certeza, ambos autobuses realizaron al menos un recorrido la última semana que duró exactamente 37.5 min.",
+            "text_cleaned": "Con certeza, ambos autobuses realizaron al menos un recorrido la última semana que duró exactamente 37.5 min.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Los tiempos empleados en los recorridos del autobús A siempre son mayores que los empleados en el autobús B.",
+            "text_cleaned": "Los tiempos empleados en los recorridos del autobús A siempre son mayores que los empleados en el autobús B.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Al menos 25% de los recorridos, duraron 46 min o más.",
+            "text_cleaned": "Al menos 25% de los recorridos, duraron 46 min o más.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\n¿Cuál de las siguientes afirmaciones es verdadera?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q50",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "55 min",
+            "text_cleaned": "55 min",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "46 min",
+            "text_cleaned": "46 min",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "37.4 min",
+            "text_cleaned": "37.4 min",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nCon certeza, hubo al menos un recorrido durante la última semana donde cada autobús duró exactamente____min.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q51",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambos tuvieron la misma variabilidad",
+            "text_cleaned": "ambos tuvieron la misma variabilidad",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "fueron más variables los del autobús A que los del B",
+            "text_cleaned": "fueron más variables los del autobús A que los del B",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "fueron más variables los del autobús B que los del A",
+            "text_cleaned": "fueron más variables los del autobús B que los del A",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nLos tiempos de los recorridos realizados por los dos autobuses durante la última semana muestran que____________.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q52",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "8A",
+            "text_cleaned": "8A",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "8B",
+            "text_cleaned": "8B",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "8C",
+            "text_cleaned": "8C",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\n¿En cuál de las secciones se presenta la menor variabilidad relativa de las tallas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q53",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "8A",
+            "text_cleaned": "8A",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "8B",
+            "text_cleaned": "8B",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "8C",
+            "text_cleaned": "8C",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nEl estudiante que posee la mejor posición relativa dada su talla con respecto a las tallas de sus compañeros de sección pertenece a la__________.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q54",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "2/11",
+            "text_cleaned": "2/11",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "1/11",
+            "text_cleaned": "1/11",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "4/11",
+            "text_cleaned": "4/11",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar y en un solo intento un número, entonces, ¿cuál es la probabilidad de que sea un número divisible entre 4?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q55",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "0",
+            "text_cleaned": "0",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "1/11",
+            "text_cleaned": "1/11",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "3/11",
+            "text_cleaned": "3/11",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nAhora si se extrae al azar un número, ¿cuál es la probabilidad de que sea mayor que 12?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q56",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "6/11",
+            "text_cleaned": "6/11",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "0",
+            "text_cleaned": "0",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "1",
+            "text_cleaned": "1",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nSi de E se extrae al azar un numero en un solo intento, entonces, ¿cuál es la probabilidad de que sea par o impar?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q57",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "D",
+            "text_cleaned": "D",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "E",
+            "text_cleaned": "E",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "F",
+            "text_cleaned": "F",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de anís o fresa, se debe elegir la urna_______.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q58",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "D",
+            "text_cleaned": "D",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "E",
+            "text_cleaned": "E",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "F",
+            "text_cleaned": "F",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nPara obtener la mayor probabilidad de extraer al azar en un solo intento un dulce de menta o fresa, se debe elegir la urna_______.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q59",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "20/53",
+            "text_cleaned": "20/53",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "18/53",
+            "text_cleaned": "18/53",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "2/53",
+            "text_cleaned": "2/53",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-776de9d610",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image1-776de9d6.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image1-776de9d6.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "776de9d6103695b0e7e3d924b1c1dcbed3c07f11fe31f5f7f81e5431a98a95d4",
+          "byte_size": 7263,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige al azar, entonces, la probabilidad de que ella hable al menos dos de esos idiomas corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.717Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2025-c1-statistics-1-q60",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math STATS 01 C2025)"
+      },
+      "content": {
+        "stem_raw": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a*",
+        "stem_cleaned": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "13/53",
+            "text_cleaned": "13/53",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "11/53",
+            "text_cleaned": "11/53",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "26/53",
+            "text_cleaned": "26/53",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-1f050eaf3e",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image2-1f050eaf.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "1f050eaf3ed65e7e24457fde39b8febbcd95f7751804ad7570e44b85a0353b13",
+          "byte_size": 20990,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-776de9d610",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2025-c1-statistics-1-image1-776de9d6.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2025-c1-statistics-1-image1-776de9d6.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "776de9d6103695b0e7e3d924b1c1dcbed3c07f11fe31f5f7f81e5431a98a95d4",
+          "byte_size": 7263,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín.   I. Cuartil  Mediana  III. Cuartil  Máximo  Media aritmética  Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección  Promedio  Desviación estándar  Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna  Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.718Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a*",
+            "normalized_text": "Esta01C25\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 44 y 45. Considere la siguiente tabla en la que se presentan algunas medidas de posición referentes a masas medidas en gramos, en un negocio de cultivo de truchas.\n____________________________________________________________________\nMín. I. Cuartil Mediana III. Cuartil Máximo Media aritmética Moda\n____________________________________________________________________\n____________________________________________________________________\nResponda las preguntas 49, 50 y 51 analizando el diagrama de cajas. Se trata de los tiempos en minutos de dos buses A y B que tardan en completar una ruta en particular en San Josécen una semana.\nPara responder las preguntas 52 y 53 analice la siguiente información. En la siguiente tabla se muestran las alturas en cm de los estudiantes que pertenecen en tres secciones:\n__________________________________________________________________\nSección Promedio Desviación estándar Estatura de 1 estudiante\n_________________________________________________________________\n________________________________________________________________\nPara responder las preguntas 54, 55 y 56 considere el siguiente espacio muestral formado por los siguientes números:\nE={2,6,7,8,9,10,11,12,13,15, 17}\nResponda las preguntas 57 y 58 analizando la siguiente tabla, donde se ha contabilizado los sabores de las urnas D, E y F, que se encuentran llenas de confites de 3 sabores.\n_____________________________\nUrna Anís Fresa Menta Total\n_____________________________\nResponda las preguntas 59 y 60 con base en la siguiente información referida a los idiomas que habla un grupo de personas índigenas:\nSi del total de personas se elige una al azar, entonces, la probabilidad de que ella hable únicamente bribrí y español corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.718Z"
+          }
+        ]
+      }
+    }
+  ]
+}

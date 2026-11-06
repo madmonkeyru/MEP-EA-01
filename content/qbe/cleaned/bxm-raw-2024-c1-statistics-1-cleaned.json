@@ -1,0 +1,1954 @@
+{
+  "asset_id": "bxm-raw-2024-c1-statistics-1",
+  "convocatoria": "2024-c1",
+  "area": "statistics",
+  "total_questions": 18,
+  "questions": [
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q21",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nEn la siguiente tabla se muestra las notas y porcentaje de un estudiante en la materia de Física. ¿Cuál es su nota final?\n___________________________\n____________________________\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nEn la siguiente tabla se muestra las notas y porcentaje de un estudiante en la materia de Física. ¿Cuál es su nota final?\n___________________________\n____________________________",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "77",
+            "text_cleaned": "77",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "80",
+            "text_cleaned": "80",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "85",
+            "text_cleaned": "85",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nEn la siguiente tabla se muestra las notas y porcentaje de un estudiante en la materia de Física. ¿Cuál es su nota final?\n___________________________\n____________________________\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nEn la siguiente tabla se muestra las notas y porcentaje de un estudiante en la materia de Física. ¿Cuál es su nota final?\n___________________________\n____________________________",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q22",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestran los datos estadísticos sobre el tiempo de duración en minutos de 20 partidas de ajedrez en el torneo Bobby Fisher:\n¿Cuál de las siguientes opciones es correcta?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestran los datos estadísticos sobre el tiempo de duración en minutos de 20 partidas de ajedrez en el torneo Bobby Fisher:\n¿Cuál de las siguientes opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "al menos hubo una partidoa de ajedrez que duró 55 min.",
+            "text_cleaned": "al menos hubo una partidoa de ajedrez que duró 55 min.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "al menos dos partidas duraron 65 min.",
+            "text_cleaned": "al menos dos partidas duraron 65 min.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "los datos evidencian una distribución que tiende a ser simétrica.",
+            "text_cleaned": "los datos evidencian una distribución que tiende a ser simétrica.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestran los datos estadísticos sobre el tiempo de duración en minutos de 20 partidas de ajedrez en el torneo Bobby Fisher:\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestran los datos estadísticos sobre el tiempo de duración en minutos de 20 partidas de ajedrez en el torneo Bobby Fisher:\n¿Cuál de las siguientes opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q23",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestra los datos estadísticos de una empresa, que representan el costo (en colones) de transporte diario de los 20 empleados, como sigue\nEn promedio, los empleados gastan a diario______________colones.\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestra los datos estadísticos de una empresa, que representan el costo (en colones) de transporte diario de los 20 empleados, como sigue\nEn promedio, los empleados gastan a diario______________colones.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "570",
+            "text_cleaned": "570",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "720",
+            "text_cleaned": "720",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "750",
+            "text_cleaned": "750",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestra los datos estadísticos de una empresa, que representan el costo (en colones) de transporte diario de los 20 empleados, como sigue\nEn promedio, los empleados gastan a diario______________colones.\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nA continuación se muestra los datos estadísticos de una empresa, que representan el costo (en colones) de transporte diario de los 20 empleados, como sigue\nEn promedio, los empleados gastan a diario______________colones.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q24",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere el recorrido de hombres y mujeres en los datos estadísticos de 43 años.\nSe cumple entonces.\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere el recorrido de hombres y mujeres en los datos estadísticos de 43 años.\nSe cumple entonces.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "el empleado de mayor edad es una mujer",
+            "text_cleaned": "el empleado de mayor edad es una mujer",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "el empleado de mayor edad es un hombre",
+            "text_cleaned": "el empleado de mayor edad es un hombre",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Al menos un hombre y una mujer tienen la misma edad.",
+            "text_cleaned": "Al menos un hombre y una mujer tienen la misma edad.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere el recorrido de hombres y mujeres en los datos estadísticos de 43 años.\nSe cumple entonces.\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere el recorrido de hombres y mujeres en los datos estadísticos de 43 años.\nSe cumple entonces.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q25",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere ahora que el recorrido intercuartílico de las mujeres es de 26, se cumple que\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere ahora que el recorrido intercuartílico de las mujeres es de 26, se cumple que",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "al menos el 50% de los hombres tiene 44 años o más. Al menos el 25% de las mujeres tiene 44 años o más.",
+            "text_cleaned": "al menos el 50% de los hombres tiene 44 años o más. Al menos el 25% de las mujeres tiene 44 años o más.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "al menos un hombre y una mujer tienen 44 años cada uno.",
+            "text_cleaned": "al menos un hombre y una mujer tienen 44 años cada uno.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "al menos un hombre y una mujer tienen 24 años.",
+            "text_cleaned": "al menos un hombre y una mujer tienen 24 años.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere ahora que el recorrido intercuartílico de las mujeres es de 26, se cumple que\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nConsidere ahora que el recorrido intercuartílico de las mujeres es de 26, se cumple que",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q26",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140   175    285    445     560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140 175 285 445 560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "A",
+            "text_cleaned": "A",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "B",
+            "text_cleaned": "B",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "C",
+            "text_cleaned": "C",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140   175    285    445     560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140 175 285 445 560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140 175 285 445 560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nEn la siguiente tabla se muestran datos estadísticos del número de visitas de 3 sitios web:\nA140 175 285 445 560\nB\nC\n¿Cuál sitio tiene los datos más variables en cuanto a su número de visitas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q27",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nA continuación se muestran las estadísticas de los puntos obtenidos por los equipos de fútbol en dos torneos (verano e invierno) efectuados en un año. ¿Cuál de las siguientes opciones es correcta?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nA continuación se muestran las estadísticas de los puntos obtenidos por los equipos de fútbol en dos torneos (verano e invierno) efectuados en un año. ¿Cuál de las siguientes opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Ningún equipo obtuvo 30 puntos",
+            "text_cleaned": "Ningún equipo obtuvo 30 puntos",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "En ambos torneos, al menos el 50% de los equipos obtuvieron 25 o más puntos.",
+            "text_cleaned": "En ambos torneos, al menos el 50% de los equipos obtuvieron 25 o más puntos.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Al menos un equipo en cada torneo obtuvo 20 puntos.",
+            "text_cleaned": "Al menos un equipo en cada torneo obtuvo 20 puntos.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-2abe2c1bc5",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image2-2abe2c1b.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image2-2abe2c1b.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "2abe2c1bc5637c39afd2ebcfdabbe406dd261581757d8dab5052f42a40513599",
+          "byte_size": 18575,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nA continuación se muestran las estadísticas de los puntos obtenidos por los equipos de fútbol en dos torneos (verano e invierno) efectuados en un año. ¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nA continuación se muestran las estadísticas de los puntos obtenidos por los equipos de fútbol en dos torneos (verano e invierno) efectuados en un año. ¿Cuál de las siguientes opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q28",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. Tanto en enero como febrero, el 25% de las llamadas fue de 5 minutos o menos.\nII. En cada mes, al menos 100 entrevistas, se realizaron en 25 minutos o más.\nIII. Al menos una de las entrevistas, en el mes de febrero duró más que cualquier entrevista realizada en el mes de enero.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. Tanto en enero como febrero, el 25% de las llamadas fue de 5 minutos o menos.\nII. En cada mes, al menos 100 entrevistas, se realizaron en 25 minutos o más.\nIII. Al menos una de las entrevistas, en el mes de febrero duró más que cualquier entrevista realizada en el mes de enero.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "solamente la I.",
+            "text_cleaned": "solamente la I.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solament la II.",
+            "text_cleaned": "solament la II.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "La II y la III.",
+            "text_cleaned": "La II y la III.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. Tanto en enero como febrero, el 25% de las llamadas fue de 5 minutos o menos.\nII. En cada mes, al menos 100 entrevistas, se realizaron en 25 minutos o más.\nIII. Al menos una de las entrevistas, en el mes de febrero duró más que cualquier entrevista realizada en el mes de enero.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. Tanto en enero como febrero, el 25% de las llamadas fue de 5 minutos o menos.\nII. En cada mes, al menos 100 entrevistas, se realizaron en 25 minutos o más.\nIII. Al menos una de las entrevistas, en el mes de febrero duró más que cualquier entrevista realizada en el mes de enero.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.699Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q29",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál de las siguientes opciones es correcta?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál de las siguientes opciones es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Los datos tienen mayor variabilidad en febrero que en enero.",
+            "text_cleaned": "Los datos tienen mayor variabilidad en febrero que en enero.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Al menos una entrevista duró 15 min en cada mes.",
+            "text_cleaned": "Al menos una entrevista duró 15 min en cada mes.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "La entrevista en la que se empleó menos tiempo se realizó en enero.",
+            "text_cleaned": "La entrevista en la que se empleó menos tiempo se realizó en enero.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál de las siguientes opciones es correcta?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál de las siguientes opciones es correcta?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q30",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección   Media   Desviación\n¿Cuál sección tiene mayor variabilidad relativa?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección Media Desviación\n¿Cuál sección tiene mayor variabilidad relativa?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "A",
+            "text_cleaned": "A",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "B",
+            "text_cleaned": "B",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "C",
+            "text_cleaned": "C",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección   Media   Desviación\n¿Cuál sección tiene mayor variabilidad relativa?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección Media Desviación\n¿Cuál sección tiene mayor variabilidad relativa?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección Media Desviación\n¿Cuál sección tiene mayor variabilidad relativa?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nA continuación se muestran datos estadísticos de las notas obtenidas por tres novenos en el primer examen del último trimestre en Estudios Sociales:\nSección Media Desviación\n¿Cuál sección tiene mayor variabilidad relativa?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q31",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAlice, Alana y Axa pertenecen a tres empresas diferentes N, M y L. A continuación se muestran datos estadísticos sobre sus sueldos respectivos en millones de colones:\nSalario Promedio y desviación\n____________________________________\n___________________________________\n¿Cuál ocupa la mejor posición relativa en su empresa?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAlice, Alana y Axa pertenecen a tres empresas diferentes N, M y L. A continuación se muestran datos estadísticos sobre sus sueldos respectivos en millones de colones:\nSalario Promedio y desviación\n____________________________________\n___________________________________\n¿Cuál ocupa la mejor posición relativa en su empresa?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "Axa",
+            "text_cleaned": "Axa",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "Alice",
+            "text_cleaned": "Alice",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Alana",
+            "text_cleaned": "Alana",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAlice, Alana y Axa pertenecen a tres empresas diferentes N, M y L. A continuación se muestran datos estadísticos sobre sus sueldos respectivos en millones de colones:\nSalario Promedio y desviación\n____________________________________\n___________________________________\n¿Cuál ocupa la mejor posición relativa en su empresa?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAlice, Alana y Axa pertenecen a tres empresas diferentes N, M y L. A continuación se muestran datos estadísticos sobre sus sueldos respectivos en millones de colones:\nSalario Promedio y desviación\n____________________________________\n___________________________________\n¿Cuál ocupa la mejor posición relativa en su empresa?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q32",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones\nI. Ninguno de los términos en la expresión; P(A∪B)=P(A)+P(B)-P(A∩B) es nulo.\nII. El evento A tiene 4 puntos muestrales\nDe ellas son verdaderas.\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones\nI. Ninguno de los términos en la expresión; P(A∪B)=P(A)+P(B)-P(A∩B) es nulo.\nII. El evento A tiene 4 puntos muestrales\nDe ellas son verdaderas.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones\nI. Ninguno de los términos en la expresión; P(A∪B)=P(A)+P(B)-P(A∩B) es nulo.\nII. El evento A tiene 4 puntos muestrales\nDe ellas son verdaderas.\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones\nI. Ninguno de los términos en la expresión; P(A∪B)=P(A)+P(B)-P(A∩B) es nulo.\nII. El evento A tiene 4 puntos muestrales\nDe ellas son verdaderas.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q33",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI.  P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI.  P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nAnalice las siguientes afirmaciones:\nI. P(B∩C) = 1\nII. El complemento del evento D tiene 4 puntos muestrales.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q34",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nConsidere las siguientes afirmaciones:\nI. P(Aᶜ )= 1- P(A)\nII. P(Aᶜ) = 1-P(D)\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nConsidere las siguientes afirmaciones:\nI. P(Aᶜ )= 1- P(A)\nII. P(Aᶜ) = 1-P(D)\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nConsidere las siguientes afirmaciones:\nI. P(Aᶜ )= 1- P(A)\nII. P(Aᶜ) = 1-P(D)\nDe ellas son verdaderas\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nConsidere las siguientes afirmaciones:\nI. P(Aᶜ )= 1- P(A)\nII. P(Aᶜ) = 1-P(D)\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q35",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la mayor probabilidad de tener un empleado que prefiera el baloncesto o el voleibol\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la mayor probabilidad de tener un empleado que prefiera el baloncesto o el voleibol",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "H",
+            "text_cleaned": "H",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "M",
+            "text_cleaned": "M",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "K",
+            "text_cleaned": "K",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la mayor probabilidad de tener un empleado que prefiera el baloncesto o el voleibol\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la mayor probabilidad de tener un empleado que prefiera el baloncesto o el voleibol",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q36",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la menor probabilidad de tener un empleado queNOprefiera elvoleibol?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la menor probabilidad de tener un empleado queNOprefiera elvoleibol?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "H",
+            "text_cleaned": "H",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "M",
+            "text_cleaned": "M",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "K",
+            "text_cleaned": "K",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la menor probabilidad de tener un empleado queNOprefiera elvoleibol?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\n¿Cuál sucursal tiene la menor probabilidad de tener un empleado queNOprefiera elvoleibol?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q37",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer activa o un hombre sedentario?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer activa o un hombre sedentario?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "23/57",
+            "text_cleaned": "23/57",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "30/57",
+            "text_cleaned": "30/57",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "27/57",
+            "text_cleaned": "27/57",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer activa o un hombre sedentario?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer activa o un hombre sedentario?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2024-c1-statistics-1-q38",
+      "source": {
+        "asset_id": "bxm-raw-2024-c1-statistics-1",
+        "filename": "BXM Math STATS 01 C2024.docx",
+        "convocatoria": "2024-c1",
+        "area": "statistics",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2024-1 (BXM Math STATS 01 C2024)"
+      },
+      "content": {
+        "stem_raw": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una  persona activa?\n*",
+        "stem_cleaned": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una persona activa?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "45/57",
+            "text_cleaned": "45/57",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "48/57",
+            "text_cleaned": "48/57",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "34/57",
+            "text_cleaned": "34/57",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-b6b96c3cf5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c1-statistics-1-image1-b6b96c3c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b6b96c3cf5b3706bc69b0cfe27c44e58b54e5878fff85cef89805d41a0e1efc3",
+          "byte_size": 19937,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "statistics"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": false,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key",
+          "incomplete_options"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset",
+          "Incomplete option count: 3 of 4 options present"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una  persona activa?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una persona activa?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una persona activa?\n*",
+            "normalized_text": "Esta01C24 Matemáticas\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 sobre las edades de los empleados de una empresa, en años cumplidos:\nHombres\n_________________\n_________________\nMujeres\n________________\n__________________\nResponda las preguntas 28 y 29 con base en el siguiente diagrama de cajas. Se muestra el tiempo de duración en minutos para realizar una encuesta telefónica, durante los meses de enero y febrero, en la cual se entrevistó a 800 personas (400 por mes)\nPara responder las preguntas 37 y 38, analice la siguiente información sobre la actividad física de un grupo conformado por 57 personas:\nSedentario\nActivo(a)\nTotal\n¿Cuál es la probabilidad de tener una mujer (sin importar su condición) o una persona activa?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.700Z"
+          }
+        ]
+      }
+    }
+  ]
+}
