@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { AppRoute } from '../../services/navigation';
+import type { AppRoute, LearningContextReason } from '../../services/navigation';
 import { storageService } from '../../services/storageService';
 import { Dialog } from '../../components/common/Dialog';
 import { PaywallModal } from '../../components/common/PaywallModal';
@@ -18,6 +18,7 @@ import { computeEvidenceMasteryRecords } from '../bxm-progress/domain/masteryEng
 import { PlanDeNivelacionView } from '../../components/results/PlanDeNivelacionView';
 import { generateRemediationPlanFromSessionResult } from '../../services/remediationEngine';
 import { RecommendationCard } from '../../components/common/RecommendationCard';
+import { StudentMasteryBadge } from '../../components/common/StudentMasteryBadge';
 import { deriveCanonicalRecommendation } from '../bxm-progress/recommendations/recommendationsEngine';
 import type { CanonicalRecommendation } from '../../types/recommendation';
 
@@ -46,8 +47,8 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     return 'inicio';
   }, [tab]);
 
-  const go = useCallback((nextTab: string, evidenceKey?: string, sessionId?: string) => onNavigate({
-    view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: nextTab, evidenceKey, sessionId,
+  const go = useCallback((nextTab: string, evidenceKey?: string, sessionId?: string, contextReason?: LearningContextReason) => onNavigate({
+    view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: nextTab, evidenceKey, sessionId, contextReason,
   }), [onNavigate]);
   useEffect(() => { store.reconcile(); if (store.lastError) setMessage(store.lastError); }, [store]);
   const persist = useCallback((current: SessionRunner) => {
@@ -89,7 +90,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     try { const restored = SessionRunner.restore(active); setRunner(restored); go('assessment', undefined, active.sessionId); }
     catch { setMessage('No se pudo reanudar este intento. El registro se conserva para su revisión.'); }
   }
-  function openLesson(key: string) { go('temario', key); }
+  function openLesson(key: string, reason?: LearningContextReason) { go('temario', key, undefined, reason); }
   const results = store.getResults();
   const legacy = storageService.getContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' }, userId);
 
@@ -145,7 +146,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         break;
       case 'lesson':
         if (targetId) {
-          openLesson(targetId);
+          openLesson(targetId, rec.reason === 'diagnostic_weakness' ? 'diagnostic_weakness' : rec.reason === 'remediation_pending' ? 'remediation' : undefined);
         } else {
           go('temario');
         }
@@ -650,14 +651,15 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                 </div>
                 {mastered.length > 0 ? (
                   <ul className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300">
-                    {mastered.map(m => (
-                      <li key={m.evidenceId} className="flex items-center justify-between">
-                        <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
-                        <span className="font-bold text-emerald-700 dark:text-emerald-400">
-                          {Math.round((m.correctFirstResponseCount / m.totalItems) * 100)}%
-                        </span>
-                      </li>
-                    ))}
+                    {mastered.map(m => {
+                      const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
+                      return (
+                        <li key={m.evidenceId} className="flex items-center justify-between">
+                          <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
+                          <StudentMasteryBadge percentage={acc} />
+                        </li>
+                      );
+                    })}
                   </ul>
                 ) : (
                   <p className="text-xs text-stone-500 italic">
@@ -676,13 +678,10 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                   <ul className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300">
                     {[...needReinforcement, ...inProgress].map(m => {
                       const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
-                      const isLow = acc < 60;
                       return (
                         <li key={m.evidenceId} className="flex items-center justify-between">
                           <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
-                          <span className={`font-bold ${isLow ? 'text-rose-700 dark:text-rose-400' : 'text-amber-700 dark:text-amber-400'}`}>
-                            {acc}% {isLow ? '(Prioritario)' : '(En progreso)'}
-                          </span>
+                          <StudentMasteryBadge percentage={acc} />
                         </li>
                       );
                     })}

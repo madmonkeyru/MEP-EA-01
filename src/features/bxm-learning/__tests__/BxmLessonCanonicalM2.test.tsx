@@ -2,7 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BxmLessonView } from '../components/BxmLessonView';
 import { BxmContentService } from '../services/bxmContentService';
-import { BxmDigitalTemario } from '../components/BxmDigitalTemario';
 import { BxmLearningStore } from '../../bxm-integration/learningStore';
 import { BxmLearningHub } from '../../bxm-integration/BxmLearningHub';
 import type { AppRoute } from '../../../services/navigation';
