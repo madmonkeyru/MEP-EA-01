@@ -1,0 +1,2454 @@
+{
+  "asset_id": "bxm-raw-2023-c2-functions-2",
+  "convocatoria": "2023-c2",
+  "area": "functions",
+  "total_questions": 20,
+  "questions": [
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q41",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x²+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x^2+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "I",
+            "text_cleaned": "I",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "II",
+            "text_cleaned": "II",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "III",
+            "text_cleaned": "III",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "I y la III.",
+            "text_cleaned": "I y la III.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x²+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x²+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x²+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la siguiente función:\nf: D →{0}\nf(x)=(-x^2+x)/x\nAnalize las siguientes opciones:\nI. -1 ∈ D\nII {1} ⊂ D\nIII. D= {-1 } ∪ {0} ∪ {1}\nDe ellas son verdaderas",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q42",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x²-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x^2-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguno",
+            "text_cleaned": "ninguno",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x²-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x²-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x²-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes relaciones:\nI. D = {-1,1} y E={0}, D → E con J={(x.y): y = x^2-1}\nII. A = {-4,0} y B={0,2,4}, A →B con T={(x.y): y = x+4}\nDe ellas son funciones:",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q43",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere estas dos funciones:\ng: [-4,2[ → [0,10[\nh: [-1,5[ → [-3,6]\nAhora considere una funcion f. Esta tiene como dominio la intersección del ámbito de g con el domino de h. Entonces el dominio de f es igual a\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere estas dos funciones:\ng: [-4,2[ → [0,10[\nh: [-1,5[ → [-3,6]\nAhora considere una funcion f. Esta tiene como dominio la intersección del ámbito de g con el domino de h. Entonces el dominio de f es igual a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "[0,5[",
+            "text_cleaned": "[0,5[",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "[5,10[",
+            "text_cleaned": "[5,10[",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "[-3,2[",
+            "text_cleaned": "[-3,2[",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "[-1,10[",
+            "text_cleaned": "[-1,10[",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere estas dos funciones:\ng: [-4,2[ → [0,10[\nh: [-1,5[ → [-3,6]\nAhora considere una funcion f. Esta tiene como dominio la intersección del ámbito de g con el domino de h. Entonces el dominio de f es igual a\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere estas dos funciones:\ng: [-4,2[ → [0,10[\nh: [-1,5[ → [-3,6]\nAhora considere una funcion f. Esta tiene como dominio la intersección del ámbito de g con el domino de h. Entonces el dominio de f es igual a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q44",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅  +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=\\sqrt{X}̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "]-∞,1[",
+            "text_cleaned": "]-∞,1[",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "]-∞,2[",
+            "text_cleaned": "]-∞,2[",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "]-∞,3[",
+            "text_cleaned": "]-∞,3[",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "]-∞,4[",
+            "text_cleaned": "]-∞,4[",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅  +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=√X̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea la función f dada por f: [3, +∞] →A, con f(x)=\\sqrt{X}̅-̅2̅ +1. Si el conjunto universo es ℝ , entonces, el complemento del dominio de la función inversa de f corresponde a",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q45",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a  ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a  ]-∞,-5[ ∪  ]3,+∞[\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a ]-∞,-5[ ∪ ]3,+∞[\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a  ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a  ]-∞,-5[ ∪  ]3,+∞[\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a ]-∞,-5[ ∪ ]3,+∞[\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a ]-∞,-5[ ∪ ]3,+∞[\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes afirmaciones:\nI. Un intervalo del dominio de f, donde esta función posee inversa es igual a ]-3,2[.\nII. Si es el conjunto universo es ℝ, entonces el complemento del dominio de f corresponde a ]-∞,-5[ ∪ ]3,+∞[\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q46",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\n¿Cuál de las siguientes afirmaciones son correctas?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "(f∘h)(2)=2",
+            "text_cleaned": "(f∘h)(2)=2",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "(r∘g)(x) =x²+x-4",
+            "text_cleaned": "(r∘g)(x) =x^2+x-4",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "Es factible efectuar (g∘f)(x)",
+            "text_cleaned": "Es factible efectuar (g∘f)(x)",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "Es factible efectuar (g∘r)(x)",
+            "text_cleaned": "Es factible efectuar (g∘r)(x)",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\n¿Cuál de las siguientes afirmaciones son correctas?\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\n¿Cuál de las siguientes afirmaciones son correctas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "(r∘g)(x) =x²+x-4",
+            "normalized_text": "(r∘g)(x) =x^2+x-4",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q47",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la función f(x)= (6+12x)/12.Si la inversa de f tiene la forma ax+b, entonces sus valores son\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la función f(x)= (6+12x)/12.Si la inversa de f tiene la forma ax+b, entonces sus valores son",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "a= -6 y b=3",
+            "text_cleaned": "$a = -6 y b = 3$",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "a= 6 y b= -3",
+            "text_cleaned": "$a = 6 y b = -3$",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "a=10 y b= -4",
+            "text_cleaned": "$a = 10 y b = -4$",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "a=14 y b= -8",
+            "text_cleaned": "$a = 14 y b = -8$",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la función f(x)= (6+12x)/12.Si la inversa de f tiene la forma ax+b, entonces sus valores son\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la función f(x)= (6+12x)/12.Si la inversa de f tiene la forma ax+b, entonces sus valores son",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a= -6 y b=3",
+            "normalized_text": "$a = -6 y b = 3$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a= 6 y b= -3",
+            "normalized_text": "$a = 6 y b = -3$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a=10 y b= -4",
+            "normalized_text": "$a = 10 y b = -4$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "a=14 y b= -8",
+            "normalized_text": "$a = 14 y b = -8$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q48",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) =  √X̅-̅1̅6̅  es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅  es la traslación de la gráfica de f(x).\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5\\sqrt{X}̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = \\sqrt{X}̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5\\sqrt{X}̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "ambiguous_math",
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) =  √X̅-̅1̅6̅  es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅  es la traslación de la gráfica de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = √X̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = √X̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = √X̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5√X̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = √X̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5√X̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere la función f(x)=5\\sqrt{X}̅-̅1̅6̅. Analice las siguientes informaciones;\nI. La gráfica de r(x) = \\sqrt{X}̅-̅1̅6̅ es la homotecia de la gráfica de f(x).\nII. La gráfica de r(x) = 5\\sqrt{X}̅ es la traslación de la gráfica de f(x).\nDe ellas son verdaderas",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol to standard \\sqrt{} notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q49",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere las siguientes informaciones sobre la función r cuya gráfica es y=5. Analice las siguientes afirmaciones;\nI. La pendiente de r es 5.\nII. (0.5) pertenece al gráfico de r.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere las siguientes informaciones sobre la función r cuya gráfica es y=5. Analice las siguientes afirmaciones;\nI. La pendiente de r es 5.\nII. (0.5) pertenece al gráfico de r.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere las siguientes informaciones sobre la función r cuya gráfica es y=5. Analice las siguientes afirmaciones;\nI. La pendiente de r es 5.\nII. (0.5) pertenece al gráfico de r.\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere las siguientes informaciones sobre la función r cuya gráfica es y=5. Analice las siguientes afirmaciones;\nI. La pendiente de r es 5.\nII. (0.5) pertenece al gráfico de r.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.684Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q50",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la siguiente gráfica.\nAnalice las siguientes afirmaciones;\nI. (-7,6) pertenece al gráfico de f.\nII. f es decreciente.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la siguiente gráfica.\nAnalice las siguientes afirmaciones;\nI. (-7,6) pertenece al gráfico de f.\nII. f es decreciente.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo I",
+            "text_cleaned": "solo I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo II",
+            "text_cleaned": "solo II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-374b48f180",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image3-374b48f1.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image3-374b48f1.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "374b48f1804dc353452cb54ce5ad05e650d86e4eb5c739c4669b1a1fa9fae7eb",
+          "byte_size": 10262,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la siguiente gráfica.\nAnalice las siguientes afirmaciones;\nI. (-7,6) pertenece al gráfico de f.\nII. f es decreciente.\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice la siguiente gráfica.\nAnalice las siguientes afirmaciones;\nI. (-7,6) pertenece al gráfico de f.\nII. f es decreciente.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q51",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ  y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-4ad087b77c",
+          "original_filename": "image4.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image4-4ad087b7.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image4-4ad087b7.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "4ad087b77c110fb871bf4be5ec5895b92bf661cc83583127a97928f2427150bf",
+          "byte_size": 9226,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ  y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nConsidere una función f(x)=a ͯ y contiene el punto (5,32). Analice las siguientes afirmaciones;\nI. f es creciente en todo su dominio.\nII. La inversa de f(x) es log₅(x)\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q52",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a la función f;\nI. c>0.\nII. a<0.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a la función f;\nI. c>0.\nII. a<0.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a la función f;\nI. c>0.\nII. a<0.\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a la función f;\nI. c>0.\nII. a<0.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q53",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a f(x);\nI. f(3)=0\nII. El eje de simetría es x=1.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a f(x);\nI. f(3)=0\nII. El eje de simetría es x=1.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a f(x);\nI. f(3)=0\nII. El eje de simetría es x=1.\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes proposiciones referidas a f(x);\nI. f(3)=0\nII. El eje de simetría es x=1.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q54",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nHelena pagó por 2 limones y 3 guayabas 775 colones, mientras que Omar gastó en 3 limones y 2 guayabas 850 colones. Cada limón cuesta_____________colones.\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nHelena pagó por 2 limones y 3 guayabas 775 colones, mientras que Omar gastó en 3 limones y 2 guayabas 850 colones. Cada limón cuesta_____________colones.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "155",
+            "text_cleaned": "155",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "162",
+            "text_cleaned": "162",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "170",
+            "text_cleaned": "170",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "200",
+            "text_cleaned": "200",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nHelena pagó por 2 limones y 3 guayabas 775 colones, mientras que Omar gastó en 3 limones y 2 guayabas 850 colones. Cada limón cuesta_____________colones.\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nHelena pagó por 2 limones y 3 guayabas 775 colones, mientras que Omar gastó en 3 limones y 2 guayabas 850 colones. Cada limón cuesta_____________colones.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q55",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo  se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "1",
+            "text_cleaned": "1",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "2",
+            "text_cleaned": "2",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "3",
+            "text_cleaned": "3",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "4",
+            "text_cleaned": "4",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo  se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa cantidad de personas (p) de una ciudad en función de los años (t) está dada por;\np(t)=120 000 (1.1)ᵗ\nSi en un censo se comprobó la existencia de 132 000 personas y en el siguiente se comprobó la existencia de 175 692 , entonces, ¿cuántos años transcurrieron entre censo y censo?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q56",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes ecuaciones:\nm ͯ =16\nlog ₂ (m)= -1\n¿Cuál es el valor de x?\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes ecuaciones:\nm ͯ =16\nlog ₂ (m)= -1\n¿Cuál es el valor de x?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "2",
+            "text_cleaned": "2",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "4",
+            "text_cleaned": "4",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "-2",
+            "text_cleaned": "-2",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "-4",
+            "text_cleaned": "-4",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes ecuaciones:\nm ͯ =16\nlog ₂ (m)= -1\n¿Cuál es el valor de x?\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice las siguientes ecuaciones:\nm ͯ =16\nlog ₂ (m)= -1\n¿Cuál es el valor de x?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q57",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa siguiente gráfica muestra la cantidad de minutos disponibles para llamadas y la tarifa mensual en colones que ofrece una compañía de telefonía fija:\nAnalice si las siguientes afirmaciones son correctas;\nI. Un cliente con 90 minutos tiene una factura de 4300 colones.\nII. Un cliente consumió 50 minutos y otro 25 minutos. Entonces la factura del primero es el doble que la del segundo.\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa siguiente gráfica muestra la cantidad de minutos disponibles para llamadas y la tarifa mensual en colones que ofrece una compañía de telefonía fija:\nAnalice si las siguientes afirmaciones son correctas;\nI. Un cliente con 90 minutos tiene una factura de 4300 colones.\nII. Un cliente consumió 50 minutos y otro 25 minutos. Entonces la factura del primero es el doble que la del segundo.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-c4306f54a9",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image1-c4306f54.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image1-c4306f54.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "c4306f54a94099733699016a91144aed2ad80799ff2bed819939c1ee51618be2",
+          "byte_size": 25692,
+          "relationship_id": "rId10",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa siguiente gráfica muestra la cantidad de minutos disponibles para llamadas y la tarifa mensual en colones que ofrece una compañía de telefonía fija:\nAnalice si las siguientes afirmaciones son correctas;\nI. Un cliente con 90 minutos tiene una factura de 4300 colones.\nII. Un cliente consumió 50 minutos y otro 25 minutos. Entonces la factura del primero es el doble que la del segundo.\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nLa siguiente gráfica muestra la cantidad de minutos disponibles para llamadas y la tarifa mensual en colones que ofrece una compañía de telefonía fija:\nAnalice si las siguientes afirmaciones son correctas;\nI. Un cliente con 90 minutos tiene una factura de 4300 colones.\nII. Un cliente consumió 50 minutos y otro 25 minutos. Entonces la factura del primero es el doble que la del segundo.",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q58",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nEn la academia Mejor porvenir se imparten cursos de bachillerato. Cada curso es de 23 lecciones. El costo de la matrícula es de 12 000 colones y el costo por lección de 3000 colones.\n¿Cuánto paga un estudiante por curso si lleva x lecciones solamente?\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nEn la academia Mejor porvenir se imparten cursos de bachillerato. Cada curso es de 23 lecciones. El costo de la matrícula es de 12 000 colones y el costo por lección de 3000 colones.\n¿Cuánto paga un estudiante por curso si lleva x lecciones solamente?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "3000x + 12 000",
+            "text_cleaned": "3000x + 12 000",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "3000x + 15 000",
+            "text_cleaned": "3000x + 15 000",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "15 000+ 23x",
+            "text_cleaned": "15 000+ 23x",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "12 000 + 23x",
+            "text_cleaned": "12 000 + 23x",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nEn la academia Mejor porvenir se imparten cursos de bachillerato. Cada curso es de 23 lecciones. El costo de la matrícula es de 12 000 colones y el costo por lección de 3000 colones.\n¿Cuánto paga un estudiante por curso si lleva x lecciones solamente?\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nEn la academia Mejor porvenir se imparten cursos de bachillerato. Cada curso es de 23 lecciones. El costo de la matrícula es de 12 000 colones y el costo por lección de 3000 colones.\n¿Cuánto paga un estudiante por curso si lleva x lecciones solamente?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q59",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función logarítmica.\nII. La función g se modela de la mejor forma con la función exponencial.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función logarítmica.\nII. La función g se modela de la mejor forma con la función exponencial.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-cc1e0361ba",
+          "original_filename": "image5.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image5-cc1e0361.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image5-cc1e0361.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "cc1e0361ba7d93a908573dec749717e3f67ab1a4ef255154089bff09966c825e",
+          "byte_size": 28920,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función logarítmica.\nII. La función g se modela de la mejor forma con la función exponencial.\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función logarítmica.\nII. La función g se modela de la mejor forma con la función exponencial.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bxm-raw-2023-c2-functions-2-q60",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2023.docx",
+        "convocatoria": "2023-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math FUN 02 C2023)"
+      },
+      "content": {
+        "stem_raw": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función raíz cuadrada.\nII. La función g se modela de la mejor forma con la función cuadrática\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función raíz cuadrada.\nII. La función g se modela de la mejor forma con la función cuadrática\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la I",
+            "text_cleaned": "solo la I",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la II",
+            "text_cleaned": "solo la II",
+            "visuals": []
+          }
+        ],
+        "detected_answer": null,
+        "explanation_raw": null,
+        "explanation_cleaned": null
+      },
+      "visuals": [
+        {
+          "id": "vis-297b4517dc",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image6-297b4517.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "297b4517dc9bf0575979a051586f8643dddc2b73a63ba7f4289738b98f40a1b2",
+          "byte_size": 47837,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        },
+        {
+          "id": "vis-34c5fb62e9",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2023-c2-functions-2-image2-34c5fb62.jpg",
+          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-functions-2-image2-34c5fb62.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "34c5fb62e982c1357b64be88d1f904ef7ab971ac265c3074b65ca55bdacb54a8",
+          "byte_size": 26011,
+          "relationship_id": "rId12",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
+      "classification": {
+        "topic": "functions"
+      },
+      "evaluation": {
+        "framework_version": "02-2026",
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
+      },
+      "quality": {
+        "status": "needs_review",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": false,
+        "review_flags": [
+          "missing_answer_key"
+        ],
+        "issues": [
+          "Missing explicit answer key from source asset"
+        ]
+      },
+      "review": {
+        "extraction_reviewed": false,
+        "content_reviewed": false,
+        "answer_reviewed": false,
+        "mapping_reviewed": false,
+        "reviewer_notes": []
+      },
+      "confidence": {
+        "source_confidence": 0.5,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 0,
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
+      },
+      "history": {
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función raíz cuadrada.\nII. La función g se modela de la mejor forma con la función cuadrática\nDe ellas son verdaderas\n*",
+            "normalized_text": "bxm 02C23\nFunciones\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 45 y 46 donde se describen las funciones f,h,g y r.\nAnalice los siguientes datos tabulados sobre las funciones f y g\nAnalice las siguientes afirmaciones:\nI. La función f se modela de la mejor forma con la función raíz cuadrada.\nII. La función g se modela de la mejor forma con la función cuadrática\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T00:31:46.685Z"
+          }
+        ]
+      }
+    }
+  ]
+}
