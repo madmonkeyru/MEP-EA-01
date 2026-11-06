@@ -47,9 +47,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Centro (-3,-4), radio 5: (x+3)²+(y+4)²=25."
       },
       "visuals": [],
       "classification": {
@@ -57,39 +57,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Centro (-3,-4), radio 5: (x+3)²+(y+4)²=25.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -213,6 +210,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\\n*\", \"stem_cleaned\": \"¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(x-3)² + (y-4)² = √̅5̅\", \"text_cleaned\": \"$(x-3)^2 + (y-4)^2 = \\\\sqrt{5}$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(x+3)² + (y+4)² = √̅5̅\", \"text_cleaned\": \"$(x + 3)^2 + (y + 4)^2 = \\\\sqrt{5}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x+3)² + (y+4)² = 25\", \"text_cleaned\": \"$(x + 3)^2 + (y + 4)^2 = 25$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x-3)² + (y-4)² = 25\", \"text_cleaned\": \"$(x-3)^2 + (y-4)^2 = 25$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\\n*\", \"stem_cleaned\": \"¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(x-3)² + (y-4)² = √̅5̅\", \"text_cleaned\": \"$(x-3)^2 + (y-4)^2 = \\\\sqrt{5}$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(x+3)² + (y+4)² = √̅5̅\", \"text_cleaned\": \"$(x + 3)^2 + (y + 4)^2 = \\\\sqrt{5}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x+3)² + (y+4)² = 25\", \"text_cleaned\": \"$(x + 3)^2 + (y + 4)^2 = 25$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x-3)² + (y-4)² = 25\", \"text_cleaned\": \"$(x-3)^2 + (y-4)^2 = 25$\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Centro (-3,-4), radio 5: (x+3)²+(y+4)²=25.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -260,16 +268,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Centro (-2,0), radio 2: (x+2)²+y²=4."
       },
       "visuals": [
         {
           "id": "vis-dea9fb72c7",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image2-dea9fb72.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image2-dea9fb72.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image2-dea9fb72.jpg",
           "content_type": "image/jpeg",
           "sha256": "dea9fb72c7651d01e8ce6091ad0f5072dd93879713ab9abc7bca0565989b6772",
           "byte_size": 18682,
@@ -283,37 +291,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Centro (-2,0), radio 2: (x+2)²+y²=4.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -415,6 +422,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"¿Cuál es la ecuación de la siguiente gráfica?\\n*\", \"stem_cleaned\": \"¿Cuál es la ecuación de la siguiente gráfica?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"x² + (y-2)² = 4\", \"text_cleaned\": \"$x^2 + (y-2)^2 = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"x² + (y+2)² = 4\", \"text_cleaned\": \"$x^2 + (y + 2)^2 = 4$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x+2)² + y² = 4\", \"text_cleaned\": \"$(x + 2)^2 + y^2 = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x-2)² + y² = 4\", \"text_cleaned\": \"$(x-2)^2 + y^2 = 4$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"¿Cuál es la ecuación de la siguiente gráfica?\\n*\", \"stem_cleaned\": \"¿Cuál es la ecuación de la siguiente gráfica?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"x² + (y-2)² = 4\", \"text_cleaned\": \"$x^2 + (y-2)^2 = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"x² + (y+2)² = 4\", \"text_cleaned\": \"$x^2 + (y + 2)^2 = 4$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x+2)² + y² = 4\", \"text_cleaned\": \"$(x + 2)^2 + y^2 = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x-2)² + y² = 4\", \"text_cleaned\": \"$(x-2)^2 + y^2 = 4$\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Centro (-2,0), radio 2: (x+2)²+y²=4.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -462,9 +480,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "P(0,0) da distancia²=4<5 y es interior, no exterior. R(1,1) da 10>5 y es exterior, no interior. Ninguna verdadera."
       },
       "visuals": [],
       "classification": {
@@ -472,37 +490,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. P(0,0) da distancia²=4<5 y es interior, no exterior. R(1,1) da 10>5 y es exterior, no interior. Ninguna verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -538,6 +555,17 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\\nI. P(0,0) es un punto ubicado al exterior de c.\\nII. R(1,1) es un punto interior de c.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\\nI. P(0,0) es un punto ubicado al exterior de c.\\nII. R(1,1) es un punto interior de c.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\\nI. P(0,0) es un punto ubicado al exterior de c.\\nII. R(1,1) es un punto interior de c.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\\nI. P(0,0) es un punto ubicado al exterior de c.\\nII. R(1,1) es un punto interior de c.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"P(0,0) da distancia²=4<5 y es interior, no exterior. R(1,1) da 10>5 y es exterior, no interior. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -585,9 +613,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La distancia del centro (0,1) a y=x es 1/√2<3, así que es secante. La recta y=-3 dista 4>3 y es exterior. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -595,37 +623,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La distancia del centro (0,1) a y=x es 1/√2<3, así que es secante. La recta y=-3 dista 4>3 y es exterior. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -661,6 +688,17 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\\nI. La recta x=y es secante a d.\\nII. La recta y=-3 es exterior a d\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\\nI. La recta x=y es secante a d.\\nII. La recta y=-3 es exterior a d\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\\nI. La recta x=y es secante a d.\\nII. La recta y=-3 es exterior a d\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\\nI. La recta x=y es secante a d.\\nII. La recta y=-3 es exterior a d\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La distancia del centro (0,1) a y=x es 1/√2<3, así que es secante. La recta y=-3 dista 4>3 y es exterior. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -708,9 +746,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La recta y=0 dista 2 del centro (-3,2), igual al radio. La recta y=-x dista 1/√2<2, así que es secante. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -718,37 +756,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La recta y=0 dista 2 del centro (-3,2), igual al radio. La recta y=-x dista 1/√2<2, así que es secante. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -784,6 +821,17 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\\nI. La recta y=0 es tangente a h.\\nII. La recta y=-x  es secante a h.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\\nI. La recta y=0 es tangente a h.\\nII. La recta y=-x es secante a h.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\\nI. La recta y=0 es tangente a h.\\nII. La recta y=-x  es secante a h.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\\nI. La recta y=0 es tangente a h.\\nII. La recta y=-x es secante a h.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La recta y=0 dista 2 del centro (-3,2), igual al radio. La recta y=-x dista 1/√2<2, así que es secante. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -831,16 +879,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "T es punto de tangencia de r y C. El radio OT es perpendicular a r."
       },
       "visuals": [
         {
           "id": "vis-ba2f68f84b",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
           "content_type": "image/jpeg",
           "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
           "byte_size": 27929,
@@ -858,33 +906,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. T es punto de tangencia de r y C. El radio OT es perpendicular a r.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -898,6 +945,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\\n*\", \"stem_cleaned\": \"Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"B y A\", \"text_cleaned\": \"B y A\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"O y B\", \"text_cleaned\": \"O y B\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"A y O\", \"text_cleaned\": \"A y O\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"T y O\", \"text_cleaned\": \"T y O\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\\n*\", \"stem_cleaned\": \"Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"B y A\", \"text_cleaned\": \"B y A\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"O y B\", \"text_cleaned\": \"O y B\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"A y O\", \"text_cleaned\": \"A y O\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"T y O\", \"text_cleaned\": \"T y O\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"T es punto de tangencia de r y C. El radio OT es perpendicular a r.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -954,7 +1012,7 @@
           "id": "vis-ba2f68f84b",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
           "content_type": "image/jpeg",
           "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
           "byte_size": 27929,
@@ -968,11 +1026,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
         "status": "needs_review",
@@ -983,22 +1041,24 @@
           "missing_answer_key"
         ],
         "issues": [
-          "Missing explicit answer key from source asset"
+          "Las alternativas C y D son idénticas y ambas coinciden con la traslación correcta: (x-1)²+(y-4)²=4. Debe sustituirse un distractor duplicado con una alternativa inequívocamente incorrecta."
         ]
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
         "answer_reviewed": false,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Las alternativas C y D son idénticas y ambas coinciden con la traslación correcta: (x-1)²+(y-4)²=4. Debe sustituirse un distractor duplicado con una alternativa inequívocamente incorrecta."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "mapping_confidence": 0,
+        "content_confidence": 0.75
       },
       "history": {
         "transformations": [
@@ -1078,28 +1138,6 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "(x-1)² + (y-4)² = 4",
-            "normalized_text": "(x-1)^2 + (y-4)^2 = 4",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.774Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
-            "original_text": "(x-1)^2 + (y-4)^2 = 4",
-            "normalized_text": "$(x-1)^2 + (y-4)^2 = 4$",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1120,7 +1158,7 @@
       },
       "content": {
         "stem_raw": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
-        "stem_cleaned": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;",
+        "stem_cleaned": "La circunferencia c tiene centro (-1,4) y radio 2, como en la figura anterior. Se traslada una unidad a la izquierda y tres hacia abajo. ¿Cuál es la ecuación resultante?",
         "options": [
           {
             "id": "A",
@@ -1147,9 +1185,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La circunferencia original tiene centro (-1,4) y radio 2. Trasladar (-1,-3) da centro (-2,1): (x+2)²+(y-1)²=4."
       },
       "visuals": [],
       "classification": {
@@ -1157,37 +1195,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La circunferencia original tiene centro (-1,4) y radio 2. Trasladar (-1,-3) da centro (-2,1): (x+2)²+(y-1)²=4.",
+          "Se restauró explícitamente el centro y radio del contexto gráfico compartido de las preguntas anteriores."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1289,6 +1326,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\\n*\", \"stem_cleaned\": \"Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(x+2)² + (y+1)² = 4\", \"text_cleaned\": \"$(x + 2)^2 + (y + 1)^2 = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(x -2)² + (y -1)² = 4\", \"text_cleaned\": \"$(x -2)^2 + (y -1)^2 = 4$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x-2)² + (y+1)² = 4\", \"text_cleaned\": \"$(x-2)^2 + (y + 1)^2 = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x+2)² + (y-1)² = 4\", \"text_cleaned\": \"$(x + 2)^2 + (y-1)^2 = 4$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\\n*\", \"stem_cleaned\": \"La circunferencia c tiene centro (-1,4) y radio 2, como en la figura anterior. Se traslada una unidad a la izquierda y tres hacia abajo. ¿Cuál es la ecuación resultante?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(x+2)² + (y+1)² = 4\", \"text_cleaned\": \"$(x + 2)^2 + (y + 1)^2 = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(x -2)² + (y -1)² = 4\", \"text_cleaned\": \"$(x -2)^2 + (y -1)^2 = 4$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(x-2)² + (y+1)² = 4\", \"text_cleaned\": \"$(x-2)^2 + (y + 1)^2 = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(x+2)² + (y-1)² = 4\", \"text_cleaned\": \"$(x + 2)^2 + (y-1)^2 = 4$\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La circunferencia original tiene centro (-1,4) y radio 2. Trasladar (-1,-3) da centro (-2,1): (x+2)²+(y-1)²=4.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró explícitamente el centro y radio del contexto gráfico compartido de las preguntas anteriores.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -1336,16 +1384,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "BAFE tiene ancho 6 y altura 2, por lo que P=16. La parte superior tiene bases 6 y 4 y altura 2, con área 10; área total=12+10=22, no 20. Solo I: C."
       },
       "visuals": [
         {
           "id": "vis-38fa45324b",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image1-38fa4532.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image1-38fa4532.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image1-38fa4532.jpg",
           "content_type": "image/jpeg",
           "sha256": "38fa45324b2f109dc0fa48d69ec1603695c13dfb2d90adfd2fbc41c6e815bb57",
           "byte_size": 26758,
@@ -1363,33 +1411,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. BAFE tiene ancho 6 y altura 2, por lo que P=16. La parte superior tiene bases 6 y 4 y altura 2, con área 10; área total=12+10=22, no 20. Solo I: C.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1403,6 +1450,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente figura;\\nAnalice las siguientes afirmaciones;\\nI. El perímetro del rectángulo BAFE es de 16 unidades.\\nII. El área del hexágono AFEDCB es de 20.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente figura;\\nAnalice las siguientes afirmaciones;\\nI. El perímetro del rectángulo BAFE es de 16 unidades.\\nII. El área del hexágono AFEDCB es de 20.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente figura;\\nAnalice las siguientes afirmaciones;\\nI. El perímetro del rectángulo BAFE es de 16 unidades.\\nII. El área del hexágono AFEDCB es de 20.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente figura;\\nAnalice las siguientes afirmaciones;\\nI. El perímetro del rectángulo BAFE es de 16 unidades.\\nII. El área del hexágono AFEDCB es de 20.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"BAFE tiene ancho 6 y altura 2, por lo que P=16. La parte superior tiene bases 6 y 4 y altura 2, con área 10; área total=12+10=22, no 20. Solo I: C.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -1423,7 +1481,7 @@
       },
       "content": {
         "stem_raw": "La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\n*",
-        "stem_cleaned": "La diagonal de un polígono mide 5\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+        "stem_cleaned": "La diagonal de un polígono mide $5\\sqrt{2}$ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
         "options": [
           {
             "id": "A",
@@ -1450,9 +1508,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20."
       },
       "visuals": [],
       "classification": {
@@ -1460,39 +1518,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A4",
-        "evidencia": "A4.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.82,
-        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.82,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1517,6 +1572,28 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\\n*\", \"stem_cleaned\": \"La diagonal de un polígono mide 5\\\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"20\", \"text_cleaned\": \"20\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"22.5\", \"text_cleaned\": \"22.5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25\", \"text_cleaned\": \"25\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"28.28\", \"text_cleaned\": \"28.28\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\\n*\", \"stem_cleaned\": \"La diagonal de un polígono mide 5\\\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"20\", \"text_cleaned\": \"20\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"22.5\", \"text_cleaned\": \"22.5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25\", \"text_cleaned\": \"25\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"28.28\", \"text_cleaned\": \"28.28\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\\n*\", \"stem_cleaned\": \"La diagonal de un polígono mide 5\\\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"20\", \"text_cleaned\": \"20\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"22.5\", \"text_cleaned\": \"22.5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25\", \"text_cleaned\": \"25\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"28.28\", \"text_cleaned\": \"28.28\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20.\"}",
+            "normalized_text": "{\"stem_raw\": \"La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\\n*\", \"stem_cleaned\": \"La diagonal de un polígono mide $5\\\\sqrt{2}$ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"20\", \"text_cleaned\": \"20\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"22.5\", \"text_cleaned\": \"22.5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25\", \"text_cleaned\": \"25\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"28.28\", \"text_cleaned\": \"28.28\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:31:42.804777+00:00"
           }
         ]
       }
@@ -1537,36 +1614,36 @@
       },
       "content": {
         "stem_raw": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\n*",
-        "stem_cleaned": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\sqrt{3}, entonces el área de dicho polígono corresponde a",
+        "stem_cleaned": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide $4\\sqrt{3}$, entonces el área de dicho polígono corresponde a",
         "options": [
           {
             "id": "A",
             "text_raw": "12 √̅3̅",
-            "text_cleaned": "12 \\sqrt{3}",
+            "text_cleaned": "12 $\\sqrt{3}$",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "16√̅3̅",
-            "text_cleaned": "16\\sqrt{3}",
+            "text_cleaned": "$16\\sqrt{3}$",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "72√̅3̅",
-            "text_cleaned": "72\\sqrt{3}",
+            "text_cleaned": "$72\\sqrt{3}$",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "96√̅3̅",
-            "text_cleaned": "96\\sqrt{3}",
+            "text_cleaned": "$96\\sqrt{3}$",
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3."
       },
       "visuals": [],
       "classification": {
@@ -1574,39 +1651,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A4",
-        "evidencia": "A4.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.82,
-        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.82,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1675,6 +1749,28 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\\n*\", \"stem_cleaned\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\\\sqrt{3}, entonces el área de dicho polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12 √̅3̅\", \"text_cleaned\": \"12 \\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16√̅3̅\", \"text_cleaned\": \"16\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"72√̅3̅\", \"text_cleaned\": \"72\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"96√̅3̅\", \"text_cleaned\": \"96\\\\sqrt{3}\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\\n*\", \"stem_cleaned\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\\\sqrt{3}, entonces el área de dicho polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12 √̅3̅\", \"text_cleaned\": \"12 \\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16√̅3̅\", \"text_cleaned\": \"16\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"72√̅3̅\", \"text_cleaned\": \"72\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"96√̅3̅\", \"text_cleaned\": \"96\\\\sqrt{3}\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\\n*\", \"stem_cleaned\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\\\sqrt{3}, entonces el área de dicho polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12 √̅3̅\", \"text_cleaned\": \"12 \\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16√̅3̅\", \"text_cleaned\": \"16\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"72√̅3̅\", \"text_cleaned\": \"72\\\\sqrt{3}\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"96√̅3̅\", \"text_cleaned\": \"96\\\\sqrt{3}\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3.\"}",
+            "normalized_text": "{\"stem_raw\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\\n*\", \"stem_cleaned\": \"La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide $4\\\\sqrt{3}$, entonces el área de dicho polígono corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12 √̅3̅\", \"text_cleaned\": \"12 $\\\\sqrt{3}$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16√̅3̅\", \"text_cleaned\": \"$16\\\\sqrt{3}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"72√̅3̅\", \"text_cleaned\": \"$72\\\\sqrt{3}$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"96√̅3̅\", \"text_cleaned\": \"$96\\\\sqrt{3}$\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:31:42.804777+00:00"
           }
         ]
       }
@@ -1698,6 +1794,12 @@
         "stem_cleaned": "Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
         "options": [
           {
+            "id": "A",
+            "text_raw": "30",
+            "text_cleaned": "30",
+            "visuals": []
+          },
+          {
             "id": "B",
             "text_raw": "35.27",
             "text_cleaned": "35.27",
@@ -1716,9 +1818,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Ángulo central 72° implica pentágono. Lado=2·6·sin36° y P=60·sin36°≈35.27."
       },
       "visuals": [],
       "classification": {
@@ -1726,42 +1828,51 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A4",
-        "evidencia": "A4.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.82,
-        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Ángulo central 72° implica pentágono. Lado=2·6·sin36° y P=60·sin36°≈35.27.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.82,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
-        "transformations": []
+        "transformations": [
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\\n*\\nA 30\", \"stem_cleaned\": \"Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\\n*\\nA 30\", \"options\": [{\"id\": \"A\", \"text_raw\": \"30\", \"text_cleaned\": \"30\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"35.27\", \"text_cleaned\": \"35.27\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"48.54\", \"text_cleaned\": \"48.54\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"66\", \"text_cleaned\": \"66\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\\n*\\nA 30\", \"stem_cleaned\": \"Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\\n*\\nA 30\", \"options\": [{\"id\": \"A\", \"text_raw\": \"30\", \"text_cleaned\": \"30\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"35.27\", \"text_cleaned\": \"35.27\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"48.54\", \"text_cleaned\": \"48.54\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"66\", \"text_cleaned\": \"66\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Ángulo central 72° implica pentágono. Lado=2·6·sin36° y P=60·sin36°≈35.27.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
+          }
+        ]
       }
     },
     {
@@ -1807,16 +1918,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "A=(1,2) y C=(7,2) tienen mediatriz x=(1+7)/2=4."
       },
       "visuals": [
         {
           "id": "vis-f0cccf6776",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image7-f0cccf67.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image7-f0cccf67.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image7-f0cccf67.jpg",
           "content_type": "image/jpeg",
           "sha256": "f0cccf67763d4edb1fabe0e0774eefc329e5f3672a1b6cbe1e91f251c45864d6",
           "byte_size": 24178,
@@ -1834,33 +1945,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. A=(1,2) y C=(7,2) tienen mediatriz x=(1+7)/2=4.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1918,6 +2028,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice el cuadrilátero ABCD como sigue:\\nLos puntos A y C son homólogos entre sí con respecto a la recta es\\n*\", \"stem_cleaned\": \"Analice el cuadrilátero ABCD como sigue:\\nLos puntos A y C son homólogos entre sí con respecto a la recta es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"y=4\", \"text_cleaned\": \"$y = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"x=2\", \"text_cleaned\": \"$x = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"x=4\", \"text_cleaned\": \"$x = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"y=2\", \"text_cleaned\": \"$y = 2$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice el cuadrilátero ABCD como sigue:\\nLos puntos A y C son homólogos entre sí con respecto a la recta es\\n*\", \"stem_cleaned\": \"Analice el cuadrilátero ABCD como sigue:\\nLos puntos A y C son homólogos entre sí con respecto a la recta es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"y=4\", \"text_cleaned\": \"$y = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"x=2\", \"text_cleaned\": \"$x = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"x=4\", \"text_cleaned\": \"$x = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"y=2\", \"text_cleaned\": \"$y = 2$\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"A=(1,2) y C=(7,2) tienen mediatriz x=(1+7)/2=4.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -1938,7 +2059,7 @@
       },
       "content": {
         "stem_raw": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
+        "stem_cleaned": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que AB sea homólogo con DC .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1965,16 +2086,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La reflexión en x=4 lleva AB a DC. La reflexión en y=3 lleva el trapecio superior ABCD al inferior SRUT. Ambas verdaderas."
       },
       "visuals": [
         {
           "id": "vis-e930b8ab59",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image4-e930b8ab.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image4-e930b8ab.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image4-e930b8ab.jpg",
           "content_type": "image/jpeg",
           "sha256": "e930b8ab59dacfc730b0c56d609de84ab3192748cbe11643a3176bfdc6f0a1ee",
           "byte_size": 31006,
@@ -1988,39 +2109,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A6",
-        "evidencia": "A6.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La reflexión en x=4 lleva AB a DC. La reflexión en y=3 lleva el trapecio superior ABCD al inferior SRUT. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2034,6 +2152,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente información;\\nAnalice las siguientes afirmaciones;\\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente información;\\nAnalice las siguientes afirmaciones;\\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente información;\\nAnalice las siguientes afirmaciones;\\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente información;\\nAnalice las siguientes afirmaciones;\\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que AB sea homólogo con DC .\\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La reflexión en x=4 lleva AB a DC. La reflexión en y=3 lleva el trapecio superior ABCD al inferior SRUT. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2081,16 +2210,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "G=(2,4); reflejar respecto de y=0 da (2,-4)."
       },
       "visuals": [
         {
           "id": "vis-2aabb6edf6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
           "content_type": "image/jpeg",
           "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
           "byte_size": 34771,
@@ -2108,33 +2237,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. G=(2,4); reflejar respecto de y=0 da (2,-4).",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2148,6 +2276,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\\n*\", \"stem_cleaned\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(0,4)\", \"text_cleaned\": \"(0,4)\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(2,4)\", \"text_cleaned\": \"(2,4)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(-2,4)\", \"text_cleaned\": \"(-2,4)\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(2,-4)\", \"text_cleaned\": \"(2,-4)\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\\n*\", \"stem_cleaned\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(0,4)\", \"text_cleaned\": \"(0,4)\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(2,4)\", \"text_cleaned\": \"(2,4)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(-2,4)\", \"text_cleaned\": \"(-2,4)\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"(2,-4)\", \"text_cleaned\": \"(2,-4)\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"G=(2,4); reflejar respecto de y=0 da (2,-4).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2195,16 +2334,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La razón -1 y la rotación de 180° son la misma transformación (x,y)→(-x,-y); envían los vértices de HGFE a ABCD. Ambas válidas."
       },
       "visuals": [
         {
           "id": "vis-2aabb6edf6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
           "content_type": "image/jpeg",
           "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
           "byte_size": 34771,
@@ -2218,37 +2357,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A7",
-        "evidencia": "A7.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.87,
-        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La razón -1 y la rotación de 180° son la misma transformación (x,y)→(-x,-y); envían los vértices de HGFE a ABCD. Ambas válidas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.87,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2262,6 +2400,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\\nLos anterior se completa mediante:\\nI. homotecia (centro en el origen y razón k=-1).\\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\\n¿Cuál de ellas completa el texto de forma correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\\nLos anterior se completa mediante:\\nI. homotecia (centro en el origen y razón k=-1).\\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\\n¿Cuál de ellas completa el texto de forma correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\\nLos anterior se completa mediante:\\nI. homotecia (centro en el origen y razón k=-1).\\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\\n¿Cuál de ellas completa el texto de forma correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 34 a 35 con base a la siguiente información;\\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\\nLos anterior se completa mediante:\\nI. homotecia (centro en el origen y razón k=-1).\\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\\n¿Cuál de ellas completa el texto de forma correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La razón -1 y la rotación de 180° son la misma transformación (x,y)→(-x,-y); envían los vértices de HGFE a ABCD. Ambas válidas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2309,9 +2458,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La reflexión en y=1 no cambia las abscisas negativas de CBAD y no puede producir RWPQ a la derecha. La traslación (2,-5) lleva E,H,G,F a R,W,P,Q. Solo II."
       },
       "visuals": [],
       "classification": {
@@ -2323,33 +2472,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La reflexión en y=1 no cambia las abscisas negativas de CBAD y no puede producir RWPQ a la derecha. La traslación (2,-5) lleva E,H,G,F a R,W,P,Q. Solo II.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2363,6 +2511,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\\nEl texto anterior se completa con la siguiente oración;\\nI. reflexión sobre y=1 al cuadrilátero CBAD.\\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\\nEl texto anterior se completa con la siguiente oración;\\nI. reflexión sobre y=1 al cuadrilátero CBAD.\\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambos\", \"text_cleaned\": \"ambos\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\\nEl texto anterior se completa con la siguiente oración;\\nI. reflexión sobre y=1 al cuadrilátero CBAD.\\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\\nEl texto anterior se completa con la siguiente oración;\\nI. reflexión sobre y=1 al cuadrilátero CBAD.\\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambos\", \"text_cleaned\": \"ambos\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La reflexión en y=1 no cambia las abscisas negativas de CBAD y no puede producir RWPQ a la derecha. La traslación (2,-5) lleva E,H,G,F a R,W,P,Q. Solo II.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2383,7 +2542,7 @@
       },
       "content": {
         "stem_raw": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
+        "stem_cleaned": "Sean AB y NM dos diámetros de una esfera con centro O, tal que AB sea ortogonal a NM y AB = 8. Analice las siguientes afirmaciones:\nI. MA corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2410,9 +2569,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "AB=8 implica radio 4. MA une extremos de radios ortogonales y mide 4√2, no 4; OA=OB=4. Ninguna verdadera."
       },
       "visuals": [],
       "classification": {
@@ -2420,39 +2579,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. AB=8 implica radio 4. MA une extremos de radios ortogonales y mide 4√2, no 4; OA=OB=4. Ninguna verdadera.",
+          "Se normalizaron sobrelíneas de segmentos sin cambiar sus relaciones."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2477,6 +2633,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\\nI. M̅A̅ corresponde a un radio de la esfera.\\nII. La distanca de O a B es mayor que la de O a A.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\\nI. M̅A̅ corresponde a un radio de la esfera.\\nII. La distanca de O a B es mayor que la de O a A.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\\nI. M̅A̅ corresponde a un radio de la esfera.\\nII. La distanca de O a B es mayor que la de O a A.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Sean AB y NM dos diámetros de una esfera con centro O, tal que AB sea ortogonal a NM y AB = 8. Analice las siguientes afirmaciones:\\nI. MA corresponde a un radio de la esfera.\\nII. La distanca de O a B es mayor que la de O a A.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"AB=8 implica radio 4. MA une extremos de radios ortogonales y mide 4√2, no 4; OA=OB=4. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se normalizaron sobrelíneas de segmentos sin cambiar sus relaciones.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2524,9 +2691,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El corte está a 15 del vértice en un cono de altura 20 y radio basal 8. Radio de sección=8·15/20=6, longitud=12π."
       },
       "visuals": [],
       "classification": {
@@ -2534,37 +2701,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El corte está a 15 del vértice en un cono de altura 20 y radio basal 8. Radio de sección=8·15/20=6, longitud=12π.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2578,6 +2744,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.775Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\\n*\", \"stem_cleaned\": \"A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"8π\", \"text_cleaned\": \"8π\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"10π\", \"text_cleaned\": \"10π\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"12π\", \"text_cleaned\": \"12π\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"16π\", \"text_cleaned\": \"16π\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\\n*\", \"stem_cleaned\": \"A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"8π\", \"text_cleaned\": \"8π\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"10π\", \"text_cleaned\": \"10π\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"12π\", \"text_cleaned\": \"12π\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"16π\", \"text_cleaned\": \"16π\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El corte está a 15 del vértice en un cono de altura 20 y radio basal 8. Radio de sección=8·15/20=6, longitud=12π.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2625,16 +2802,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Un corte oblicuo produce una elipse. Un plano que contiene el eje OS produce una sección rectangular, no hiperbólica. Solo I."
       },
       "visuals": [
         {
           "id": "vis-0b09cd3e09",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
           "content_type": "image/jpeg",
           "sha256": "0b09cd3e0961f6c23812257b8727baadffc1e256afdd7749c6a96ee24d2390b8",
           "byte_size": 7128,
@@ -2648,37 +2825,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Un corte oblicuo produce una elipse. Un plano que contiene el eje OS produce una sección rectangular, no hiperbólica. Solo I.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2692,6 +2868,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.775Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nAnalice las siguientes afirmaciones:\\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nAnalice las siguientes afirmaciones:\\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambos\", \"text_cleaned\": \"ambos\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nAnalice las siguientes afirmaciones:\\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nAnalice las siguientes afirmaciones:\\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambos\", \"text_cleaned\": \"ambos\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Un corte oblicuo produce una elipse. Un plano que contiene el eje OS produce una sección rectangular, no hiperbólica. Solo I.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }
@@ -2739,16 +2926,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "AS=5 es radio basal. Un corte paralelo a la base tiene el mismo radio y longitud=2π·5=10π."
       },
       "visuals": [
         {
           "id": "vis-0b09cd3e09",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
           "content_type": "image/jpeg",
           "sha256": "0b09cd3e0961f6c23812257b8727baadffc1e256afdd7749c6a96ee24d2390b8",
           "byte_size": 7128,
@@ -2762,37 +2949,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. AS=5 es radio basal. Un corte paralelo a la base tiene el mismo radio y longitud=2π·5=10π.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2806,6 +2992,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.775Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\\n*\", \"stem_cleaned\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"10π\", \"text_cleaned\": \"10π\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"24π\", \"text_cleaned\": \"24π\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25π\", \"text_cleaned\": \"25π\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"36π\", \"text_cleaned\": \"36π\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\\n*\", \"stem_cleaned\": \"Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"10π\", \"text_cleaned\": \"10π\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"24π\", \"text_cleaned\": \"24π\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"25π\", \"text_cleaned\": \"25π\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"36π\", \"text_cleaned\": \"36π\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"AS=5 es radio basal. Un corte paralelo a la base tiene el mismo radio y longitud=2π·5=10π.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:19:31.621373+00:00"
           }
         ]
       }

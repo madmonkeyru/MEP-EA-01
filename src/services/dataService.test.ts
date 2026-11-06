@@ -1,7 +1,31 @@
 import { describe, it, expect } from 'vitest';
 import { dataService } from './dataService';
+import publication from '../../content/qbe/manifests/publication_report.json';
+import { prepareItems } from './learningSession';
 
 describe('DataService', () => {
+  it('publishes each verified QBE item once and keeps blocked identities unreachable', () => {
+    const all = dataService.getAllItems();
+    const released = all.filter(item => item.source_question_id);
+    expect(released.length).toBe(publication.summary.enabled);
+    expect(new Set(all.map(item => item.id)).size).toBe(all.length);
+    for (const decision of publication.questions) {
+      const id = publication.runtime_id_map[decision.id as keyof typeof publication.runtime_id_map];
+      expect(Boolean(dataService.getItemById(id))).toBe(decision.enabled);
+      if (decision.enabled) {
+        const item = dataService.getItemById(id)!;
+        expect(item.source_question_id).toBe(decision.id);
+        expect(Object.keys(item.options)).toContain(item.correct_answer);
+        expect(item.solution_steps.length).toBeGreaterThan(0);
+      }
+    }
+    for (const set of dataService.getSets().filter(set => set.id.startsWith('qbe-'))) {
+      const items = prepareItems({ mode: 'random_practice', setId: set.id, itemCount: 'all',
+        enableTimer: false, timerDurationMinutes: 30 });
+      expect(items.length).toBe(set.total_items);
+      expect(items.every(item => item.set_id === set.id)).toBe(true);
+    }
+  });
   it('loads all atomic items across domains', () => {
     const items = dataService.getAllItems();
     expect(items.length).toBeGreaterThanOrEqual(232);
@@ -11,7 +35,7 @@ describe('DataService', () => {
   });
 
   it('manages legacy sets correctly for backwards compatibility', () => {
-    const sets = dataService.getSets();
+    const sets = dataService.getSets().filter(set => !set.id.startsWith('qbe-'));
     expect(sets.length).toBe(5);
     expect(sets[0].id).toBe('set_1');
     expect(sets[0].total_items).toBe(60);

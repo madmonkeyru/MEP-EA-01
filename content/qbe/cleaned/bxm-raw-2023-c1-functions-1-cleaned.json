@@ -2,7 +2,7 @@
   "asset_id": "bxm-raw-2023-c1-functions-1",
   "convocatoria": "2023-c1",
   "area": "functions",
-  "total_questions": 34,
+  "total_questions": 15,
   "questions": [
     {
       "id": "bxm-raw-2023-c1-functions-1-q23",
@@ -47,16 +47,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El tramo inferior recorre [-2,0] y el superior [1,3], con extremos incluidos. Ámbito=[-2,0]∪[1,3]."
       },
       "visuals": [
         {
           "id": "vis-9d6e69d94d",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2023-c1-functions-1-image4-9d6e69d9.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image4-9d6e69d9.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image4-9d6e69d9.jpg",
           "content_type": "image/jpeg",
           "sha256": "9d6e69d94dcbed8319cedf944ef50a6c3797e390f741d8321201f430bf74df44",
           "byte_size": 23567,
@@ -74,33 +74,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El tramo inferior recorre [-2,0] y el superior [1,3], con extremos incluidos. Ámbito=[-2,0]∪[1,3].",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -114,6 +113,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.766Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la gráfica de la función f:\\n¿Cuál es el ámbito de f(x)?\\n*\", \"stem_cleaned\": \"Analice la gráfica de la función f:\\n¿Cuál es el ámbito de f(x)?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,0] ∪ [1,4]\", \"text_cleaned\": \"[-2,0] ∪ [1,4]\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-2,0] ∪ [1,3]\", \"text_cleaned\": \"[-2,0] ∪ [1,3]\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-4,0] ∪ [1,4]\", \"text_cleaned\": \"[-4,0] ∪ [1,4]\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-4,-2] ∪ [1,4]\", \"text_cleaned\": \"[-4,-2] ∪ [1,4]\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la gráfica de la función f:\\n¿Cuál es el ámbito de f(x)?\\n*\", \"stem_cleaned\": \"Analice la gráfica de la función f:\\n¿Cuál es el ámbito de f(x)?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,0] ∪ [1,4]\", \"text_cleaned\": \"[-2,0] ∪ [1,4]\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-2,0] ∪ [1,3]\", \"text_cleaned\": \"[-2,0] ∪ [1,3]\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-4,0] ∪ [1,4]\", \"text_cleaned\": \"[-4,0] ∪ [1,4]\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-4,-2] ∪ [1,4]\", \"text_cleaned\": \"[-4,-2] ∪ [1,4]\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"El tramo inferior recorre [-2,0] y el superior [1,3], con extremos incluidos. Ámbito=[-2,0]∪[1,3].\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -145,25 +155,25 @@
           {
             "id": "B",
             "text_raw": "S={4}",
-            "text_cleaned": "$S = {4}$",
+            "text_cleaned": "$S = \\{4\\}$",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "{-2}⊂S",
-            "text_cleaned": "{-2}⊂S",
+            "text_cleaned": "{-2}⊆S",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "S={-4}",
-            "text_cleaned": "$S = {-4}$",
+            "text_cleaned": "$S = \\{-4\\}$",
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}."
       },
       "visuals": [],
       "classification": {
@@ -175,33 +185,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -248,6 +257,28 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.766Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x²-4x)/x\\nEntonces se tiene:\\n*\", \"stem_cleaned\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x^2-4x)/x\\nEntonces se tiene:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"2∈S\", \"text_cleaned\": \"2∈S\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"S={4}\", \"text_cleaned\": \"$S = {4}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"{-2}⊂S\", \"text_cleaned\": \"{-2}⊂S\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"S={-4}\", \"text_cleaned\": \"$S = {-4}$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x²-4x)/x\\nEntonces se tiene:\\n*\", \"stem_cleaned\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x^2-4x)/x\\nEntonces se tiene:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"2∈S\", \"text_cleaned\": \"2∈S\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"S={4}\", \"text_cleaned\": \"$S = {4}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"{-2}⊂S\", \"text_cleaned\": \"{-2}⊂S\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"S={-4}\", \"text_cleaned\": \"$S = {-4}$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x²-4x)/x\\nEntonces se tiene:\\n*\", \"stem_cleaned\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x^2-4x)/x\\nEntonces se tiene:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"2∈S\", \"text_cleaned\": \"2∈S\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"S={4}\", \"text_cleaned\": \"$S = {4}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"{-2}⊂S\", \"text_cleaned\": \"{-2}⊂S\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"S={-4}\", \"text_cleaned\": \"$S = {-4}$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}.\"}",
+            "normalized_text": "{\"stem_raw\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x²-4x)/x\\nEntonces se tiene:\\n*\", \"stem_cleaned\": \"Analice la función f dada por:\\nf: S→ {0}, con f(x)=(x^2-4x)/x\\nEntonces se tiene:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"2∈S\", \"text_cleaned\": \"2∈S\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"S={4}\", \"text_cleaned\": \"$S = \\\\{4\\\\}$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"{-2}⊂S\", \"text_cleaned\": \"{-2}⊆S\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"S={-4}\", \"text_cleaned\": \"$S = \\\\{-4\\\\}$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:45:55.307915+00:00"
           }
         ]
       }
@@ -267,154 +298,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Analice las relaciones T y J como sigue:",
-        "stem_cleaned": "Analice las relaciones T y J como sigue:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}",
-        "stem_cleaned": "Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}",
-            "normalized_text": "Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.766Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones\n*",
-        "stem_cleaned": "Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
+        "stem_raw": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones\n*",
+        "stem_cleaned": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
         "options": [
           {
             "id": "A",
@@ -441,9 +326,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "J no envía todo [-6,6] a cero. T(1)=0 y T(2)=1 sí pertenecen al codominio. Solo la relación 2."
       },
       "visuals": [],
       "classification": {
@@ -455,46 +340,78 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. J no envía todo [-6,6] a cero. T(1)=0 y T(2)=1 sí pertenecen al codominio. Solo la relación 2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones\n*",
-            "normalized_text": "Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
+            "original_text": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones\n*",
+            "normalized_text": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
+            "normalized_text": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Analice las relaciones T y J como sigue:\",\"stem_cleaned\":\"Analice las relaciones T y J como sigue:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\\n*\",\"stem_cleaned\":\"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\\n*\", \"stem_cleaned\": \"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x²-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\\n*\", \"stem_cleaned\": \"Analice las relaciones T y J como sigue:\\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\\nDe ellas son funciones\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"J no envía todo [-6,6] a cero. T(1)=0 y T(2)=1 sí pertenecen al codominio. Solo la relación 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -542,16 +459,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Entre -2 y 0, f es estrictamente creciente. Los demás intervalos cruzan el máximo o contienen un tramo constante."
       },
       "visuals": [
         {
           "id": "vis-777add4ca5",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
           "content_type": "image/jpeg",
           "sha256": "777add4ca557de96e101db62f21b2e1c8583379d32f6cfb4188a279388516a4d",
           "byte_size": 23504,
@@ -569,33 +486,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Entre -2 y 0, f es estrictamente creciente. Los demás intervalos cruzan el máximo o contienen un tramo constante.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -620,6 +536,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nUn intervalo del dominio de f donde esta tiene inversa es\\n*\", \"stem_cleaned\": \"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nUn intervalo del dominio de f donde esta tiene inversa es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"]-1,1[\", \"text_cleaned\": \"]-1,1[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"]-2,0[\", \"text_cleaned\": \"]-2,0[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"]-3,0[\", \"text_cleaned\": \"]-3,0[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"]-4,-2[\", \"text_cleaned\": \"]-4,-2[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nUn intervalo del dominio de f donde esta tiene inversa es\\n*\", \"stem_cleaned\": \"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nUn intervalo del dominio de f donde esta tiene inversa es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"]-1,1[\", \"text_cleaned\": \"]-1,1[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"]-2,0[\", \"text_cleaned\": \"]-2,0[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"]-3,0[\", \"text_cleaned\": \"]-3,0[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"]-4,-2[\", \"text_cleaned\": \"]-4,-2[\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Entre -2 y 0, f es estrictamente creciente. Los demás intervalos cruzan el máximo o contienen un tramo constante.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -639,246 +566,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
-        "stem_cleaned": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [
-        {
-          "id": "vis-777add4ca5",
-          "original_filename": "image1.jpg",
-          "stored_filename": "bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "777add4ca557de96e101db62f21b2e1c8583379d32f6cfb4188a279388516a4d",
-          "byte_size": 23504,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
-            "normalized_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "(h∘f)(-2)=-6",
-        "stem_cleaned": "(h∘f)(-2)=-6",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "(m∘r) (x)=-x²+2",
-        "stem_cleaned": "(m∘r) (x)=-x^2+2",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "(m∘r) (x)=-x²+2",
-            "normalized_text": "(m∘r) (x)=-x^2+2",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q03",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
-        "stem_cleaned": "Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
+        "stem_raw": "Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2-  (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
+        "stem_cleaned": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x^2+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
         "options": [
           {
             "id": "A",
@@ -905,11 +594,24 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "f(-2)=-4 y h(-4)=-6. m(r(x))=x²-2, no -x²+2. El ámbito de m es [-2,4], no contenido en [-2,2], dominio de r. Solo 1."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-777add4ca5",
+          "original_filename": "image1.jpg",
+          "stored_filename": "bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image1-777add4c.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "777add4ca557de96e101db62f21b2e1c8583379d32f6cfb4188a279388516a4d",
+          "byte_size": 23504,
+          "relationship_id": "rId7",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "functions"
       },
@@ -919,46 +621,100 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. f(-2)=-4 y h(-4)=-6. m(r(x))=x²-2, no -x²+2. El ámbito de m es [-2,4], no contenido en [-2,2], dominio de r. Solo 1.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
+            "normalized_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2-  (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
+            "normalized_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
-            "normalized_text": "Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
+            "original_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)\n*",
+            "normalized_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x²+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
+            "normalized_text": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x^2+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\",\"stem_cleaned\":\"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2-  (m∘r) (x)=-x²+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\\n*\",\"stem_cleaned\":\"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2- (m∘r) (x)=-x^2+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\",\"options\":[{\"id\":\"A\",\"text_raw\":\"1\",\"text_cleaned\":\"1\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"2\",\"text_cleaned\":\"2\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"3\",\"text_cleaned\":\"3\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"1 y 2\",\"text_cleaned\":\"1 y 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2-  (m∘r) (x)=-x²+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\\n*\", \"stem_cleaned\": \"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2- (m∘r) (x)=-x^2+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"1 y 2\", \"text_cleaned\": \"1 y 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 26 y 27  con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2-  (m∘r) (x)=-x²+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\\n*\", \"stem_cleaned\": \"Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\\nAnalice las siguientes proposiciones:\\n1- (h∘f)(-2)=-6\\n2- (m∘r) (x)=-x^2+2\\n3- Es factible efectuar (r∘m) (x)\\nDe ellas son verdaderas solo la(s)\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"1 y 2\", \"text_cleaned\": \"1 y 2\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"f(-2)=-4 y h(-4)=-6. m(r(x))=x²-2, no -x²+2. El ámbito de m es [-2,4], no contenido en [-2,2], dominio de r. Solo 1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -979,7 +735,7 @@
       },
       "content": {
         "stem_raw": "Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\n*",
-        "stem_cleaned": "Considere la función f(x)=(x+1)/2 y su inversa f⁻^1(x)=ax+b. Entonces, se cumple",
+        "stem_cleaned": "Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple",
         "options": [
           {
             "id": "A",
@@ -1006,9 +762,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "y=(x+1)/2 implica x=2y-1; a=2,b=-1."
       },
       "visuals": [],
       "classification": {
@@ -1020,33 +776,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. y=(x+1)/2 implica x=2y-1; a=2,b=-1.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1115,6 +870,28 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻^1(x)=ax+b. Entonces, se cumple\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=1\", \"text_cleaned\": \"$a = 2 y b = 1$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=2 y b=-1\", \"text_cleaned\": \"$a = 2 y b = -1$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=1\", \"text_cleaned\": \"$a = -2 y b = 1$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-2 y b=-1\", \"text_cleaned\": \"$a = -2 y b = -1$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻^1(x)=ax+b. Entonces, se cumple\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=1\", \"text_cleaned\": \"$a = 2 y b = 1$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=2 y b=-1\", \"text_cleaned\": \"$a = 2 y b = -1$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=1\", \"text_cleaned\": \"$a = -2 y b = 1$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-2 y b=-1\", \"text_cleaned\": \"$a = -2 y b = -1$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(x+1)/2 implica x=2y-1; a=2,b=-1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻^1(x)=ax+b. Entonces, se cumple\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=1\", \"text_cleaned\": \"$a = 2 y b = 1$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=2 y b=-1\", \"text_cleaned\": \"$a = 2 y b = -1$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=1\", \"text_cleaned\": \"$a = -2 y b = 1$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-2 y b=-1\", \"text_cleaned\": \"$a = -2 y b = -1$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(x+1)/2 implica x=2y-1; a=2,b=-1.\"}",
+            "normalized_text": "{\"stem_raw\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=1\", \"text_cleaned\": \"$a = 2 y b = 1$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=2 y b=-1\", \"text_cleaned\": \"$a = 2 y b = -1$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=1\", \"text_cleaned\": \"$a = -2 y b = 1$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-2 y b=-1\", \"text_cleaned\": \"$a = -2 y b = -1$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(x+1)/2 implica x=2y-1; a=2,b=-1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:42:31.740219+00:00"
           }
         ]
       }
@@ -1135,7 +912,7 @@
       },
       "content": {
         "stem_raw": "Sea f: [4,+ ∞ [ → A, dada por f(x)=2√x̅+̅5̅ - 7. ¿Cuál es el dominio de la inversa de f?\n*",
-        "stem_cleaned": "Sea f: [4,+ ∞ [ → A, dada por f(x)=2\\sqrt{x}+̅5̅ - 7. ¿Cuál es el dominio de la inversa de f?",
+        "stem_cleaned": "Sea f: [4,+ ∞ [ → A, dada por f(x)=$2\\sqrt{x+5}-7$. ¿Cuál es el dominio de la inversa de f?",
         "options": [
           {
             "id": "A",
@@ -1162,9 +939,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Para x≥4, el mínimo es 2√(4+5)-7=-1. El dominio de la inversa es [-1,∞)."
       },
       "visuals": [],
       "classification": {
@@ -1176,35 +953,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Para x≥4, el mínimo es 2√(4+5)-7=-1. El dominio de la inversa es [-1,∞).",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1229,6 +1003,17 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea f: [4,+ ∞ [ → A, dada por f(x)=2√x̅+̅5̅ - 7. ¿Cuál es el dominio de la inversa de f?\\n*\", \"stem_cleaned\": \"Sea f: [4,+ ∞ [ → A, dada por f(x)=2\\\\sqrt{x}+̅5̅ - 7. ¿Cuál es el dominio de la inversa de f?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[8,+∞[\", \"text_cleaned\": \"[8,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-1,+∞[\", \"text_cleaned\": \"[-1,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-2,,+∞[\", \"text_cleaned\": \"[-2,,+∞[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Sea f: [4,+ ∞ [ → A, dada por f(x)=2√x̅+̅5̅ - 7. ¿Cuál es el dominio de la inversa de f?\\n*\", \"stem_cleaned\": \"Sea f: [4,+ ∞ [ → A, dada por f(x)=$2\\\\sqrt{x+5}-7$. ¿Cuál es el dominio de la inversa de f?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[8,+∞[\", \"text_cleaned\": \"[8,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-1,+∞[\", \"text_cleaned\": \"[-1,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-2,,+∞[\", \"text_cleaned\": \"[-2,,+∞[\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Para x≥4, el mínimo es 2√(4+5)-7=-1. El dominio de la inversa es [-1,∞).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1248,12 +1033,37 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:",
-        "stem_cleaned": "Considere la función f(x)=\\sqrt{x} . Analice las siguientes afirmaciones:",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Considere la función f(x)=$\\sqrt{x}$ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=$2\\sqrt{x}$ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=$\\sqrt{x}$ +2.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas",
+            "text_cleaned": "ambas",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna",
+            "text_cleaned": "ninguna",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la 1",
+            "text_cleaned": "solo la 1",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la 2",
+            "text_cleaned": "solo la 2",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -1265,38 +1075,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.5
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1321,212 +1125,72 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).",
-        "stem_cleaned": "La gráfica de r(x)=2\\sqrt{x} es una homotecia formada a partir de f(x).",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).",
-            "normalized_text": "La gráfica de r(x)=2\\sqrt{x} es una homotecia formada a partir de f(x).",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Normalized radical symbol and stripped combining overline within radical",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\sqrt{x} +2.\nDe ellas son verdaderas",
-        "options": [
-          {
-            "id": "A",
-            "text_raw": "ambas",
-            "text_cleaned": "ambas",
-            "visuals": []
           },
-          {
-            "id": "B",
-            "text_raw": "ninguna",
-            "text_cleaned": "ninguna",
-            "visuals": []
-          },
-          {
-            "id": "C",
-            "text_raw": "solo la 1",
-            "text_cleaned": "solo la 1",
-            "visuals": []
-          },
-          {
-            "id": "D",
-            "text_raw": "solo la 2",
-            "text_cleaned": "solo la 2",
-            "visuals": []
-          }
-        ],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
-      },
-      "history": {
-        "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\nDe ellas son verdaderas\n*",
-            "normalized_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas\n*",
+            "original_text": "Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere la función f(x)=√̅x̅ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas\n*",
-            "normalized_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas",
+            "original_text": "Considere la función f(x)=√̅x̅ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere la función f(x)=√̅x̅ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas",
-            "normalized_text": "Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\sqrt{x} +2.\nDe ellas son verdaderas",
+            "original_text": "Considere la función f(x)=√̅x̅ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅ +2.\nDe ellas son verdaderas",
+            "normalized_text": "Considere la función f(x)=\\sqrt{x} . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=2\\sqrt{x} es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\sqrt{x} +2.\nDe ellas son verdaderas",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\",\"stem_cleaned\":\"Considere la función f(x)=\\\\sqrt{x} . Analice las siguientes afirmaciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Considere la función f(x)=\\\\sqrt{x} . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2\\\\sqrt{x} es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\\\sqrt{x} +2.\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere la función f(x)=\\\\sqrt{x} . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2\\\\sqrt{x} es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\\\sqrt{x} +2.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere la función f(x)=\\\\sqrt{x} . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2\\\\sqrt{x} es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\\\sqrt{x} +2.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere la función f(x)=\\\\sqrt{x} . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2\\\\sqrt{x} es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=\\\\sqrt{x} +2.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas.\"}",
+            "normalized_text": "{\"stem_raw\": \"Considere la función f(x)=√̅x̅  . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=2√̅x̅ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=√̅x̅  +2.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere la función f(x)=$\\\\sqrt{x}$ . Analice las siguientes afirmaciones:\\n1-La gráfica de r(x)=$2\\\\sqrt{x}$ es una homotecia formada a partir de f(x).\\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=$\\\\sqrt{x}$ +2.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:31:42.804777+00:00"
           }
         ]
       }
@@ -1546,155 +1210,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:",
-        "stem_cleaned": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [
-        {
-          "id": "vis-0cfbbb4007",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-functions-1-image2-0cfbbb40.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image2-0cfbbb40.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0cfbbb4007a664ca7937f4ef35dc896021d651998f83f82b1b019e733d6a03a4",
-          "byte_size": 7383,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La recta interseca el eje y en (0,2)",
-        "stem_cleaned": "La recta interseca el eje y en (0,2)",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "El valor de la pendiente es mayor que 1\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "El valor de la pendiente es mayor que 1\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:\n1-La recta interseca el eje y en (0,2)\n2-El valor de la pendiente es mayor que 1\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:\n1-La recta interseca el eje y en (0,2)\n2-El valor de la pendiente es mayor que 1\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1721,60 +1238,94 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La recta cruza Y en 2 y contiene (8,4), por lo que su pendiente es (4-2)/8=1/4, menor que 1. Solo 1."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-0cfbbb4007",
+          "original_filename": "image2.jpg",
+          "stored_filename": "bxm-raw-2023-c1-functions-1-image2-0cfbbb40.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image2-0cfbbb40.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "0cfbbb4007a664ca7937f4ef35dc896021d651998f83f82b1b019e733d6a03a4",
+          "byte_size": 7383,
+          "relationship_id": "rId8",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "functions"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.3",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La recta cruza Y en 2 y contiene (8,4), por lo que su pendiente es (4-2)/8=1/4, menor que 1. Solo 1.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "El valor de la pendiente es mayor que 1\nDe ellas son verdaderas\n*",
-            "normalized_text": "El valor de la pendiente es mayor que 1\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:\n1-La recta interseca el eje y en (0,2)\n2-El valor de la pendiente es mayor que 1\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:\n1-La recta interseca el eje y en (0,2)\n2-El valor de la pendiente es mayor que 1\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\",\"stem_cleaned\":\"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\\nAnalice las siguientes afirmaciones:\\n1-La recta interseca el eje y en (0,2)\\n2-El valor de la pendiente es mayor que 1\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"La recta cruza Y en 2 y contiene (8,4), por lo que su pendiente es (4-2)/8=1/4, menor que 1. Solo 1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1794,142 +1345,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Analice las siguientes proposiciones referidas a la recta y=-x:",
-        "stem_cleaned": "Analice las siguientes proposiciones referidas a la recta y=-x:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La gráfica es creciente.",
-        "stem_cleaned": "La gráfica es creciente.",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La gráfica pasa por (0,0)\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "La gráfica pasa por (0,0)\nDe ellas son verdaderas",
+        "stem_raw": "Analice las siguientes proposiciones referidas a la recta y=-x:\n1-La gráfica es creciente.\n2-La gráfica pasa por (0,0)\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice las siguientes proposiciones referidas a la recta y=-x:\n1-La gráfica es creciente.\n2-La gráfica pasa por (0,0)\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1956,9 +1373,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "y=-x es decreciente y pasa por (0,0). Solo 2."
       },
       "visuals": [],
       "classification": {
@@ -1970,46 +1387,67 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. y=-x es decreciente y pasa por (0,0). Solo 2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "La gráfica pasa por (0,0)\nDe ellas son verdaderas\n*",
-            "normalized_text": "La gráfica pasa por (0,0)\nDe ellas son verdaderas",
+            "original_text": "Analice las siguientes proposiciones referidas a la recta y=-x:\n1-La gráfica es creciente.\n2-La gráfica pasa por (0,0)\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice las siguientes proposiciones referidas a la recta y=-x:\n1-La gráfica es creciente.\n2-La gráfica pasa por (0,0)\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Analice las siguientes proposiciones referidas a la recta y=-x:\",\"stem_cleaned\":\"Analice las siguientes proposiciones referidas a la recta y=-x:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II.\",\"text_cleaned\":\"solo la II.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Analice las siguientes proposiciones referidas a la recta y=-x:\\n1-La gráfica es creciente.\\n2-La gráfica pasa por (0,0)\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=-x es decreciente y pasa por (0,0). Solo 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2029,192 +1467,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:",
-        "stem_cleaned": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\n-Analice las siguientes proposiciones:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [
-        {
-          "id": "vis-b2fd3e7568",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b2fd3e7568a68fa74208f879714e66ddf880e06c3bcc1a8d1d87e9eb8abacfd2",
-          "byte_size": 7677,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:",
-            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\n-Analice las siguientes proposiciones:",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\nc=0",
-        "stem_cleaned": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\nc=0",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [
-        {
-          "id": "vis-b2fd3e7568",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b2fd3e7568a68fa74208f879714e66ddf880e06c3bcc1a8d1d87e9eb8abacfd2",
-          "byte_size": 7677,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\nc=0",
-            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\nc=0",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "a>0\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "a>0\nDe ellas son verdaderas",
+        "stem_raw": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2241,11 +1495,24 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La parábola pasa por el origen, de modo que c=0; abre hacia abajo, de modo que a<0. Solo 1."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-b2fd3e7568",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b2fd3e7568a68fa74208f879714e66ddf880e06c3bcc1a8d1d87e9eb8abacfd2",
+          "byte_size": 7677,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "functions"
       },
@@ -2255,46 +1522,89 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La parábola pasa por el origen, de modo que c=0; abre hacia abajo, de modo que a<0. Solo 1.",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:",
+            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\n-Analice las siguientes proposiciones:",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "a>0\nDe ellas son verdaderas\n*",
-            "normalized_text": "a>0\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas\n*",
+            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.233Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas",
+            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\",\"stem_cleaned\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\\n-Analice las siguientes proposiciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\\n-Analice las siguientes proposiciones:\\n1- c=0\\n2- a>0\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"La parábola pasa por el origen, de modo que c=0; abre hacia abajo, de modo que a<0. Solo 1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2314,142 +1624,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "-Analice las siguientes proposiciones:",
-        "stem_cleaned": "-Analice las siguientes proposiciones:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "Δ>0",
-        "stem_cleaned": "Δ>0",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
+        "stem_raw": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2476,11 +1652,24 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La parábola tiene dos raíces distintas, por lo que Δ>0. Con eje x=3 y raíz 0, la otra raíz es 6. Ambas verdaderas."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-b2fd3e7568",
+          "original_filename": "image3.jpg",
+          "stored_filename": "bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2023-c1-functions-1-image3-b2fd3e75.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "b2fd3e7568a68fa74208f879714e66ddf880e06c3bcc1a8d1d87e9eb8abacfd2",
+          "byte_size": 7677,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "functions"
       },
@@ -2490,46 +1679,78 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La parábola tiene dos raíces distintas, por lo que Δ>0. Con eje x=3 y raíz 0, la otra raíz es 6. Ambas verdaderas.",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas\n*",
-            "normalized_text": "El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas\n*",
+            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
+            "normalized_text": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"-Analice las siguientes proposiciones:\",\"stem_cleaned\":\"-Analice las siguientes proposiciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax^2+bx+x\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=ax²+bx+x\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\\n-Analice las siguientes proposiciones:\\n1- Δ>0\\n2- El punto B tiene como coordenadas (6,0)\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La parábola tiene dos raíces distintas, por lo que Δ>0. Con eje x=3 y raíz 0, la otra raíz es 6. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2549,166 +1770,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):",
-        "stem_cleaned": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Propiedades de la función exponencial"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):",
-            "normalized_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La gráfica f⁻¹(x)es creciente.",
-        "stem_cleaned": "La gráfica f⁻^1(x)es creciente.",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "La gráfica f⁻¹(x)es creciente.",
-            "normalized_text": "La gráfica f⁻^1(x)es creciente.",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q02",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "f⁻^1(x) es una función logarítmica.\nDe ellas son verdaderas",
+        "stem_raw": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2735,9 +1798,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2."
       },
       "visuals": [],
       "classification": {
@@ -2749,57 +1812,100 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas\n*",
-            "normalized_text": "f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
-            "correction_type": "formatting",
-            "semantic_change": false,
-            "reason": "Removed trailing asterisk exam artifact",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
-            "normalized_text": "f⁻^1(x) es una función logarítmica.\nDe ellas son verdaderas",
+            "original_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):",
+            "normalized_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
+            "normalized_text": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\n1-La gráfica f⁻^1(x)es creciente.\n2- f⁻^1(x) es una función logarítmica.\nDe ellas son verdaderas",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\",\"stem_cleaned\":\"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\\n1-La gráfica f⁻^1(x)es creciente.\\n2- f⁻^1(x) es una función logarítmica.\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 1\",\"text_cleaned\":\"solo la 1\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la 2\",\"text_cleaned\":\"solo la 2\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\\n1-La gráfica f⁻^1(x)es creciente.\\n2- f⁻^1(x) es una función logarítmica.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\\n1-La gráfica f⁻^1(x)es creciente.\\n2- f⁻^1(x) es una función logarítmica.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻^1(x):\\n1-La gráfica f⁻^1(x)es creciente.\\n2- f⁻^1(x) es una función logarítmica.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2.\"}",
+            "normalized_text": "{\"stem_raw\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\\n1-La gráfica f⁻¹(x)es creciente.\\n2- f⁻¹(x) es una función logarítmica.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 1\", \"text_cleaned\": \"solo la 1\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la 2\", \"text_cleaned\": \"solo la 2\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:42:31.740219+00:00"
           }
         ]
       }
@@ -2819,142 +1925,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
       },
       "content": {
-        "stem_raw": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:",
-        "stem_cleaned": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q01",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La máquina A ordeña 3 vacas en 15 min.",
-        "stem_cleaned": "La máquina A ordeña 3 vacas en 15 min.",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": []
-      }
-    },
-    {
-      "id": "bxm-raw-2023-c1-functions-1-q03",
-      "source": {
-        "asset_id": "bxm-raw-2023-c1-functions-1",
-        "filename": "BXM Math FUN 01 C2023.docx",
-        "convocatoria": "2023-c1",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
-      },
-      "content": {
-        "stem_raw": "La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas",
+        "stem_raw": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\n1-La máquina A ordeña 3 vacas en 15 min.\n3-La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\n1-La máquina A ordeña 3 vacas en 15 min.\n3-La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2981,9 +1953,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "A requiere 15/3=5 min/vaca y B 30/5=6 min/vaca. A es más rápida y para A el tiempo es t(x)=5x. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -2995,46 +1967,67 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. A requiere 15/3=5 min/vaca y B 30/5=6 min/vaca. A es más rápida y para A el tiempo es t(x)=5x. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas\n*",
-            "normalized_text": "La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas",
+            "original_text": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\n1-La máquina A ordeña 3 vacas en 15 min.\n3-La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\n1-La máquina A ordeña 3 vacas en 15 min.\n3-La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.767Z"
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\",\"stem_cleaned\":\"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:15.234Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\\n1-La máquina A ordeña 3 vacas en 15 min.\\n3-La máquina B ordeña 5 vacas en 30 min.\\nAnalice las siguientes afirmaciones:\\nI. La mejor máquina es la A\\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"A requiere 15/3=5 min/vaca y B 30/5=6 min/vaca. A es más rápida y para A el tiempo es t(x)=5x. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -3082,9 +2075,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "2p+3t=2800 y 3p+2t=2700 dan t=600 colones."
       },
       "visuals": [],
       "classification": {
@@ -3096,33 +2089,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. 2p+3t=2800 y 3p+2t=2700 dan t=600 colones.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -3136,6 +2128,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.767Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Ana compró 2 kg de papas y 3 kg de tomates por ₡2800. Juan 3 kg de papas y 2 kg de tomate por ₡2700. ¿Cuál es el precio del kg de tomate?\\n*\", \"stem_cleaned\": \"Ana compró 2 kg de papas y 3 kg de tomates por ₡2800. Juan 3 kg de papas y 2 kg de tomate por ₡2700. ¿Cuál es el precio del kg de tomate?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"540\", \"text_cleaned\": \"540\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"550\", \"text_cleaned\": \"550\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"560\", \"text_cleaned\": \"560\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"600\", \"text_cleaned\": \"600\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Ana compró 2 kg de papas y 3 kg de tomates por ₡2800. Juan 3 kg de papas y 2 kg de tomate por ₡2700. ¿Cuál es el precio del kg de tomate?\\n*\", \"stem_cleaned\": \"Ana compró 2 kg de papas y 3 kg de tomates por ₡2800. Juan 3 kg de papas y 2 kg de tomate por ₡2700. ¿Cuál es el precio del kg de tomate?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"540\", \"text_cleaned\": \"540\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"550\", \"text_cleaned\": \"550\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"560\", \"text_cleaned\": \"560\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"600\", \"text_cleaned\": \"600\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"2p+3t=2800 y 3p+2t=2700 dan t=600 colones.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }

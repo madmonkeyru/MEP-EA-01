@@ -33,6 +33,7 @@ const contentModules = import.meta.glob([
 // Eagerly glob all atomic items and convocatoria blueprints
 const atomicItemModules = import.meta.glob('../../content/items/math/**/*.json', { eager: true });
 const blueprintModules = import.meta.glob('../../content/programs/**/convocatorias/*.json', { eager: true });
+const qbeReleaseModules = import.meta.glob('../../content/bxm/matematicas/qbe-*.json', { eager: true });
 
 class DataService {
   private manifest: ContentManifest;
@@ -123,6 +124,10 @@ class DataService {
     this.itemsMap.set('set_3', set3Data.items || []);
     this.itemsMap.set('set_4', set4Data.items || []);
     this.itemsMap.set('set_5', set5Data.items || []);
+    for (const mod of Object.values(qbeReleaseModules)) {
+      const data = (mod as { default: QuestionSetData }).default;
+      if (data.set_info?.id) this.itemsMap.set(data.set_info.id, data.items);
+    }
 
     // Register all legacy set items into decoupled index map
     [set1Data, set2Data, set3Data, set4Data, set5Data].forEach((s) => {
@@ -134,6 +139,13 @@ class DataService {
         this.decoupledItemsMap.set(`${prefix}-${String(item.id).padStart(3, '0')}`, item);
       });
     });
+    for (const [setId, items] of this.itemsMap) {
+      if (!setId.startsWith('qbe-')) continue;
+      for (const item of items) {
+        this.decoupledItemsMap.set(String(item.id), item);
+        if (item.code) this.decoupledItemsMap.set(item.code, item);
+      }
+    }
 
     const groupData = groupsJson as unknown as GroupBankData;
     if (groupData && Array.isArray(groupData.groups)) {
@@ -326,7 +338,8 @@ class DataService {
       (this.currentSubjectId === 'matematicas' || !this.currentSubjectId) &&
       this.atomicItemsList.length > 0
     ) {
-      return this.atomicItemsList;
+      return [...this.atomicItemsList, ...Array.from(this.itemsMap.entries())
+        .filter(([id]) => id.startsWith('qbe-')).flatMap(([, items]) => items)];
     }
     const allItems: Item[] = [];
     this.itemsMap.forEach((items) => {
@@ -337,8 +350,8 @@ class DataService {
 
   public getLegacySetItems(): Item[] {
     const allItems: Item[] = [];
-    this.itemsMap.forEach((items) => {
-      allItems.push(...items);
+    this.itemsMap.forEach((items, id) => {
+      if (!id.startsWith('qbe-')) allItems.push(...items);
     });
     return allItems;
   }

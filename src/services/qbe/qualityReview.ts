@@ -28,12 +28,12 @@ export function applyQualityReview(
 
   // 3. Gate B criteria assessment
   const hasStem = question.content.stem_cleaned.trim().length > 0;
-  const hasFourOptions = question.content.options.length === 4;
+  const hasSupportedOptions = [3, 4].includes(question.content.options.length);
   const noMissingVisual = !question.quality.review_flags.includes('missing_visual');
   const noAmbiguousMath = !question.quality.review_flags.includes('ambiguous_math');
 
   // Gate B is met when the question structure is coherent and solvable
-  const gateBPassed = hasStem && hasFourOptions && noMissingVisual && noAmbiguousMath;
+  const gateBPassed = hasStem && hasSupportedOptions && noMissingVisual && noAmbiguousMath;
   question.quality.gate_b_quality_passed = gateBPassed;
 
   // If Gate B passed and candidate mapping found, update content confidence

@@ -1,0 +1,1547 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2022-c1 · Relaciones y Álgebra",
+  "convocatoria": "2022-c1",
+  "language": "es-CR",
+  "source": "BXM Math FUN 01 C2022.docx",
+  "set_info": {
+    "id": "qbe-2022-c1-functions-1",
+    "name": "Práctica histórica 2022-c1 · Relaciones y Álgebra",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 20,
+    "file": "bxm/matematicas/qbe-2022-c1-functions-1.json",
+    "convocatoria": "2022-c1"
+  },
+  "total_items": 20,
+  "items": [
+    {
+      "id": 10218,
+      "code": "item-qbe-2022-c1-functions-1-q23",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 23 y 24 analizando las siguientes funciones:\nAnalice las siguientes proposiciones:\nI. El ámbito de f corresponde a [0,1] ∪ [2,3]\nII. El dominio de g corresponde a [-3,-1]∪ ]2,6]\n¿Cuál o cuáles son verdaderas?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "En f el extremo (0,3) es abierto, así que el ámbito no incluye 3 y I es falsa. En g el dominio es [-3,-1]∪(2,6], como indica II. Solo II."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  7
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "line",
+                  "p1": [
+                    -4,
+                    2
+                  ],
+                  "p2": [
+                    0,
+                    3
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    1,
+                    1
+                  ],
+                  "p2": [
+                    4,
+                    0
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -4,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    0,
+                    3
+                  ],
+                  "label": "",
+                  "open": true
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    0
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "g",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  7
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      -3,
+                      2
+                    ],
+                    [
+                      -2,
+                      1.2
+                    ],
+                    [
+                      -1,
+                      1
+                    ]
+                  ]
+                },
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      4,
+                      1.4
+                    ],
+                    [
+                      6,
+                      3
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -3,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -1,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    1
+                  ],
+                  "label": "",
+                  "open": true
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    6,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q23",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10219,
+      "code": "item-qbe-2022-c1-functions-1-q24",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 23 y 24 analizando las siguientes funciones:\nSi se define una función h tal que su dominio es igual al complemento del conjunto que conforma el ámbito de g, entonces, ese dominio correspondería a",
+      "options": {
+        "A": "]-∞,1[ ∪ ]2,+∞[",
+        "B": "]-∞,1[ ∪ ]3,+∞[",
+        "C": "]-∞,1] ∪ ]2,+∞[",
+        "D": "]-∞,1] ∪ ]3,+∞["
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El ámbito de g es [1,3], por lo que su complemento real es (-∞,1)∪(3,∞)."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  7
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "line",
+                  "p1": [
+                    -4,
+                    2
+                  ],
+                  "p2": [
+                    0,
+                    3
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    1,
+                    1
+                  ],
+                  "p2": [
+                    4,
+                    0
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -4,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    0,
+                    3
+                  ],
+                  "label": "",
+                  "open": true
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    0
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "g",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  7
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      -3,
+                      2
+                    ],
+                    [
+                      -2,
+                      1.2
+                    ],
+                    [
+                      -1,
+                      1
+                    ]
+                  ]
+                },
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      4,
+                      1.4
+                    ],
+                    [
+                      6,
+                      3
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -3,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -1,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    1
+                  ],
+                  "label": "",
+                  "open": true
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    6,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q24",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10220,
+      "code": "item-qbe-2022-c1-functions-1-q25",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice el siguiente gráfico de una función f(x):\nUn intervalo del dominio de f, donde existe su inversa corresponde a",
+      "options": {
+        "A": "[0,3]",
+        "B": "[1,6]",
+        "C": "[-1,1]",
+        "D": "[-1,7]"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "En [-1,1] la gráfica es estrictamente creciente. Los demás intervalos incluyen parte del tramo constante, impidiendo la inversa."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            9
+          ],
+          "y": [
+            -1,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Gráfica de la función",
+        "children": [
+          {
+            "type": "polyline",
+            "points": [
+              [
+                -1,
+                0
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                0
+              ]
+            ]
+          },
+          {
+            "type": "point",
+            "coords": [
+              -1,
+              0
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              7,
+              0
+            ],
+            "label": ""
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q25",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10221,
+      "code": "item-qbe-2022-c1-functions-1-q26",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la siguiente función:\nf(x): D→ {0} con f(x)=(x^2-4)/(x-2)\nAnalice las siguientes proposiciones:\nI. -2 ∈ D\nII. {2} ⊆ D\nIII. D={-2} ∪ {2}\nDe ellas son verdaderas solo la",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "II y la III."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "x=2 está excluido por el denominador y -2 es la única raíz válida del numerador. D={-2}. Solo I."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q26",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10222,
+      "code": "item-qbe-2022-c1-functions-1-q27",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 27 y 28 con base en las siguientes funciones:\nEl valor de ( f∘g)(2) corresponde a",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "-1",
+        "D": "-2"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "g(2)=2·2-5=-1. La gráfica da f(-1)=0, así que (f∘g)(2)=0."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  4
+                ],
+                "y": [
+                  -3,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -5,
+                      -2
+                    ],
+                    [
+                      -2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    -2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    2
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "g",
+                  "[0,3]",
+                  "g(x)=2x-5"
+                ],
+                [
+                  "j",
+                  "[-2,2]",
+                  "j(x)=-x²+4"
+                ],
+                [
+                  "r",
+                  "[0,4]",
+                  "r(x)=2-2x"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q27",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10223,
+      "code": "item-qbe-2022-c1-functions-1-q28",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 27 y 28 con base en las siguientes funciones:\nAnalice las siguientes proposiciones:\nI. Existe la composición (r∘j)(x)\nII. Existe la composición (r∘g)(x)\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "j toma valores [0,4], contenidos en el dominio de r. g toma valores [-5,1], no contenidos en [0,4]. Solo I."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  4
+                ],
+                "y": [
+                  -3,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -5,
+                      -2
+                    ],
+                    [
+                      -2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    -2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    2
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "g",
+                  "[0,3]",
+                  "g(x)=2x-5"
+                ],
+                [
+                  "j",
+                  "[-2,2]",
+                  "j(x)=-x²+4"
+                ],
+                [
+                  "r",
+                  "[0,4]",
+                  "r(x)=2-2x"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q28",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10224,
+      "code": "item-qbe-2022-c1-functions-1-q29",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice las siguientes proposiciones\nI. A={0,5} y B={0,10}. Sea M: A →B tal que M: y=x+5\nII. C=[-3,3] y D={0}. Sea N: C →D tal que N: y=x^2-9\nDe ellas corresponden a una función",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "M(0)=5 no pertenece a B={0,10}, por lo que M no es función A→B. N no envía todos los números de [-3,3] a cero. Ninguna."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q29",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10225,
+      "code": "item-qbe-2022-c1-functions-1-q30",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice las siguientes proposiciones\nI. Sea f:[4,+∞[ →P Ⅰ f(x)=$4\\sqrt{x-3}+2$, entonces el dominio de su inversa es [1,+∞[\nII. La inversa de la función f(x)=(-x/4)+4 se escribe como f⁻¹(x)=-4x+8\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Para f(x)=4√(x-3)+2, x≥4, el ámbito comienza en 6, no 1. La inversa de -x/4+4 es -4x+16, no -4x+8. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q30",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10226,
+      "code": "item-qbe-2022-c1-functions-1-q31",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea la recta y=4x-b. Si (-1,-12) es un punto de dicha recta, ¿cuál es la intersección de la recta con el eje X?",
+      "options": {
+        "A": "(2,0)",
+        "B": "(0,8)",
+        "C": "(-2,0)",
+        "D": "(0,-8)"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "-12=4(-1)-b da b=8; y=4x-8 se anula en x=2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q31",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10227,
+      "code": "item-qbe-2022-c1-functions-1-q32",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la siguiente gráfica de la función f(x)=ax^2+bx+c (con a≠0):\nAnalice las siguientes proposiciones para dicha función:\nI. a>0\nII. ∆<0\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La parábola abre hacia arriba, así que a>0. Corta al eje X en dos puntos, por lo que Δ>0 y II es falsa. Solo I."
+      ],
+      "visual_spec": {
+        "type": "function_plot",
+        "form": "quadratic",
+        "params": {
+          "a": 1,
+          "b": -1,
+          "c": -2
+        },
+        "domain": {
+          "x": [
+            -3,
+            4
+          ],
+          "y": [
+            -4,
+            6
+          ]
+        },
+        "annotations": {
+          "vertex": {
+            "show": false
+          },
+          "roots": {
+            "show": false
+          }
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q32",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10228,
+      "code": "item-qbe-2022-c1-functions-1-q33",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere una función f(x)=logₘ(x) con m=1/3. Analice las siguientes proposiciones:\nI. La inversa de f(x) es igual a 3ˣ.\nII. f(x) interseca el eje Y en el punto (1/3,0)\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I.",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "La inversa es (1/3)ˣ, no 3ˣ. Un logaritmo no interseca el eje Y; su intersección X es (1,0). Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q33",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10229,
+      "code": "item-qbe-2022-c1-functions-1-q34",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice el siguiente gráfico de la función f(x)=aˣ\nAnalice las siguientes proposiciones:\nI. El valor de a es 2\nII. La gráfica es creciente\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El punto (2,4) implica a²=4 y a>0, así que a=2. Al ser a>1, la función es creciente. Ambas verdaderas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            4
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "path",
+            "points": [
+              [
+                -3,
+                0.125
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                8
+              ]
+            ],
+            "arrow": "both"
+          },
+          {
+            "type": "point",
+            "coords": [
+              0,
+              1
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              2,
+              4
+            ],
+            "label": ""
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q34",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10230,
+      "code": "item-qbe-2022-c1-functions-1-q35",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la función f(x)=2x^2+bx+c que posee como punto mínimo (-1,-8). ¿Cuál es la intersección con Y?",
+      "options": {
+        "A": "(0,-4)",
+        "B": "(0,-6)",
+        "C": "(0,-7)",
+        "D": "(0,-8)"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "f(x)=2(x+1)²-8=2x²+4x-6. Corta Y en (0,-6)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q35",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10231,
+      "code": "item-qbe-2022-c1-functions-1-q36",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Una empresa analiza comprar una máquina entre dos opciones que tienen las siguientes características:\nLa máquina 1 produce 5 lotes cada 2 minutos. Cada lote tiene 16 paquetes.\nLa máquina 2 produce 6.5 lotes en 3 minutos. Cada lote tiene 18 paquetes.\nAnalice las siguientes proposiciones:\nI. p(x)=32x para la máquina 1 (con x=tiempo y p(x) la cantidad de paquetes)\nII. Si la empresa requiere empacar la mayor cantidad de paquetes debe comprar la máquina 2.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "La primera máquina produce 5·16/2=40 paquetes/min; la segunda 6.5·18/3=39. El primer modelo no es 32x y no conviene la segunda. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q36",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10232,
+      "code": "item-qbe-2022-c1-functions-1-q37",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Andrea compró 4 kg de papas y 2 kg de zanahoria a un precio de ₡2950 . Su hermana compró 3 kg de papas y 5 kg de zanahoria por ₡ 3525. ¿Cuál es el costo del kg de papa en colones?",
+      "options": {
+        "A": "462",
+        "B": "492",
+        "C": "504",
+        "D": "550"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "4p+2z=2950 y 3p+5z=3525. Al resolver se obtiene p=550 colones."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q37",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10233,
+      "code": "item-qbe-2022-c1-functions-1-q38",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "La población de las bacterias p(t) a un tiempo de t horas en un laboratorio se modela según la siguiente ecuación:\np(t)=1500(2ᵃᵗ) siendo a=1/3\n¿En cuántas horas la población alcanza 96000?",
+      "options": {
+        "A": "6",
+        "B": "9",
+        "C": "12",
+        "D": "18"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "96000/1500=64=2⁶. t/3=6, así que t=18 h."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q38",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10234,
+      "code": "item-qbe-2022-c1-functions-1-q39",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la función función f(x)=logₘ(x). ¿A qué equivale f(1/m^3)?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "-1",
+        "D": "-3"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "1/m³=m^(-3), de modo que logₘ(1/m³)=-3."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q39",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10235,
+      "code": "item-qbe-2022-c1-functions-1-q40",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice los siguientes datos de una función\n\nx -3 -2 -1 0 1 2 3\ny 24 12 6 3 3/2 3/4 3/8\n\n¿Cuál de los siguientes funciones se adapta mejor?",
+      "options": {
+        "A": "lineal",
+        "B": "cuadrática",
+        "C": "logarítmica",
+        "D": "exponencial"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Por cada aumento de una unidad de x, y se divide entre dos. El modelo es 3(1/2)ˣ, exponencial."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q40",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10236,
+      "code": "item-qbe-2022-c1-functions-1-q41",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "La utilidad semanal en colones de una empresa u se expresa en función de las unidades producidas x como sigue: u(x)=-0.2x^2+1500x-100000. ¿Cuál es la utilidad máxima?",
+      "options": {
+        "A": "2 712 500",
+        "B": "5 524 250",
+        "C": "6 500 250",
+        "D": "8 337 500"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La parábola de utilidad alcanza su máximo en x=-1500/(2·(-0.2))=3750. u(3750)=2712500."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q41",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    },
+    {
+      "id": 10237,
+      "code": "item-qbe-2022-c1-functions-1-q42",
+      "set_id": "qbe-2022-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Se cuenta con los siguientes datos que relación la temperatura en grados Celsius con la altura:\nh 870 1020 1170 1320 1470 1620 1770 1920 2070 2220\n℃ 22 21 20 19 18 17 16 15 14 13\n¿Cuál función se adapta mejor a estos datos?",
+      "options": {
+        "A": "lineal",
+        "B": "cuadrática",
+        "C": "logarítmica",
+        "D": "exponencial"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Cada aumento de 150 unidades de altura reduce un grado de temperatura; la tasa es constante y el modelo es lineal."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2022-c1-functions-1-q42",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2022-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2022.docx",
+        "convocatoria": "2022-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2022-1 (BXM Math FUN 01 C2022)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2022-c1"
+      ]
+    }
+  ]
+}

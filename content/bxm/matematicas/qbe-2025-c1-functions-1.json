@@ -1,0 +1,1237 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2025-c1 · Relaciones y Álgebra",
+  "convocatoria": "2025-c1",
+  "language": "es-CR",
+  "source": "BXM Math FUN 01 C2025.docx",
+  "set_info": {
+    "id": "qbe-2025-c1-functions-1",
+    "name": "Práctica histórica 2025-c1 · Relaciones y Álgebra",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 18,
+    "file": "bxm/matematicas/qbe-2025-c1-functions-1.json",
+    "convocatoria": "2025-c1"
+  },
+  "total_items": 18,
+  "items": [
+    {
+      "id": 10475,
+      "code": "item-qbe-2025-c1-functions-1-q23",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la función f:\nf: D→{0}, con f(x)=(x^2-1)/(x+1)\nEntonces, es cierto que",
+      "options": {
+        "A": "$D = \\{0\\}$",
+        "B": "-1 ∈ D",
+        "C": "{1} ⊆ D"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El denominador excluye -1 y la única raíz válida del numerador es 1. D={1}, de modo que {1}⊂D es la opción correcta bajo la inclusión no estricta usada por la fuente."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q23",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10476,
+      "code": "item-qbe-2025-c1-functions-1-q24",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "¿Cuál opción es una función?",
+      "options": {
+        "A": "Tabla A",
+        "B": "Gráfico B",
+        "C": "$g:\\mathbb{Z}\\to\\mathbb{Z}$ con $g(x)=(x+1)/2$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La tabla A asigna exactamente un valor a cada entrada, aun cuando todas las imágenes son 1. El gráfico B no supera la prueba de recta vertical y g:ℤ→ℤ,(x+1)/2 no envía los enteros pares a enteros."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "A",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "f(x)"
+              ],
+              "rows": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          },
+          {
+            "label": "B",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -3,
+                  3
+                ],
+                "y": [
+                  -4,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      -1,
+                      -3
+                    ],
+                    [
+                      -1.5,
+                      -2
+                    ],
+                    [
+                      -1,
+                      -1
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1.5,
+                      2
+                    ],
+                    [
+                      1.5,
+                      3
+                    ],
+                    [
+                      1,
+                      4
+                    ]
+                  ],
+                  "arrow": "both"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q24",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10479,
+      "code": "item-qbe-2025-c1-functions-1-q27",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la siguiente información sobre f:\nf: [9, + ∞[ → P, con f(x)=$4\\sqrt{x-5}$\nEntonces, el ámbito de la inversa de f corresponde a",
+      "options": {
+        "A": "[9, + ∞[",
+        "B": "[8, + ∞[",
+        "C": "[2, +∞["
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El ámbito de la inversa coincide con el dominio original [9,∞)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q27",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10480,
+      "code": "item-qbe-2025-c1-functions-1-q28",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "¿Cuál de las siguientes afirmaciones es correcta, respecto a las tres funciones f, p y r?",
+      "options": {
+        "A": "es factible efectuar (p o r)(x)",
+        "B": "es factible efectuar (r o p)(x)",
+        "C": "$(p o f)(-2) = 4$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "r(x)=-x²+4 en [-2,2] tiene ámbito [0,4], contenido en el dominio de p. En cambio p tiene ámbito [0,4], no contenido en [-2,2]. p(f(-2))=0, no 4. Solo A."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -4,
+                  4
+                ],
+                "y": [
+                  -2,
+                  6
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -2,
+                      0
+                    ],
+                    [
+                      0,
+                      4
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    0
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    0
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "p",
+                  "[0,4]",
+                  "p(x)=x"
+                ],
+                [
+                  "r",
+                  "[-2,2]",
+                  "r(x)=-x²+4"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q28",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10481,
+      "code": "item-qbe-2025-c1-functions-1-q29",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = $\\sqrt{x}$ :\n1. La gráfica de n(x)= 5 $\\sqrt{x}$ , es una traslación horizontal de la gráfica de f.\n2. La gráfica de r(x)= $\\sqrt{x}$ +1, es una traslación vertical de la gráfica de f.\n3.La gráfica de m(x)= $\\sqrt{x+1}$ es una homotecia de f(x).\nDe ellas son verdaderas",
+      "options": {
+        "A": "solo la 1.",
+        "B": "solo la 2.",
+        "C": "solo la 3."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "5√x modifica la escala, no es una traslación horizontal. √x+1 es traslación vertical y √(x+1) es traslación horizontal, no homotecia en el origen. Solo 2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q29",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10482,
+      "code": "item-qbe-2025-c1-functions-1-q30",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 30 y 31 con base en la siguiente parábola\n¿Cuántos ceros posee?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La parábola corta al eje X en 0 y 2: tiene dos ceros."
+      ],
+      "visual_spec": {
+        "type": "function_plot",
+        "form": "quadratic",
+        "params": {
+          "a": -1,
+          "b": 2,
+          "c": 0
+        },
+        "domain": {
+          "x": [
+            -1,
+            3
+          ],
+          "y": [
+            -2,
+            2
+          ]
+        },
+        "annotations": {
+          "vertex": {
+            "show": false
+          },
+          "roots": {
+            "show": false
+          }
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q30",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10483,
+      "code": "item-qbe-2025-c1-functions-1-q31",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 30 y 31 con base en la siguiente parábola\n¿En cuál intervalo la función es positiva?",
+      "options": {
+        "A": "]0,2[",
+        "B": "]2,4[",
+        "C": "]-2,0["
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La parábola abre hacia abajo y es positiva estrictamente entre sus ceros: (0,2)."
+      ],
+      "visual_spec": {
+        "type": "function_plot",
+        "form": "quadratic",
+        "params": {
+          "a": -1,
+          "b": 2,
+          "c": 0
+        },
+        "domain": {
+          "x": [
+            -1,
+            3
+          ],
+          "y": [
+            -2,
+            2
+          ]
+        },
+        "annotations": {
+          "vertex": {
+            "show": false
+          },
+          "roots": {
+            "show": false
+          }
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q31",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10484,
+      "code": "item-qbe-2025-c1-functions-1-q32",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere una recta con y=2x+6. La intersección con el eje x (abcisas) es",
+      "options": {
+        "A": "(3,0)",
+        "B": "(-3,0)",
+        "C": "(-6,0)"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "0=2x+6 implica x=-3; la intersección es (-3,0)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q32",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10485,
+      "code": "item-qbe-2025-c1-functions-1-q33",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea g una función de la forma f(x)=\nlogₐ(x) y f(16)=4. ¿Cuál opción representa un punto de la función inversa f⁻¹(x)?",
+      "options": {
+        "A": "(4,2)",
+        "B": "(1,0)",
+        "C": "(1,2)"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "logₐ(16)=4 implica a=2. La inversa es 2ˣ, que contiene (1,2)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q33",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10486,
+      "code": "item-qbe-2025-c1-functions-1-q34",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la función f(x)=aˣ, con 1<a. ¿Cuál opción es correcta?",
+      "options": {
+        "A": "si x<0, f(x)<1.",
+        "B": "0 es un elemento del ámbito de f.",
+        "C": "La inversa f‾^1 es igual a logₐ(x) con 0<a<1."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Si a>1 y x<0, a^x=1/a^(-x)<1. El cero no pertenece al ámbito y la inversa mantiene base a>1."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q34",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10487,
+      "code": "item-qbe-2025-c1-functions-1-q35",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Las utilidades en dólares de una empresa u, en función de las unidades producidas es igual a u(x)=57x - 0.001x^2. ¿Cuál es la utilidad máxima de esta empresa?",
+      "options": {
+        "A": "28 200",
+        "B": "162 393",
+        "C": "812 250"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El máximo de -0.001x²+57x ocurre en x=28500. La utilidad máxima es 57²/(4·0.001)=812250 dólares."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q35",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10488,
+      "code": "item-qbe-2025-c1-functions-1-q36",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Luis compró en la ferretería 2 kg de clavos y 3 kg de tornillos por un costo de 4800 colones. Más tarde compró 3 kg de clavos y 2 kg de tornillos por 4900 colones. ¿Cuánto pagó por cada kg de tornillos.",
+      "options": {
+        "A": "810",
+        "B": "920",
+        "C": "1940"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "2c+3t=4800 y 3c+2t=4900 dan c=1020 y t=920 colones."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q36",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10489,
+      "code": "item-qbe-2025-c1-functions-1-q37",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "En un experimento se observó al inicio 10 000 bacterias y luego en 5 h se multiplicaron hasta 320 000. Considere la fórmula P(t)= maᵗ , donde t es el tiempo en horas y P el número de bacterias, para el modelo ¿Cuál es la población a las 6 horas?",
+      "options": {
+        "A": "330 000.",
+        "B": "380 000",
+        "C": "640 000"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "320000/10000=32=a⁵, por lo que a=2. P(6)=10000·2⁶=640000."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q37",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10490,
+      "code": "item-qbe-2025-c1-functions-1-q38",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "En una empresa el costo semanal de producción está dado por C(x)=400x+30 000 y los ingresos I(x)=600x. Donde x corresponde a los artículos vendidos.\nSi en una semana la ganancia fue de 10000, ¿cuántos artículos se vendieron? La ganancia es igual a las ventas menos los costos.",
+      "options": {
+        "A": "200",
+        "B": "100",
+        "C": "40"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Ganancia=600x-(400x+30000)=200x-30000. Igualarla a 10000 da x=200."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q38",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10491,
+      "code": "item-qbe-2025-c1-functions-1-q39",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "¿Cuál grupo de datos representa un modelo logarítmico?",
+      "options": {
+        "A": "Tabla A",
+        "B": "Tabla B",
+        "C": "Tabla C"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "La tabla B sigue y=2log₂(x); A es lineal y C sigue una exponencial desplazada. Solo B es logarítmica."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 3,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "A",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "f(x)"
+              ],
+              "rows": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          },
+          {
+            "label": "B",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "g(x)"
+              ],
+              "rows": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2
+                ],
+                [
+                  4,
+                  4
+                ],
+                [
+                  8,
+                  6
+                ],
+                [
+                  16,
+                  8
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          },
+          {
+            "label": "C",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "r(x)"
+              ],
+              "rows": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  14
+                ],
+                [
+                  5,
+                  30
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q39",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10492,
+      "code": "item-qbe-2025-c1-functions-1-q40",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "¿Cuáles son las funciones que representan los datos I,y II respectivamente?",
+      "options": {
+        "A": "I. raíz cuadrada y II. exponencial.",
+        "B": "I. exponencial, II. exponencial.",
+        "C": "I. exponencial y II raíz cuadrada."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "I cumple y=0.5√x y II cumple y=2ˣ: raíz cuadrada y exponencial."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "I",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "f(x)"
+              ],
+              "rows": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0.5
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  9,
+                  1.5
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          },
+          {
+            "label": "II",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "g(x)"
+              ],
+              "rows": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  8
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q40",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10493,
+      "code": "item-qbe-2025-c1-functions-1-q41",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "¿Cuáles son las funciones que representan los datos I y II?",
+      "options": {
+        "A": "I. lineal y II.lineal.",
+        "B": "I. cuadrática y II. lineal.",
+        "C": "I. lineal y II.cuadrática."
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "I cumple r=x-2 y II cumple k=-x². Orden: lineal y cuadrática."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "I",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "r(x)"
+              ],
+              "rows": [
+                [
+                  0,
+                  -2
+                ],
+                [
+                  1,
+                  -1
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          },
+          {
+            "label": "II",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "x",
+                "k(x)"
+              ],
+              "rows": [
+                [
+                  -2,
+                  -4
+                ],
+                [
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  -1
+                ],
+                [
+                  2,
+                  -4
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q41",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10494,
+      "code": "item-qbe-2025-c1-functions-1-q42",
+      "set_id": "qbe-2025-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "En enero María deposita 2000 colones. Luego añade 200 colones cada mes y en diciembre tiene 4200. Si x es el número de meses transcurridos desde el depósito inicial de enero, ¿qué función expresa el ahorro?",
+      "options": {
+        "A": "$a(x) = 350x$",
+        "B": "$a(x) = 2000 + 200x$",
+        "C": "$a(x) = 4200-200x$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Con x meses transcurridos desde el depósito inicial de enero, a(x)=2000+200x. En diciembre x=11 y a(11)=4200."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-functions-1-q42",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2025.docx",
+        "convocatoria": "2025-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math FUN 01 C2025)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    }
+  ]
+}

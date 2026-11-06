@@ -212,7 +212,7 @@ export interface Item {
   difficulty_tier?: DifficultyTier;
   historical_convocatoria?: string[];
   stem: string;
-  options: Record<'A' | 'B' | 'C' | 'D', string> | Option[];
+  options: (Record<'A' | 'B' | 'C', string> & { D?: string }) | Option[];
   correct_answer: 'A' | 'B' | 'C' | 'D';
   solution_steps: (string | SolutionStep)[];
   group_id?: string | null;

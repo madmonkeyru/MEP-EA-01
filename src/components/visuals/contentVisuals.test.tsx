@@ -12,6 +12,7 @@ import type { Group } from '../../types';
 describe('Content visual spec integration', () => {
   it('renders every per-item visual_spec without falling back', () => {
     const items = [
+      ...Object.values(import.meta.glob('../../../content/bxm/matematicas/qbe-*.json', { eager: true })).flatMap((mod: any) => mod.default.items),
       ...((set1Json as any).items || []),
       ...((set2Json as any).items || []),
       ...((set3Json as any).items || []),
@@ -22,7 +23,7 @@ describe('Content visual spec integration', () => {
     expect(withVisuals.length).toBeGreaterThan(0);
 
     for (const item of withVisuals) {
-      const { container } = render(
+      const { container, unmount } = render(
         <VisualRenderer spec={item.visual_spec} itemId={item.id} />
       );
 
@@ -34,8 +35,9 @@ describe('Content visual spec integration', () => {
         hasGraphic,
         `item ${item.id} (${item.topic}) should render a graphic`
       ).toBe(true);
+      unmount();
     }
-  });
+  }, 30000);
 
   it('verifies updated geometry visual specs for items 6, 9, 13, 21, 22, and 23', () => {
     const items = (set1Json as any).items || [];

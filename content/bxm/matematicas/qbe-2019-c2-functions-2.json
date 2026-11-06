@@ -1,0 +1,1457 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2019-c2 · Relaciones y Álgebra",
+  "convocatoria": "2019-c2",
+  "language": "es-CR",
+  "source": "BXM Math FUN 02 C2019.docx",
+  "set_info": {
+    "id": "qbe-2019-c2-functions-2",
+    "name": "Práctica histórica 2019-c2 · Relaciones y Álgebra",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 20,
+    "file": "bxm/matematicas/qbe-2019-c2-functions-2.json",
+    "convocatoria": "2019-c2"
+  },
+  "total_items": 20,
+  "items": [
+    {
+      "id": 10573,
+      "code": "item-qbe-2019-c2-functions-2-q01",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Con base en las siguientes gráficas, responda las preguntas 1 y 2.\n¿Cuál es el ámbito de f?",
+      "options": {
+        "A": "[0,1] ∪ [2,3]",
+        "B": "[0,1]∪ [2,4]",
+        "C": "[-2,0] ∪ [2,4]",
+        "D": "[-2,0] ∪ [3,4]"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El primer segmento cubre [0,1] y el segundo [2,3], incluidos sus extremos. Ese es el ámbito de f."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "line",
+                  "p1": [
+                    -2,
+                    1
+                  ],
+                  "p2": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    2,
+                    2
+                  ],
+                  "p2": [
+                    4,
+                    3
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    0,
+                    0
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "g",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      -5,
+                      3
+                    ],
+                    [
+                      -3,
+                      2.8
+                    ],
+                    [
+                      -2,
+                      2
+                    ]
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    1,
+                    2
+                  ],
+                  "p2": [
+                    2,
+                    3
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    3
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q01",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10574,
+      "code": "item-qbe-2019-c2-functions-2-q02",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Con base en las siguientes gráficas, responda las preguntas 1 y 2.\n¿Cuál es el ámbito de g?",
+      "options": {
+        "A": "[2,3]",
+        "B": "[ -5,2]",
+        "C": "[-5,-2] ∪ [1,2]",
+        "D": "[-5,-2] ∪ [2,3]"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Ambas ramas de g toman valores entre 2 y 3, con extremos incluidos. Ámbito=[2,3]."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "line",
+                  "p1": [
+                    -2,
+                    1
+                  ],
+                  "p2": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    2,
+                    2
+                  ],
+                  "p2": [
+                    4,
+                    3
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    1
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    0,
+                    0
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    4,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "g",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Plano cartesiano con los datos del problema.",
+              "children": [
+                {
+                  "type": "path",
+                  "points": [
+                    [
+                      -5,
+                      3
+                    ],
+                    [
+                      -3,
+                      2.8
+                    ],
+                    [
+                      -2,
+                      2
+                    ]
+                  ]
+                },
+                {
+                  "type": "line",
+                  "p1": [
+                    1,
+                    2
+                  ],
+                  "p2": [
+                    2,
+                    3
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    3
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -2,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    2
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    2,
+                    3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q02",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10575,
+      "code": "item-qbe-2019-c2-functions-2-q03",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere las siguientes proposiciones referidas a una función que se define como sigue: f: M→{0} con f(x)=(x^2-4)/(x+2)\nI 2∊M\nII {-2}⊆M\nIII M={-2} ∪ {2}\n¿Cuál o cuáles opciones son correctas?",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "I y III"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El valor -2 está excluido por el denominador. La única preimagen de cero es 2, por lo que M={2}. Solo I."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q03",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10576,
+      "code": "item-qbe-2019-c2-functions-2-q04",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 4 y 5 con base a las siguientes funciones.\nUn intervalo del dominio de f, donde existe su inversa es",
+      "options": {
+        "A": "[-1,1]",
+        "B": "[-2,1]",
+        "C": "[-4,-2]",
+        "D": "[-5,-4]"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "El intervalo [-5,-4] está enteramente en un tramo estrictamente decreciente. Los demás intervalos cruzan el mínimo o incluyen un tramo constante."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  3
+                ],
+                "y": [
+                  -4,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -5,
+                      3
+                    ],
+                    [
+                      -3,
+                      -3
+                    ],
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    3
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    1
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones auxiliares",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "r",
+                  "[-5,1]",
+                  "r(x)=-x+2"
+                ],
+                [
+                  "g",
+                  "[-3,3]",
+                  "g(x)=x-2"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q04",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10577,
+      "code": "item-qbe-2019-c2-functions-2-q05",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 4 y 5 con base a las siguientes funciones.\nConsidere las siguientes proposiciones\nI (f ∘ g) (-2)=-4\nII Es factible realizar la composición (g∘r) (x)\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "g(-2)=-4 y la gráfica da f(-4)=0, no -4. El ámbito de r es [1,7], no contenido en el dominio [-3,3] de g. Ninguna verdadera."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -6,
+                  3
+                ],
+                "y": [
+                  -4,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -5,
+                      3
+                    ],
+                    [
+                      -3,
+                      -3
+                    ],
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -5,
+                    3
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    1,
+                    1
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones auxiliares",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "r",
+                  "[-5,1]",
+                  "r(x)=-x+2"
+                ],
+                [
+                  "g",
+                  "[-3,3]",
+                  "g(x)=x-2"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q05",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10578,
+      "code": "item-qbe-2019-c2-functions-2-q06",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere las siguientes características de las relaciones R y Q:\nI- A={-1,0} y B={1,2} y la relación R de A→B con R={(x,y):y=-x+1}\nII- D={0,2} y E={1,5} y la relación Q de D→E con Q={(x,y):y=x^2+1}\n¿Cuál o cuáles de ellas son funciones?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "R(-1)=2,R(0)=1 y Q(0)=1,Q(2)=5 pertenecen a sus respectivos codominios. Ambas relaciones son funciones."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q06",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10579,
+      "code": "item-qbe-2019-c2-functions-2-q07",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Si la inversa de la función f(x)=(x/2)-3 es f(x)⁻^1=ax+b. Entonces los valores de a y b son:",
+      "options": {
+        "A": "$a = 2 y b = 6$",
+        "B": "$a = 6 y b = 2$",
+        "C": "$a = 2 y b = -6$",
+        "D": "$a = -6 y b = 2$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "y=x/2-3 implica x=2y+6. La inversa tiene a=2,b=6."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q07",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10580,
+      "code": "item-qbe-2019-c2-functions-2-q08",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere las siguientes proposiciones referidas a la función f(x) que posee inversa y se define como: f: [8,+∞[→P y con f(x) definida como f(x)=$2\\sqrt{x+1}-3$\nI- El ámbito de f⁻¹ es [3,+∞[\nII El dominio de f⁻¹ es [8,+∞[\n¿Cuál o cuáles de ellas son verdaderas?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El ámbito de la inversa es el dominio original [8,∞), no [3,∞). El dominio de la inversa es [3,∞), no [8,∞). Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q08",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10581,
+      "code": "item-qbe-2019-c2-functions-2-q09",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea la recta definida como y=-4x+b. Si (1,2) pertenece a dicha recta, ¿cuál es la intersección de la recta con el eje Y?",
+      "options": {
+        "A": "(0,3)",
+        "B": "(0,6)",
+        "C": "(0,-2)",
+        "D": "(0,-4)"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "2=-4(1)+b implica b=6, así que corta Y en (0,6)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q09",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10582,
+      "code": "item-qbe-2019-c2-functions-2-q10",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere las siguientes proposiciones referidas a la recta y=x+3.\nI- La pendiente de la recta es igual a 1.\nII- La intersección con el eje X es igual a (3,0)\n¿Cuál o cuáles de ellas son verdaderas?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo I",
+        "D": "solo II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La pendiente es 1. Al poner y=0, x=-3 y no 3. Solo I."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q10",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10583,
+      "code": "item-qbe-2019-c2-functions-2-q11",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Si el punto mínimo de una función cuadrática es (1,3) entonces su ámbito corresponde a:",
+      "options": {
+        "A": "]-∞,1]",
+        "B": "]-∞,3]",
+        "C": "[1, +∞[",
+        "D": "[3, +∞["
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Un mínimo de ordenada 3 implica ámbito [3,∞)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q11",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10584,
+      "code": "item-qbe-2019-c2-functions-2-q12",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea f(x) una función exponencial tal que f(x)=bˣ. Si el punto (-2,16) corresponde al gráfico de f(x) entonces b corresponde a:",
+      "options": {
+        "A": "4",
+        "B": "8",
+        "C": "1/4",
+        "D": "1/8"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "b^(-2)=16 implica b²=1/16; como b>0, b=1/4."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q12",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10585,
+      "code": "item-qbe-2019-c2-functions-2-q13",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea una función tal que f(x)=logₐ(x). ¿A qué es igual f(a^2)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "b",
+        "D": "$b^3$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Por definición de logaritmo, logₐ(a²)=2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q13",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10586,
+      "code": "item-qbe-2019-c2-functions-2-q14",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "En la expresión ($10^{x+h}=1000^h$) se cumple que",
+      "options": {
+        "A": "$x = 2h$",
+        "B": "$x = 3h$",
+        "C": "$x = -2h + 3$",
+        "D": "$x = -2h-3$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "10^(x+h)=1000^h=10^(3h); entonces x+h=3h y x=2h."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q14",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10587,
+      "code": "item-qbe-2019-c2-functions-2-q15",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Si el área de un círculo aumenta 4π se obtiene otro círculo de área 200π. ¿Cuánto medía el radio original?",
+      "options": {
+        "A": "14",
+        "B": "25",
+        "C": "$2\\sqrt{51}$",
+        "D": "$10\\sqrt{2}$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El área original es 200π-4π=196π; el radio es √196=14."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q15",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10588,
+      "code": "item-qbe-2019-c2-functions-2-q16",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Don Fernando paga por un bollo de pan y un litro de leche ₡1100. Hoy compró 3 bollos de pan y 2 litros de leche y pagó ₡2700. ¿Cuál es el precio de la 1 L de leche?",
+      "options": {
+        "A": "545",
+        "B": "600",
+        "C": "760",
+        "D": "800"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Pan+leche=1100 y 3pan+2leche=2700. Restando dos veces la primera, pan=500 y leche=600."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q16",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10589,
+      "code": "item-qbe-2019-c2-functions-2-q17",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "En la siguiente tabla se han tabulado los datos de una función logarítmica\n¿Cuál es la preimagen de 3 para esta función (k)?",
+      "options": {
+        "A": "12",
+        "B": "15",
+        "C": "18",
+        "D": "27"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Los datos siguen n(t)=log₃(t). La preimagen de 3 es 3³=27."
+      ],
+      "visual_spec": {
+        "type": "table",
+        "headers": [
+          "x",
+          "n(t)"
+        ],
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            "k",
+            3
+          ]
+        ],
+        "title": "Datos del problema"
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q17",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10590,
+      "code": "item-qbe-2019-c2-functions-2-q18",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Una fábrica gasta por cada par de zapatos producido ₡4000 y un monto fijo de ₡100 000 por semana. La función costo total semanal \"c\", en colones para la producción de x pares de zapatos por semana es",
+      "options": {
+        "A": "104 000x",
+        "B": "4000x + 100 000",
+        "C": "5000x + 100 000",
+        "D": "100 000x + 4000"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Costo variable 4000x más costo fijo semanal 100000: c(x)=4000x+100000."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q18",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10591,
+      "code": "item-qbe-2019-c2-functions-2-q19",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "La población de insectos (p(t)) se registró en función del tiempo en días (t) como se muestra en la siguiente tabla:\n¿Cuál es la población de insectos el día 4 (k)?",
+      "options": {
+        "A": "80",
+        "B": "85",
+        "C": "192",
+        "D": "256"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "La población se multiplica por cuatro cada día: p(4)=4⁴=256."
+      ],
+      "visual_spec": {
+        "type": "table",
+        "headers": [
+          "x",
+          "p(t)"
+        ],
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            64
+          ],
+          [
+            4,
+            "k"
+          ]
+        ],
+        "title": "Datos del problema"
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q19",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    },
+    {
+      "id": 10592,
+      "code": "item-qbe-2019-c2-functions-2-q20",
+      "set_id": "qbe-2019-c2-functions-2",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "A continuación se ha tabulado una función r(x)\nConsidere las siguientes proposiciones referidas a r(x)\nI- La preimagen de 4 corresponde a 16\nII-El mejor modelo matemático entre los estudiados en bachillero que describe los datos es la función cuadrática.\n¿Cuál o cuáles de ellas son verdaderas?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La tabla corresponde a r(x)=√x: la preimagen de 4 es 16 y el modelo no es cuadrático. Solo I."
+      ],
+      "visual_spec": {
+        "type": "table",
+        "headers": [
+          "x",
+          "r(x)"
+        ],
+        "rows": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            "n",
+            4
+          ]
+        ],
+        "title": "Datos del problema"
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2019-c2-functions-2-q20",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2019-c2-functions-2",
+        "filename": "BXM Math FUN 02 C2019.docx",
+        "convocatoria": "2019-c2",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math FUN 02 C2019)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2019-c2"
+      ]
+    }
+  ]
+}

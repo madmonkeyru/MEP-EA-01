@@ -84,23 +84,23 @@ export class PublicationEligibilityValidator {
 
     // 3. Options validation
     const options = question.content?.options || [];
-    if (options.length !== 4) {
+    if (![3, 4].includes(options.length)) {
       blockers.push({
         code: 'INVALID_OPTION_COUNT',
         verdict: 'BLOCKER',
         field: 'content.options',
-        message: `Question must contain exactly 4 options; found ${options.length}.`,
+        message: `Question must contain 3 or 4 options; found ${options.length}.`,
       });
     } else {
       const optionLetters = options.map((o) => o.id);
-      const expectedLetters = ['A', 'B', 'C', 'D'];
-      const hasAllLetters = expectedLetters.every((l) => optionLetters.includes(l));
+      const expectedLetters = ['A', 'B', 'C', 'D'].slice(0, options.length);
+      const hasAllLetters = new Set(optionLetters).size === options.length && expectedLetters.every((l) => optionLetters.includes(l));
       if (!hasAllLetters) {
         blockers.push({
           code: 'MALFORMED_OPTION_KEYS',
           verdict: 'BLOCKER',
           field: 'content.options',
-          message: `Options must have IDs A, B, C, D. Found: ${optionLetters.join(', ')}`,
+          message: `Options must have consecutive unique IDs A–C or A–D. Found: ${optionLetters.join(', ')}`,
         });
       }
 
@@ -120,7 +120,7 @@ export class PublicationEligibilityValidator {
 
     // 4. Valid detected answer key
     const answer = question.content?.detected_answer;
-    if (!answer || !['A', 'B', 'C', 'D'].includes(answer.trim().toUpperCase())) {
+    if (!answer || !options.some(o => o.id === answer)) {
       blockers.push({
         code: 'MISSING_OR_INVALID_ANSWER_KEY',
         verdict: 'BLOCKER',

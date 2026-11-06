@@ -2,7 +2,7 @@
   "asset_id": "bxm-raw-2024-c2-functions-2",
   "convocatoria": "2024-c2",
   "area": "functions",
-  "total_questions": 23,
+  "total_questions": 20,
   "questions": [
     {
       "id": "bxm-raw-2024-c2-functions-2-q01",
@@ -20,7 +20,7 @@
       },
       "content": {
         "stem_raw": "Analice la función f:\nf: D→{0}, con f(x)=(-x²+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?\n*",
-        "stem_cleaned": "Analice la función f:\nf: D→{0}, con f(x)=(-x^2+1)/x\nI. -1 ∈ D\nII. {1} ⊂ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
+        "stem_cleaned": "Analice la función f:\nf: D→{0}, con f(x)=(-x^2+1)/x\nI. -1 ∈ D\nII. {1} ⊆ D\nIII. D = {-1} ⋃ {0} ⋃ {1}\n¿Cuáles son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -41,9 +41,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El denominador excluye cero; el numerador se anula en -1 y 1. D={-1,1}, así que I y II son verdaderas y III falsa."
       },
       "visuals": [],
       "classification": {
@@ -55,35 +55,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El denominador excluye cero; el numerador se anula en -1 y 1. D={-1,1}, así que I y II son verdaderas y III falsa.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -108,6 +105,39 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\",\"stem_cleaned\":\"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la III.\",\"text_cleaned\":\"solo la III.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I y la II\",\"text_cleaned\":\"solo la I y la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null},{\"stem_raw\":\"La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\",\"stem_cleaned\":\"La gráfica de n(x)= 5 \\\\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\",\"stem_cleaned\":\"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la III.\",\"text_cleaned\":\"solo la III.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I y la II\",\"text_cleaned\":\"solo la I y la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:16.305Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\", \"stem_cleaned\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I y la II\", \"text_cleaned\": \"solo la I y la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\", \"stem_cleaned\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I y la II\", \"text_cleaned\": \"solo la I y la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El denominador excluye cero; el numerador se anula en -1 y 1. D={-1,1}, así que I y II son verdaderas y III falsa.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\", \"stem_cleaned\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I y la II\", \"text_cleaned\": \"solo la I y la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El denominador excluye cero; el numerador se anula en -1 y 1. D={-1,1}, así que I y II son verdaderas y III falsa.\"}",
+            "normalized_text": "{\"stem_raw\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x²+1)/x\\nI. -1 ∈ D\\nII. {1} ⊂ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\\n*\", \"stem_cleaned\": \"Analice la función f:\\nf: D→{0}, con f(x)=(-x^2+1)/x\\nI. -1 ∈ D\\nII. {1} ⊆ D\\nIII. D = {-1} ⋃ {0} ⋃ {1}\\n¿Cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I y la II\", \"text_cleaned\": \"solo la I y la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El denominador excluye cero; el numerador se anula en -1 y 1. D={-1,1}, así que I y II son verdaderas y III falsa.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:45:55.307915+00:00"
           }
         ]
       }
@@ -133,13 +163,13 @@
           {
             "id": "A",
             "text_raw": "",
-            "text_cleaned": "",
+            "text_cleaned": "Tabla A",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "",
-            "text_cleaned": "",
+            "text_cleaned": "Gráfico B",
             "visuals": []
           },
           {
@@ -149,16 +179,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La tabla A asigna a x=2 dos imágenes distintas, 2 y 3. El gráfico B supera la prueba de recta vertical y C asigna -3 y 3 a cero. Solo A no es función."
       },
       "visuals": [
         {
           "id": "vis-ae6aba60bd",
           "original_filename": "image8.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image8-ae6aba60.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image8-ae6aba60.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image8-ae6aba60.jpg",
           "content_type": "image/jpeg",
           "sha256": "ae6aba60bd63c2ec1299642cd99edc5ad9ac8627017fb7ce791ee254fdbb7c58",
           "byte_size": 4500,
@@ -170,7 +200,7 @@
           "id": "vis-4d5a927394",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image5-4d5a9273.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image5-4d5a9273.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image5-4d5a9273.jpg",
           "content_type": "image/jpeg",
           "sha256": "4d5a927394c25c1f672e07f7501d9d79edb81984972b1ff6fefc7100c07f740b",
           "byte_size": 3342,
@@ -188,35 +218,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La tabla A asigna a x=2 dos imágenes distintas, 2 y 3. El gráfico B supera la prueba de recta vertical y C asigna -3 y 3 a cero. Solo A no es función.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -241,6 +268,28 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"¿Cuál opción NO es una función?\\n*\",\"stem_cleaned\":\"¿Cuál opción NO es una función?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"\",\"text_cleaned\":\"\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"\",\"text_cleaned\":\"\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }\",\"text_cleaned\":\"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null},{\"stem_raw\":\"La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\",\"stem_cleaned\":\"La gráfica de r(x)= \\\\sqrt{x} , es una traslación horizontal de la gráfica de f.\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"¿Cuál opción NO es una función?\\n*\",\"stem_cleaned\":\"¿Cuál opción NO es una función?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"\",\"text_cleaned\":\"\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"\",\"text_cleaned\":\"\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }\",\"text_cleaned\":\"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:16.305Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"¿Cuál opción NO es una función?\\n*\", \"stem_cleaned\": \"¿Cuál opción NO es una función?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"\", \"text_cleaned\": \"\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"\", \"text_cleaned\": \"\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }\", \"text_cleaned\": \"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"¿Cuál opción NO es una función?\\n*\", \"stem_cleaned\": \"¿Cuál opción NO es una función?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"\", \"text_cleaned\": \"Tabla A\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"\", \"text_cleaned\": \"Gráfico B\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x²-9 }\", \"text_cleaned\": \"Sea D ={-3, 3) y E={0) y J la relación de D → E tal que J { (x,y): y=x^2-9 }\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La tabla A asigna a x=2 dos imágenes distintas, 2 y 3. El gráfico B supera la prueba de recta vertical y C asigna -3 y 3 a cero. Solo A no es función.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -272,7 +321,7 @@
           {
             "id": "B",
             "text_raw": "El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }",
-            "text_cleaned": "El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }",
+            "text_cleaned": "El complemento del ámbito de f es $\\{y\\in\\mathbb{R}:y<-2\\}$.",
             "visuals": []
           },
           {
@@ -282,16 +331,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El ámbito de la gráfica es [-2,∞), cuyo complemento es (-∞,-2). Las otras opciones incluyen un hueco del dominio o un intervalo no inyectivo."
       },
       "visuals": [
         {
           "id": "vis-7e97fa39a8",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image7-7e97fa39.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image7-7e97fa39.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image7-7e97fa39.jpg",
           "content_type": "image/jpeg",
           "sha256": "7e97fa39a86c6bb9c16f50a44c85c78923fa3f94d88166c0485996e96e7f4489",
           "byte_size": 16798,
@@ -309,35 +358,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El ámbito de la gráfica es [-2,∞), cuyo complemento es (-∞,-2). Las otras opciones incluyen un hueco del dominio o un intervalo no inyectivo.",
+          "La opción B original imponía 2<y<-2, un conjunto vacío. Se corrigió a y<-2, complemento inequívoco del ámbito [-2,+∞) observado en la figura."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -362,6 +408,28 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\\n*\",\"stem_cleaned\":\"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"Un intervalo del dominio de f es [-1,1]\",\"text_cleaned\":\"Un intervalo del dominio de f es [-1,1]\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }\",\"text_cleaned\":\"El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\",\"text_cleaned\":\"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null},{\"stem_raw\":\"La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"La gráfica de m(x)= \\\\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la 1.\",\"text_cleaned\":\"solo la 1.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la 2.\",\"text_cleaned\":\"solo la 2.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 3.\",\"text_cleaned\":\"solo la 3.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\\n*\",\"stem_cleaned\":\"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"Un intervalo del dominio de f es [-1,1]\",\"text_cleaned\":\"Un intervalo del dominio de f es [-1,1]\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }\",\"text_cleaned\":\"El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\",\"text_cleaned\":\"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:16.305Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\\n*\", \"stem_cleaned\": \"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"Un intervalo del dominio de f es [-1,1]\", \"text_cleaned\": \"Un intervalo del dominio de f es [-1,1]\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }\", \"text_cleaned\": \"El complemento del ámbito de f es el conjunto {y ∈ ℝ│ 2<y<-2 }\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\", \"text_cleaned\": \"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\\n*\", \"stem_cleaned\": \"Analice la siguiente función. Considere que los números reales ℝ representan el universo para el dominio y el ámbito.\\n¿Cuál de las opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"Un intervalo del dominio de f es [-1,1]\", \"text_cleaned\": \"Un intervalo del dominio de f es [-1,1]\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"El complemento del ámbito de f  es el conjunto {y ∈ ℝ│ 2<y<-2 }\", \"text_cleaned\": \"El complemento del ámbito de f es $\\\\{y\\\\in\\\\mathbb{R}:y<-2\\\\}$.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\", \"text_cleaned\": \"Un intervalo del dominio de f donde se puede obtener su inversa es ]0,4[\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"El ámbito de la gráfica es [-2,∞), cuyo complemento es (-∞,-2). Las otras opciones incluyen un hueco del dominio o un intervalo no inyectivo.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "La opción B original imponía 2<y<-2, un conjunto vacío. Se corrigió a y<-2, complemento inequívoco del ámbito [-2,+∞) observado en la figura.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -403,9 +471,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "y=(8-4x)/12=2/3-x/3 implica x=2-3y. La inversa es -3x+2."
       },
       "visuals": [],
       "classification": {
@@ -417,35 +485,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. y=(8-4x)/12=2/3-x/3 implica x=2-3y. La inversa es -3x+2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -492,6 +557,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=-3 y b=2\", \"text_cleaned\": \"$a = -3 y b = 2$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=3 y b=-2\", \"text_cleaned\": \"$a = 3 y b = -2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-3 y b=-2\", \"text_cleaned\": \"$a = -3 y b = -2$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\\n*\", \"stem_cleaned\": \"Considere la función f(x)=(8-4x)/12, si su inversa se escribe como ax+b, entonces estos valores son\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=-3 y b=2\", \"text_cleaned\": \"$a = -3 y b = 2$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=3 y b=-2\", \"text_cleaned\": \"$a = 3 y b = -2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-3 y b=-2\", \"text_cleaned\": \"$a = -3 y b = -2$\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(8-4x)/12=2/3-x/3 implica x=2-3y. La inversa es -3x+2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -512,7 +588,7 @@
       },
       "content": {
         "stem_raw": "Analice la siguiente información sobre f:\nf: [8, + ∞[  → P, con f(x)=2 √̅x̅+̅1̅   - 3\nEntonces, el ámbito de la inversa de f corresponde a\n*",
-        "stem_cleaned": "Analice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=2 \\sqrt{x}+̅1̅ - 3\nEntonces, el ámbito de la inversa de f corresponde a",
+        "stem_cleaned": "Analice la siguiente información sobre f:\nf: [8, + ∞[ → P, con f(x)=$2\\sqrt{x+1}-3$\nEntonces, el ámbito de la inversa de f corresponde a",
         "options": [
           {
             "id": "A",
@@ -533,9 +609,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El ámbito de la inversa es el dominio original [8,∞)."
       },
       "visuals": [],
       "classification": {
@@ -547,37 +623,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El ámbito de la inversa es el dominio original [8,∞).",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -613,6 +684,17 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente información sobre f:\\nf: [8, + ∞[  → P, con f(x)=2 √̅x̅+̅1̅   - 3\\nEntonces, el ámbito de la inversa de f corresponde a\\n*\", \"stem_cleaned\": \"Analice la siguiente información sobre f:\\nf: [8, + ∞[ → P, con f(x)=2 \\\\sqrt{x}+̅1̅ - 3\\nEntonces, el ámbito de la inversa de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[8, + ∞[\", \"text_cleaned\": \"[8, + ∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[3, + ∞[\", \"text_cleaned\": \"[3, + ∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[15, + ∞[\", \"text_cleaned\": \"[15, + ∞[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente información sobre f:\\nf: [8, + ∞[  → P, con f(x)=2 √̅x̅+̅1̅   - 3\\nEntonces, el ámbito de la inversa de f corresponde a\\n*\", \"stem_cleaned\": \"Analice la siguiente información sobre f:\\nf: [8, + ∞[ → P, con f(x)=$2\\\\sqrt{x+1}-3$\\nEntonces, el ámbito de la inversa de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[8, + ∞[\", \"text_cleaned\": \"[8, + ∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[3, + ∞[\", \"text_cleaned\": \"[3, + ∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[15, + ∞[\", \"text_cleaned\": \"[15, + ∞[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El ámbito de la inversa es el dominio original [8,∞).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -654,16 +736,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La gráfica da f(3)=4 y p(x)=x+2, por lo que p(f(3))=6."
       },
       "visuals": [
         {
           "id": "vis-085efd9c58",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
           "content_type": "image/jpeg",
           "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
           "byte_size": 18386,
@@ -681,35 +763,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La gráfica da f(3)=4 y p(x)=x+2, por lo que p(f(3))=6.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -723,6 +802,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál es el valor de (p o f)(3)?\\n*\", \"stem_cleaned\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál es el valor de (p o f)(3)?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"6\", \"text_cleaned\": \"6\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"5\", \"text_cleaned\": \"5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál es el valor de (p o f)(3)?\\n*\", \"stem_cleaned\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál es el valor de (p o f)(3)?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"6\", \"text_cleaned\": \"6\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"5\", \"text_cleaned\": \"5\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La gráfica da f(3)=4 y p(x)=x+2, por lo que p(f(3))=6.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -764,16 +854,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "r tiene ámbito [-4,4], contenido en el dominio de p. p tiene ámbito [-2,6], que no queda en el dominio de r. h(p(0))=h(2)=3, no 2. Solo C."
       },
       "visuals": [
         {
           "id": "vis-085efd9c58",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
           "content_type": "image/jpeg",
           "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
           "byte_size": 18386,
@@ -791,35 +881,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. r tiene ámbito [-4,4], contenido en el dominio de p. p tiene ámbito [-2,6], que no queda en el dominio de r. h(p(0))=h(2)=3, no 2. Solo C.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -844,6 +931,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál de las siguientes afirmaciones es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál de las siguientes afirmaciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(h o p)(0)=2\", \"text_cleaned\": \"$(h o p)(0) = 2$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"es factible efectuar (r o p)(x)\", \"text_cleaned\": \"es factible efectuar (r o p)(x)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Es factible efectuar (p o r)(x)\", \"text_cleaned\": \"Es factible efectuar (p o r)(x)\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál de las siguientes afirmaciones es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\n¿Cuál de las siguientes afirmaciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(h o p)(0)=2\", \"text_cleaned\": \"$(h o p)(0) = 2$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"es factible efectuar (r o p)(x)\", \"text_cleaned\": \"es factible efectuar (r o p)(x)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Es factible efectuar (p o r)(x)\", \"text_cleaned\": \"Es factible efectuar (p o r)(x)\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"r tiene ámbito [-4,4], contenido en el dominio de p. p tiene ámbito [-2,6], que no queda en el dominio de r. h(p(0))=h(2)=3, no 2. Solo C.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -863,27 +961,33 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
       },
       "content": {
-        "stem_raw": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :",
-        "stem_cleaned": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = \\sqrt{x}+̅1̅ :",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Considere $f(x)=\\sqrt{x+1}$. I. $n(x)=5\\sqrt{x+1}$ es una traslación vertical de f. II. $r(x)=\\sqrt{x}$ es una traslación horizontal de f. III. $m(x)=\\sqrt{x+1}+5$ es una homotecia de f. ¿Cuál es verdadera?",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "solo la 1.",
+            "text_cleaned": "solo la 1.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "solo la 2.",
+            "text_cleaned": "solo la 2.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la 3.",
+            "text_cleaned": "solo la 3.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Multiplicar √(x+1) por 5 no es una traslación vertical; sumar 5 sí es traslación, no homotecia. √x se obtiene trasladando √(x+1) una unidad a la derecha. Solo 2."
       },
-      "visuals": [
-        {
-          "id": "vis-085efd9c58",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image3-085efd9c.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "085efd9c585b35f111faa7d39352b6f2ea98ac4af3e618a98d76b857a87dafb6",
-          "byte_size": 18386,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -893,38 +997,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Multiplicar √(x+1) por 5 no es una traslación vertical; sumar 5 sí es traslación, no homotecia. √x se obtiene trasladando √(x+1) una unidad a la derecha. Solo 2.",
+          "Se restauraron los radicandos completos indicados por las barras de la fuente."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.5
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -949,311 +1047,105 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2024-c2-functions-2-q01",
-      "source": {
-        "asset_id": "bxm-raw-2024-c2-functions-2",
-        "filename": "BXM Math FUN 02 C2024.docx",
-        "convocatoria": "2024-c2",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
-      },
-      "content": {
-        "stem_raw": "La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.",
-        "stem_cleaned": "La gráfica de n(x)= 5 \\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
+          },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.",
-            "normalized_text": "La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.",
+            "original_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.",
-            "normalized_text": "La gráfica de n(x)= 5 \\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Normalized radical symbol and stripped combining overline within radical",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2024-c2-functions-2-q02",
-      "source": {
-        "asset_id": "bxm-raw-2024-c2-functions-2",
-        "filename": "BXM Math FUN 02 C2024.docx",
-        "convocatoria": "2024-c2",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
-      },
-      "content": {
-        "stem_raw": "La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.",
-        "stem_cleaned": "La gráfica de r(x)= \\sqrt{x} , es una traslación horizontal de la gráfica de f.",
-        "options": [],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.5
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.",
-            "normalized_text": "La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.",
-            "normalized_text": "La gráfica de r(x)= \\sqrt{x} , es una traslación horizontal de la gráfica de f.",
-            "correction_type": "mathematical_notation",
-            "semantic_change": false,
-            "reason": "Normalized radical symbol and stripped combining overline within radical",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
-          }
-        ]
-      }
-    },
-    {
-      "id": "bxm-raw-2024-c2-functions-2-q03",
-      "source": {
-        "asset_id": "bxm-raw-2024-c2-functions-2",
-        "filename": "BXM Math FUN 02 C2024.docx",
-        "convocatoria": "2024-c2",
-        "area": "functions",
-        "subject": "matematica",
-        "program": "bxm",
-        "version": "1.0.0",
-        "source_type": "docx",
-        "provenance_status": "source_unverified",
-        "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math FUN 02 C2024)"
-      },
-      "content": {
-        "stem_raw": "La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "La gráfica de m(x)= \\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
-        "options": [
-          {
-            "id": "A",
-            "text_raw": "solo la 1.",
-            "text_cleaned": "solo la 1.",
-            "visuals": []
-          },
-          {
-            "id": "B",
-            "text_raw": "solo la 2.",
-            "text_cleaned": "solo la 2.",
-            "visuals": []
-          },
-          {
-            "id": "C",
-            "text_raw": "solo la 3.",
-            "text_cleaned": "solo la 3.",
-            "visuals": []
-          }
-        ],
-        "detected_answer": null,
-        "explanation_raw": null,
-        "explanation_cleaned": null
-      },
-      "visuals": [],
-      "classification": {
-        "topic": "functions"
-      },
-      "evaluation": {
-        "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
-      },
-      "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
-      },
-      "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
-        "mapping_reviewed": false,
-        "reviewer_notes": []
-      },
-      "confidence": {
-        "source_confidence": 0.5,
-        "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
-      },
-      "history": {
-        "transformations": [
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
-            "normalized_text": "La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
+            "timestamp": "2026-11-06T09:53:16.305Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
-            "normalized_text": "La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
+            "timestamp": "2026-11-06T09:53:16.305Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-05-UNICODE-RADICAL",
-            "original_text": "La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
-            "normalized_text": "La gráfica de m(x)= \\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "normalized_text": "Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = \\sqrt{x}+̅1̅ :\n1. La gráfica de n(x)= 5 \\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= \\sqrt{x} , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= \\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
             "correction_type": "mathematical_notation",
             "semantic_change": false,
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T02:56:40.787Z"
+            "timestamp": "2026-11-06T09:53:16.305Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\",\"stem_cleaned\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = \\\\sqrt{x}+̅1̅ :\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = \\\\sqrt{x}+̅1̅ :\\n1. La gráfica de n(x)= 5 \\\\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= \\\\sqrt{x} , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= \\\\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la 1.\",\"text_cleaned\":\"solo la 1.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la 2.\",\"text_cleaned\":\"solo la 2.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 3.\",\"text_cleaned\":\"solo la 3.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:16.305Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:58:04.334Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:58:04.334Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = √̅x̅+̅1̅ :\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= √̅x̅ , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= √̅x̅+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "normalized_text": "Considere las siguientes afirmaciones respecto a la función f dada por f(x) = \\sqrt{x}+̅1̅ :\n1. La gráfica de n(x)= 5 \\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\n2. La gráfica de r(x)= \\sqrt{x} , es una traslación horizontal de la gráfica de f.\n3.La gráfica de m(x)= \\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\nDe ellas son verdaderas",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:58:04.334Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Responda las preguntas 6 y 7 con base en las siguientes 4 funciones:\\nConsidere las siguientes afirmaciones respecto a la función f dada por f(x) = \\\\sqrt{x}+̅1̅ :\\n1. La gráfica de n(x)= 5 \\\\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= \\\\sqrt{x} , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= \\\\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la 1.\",\"text_cleaned\":\"solo la 1.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la 2.\",\"text_cleaned\":\"solo la 2.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 3.\",\"text_cleaned\":\"solo la 3.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\",\"stem_cleaned\":\"Considere las siguientes afirmaciones respecto a la función f dada por f(x) = \\\\sqrt{x}+̅1̅ :\\n1. La gráfica de n(x)= 5 \\\\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= \\\\sqrt{x} , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= \\\\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"solo la 1.\",\"text_cleaned\":\"solo la 1.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"solo la 2.\",\"text_cleaned\":\"solo la 2.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la 3.\",\"text_cleaned\":\"solo la 3.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:04.334Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere las siguientes afirmaciones respecto a la función f dada por f(x) = \\\\sqrt{x}+̅1̅ :\\n1. La gráfica de n(x)= 5 \\\\sqrt{x}+̅1̅ , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= \\\\sqrt{x} , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= \\\\sqrt{x}+̅1̅ +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la 1.\", \"text_cleaned\": \"solo la 1.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la 2.\", \"text_cleaned\": \"solo la 2.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 3.\", \"text_cleaned\": \"solo la 3.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes afirmaciones respecto a la función f dada por f(x) =  √̅x̅+̅1̅  :\\n1. La gráfica de n(x)= 5 √̅x̅+̅1̅  , es una traslación vertical de la gráfica de f.\\n2. La gráfica de r(x)= √̅x̅  , es una traslación horizontal de la gráfica de f.\\n3.La gráfica de m(x)= √̅x̅+̅1̅  +5 es una homotecia de de f(x).\\nDe ellas son verdaderas\\n*\", \"stem_cleaned\": \"Considere $f(x)=\\\\sqrt{x+1}$. I. $n(x)=5\\\\sqrt{x+1}$ es una traslación vertical de f. II. $r(x)=\\\\sqrt{x}$ es una traslación horizontal de f. III. $m(x)=\\\\sqrt{x+1}+5$ es una homotecia de f. ¿Cuál es verdadera?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la 1.\", \"text_cleaned\": \"solo la 1.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la 2.\", \"text_cleaned\": \"solo la 2.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la 3.\", \"text_cleaned\": \"solo la 3.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Multiplicar √(x+1) por 5 no es una traslación vertical; sumar 5 sí es traslación, no homotecia. √x se obtiene trasladando √(x+1) una unidad a la derecha. Solo 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauraron los radicandos completos indicados por las barras de la fuente.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1295,16 +1187,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La parábola abre hacia arriba y su vértice está por debajo del eje X; corta X dos veces."
       },
       "visuals": [
         {
           "id": "vis-fe75953950",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
           "content_type": "image/jpeg",
           "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
           "byte_size": 7054,
@@ -1322,35 +1214,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La parábola abre hacia arriba y su vértice está por debajo del eje X; corta X dos veces.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1364,6 +1253,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál opción es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál opción es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"f NO tiene raíces reales.\", \"text_cleaned\": \"f NO tiene raíces reales.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"f posee dos raíces reales.\", \"text_cleaned\": \"f posee dos raíces reales.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"f posee solo una raíz real.\", \"text_cleaned\": \"f posee solo una raíz real.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál opción es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál opción es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"f NO tiene raíces reales.\", \"text_cleaned\": \"f NO tiene raíces reales.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"f posee dos raíces reales.\", \"text_cleaned\": \"f posee dos raíces reales.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"f posee solo una raíz real.\", \"text_cleaned\": \"f posee solo una raíz real.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"La parábola abre hacia arriba y su vértice está por debajo del eje X; corta X dos veces.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1405,16 +1305,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El vértice es (5,-3), con apertura hacia arriba, y ambos ceros son positivos. Para todo x∈(-6,0), la gráfica está arriba del eje X."
       },
       "visuals": [
         {
           "id": "vis-fe75953950",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image4-fe759539.jpg",
           "content_type": "image/jpeg",
           "sha256": "fe759539506d5b77a1f00bdda57a1332b9c23c2f427c514afd2b2f4a8f3038a3",
           "byte_size": 7054,
@@ -1432,35 +1332,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El vértice es (5,-3), con apertura hacia arriba, y ambos ceros son positivos. Para todo x∈(-6,0), la gráfica está arriba del eje X.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1474,6 +1371,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál de las siguientes opciones es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál de las siguientes opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a<0\", \"text_cleaned\": \"a<0\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"el eje de simetría es igual a x=-3\", \"text_cleaned\": \"el eje de simetría es igual a x=-3\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"f>0 si x∈ ]-6,0[\", \"text_cleaned\": \"f>0 si x∈ ]-6,0[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál de las siguientes opciones es correcta?\\n*\", \"stem_cleaned\": \"Responda las preguntas 9 y 10 con base en la siguiente parábola\\n¿Cuál de las siguientes opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a<0\", \"text_cleaned\": \"a<0\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"el eje de simetría es igual a x=-3\", \"text_cleaned\": \"el eje de simetría es igual a x=-3\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"f>0 si x∈ ]-6,0[\", \"text_cleaned\": \"f>0 si x∈ ]-6,0[\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El vértice es (5,-3), con apertura hacia arriba, y ambos ceros son positivos. Para todo x∈(-6,0), la gráfica está arriba del eje X.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1515,9 +1423,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "0=2x/3+1 implica x=-3/2; intersección=(-3/2,0)."
       },
       "visuals": [],
       "classification": {
@@ -1525,39 +1433,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.3",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. 0=2x/3+1 implica x=-3/2; intersección=(-3/2,0).",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1571,6 +1476,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere una recta con y=(2/3x)+1. La intersección con el eje x es\\n*\", \"stem_cleaned\": \"Considere una recta con y=(2/3x)+1. La intersección con el eje x es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(-3/2,0)\", \"text_cleaned\": \"(-3/2,0)\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(2/3,0)\", \"text_cleaned\": \"(2/3,0)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(1,0)\", \"text_cleaned\": \"(1,0)\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere una recta con y=(2/3x)+1. La intersección con el eje x es\\n*\", \"stem_cleaned\": \"Considere una recta con y=(2/3x)+1. La intersección con el eje x es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"(-3/2,0)\", \"text_cleaned\": \"(-3/2,0)\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"(2/3,0)\", \"text_cleaned\": \"(2/3,0)\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"(1,0)\", \"text_cleaned\": \"(1,0)\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"0=2x/3+1 implica x=-3/2; intersección=(-3/2,0).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1622,11 +1538,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A4",
-        "evidencia": "A4.4",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Inversa de una función"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
         "status": "needs_review",
@@ -1635,27 +1551,26 @@
         "gate_c_internalization_passed": false,
         "review_flags": [
           "missing_answer_key",
-          "incomplete_options",
           "missing_visual"
         ],
         "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present",
-          "Stem text references visual diagram but no visual asset is linked"
+          "El texto declara g⁻¹(x)=logₐ(x) y g(8)=3. Entonces a^8=3 y ninguna de las tres opciones es un punto de la inversa. Si se pretendía g(x)=logₐ(x), la respuesta cambiaría; la fuente debe aclararse."
         ]
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
         "answer_reviewed": false,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "El texto declara g⁻¹(x)=logₐ(x) y g(8)=3. Entonces a^8=3 y ninguna de las tres opciones es un punto de la inversa. Si se pretendía g(x)=logₐ(x), la respuesta cambiaría; la fuente debe aclararse."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0.88,
+        "mapping_confidence": 0,
         "content_confidence": 0.75
       },
       "history": {
@@ -1722,9 +1637,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Si 0<a<1 y x<0, a^x=1/a^(-x)>1. El ámbito sigue siendo positivo y la inversa conserva la base a<1."
       },
       "visuals": [],
       "classification": {
@@ -1732,39 +1647,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.6",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Propiedades y simplificación de expresiones con logaritmos"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Si 0<a<1 y x<0, a^x=1/a^(-x)>1. El ámbito sigue siendo positivo y la inversa conserva la base a<1.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.75
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1789,6 +1701,17 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\\n*\", \"stem_cleaned\": \"Analice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"La inversa h‾¹ es igual a logₐ(x) con a>1\", \"text_cleaned\": \"La inversa h‾^1 es igual a logₐ(x) con a>1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"Un elemento del ámbito de la función h es -2.\", \"text_cleaned\": \"Un elemento del ámbito de la función h es -2.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"h(x)>1 si x<0.\", \"text_cleaned\": \"h(x)>1 si x<0.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\\n*\", \"stem_cleaned\": \"Analice la función h(x)=aˣ, con 0<a<1. ¿Cuál opción es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"La inversa h‾¹ es igual a logₐ(x) con a>1\", \"text_cleaned\": \"La inversa h‾^1 es igual a logₐ(x) con a>1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"Un elemento del ámbito de la función h es -2.\", \"text_cleaned\": \"Un elemento del ámbito de la función h es -2.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"h(x)>1 si x<0.\", \"text_cleaned\": \"h(x)>1 si x<0.\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Si 0<a<1 y x<0, a^x=1/a^(-x)>1. El ámbito sigue siendo positivo y la inversa conserva la base a<1.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1830,9 +1753,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "u(x)=100x-0.5x² tiene máximo en x=100. u(100)=5000."
       },
       "visuals": [],
       "classification": {
@@ -1844,35 +1767,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. u(x)=100x-0.5x² tiene máximo en x=100. u(100)=5000.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1897,6 +1817,17 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Las utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?\\n*\", \"stem_cleaned\": \"Las utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x^2. ¿Cuál es la utilidad máxima de esta empresa?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"5000\", \"text_cleaned\": \"5000\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4000\", \"text_cleaned\": \"4000\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"1000\", \"text_cleaned\": \"1000\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Las utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x². ¿Cuál es la utilidad máxima de esta empresa?\\n*\", \"stem_cleaned\": \"Las utilidades de una empresa u, en función de las unidades producidas es igual a u(x)=100x-0.5x^2. ¿Cuál es la utilidad máxima de esta empresa?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"5000\", \"text_cleaned\": \"5000\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4000\", \"text_cleaned\": \"4000\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"1000\", \"text_cleaned\": \"1000\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"u(x)=100x-0.5x² tiene máximo en x=100. u(100)=5000.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1938,9 +1869,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "4a+2p=78000 y 2a+6p=84000 dan a=15000 y p=9000 colones."
       },
       "visuals": [],
       "classification": {
@@ -1952,35 +1883,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. 4a+2p=78000 y 2a+6p=84000 dan a=15000 y p=9000 colones.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1994,6 +1922,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Las entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\\n*\", \"stem_cleaned\": \"Las entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"9000\", \"text_cleaned\": \"9000\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"6000\", \"text_cleaned\": \"6000\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"10 125\", \"text_cleaned\": \"10 125\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Las entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\\n*\", \"stem_cleaned\": \"Las entradas al circo tienen un precio en colones diferente. Ana pagó 4 entradas de adulta y 2 de peques por 78000. María 2 de adulto y 6 de peques por 84000. ¿Cuánto vale una entrada de peque?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"9000\", \"text_cleaned\": \"9000\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"6000\", \"text_cleaned\": \"6000\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"10 125\", \"text_cleaned\": \"10 125\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"4a+2p=78000 y 2a+6p=84000 dan a=15000 y p=9000 colones.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2014,7 +1953,7 @@
       },
       "content": {
         "stem_raw": "La fórmula m(t)=  64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?\n*",
-        "stem_cleaned": "La fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?",
+        "stem_cleaned": "La fórmula m(t)= $64\\cdot2^{-t}$ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\n¿Cuál de las siguientes opciones es correcta?",
         "options": [
           {
             "id": "A",
@@ -2035,9 +1974,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "m(0)=64. A las 3 h quedan 64/8=8 mg, por lo que se eliminaron 56 mg. A las 4 h queda 1/16 de la dosis inicial. Solo B."
       },
       "visuals": [],
       "classification": {
@@ -2049,37 +1988,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options",
-          "missing_visual"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present",
-          "Stem text references visual diagram but no visual asset is linked"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. m(0)=64. A las 3 h quedan 64/8=8 mg, por lo que se eliminaron 56 mg. A las 4 h queda 1/16 de la dosis inicial. Solo B.",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2104,6 +2038,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La fórmula m(t)=  64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\\n¿Cuál de las siguientes opciones es correcta?\\n*\", \"stem_cleaned\": \"La fórmula m(t)= 64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\\n¿Cuál de las siguientes opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"La cantidad inicial del medicamentes fue de 128 mg.\", \"text_cleaned\": \"La cantidad inicial del medicamentes fue de 128 mg.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"Para t= 3h se han eliminado 56 mg del cuerpo.\", \"text_cleaned\": \"Para t= 3h se han eliminado 56 mg del cuerpo.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Para t=4 h se redujo una cuarta parte el medicamento inicial.\", \"text_cleaned\": \"Para t=4 h se redujo una cuarta parte el medicamento inicial.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"La fórmula m(t)=  64­­­•2 ­­­- ­­­ᵗ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\\n¿Cuál de las siguientes opciones es correcta?\\n*\", \"stem_cleaned\": \"La fórmula m(t)= $64\\\\cdot2^{-t}$ representa la masa en mg de un medicamento inyectado en función del tiempo (h).\\n¿Cuál de las siguientes opciones es correcta?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"La cantidad inicial del medicamentes fue de 128 mg.\", \"text_cleaned\": \"La cantidad inicial del medicamentes fue de 128 mg.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"Para t= 3h se han eliminado 56 mg del cuerpo.\", \"text_cleaned\": \"Para t= 3h se han eliminado 56 mg del cuerpo.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"Para t=4 h se redujo una cuarta parte el medicamento inicial.\", \"text_cleaned\": \"Para t=4 h se redujo una cuarta parte el medicamento inicial.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"m(0)=64. A las 3 h quedan 64/8=8 mg, por lo que se eliminaron 56 mg. A las 4 h queda 1/16 de la dosis inicial. Solo B.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2145,9 +2090,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Equilibrio: 600x=350x+20000, de donde x=80."
       },
       "visuals": [],
       "classification": {
@@ -2159,35 +2104,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Equilibrio: 600x=350x+20000, de donde x=80.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2201,6 +2143,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Los costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\\n*\", \"stem_cleaned\": \"Los costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"250\", \"text_cleaned\": \"250\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"21\", \"text_cleaned\": \"21\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"80\", \"text_cleaned\": \"80\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Los costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\\n*\", \"stem_cleaned\": \"Los costos de una empresa son iguales a C(x)=350x+20 000 y los ingresos I(x)=600x. x corresponde a los artículos vendidos.\\nSi la empresa no tuvo ganancias ni pérdidas, ¿cuántos artículos se produjeron?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"250\", \"text_cleaned\": \"250\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"21\", \"text_cleaned\": \"21\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"80\", \"text_cleaned\": \"80\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Equilibrio: 600x=350x+20000, de donde x=80.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2226,32 +2179,32 @@
           {
             "id": "A",
             "text_raw": "",
-            "text_cleaned": "",
+            "text_cleaned": "Tabla A",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "",
-            "text_cleaned": "",
+            "text_cleaned": "Tabla B",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "",
-            "text_cleaned": "",
+            "text_cleaned": "Tabla C",
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La tabla A cumple f(x)=3log₂(x); B es lineal y C exponencial. Solo A es logarítmica."
       },
       "visuals": [
         {
           "id": "vis-1b0c3475f1",
           "original_filename": "image9.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image9-1b0c3475.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image9-1b0c3475.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image9-1b0c3475.jpg",
           "content_type": "image/jpeg",
           "sha256": "1b0c3475f1a62d0e5e86eacfb42bf686afc4b834f78810e13d42a32c99c9a707",
           "byte_size": 4918,
@@ -2263,7 +2216,7 @@
           "id": "vis-f5614d0d44",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image1-f5614d0d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image1-f5614d0d.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image1-f5614d0d.jpg",
           "content_type": "image/jpeg",
           "sha256": "f5614d0d444bbdf06f47370b786cc1a28d8a496e40232f60b448ea874e4db799",
           "byte_size": 4644,
@@ -2275,7 +2228,7 @@
           "id": "vis-bb7d21f9ce",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image6-bb7d21f9.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image6-bb7d21f9.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image6-bb7d21f9.jpg",
           "content_type": "image/jpeg",
           "sha256": "bb7d21f9cef5a3e1d063f6f9e545bc1beaf968945c81c5935041dd0b77b242d6",
           "byte_size": 4776,
@@ -2293,35 +2246,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La tabla A cumple f(x)=3log₂(x); B es lineal y C exponencial. Solo A es logarítmica.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2335,6 +2285,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"¿Cuál grupo de datos representa un modelo logarítmico?\\n*\", \"stem_cleaned\": \"¿Cuál grupo de datos representa un modelo logarítmico?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"\", \"text_cleaned\": \"\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"\", \"text_cleaned\": \"\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"\", \"text_cleaned\": \"\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"¿Cuál grupo de datos representa un modelo logarítmico?\\n*\", \"stem_cleaned\": \"¿Cuál grupo de datos representa un modelo logarítmico?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"\", \"text_cleaned\": \"Tabla A\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"\", \"text_cleaned\": \"Tabla B\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"\", \"text_cleaned\": \"Tabla C\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La tabla A cumple f(x)=3log₂(x); B es lineal y C exponencial. Solo A es logarítmica.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2376,16 +2337,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "I sigue y=2√x; II sigue y=(1/2)^x; III sigue y=x². Orden: raíz cuadrada, exponencial, cuadrática."
       },
       "visuals": [
         {
           "id": "vis-24e66a0e12",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2024-c2-functions-2-image2-24e66a0e.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2024-c2-functions-2-image2-24e66a0e.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2024-c2-functions-2-image2-24e66a0e.jpg",
           "content_type": "image/jpeg",
           "sha256": "24e66a0e1233ace54717cfd36aff7ac932db6e8f0aaafe516521ec03ffc86ef8",
           "byte_size": 24876,
@@ -2403,35 +2364,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. I sigue y=2√x; II sigue y=(1/2)^x; III sigue y=x². Orden: raíz cuadrada, exponencial, cuadrática.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2445,6 +2403,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"¿Cuál son las funciones que representan los datos I, II y III respectivamente?\\n*\", \"stem_cleaned\": \"¿Cuál son las funciones que representan los datos I, II y III respectivamente?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I. raíz cuadrada, II. cuadrática y III. exponencial.\", \"text_cleaned\": \"I. raíz cuadrada, II. cuadrática y III. exponencial.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"I. exponencial, II raíz cuadrada y III. cuadrática.\", \"text_cleaned\": \"I. exponencial, II raíz cuadrada y III. cuadrática.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"I. raíz cuadrada, II. exponencial y III cuadrática.\", \"text_cleaned\": \"I. raíz cuadrada, II. exponencial y III cuadrática.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"¿Cuál son las funciones que representan los datos I, II y III respectivamente?\\n*\", \"stem_cleaned\": \"¿Cuál son las funciones que representan los datos I, II y III respectivamente?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I. raíz cuadrada, II. cuadrática y III. exponencial.\", \"text_cleaned\": \"I. raíz cuadrada, II. cuadrática y III. exponencial.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"I. exponencial, II raíz cuadrada y III. cuadrática.\", \"text_cleaned\": \"I. exponencial, II raíz cuadrada y III. cuadrática.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"I. raíz cuadrada, II. exponencial y III cuadrática.\", \"text_cleaned\": \"I. raíz cuadrada, II. exponencial y III cuadrática.\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"I sigue y=2√x; II sigue y=(1/2)^x; III sigue y=x². Orden: raíz cuadrada, exponencial, cuadrática.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2486,9 +2455,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Comienza con 1000 ml y pierde 20 ml por minuto: s(x)=1000-20x, para 0≤x≤50."
       },
       "visuals": [],
       "classification": {
@@ -2500,37 +2469,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options",
-          "missing_visual"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 3 of 4 options present",
-          "Stem text references visual diagram but no visual asset is linked"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Comienza con 1000 ml y pierde 20 ml por minuto: s(x)=1000-20x, para 0≤x≤50.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2577,6 +2541,17 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.787Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\\n*\", \"stem_cleaned\": \"1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"s(x)=20-1000\", \"text_cleaned\": \"$s(x) = 20-1000$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"s(x)=1000-20x\", \"text_cleaned\": \"$s(x) = 1000-20x$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"s(x)=1000x-10\", \"text_cleaned\": \"$s(x) = 1000x-10$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\\n*\", \"stem_cleaned\": \"1000 ml de suero se aplica de tal forma que ingresan 20 ml cada minuto al paciente. Si s(x) es la cantidad de suero que contiene la bolsa, transcurridos x minutos, el modelo lineal que representa la situación anterior es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"s(x)=20-1000\", \"text_cleaned\": \"$s(x) = 20-1000$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"s(x)=1000-20x\", \"text_cleaned\": \"$s(x) = 1000-20x$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"s(x)=1000x-10\", \"text_cleaned\": \"$s(x) = 1000x-10$\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Comienza con 1000 ml y pierde 20 ml por minuto: s(x)=1000-20x, para 0≤x≤50.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }

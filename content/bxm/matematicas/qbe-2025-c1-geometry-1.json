@@ -1,0 +1,1443 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2025-c1 · Geometría",
+  "convocatoria": "2025-c1",
+  "language": "es-CR",
+  "source": "BXM Math Geo 01 C25.docx",
+  "set_info": {
+    "id": "qbe-2025-c1-geometry-1",
+    "name": "Práctica histórica 2025-c1 · Geometría",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 21,
+    "file": "bxm/matematicas/qbe-2025-c1-geometry-1.json",
+    "convocatoria": "2025-c1"
+  },
+  "total_items": 21,
+  "items": [
+    {
+      "id": 10495,
+      "code": "item-qbe-2025-c1-geometry-1-q01",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la circunferencia c de centro Q. La ecuación de esta circunferencia es",
+      "options": {
+        "A": "$(x-3)^2 + y^2 = 9$",
+        "B": "$x^2 + (y-3)^2 = 9$",
+        "C": "$x^2+(y+3)^2=9$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El centro es (0,-3) y el radio es 3; por tanto x²+(y+3)²=9. Las otras opciones tienen otro centro."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            4
+          ],
+          "y": [
+            -7,
+            1
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              0,
+              -3
+            ],
+            "radius": 3
+          },
+          {
+            "type": "point",
+            "coords": [
+              0,
+              -3
+            ],
+            "label": "Q"
+          },
+          {
+            "type": "point",
+            "coords": [
+              0,
+              -6
+            ],
+            "label": "-6"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q01",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10496,
+      "code": "item-qbe-2025-c1-geometry-1-q02",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La ecuación de una circunferencia con centro (1,0) y radio de 4 unidades, corresponde a",
+      "options": {
+        "A": "$x^2 + (y + 1)^2 = 16$",
+        "B": "$(x-1)^2 + y^2 = 16$",
+        "C": "$(x + 1)^2 + y^2 = 16$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "La forma (x-h)²+(y-k)²=r², con (h,k)=(1,0) y r=4, da (x-1)²+y²=16."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q02",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10497,
+      "code": "item-qbe-2025-c1-geometry-1-q03",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere la circunferencia c y su ecuación: (x+2)^2+(y-1)^2=5. Un punto exterior a dicha circunferencia tiene como coordenadas",
+      "options": {
+        "A": "(1,1)",
+        "B": "(0,1)",
+        "C": "(-1,2)"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Respecto de (-2,1), las distancias al cuadrado de A, B y C son 9, 4 y 2. Solo 9 es mayor que r²=5."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q03",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10498,
+      "code": "item-qbe-2025-c1-geometry-1-q04",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere la circunferencia c que tiene la siguiente ecuación: x^2+(y+1)^2=4. La recta x=-2 es__________ a la circunferencia c.",
+      "options": {
+        "A": "exterior",
+        "B": "secante",
+        "C": "tangente"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El centro es (0,-1), r=2. La distancia a x=-2 es 2, igual al radio; la recta es tangente."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q04",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10499,
+      "code": "item-qbe-2025-c1-geometry-1-q05",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere la circunferencia c que tiene la siguiente ecuación: (x-2)^2+(y-3)^2=1. La recta y=-x es__________ a la circunferencia c.",
+      "options": {
+        "A": "exterior",
+        "B": "secante",
+        "C": "tangente"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El centro es (2,3), r=1. Su distancia a x+y=0 es 5/√2>1, de modo que la recta es exterior."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q05",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10501,
+      "code": "item-qbe-2025-c1-geometry-1-q07",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 7 y 8, analizando las siguientes tres circunferencias:\nSi la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro A, el desplazamiento requerido es",
+      "options": {
+        "A": "8 unidades hacia la izquierda (paralelo eje abscisas X)",
+        "B": "9 unidades hacia la izquierda (paralelo eje abscisas X)",
+        "C": "7 unidades hacia la izquierda (paralelo eje abscisas X)"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "A=(4,2) y B=(-4,2). El desplazamiento es (-8,0): ocho unidades hacia la izquierda."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -6,
+            7
+          ],
+          "y": [
+            -4,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              4,
+              2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "circle",
+            "center": [
+              -4,
+              2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "circle",
+            "center": [
+              5,
+              -2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "point",
+            "coords": [
+              4,
+              2
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -4,
+              2
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              5,
+              -2
+            ],
+            "label": "C"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q07",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10502,
+      "code": "item-qbe-2025-c1-geometry-1-q08",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere las tres circunferencias de la figura. Si la circunferencia de centro B es el resultado de una traslación de la circunferencia de centro C, ¿cuál es el desplazamiento requerido?",
+      "options": {
+        "A": "7 unidades a la izquierda (paralelo al eje de abscisas X) y luego 3 unidades hacia arriba (paralelo al eje Y de ordenadas).",
+        "B": "9 unidades a la izquierda (paralelo al eje de abscisas X) y luego 4 unidades hacia arriba (paralelo al eje Y de ordenadas).",
+        "C": "11 unidades a la izquierda (paralelo al eje de abscisas X) y luego 4 unidades hacia arriba (paralelo al eje Y de ordenadas)."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "C=(5,-2) y B=(-4,2). B-C=(-9,4): nueve unidades hacia la izquierda y cuatro hacia arriba."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -6,
+            7
+          ],
+          "y": [
+            -4,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              4,
+              2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "circle",
+            "center": [
+              -4,
+              2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "circle",
+            "center": [
+              5,
+              -2
+            ],
+            "radius": 1
+          },
+          {
+            "type": "point",
+            "coords": [
+              4,
+              2
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -4,
+              2
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              5,
+              -2
+            ],
+            "label": "C"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q08",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10503,
+      "code": "item-qbe-2025-c1-geometry-1-q09",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "¿Cuál es el área del polígono BAEDC?",
+      "options": {
+        "A": "34.5",
+        "B": "40.0",
+        "C": "45.0"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Con B(8,9), A(-1,6), E(-1,1), D(9,1), C(4,6), la fórmula del área por coordenadas da 45 unidades cuadradas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -2,
+            10
+          ],
+          "y": [
+            0,
+            10
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                8,
+                9
+              ],
+              [
+                -1,
+                6
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                9,
+                1
+              ],
+              [
+                4,
+                6
+              ]
+            ],
+            "labels": [
+              "B",
+              "A",
+              "E",
+              "D",
+              "C"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q09",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10504,
+      "code": "item-qbe-2025-c1-geometry-1-q10",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere un polígono regular, donde se pueden trazar 3 diagonales desde uno de sus vértices. Si este polígono tiene un radio de 3 unidades, ¿cuál es su perímetro?",
+      "options": {
+        "A": "9",
+        "B": "12",
+        "C": "18"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Desde un vértice se trazan n-3=3 diagonales; n=6. En un hexágono regular el lado es igual al radio: P=6·3=18."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q10",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10505,
+      "code": "item-qbe-2025-c1-geometry-1-q11",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Si el ángulo central de un polígono regular mide 90 grados y su diagonal 6 unidades, entonces el área del polígono corresponde a",
+      "options": {
+        "A": "18",
+        "B": "26",
+        "C": "36"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El ángulo central de 90° implica un cuadrado. Una diagonal de 6 da área d²/2=36/2=18."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q11",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10506,
+      "code": "item-qbe-2025-c1-geometry-1-q12",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Si el ángulo interno de un polígono regular mide $60^\\circ$ y su apotema es $2\\sqrt{3}$, ¿cuál es su área?",
+      "options": {
+        "A": "$30\\sqrt{3}$",
+        "B": "$36\\sqrt{3}$",
+        "C": "$27\\sqrt{3}$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El ángulo interno de 60° implica un triángulo equilátero. Con apotema 2√3, el lado es 2a√3=12 y el área es (3·12·2√3)/2=36√3."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q12",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10507,
+      "code": "item-qbe-2025-c1-geometry-1-q13",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "¿Cuántos ejes de simetría tiene la siguiente figura?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El rectángulo de vértices (-2,2),(2,2),(2,-3),(-2,-3) tiene dos ejes de simetría, x=0 e y=-0.5; no es un cuadrado."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -5,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                2
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                -3
+              ],
+              [
+                -2,
+                -3
+              ]
+            ],
+            "labels": [
+              "N",
+              "M",
+              "P",
+              "O"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q13",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10508,
+      "code": "item-qbe-2025-c1-geometry-1-q14",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "¿Cuál es un eje de simetría para la siguiente figura?",
+      "options": {
+        "A": "$y = x$",
+        "B": "$x = 0$",
+        "C": "$y = -x$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La reflexión (x,y)→(-y,-x) fija N(-4,4) y P(3,-3) e intercambia M(2,2) con O(-2,-2). Su eje es y=-x."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -4,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -4,
+                4
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                -2,
+                -2
+              ]
+            ],
+            "labels": [
+              "N",
+              "M",
+              "P",
+              "O"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q14",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10509,
+      "code": "item-qbe-2025-c1-geometry-1-q15",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Los vértices de un cuadrado ABCD tienen como coordenadas: A(0,0), B(2,0), C(2,-2) y D(0,-2).\nLos vértices de un cuadrado A'B'C'D' tienen como coordenadas: A'(0,0), B'(0,2), C'(-2,2) y D'(-2,0).\n¿Cuál opción representa un eje de simetría para estos dos cuadrados?",
+      "options": {
+        "A": "$x = 0$",
+        "B": "$y = x$",
+        "C": "$y = 0$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "La reflexión respecto de y=x transforma (x,y) en (y,x), enviando A,B,C,D a A′,B′,C′,D′ respectivamente."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q15",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10510,
+      "code": "item-qbe-2025-c1-geometry-1-q16",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nCuando se aplica una reflexión con la recta y=-x sobre el cuadrado DEFG, ¿cuáles son las coordenadas de la imagen del vértice F?",
+      "options": {
+        "A": "(2,1)",
+        "B": "(-2,2)",
+        "C": "(-1,2)"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "F=(-1,-2). Reflejar en y=-x aplica (x,y)→(-y,-x), de donde F′=(2,1)."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            3
+          ],
+          "y": [
+            -3,
+            3
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "labels": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q16",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10511,
+      "code": "item-qbe-2025-c1-geometry-1-q17",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi al cuadrilátero DEFG se le aplica una homotecia con centro en (0,0) y k=-2, entonces, ¿cuáles son las coordenadas de la imagen del vértice F?",
+      "options": {
+        "A": "(-4,-2)",
+        "B": "(2,4)",
+        "C": "(4,2)"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Con F=(-1,-2) y centro en el origen, la homotecia de razón -2 da F′=(2,4)."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            3
+          ],
+          "y": [
+            -3,
+            3
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "labels": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q17",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10512,
+      "code": "item-qbe-2025-c1-geometry-1-q18",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 16, 17 y 18 con base en la siguiente figura:\nSi el cuadrilátero DEFG se traslada con (x+3, y-1) y luego una rotación de 90° con centro en (0,0) y en sentido antihorario, entonces, ¿cuáles son las coordenadas de la imagen del vértice E?",
+      "options": {
+        "A": "(1,2)",
+        "B": "(2,1)",
+        "C": "(1,-2)"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "E=(-2,-1); al trasladar se obtiene (1,-2). Una rotación antihoraria de 90° envía (x,y) a (-y,x), de donde (2,1)."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            3
+          ],
+          "y": [
+            -3,
+            3
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "labels": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q18",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10513,
+      "code": "item-qbe-2025-c1-geometry-1-q19",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la siguiente figura de un cono circular recto al que se le aplicó un corte paralelo a su base. ¿Cuál es la medida de la altura del cono antes del corte?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Si H es la altura total, por semejanza 3/5=(H-4)/H. Así 3H=5H-20 y H=10."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -6,
+            6
+          ],
+          "y": [
+            -1,
+            11
+          ]
+        },
+        "show_ticks": false,
+        "show_tick_labels": false,
+        "show_numbers": false,
+        "alt": "Sección axial del cono: radio basal 5, radio del corte 3 y distancia entre el corte y la base 4.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -5,
+                0
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                10
+              ]
+            ],
+            "labels": [
+              "",
+              "",
+              "A"
+            ]
+          },
+          {
+            "type": "line",
+            "p1": [
+              -3,
+              4
+            ],
+            "p2": [
+              3,
+              4
+            ]
+          },
+          {
+            "type": "line",
+            "p1": [
+              0,
+              0
+            ],
+            "p2": [
+              0,
+              10
+            ],
+            "dashed": true
+          },
+          {
+            "type": "label",
+            "coords": [
+              1.5,
+              4.5
+            ],
+            "text": "3"
+          },
+          {
+            "type": "label",
+            "coords": [
+              2.5,
+              0.5
+            ],
+            "text": "5"
+          },
+          {
+            "type": "label",
+            "coords": [
+              -0.6,
+              2
+            ],
+            "text": "4"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q19",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10514,
+      "code": "item-qbe-2025-c1-geometry-1-q20",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Una esfera cuyo diámetro mide 10 unidades, es cortada por un plano y se forma una sección plana. Si la distancia al centro de la sección plana es de 3, entonces, la longitud de dicha sección plana corresponde a",
+      "options": {
+        "A": "8Π",
+        "B": "14Π",
+        "C": "20Π"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El radio de la esfera es 5. El radio de la sección es √(25-9)=4 y su longitud es 2π·4=8π."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q20",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10515,
+      "code": "item-qbe-2025-c1-geometry-1-q21",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La sección plana que se forma cuando un cono circular recto es cortado por un plano paralelo al plano de la base corresponde a una",
+      "options": {
+        "A": "parábola",
+        "B": "hipérbola",
+        "C": "circunferencia"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Un corte de un cono circular recto paralelo a su base produce una sección circular, cuya frontera es una circunferencia."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q21",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    },
+    {
+      "id": 10516,
+      "code": "item-qbe-2025-c1-geometry-1-q22",
+      "set_id": "qbe-2025-c1-geometry-1",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "En la siguiente figura se muestra un trozo de madera. Tiene forma de un cilindro recto. El diámetro y la altura miden 40 pulgadas cada uno. A dicha pieza se le realiza un corte perpendicular al plano de la base. Si el corte se realiza a 12 pulgadas del centro de la base, entonces, ¿cuál es el área del corte?",
+      "options": {
+        "A": "960",
+        "B": "1280",
+        "C": "1600"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El radio es 20 y la distancia del plano al eje es 12. El ancho del corte es 2√(20²-12²)=32. Su área es 32·40=1280 pulgadas cuadradas."
+      ],
+      "visual_spec": {
+        "type": "solid_3d",
+        "shape": "cylinder",
+        "parameters": {
+          "radius": 70,
+          "height": 140,
+          "chordDistance": 42
+        },
+        "crossSectionType": "chord",
+        "crossSectionOffset": 42,
+        "referenceBox": {
+          "title": "Medidas en pulgadas",
+          "lines": [
+            "Diámetro: 40",
+            "Altura: 40",
+            "Distancia del corte al eje: 12"
+          ]
+        },
+        "alt": "Cilindro con un corte paralelo al eje a 12 pulgadas de él; radio 20 y altura 40."
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2025-c1-geometry-1-q22",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2025-c1-geometry-1",
+        "filename": "BXM Math Geo 01 C25.docx",
+        "convocatoria": "2025-c1",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2025-1 (BXM Math Geo 01 C25)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2025-c1"
+      ]
+    }
+  ]
+}

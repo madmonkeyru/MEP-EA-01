@@ -92,8 +92,8 @@ for (const sub of subdirs) {
         errorCount++;
       }
 
-      if (!item.options || typeof item.options !== 'object' || !item.options.A || !item.options.B || !item.options.C || !item.options.D) {
-        console.error(`[ERROR] Item ${file}: invalid options structure (A, B, C, D required).`);
+      if (!item.options || typeof item.options !== 'object' || !item.options.A || !item.options.B || !item.options.C) {
+        console.error(`[ERROR] Item ${file}: invalid options structure (A, B, C required; D optional).`);
         errorCount++;
       }
 
@@ -376,6 +376,45 @@ for (const file of fs.readdirSync(calendarDir).filter(name => name.endsWith('.js
   }
 }
 if (calendarEvents) console.log(`[PASS] Checked ${calendarEvents} calendar events.`);
+
+// Published QBE bundles use the same playable item contract as the atomic bank.
+// Staging records must never become selectable merely because their JSON exists.
+const publicationPath = path.join(ROOT_DIR, 'content/qbe/manifests/publication_report.json');
+if (fs.existsSync(publicationPath)) {
+  const publication = JSON.parse(fs.readFileSync(publicationPath, 'utf8'));
+  const expected = new Map(publication.questions.filter(q => q.enabled).map(q => [q.id, q]));
+  const encountered = new Set();
+  const registered = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')).programs
+    .find(program => program.id === 'bxm').subjects.find(subject => subject.id === 'matematicas').sets
+    .filter(set => set.id.startsWith('qbe-'));
+  for (const set of registered) {
+    const bundle = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content', set.file), 'utf8'));
+    if (bundle.items.length !== set.total_items || bundle.total_items !== set.total_items) {
+      console.error(`[ERROR] QBE set ${set.id}: inconsistent released count.`); errorCount++;
+    }
+    for (const item of bundle.items) {
+      const source = item.source_question_id;
+      const canonicalFile = source.replace(/-q\d+$/, '') + '-cleaned.json';
+      const canonical = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content/qbe/cleaned', canonicalFile), 'utf8'))
+        .questions.find(question => question.id === source);
+      const letters = Object.keys(item.options);
+      if (!expected.has(source) || encountered.has(source) || itemNumericIds.has(item.id) || itemCodes.has(item.code) ||
+          item.id !== publication.runtime_id_map[source] || item.set_id !== set.id || !item.stem?.trim() ||
+          !['A','B','C'].every(key => item.options[key]?.trim()) || ![3,4].includes(letters.length) ||
+          !letters.every(key => ['A','B','C','D'].includes(key)) || !letters.includes(item.correct_answer) ||
+          !item.solution_steps?.length || canonical?.quality.status !== 'approved' ||
+          !canonical?.review.answer_reviewed || !canonical?.quality.gate_c_internalization_passed ||
+          canonical?.content.detected_answer !== item.correct_answer) {
+        console.error(`[ERROR] QBE item ${source}: publication, identity, answer or required fields mismatch.`); errorCount++;
+      }
+      encountered.add(source); itemNumericIds.add(item.id); itemCodes.add(item.code); itemsValidated++;
+    }
+  }
+  if (encountered.size !== expected.size) {
+    console.error('[ERROR] Approved QBE questions missing from registered release bundles.'); errorCount++;
+  }
+  console.log(`[PASS] Checked ${encountered.size} released QBE items across ${registered.length} practice sets.`);
+}
 
 console.log('\n=====================================================');
 console.log(`Summary: ${itemsValidated} items | ${allBlueprints.length} blueprints | ${errorCount} errors | ${warningCount} warnings`);

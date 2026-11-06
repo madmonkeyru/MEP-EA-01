@@ -8,7 +8,7 @@ require.extensions['.ts'] = (module, filename) => {
     .replace(/import\s+\{([^}]+)\}\s+from\s+['"]([^'"]+)['"];?/g, (_, bindings, target) =>
       `const {${bindings.replace(/\s+as\s+/g, ':')}} = require(${JSON.stringify(target)});`)
     .replace(/import\s+(\w+)\s+from\s+['"]([^'"]+)['"];?/g, (_, binding, target) => `const ${binding} = require(${JSON.stringify(target)});`)
-    .replace(/export\s+(class|function|const|let)\s+(\w+)/g, (_, kind, name) => { names.push(name); return `${kind} ${name}`; })
+    .replace(/export\s+(async\s+)?(class|function|const|let)\s+(\w+)/g, (_, asyncPrefix, kind, name) => { names.push(name); return `${asyncPrefix || ''}${kind} ${name}`; })
     .replace(/export\s*\{\s*\};?/g, '');
   module._compile(`${code}\nObject.assign(exports, {${names.join(',')}});`, filename);
 };

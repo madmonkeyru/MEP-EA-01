@@ -8,6 +8,31 @@ import {
 import { scanRawAssets } from '../../services/qbe/assetInventory';
 
 describe('QBE-02: DOCX Content & Visual Asset Extraction Engine', () => {
+  it('restores tab-separated rows and keeps mathematical B) inside the question stem', async () => {
+    const { summary } = await scanRawAssets();
+    const stats = summary.assets.find(a => a.convocatoria === '2025-c1' && a.area === 'statistics')!;
+    const result = await extractDocxContentAndVisuals(stats, path.resolve(stats.rel_path));
+    expect(result.questions[0].stem_text).toContain('Examen 1 30 65');
+    const other = summary.assets.find(a => a.convocatoria === '2024-c2' && a.area === 'statistics')!;
+    const recovered = await extractDocxContentAndVisuals(other, path.resolve(other.rel_path));
+    const q32 = recovered.questions.find(q => q.source_question_number === 32)!;
+    expect(q32.stem_text).toContain('P(A U B)');
+    expect(q32.options.map(o => o.id)).toEqual(['A', 'B', 'C']);
+  });
+
+  it('reattaches numbered statements and recovers the implicit source question 13', async () => {
+    const { summary } = await scanRawAssets();
+    const functions = summary.assets.find(a => a.convocatoria === '2023-c1' && a.area === 'functions')!;
+    const result = await extractDocxContentAndVisuals(functions, path.resolve(functions.rel_path));
+    expect(result.questions).toHaveLength(15);
+    expect(new Set(result.questions.map(q => q.id)).size).toBe(15);
+    expect(result.questions.find(q => q.source_question_number === 25)?.stem_text).toContain('y=x²-36');
+    const geometry = summary.assets.find(a => a.convocatoria === '2022-c1' && a.area === 'geometry')!;
+    const recovered = await extractDocxContentAndVisuals(geometry, path.resolve(geometry.rel_path));
+    const q13 = recovered.questions.find(q => q.source_question_number === 13)!;
+    expect(q13.stem_text).toContain('ejes de simetría');
+    expect(q13.options).toHaveLength(4);
+  });
   it('parses OpenXML relationships correctly', () => {
     const sampleRels = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">

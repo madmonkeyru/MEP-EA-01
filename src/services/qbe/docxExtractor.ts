@@ -57,8 +57,12 @@ function extractTextAndBlipsFromP(pObj: any): { text: string; blipRIds: string[]
     // Check for text node w:t
     if (node['w:t'] !== undefined) {
       const t = node['w:t'];
-      if (typeof t === 'string') texts.push(t);
-      else if (typeof t === 'object' && t['#text']) texts.push(String(t['#text']));
+      const parts = Array.isArray(t) ? t : [t];
+      parts.forEach((part, index) => {
+        if (index > 0) texts.push(' '); // Word tab-separated table cells in one run
+        if (typeof part === 'string' || typeof part === 'number') texts.push(String(part));
+        else if (part && part['#text'] !== undefined) texts.push(String(part['#text']));
+      });
     }
 
     // Check for drawing / blip
@@ -152,11 +156,15 @@ export async function extractDocxContentAndVisuals(
     const pArr = Array.isArray(pList) ? pList : [pList];
     pArr.forEach((p, idx) => {
       const { text, blipRIds } = extractTextAndBlipsFromP(p);
-      rawParagraphs.push({
+      // Some Forms exports put all alternatives in a single Word paragraph.
+      // Do not split expressions such as P(A U B): B) is not an option there.
+      const containsAlternatives = /^\s*[A-D][).]\s/.test(text) || /\sA[).]\s/.test(text);
+      const lines = containsAlternatives ? text.split(/\n|\s+(?=[A-D][).]\s)/) : text.split(/\n/);
+      lines.forEach((line, lineIndex) => rawParagraphs.push({
         index: idx,
-        text,
-        blipRIds,
-      });
+        text: line,
+        blipRIds: lineIndex === 0 ? blipRIds : [],
+      }));
     });
   }
 
@@ -165,7 +173,8 @@ export async function extractDocxContentAndVisuals(
   const questionStartRegex = /^\s*(\d{1,3})\s*[-.)]\s*(.*)$/;
   const optionRegex = /^\s*([A-D])\s*[-.)]\s*(.*)$/i;
   // Shared context banner pattern (e.g. "Para responder las preguntas 2 y 3...", "Con base en la siguiente figura responda los ítems 4, 5 y 6...")
-  const sharedContextRegex = /^(?:responda|con base en|para responder|considere la siguiente información)/i;
+  const sharedContextRegex = /^(?:para|responda|con base|considere|analice|conteste).*?(?:preguntas?|ítems?)\s*\d/i;
+  let lastQuestionNumber = 0;
 
   const questions: ExtractedQuestionItem[] = [];
   let currentQ: {
@@ -178,6 +187,7 @@ export async function extractDocxContentAndVisuals(
   let activeSharedContextText: string[] = [];
   let activeSharedVisuals: ExtractedVisualAsset[] = [];
   let sharedContextRemainingQuestions = 0; // Number of items this shared context applies to
+  let sharedContextFirstQuestion = 0;
 
   function resolveVisualAsset(rId: string): ExtractedVisualAsset | null {
     const target = relMap.get(rId);
@@ -278,8 +288,13 @@ export async function extractDocxContentAndVisuals(
         currentQ = null;
       }
       // Parse how many questions this banner applies to, e.g. "preguntas 2 y 3" -> 2 items, "ítems 4, 5 y 6" -> 3 items
-      const targetNumbers = Array.from(text.matchAll(/\b\d{1,3}\b/g)).map(m => parseInt(m[0], 10));
-      sharedContextRemainingQuestions = targetNumbers.length > 0 ? targetNumbers.length : 2;
+      const numberList = text.match(/(?:preguntas?|ítems?)\s*(\d+(?:(?:\s*,\s*(?:y\s*)?|\s+(?:y|a|al|hasta)\s+|\s*-\s*)\d+)*)/i)?.[1] || '';
+      const targetNumbers = Array.from(numberList.matchAll(/\d+/g)).map(m => parseInt(m[0], 10));
+      sharedContextFirstQuestion = targetNumbers[0] || 0;
+      const range = text.match(/(?:preguntas?|ítems?)\s*(\d+)\s*(?:a|al|hasta|-)\s*(\d+)/i);
+      sharedContextRemainingQuestions = range
+        ? Number(range[2]) - Number(range[1]) + 1
+        : targetNumbers.length > 0 ? targetNumbers.length : 2;
 
       activeSharedContextText = [text];
       activeSharedVisuals = [...paragraphVisuals];
@@ -288,12 +303,13 @@ export async function extractDocxContentAndVisuals(
 
     // Check if new question starts
     const qMatch = text.match(questionStartRegex);
-    if (qMatch) {
+    if (qMatch && Number(qMatch[1]) > lastQuestionNumber && Number(qMatch[1]) <= 60) {
       if (currentQ) {
         finalizeQuestion(currentQ);
       }
 
       const qNum = parseInt(qMatch[1], 10);
+      lastQuestionNumber = qNum;
       const restOfStem = qMatch[2];
 
       const initialStem: string[] = [];
@@ -324,6 +340,14 @@ export async function extractDocxContentAndVisuals(
 
     // Check option line (A, B, C, D)
     const optMatch = text.match(optionRegex);
+    // An unnumbered first question may follow an explicit shared range (e.g. 13 y 14).
+    if (optMatch && !currentQ && sharedContextFirstQuestion > lastQuestionNumber && activeSharedContextText.some(line => line.includes('¿'))) {
+      currentQ = { qNum: sharedContextFirstQuestion, stemLines: [...activeSharedContextText],
+        options: new Map(), visuals: [...activeSharedVisuals] };
+      lastQuestionNumber = sharedContextFirstQuestion;
+      sharedContextRemainingQuestions--;
+      activeSharedContextText = activeSharedContextText.filter(line => !line.includes('¿'));
+    }
     if (optMatch && currentQ) {
       const letter = optMatch[1].toUpperCase();
       const optText = optMatch[2].trim();

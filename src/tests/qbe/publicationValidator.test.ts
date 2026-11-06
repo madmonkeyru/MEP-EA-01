@@ -107,6 +107,19 @@ describe('M5.2: Publication Eligibility Validator', () => {
     expect(result.warnings.some((w) => w.code === 'UNMAPPED_EVALUATION')).toBe(true);
   });
 
+  it('accepts source A–C questions but rejects an answer absent from their options', () => {
+    const question = createMockQuestion();
+    question.content.options = question.content.options.slice(0, 3);
+    question.content.detected_answer = 'C';
+    expect(PublicationEligibilityValidator.validateQuestion(question).is_eligible_for_release).toBe(true);
+    question.content.detected_answer = 'D';
+    expect(PublicationEligibilityValidator.validateQuestion(question).blockers
+      .some(issue => issue.code === 'MISSING_OR_INVALID_ANSWER_KEY')).toBe(true);
+    question.content.options[2].id = 'B';
+    expect(PublicationEligibilityValidator.validateQuestion(question).blockers
+      .some(issue => issue.code === 'MALFORMED_OPTION_KEYS')).toBe(true);
+  });
+
   it('yields BLOCKER if stem is missing, options are incomplete, or answer key is missing', () => {
     const corruptedQ = createMockQuestion({
       content: {

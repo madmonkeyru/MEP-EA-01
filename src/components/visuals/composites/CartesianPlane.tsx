@@ -101,6 +101,7 @@ export function renderPrimitive(child: any, transform: CoordinateTransform, key:
           labelPosition={child.label_position}
           color={resolveColor(child, 'var(--visual-primary, #2563eb)')}
           radius={child.radius}
+          open={child.open}
           transform={transform}
         />
       );

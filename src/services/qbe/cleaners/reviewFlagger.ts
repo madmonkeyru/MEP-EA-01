@@ -55,9 +55,9 @@ export function cleanAndReviewCanonicalQuestion(
   }
 
   // Stage 2 Flag 2: Incomplete Options (< 4 options)
-  if (item.content.options.length < 4) {
+  if (item.content.options.length < 3) {
     flags.push('incomplete_options');
-    issues.push(`Incomplete option count: ${item.content.options.length} of 4 options present`);
+    issues.push(`Incomplete option count: ${item.content.options.length} options present (minimum 3)`);
   }
 
   // Stage 2 Flag 3: Missing Visual Asset check
@@ -84,7 +84,7 @@ export function cleanAndReviewCanonicalQuestion(
   // Gate B: Passed if no critical issues (has stem, at least 4 options, and no missing visual)
   item.quality.gate_b_quality_passed =
     item.content.stem_cleaned.length > 0 &&
-    item.content.options.length === 4 &&
+    [3, 4].includes(item.content.options.length) &&
     !flags.includes('missing_visual');
 
   item.history.transformations = allTransformations;

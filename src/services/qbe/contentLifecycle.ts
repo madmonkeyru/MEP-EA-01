@@ -85,12 +85,12 @@ export class ContentLifecycleManager {
           timestamp: now,
         });
       }
-      if (!question.content.options || question.content.options.length !== 4) {
+      if (!question.content.options || ![3, 4].includes(question.content.options.length)) {
         blockers.push({
           code: 'INVALID_OPTIONS_COUNT',
           stage: 'parsed',
           severity: 'blocker',
-          message: `Expected 4 options, found ${question.content.options?.length ?? 0}.`,
+          message: `Expected 3 or 4 options, found ${question.content.options?.length ?? 0}.`,
           field: 'content.options',
           timestamp: now,
         });

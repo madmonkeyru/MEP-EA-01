@@ -1,0 +1,1870 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2021-c2 · Geometría",
+  "convocatoria": "2021-c2",
+  "language": "es-CR",
+  "source": "BXM Math GEO 02 C21.docx",
+  "set_info": {
+    "id": "qbe-2021-c2-geometry-2",
+    "name": "Práctica histórica 2021-c2 · Geometría",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 22,
+    "file": "bxm/matematicas/qbe-2021-c2-geometry-2.json",
+    "convocatoria": "2021-c2"
+  },
+  "total_items": 22,
+  "items": [
+    {
+      "id": 10178,
+      "code": "item-qbe-2021-c2-geometry-2-q01",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere la siguiente circunferencia “C”:\nCon base en la información dada la ecuación de “C” corresponde",
+      "options": {
+        "A": "$(x-2)^2 + (y-5)^2 = 4$",
+        "B": "$(x + 2)^2 + (y + 5)^2 = 4$",
+        "C": "$(x-3)^2 + (y-3)^2 = 4$",
+        "D": "$(x + 3)^2 + (y + 3)^2 = 4$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El centro es (2,5) y el radio OB=2; la ecuación es (x-2)²+(y-5)²=4."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -1,
+            6
+          ],
+          "y": [
+            0,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              2,
+              5
+            ],
+            "radius": 2
+          },
+          {
+            "type": "point",
+            "coords": [
+              2,
+              5
+            ],
+            "label": "O"
+          },
+          {
+            "type": "point",
+            "coords": [
+              2,
+              3
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              2,
+              7
+            ],
+            "label": "B"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q01",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10179,
+      "code": "item-qbe-2021-c2-geometry-2-q02",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Sea “S” la circunferencia con centro en (-1,3). Si la medida de su radio es 4, entonces, la ecuación de “S” corresponde a",
+      "options": {
+        "A": "$(x-1)^2 + (y + 3)^2 = 8$",
+        "B": "$(x + 1)^2 + (y-3)^2 = 8$",
+        "C": "$(x-1)^2 + (y + 3)^2 = 16$",
+        "D": "$(x + 1)^2 + (y-3)^2 = 16$"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Centro (-1,3), radio 4 dan (x+1)²+(y-3)²=16."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q02",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10180,
+      "code": "item-qbe-2021-c2-geometry-2-q03",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere las siguientes proposiciones referidas a la circunferencia “d” dada por: (x-1)^2 + (y+1)^2 = 2:\nI. M(14,1) es un punto ubicado en el interior a “d’.\nII. T(1,-1) es un punto ubicado en el exterior a “d”.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "M(14,1) dista al cuadrado 173 del centro (1,-1), mayor que 2, por lo que no es interior. T es el centro, así que no es exterior. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q03",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10181,
+      "code": "item-qbe-2021-c2-geometry-2-q04",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 4 y 5 considere la siguiente información referida a la circunferencia dada por c: (x-1)^2 + y^2=9 y la posición de diversas rectas\nConsidere las siguientes proposiciones:\nI. y=3 es una recta secante a la circunferencia.\nII. x=3 es una recta tangente a la circunferencia.\nDe ellas, ¿cuál es verdadera?",
+      "options": {
+        "A": "ninguna.",
+        "B": "solo la I.",
+        "C": "solo la II.",
+        "D": "ambas."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La distancia a y=3 es 3, igual al radio, por lo que es tangente y no secante. La distancia a x=3 es 2<3, por lo que es secante y no tangente. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q04",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10182,
+      "code": "item-qbe-2021-c2-geometry-2-q05",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 4 y 5 considere la siguiente información referida a la circunferencia dada por c: (x-1)^2 + y^2=9 y la posición de diversas rectas\nConsidere las siguientes proposiciones:\nl. x=-3 es exterior.\nll. y=-x es secante.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "x=-3 dista 4 del centro (1,0), mayor que el radio 3. La recta y=-x dista 1/√2<3 y es secante. Ambas verdaderas."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q05",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10183,
+      "code": "item-qbe-2021-c2-geometry-2-q06",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 6, 7 y 8 considere la siguiente información referida a la circunferencia “C”:\nCon certeza se cumple que r es perpendicular a la recta que contiene a los puntos",
+      "options": {
+        "A": "A y O",
+        "B": "A y T",
+        "C": "T y O",
+        "D": "T y B"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La recta r es tangente en A. Por tanto, es perpendicular al radio AO."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              1,
+              4
+            ],
+            "radius": 2
+          },
+          {
+            "type": "line",
+            "slope": -1,
+            "intercept": 2.1715728752538097
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              4
+            ],
+            "label": "O"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -0.4142135623730949,
+              2.585786437626905
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              2.414213562373095,
+              5.414213562373095
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              2
+            ],
+            "label": "T"
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              8
+            ],
+            "text": "r"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q06",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10184,
+      "code": "item-qbe-2021-c2-geometry-2-q07",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 6, 7 y 8 considere la siguiente información referida a la circunferencia “C”:\nSi “C” se traslada dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
+      "options": {
+        "A": "$(x-1)^2 + (y + 2)^2 = 4$",
+        "B": "$(x + 3)^2 + (y-4)^2 = 4$",
+        "C": "$(x-1)^2 + (y-6)^2 = 4$",
+        "D": "$(x + 3)^2 + (y + 6)^2 = 4$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El centro original es (1,4); al subir 2 queda en (1,6), conservando r²=4."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              1,
+              4
+            ],
+            "radius": 2
+          },
+          {
+            "type": "line",
+            "slope": -1,
+            "intercept": 2.1715728752538097
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              4
+            ],
+            "label": "O"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -0.4142135623730949,
+              2.585786437626905
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              2.414213562373095,
+              5.414213562373095
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              2
+            ],
+            "label": "T"
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              8
+            ],
+            "text": "r"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q07",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10185,
+      "code": "item-qbe-2021-c2-geometry-2-q08",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 6, 7 y 8 considere la siguiente información referida a la circunferencia “C”:\nSi “C” traslada su centro dos unidades hacia la izquierda (paralelo al eje X). Luego una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación corresponde a",
+      "options": {
+        "A": "$(x + 1)^2 + (y-3)^2 = 4$",
+        "B": "$(x + 1)^2 + (y + 3)^2 = 4$",
+        "C": "$(x-5)^2 + (y-5)^2 = 4$",
+        "D": "$(x-5)^2 + (y + 5)^2 = 4$"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Trasladar (1,4) dos a la izquierda y una abajo da (-1,3). La ecuación es (x+1)²+(y-3)²=4."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              1,
+              4
+            ],
+            "radius": 2
+          },
+          {
+            "type": "line",
+            "slope": -1,
+            "intercept": 2.1715728752538097
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              4
+            ],
+            "label": "O"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -0.4142135623730949,
+              2.585786437626905
+            ],
+            "label": "A"
+          },
+          {
+            "type": "point",
+            "coords": [
+              2.414213562373095,
+              5.414213562373095
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              2
+            ],
+            "label": "T"
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              8
+            ],
+            "text": "r"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q08",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10186,
+      "code": "item-qbe-2021-c2-geometry-2-q09",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere el siguiente polígono regular AETSRB:\nCon base en la información dada considere las siguientes proposiciones:\nI. si el radio mide 4, entonces, el perímetro de AETSRB corresponde a 24.\nII. si la apotema mide $3\\sqrt{3}$ entonces, el área de AETSRB corresponde a $54\\sqrt{3}$.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "En el hexágono regular lado=radio, de modo que P=6·4=24. Con apotema 3√3, lado=6 y área=36·3√3/2=54√3. Ambas verdaderas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -4,
+            4
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                3
+              ],
+              [
+                -4,
+                0
+              ],
+              [
+                -2,
+                -3
+              ],
+              [
+                2,
+                -3
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "labels": [
+              "A",
+              "E",
+              "T",
+              "S",
+              "R",
+              "B"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q09",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10187,
+      "code": "item-qbe-2021-c2-geometry-2-q10",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Considere las siguientes proposiciones:\nSi el ángulo interno de un polígono regular mide 60° y el lado 4, entonces, el perímetro de ese polígono es 16.\nSi el ángulo central de un polígono regular mide 90° y el lado 5, entonces, el área de ese polígono corresponde a 18.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Ángulo interno 60° implica un triángulo de perímetro 12, no 16. Ángulo central 90° implica un cuadrado de área 25, no 18. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q10",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10188,
+      "code": "item-qbe-2021-c2-geometry-2-q11",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice el polígono ABCDE:\n¿Cuál es el área del polígono ABCDE?",
+      "options": {
+        "A": "23",
+        "B": "27",
+        "C": "31",
+        "D": "42"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Con A(-2,0),B(4,0),C(4,7),D(0,5),E(0,3), el área por coordenadas es 27."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            6
+          ],
+          "y": [
+            -1,
+            8
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q11",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10189,
+      "code": "item-qbe-2021-c2-geometry-2-q12",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La diagonal de un polígono regular mide $5\\sqrt{2}$. Si el ángulo externo mide 90°, entonces, el área de ese polígono corresponde a",
+      "options": {
+        "A": "18",
+        "B": "20",
+        "C": "25",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Ángulo externo 90° implica cuadrado. Con diagonal 5√2, el lado es 5 y el área es 25."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q12",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10190,
+      "code": "item-qbe-2021-c2-geometry-2-q13",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 13, 14 y 15 considere la siguiente información:\nAl polígono EFGHJI se le pueden trazar en total___ eje(s) de simetría.",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La figura es simétrica solo en x=0. La muesca superior y el vértice inferior impiden una simetría horizontal."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                3
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                -3,
+                8
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H",
+              "J",
+              "I"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q13",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10191,
+      "code": "item-qbe-2021-c2-geometry-2-q14",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 13, 14 y 15 considere la siguiente información:\nPara el punto E, ¿cuál es su homólogo a través del eje Y?",
+      "options": {
+        "A": "I",
+        "B": "J",
+        "C": "G",
+        "D": "H"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "E=(-3,3); su reflejo respecto del eje Y es (3,3), el punto G."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                3
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                -3,
+                8
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H",
+              "J",
+              "I"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q14",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10192,
+      "code": "item-qbe-2021-c2-geometry-2-q15",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para responder los ítems 13, 14 y 15 considere la siguiente información:\nConsidere las siguientes proposiciones\nI. El triángulo ∆GJH tiene un eje de simetría.\nll. El cuadrilátero ☐FGHJ se le puede trazar al menos un eje de simetría.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El triángulo GJH tiene lados 5,√13,√18 y es escaleno. FGHJ es un paralelogramo oblicuo con lados desiguales, sin eje de reflexión. Ninguna verdadera."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -1,
+            9
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                3
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                -3,
+                8
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H",
+              "J",
+              "I"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q15",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10193,
+      "code": "item-qbe-2021-c2-geometry-2-q16",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para contestar los ítems 16, 17 y 18 considere las siguientes figuras:\nConsidere las siguientes proposiciones al aplicarle al triangulo amarillo una rotación de 90° con centro en el origen de coordenadas y sentido contrario al desplazamiento de las manecillas del reloj (hacia la izquierda):\nI. La imagen del punto (3,1) corresponde a (1,3).\nII. La imagen del punto (3,2) corresponde a (-2,3).\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Una rotación antihoraria de 90° envía (x,y) a (-y,x). (3,1)→(-1,3), no (1,3); (3,2)→(-2,3). Solo II."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              2.5
+            ],
+            "text": "Amarillo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                -3
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                3,
+                -4
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              -4.5
+            ],
+            "text": "Rojo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                -2
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                -1,
+                -1
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              -2.5
+            ],
+            "text": "Verde"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                4
+              ],
+              [
+                -3,
+                3
+              ],
+              [
+                -1,
+                3
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              4.5
+            ],
+            "text": "Azul"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q16",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10194,
+      "code": "item-qbe-2021-c2-geometry-2-q17",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para contestar los ítems 16, 17 y 18 considere las siguientes figuras:\nConsidere las siguientes proposiciones suponiendo que el triángulo amarillo es el resultado de aplicar una transformación al triangulo rojo:\nI. El punto imagen de (1,1) corresponde a (1,-3).\nll. Una forma de obtener el triángulo amarillo es aplicándole al triangulo rojo una reflexión sobre sobre y = -1.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "La transformación indicada lleva el triángulo rojo al amarillo, no al revés. La reflexión en y=-1 lleva los vértices rojos a los amarillos. Solo II es correcta."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              2.5
+            ],
+            "text": "Amarillo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                -3
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                3,
+                -4
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              -4.5
+            ],
+            "text": "Rojo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                -2
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                -1,
+                -1
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              -2.5
+            ],
+            "text": "Verde"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                4
+              ],
+              [
+                -3,
+                3
+              ],
+              [
+                -1,
+                3
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              4.5
+            ],
+            "text": "Azul"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q17",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10195,
+      "code": "item-qbe-2021-c2-geometry-2-q18",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Para contestar los ítems 16, 17 y 18 considere las siguientes figuras:\nConsidere las siguientes proposiciones:\nI. Una forma de obtener el triángulo amarillo es aplicándole al triangulo verde la traslación (x+4, y+3).\nII. Una forma de obtener el triángulo azul es aplicándole al triangulo rojo una homotecia centrada en el origen de coordenadas y de razón k = -1.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas.",
+        "B": "ninguna.",
+        "C": "solo la I.",
+        "D": "solo la II."
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "Sumar (4,3) a los vértices verdes produce los amarillos. Multiplicar los vértices rojos por -1 produce los azules. Ambas verdaderas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              2.5
+            ],
+            "text": "Amarillo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                -3
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                3,
+                -4
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              2,
+              -4.5
+            ],
+            "text": "Rojo"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                -2
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                -1,
+                -1
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              -2.5
+            ],
+            "text": "Verde"
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -3,
+                4
+              ],
+              [
+                -3,
+                3
+              ],
+              [
+                -1,
+                3
+              ]
+            ],
+            "labels": []
+          },
+          {
+            "type": "label",
+            "coords": [
+              -3,
+              4.5
+            ],
+            "text": "Azul"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q18",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10196,
+      "code": "item-qbe-2021-c2-geometry-2-q19",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Un cono circular recto es intersecado por un plano perpendicular al plano de la base. Si el plano no contiene el vértice del cono, entonces, la sección plana producto de dicha intersección corresponde a una",
+      "options": {
+        "A": "elipse.",
+        "B": "parábola.",
+        "C": "hipérbola.",
+        "D": "circunferencia."
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Un plano perpendicular a la base y sin el vértice produce una sección hiperbólica."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q19",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10197,
+      "code": "item-qbe-2021-c2-geometry-2-q20",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La medida de la altura de un cono circular recto es de 16 y la medida del diámetro de su base es de 16. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 6 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
+      "options": {
+        "A": "8π",
+        "B": "10π",
+        "C": "12π",
+        "D": "16π"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Radio basal 8, altura 16, corte a 6 de la base: radio del corte=8(16-6)/16=5. Longitud=10π."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q20",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10198,
+      "code": "item-qbe-2021-c2-geometry-2-q21",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La siguiente figura representa un trozo de madera con forma de cilindro circular recto del cual se va a obtener una pieza con forma de prisma recto de base cuadrada, tal como se muestra a continuación:\nEl área total de la pieza que se obtiene corresponde aproximadamente a _________cm^2.",
+      "options": {
+        "A": "25 000",
+        "B": "28 284",
+        "C": "30 000",
+        "D": "56 568"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La diagonal de la base cuadrada es 70.71≈50√2, así que el lado es aproximadamente 50. Con altura 100, área total≈2·50²+4·50·100=25000 cm²."
+      ],
+      "visual_spec": {
+        "type": "table",
+        "headers": [
+          "Magnitud",
+          "Valor (cm)"
+        ],
+        "rows": [
+          [
+            "Diagonal AC de la base cuadrada",
+            70.71
+          ],
+          [
+            "Altura BG",
+            100
+          ]
+        ],
+        "title": "Prisma recto de base cuadrada inscrito en cilindro"
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q21",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    },
+    {
+      "id": 10199,
+      "code": "item-qbe-2021-c2-geometry-2-q22",
+      "set_id": "qbe-2021-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La medida del diámetro de una esfera es de 30 unidades. Si esa esfera se interseca con un plano y se forma una sección plana de radio 12, entonces, ¿a qué distancia del centro de la esfera está dicha sección plana?",
+      "options": {
+        "A": "6",
+        "B": "9",
+        "C": "15",
+        "D": "18"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Radio de esfera 15 y radio del corte 12: distancia=√(225-144)=9."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2021-c2-geometry-2-q22",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2021-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C21.docx",
+        "convocatoria": "2021-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math GEO 02 C21)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2021-c2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2023-c1 · Relaciones y Álgebra",
+  "convocatoria": "2023-c1",
+  "language": "es-CR",
+  "source": "BXM Math FUN 01 C2023.docx",
+  "set_info": {
+    "id": "qbe-2023-c1-functions-1",
+    "name": "Práctica histórica 2023-c1 · Relaciones y Álgebra",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 15,
+    "file": "bxm/matematicas/qbe-2023-c1-functions-1.json",
+    "convocatoria": "2023-c1"
+  },
+  "total_items": 15,
+  "items": [
+    {
+      "id": 10259,
+      "code": "item-qbe-2023-c1-functions-1-q23",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la gráfica de la función f:\n¿Cuál es el ámbito de f(x)?",
+      "options": {
+        "A": "[-2,0] ∪ [1,4]",
+        "B": "[-2,0] ∪ [1,3]",
+        "C": "[-4,0] ∪ [1,4]",
+        "D": "[-4,-2] ∪ [1,4]"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "El tramo inferior recorre [-2,0] y el superior [1,3], con extremos incluidos. Ámbito=[-2,0]∪[1,3]."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            5
+          ],
+          "y": [
+            -3,
+            5
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "line",
+            "p1": [
+              -4,
+              1
+            ],
+            "p2": [
+              0,
+              3
+            ]
+          },
+          {
+            "type": "line",
+            "p1": [
+              1,
+              -2
+            ],
+            "p2": [
+              4,
+              0
+            ]
+          },
+          {
+            "type": "point",
+            "coords": [
+              -4,
+              1
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              0,
+              3
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              1,
+              -2
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              4,
+              0
+            ],
+            "label": ""
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q23",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10260,
+      "code": "item-qbe-2023-c1-functions-1-q24",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la función f dada por:\nf: S→ {0}, con f(x)=(x^2-4x)/x\nEntonces se tiene:",
+      "options": {
+        "A": "2∈S",
+        "B": "$S = \\{4\\}$",
+        "C": "{-2}⊆S",
+        "D": "$S = \\{-4\\}$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "x=0 queda excluido del denominador. La raíz válida de x²-4x es 4, por lo que S={4}."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q24",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10261,
+      "code": "item-qbe-2023-c1-functions-1-q25",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice las relaciones T y J como sigue:\n1-Sea D=[-6,6] y E={0}. J la relación de D a E definida como J={(x,y): y=x^2-36}\n2-Sea A={1,2} y B{0,1,5}. T la relación de A a B definida como T={(x,y): y=x-1}\nDe ellas son funciones",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "J no envía todo [-6,6] a cero. T(1)=0 y T(2)=1 sí pertenecen al codominio. Solo la relación 2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q25",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10262,
+      "code": "item-qbe-2023-c1-functions-1-q26",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nUn intervalo del dominio de f donde esta tiene inversa es",
+      "options": {
+        "A": "]-1,1[",
+        "B": "]-2,0[",
+        "C": "]-3,0[",
+        "D": "]-4,-2["
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Entre -2 y 0, f es estrictamente creciente. Los demás intervalos cruzan el máximo o contienen un tramo constante."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  5
+                ],
+                "y": [
+                  -5,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -4,
+                      -4
+                    ],
+                    [
+                      -2,
+                      -4
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      -1
+                    ],
+                    [
+                      3,
+                      -3
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -4,
+                    -4
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    3,
+                    -3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "h",
+                  "[-4,2]",
+                  "h(x)=x-2"
+                ],
+                [
+                  "r",
+                  "[-2,2]",
+                  "r(x)=x²-4"
+                ],
+                [
+                  "m",
+                  "[-4,2]",
+                  "m(x)=x+2"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q26",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10263,
+      "code": "item-qbe-2023-c1-functions-1-q27",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 26 y 27 con base en las funciones f, h, m y r que se muestran a continuación\nAnalice las siguientes proposiciones:\n1- (h∘f)(-2)=-6\n2- (m∘r) (x)=-x^2+2\n3- Es factible efectuar (r∘m) (x)\nDe ellas son verdaderas solo la(s)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "1 y 2"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "f(-2)=-4 y h(-4)=-6. m(r(x))=x²-2, no -x²+2. El ámbito de m es [-2,4], no contenido en [-2,2], dominio de r. Solo 1."
+      ],
+      "visual_spec": {
+        "type": "multi_view_grid",
+        "layout": {
+          "rows": 2,
+          "cols": 1
+        },
+        "views": [
+          {
+            "label": "f",
+            "visual": {
+              "type": "cartesian_2d",
+              "domain": {
+                "x": [
+                  -5,
+                  5
+                ],
+                "y": [
+                  -5,
+                  5
+                ]
+              },
+              "grid": true,
+              "preserveAspect": true,
+              "width": 440,
+              "height": 380,
+              "alt": "Gráfica de la función",
+              "children": [
+                {
+                  "type": "polyline",
+                  "points": [
+                    [
+                      -4,
+                      -4
+                    ],
+                    [
+                      -2,
+                      -4
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      -1
+                    ],
+                    [
+                      3,
+                      -3
+                    ]
+                  ]
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    -4,
+                    -4
+                  ],
+                  "label": ""
+                },
+                {
+                  "type": "point",
+                  "coords": [
+                    3,
+                    -3
+                  ],
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "label": "Funciones",
+            "visual": {
+              "type": "table",
+              "headers": [
+                "Función",
+                "Dominio",
+                "Regla"
+              ],
+              "rows": [
+                [
+                  "h",
+                  "[-4,2]",
+                  "h(x)=x-2"
+                ],
+                [
+                  "r",
+                  "[-2,2]",
+                  "r(x)=x²-4"
+                ],
+                [
+                  "m",
+                  "[-4,2]",
+                  "m(x)=x+2"
+                ]
+              ],
+              "title": "Datos del problema"
+            }
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q27",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10264,
+      "code": "item-qbe-2023-c1-functions-1-q28",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la función f(x)=(x+1)/2 y su inversa f⁻¹(x)=ax+b. Entonces, se cumple",
+      "options": {
+        "A": "$a = 2 y b = 1$",
+        "B": "$a = 2 y b = -1$",
+        "C": "$a = -2 y b = 1$",
+        "D": "$a = -2 y b = -1$"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "y=(x+1)/2 implica x=2y-1; a=2,b=-1."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q28",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10265,
+      "code": "item-qbe-2023-c1-functions-1-q29",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Sea f: [4,+ ∞ [ → A, dada por f(x)=$2\\sqrt{x+5}-7$. ¿Cuál es el dominio de la inversa de f?",
+      "options": {
+        "A": "[4,+∞[",
+        "B": "[8,+∞[",
+        "C": "[-1,+∞[",
+        "D": "[-2,,+∞["
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Para x≥4, el mínimo es 2√(4+5)-7=-1. El dominio de la inversa es [-1,∞)."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q29",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10266,
+      "code": "item-qbe-2023-c1-functions-1-q30",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considere la función f(x)=$\\sqrt{x}$ . Analice las siguientes afirmaciones:\n1-La gráfica de r(x)=$2\\sqrt{x}$ es una homotecia formada a partir de f(x).\n2-Si se traslada la gráfica de f(x)dos unidades hacia arriba se obtiene una función que se puede calcular como g(x)=$\\sqrt{x}$ +2.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La curva y=2√x se obtiene por homotecia de razón 4 en el origen aplicada a y=√x; y=√x+2 es una traslación vertical de dos unidades. Ambas verdaderas."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q30",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10267,
+      "code": "item-qbe-2023-c1-functions-1-q31",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice la siguiente gráfica donde se muestra una línea recta con la forma y=mx+2\nAnalice las siguientes afirmaciones:\n1-La recta interseca el eje y en (0,2)\n2-El valor de la pendiente es mayor que 1\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La recta cruza Y en 2 y contiene (8,4), por lo que su pendiente es (4-2)/8=1/4, menor que 1. Solo 1."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -2,
+            10
+          ],
+          "y": [
+            -1,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "line",
+            "slope": 0.25,
+            "intercept": 2
+          },
+          {
+            "type": "point",
+            "coords": [
+              8,
+              4
+            ],
+            "label": ""
+          },
+          {
+            "type": "point",
+            "coords": [
+              0,
+              2
+            ],
+            "label": ""
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q31",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10268,
+      "code": "item-qbe-2023-c1-functions-1-q32",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Analice las siguientes proposiciones referidas a la recta y=-x:\n1-La gráfica es creciente.\n2-La gráfica pasa por (0,0)\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II."
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "y=-x es decreciente y pasa por (0,0). Solo 2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q32",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10269,
+      "code": "item-qbe-2023-c1-functions-1-q33",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\n-Analice las siguientes proposiciones:\n1- c=0\n2- a>0\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "La parábola pasa por el origen, de modo que c=0; abre hacia abajo, de modo que a<0. Solo 1."
+      ],
+      "visual_spec": {
+        "type": "function_plot",
+        "form": "quadratic",
+        "params": {
+          "a": -0.3333333333333333,
+          "b": 2,
+          "c": 0
+        },
+        "domain": {
+          "x": [
+            -1,
+            7
+          ],
+          "y": [
+            -2,
+            5
+          ]
+        },
+        "annotations": {
+          "vertex": {
+            "show": false
+          },
+          "roots": {
+            "show": false
+          }
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q33",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10270,
+      "code": "item-qbe-2023-c1-functions-1-q34",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Responda las preguntas 33 y 34 considerando el gráfico siguiente de una función f(x)=$ax^2+bx+c$\n-Analice las siguientes proposiciones:\n1- Δ>0\n2- El punto B tiene como coordenadas (6,0)\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La parábola tiene dos raíces distintas, por lo que Δ>0. Con eje x=3 y raíz 0, la otra raíz es 6. Ambas verdaderas."
+      ],
+      "visual_spec": {
+        "type": "function_plot",
+        "form": "quadratic",
+        "params": {
+          "a": -0.3333333333333333,
+          "b": 2,
+          "c": 0
+        },
+        "domain": {
+          "x": [
+            -1,
+            7
+          ],
+          "y": [
+            -2,
+            5
+          ]
+        },
+        "annotations": {
+          "vertex": {
+            "show": false
+          },
+          "roots": {
+            "show": false
+          }
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q34",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10271,
+      "code": "item-qbe-2023-c1-functions-1-q35",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Considera una función exponencial de la forma f(x)=aˣ , con 0<a<1.\nAnalice las siguientes proposiciones referidas a su inversa f⁻¹(x):\n1-La gráfica f⁻¹(x)es creciente.\n2- f⁻¹(x) es una función logarítmica.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la 1",
+        "D": "solo la 2"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "Si 0<a<1, la inversa logₐ(x) es decreciente. Es logarítmica; solo 2."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q35",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10272,
+      "code": "item-qbe-2023-c1-functions-1-q36",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Una lecheria necesita adquirir una máquina ordeñadora y se cuenta con las siguientes opciones:\n1-La máquina A ordeña 3 vacas en 15 min.\n3-La máquina B ordeña 5 vacas en 30 min.\nAnalice las siguientes afirmaciones:\nI. La mejor máquina es la A\nII.Si t es el tiempo de ordeño y x la cantidad de vacas, el modelo es t(x)=5x.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "A requiere 15/3=5 min/vaca y B 30/5=6 min/vaca. A es más rápida y para A el tiempo es t(x)=5x. Ambas verdaderas."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q36",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    },
+    {
+      "id": 10273,
+      "code": "item-qbe-2023-c1-functions-1-q37",
+      "set_id": "qbe-2023-c1-functions-1",
+      "area": "Relaciones y Álgebra",
+      "area_id": "functions",
+      "topic": "functions",
+      "stem": "Ana compró 2 kg de papas y 3 kg de tomates por ₡2800. Juan 3 kg de papas y 2 kg de tomate por ₡2700. ¿Cuál es el precio del kg de tomate?",
+      "options": {
+        "A": "540",
+        "B": "550",
+        "C": "560",
+        "D": "600"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "2p+3t=2800 y 3p+2t=2700 dan t=600 colones."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c1-functions-1-q37",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c1-functions-1",
+        "filename": "BXM Math FUN 01 C2023.docx",
+        "convocatoria": "2023-c1",
+        "area": "functions",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math FUN 01 C2023)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c1"
+      ]
+    }
+  ]
+}

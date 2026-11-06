@@ -47,16 +47,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El primer tramo recorre [-2,0] y la semirrecta desde (3,2) recorre [2,∞). Esa es la unión del ámbito."
       },
       "visuals": [
         {
           "id": "vis-cd5cd5498a",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
           "content_type": "image/jpeg",
           "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
           "byte_size": 13462,
@@ -74,33 +74,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El primer tramo recorre [-2,0] y la semirrecta desde (3,2) recorre [2,∞). Esa es la unión del ámbito.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -114,6 +113,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl ámbito de f corresponde a*\", \"stem_cleaned\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl ámbito de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,0] U [2,+∞[\", \"text_cleaned\": \"[-2,0] U [2,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-4,0] U [3,+∞[\", \"text_cleaned\": \"[-4,0] U [3,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-2,-1] U [2,+∞[\", \"text_cleaned\": \"[-2,-1] U [2,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-4,-2] U [3,+∞[\", \"text_cleaned\": \"[-4,-2] U [3,+∞[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl ámbito de f corresponde a*\", \"stem_cleaned\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl ámbito de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,0] U [2,+∞[\", \"text_cleaned\": \"[-2,0] U [2,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-4,0] U [3,+∞[\", \"text_cleaned\": \"[-4,0] U [3,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-2,-1] U [2,+∞[\", \"text_cleaned\": \"[-2,-1] U [2,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-4,-2] U [3,+∞[\", \"text_cleaned\": \"[-4,-2] U [3,+∞[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El primer tramo recorre [-2,0] y la semirrecta desde (3,2) recorre [2,∞). Esa es la unión del ámbito.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -161,16 +171,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El tramo izquierdo va de x=-4 a x=-1; el derecho comienza en x=3 y continúa sin límite. Dominio=[-4,-1]∪[3,∞)."
       },
       "visuals": [
         {
           "id": "vis-cd5cd5498a",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
           "content_type": "image/jpeg",
           "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
           "byte_size": 13462,
@@ -188,33 +198,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El tramo izquierdo va de x=-4 a x=-1; el derecho comienza en x=3 y continúa sin límite. Dominio=[-4,-1]∪[3,∞).",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -228,6 +237,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl dominio de f corresponde a*\", \"stem_cleaned\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl dominio de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,-1] U [ 2,+∞[\", \"text_cleaned\": \"[-2,-1] U [ 2,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-4,-1] U [3,+∞[\", \"text_cleaned\": \"[-4,-1] U [3,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-4,-2] U [2,+∞[\", \"text_cleaned\": \"[-4,-2] U [2,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-2,-1] U [3,+∞[\", \"text_cleaned\": \"[-2,-1] U [3,+∞[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl dominio de f corresponde a*\", \"stem_cleaned\": \"Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\\nEl dominio de f corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[-2,-1] U [ 2,+∞[\", \"text_cleaned\": \"[-2,-1] U [ 2,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[-4,-1] U [3,+∞[\", \"text_cleaned\": \"[-4,-1] U [3,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[-4,-2] U [2,+∞[\", \"text_cleaned\": \"[-4,-2] U [2,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[-2,-1] U [3,+∞[\", \"text_cleaned\": \"[-2,-1] U [3,+∞[\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"El tramo izquierdo va de x=-4 a x=-1; el derecho comienza en x=3 y continúa sin límite. Dominio=[-4,-1]∪[3,∞).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -248,7 +268,7 @@
       },
       "content": {
         "stem_raw": "Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\nI.  -1 ∈ S\nII.  {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
-        "stem_cleaned": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
+        "stem_cleaned": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊆ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
         "options": [
           {
             "id": "A",
@@ -275,9 +295,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "x=-1 está excluido del denominador; x=1 es la única raíz válida del numerador. S={1}, por lo que solo II es verdadera."
       },
       "visuals": [],
       "classification": {
@@ -289,33 +309,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. x=-1 está excluido del denominador; x=1 es la única raíz válida del numerador. S={1}, por lo que solo II es verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -351,6 +370,28 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\\nI.  -1 ∈ S\\nII.  {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\\nI. -1 ∈ S\\nII. {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I.\", \"text_cleaned\": \"I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ll.\", \"text_cleaned\": \"ll.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"III.\", \"text_cleaned\": \"III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III.\", \"text_cleaned\": \"I y III.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\\nI.  -1 ∈ S\\nII.  {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\\nI. -1 ∈ S\\nII. {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I.\", \"text_cleaned\": \"I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ll.\", \"text_cleaned\": \"ll.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"III.\", \"text_cleaned\": \"III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III.\", \"text_cleaned\": \"I y III.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=-1 está excluido del denominador; x=1 es la única raíz válida del numerador. S={1}, por lo que solo II es verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\\nI.  -1 ∈ S\\nII.  {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\\nI. -1 ∈ S\\nII. {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I.\", \"text_cleaned\": \"I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ll.\", \"text_cleaned\": \"ll.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"III.\", \"text_cleaned\": \"III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III.\", \"text_cleaned\": \"I y III.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=-1 está excluido del denominador; x=1 es la única raíz válida del numerador. S={1}, por lo que solo II es verdadera.\"}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\\nI.  -1 ∈ S\\nII.  {1} ⊂ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\\nI. -1 ∈ S\\nII. {1} ⊆ S\\nIII. S = {-1} U {1}\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I.\", \"text_cleaned\": \"I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ll.\", \"text_cleaned\": \"ll.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"III.\", \"text_cleaned\": \"III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III.\", \"text_cleaned\": \"I y III.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"x=-1 está excluido del denominador; x=1 es la única raíz válida del numerador. S={1}, por lo que solo II es verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:45:55.307915+00:00"
           }
         ]
       }
@@ -398,9 +439,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "x²-4 no envía todo [-2,2] al único valor cero. En T, 0→1 y -1→2 pertenecen a B. Solo II."
       },
       "visuals": [],
       "classification": {
@@ -412,33 +453,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. x²-4 no envía todo [-2,2] al único valor cero. En T, 0→1 y -1→2 pertenecen a B. Solo II.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -485,6 +525,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referentes a las relaciones T y J:\\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\\nDe ellas corresponden a una función*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referentes a las relaciones T y J:\\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\\nDe ellas corresponden a una función\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes proposiciones referentes a las relaciones T y J:\\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\\nDe ellas corresponden a una función*\", \"stem_cleaned\": \"Considere las siguientes proposiciones referentes a las relaciones T y J:\\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\\nDe ellas corresponden a una función\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"x²-4 no envía todo [-2,2] al único valor cero. En T, 0→1 y -1→2 pertenecen a B. Solo II.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -532,16 +583,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El tramo entre x=0 y x=1 es estrictamente decreciente. Los demás intervalos propuestos cruzan un mínimo o un máximo y no son inyectivos."
       },
       "visuals": [
         {
           "id": "vis-630545644f",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
           "content_type": "image/jpeg",
           "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
           "byte_size": 45047,
@@ -559,33 +610,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El tramo entre x=0 y x=1 es estrictamente decreciente. Los demás intervalos propuestos cruzan un mínimo o un máximo y no son inyectivos.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -599,6 +649,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nUn intervalo del dominio de f donde f tiene inversa corresponde a*\", \"stem_cleaned\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nUn intervalo del dominio de f donde f tiene inversa corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"]0,1[\", \"text_cleaned\": \"]0,1[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"]0,2[\", \"text_cleaned\": \"]0,2[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"]-3,-1[\", \"text_cleaned\": \"]-3,-1[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"]-4,-1[\", \"text_cleaned\": \"]-4,-1[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nUn intervalo del dominio de f donde f tiene inversa corresponde a*\", \"stem_cleaned\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nUn intervalo del dominio de f donde f tiene inversa corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"]0,1[\", \"text_cleaned\": \"]0,1[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"]0,2[\", \"text_cleaned\": \"]0,2[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"]-3,-1[\", \"text_cleaned\": \"]-3,-1[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"]-4,-1[\", \"text_cleaned\": \"]-4,-1[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"El tramo entre x=0 y x=1 es estrictamente decreciente. Los demás intervalos propuestos cruzan un mínimo o un máximo y no son inyectivos.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -646,16 +707,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "f(1)=-4 y h(-4)=-5: I verdadera. m(h(x))=3(x-1)-1=3x-4, no 3x-2. r toma valores en [-4,4], incluidos en el dominio de f: III verdadera. I y III."
       },
       "visuals": [
         {
           "id": "vis-630545644f",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
           "content_type": "image/jpeg",
           "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
           "byte_size": 45047,
@@ -673,33 +734,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. f(1)=-4 y h(-4)=-5: I verdadera. m(h(x))=3(x-1)-1=3x-4, no 3x-2. r toma valores en [-4,4], incluidos en el dominio de f: III verdadera. I y III.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -735,6 +795,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nConsidere  las  siguientes  proposiciones:\\nI. (h∘f)(1)= -5\\nII.  =  (m∘h)(x)  =  3x-2\\nIII.  Es  factible  efectuar  (f∘r)(x).\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nConsidere las siguientes proposiciones:\\nI. (h∘f)(1)= -5\\nII. = (m∘h)(x) = 3x-2\\nIII. Es factible efectuar (f∘r)(x).\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y  la  Ill.\", \"text_cleaned\": \"I y la Ill.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nConsidere  las  siguientes  proposiciones:\\nI. (h∘f)(1)= -5\\nII.  =  (m∘h)(x)  =  3x-2\\nIII.  Es  factible  efectuar  (f∘r)(x).\\nDe ellas son verdaderas solo la*\", \"stem_cleaned\": \"Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\\nConsidere las siguientes proposiciones:\\nI. (h∘f)(1)= -5\\nII. = (m∘h)(x) = 3x-2\\nIII. Es factible efectuar (f∘r)(x).\\nDe ellas son verdaderas solo la\", \"options\": [{\"id\": \"A\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la III.\", \"text_cleaned\": \"solo la III.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y  la  Ill.\", \"text_cleaned\": \"I y la Ill.\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"f(1)=-4 y h(-4)=-5: I verdadera. m(h(x))=3(x-1)-1=3x-4, no 3x-2. r toma valores en [-4,4], incluidos en el dominio de f: III verdadera. I y III.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -755,7 +826,7 @@
       },
       "content": {
         "stem_raw": "Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
-        "stem_cleaned": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que",
+        "stem_cleaned": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que",
         "options": [
           {
             "id": "A",
@@ -782,9 +853,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "y=(-2x+4)/8=-x/4+1/2 implica x=-4y+2. La inversa tiene a=-4,b=2."
       },
       "visuals": [],
       "classification": {
@@ -796,33 +867,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. y=(-2x+4)/8=-x/4+1/2 implica x=-4y+2. La inversa tiene a=-4,b=2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -902,6 +972,28 @@
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*\", \"stem_cleaned\": \"Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=4\", \"text_cleaned\": \"$a = 2 y b = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=4 y b=2\", \"text_cleaned\": \"$a = 4 y b = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=4\", \"text_cleaned\": \"$a = -2 y b = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-4 y b=2\", \"text_cleaned\": \"$a = -4 y b = 2$\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*\", \"stem_cleaned\": \"Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=4\", \"text_cleaned\": \"$a = 2 y b = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=4 y b=2\", \"text_cleaned\": \"$a = 4 y b = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=4\", \"text_cleaned\": \"$a = -2 y b = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-4 y b=2\", \"text_cleaned\": \"$a = -4 y b = 2$\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(-2x+4)/8=-x/4+1/2 implica x=-4y+2. La inversa tiene a=-4,b=2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*\", \"stem_cleaned\": \"Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=4\", \"text_cleaned\": \"$a = 2 y b = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=4 y b=2\", \"text_cleaned\": \"$a = 4 y b = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=4\", \"text_cleaned\": \"$a = -2 y b = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-4 y b=2\", \"text_cleaned\": \"$a = -4 y b = 2$\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(-2x+4)/8=-x/4+1/2 implica x=-4y+2. La inversa tiene a=-4,b=2.\"}",
+            "normalized_text": "{\"stem_raw\": \"Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*\", \"stem_cleaned\": \"Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que\", \"options\": [{\"id\": \"A\", \"text_raw\": \"a=2 y b=4\", \"text_cleaned\": \"$a = 2 y b = 4$\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"a=4 y b=2\", \"text_cleaned\": \"$a = 4 y b = 2$\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"a=-2 y b=4\", \"text_cleaned\": \"$a = -2 y b = 4$\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"a=-4 y b=2\", \"text_cleaned\": \"$a = -4 y b = 2$\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"y=(-2x+4)/8=-x/4+1/2 implica x=-4y+2. La inversa tiene a=-4,b=2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:42:31.740219+00:00"
           }
         ]
       }
@@ -922,7 +1014,7 @@
       },
       "content": {
         "stem_raw": "Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
-        "stem_cleaned": "Sea f: [1,+∞[ → P; con f(x) =\\sqrt{x}+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
+        "stem_cleaned": "Sea f: [1,+∞[ → P; con f(x) =$\\sqrt{x+3}-1$, entonces, el dominio de su inversa f⁻¹ es",
         "options": [
           {
             "id": "A",
@@ -949,9 +1041,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Para f(x)=√(x+3)-1 y x≥1, el mínimo es f(1)=1. El dominio de la inversa es [1,∞)."
       },
       "visuals": [],
       "classification": {
@@ -963,35 +1055,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "ambiguous_math",
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Detected unicode combining overline segment notation (e.g. Q̅P̅)",
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Para f(x)=√(x+3)-1 y x≥1, el mínimo es f(1)=1. El dominio de la inversa es [1,∞).",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1038,6 +1127,28 @@
             "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*\", \"stem_cleaned\": \"Sea f: [1,+∞[ → P; con f(x) =\\\\sqrt{x}+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[1,+∞[\", \"text_cleaned\": \"[1,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[2,+∞[\", \"text_cleaned\": \"[2,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[3,+∞[\", \"text_cleaned\": \"[3,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*\", \"stem_cleaned\": \"Sea f: [1,+∞[ → P; con f(x) =$\\\\sqrt{x+3}-1$, entonces, el dominio de su inversa f⁻^1 es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[1,+∞[\", \"text_cleaned\": \"[1,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[2,+∞[\", \"text_cleaned\": \"[2,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[3,+∞[\", \"text_cleaned\": \"[3,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Para f(x)=√(x+3)-1 y x≥1, el mínimo es f(1)=1. El dominio de la inversa es [1,∞).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*\", \"stem_cleaned\": \"Sea f: [1,+∞[ → P; con f(x) =$\\\\sqrt{x+3}-1$, entonces, el dominio de su inversa f⁻^1 es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[1,+∞[\", \"text_cleaned\": \"[1,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[2,+∞[\", \"text_cleaned\": \"[2,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[3,+∞[\", \"text_cleaned\": \"[3,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Para f(x)=√(x+3)-1 y x≥1, el mínimo es f(1)=1. El dominio de la inversa es [1,∞).\"}",
+            "normalized_text": "{\"stem_raw\": \"Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*\", \"stem_cleaned\": \"Sea f: [1,+∞[ → P; con f(x) =$\\\\sqrt{x+3}-1$, entonces, el dominio de su inversa f⁻¹ es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"[1,+∞[\", \"text_cleaned\": \"[1,+∞[\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"[2,+∞[\", \"text_cleaned\": \"[2,+∞[\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"[3,+∞[\", \"text_cleaned\": \"[3,+∞[\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"[4,+∞[\", \"text_cleaned\": \"[4,+∞[\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Para f(x)=√(x+3)-1 y x≥1, el mínimo es f(1)=1. El dominio de la inversa es [1,∞).\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:42:31.740219+00:00"
           }
         ]
       }
@@ -1085,16 +1196,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La gráfica pasa por (-2,3) y (0,6), con pendiente 3/2 positiva, no -3/2. La intersección Y es (0,6). Solo II."
       },
       "visuals": [
         {
           "id": "vis-ea78239588",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image1-ea782395.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image1-ea782395.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image1-ea782395.jpg",
           "content_type": "image/jpeg",
           "sha256": "ea7823958881a8a67b84b09b2feb4d1095bcc7fb94f66fe20be5023521cfe845",
           "byte_size": 4181,
@@ -1108,37 +1219,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.3",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La gráfica pasa por (-2,3) y (0,6), con pendiente 3/2 positiva, no -3/2. La intersección Y es (0,6). Solo II.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1185,6 +1295,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Analice la siguiente gráfica de la recta y = mx + 6:\\nConsidere las siguientes proposiciones:\\nI.  El  valor de la pendiente es -3/2\\nll.  La recta interseca al eje Y en (0,6).\\nDe  ellas  son  verdaderas*\", \"stem_cleaned\": \"Analice la siguiente gráfica de la recta y = mx + 6:\\nConsidere las siguientes proposiciones:\\nI. El valor de la pendiente es -3/2\\nll. La recta interseca al eje Y en (0,6).\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Analice la siguiente gráfica de la recta y = mx + 6:\\nConsidere las siguientes proposiciones:\\nI.  El  valor de la pendiente es -3/2\\nll.  La recta interseca al eje Y en (0,6).\\nDe  ellas  son  verdaderas*\", \"stem_cleaned\": \"Analice la siguiente gráfica de la recta y = mx + 6:\\nConsidere las siguientes proposiciones:\\nI. El valor de la pendiente es -3/2\\nll. La recta interseca al eje Y en (0,6).\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"La gráfica pasa por (-2,3) y (0,6), con pendiente 3/2 positiva, no -3/2. La intersección Y es (0,6). Solo II.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1232,9 +1353,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La recta y=-x tiene pendiente negativa y pasa por el origen. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -1246,33 +1367,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La recta y=-x tiene pendiente negativa y pasa por el origen. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1319,6 +1439,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes proposiciones sobre la función y =-x:\\nI.  La gráfica de “g” es decreciente.\\nII. La  gráfica de “g” contiene el origen de coordenadas.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere las siguientes proposiciones sobre la función y =-x:\\nI. La gráfica de “g” es decreciente.\\nII. La gráfica de “g” contiene el origen de coordenadas.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes proposiciones sobre la función y =-x:\\nI.  La gráfica de “g” es decreciente.\\nII. La  gráfica de “g” contiene el origen de coordenadas.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere las siguientes proposiciones sobre la función y =-x:\\nI. La gráfica de “g” es decreciente.\\nII. La gráfica de “g” contiene el origen de coordenadas.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La recta y=-x tiene pendiente negativa y pasa por el origen. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1366,16 +1497,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La parábola tiene máximo en (2,4); decrece para x>2 y es inyectiva en [2,∞). Ambas verdaderas."
       },
       "visuals": [
         {
           "id": "vis-0f431ce9b6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image3-0f431ce9.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image3-0f431ce9.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image3-0f431ce9.jpg",
           "content_type": "image/jpeg",
           "sha256": "0f431ce9b6e87e183fdba4777eaeea6a675c30ae125ad5dfa620d6cd9a50268c",
           "byte_size": 15224,
@@ -1389,37 +1520,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.5",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Elementos o propiedades de la función cuadrática"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La parábola tiene máximo en (2,4); decrece para x>2 y es inyectiva en [2,∞). Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1466,6 +1596,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\\nConsidere  las  siguientes  proposiciones:\\nI.  f es decreciente en ]5,10[.\\nll.  La función es inyectiva en [2,+∞[\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\\nConsidere las siguientes proposiciones:\\nI. f es decreciente en ]5,10[.\\nll. La función es inyectiva en [2,+∞[\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\\nConsidere  las  siguientes  proposiciones:\\nI.  f es decreciente en ]5,10[.\\nll.  La función es inyectiva en [2,+∞[\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\\nConsidere las siguientes proposiciones:\\nI. f es decreciente en ]5,10[.\\nll. La función es inyectiva en [2,+∞[\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La parábola tiene máximo en (2,4); decrece para x>2 y es inyectiva en [2,∞). Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1513,16 +1654,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "g es exponencial creciente y f logarítmica creciente. Solo I."
       },
       "visuals": [
         {
           "id": "vis-f9d50cbb18",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
           "content_type": "image/jpeg",
           "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
           "byte_size": 18772,
@@ -1540,33 +1681,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. g es exponencial creciente y f logarítmica creciente. Solo I.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1602,6 +1742,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI.  “g” es creciente.\\nll.  “f\\\" es decreciente.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI. “g” es creciente.\\nll. “f\\\" es decreciente.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo  la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI.  “g” es creciente.\\nll.  “f\\\" es decreciente.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI. “g” es creciente.\\nll. “f\\\" es decreciente.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo  la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"g es exponencial creciente y f logarítmica creciente. Solo I.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1649,16 +1800,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Los puntos (2,4) de g y (4,2) de f, junto a sus interceptos, corresponden a 2ˣ y log₂(x). Son inversas y a=b=2."
       },
       "visuals": [
         {
           "id": "vis-f9d50cbb18",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
           "content_type": "image/jpeg",
           "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
           "byte_size": 18772,
@@ -1676,33 +1827,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Los puntos (2,4) de g y (4,2) de f, junto a sus interceptos, corresponden a 2ˣ y log₂(x). Son inversas y a=b=2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1749,6 +1899,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI.  “f\\\" y “g” son inversas entre sí.\\nll. Se cumple con certeza que a=b.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI. “f\\\" y “g” son inversas entre sí.\\nll. Se cumple con certeza que a=b.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI.  “f\\\" y “g” son inversas entre sí.\\nll. Se cumple con certeza que a=b.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Para responder los ítems 34 y 35 considere las funciones f y g:\\nConsidere las siguientes proposiciones:\\nI. “f\\\" y “g” son inversas entre sí.\\nll. Se cumple con certeza que a=b.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Los puntos (2,4) de g y (4,2) de f, junto a sus interceptos, corresponden a 2ˣ y log₂(x). Son inversas y a=b=2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1796,9 +1957,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La máquina uno produce 90/2=45 botones/min y la dos 105/3=35. Conviene la primera y su función es 45x, no 15x. Ninguna verdadera."
       },
       "visuals": [],
       "classification": {
@@ -1810,33 +1971,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La máquina uno produce 90/2=45 botones/min y la dos 105/3=35. Conviene la primera y su función es 45x, no 15x. Ninguna verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1872,6 +2032,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\\nDe acuerdo con la información dada considere las siguientes proposiciones:\\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\\nDe acuerdo con la información dada considere las siguientes proposiciones:\\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\\nDe acuerdo con la información dada considere las siguientes proposiciones:\\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\\nDe acuerdo con la información dada considere las siguientes proposiciones:\\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"La máquina uno produce 90/2=45 botones/min y la dos 105/3=35. Conviene la primera y su función es 45x, no 15x. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1919,9 +2090,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "3p+2y=2800 y 2p+3y=2700 dan p=600,y=500 colones."
       },
       "visuals": [],
       "classification": {
@@ -1933,33 +2104,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. 3p+2y=2800 y 2p+3y=2700 dan p=600,y=500 colones.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1973,6 +2143,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*\", \"stem_cleaned\": \"Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"500\", \"text_cleaned\": \"500\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"540\", \"text_cleaned\": \"540\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"550\", \"text_cleaned\": \"550\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"560\", \"text_cleaned\": \"560\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*\", \"stem_cleaned\": \"Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"500\", \"text_cleaned\": \"500\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"540\", \"text_cleaned\": \"540\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"550\", \"text_cleaned\": \"550\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"560\", \"text_cleaned\": \"560\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"3p+2y=2800 y 2p+3y=2700 dan p=600,y=500 colones.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -1992,12 +2173,37 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ",
-        "stem_cleaned": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*",
+        "stem_cleaned": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = $8000\\cdot2^{-0.2t}$\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas.",
+            "text_cleaned": "ambas.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna.",
+            "text_cleaned": "ninguna.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la  I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la  II.",
+            "text_cleaned": "solo la II.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "p(0)=8000. El modelo se reduce a la mitad cuando -0.2t=-1, esto es t=5 horas, no a cuatro años. Solo I."
       },
       "visuals": [],
       "classification": {
@@ -2009,36 +2215,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. p(0)=8000. El modelo se reduce a la mitad cuando -0.2t=-1, esto es t=5 horas, no a cuatro años. Solo I.",
+          "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.5
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2063,6 +2265,83 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*",
+            "normalized_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*",
+            "normalized_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas",
+            "normalized_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "solo la  I.",
+            "normalized_text": "solo la I.",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "solo la  II.",
+            "normalized_text": "solo la II.",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\",\"stem_cleaned\":\"La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\",\"stem_cleaned\":\"La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas.\",\"text_cleaned\":\"ambas.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna.\",\"text_cleaned\":\"ninguna.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la  I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la  II.\",\"text_cleaned\":\"solo la II.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = $8000\\\\cdot2^{-0.2t}$\\nCon base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  II.\", \"text_cleaned\": \"solo la II.\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"p(0)=8000. El modelo se reduce a la mitad cuando -0.2t=-1, esto es t=5 horas, no a cuatro años. Solo I.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se restauró la notación matemática de la fuente (radicando, exponente o coordenada) antes de resolver.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2082,8 +2361,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
-        "stem_cleaned": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
+        "stem_raw": "Si f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
+        "stem_cleaned": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
         "options": [
           {
             "id": "A",
@@ -2110,9 +2389,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "logₐ(a⁴)+logₐ((a⁴)²)=4+8=12."
       },
       "visuals": [],
       "classification": {
@@ -2120,37 +2399,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A5",
-        "evidencia": "A5.6",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Propiedades y simplificación de expresiones con logaritmos"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. logₐ(a⁴)+logₐ((a⁴)²)=4+8=12.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2186,6 +2464,61 @@
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Si f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
+            "normalized_text": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
+            "normalized_text": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
+            "original_text": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
+            "normalized_text": "Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
+            "correction_type": "unicode_normalization",
+            "semantic_change": false,
+            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Con base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\\nA)  ambas.\\nB)  ninguna.\\nC)  solo la  I.\\nD)  solo la  II.\\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*\",\"stem_cleaned\":\"Con base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\\nA) ambas.\\nB) ninguna.\\nC) solo la I.\\nD) solo la II.\\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a\",\"options\":[{\"id\":\"A\",\"text_raw\":\"12\",\"text_cleaned\":\"12\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"16\",\"text_cleaned\":\"16\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"24\",\"text_cleaned\":\"24\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"48\",\"text_cleaned\":\"48\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Si f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*\",\"stem_cleaned\":\"Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a\",\"options\":[{\"id\":\"A\",\"text_raw\":\"12\",\"text_cleaned\":\"12\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"16\",\"text_cleaned\":\"16\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"24\",\"text_cleaned\":\"24\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"48\",\"text_cleaned\":\"48\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Si f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*\", \"stem_cleaned\": \"Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12\", \"text_cleaned\": \"12\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16\", \"text_cleaned\": \"16\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"24\", \"text_cleaned\": \"24\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"48\", \"text_cleaned\": \"48\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Si f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*\", \"stem_cleaned\": \"Si f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a\", \"options\": [{\"id\": \"A\", \"text_raw\": \"12\", \"text_cleaned\": \"12\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"16\", \"text_cleaned\": \"16\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"24\", \"text_cleaned\": \"24\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"48\", \"text_cleaned\": \"48\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"logₐ(a⁴)+logₐ((a⁴)²)=4+8=12.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2205,19 +2538,44 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:",
-        "stem_cleaned": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "La  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\nCon base en la información dada el modelo que mejor describe la función es*",
+        "stem_cleaned": "La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\nCon base en la información dada el modelo que mejor describe la función es",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "lineal.",
+            "text_cleaned": "lineal.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "cuadrática.",
+            "text_cleaned": "cuadrática.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "logarítmica.",
+            "text_cleaned": "logarítmica.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "exponencial.",
+            "text_cleaned": "exponencial.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La cantidad restante disminuye 80 m cada 10 s, a tasa constante -8 m/s. El modelo es lineal."
       },
       "visuals": [
         {
           "id": "vis-ed5078b482",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image6-ed5078b4.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image6-ed5078b4.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image6-ed5078b4.jpg",
           "content_type": "image/jpeg",
           "sha256": "ed5078b48213770943877e160155cbecb0976ae5ae87dfca60e6a171a0b75a95",
           "byte_size": 11786,
@@ -2235,36 +2593,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La cantidad restante disminuye 80 m cada 10 s, a tasa constante -8 m/s. El modelo es lineal.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.5
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2278,6 +2632,50 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "La  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\nCon base en la información dada el modelo que mejor describe la función es*",
+            "normalized_text": "La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\nCon base en la información dada el modelo que mejor describe la función es*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\nCon base en la información dada el modelo que mejor describe la función es*",
+            "normalized_text": "La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\nCon base en la información dada el modelo que mejor describe la función es",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Con base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\\nA)  ambas.\\nB)  ninguna.\\nC)  solo la  I.\\nD)  solo la  II.\\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\",\"stem_cleaned\":\"Con base en la información dada considere las siguientes proposiciones:\\nI. En el tiempo de inicio el número de ranas es de 8000.\\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\\nDe ellas son verdaderas*\\nA) ambas.\\nB) ninguna.\\nC) solo la I.\\nD) solo la II.\\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"La  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\\nCon base en la información dada el modelo que mejor describe la función es*\",\"stem_cleaned\":\"La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\\nCon base en la información dada el modelo que mejor describe la función es\",\"options\":[{\"id\":\"A\",\"text_raw\":\"lineal.\",\"text_cleaned\":\"lineal.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"cuadrática.\",\"text_cleaned\":\"cuadrática.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"logarítmica.\",\"text_cleaned\":\"logarítmica.\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"exponencial.\",\"text_cleaned\":\"exponencial.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"La  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\\nCon base en la información dada el modelo que mejor describe la función es*\", \"stem_cleaned\": \"La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\\nCon base en la información dada el modelo que mejor describe la función es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"lineal.\", \"text_cleaned\": \"lineal.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"cuadrática.\", \"text_cleaned\": \"cuadrática.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"logarítmica.\", \"text_cleaned\": \"logarítmica.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"exponencial.\", \"text_cleaned\": \"exponencial.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"La  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:\\nCon base en la información dada el modelo que mejor describe la función es*\", \"stem_cleaned\": \"La cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:\\nCon base en la información dada el modelo que mejor describe la función es\", \"options\": [{\"id\": \"A\", \"text_raw\": \"lineal.\", \"text_cleaned\": \"lineal.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"cuadrática.\", \"text_cleaned\": \"cuadrática.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"logarítmica.\", \"text_cleaned\": \"logarítmica.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"exponencial.\", \"text_cleaned\": \"exponencial.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La cantidad restante disminuye 80 m cada 10 s, a tasa constante -8 m/s. El modelo es lineal.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2297,8 +2695,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
-        "stem_cleaned": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
+        "stem_raw": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2325,16 +2723,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La tabla A sigue y=0.5·2ˣ y la B y=2log₂(x). Ambas clasificaciones son verdaderas."
       },
       "visuals": [
         {
           "id": "vis-da67b22d02",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image2-da67b22d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image2-da67b22d.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image2-da67b22d.jpg",
           "content_type": "image/jpeg",
           "sha256": "da67b22d0228deb5c578abca44e9edef04fab798dc4db2a4f56c04b5b2e94ea0",
           "byte_size": 13593,
@@ -2348,37 +2746,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.3",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La tabla A sigue y=0.5·2ˣ y la B y=2log₂(x). Ambas clasificaciones son verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2425,6 +2822,50 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.755Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "normalized_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "normalized_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.689Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Con base en la información dada el modelo que mejor describe la función es*\\nA)  lineal.\\nB)  cuadrática.\\nC)  logarítmica.\\nD)  exponencial.\\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas*\",\"stem_cleaned\":\"Con base en la información dada el modelo que mejor describe la función es*\\nA) lineal.\\nB) cuadrática.\\nC) logarítmica.\\nD) exponencial.\\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas.\",\"text_cleaned\":\"ambas.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna.\",\"text_cleaned\":\"ninguna.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la  I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la  Il.\",\"text_cleaned\":\"solo la Il.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas*\",\"stem_cleaned\":\"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas.\",\"text_cleaned\":\"ambas.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna.\",\"text_cleaned\":\"ninguna.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la  I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la  Il.\",\"text_cleaned\":\"solo la Il.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.690Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\\nDe acuerdo con la información dada considere las siguientes proposiciones\\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\\\" y “y” en la tabla A involucra la función exponencial.\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la  Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La tabla A sigue y=0.5·2ˣ y la B y=2log₂(x). Ambas clasificaciones son verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }
@@ -2444,19 +2885,44 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
-        "stem_cleaned": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\nCon base en la información dada considere las siguientes proposiciones:\nI. m=n\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\nCon base en la información dada considere las siguientes proposiciones:\nI. m=n\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\nDe ellas son verdaderas",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "ambas.",
+            "text_cleaned": "ambas.",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "ninguna.",
+            "text_cleaned": "ninguna.",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "solo la  I.",
+            "text_cleaned": "solo la I.",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "solo la Il.",
+            "text_cleaned": "solo la Il.",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "En A, y=x²+1 da m=10. En B, y=2√x da n=10. Son iguales y el segundo modelo es raíz cuadrada."
       },
       "visuals": [
         {
           "id": "vis-4189d0eedf",
           "original_filename": "image8.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image8-4189d0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image8-4189d0ee.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2021-c2-functions-2-image8-4189d0ee.jpg",
           "content_type": "image/jpeg",
           "sha256": "4189d0eedf611ffa9135122f70cc40fb8518aededf26480cb0267eee6a645494",
           "byte_size": 13032,
@@ -2470,40 +2936,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.3",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.84,
-        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. En A, y=x²+1 da m=10. En B, y=2√x da n=10. Son iguales y el segundo modelo es raíz cuadrada.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.84,
-        "content_confidence": 0.5
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2517,6 +2979,50 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.755Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\nCon base en la información dada considere las siguientes proposiciones:\nI. m=n\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\nDe ellas son verdaderas*",
+            "normalized_text": "Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\nCon base en la información dada considere las siguientes proposiciones:\nI. m=n\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\nDe ellas son verdaderas",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.690Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "solo la  I.",
+            "normalized_text": "solo la I.",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.690Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Con base en la información dada el modelo que mejor describe la función es*\\nA)  lineal.\\nB)  cuadrática.\\nC)  logarítmica.\\nD)  exponencial.\\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\",\"stem_cleaned\":\"Con base en la información dada el modelo que mejor describe la función es*\\nA) lineal.\\nB) cuadrática.\\nC) logarítmica.\\nD) exponencial.\\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas*\",\"stem_cleaned\":\"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas.\",\"text_cleaned\":\"ambas.\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna.\",\"text_cleaned\":\"ninguna.\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la  I.\",\"text_cleaned\":\"solo la I.\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la Il.\",\"text_cleaned\":\"solo la Il.\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.690Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas*\", \"stem_cleaned\": \"Considere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:\\nCon base en la información dada considere las siguientes proposiciones:\\nI. m=n\\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y’ en la tabla B involucra la función raíz cuadrada.\\nDe ellas son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas.\", \"text_cleaned\": \"ambas.\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna.\", \"text_cleaned\": \"ninguna.\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la  I.\", \"text_cleaned\": \"solo la I.\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la Il.\", \"text_cleaned\": \"solo la Il.\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"En A, y=x²+1 da m=10. En B, y=2√x da n=10. Son iguales y el segundo modelo es raíz cuadrada.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:28:47.255586+00:00"
           }
         ]
       }

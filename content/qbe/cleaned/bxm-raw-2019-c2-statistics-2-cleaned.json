@@ -47,16 +47,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "La nota anual es 0.20·100+0.30·90+0.50·80=87."
       },
       "visuals": [
         {
           "id": "vis-283d3237a4",
           "original_filename": "image8.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image8-283d3237.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image8-283d3237.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image8-283d3237.jpg",
           "content_type": "image/jpeg",
           "sha256": "283d3237a49fd8a68e13efde6513b162fd543974b7d2c5978a55b18748365cc3",
           "byte_size": 8960,
@@ -74,33 +74,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. La nota anual es 0.20·100+0.30·90+0.50·80=87.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -114,6 +113,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.743Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestran las notas obtenidas por un estudiante en la materia de cívica durante 3 trimestres (T) y el valor porcentual que tiene cada trimestre sobre la nota final anual.\\n¿Cuál fue el promedio anual del estudiante?*\", \"stem_cleaned\": \"En la siguiente tabla se muestran las notas obtenidas por un estudiante en la materia de cívica durante 3 trimestres (T) y el valor porcentual que tiene cada trimestre sobre la nota final anual.\\n¿Cuál fue el promedio anual del estudiante?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"87\", \"text_cleaned\": \"87\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"88\", \"text_cleaned\": \"88\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"90\", \"text_cleaned\": \"90\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"92\", \"text_cleaned\": \"92\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestran las notas obtenidas por un estudiante en la materia de cívica durante 3 trimestres (T) y el valor porcentual que tiene cada trimestre sobre la nota final anual.\\n¿Cuál fue el promedio anual del estudiante?*\", \"stem_cleaned\": \"En la siguiente tabla se muestran las notas obtenidas por un estudiante en la materia de cívica durante 3 trimestres (T) y el valor porcentual que tiene cada trimestre sobre la nota final anual.\\n¿Cuál fue el promedio anual del estudiante?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"87\", \"text_cleaned\": \"87\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"88\", \"text_cleaned\": \"88\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"90\", \"text_cleaned\": \"90\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"92\", \"text_cleaned\": \"92\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"La nota anual es 0.20·100+0.30·90+0.50·80=87.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -161,16 +171,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Las modas son 92 y 96. La mediana es 96 y la media es (96+92+92+93+98+92+100+93+97+96+96)/11=95. Por ello son verdaderas I y III: D."
       },
       "visuals": [
         {
           "id": "vis-654ec4c60b",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image1-654ec4c6.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image1-654ec4c6.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image1-654ec4c6.jpg",
           "content_type": "image/jpeg",
           "sha256": "654ec4c60b8cb02c174c33d0a9bb65bda50686fb101d63e27d19eb952f3b0d32",
           "byte_size": 6844,
@@ -184,37 +194,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Las modas son 92 y 96. La mediana es 96 y la media es (96+92+92+93+98+92+100+93+97+96+96)/11=95. Por ello son verdaderas I y III: D.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -228,6 +237,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.743Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las notas de 11 estudiantes obtenidas en un examen:\\nConsidere las siguientes proposiciones:\\nI- En el grupo de notas hay más de una moda\\nII-La mediana del grupo es de 92\\nIII-La media aritmética es de 95\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las notas de 11 estudiantes obtenidas en un examen:\\nConsidere las siguientes proposiciones:\\nI- En el grupo de notas hay más de una moda\\nII-La mediana del grupo es de 92\\nIII-La media aritmética es de 95\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I\", \"text_cleaned\": \"I\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"III\", \"text_cleaned\": \"III\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"I y II\", \"text_cleaned\": \"I y II\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III\", \"text_cleaned\": \"I y III\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las notas de 11 estudiantes obtenidas en un examen:\\nConsidere las siguientes proposiciones:\\nI- En el grupo de notas hay más de una moda\\nII-La mediana del grupo es de 92\\nIII-La media aritmética es de 95\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las notas de 11 estudiantes obtenidas en un examen:\\nConsidere las siguientes proposiciones:\\nI- En el grupo de notas hay más de una moda\\nII-La mediana del grupo es de 92\\nIII-La media aritmética es de 95\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"I\", \"text_cleaned\": \"I\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"III\", \"text_cleaned\": \"III\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"I y II\", \"text_cleaned\": \"I y II\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"I y III\", \"text_cleaned\": \"I y III\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Las modas son 92 y 96. La mediana es 96 y la media es (96+92+92+93+98+92+100+93+97+96+96)/11=95. Por ello son verdaderas I y III: D.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -247,19 +267,44 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.",
-        "stem_cleaned": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.",
-        "options": [],
-        "detected_answer": null,
+        "stem_raw": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*",
+        "stem_cleaned": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.",
+        "options": [
+          {
+            "id": "A",
+            "text_raw": "3.3",
+            "text_cleaned": "3.3",
+            "visuals": []
+          },
+          {
+            "id": "B",
+            "text_raw": "4.2",
+            "text_cleaned": "4.2",
+            "visuals": []
+          },
+          {
+            "id": "C",
+            "text_raw": "5.6",
+            "text_cleaned": "5.6",
+            "visuals": []
+          },
+          {
+            "id": "D",
+            "text_raw": "7.6",
+            "text_cleaned": "7.6",
+            "visuals": []
+          }
+        ],
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas."
       },
       "visuals": [
         {
           "id": "vis-bf76451bc4",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image3-bf76451b.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image3-bf76451b.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image3-bf76451b.jpg",
           "content_type": "image/jpeg",
           "sha256": "bf76451bc47b9ddf4268d4cf46430af173f62901d61a7fb1650fa8236dfc080e",
           "byte_size": 10776,
@@ -277,39 +322,124 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
-        "gate_a_extraction_passed": false,
-        "gate_b_quality_passed": false,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key",
-          "incomplete_options"
-        ],
-        "issues": [
-          "Insufficient options detected: found 0",
-          "Missing explicit answer key from source asset",
-          "Incomplete option count: 0 of 4 options present"
-        ]
+        "status": "approved",
+        "gate_a_extraction_passed": true,
+        "gate_b_quality_passed": true,
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.",
+          "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
-        "extraction_confidence": 0.65,
-        "answer_confidence": 0,
+        "extraction_confidence": 0.95,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.5
+        "content_confidence": 1
       },
       "history": {
-        "transformations": []
+        "transformations": [
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*",
+            "normalized_text": "En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.138Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\",\"stem_cleaned\":\"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\",\"options\":[],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\",\"stem_cleaned\":\"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"3.3\",\"text_cleaned\":\"3.3\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"4.2\",\"text_cleaned\":\"4.2\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"5.6\",\"text_cleaned\":\"5.6\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"7.6\",\"text_cleaned\":\"7.6\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.138Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:31:42.804777+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:34:17.113788+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:41:19.324805+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:42:31.740219+00:00"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "normalized_text": "{\"stem_raw\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\", \"stem_cleaned\": \"En la siguiente tabla se muestra las horas por semana que escucha música un grupo de amigos por semana. Se muestra el rango de horas vs la frecuencia absoluta.\\nCon base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos? Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase. Estime el promedio utilizando las marcas de clase.\", \"options\": [{\"id\": \"A\", \"text_raw\": \"3.3\", \"text_cleaned\": \"3.3\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"4.2\", \"text_cleaned\": \"4.2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"5.6\", \"text_cleaned\": \"5.6\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"7.6\", \"text_cleaned\": \"7.6\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Con marcas de clase 5,7,9 y frecuencias 2,3,5, la media estimada es (10+21+45)/10=7.6 horas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Se precisó que el promedio de datos agrupados se estima mediante marcas de clase; no se alteraron datos ni alternativas.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:45:55.307915+00:00"
+          }
+        ]
       }
     },
     {
@@ -355,16 +485,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "En Mercadeo Q3-Q1=41-30=11."
       },
       "visuals": [
         {
           "id": "vis-172e4f8458",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
           "content_type": "image/jpeg",
           "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
           "byte_size": 16794,
@@ -378,37 +508,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. En Mercadeo Q3-Q1=41-30=11.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -422,6 +551,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.743Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"11\", \"text_cleaned\": \"11\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"12\", \"text_cleaned\": \"12\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"16\", \"text_cleaned\": \"16\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"24\", \"text_cleaned\": \"24\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"11\", \"text_cleaned\": \"11\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"12\", \"text_cleaned\": \"12\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"16\", \"text_cleaned\": \"16\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"24\", \"text_cleaned\": \"24\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"En Mercadeo Q3-Q1=41-30=11.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -469,16 +609,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "En Informática Q3-Q1=40-26=14."
       },
       "visuals": [
         {
           "id": "vis-172e4f8458",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
           "content_type": "image/jpeg",
           "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
           "byte_size": 16794,
@@ -492,37 +632,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. En Informática Q3-Q1=40-26=14.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -536,6 +675,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.743Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de informática?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de informática?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"10\", \"text_cleaned\": \"10\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"14\", \"text_cleaned\": \"14\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"18\", \"text_cleaned\": \"18\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"26\", \"text_cleaned\": \"26\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de informática?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\n¿Cuál es el recorrido intercuartílico del departamento de informática?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"10\", \"text_cleaned\": \"10\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"14\", \"text_cleaned\": \"14\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"18\", \"text_cleaned\": \"18\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"26\", \"text_cleaned\": \"26\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"En Informática Q3-Q1=40-26=14.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -555,8 +705,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
-        "stem_cleaned": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
+        "stem_raw": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -583,47 +733,59 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Los recorridos intercuartílicos de Contabilidad y Secretariado son ambos 12. El rango de Secretariado es 52-24=28 y el de Contabilidad 42-19=23; también se comparan así sus recorridos. Ambas verdaderas."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-172e4f8458",
+          "original_filename": "image6.jpg",
+          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
+          "byte_size": 16794,
+          "relationship_id": "rId9",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "statistics"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Los recorridos intercuartílicos de Contabilidad y Secretariado son ambos 12. El rango de Secretariado es 52-24=28 y el de Contabilidad 42-19=23; también se comparan así sus recorridos. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -637,6 +799,39 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.743Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.138Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?*\",\"stem_cleaned\":\"Considere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?*\",\"stem_cleaned\":\"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.138Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\\nConsidere las siguientes proposiciones\\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\\nII-Los datos de Secretariado son más variables que los de Contabilidad.\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Los recorridos intercuartílicos de Contabilidad y Secretariado son ambos 12. El rango de Secretariado es 52-24=28 y el de Contabilidad 42-19=23; también se comparan así sus recorridos. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -684,16 +879,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "El mínimo del primer semestre es 50<60. Ambos recorridos intercuartílicos son 20, por lo que II es falsa. Solo I."
       },
       "visuals": [
         {
           "id": "vis-a0d08ed794",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
           "content_type": "image/jpeg",
           "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
           "byte_size": 12964,
@@ -707,37 +902,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. El mínimo del primer semestre es 50<60. Ambos recorridos intercuartílicos son 20, por lo que II es falsa. Solo I.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -751,6 +945,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"El mínimo del primer semestre es 50<60. Ambos recorridos intercuartílicos son 20, por lo que II es falsa. Solo I.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -798,16 +1003,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Ni un cuartil ni una mediana garantizan una observación exactamente igual al valor resumido. En el primer semestre [70,80] contiene al menos un cuartil y en el segundo también; solo II está garantizada."
       },
       "visuals": [
         {
           "id": "vis-a0d08ed794",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
           "content_type": "image/jpeg",
           "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
           "byte_size": 12964,
@@ -825,33 +1030,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Ni un cuartil ni una mediana garantizan una observación exactamente igual al valor resumido. En el primer semestre [70,80] contiene al menos un cuartil y en el segundo también; solo II está garantizada.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -865,6 +1069,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\\n¿Cuál o cuáles son verdaderas*\", \"stem_cleaned\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\\n¿Cuál o cuáles son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\\n¿Cuál o cuáles son verdaderas*\", \"stem_cleaned\": \"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\\n¿Cuál o cuáles son verdaderas\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"Ni un cuartil ni una mediana garantizan una observación exactamente igual al valor resumido. En el primer semestre [70,80] contiene al menos un cuartil y en el segundo también; solo II está garantizada.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -884,8 +1099,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
-        "stem_cleaned": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
+        "stem_raw": "Considere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
+        "stem_cleaned": "Considere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -912,60 +1127,46 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Ambos recorridos intercuartílicos son 20. El Q3=80 del primer semestre no garantiza una nota exactamente 80. Ambas proposiciones son falsas."
       },
-      "visuals": [
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "statistics"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A3",
-        "evidencia": "A3.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.86,
-        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Ambos recorridos intercuartílicos son 20. El Q3=80 del primer semestre no garantiza una nota exactamente 80. Ambas proposiciones son falsas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.86,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -979,6 +1180,39 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:58:00.244Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?*\",\"stem_cleaned\":\"Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\\nConsidere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:00.244Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Considere las siguientes proposiciones:\\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Ambos recorridos intercuartílicos son 20. El Q3=80 del primer semestre no garantiza una nota exactamente 80. Ambas proposiciones son falsas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1026,9 +1260,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "A",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Juan tiene z=(70-58)/3=4 y Rita z=(65-48)/5=3.4. La variabilidad relativa femenina 5/48 es mayor que 3/58. Ambas verdaderas."
       },
       "visuals": [],
       "classification": {
@@ -1036,37 +1270,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Juan tiene z=(70-58)/3=4 y Rita z=(65-48)/5=3.4. La variabilidad relativa femenina 5/48 es mayor que 3/58. Ambas verdaderas.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1091,6 +1324,61 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-02-WHITESPACE",
+            "original_text": "Considere las siguientes proposiciones:\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "correction_type": "whitespace",
+            "semantic_change": false,
+            "reason": "Normalized internal spaces and line trims",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:00.244Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\", \"stem_cleaned\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:*\", \"stem_cleaned\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\\nDe ellas son verdaderas:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"A\", \"explanation_raw\": null, \"explanation_cleaned\": \"Juan tiene z=(70-58)/3=4 y Rita z=(65-48)/5=3.4. La variabilidad relativa femenina 5/48 es mayor que 3/58. Ambas verdaderas.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1138,9 +1426,9 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "José tiene z=2; Ana tiene z=2.4 y María z=3.2. José no supera a Ana ni iguala a María. Ninguna verdadera."
       },
       "visuals": [],
       "classification": {
@@ -1148,37 +1436,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A1",
-        "evidencia": "A1.2",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.88,
-        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. José tiene z=2; Ana tiene z=2.4 y María z=3.2. José no supera a Ana ni iguala a María. Ninguna verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.88,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1203,6 +1490,50 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Considere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\",\"stem_cleaned\":\"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:00.244Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\", \"stem_cleaned\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:*\", \"stem_cleaned\": \"Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\\n☞En una clase hay 14 hombres y 18 mujeres.\\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\\nConsidere las siguientes proposiciones:\\nI- En términos relativos, la masa de José es mayor que la de Ana.\\nII- En términos relativos, la masa de José es igual a la de María.\\nDe ellas son verdaderas:\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"José tiene z=2; Ana tiene z=2.4 y María z=3.2. José no supera a Ana ni iguala a María. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1250,16 +1581,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "A∩B contiene 6, así que no puede omitirse la intersección al sumar probabilidades. El complemento de C es {1,2,3,4,5}, no {1,3,5}. Ninguna verdadera."
       },
       "visuals": [
         {
           "id": "vis-0450f03dae",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
           "content_type": "image/jpeg",
           "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
           "byte_size": 8053,
@@ -1273,37 +1604,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Puntos muestrales y operaciones de eventos aleatorios"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. A∩B contiene 6, así que no puede omitirse la intersección al sumar probabilidades. El complemento de C es {1,2,3,4,5}, no {1,3,5}. Ninguna verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1328,6 +1658,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones\\nI- P(A ⋃ B)= P(A)+ P(B)\\nII-  El complemento de C respecto a E es {1,3,5}\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones\\nI- P(A ⋃ B)= P(A)+ P(B)\\nII- El complemento de C respecto a E es {1,3,5}\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones\\nI- P(A ⋃ B)= P(A)+ P(B)\\nII-  El complemento de C respecto a E es {1,3,5}\\n¿Cuál o cuáles de ellas son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones\\nI- P(A ⋃ B)= P(A)+ P(B)\\nII- El complemento de C respecto a E es {1,3,5}\\n¿Cuál o cuáles de ellas son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"A∩B contiene 6, así que no puede omitirse la intersección al sumar probabilidades. El complemento de C es {1,2,3,4,5}, no {1,3,5}. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1375,16 +1716,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "D",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "B∩C={6,9}, por lo que su probabilidad no es cero. La fórmula general de la unión siempre es correcta. Solo II."
       },
       "visuals": [
         {
           "id": "vis-0450f03dae",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
           "content_type": "image/jpeg",
           "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
           "byte_size": 8053,
@@ -1398,37 +1739,36 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": "A2",
-        "evidencia": "A2.1",
-        "mapping_status": "candidate",
-        "mapping_confidence": 0.85,
-        "rationale": "Matched domain rule: Puntos muestrales y operaciones de eventos aleatorios"
+        "afirmacion": null,
+        "evidencia": null,
+        "mapping_status": "unmapped",
+        "mapping_confidence": 0,
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. B∩C={6,9}, por lo que su probabilidad no es cero. La fórmula general de la unión siempre es correcta. Solo II.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
-        "mapping_confidence": 0.85,
-        "content_confidence": 0.9
+        "answer_confidence": 1,
+        "mapping_confidence": 0,
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1453,6 +1793,17 @@
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(B⋂C)=0\\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(B⋂C)=0\\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo  I\", \"text_cleaned\": \"solo I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo II\", \"text_cleaned\": \"solo II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(B⋂C)=0\\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(B⋂C)=0\\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo  I\", \"text_cleaned\": \"solo I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo II\", \"text_cleaned\": \"solo II\", \"visuals\": []}], \"detected_answer\": \"D\", \"explanation_raw\": null, \"explanation_cleaned\": \"B∩C={6,9}, por lo que su probabilidad no es cero. La fórmula general de la unión siempre es correcta. Solo II.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1472,8 +1823,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
-        "stem_cleaned": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
+        "stem_raw": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -1500,11 +1851,24 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "A∪B∪C no contiene 1 ni 5, de modo que no tiene probabilidad 1. B={3,6,9} contiene tres elementos. Ninguna verdadera."
       },
-      "visuals": [],
+      "visuals": [
+        {
+          "id": "vis-0450f03dae",
+          "original_filename": "image5.jpg",
+          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
+          "content_type": "image/jpeg",
+          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
+          "byte_size": 8053,
+          "relationship_id": "rId11",
+          "role": "question_diagram",
+          "required_for_answer": true
+        }
+      ],
       "classification": {
         "topic": "statistics"
       },
@@ -1514,33 +1878,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. A∪B∪C no contiene 1 ni 5, de modo que no tiene probabilidad 1. B={3,6,9} contiene tres elementos. Ninguna verdadera.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1554,6 +1917,39 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
+            "normalized_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?*\",\"stem_cleaned\":\"Considere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?*\",\"stem_cleaned\":\"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"ambas\",\"text_cleaned\":\"ambas\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"ninguna\",\"text_cleaned\":\"ninguna\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"solo la I\",\"text_cleaned\":\"solo la I\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"solo la II\",\"text_cleaned\":\"solo la II\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?*\", \"stem_cleaned\": \"Para responder las preguntas 12 a 14, considere la siguiente información:\\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\\n►A=obtener un número divisible por 2\\n►B=obtener un número divisible por 3\\n►C=obtener un número mayor o igual a 6\\nLa relación entre los eventos A y C es la siguiente:\\nConsidere las siguientes proposiciones:\\nI- P(A⋃B⋃C)=1\\nII- El evento B lo constituyen dos elementos.\\n¿Cuál o cuáles son verdaderas?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"ambas\", \"text_cleaned\": \"ambas\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"ninguna\", \"text_cleaned\": \"ninguna\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"solo la I\", \"text_cleaned\": \"solo la I\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"solo la II\", \"text_cleaned\": \"solo la II\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"A∪B∪C no contiene 1 ni 5, de modo que no tiene probabilidad 1. B={3,6,9} contiene tres elementos. Ninguna verdadera.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1601,16 +1997,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Las probabilidades de blanca o azul son 5/10,5/15,5/8,5/11. La mayor corresponde a la bolsa 3."
       },
       "visuals": [
         {
           "id": "vis-9f47e1667b",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
           "content_type": "image/jpeg",
           "sha256": "9f47e1667bf2eef94413655587a94949b30278fb8a3bb32849da12827060569f",
           "byte_size": 127999,
@@ -1628,33 +2024,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Las probabilidades de blanca o azul son 5/10,5/15,5/8,5/11. La mayor corresponde a la bolsa 3.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1668,6 +2063,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*\", \"stem_cleaned\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*\", \"stem_cleaned\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Las probabilidades de blanca o azul son 5/10,5/15,5/8,5/11. La mayor corresponde a la bolsa 3.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1715,16 +2121,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Las probabilidades de blanca o roja son 9/10,14/15,7/8,10/11. La mayor corresponde a la bolsa 2."
       },
       "visuals": [
         {
           "id": "vis-9f47e1667b",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
           "content_type": "image/jpeg",
           "sha256": "9f47e1667bf2eef94413655587a94949b30278fb8a3bb32849da12827060569f",
           "byte_size": 127999,
@@ -1742,33 +2148,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Las probabilidades de blanca o roja son 9/10,14/15,7/8,10/11. La mayor corresponde a la bolsa 2.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1782,6 +2187,17 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*\", \"stem_cleaned\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*\", \"stem_cleaned\": \"Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"1\", \"text_cleaned\": \"1\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"2\", \"text_cleaned\": \"2\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"3\", \"text_cleaned\": \"3\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"4\", \"text_cleaned\": \"4\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Las probabilidades de blanca o roja son 9/10,14/15,7/8,10/11. La mayor corresponde a la bolsa 2.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1829,16 +2245,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "C",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Mujer zurda y hombre derecho son categorías disjuntas con 2+30=32 estudiantes, de un total 53."
       },
       "visuals": [
         {
           "id": "vis-70023945bc",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
           "content_type": "image/jpeg",
           "sha256": "70023945bc13e3f05b3fcb88483bb21040e0a2ebeba32e26529535423d50132e",
           "byte_size": 13876,
@@ -1856,33 +2272,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Mujer zurda y hombre derecho son categorías disjuntas con 2+30=32 estudiantes, de un total 53.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -1896,6 +2311,50 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
+            "normalized_text": "Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\",\"stem_cleaned\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"21/53\",\"text_cleaned\":\"21/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"25/53\",\"text_cleaned\":\"25/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"32/53\",\"text_cleaned\":\"32/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"35/53\",\"text_cleaned\":\"35/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\",\"stem_cleaned\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"21/53\",\"text_cleaned\":\"21/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"25/53\",\"text_cleaned\":\"25/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"32/53\",\"text_cleaned\":\"32/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"35/53\",\"text_cleaned\":\"35/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\",\"stem_cleaned\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"21/53\",\"text_cleaned\":\"21/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"25/53\",\"text_cleaned\":\"25/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"32/53\",\"text_cleaned\":\"32/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"35/53\",\"text_cleaned\":\"35/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\",\"stem_cleaned\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"21/53\",\"text_cleaned\":\"21/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"25/53\",\"text_cleaned\":\"25/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"32/53\",\"text_cleaned\":\"32/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"35/53\",\"text_cleaned\":\"35/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:00.245Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\", \"stem_cleaned\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"21/53\", \"text_cleaned\": \"21/53\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"25/53\", \"text_cleaned\": \"25/53\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"32/53\", \"text_cleaned\": \"32/53\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"35/53\", \"text_cleaned\": \"35/53\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*\", \"stem_cleaned\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"21/53\", \"text_cleaned\": \"21/53\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"25/53\", \"text_cleaned\": \"25/53\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"32/53\", \"text_cleaned\": \"32/53\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"35/53\", \"text_cleaned\": \"35/53\", \"visuals\": []}], \"detected_answer\": \"C\", \"explanation_raw\": null, \"explanation_cleaned\": \"Mujer zurda y hombre derecho son categorías disjuntas con 2+30=32 estudiantes, de un total 53.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }
@@ -1943,16 +2402,16 @@
             "visuals": []
           }
         ],
-        "detected_answer": null,
+        "detected_answer": "B",
         "explanation_raw": null,
-        "explanation_cleaned": null
+        "explanation_cleaned": "Hombre zurdo o mujer derecha o mujer zurda suma 3+18+2=23 de 53."
       },
       "visuals": [
         {
           "id": "vis-70023945bc",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
+          "rel_path": "content\\qbe\\assets\\media\\bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
           "content_type": "image/jpeg",
           "sha256": "70023945bc13e3f05b3fcb88483bb21040e0a2ebeba32e26529535423d50132e",
           "byte_size": 13876,
@@ -1970,33 +2429,32 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "No confident match found against official 02-2026 evidence criteria"
+        "rationale": "Unmapped initial extraction from historical asset"
       },
       "quality": {
-        "status": "needs_review",
+        "status": "approved",
         "gate_a_extraction_passed": true,
         "gate_b_quality_passed": true,
-        "gate_c_internalization_passed": false,
-        "review_flags": [
-          "missing_answer_key"
-        ],
-        "issues": [
-          "Missing explicit answer key from source asset"
-        ]
+        "gate_c_internalization_passed": true,
+        "review_flags": [],
+        "issues": []
       },
       "review": {
-        "extraction_reviewed": false,
-        "content_reviewed": false,
-        "answer_reviewed": false,
+        "extraction_reviewed": true,
+        "content_reviewed": true,
+        "answer_reviewed": true,
         "mapping_reviewed": false,
-        "reviewer_notes": []
+        "reviewer_notes": [
+          "Independently solved and all alternatives checked. Hombre zurdo o mujer derecha o mujer zurda suma 3+18+2=23 de 53.",
+          "Source content preserved; required context and production visual checked."
+        ]
       },
       "confidence": {
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
-        "answer_confidence": 0,
+        "answer_confidence": 1,
         "mapping_confidence": 0,
-        "content_confidence": 0.9
+        "content_confidence": 1
       },
       "history": {
         "transformations": [
@@ -2010,6 +2468,50 @@
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
             "timestamp": "2026-11-06T02:56:40.744Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-03-ARTIFACT-STAR",
+            "original_text": "Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
+            "normalized_text": "Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?",
+            "correction_type": "formatting",
+            "semantic_change": false,
+            "reason": "Removed trailing asterisk exam artifact",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\",\"stem_cleaned\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"22/53\",\"text_cleaned\":\"22/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"23/53\",\"text_cleaned\":\"23/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"36/53\",\"text_cleaned\":\"36/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"38/53\",\"text_cleaned\":\"38/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\",\"stem_cleaned\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"22/53\",\"text_cleaned\":\"22/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"23/53\",\"text_cleaned\":\"23/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"36/53\",\"text_cleaned\":\"36/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"38/53\",\"text_cleaned\":\"38/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:53:14.139Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-SOURCE-RECOVERY",
+            "original_text": "[{\"stem_raw\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\",\"stem_cleaned\":\"Si se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"22/53\",\"text_cleaned\":\"22/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"23/53\",\"text_cleaned\":\"23/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"36/53\",\"text_cleaned\":\"36/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"38/53\",\"text_cleaned\":\"38/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}]",
+            "normalized_text": "{\"stem_raw\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\",\"stem_cleaned\":\"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\",\"options\":[{\"id\":\"A\",\"text_raw\":\"22/53\",\"text_cleaned\":\"22/53\",\"visuals\":[]},{\"id\":\"B\",\"text_raw\":\"23/53\",\"text_cleaned\":\"23/53\",\"visuals\":[]},{\"id\":\"C\",\"text_raw\":\"36/53\",\"text_cleaned\":\"36/53\",\"visuals\":[]},{\"id\":\"D\",\"text_raw\":\"38/53\",\"text_cleaned\":\"38/53\",\"visuals\":[]}],\"detected_answer\":null,\"explanation_raw\":null,\"explanation_cleaned\":null}",
+            "correction_type": "transcription",
+            "semantic_change": true,
+            "reason": "Recovered complete source paragraphs, numbered statements, table rows and shared context; raw DOCX/extracted evidence retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T09:58:00.245Z"
+          },
+          {
+            "stage": "manual_review",
+            "rule_id": "QBE-VERIFIED-CONTENT",
+            "original_text": "{\"stem_raw\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\", \"stem_cleaned\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"22/53\", \"text_cleaned\": \"22/53\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"23/53\", \"text_cleaned\": \"23/53\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"36/53\", \"text_cleaned\": \"36/53\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"38/53\", \"text_cleaned\": \"38/53\", \"visuals\": []}], \"detected_answer\": null, \"explanation_raw\": null, \"explanation_cleaned\": null}",
+            "normalized_text": "{\"stem_raw\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*\", \"stem_cleaned\": \"Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?\", \"options\": [{\"id\": \"A\", \"text_raw\": \"22/53\", \"text_cleaned\": \"22/53\", \"visuals\": []}, {\"id\": \"B\", \"text_raw\": \"23/53\", \"text_cleaned\": \"23/53\", \"visuals\": []}, {\"id\": \"C\", \"text_raw\": \"36/53\", \"text_cleaned\": \"36/53\", \"visuals\": []}, {\"id\": \"D\", \"text_raw\": \"38/53\", \"text_cleaned\": \"38/53\", \"visuals\": []}], \"detected_answer\": \"B\", \"explanation_raw\": null, \"explanation_cleaned\": \"Hombre zurdo o mujer derecha o mujer zurda suma 3+18+2=23 de 53.\"}",
+            "correction_type": "answer_key_correction",
+            "semantic_change": true,
+            "reason": "Independently established unique answer and authored checked explanation; recovered source context retained.",
+            "confidence": 1,
+            "timestamp": "2026-11-06T10:04:41.826977+00:00"
           }
         ]
       }

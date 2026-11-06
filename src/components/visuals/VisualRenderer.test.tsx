@@ -5,6 +5,13 @@ import { GroupVisual } from './GroupVisual';
 import { Group } from '../../types';
 
 describe('VisualRenderer & GroupVisual', () => {
+  it('keeps excluded endpoints visibly open', () => {
+    const { container } = render(<VisualRenderer spec={{ type: 'cartesian_2d',
+      children: [{ type: 'point', coords: [1, 2], open: true }] }} />);
+    const endpoint = container.querySelector('.primitive-point circle');
+    expect(endpoint?.getAttribute('fill')).toBe('var(--visual-bg, #ffffff)');
+    expect(endpoint?.getAttribute('stroke')).not.toBe('var(--visual-bg, #ffffff)');
+  });
   it('renders Cartesian plane visual spec via registry', () => {
     const { container } = render(
       <VisualRenderer

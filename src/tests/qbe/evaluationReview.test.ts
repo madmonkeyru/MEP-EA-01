@@ -158,7 +158,8 @@ describe('QBE-05 & QBE-06: Evaluation Mapping & Quality Review Workflow', () => 
       }
     }
 
-    expect(questions.length).toBe(564);
+    expect(questions.length).toBe(536);
+    expect(new Set(questions.map(q => q.id)).size).toBe(questions.length);
     const { stats, markdown } = compileMappingReport(questions);
 
     expect(stats.totalGateB).toBeGreaterThan(250);

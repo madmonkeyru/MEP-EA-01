@@ -269,7 +269,7 @@ input[type="checkbox"], input[type="radio"] { width: 22px; min-height: 22px; hei
 .question-cell { min-height: 48px; min-width: 44px; border: 1px solid var(--text-muted); border-radius: 10px; padding: .4rem; }
 .question-cell.answered { background: var(--bg-secondary); }
 .question-cell[aria-current] { outline: 3px solid var(--action); outline-offset: 2px; }
-.question-stem { font-size: 1.1rem; line-height: 1.85; font-weight: 400; }
+.question-stem { font-size: 1.1rem; line-height: 1.85; font-weight: 400; white-space: pre-line; }
 .answer-options { display: flex; flex-direction: column; gap: .75rem; }
 .answer-option { display: flex; flex-wrap: wrap; align-items: baseline; gap: .8rem; min-height: 56px; border: 2px solid var(--visual-grid); border-radius: 14px; padding: 1rem; line-height: 1.7; cursor: pointer; }
 .answer-option.selected { border-color: var(--action); background: var(--accent-soft); }

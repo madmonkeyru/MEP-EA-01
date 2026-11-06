@@ -10,6 +10,7 @@ export interface PointProps {
   labelPosition?: 'top' | 'bottom' | 'left' | 'right' | 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
   color?: string;
   radius?: number;
+  open?: boolean;
   transform: CoordinateTransform;
 }
 
@@ -21,6 +22,7 @@ export const Point: React.FC<PointProps> = ({
   labelPosition = 'top-right',
   color = 'var(--visual-primary, #2563eb)',
   radius = 4,
+  open = false,
   transform,
 }) => {
   const ptX = coords ? coords[0] : x ?? 0;
@@ -85,8 +87,8 @@ export const Point: React.FC<PointProps> = ({
           cx={px}
           cy={py}
           r={radius}
-          fill={color}
-          stroke="var(--visual-bg, #ffffff)"
+          fill={open ? 'var(--visual-bg, #ffffff)' : color}
+          stroke={open ? color : 'var(--visual-bg, #ffffff)'}
           strokeWidth={1.5}
         />
       )}

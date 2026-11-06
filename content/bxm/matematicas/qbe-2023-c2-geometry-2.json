@@ -1,0 +1,1472 @@
+{
+  "schema_version": "1.0",
+  "exam": "Práctica histórica 2023-c2 · Geometría",
+  "convocatoria": "2023-c2",
+  "language": "es-CR",
+  "source": "BXM Math GEO 02 C23.docx",
+  "set_info": {
+    "id": "qbe-2023-c2-geometry-2",
+    "name": "Práctica histórica 2023-c2 · Geometría",
+    "description": "Preguntas verificadas de material histórico atribuido; origen oficial no verificado. Banco de práctica, no examen completo.",
+    "total_items": 20,
+    "file": "bxm/matematicas/qbe-2023-c2-geometry-2.json",
+    "convocatoria": "2023-c2"
+  },
+  "total_items": 20,
+  "items": [
+    {
+      "id": 10316,
+      "code": "item-qbe-2023-c2-geometry-2-q19",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?",
+      "options": {
+        "A": "$(x-3)^2 + (y-4)^2 = \\sqrt{5}$",
+        "B": "$(x + 3)^2 + (y + 4)^2 = \\sqrt{5}$",
+        "C": "$(x + 3)^2 + (y + 4)^2 = 25$",
+        "D": "$(x-3)^2 + (y-4)^2 = 25$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Centro (-3,-4), radio 5: (x+3)²+(y+4)²=25."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q19",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10317,
+      "code": "item-qbe-2023-c2-geometry-2-q20",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "¿Cuál es la ecuación de la siguiente gráfica?",
+      "options": {
+        "A": "$x^2 + (y-2)^2 = 4$",
+        "B": "$x^2 + (y + 2)^2 = 4$",
+        "C": "$(x + 2)^2 + y^2 = 4$",
+        "D": "$(x-2)^2 + y^2 = 4$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Centro (-2,0), radio 2: (x+2)²+y²=4."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -5,
+            2
+          ],
+          "y": [
+            -3,
+            3
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              -2,
+              0
+            ],
+            "radius": 2
+          },
+          {
+            "type": "point",
+            "coords": [
+              -2,
+              0
+            ],
+            "label": "D"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q20",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10318,
+      "code": "item-qbe-2023-c2-geometry-2-q21",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "P(0,0) da distancia²=4<5 y es interior, no exterior. R(1,1) da 10>5 y es exterior, no interior. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q21",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10319,
+      "code": "item-qbe-2023-c2-geometry-2-q22",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La distancia del centro (0,1) a y=x es 1/√2<3, así que es secante. La recta y=-3 dista 4>3 y es exterior. Ambas verdaderas."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q22",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10320,
+      "code": "item-qbe-2023-c2-geometry-2-q23",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La recta y=0 dista 2 del centro (-3,2), igual al radio. La recta y=-x dista 1/√2<2, así que es secante. Ambas verdaderas."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q23",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10321,
+      "code": "item-qbe-2023-c2-geometry-2-q24",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:",
+      "options": {
+        "A": "B y A",
+        "B": "O y B",
+        "C": "A y O",
+        "D": "T y O"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "T es punto de tangencia de r y C. El radio OT es perpendicular a r."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            3
+          ],
+          "y": [
+            0,
+            8
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "circle",
+            "center": [
+              -1,
+              4
+            ],
+            "radius": 2
+          },
+          {
+            "type": "point",
+            "coords": [
+              -1,
+              4
+            ],
+            "label": "O"
+          },
+          {
+            "type": "point",
+            "coords": [
+              0.8973665961010275,
+              4.632455532033676
+            ],
+            "label": "T"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -2.8973665961010275,
+              3.367544467966324
+            ],
+            "label": "B"
+          },
+          {
+            "type": "point",
+            "coords": [
+              -1.8,
+              2.2
+            ],
+            "label": "A"
+          },
+          {
+            "type": "line",
+            "slope": -3,
+            "intercept": 7.324555320336759
+          },
+          {
+            "type": "label",
+            "coords": [
+              1,
+              6
+            ],
+            "text": "r"
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q24",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10323,
+      "code": "item-qbe-2023-c2-geometry-2-q26",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La circunferencia c tiene centro (-1,4) y radio 2, como en la figura anterior. Se traslada una unidad a la izquierda y tres hacia abajo. ¿Cuál es la ecuación resultante?",
+      "options": {
+        "A": "$(x + 2)^2 + (y + 1)^2 = 4$",
+        "B": "$(x -2)^2 + (y -1)^2 = 4$",
+        "C": "$(x-2)^2 + (y + 1)^2 = 4$",
+        "D": "$(x + 2)^2 + (y-1)^2 = 4$"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "La circunferencia original tiene centro (-1,4) y radio 2. Trasladar (-1,-3) da centro (-2,1): (x+2)²+(y-1)²=4."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q26",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10324,
+      "code": "item-qbe-2023-c2-geometry-2-q27",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "BAFE tiene ancho 6 y altura 2, por lo que P=16. La parte superior tiene bases 6 y 4 y altura 2, con área 10; área total=12+10=22, no 20. Solo I: C."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -3,
+            6
+          ],
+          "y": [
+            -1,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                -1,
+                4
+              ],
+              [
+                -2,
+                2
+              ]
+            ],
+            "labels": [
+              "A",
+              "F",
+              "E",
+              "D",
+              "C",
+              "B"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q27",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10325,
+      "code": "item-qbe-2023-c2-geometry-2-q28",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La diagonal de un polígono mide $5\\sqrt{2}$ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+      "options": {
+        "A": "20",
+        "B": "22.5",
+        "C": "25",
+        "D": "28.28"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "El ángulo externo 90° implica cuadrado. Diagonal 5√2 da lado 5 y perímetro 20."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q28",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10326,
+      "code": "item-qbe-2023-c2-geometry-2-q29",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide $4\\sqrt{3}$, entonces el área de dicho polígono corresponde a",
+      "options": {
+        "A": "12 $\\sqrt{3}$",
+        "B": "$16\\sqrt{3}$",
+        "C": "$72\\sqrt{3}$",
+        "D": "$96\\sqrt{3}$"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "La suma 720° implica hexágono. Apotema 4√3 da lado 8 y área 96√3."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q29",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10327,
+      "code": "item-qbe-2023-c2-geometry-2-q30",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
+      "options": {
+        "A": "30",
+        "B": "35.27",
+        "C": "48.54",
+        "D": "66"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "Ángulo central 72° implica pentágono. Lado=2·6·sin36° y P=60·sin36°≈35.27."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q30",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10328,
+      "code": "item-qbe-2023-c2-geometry-2-q31",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es",
+      "options": {
+        "A": "$y = 4$",
+        "B": "$x = 2$",
+        "C": "$x = 4$",
+        "D": "$y = 2$"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "A=(1,2) y C=(7,2) tienen mediatriz x=(1+7)/2=4."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -1,
+            9
+          ],
+          "y": [
+            -1,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q31",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10329,
+      "code": "item-qbe-2023-c2-geometry-2-q33",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que AB sea homólogo con DC .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La reflexión en x=4 lleva AB a DC. La reflexión en y=3 lleva el trapecio superior ABCD al inferior SRUT. Ambas verdaderas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -1,
+            9
+          ],
+          "y": [
+            0,
+            7
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                6,
+                4
+              ],
+              [
+                7,
+                5
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "labels": [
+              "S",
+              "R",
+              "U",
+              "T"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q33",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10330,
+      "code": "item-qbe-2023-c2-geometry-2-q34",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en",
+      "options": {
+        "A": "(0,4)",
+        "B": "(2,4)",
+        "C": "(-2,4)",
+        "D": "(2,-4)"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "G=(2,4); reflejar respecto de y=0 da (2,-4)."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            6
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                -1
+              ],
+              [
+                -2,
+                -4
+              ],
+              [
+                -1,
+                -3
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                4,
+                -1
+              ],
+              [
+                3,
+                -2
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                4,
+                -4
+              ]
+            ],
+            "labels": [
+              "P",
+              "Q",
+              "R",
+              "W"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q34",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10331,
+      "code": "item-qbe-2023-c2-geometry-2-q35",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "La razón -1 y la rotación de 180° son la misma transformación (x,y)→(-x,-y); envían los vértices de HGFE a ABCD. Ambas válidas."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            6
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                -1
+              ],
+              [
+                -2,
+                -4
+              ],
+              [
+                -1,
+                -3
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                4,
+                -1
+              ],
+              [
+                3,
+                -2
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                4,
+                -4
+              ]
+            ],
+            "labels": [
+              "P",
+              "Q",
+              "R",
+              "W"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q35",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10332,
+      "code": "item-qbe-2023-c2-geometry-2-q36",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambos",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "D",
+      "solution_steps": [
+        "La reflexión en y=1 no cambia las abscisas negativas de CBAD y no puede producir RWPQ a la derecha. La traslación (2,-5) lleva E,H,G,F a R,W,P,Q. Solo II."
+      ],
+      "visual_spec": {
+        "type": "cartesian_2d",
+        "domain": {
+          "x": [
+            -4,
+            6
+          ],
+          "y": [
+            -5,
+            6
+          ]
+        },
+        "grid": true,
+        "preserveAspect": true,
+        "width": 440,
+        "height": 380,
+        "alt": "Plano cartesiano con los datos del problema.",
+        "children": [
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "labels": [
+              "E",
+              "F",
+              "G",
+              "H"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                -2,
+                -1
+              ],
+              [
+                -2,
+                -4
+              ],
+              [
+                -1,
+                -3
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "labels": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          {
+            "type": "polygon",
+            "vertices": [
+              [
+                4,
+                -1
+              ],
+              [
+                3,
+                -2
+              ],
+              [
+                3,
+                -3
+              ],
+              [
+                4,
+                -4
+              ]
+            ],
+            "labels": [
+              "P",
+              "Q",
+              "R",
+              "W"
+            ]
+          }
+        ]
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q36",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10333,
+      "code": "item-qbe-2023-c2-geometry-2-q37",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Sean AB y NM dos diámetros de una esfera con centro O, tal que AB sea ortogonal a NM y AB = 8. Analice las siguientes afirmaciones:\nI. MA corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambas",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "B",
+      "solution_steps": [
+        "AB=8 implica radio 4. MA une extremos de radios ortogonales y mide 4√2, no 4; OA=OB=4. Ninguna verdadera."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q37",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10334,
+      "code": "item-qbe-2023-c2-geometry-2-q38",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?",
+      "options": {
+        "A": "8π",
+        "B": "10π",
+        "C": "12π",
+        "D": "16π"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "El corte está a 15 del vértice en un cono de altura 20 y radio basal 8. Radio de sección=8·15/20=6, longitud=12π."
+      ],
+      "visual_spec": null,
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q38",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10335,
+      "code": "item-qbe-2023-c2-geometry-2-q39",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas",
+      "options": {
+        "A": "ambos",
+        "B": "ninguna",
+        "C": "solo la I",
+        "D": "solo la II"
+      },
+      "correct_answer": "C",
+      "solution_steps": [
+        "Un corte oblicuo produce una elipse. Un plano que contiene el eje OS produce una sección rectangular, no hiperbólica. Solo I."
+      ],
+      "visual_spec": {
+        "type": "solid_3d",
+        "shape": "cylinder",
+        "showCrossSection": false,
+        "parameters": {
+          "radius": 65,
+          "height": 150
+        },
+        "referenceBox": {
+          "title": "Datos",
+          "lines": [
+            "Radio AS = 5",
+            "Altura AC = 12",
+            "S y O: centros de las bases"
+          ]
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q39",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    },
+    {
+      "id": 10336,
+      "code": "item-qbe-2023-c2-geometry-2-q40",
+      "set_id": "qbe-2023-c2-geometry-2",
+      "area": "Geometría",
+      "area_id": "geometry",
+      "topic": "geometry",
+      "stem": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es",
+      "options": {
+        "A": "10π",
+        "B": "24π",
+        "C": "25π",
+        "D": "36π"
+      },
+      "correct_answer": "A",
+      "solution_steps": [
+        "AS=5 es radio basal. Un corte paralelo a la base tiene el mismo radio y longitud=2π·5=10π."
+      ],
+      "visual_spec": {
+        "type": "solid_3d",
+        "shape": "cylinder",
+        "showCrossSection": false,
+        "parameters": {
+          "radius": 65,
+          "height": 150
+        },
+        "referenceBox": {
+          "title": "Datos",
+          "lines": [
+            "Radio AS = 5",
+            "Altura AC = 12",
+            "S y O: centros de las bases"
+          ]
+        }
+      },
+      "calculator_allowed": true,
+      "program_applicability": [
+        "BXM"
+      ],
+      "source_question_id": "bxm-raw-2023-c2-geometry-2-q40",
+      "provenance": "source_unverified",
+      "source": {
+        "asset_id": "bxm-raw-2023-c2-geometry-2",
+        "filename": "BXM Math GEO 02 C23.docx",
+        "convocatoria": "2023-c2",
+        "area": "geometry",
+        "subject": "matematica",
+        "program": "bxm",
+        "version": "1.0.0",
+        "source_type": "docx",
+        "provenance_status": "source_unverified",
+        "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
+      },
+      "review_status": "verified",
+      "historical_convocatoria": [
+        "2023-c2"
+      ]
+    }
+  ]
+}
