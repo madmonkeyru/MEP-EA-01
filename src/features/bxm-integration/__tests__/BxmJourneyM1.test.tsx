@@ -243,9 +243,9 @@ describe('M1 - Product Journey Foundation & Canonical Recommendations', () => {
       );
 
       // Verify that progress summary counts are visible
-      expect(screen.getByText(/En refuerzo/i)).toBeInTheDocument();
+      expect(screen.getByText(/Necesita práctica/i)).toBeInTheDocument();
       expect(screen.getByText(/Última actividad/i)).toBeInTheDocument();
-      expect(screen.getByText(/Evaluación diagnóstica/i)).toBeInTheDocument();
+      expect(screen.getByText('Diagnóstico', { exact: true })).toBeInTheDocument();
 
       // Recommendation card is derived from the weakness: directs to lesson when available for this evidence
       const card = screen.getByTestId('canonical-recommendation-card');

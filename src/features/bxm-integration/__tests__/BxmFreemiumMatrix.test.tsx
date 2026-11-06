@@ -51,11 +51,12 @@ describe('BxmLearningHub - Sprint 5 Freemium Matrix', () => {
     // Official simulation button
     const officialBtn = screen.getByRole('button', { name: /Examen oficial de referencia/i });
     fireEvent.click(officialBtn);
+    fireEvent.click(screen.getByRole('button', { name: /Comenzar Simulación Oficial/i }));
     expect(handleSimulation).toHaveBeenCalledTimes(1);
     expect(screen.queryByText(/Planes de Estudio Pro/i)).not.toBeInTheDocument();
 
     // Diagnostic preparation button
-    const diagBtn = screen.getByRole('button', { name: /Preparar diagnóstico/i });
+    const diagBtn = screen.getByRole('button', { name: /Iniciar evaluación diagnóstica/i });
     fireEvent.click(diagBtn);
     expect(screen.getByText(/Antes de comenzar la actividad/i)).toBeInTheDocument();
   });

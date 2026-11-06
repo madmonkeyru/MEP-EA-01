@@ -36,9 +36,9 @@ describe('Milestone 4 (M4): Simulation Loop & Exam Preparation Readiness', () =>
 
       // Verify header and distinct modes
       expect(screen.getByText('Simulación de Examen BXM')).toBeInTheDocument();
-      expect(screen.getByText('Simulacro Formativo de Autor')).toBeInTheDocument();
+      expect(screen.getByText('Simulacro de práctica')).toBeInTheDocument();
       expect(screen.getByText('20 preguntas · ~45 min')).toBeInTheDocument();
-      expect(screen.getByText('Examen Oficial de Referencia')).toBeInTheDocument();
+      expect(screen.getByText('Simulación de referencia')).toBeInTheDocument();
       expect(screen.getByText('60 preguntas · 150 min')).toBeInTheDocument();
     });
 
@@ -66,7 +66,7 @@ describe('Milestone 4 (M4): Simulation Loop & Exam Preparation Readiness', () =>
       fireEvent.click(officialLaunchBtn);
 
       // Verify the Briefing Dialog appears with real conditions and no predictive score
-      expect(screen.getByText(/Preparación para el Examen Oficial de Referencia \(60 ítems\)/i)).toBeInTheDocument();
+      expect(screen.getByText(/Preparación para la simulación de referencia \(60 ítems\)/i)).toBeInTheDocument();
       expect(screen.getByText(/Condiciones Reales del Examen MEP/i)).toBeInTheDocument();
       expect(screen.getByText(/150 minutos \(2 horas y media\)/i)).toBeInTheDocument();
       expect(screen.getByText(/Estado de tu preparación actual/i)).toBeInTheDocument();
@@ -166,7 +166,7 @@ describe('Milestone 4 (M4): Simulation Loop & Exam Preparation Readiness', () =>
       );
 
       // Verify dashboard renders
-      expect(screen.getByText('Panel de Preparación Formativa')).toBeInTheDocument();
+      expect(screen.getByText('Tu preparación')).toBeInTheDocument();
 
       // The decision surface widget displays canonical recommendation
       const card = screen.getByTestId('canonical-recommendation-card');

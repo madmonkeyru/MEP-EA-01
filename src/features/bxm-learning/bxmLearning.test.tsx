@@ -245,11 +245,11 @@ describe('Agent A: BXM Learning Content & Digital Temario', () => {
     it('renders curriculum tree with filter and opens complete lesson', () => {
       render(<BxmDigitalTemario />);
 
-      expect(screen.getByText(/Temario Digital Interactivo/i)).toBeInTheDocument();
-      expect(screen.getByText(/71 Evidencias Oficiales MEP/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Temario' })).toBeInTheDocument();
+      expect(screen.getByText(/71 habilidades del programa/i)).toBeInTheDocument();
 
       // Open a complete lesson
-      const completePill = screen.getAllByText(/Lección completa/i)[0];
+      const completePill = screen.getAllByText('Disponible', { exact: true })[0];
       expect(completePill).toBeInTheDocument();
 
       fireEvent.click(completePill);
@@ -257,7 +257,7 @@ describe('Agent A: BXM Learning Content & Digital Temario', () => {
 
       // Return to tree
       fireEvent.click(screen.getByText(/← Volver al Temario Digital/i));
-      expect(screen.getByText(/Temario Digital Interactivo/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Temario' })).toBeInTheDocument();
     });
   });
 });

@@ -1,3 +1,4 @@
+import { Dialog } from '../../../components/common/Dialog';
 import { TextRenderer } from '../../../components/common/TextRenderer';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import type {
@@ -33,6 +34,8 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
   const [remainingSeconds, setRemainingSeconds] = useState<number | null>(null);
   const [_flagRevision, setFlagRevision] = useState(0);
 
+  const questionHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => { questionHeading.current?.focus(); }, [currentIndex]);
   const isExam = runner.isExamMode();
   const currentItem: AssessmentItem | undefined = runner.items[currentIndex];
   const currentState = currentItem ? runner.getItemState(currentItem.id) : undefined;
@@ -165,7 +168,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 sm:p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl shadow-sm text-stone-900 dark:text-stone-100">
+    <div className="assessment-workspace max-w-4xl mx-auto p-4 sm:p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl shadow-sm text-stone-900 dark:text-stone-100">
       {/* Top Header */}
       <div className="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-stone-200 dark:border-stone-800 gap-2">
         <div className="flex items-center gap-3">
@@ -182,10 +185,10 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
           )}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="assessment-tools">
           {onExit && <button onClick={() => { persist(); onExit(); }} className="secondary-button">Guardar y salir</button>}
           {remainingSeconds !== null && (
-            <div className={`text-sm font-mono font-bold ${remainingSeconds < 300 ? 'text-red-600 animate-pulse' : 'text-stone-600 dark:text-stone-300'}`}>
+            <div role="timer" aria-label="Tiempo restante" className={`text-sm font-mono font-medium ${remainingSeconds < 300 ? 'text-red-700 dark:text-red-300' : 'text-stone-600 dark:text-stone-300'}`}>
               Tiempo: {formatTimer(remainingSeconds)}
             </div>
           )}
@@ -213,20 +216,12 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
       {/* Item Metadata */}
       {runner.policy.allowFormulaSheet && formulaSheet && <details className="mb-4"><summary>Hoja de fórmulas permitida</summary>{formulaSheet}</details>}
       {runner.policy.allowCalculator && <p className="text-xs mb-3">Puede utilizar la calculadora permitida para esta actividad.</p>}
-      <div className="flex flex-wrap gap-2 text-xs text-stone-500 dark:text-stone-400 mb-4">
-        <span>Área: <strong className="capitalize">{currentItem.domain}</strong></span>
-        <span>•</span>
-        <span>Evidencia: <strong>{currentItem.evidenceCode}</strong></span>
-        <span>•</span>
-        <span>Nivel: <strong className="capitalize">{currentItem.cognitiveLevel}</strong></span>
-        <span>•</span>
-        <span>Dificultad: Tier {currentItem.difficultyTier}</span>
-      </div>
+      <p className="muted mb-4">{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[currentItem.domain]}</p>
 
       {/* Stem */}
-      <div className="text-base sm:text-lg mb-6 leading-relaxed font-serif">
+      <h1 ref={questionHeading} tabIndex={-1} className="question-stem mb-6">
         <TextRenderer content={currentItem.stem} inline />
-      </div>
+      </h1>
 
       {/* Options */}
       <div className="space-y-2 sm:space-y-3 mb-6">
@@ -376,7 +371,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
       )}
 
       {/* Navigation Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-stone-200 dark:border-stone-800">
+      <div className="assessment-navigation pt-4 border-t border-stone-200 dark:border-stone-800">
         <button
           onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
           disabled={currentIndex === 0}
@@ -386,7 +381,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
         </button>
 
         {/* Quick Question Grid Dots */}
-        <div className="flex gap-1 overflow-x-auto max-w-[200px] sm:max-w-md py-1">
+        <div className="assessment-question-rail">
           {runner.items.map((it, idx) => {
             const st = runner.getItemState(it.id);
             const isDone = st?.draftOption !== null || st?.firstResponse !== null;
@@ -394,6 +389,8 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
             return (
               <button
                 key={it.id}
+                aria-label={`Pregunta ${idx + 1}${st?.flaggedForReview ? ', marcada para revisión' : ''}`}
+                aria-current={isCur ? 'step' : undefined}
                 onClick={() => setCurrentIndex(idx)}
                 className={`w-6 h-6 rounded text-xs font-bold shrink-0 transition ${
                   isCur
@@ -420,9 +417,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
       {/* Learner Reason Modal */}
       {showLearnerReasonModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-xl max-w-md w-full shadow-lg">
-            <h3 className="text-base font-bold mb-2">¿Qué crees que falló en esta respuesta?</h3>
+        <Dialog title="¿Qué crees que falló en esta respuesta?" onClose={() => handleConfirmLearnerReason('unknown')}>
             <p className="text-xs text-stone-500 mb-4">
               Identificar la causa de tu error te ayuda a enfocar mejor tu estudio. (No afectará tu puntuación).
             </p>
@@ -446,8 +441,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
             >
               Omitir / No estoy seguro
             </button>
-          </div>
-        </div>
+        </Dialog>
       )}
     </div>
   );
@@ -461,9 +455,9 @@ export const BxmSessionResultBreakdownView: React.FC<{
     <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl shadow-sm text-stone-900 dark:text-stone-100">
       <div className="flex items-center justify-between pb-4 mb-6 border-b border-stone-200 dark:border-stone-800">
         <div>
-          <h2 className="text-xl font-bold">Resultados de la Evaluación BXM</h2>
+          <h2 className="text-xl font-bold">Tu resultado</h2>
           <p className="text-xs text-stone-500">
-            Sesión: {result.sessionId} • Modo: <span className="capitalize">{result.mode}</span>
+            {result.kind === 'diagnostic' ? 'Diagnóstico completado' : result.mode === 'exam' ? 'Simulación completada' : 'Práctica completada'}
           </p>
         </div>
         {onExit && (
@@ -474,7 +468,7 @@ export const BxmSessionResultBreakdownView: React.FC<{
       </div>
 
       {/* Global KPI banner */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
           <div className="text-xs text-stone-500">Puntaje primer intento</div>
           <div className="text-2xl font-black">{result.firstResponseScorePercentage}%</div>
@@ -487,40 +481,32 @@ export const BxmSessionResultBreakdownView: React.FC<{
           <div className="text-2xl font-black">{result.totalAnswered}</div>
           <div className="text-xs text-stone-500">Sin responder: {result.totalUnanswered}</div>
         </div>
-        <div className="p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
-          <div className="text-xs text-stone-500">Duración</div>
-          <div className="text-2xl font-black">{Math.floor(result.durationSeconds / 60)}m {result.durationSeconds % 60}s</div>
-          <div className="text-xs text-stone-500">Estado: {result.status}</div>
-        </div>
-        <div className="p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
-          <div className="text-xs text-stone-500">Material oficial en esta actividad</div>
-          <div className="text-2xl font-black">{result.benchmarkExposed ? 'Incluido' : 'No incluido'}</div>
-          <div className="text-xs text-stone-500">El examen de referencia se ofrece por separado.</div>
-        </div>
       </div>
+      <p className="muted mb-4">Duración: {Math.floor(result.durationSeconds / 60)} min {result.durationSeconds % 60} s · {result.status === 'timed_out' ? 'Se terminó el tiempo' : 'Actividad finalizada'}</p>
 
       {/* Shortfall Banner if any */}
       {result.shortfalls && result.shortfalls.length > 0 && (
         <div className="p-4 mb-6 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg text-xs text-amber-900 dark:text-amber-200">
-          <strong>Aviso de cobertura del banco:</strong> Se detectaron faltantes en el inventario disponible:
+          <strong>Actividad más corta:</strong> No había suficientes preguntas para completar todos los temas:
           <ul className="list-disc list-inside mt-1">
             {result.shortfalls.map((s) => (
               <li key={s.domain}>
-                <span className="capitalize">{s.domain}</span>: {s.available} disponibles de {s.requested} solicitadas (faltante: {s.missing}).
+                <span className="capitalize">{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[s.domain]}</span>: {s.available} disponibles de {s.requested} solicitadas (faltante: {s.missing}).
               </li>
             ))}
           </ul>
         </div>
       )}
 
+      <details><summary>Ver detalles de mis respuestas</summary>
       {/* Domain Breakdown */}
       <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
         Desglose por Área Curricular
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {Object.values(result.domainBreakdowns).map((dom) => (
-          <div key={dom.domain} className="p-4 border border-stone-200 dark:border-stone-800 rounded-lg">
-            <div className="text-xs font-semibold capitalize mb-1">{dom.domain}</div>
+          <div key={{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[dom.domain]} className="p-4 border border-stone-200 dark:border-stone-800 rounded-lg">
+            <div className="text-xs font-semibold capitalize mb-1">{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[dom.domain]}</div>
             <div className="text-xl font-bold">{dom.scorePercentage}%</div>
             <div className="text-xs text-stone-500">
               {dom.correctFirstResponseCount} / {dom.totalItems} preguntas
@@ -552,7 +538,7 @@ export const BxmSessionResultBreakdownView: React.FC<{
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {Object.values(result.difficultyBreakdowns).map((diff) => (
           <div key={diff.difficultyTier} className="p-4 border border-stone-200 dark:border-stone-800 rounded-lg">
-            <div className="text-xs font-semibold mb-1">Tier {diff.difficultyTier}</div>
+            <div className="text-xs font-semibold mb-1">Nivel {diff.difficultyTier}</div>
             <div className="text-xl font-bold">{diff.scorePercentage}%</div>
             <div className="text-xs text-stone-500">
               {diff.correctFirstResponseCount} / {diff.totalItems} preguntas
@@ -561,6 +547,7 @@ export const BxmSessionResultBreakdownView: React.FC<{
         ))}
       </div>
 
+      </details>
       {/* Notice */}
       <p className="text-xs text-stone-400 italic text-center mt-6">
         Indicador formativo interno de avance; no constituye una predicción ni garantía del resultado oficial ante el MEP.

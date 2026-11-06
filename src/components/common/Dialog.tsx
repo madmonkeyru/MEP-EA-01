@@ -14,7 +14,11 @@ export function Dialog({ title, children, onClose }: { title: string; children: 
     dialog.querySelector<HTMLElement>('[autofocus], button, input, select, [tabindex="0"]')?.focus();
     const original = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = original; previous?.focus(); };
+    return () => {
+      if (typeof dialog.showModal === 'function' && dialog.open) dialog.close();
+      document.body.style.overflow = original;
+      previous?.focus();
+    };
   }, []);
   return <dialog ref={ref} aria-modal="true" aria-labelledby={id} className="app-dialog" onCancel={event => { event.preventDefault(); close.current(); }} onClick={event => { if (event.target === event.currentTarget) close.current(); }} onKeyDown={event => {
     event.stopPropagation();

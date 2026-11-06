@@ -142,7 +142,6 @@ export function deriveCanonicalRecommendation(
   if (pendingRemediationEvidenceKey) {
     const rec = evidenceRecords.find(r => r.evidenceKey === pendingRemediationEvidenceKey);
     const domainName = rec ? getFriendlyDomainName(rec.domain) : 'Matemáticas';
-    const code = rec?.rawCode || pendingRemediationEvidenceKey.split('/').pop() || '';
     const hasLesson = availableLessons.some(l => l.evidenceKey === pendingRemediationEvidenceKey);
     const isFromSimulation = context.sourceActivityKind === 'mock_exam';
 
@@ -152,8 +151,8 @@ export function deriveCanonicalRecommendation(
       reason: isFromSimulation ? 'simulation_weakness' : 'diagnostic_weakness',
       priority: 'p0',
       title: isFromSimulation
-        ? `Nivelación del Simulacro: Evidencia ${code} (${domainName})`
-        : `Reforzar: Evidencia ${code} (${domainName})`,
+        ? `Refuerza ${domainName} después del simulacro`
+        : `Continúa con ${domainName}`,
       description: rec?.description
         ? `${rec.description}. ${isFromSimulation ? 'Tu simulacro detectó oportunidad de mejora aquí.' : 'Concentra tu práctica para superar los errores detectados.'}`
         : `Refuerza los conceptos prioritarios identificados en tu última evaluación de ${domainName}.`,
@@ -194,8 +193,8 @@ export function deriveCanonicalRecommendation(
       reason: isFromSimulation ? 'simulation_weakness' : 'diagnostic_weakness',
       priority: 'p1',
       title: isFromSimulation
-        ? `Nivelación del Simulacro: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`
-        : `Reforzar: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`,
+        ? `Refuerza ${domainName} después del simulacro`
+        : `Continúa con ${domainName}`,
       description: target.description
         ? `${target.description}. ${isFromSimulation ? 'Tu simulacro detectó oportunidad de mejora aquí.' : 'Tu diagnóstico detectó una oportunidad de mejora aquí.'}`
         : `Oportunidad de mejora en ${domainName}.`,
@@ -475,8 +474,8 @@ export function generateStructuredStudyPlan(
   if (steps.length > 0 && retestInventory >= 5) {
     steps.push({
       stepNumber: steps.length + 1,
-      title: 'Comprobación de retención y retest',
-      description: `Realizar una prueba de hasta ${Math.min(10, retestInventory)} preguntas disponibles sobre las evidencias repasadas.`,
+      title: 'Comprueba lo aprendido',
+      description: `Realizar una prueba de hasta ${Math.min(10, retestInventory)} preguntas disponibles sobre las habilidades repasadas.`,
       evidenceKey: steps[0].evidenceKey,
       domain: steps[0].domain,
       targetDifficulty: 2,
@@ -518,7 +517,7 @@ export function evaluateRetestRecommendation(
       recommendedSessionKind: 'practice_evidence',
       recommendedItemCount: 10,
       targetEvidenceKeys: [],
-      rationaleEs: 'Completa al menos 10 ejercicios de práctica guiada antes de realizar un retest.',
+      rationaleEs: 'Completa al menos 10 ejercicios de práctica guiada antes de comprobar tu avance.',
     };
   }
 
@@ -529,7 +528,7 @@ export function evaluateRetestRecommendation(
       recommendedSessionKind: 'targeted_retest',
       recommendedItemCount: 10,
       targetEvidenceKeys: targets,
-      rationaleEs: `Tienes ${needsReinforcement.length} evidencias que requieren refuerzo. Un retest de 10 ítems validará tu asimilación.`,
+      rationaleEs: `Tienes ${needsReinforcement.length} habilidades que conviene reforzar. Una práctica de 10 preguntas te ayudará a comprobar lo aprendido.`,
     };
   }
 

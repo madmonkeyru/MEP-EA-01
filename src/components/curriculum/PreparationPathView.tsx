@@ -34,7 +34,7 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
               Trayectoria de Estudio por Bloques
             </h2>
             <p className="text-sm text-stone-600 dark:text-stone-400">
-              Avanza bloque por bloque cubriendo el 100% de afirmaciones y evidencias oficiales evaluadas por el MEP.
+              Explora los bloques del programa y practica las habilidades de cada tema.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
 
       {programId === 'bxm' && <article className="ui-surface rounded-2xl p-6 space-y-3">
         <h2 className="text-xl font-semibold">Del centro y el radio a la ecuación</h2>
-        <p>Geometría · Evidencia A1.2. Escribe la ecuación de una circunferencia a partir de su centro y su radio.</p>
+        <p>Geometría. Escribe la ecuación de una circunferencia a partir de su centro y su radio.</p>
         <p>Todos los puntos de la circunferencia están a la misma distancia del centro. Eleva al cuadrado la distancia para obtener la ecuación.</p>
         <TextRenderer content={String.raw`$(x-h)^2+(y-k)^2=r^2$`} />
         <p>Ejemplo. Para el centro (−3, 2) y el radio 4, sustituye las coordenadas del centro y eleva el radio al cuadrado.</p>
@@ -93,7 +93,7 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
                   <div>
                     <h3 className="font-semibold text-stone-900 dark:text-stone-100">{block.blockCode}</h3>
                     <p className="text-xs text-stone-500 dark:text-stone-400">
-                      {block.totalPoints} puntos en examen • {block.affirmations.length} afirmaciones • {block.totalAvailableItems} ítems disponibles
+                      {block.totalPoints} puntos en examen • {block.affirmations.length} objetivos • {block.totalAvailableItems} ítems disponibles
                     </p>
                   </div>
                 </div>
@@ -118,13 +118,13 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
                         <div className="space-y-1 sm:max-w-xl">
                           <div className="flex items-center gap-2">
                             <span className="rounded-md bg-stone-100 px-2 py-0.5 text-xs font-bold text-stone-700 dark:bg-stone-800 dark:text-stone-300">
-                              {aff.code}
+                              Objetivo
                             </span>
                             <span className="text-xs text-stone-500 dark:text-stone-400">
                               {aff.targetPoints} {aff.targetPoints === 1 ? 'punto' : 'puntos'}
                             </span>
                             <span className="text-xs text-indigo-600 dark:text-indigo-400">
-                              ({aff.evidenceCodes.join(', ')})
+                              {aff.evidenceCodes.length} habilidades
                             </span>
                           </div>
                           <p className="text-sm text-stone-800 dark:text-stone-200">{aff.desc}</p>

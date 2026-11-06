@@ -196,6 +196,7 @@ describe('application curriculum flows', () => {
     fireEvent.change(screen.getByLabelText('Nivel o parte'), { target: { value: 'EDAD_1' } });
     await waitFor(() => expect(dataService.getCurrentSubprogramId()).toBe('EDAD_1'));
     await screen.findByRole('heading', { name: 'Matemáticas · EDAD' });
+    fireEvent.click(screen.getByRole('button', { name: 'Perfil' }));
     fireEvent.change(screen.getByLabelText('Programa'), { target: { value: 'i_ii_ciclo' } });
     await screen.findByRole('heading', { name: 'Matemáticas · I y II Ciclo' });
     expect(screen.queryByLabelText('Nivel o parte')).not.toBeInTheDocument();

@@ -73,3 +73,13 @@ To ensure uniform behavior across Safari, Chrome, Firefox, and mobile browsers, 
 4. **Responsive Grid & Mobile Ergonomics**:
    - Touch targets are minimum $44 \times 44$ pixels.
    - Test shell features a sticky bottom or top navigation bar on mobile viewports for quick Next / Previous and Review Grid jumping.
+
+## 5. Post-M8 UX quality contracts (2026-11-06)
+
+The implemented refinement and all 30 plan areas are tracked in [UX/UI Quality Pass](UX_UI_QUALITY_PASS.md). Application chrome uses the shared type, control and density contracts in `src/ui-quality.css`, loaded after existing styles by `src/main.tsx`.
+
+Use one dominant next-action recommendation and quiet supporting sections. Reuse `RecommendationCard`, `Dialog`, `FeedbackState` and `StudentMasteryBadge`. Buttons have primary, secondary, tertiary and text treatments with a 44px minimum touch target. Page/section/card/metadata type sizes are explicit tokens; learning questions retain comfortable reading size.
+
+Profile preferences use real local profile state and system/light/dark theme choices. They do not imply cloud authentication or synchronization. Mobile learning navigation has a four-column structure; resource navigation uses the shared modal. Modal cleanup closes the native dialog before restoring focus.
+
+Dark-mode and accessibility assertions above are design targets, not a certification. See the quality-pass verification record for the checks actually performed and remaining manual acceptance checks.

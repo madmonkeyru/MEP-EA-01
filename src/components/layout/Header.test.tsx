@@ -14,7 +14,7 @@ describe('Header', () => {
     expect(screen.getByRole('img', { name: 'Yigüirro de Costa Rica' })).toHaveAttribute('src', '/logo_yiguirro_cr_high_fidelity.svg');
     expect(screen.getByText('MEP-EA-01')).toBeInTheDocument();
     expect(screen.getByText(/Educación Abierta Digital/)).toBeInTheDocument();
-    expect(screen.getByText('Perfil local opcional')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Perfil' })).toBeInTheDocument();
     // Program dropdown should not be present on landing view
     expect(screen.queryByTitle('Cambiar programa de estudio')).not.toBeInTheDocument();
   });
@@ -32,6 +32,7 @@ describe('Header', () => {
     );
 
     expect(screen.getByText(/Estudiante Prueba/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Perfil: Estudiante Prueba' }));
     expect(screen.getByRole('button', { name: 'Usar modo invitado' })).toBeInTheDocument();
     expect(screen.queryByText('Perfil local opcional')).not.toBeInTheDocument();
     // Program dropdown should be visible on hub view
@@ -55,11 +56,23 @@ describe('Header', () => {
 
     // Now drawer dialog is visible
     expect(screen.getByRole('dialog', { name: 'Menú de navegación' })).toBeInTheDocument();
-    const closeButtons = screen.getAllByRole('button', { name: 'Cerrar menú' });
+    const closeButtons = screen.getAllByRole('button', { name: 'Cerrar Menú de navegación' });
     expect(closeButtons.length).toBeGreaterThan(0);
 
     // Click close button inside drawer
     fireEvent.click(closeButtons[0]);
     expect(screen.queryByRole('dialog', { name: 'Menú de navegación' })).not.toBeInTheDocument();
   });
+  it('offers system theme and returns keyboard focus after closing preferences', () => {
+    render(<ThemeProvider><Header currentUser={null} onUserChanged={vi.fn()} onNavigateHome={vi.fn()} /></ThemeProvider>);
+    const trigger = screen.getByRole('button', { name: 'Perfil' });
+    trigger.focus();
+    fireEvent.click(trigger);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Tema' }), { target: { value: 'system' } });
+    expect(localStorage.getItem('mep_ea_01_theme')).toBe('system');
+    fireEvent.keyDown(screen.getByRole('dialog', { name: 'Perfil y preferencias' }), { key: 'Escape' });
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+  });
+
 });

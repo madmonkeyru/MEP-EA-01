@@ -124,7 +124,7 @@ describe('Milestone 3 (M3): Assessment → Remediation Loop', () => {
       // Verify Results Action Surface contains Strengths, Opportunities, and Next Step
       expect(screen.getByText(/Tu diagnóstico: ¿dónde estás y qué sigue\?/i)).toBeInTheDocument();
       expect(screen.getByText(/Necesitas reforzar/i)).toBeInTheDocument();
-      expect(screen.getByText(/TU SIGUIENTE PASO RECOMENDADO/i)).toBeInTheDocument();
+      expect(screen.getByText(/Recomendado para ti/i)).toBeInTheDocument();
 
       // Click primary action on the recommendation card
       const card = screen.getByTestId('canonical-recommendation-card');

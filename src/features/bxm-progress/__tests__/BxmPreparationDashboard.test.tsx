@@ -37,7 +37,7 @@ describe('BXM Progress - BxmPreparationDashboard UI Component', () => {
   it('renders clean empty state with mandatory disclaimer and zero values', () => {
     render(<BxmPreparationDashboard events={[]} referenceDateUtc={refDate} capabilityProvider={createCapabilityProvider('premium')} />);
 
-    expect(screen.getByText('Panel de Preparación Formativa')).toBeDefined();
+    expect(screen.getByText('Tu preparación')).toBeDefined();
     expect(
       screen.getByText(/Indicador formativo interno de avance; no constituye una predicción ni garantía/)
     ).toBeDefined();
@@ -67,7 +67,8 @@ describe('BXM Progress - BxmPreparationDashboard UI Component', () => {
     fireEvent.click(evidencesTab);
 
     // A1.1 appears across domains (geometry, functions, statistics) in fixture
-    expect(screen.getAllByText('A1.1').length).toBeGreaterThan(0);
+    expect(screen.getByRole('columnheader', { name: 'Habilidad' })).toBeInTheDocument();
+    expect(screen.queryByRole('columnheader', { name: 'Código' })).not.toBeInTheDocument();
     expect(screen.getByText('Dominado')).toBeDefined();
   });
 
@@ -83,7 +84,7 @@ describe('BXM Progress - BxmPreparationDashboard UI Component', () => {
       />
     );
 
-    expect(screen.getByText('Función Longitudinal Reservada para el Plan Pro')).toBeDefined();
+    expect(screen.getByText('Seguimiento detallado con Pro')).toBeDefined();
     const upgradeBtns = screen.getAllByRole('button', { name: /Desbloquear Premium|Ver Planes de Suscripción/i });
     fireEvent.click(upgradeBtns[0]);
     expect(onUpgradeMock).toHaveBeenCalled();

@@ -105,6 +105,6 @@ describe('BxmSessionRunnerView Component (Agent B)', () => {
 
     expect(finishFn).toHaveBeenCalledOnce();
     expect(finishedResult).not.toBeNull();
-    expect(screen.getByText('Resultados de la Evaluación BXM')).toBeDefined();
+    expect(screen.getByText('Tu resultado')).toBeDefined();
   });
 });

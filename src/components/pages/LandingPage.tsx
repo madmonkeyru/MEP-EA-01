@@ -67,7 +67,7 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
         <p className="eyebrow">Práctica interactiva disponible</p>
         <h1 className="text-3xl font-semibold" tabIndex={-1}>Tu espacio de Matemáticas BXM</h1>
         <p>Aprende a tu ritmo, ensaya el examen o consulta materiales.</p>
-        {context.convocatoriaId === '2026-c2' && <button className="primary-button" onClick={() => navigate({ ...context, view: 'learning', tab: 'diagnostic', sessionId: undefined })}>Abrir aprendizaje guiado</button>}
+        {context.convocatoriaId === '2026-c2' && <button className="primary-button" onClick={() => navigate({ ...context, view: 'learning', tab: 'inicio', sessionId: undefined })}>Ver mi preparación</button>}
         {contextControls}
       </div>
     </header>

@@ -7,7 +7,7 @@ import { createSession } from '../../services/learningSession';
 import { storageService } from '../../services/storageService';
 afterEach(() => { cleanup(); localStorage.clear(); });
 describe('results and durable review', () => {
-  it('renders Plan de Nivelación and Telemetry Dashboard when session is in diagnostic mode', () => {
+  it('renders the study plan without internal funnel analytics in learner results', () => {
     const session: TestSession = {
       ...createSession({ mode: 'diagnostic', itemCount: 2, enableTimer: false, timerDurationMinutes: 0 }),
       isCompleted: true,
@@ -26,8 +26,8 @@ describe('results and durable review', () => {
     );
 
     expect(screen.getByText(/Tu Plan Personalizado de Nivelación/i)).toBeInTheDocument();
-    expect(screen.getByText(/Métricas de Trayectoria del Estudiante/i)).toBeInTheDocument();
-    expect(screen.getByText(/Embudo de Nivelación y Diagnóstico/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Métricas de Trayectoria del Estudiante/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Embudo de Nivelación y Diagnóstico/i)).not.toBeInTheDocument();
   });
 
   it('separates unanswered from incorrect and saves a result only once under StrictMode', () => {

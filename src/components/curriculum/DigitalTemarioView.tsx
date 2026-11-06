@@ -270,7 +270,7 @@ export const DigitalTemarioView: React.FC<{
                         : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300'
                     }`}
                   >
-                    {lesson.evidenceCode}
+                    <BookOpen size={18} aria-hidden="true" />
                   </span>
                   <div>
                     <div className="flex items-center gap-2">
@@ -306,7 +306,7 @@ export const DigitalTemarioView: React.FC<{
                   {/* Objective */}
                   <div className="rounded-xl border border-stone-200/80 bg-white dark:bg-stone-900 p-4 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                      Criterio y Evidencia Oficial MEP
+                      Qué aprenderás
                     </span>
                     <p className="text-sm text-stone-800 dark:text-stone-200 font-medium">
                       {lesson.objective}

@@ -47,7 +47,7 @@ export function readRoute(hash: string): AppRoute {
     ...(learning && params.get('evidencia') ? { evidenceKey: params.get('evidencia')! } : {}),
     ...(params.get('intento') ? { sessionId: params.get('intento')! } : {}),
     ...(contextReason ? { contextReason } : {}),
-    ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
+    ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','simulation','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
     ...(['pdf', 'specs', 'terms', 'formulas'].includes(params.get('recurso') || '') ? { resourceTab: params.get('recurso')! } : {}),
     subjectId: subject?.id, moduleId, convocatoriaId };
 }

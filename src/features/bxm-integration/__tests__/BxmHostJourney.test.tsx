@@ -33,8 +33,8 @@ describe('BxmLearningHub - Sprint 3 Host Journey Integration', () => {
       />
     );
 
-    expect(screen.getByText(/¿Qué necesitas repasar\?/i)).toBeInTheDocument();
-    const prepBtn = screen.getByRole('button', { name: /Preparar diagnóstico/i });
+    expect(screen.getByRole('heading', { name: 'Recomendado para ti' })).toBeInTheDocument();
+    const prepBtn = screen.getByRole('button', { name: /Iniciar evaluación diagnóstica/i });
     fireEvent.click(prepBtn);
 
     // Preflight dialog should appear
@@ -78,8 +78,8 @@ describe('BxmLearningHub - Sprint 3 Host Journey Integration', () => {
       />
     );
 
-    expect(screen.getByText(/Tu siguiente paso recomendado/i)).toBeInTheDocument();
-    expect(screen.getByText(/Reforzar: Evidencia A1.2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Recomendado para ti/i)).toBeInTheDocument();
+    expect(screen.getByText(/Continúa con Geometría/i)).toBeInTheDocument();
     const studyBtn = screen.getByRole('button', { name: /Estudiar este tema en el Temario/i });
     expect(studyBtn).toBeInTheDocument();
     fireEvent.click(studyBtn);

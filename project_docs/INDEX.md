@@ -109,3 +109,7 @@ All preliminary draft documents, early prototyping work plans, and fragmented lo
 - `project_docs/archive/Preparation List.md`
 
 *(Refer to `project_docs/archive/README.md` for historical change logs).*
+
+## Post-M8 UX/UI quality pass
+
+The next refinement workstream from `Plan Doc.md` is tracked in [UX_UI_QUALITY_PASS.md](UX_UI_QUALITY_PASS.md), with coverage of all 30 review areas, shared component contracts, and verification evidence. It is separate from functional milestones.

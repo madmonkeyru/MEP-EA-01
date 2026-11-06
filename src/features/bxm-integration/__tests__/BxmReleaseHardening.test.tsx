@@ -38,7 +38,7 @@ describe('BxmReleaseHardening - Canonical Learner Journey & Safety Gates', () =>
       />
     );
 
-    expect(screen.getByText(/¿Qué necesitas repasar\?/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Recomendado para ti' })).toBeInTheDocument();
     unmount();
 
     // 2. Diagnostic Execution & Finalization: Weakness in Geometry A1.2 (Exam mode requires finalizing drafts)
@@ -73,7 +73,7 @@ describe('BxmReleaseHardening - Canonical Learner Journey & Safety Gates', () =>
       />
     );
 
-    expect(screen.getByText(/Tu siguiente paso recomendado/i)).toBeInTheDocument();
+    expect(screen.getByText(/Recomendado para ti/i)).toBeInTheDocument();
     const studyBtn = screen.getByRole('button', { name: /Estudiar este tema en el Temario/i });
     expect(studyBtn).toBeInTheDocument();
     fireEvent.click(studyBtn);
@@ -121,7 +121,7 @@ describe('BxmReleaseHardening - Canonical Learner Journey & Safety Gates', () =>
       />
     );
 
-    expect(screen.getByText('Simulacro Formativo de Autor')).toBeInTheDocument();
-    expect(screen.getByText('Examen Oficial de Referencia')).toBeInTheDocument();
+    expect(screen.getByText('Simulacro de práctica')).toBeInTheDocument();
+    expect(screen.getByText('Simulación de referencia')).toBeInTheDocument();
   });
 });

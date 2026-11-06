@@ -10,6 +10,11 @@ describe('program navigation', () => {
     expect(readRoute('#/programas/bxm/matematicas?seccion=resources&recurso=terms')).toMatchObject({ tab: 'resources', resourceTab: 'terms' });
     expect(readRoute('#/programas/bxm/matematicas?seccion=bad').tab).toBeUndefined();
   });
+  it('preserves each learning destination when reloading or navigating back', () => {
+    for (const tab of ['inicio', 'temario', 'practice', 'simulation']) {
+      expect(readRoute(routeHash({ view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab }))).toMatchObject({ view: 'learning', tab });
+    }
+  });
   it('round trips every subject route and validates level context', () => {
     for (const program of dataService.getPrograms()) {
       for (const subject of program.subjects) {

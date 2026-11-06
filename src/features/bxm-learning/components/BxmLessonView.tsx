@@ -63,7 +63,7 @@ export const BxmLessonView: React.FC<BxmLessonViewProps> = ({
           <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-amber-400 text-stone-950">
             Contenido Pro
           </span>
-          <span className="text-xs font-mono text-stone-500">Evidencia {lesson.evidenceCode}</span>
+          <span className="text-xs font-mono text-stone-500">Lección de Matemáticas</span>
         </div>
         <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{lesson.title}</h1>
         <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">

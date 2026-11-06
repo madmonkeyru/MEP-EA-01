@@ -34,13 +34,13 @@ describe('BxmLearningHub - Sprint 4 Simulation Loop Integration', () => {
     );
 
     expect(screen.getByText('Simulación de Examen BXM')).toBeInTheDocument();
-    expect(screen.getByText('Simulacro Formativo de Autor')).toBeInTheDocument();
-    expect(screen.getByText('Examen Oficial de Referencia')).toBeInTheDocument();
+    expect(screen.getByText('Simulacro de práctica')).toBeInTheDocument();
+    expect(screen.getByText('Simulación de referencia')).toBeInTheDocument();
 
     const officialBtn = screen.getByRole('button', { name: /Iniciar Examen Oficial/i });
     fireEvent.click(officialBtn);
     // Opens briefing dialog
-    expect(screen.getByText(/Preparación para el Examen Oficial de Referencia/i)).toBeInTheDocument();
+    expect(screen.getByText(/Preparación para la simulación de referencia/i)).toBeInTheDocument();
     const startOfficialBtn = screen.getByRole('button', { name: /Comenzar Simulación Oficial/i });
     fireEvent.click(startOfficialBtn);
     expect(handleSimulation).toHaveBeenCalledTimes(1);
@@ -116,8 +116,8 @@ describe('BxmLearningHub - Sprint 4 Simulation Loop Integration', () => {
       />
     );
 
-    expect(screen.getByText(/Resultado del Retest · Recuperación de Evidencia/i)).toBeInTheDocument();
-    expect(screen.getByText(/¡Evidencia Recuperada con Éxito!/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tu avance después del refuerzo/i)).toBeInTheDocument();
+    expect(screen.getByText(/¡Has reforzado esta habilidad!/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Ver mi preparación actualizada/i })).toBeInTheDocument();
   });
 });

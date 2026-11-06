@@ -126,6 +126,6 @@ describe('BxmLearningHub - Next Milestone P0 UX Improvements', () => {
     expect(screen.getByText(/Tu diagnóstico: ¿dónde estás y qué sigue\?/i)).toBeInTheDocument();
     expect(screen.getByText(/Lo que ya dominas/i)).toBeInTheDocument();
     expect(screen.getByText(/Necesitas reforzar/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Prioritario/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByRole('heading', { name: 'Recomendado para ti' })).toBeInTheDocument();
   });
 });

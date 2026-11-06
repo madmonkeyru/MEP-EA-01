@@ -10,7 +10,6 @@ import { options } from '../test/TestShell';
 import { CustomSelect } from '../common/CustomSelect';
 import { generateRemediationPlan, type RemediationPlan } from '../../services/remediationEngine';
 import { PlanDeNivelacionView } from './PlanDeNivelacionView';
-import { TelemetryFunnelDashboard } from './TelemetryFunnelDashboard';
 
 export function ResultsPage({
   session,
@@ -111,7 +110,7 @@ export function ResultsPage({
         <button className="secondary-button" onClick={handleRetry}>Repetir estas preguntas</button>
         <button className="secondary-button" onClick={onNewTest}>Elegir otra práctica</button>
         <button className="secondary-button" onClick={onGoHome}>Volver a Matemáticas</button>
-        <button className="secondary-button" onClick={download}>Descargar resumen</button>
+        <button className="tertiary-button" onClick={download}>Descargar resumen</button>
       </div>
       {saveError && <p role="alert">{saveError}</p>}
     </header>
@@ -127,13 +126,12 @@ export function ResultsPage({
     )}
 
     {/* Telemetry Funnel Dashboard for Tutors and Learners */}
-    <TelemetryFunnelDashboard />
 
     {weakest && (
       <section className="ui-surface rounded-2xl p-6 space-y-4 border border-indigo-100 dark:border-indigo-950/60 bg-gradient-to-br from-white to-indigo-50/20 dark:from-stone-900 dark:to-indigo-950/20">
         <div className="flex items-center justify-between border-b border-stone-200 dark:border-stone-700/60 pb-3">
           <h2 className="text-xl font-bold text-stone-900 dark:text-stone-100">
-            Recomendación de Estudio Focalizado
+            Lo que conviene reforzar
           </h2>
           <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
             Prioridad: {areaLabel(weakest.area)}

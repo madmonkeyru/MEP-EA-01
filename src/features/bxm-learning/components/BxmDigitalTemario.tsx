@@ -119,23 +119,24 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
             BXM Bachillerato por Madurez 02-2026
           </span>
           <span className="text-xs font-semibold text-stone-500">
-            71 Evidencias Oficiales MEP
+            71 habilidades del programa
           </span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
-          Temario Digital Interactivo
+          Temario
         </h1>
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 max-w-3xl">
-          Navegue por la taxonomía oficial de evaluación: Bloque → Afirmación → Evidencia → Lección.
+          Elige un tema para repasar a tu ritmo.
           Consulte definiciones, fórmulas, errores típicos, ejemplos resueltos y laboratorios interactivos.
         </p>
       </div>
 
       {/* Domain Filters & Search Bar */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-stone-100 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-xs font-semibold">
+        <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-stone-100 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-xs font-semibold">
           <button
             type="button"
+            aria-pressed={selectedDomain === 'all'}
             onClick={() => setSelectedDomain('all')}
             className={`px-3 py-1.5 rounded-lg transition-colors ${
               selectedDomain === 'all'
@@ -143,10 +144,11 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
             }`}
           >
-            Todas (71)
+            Todas ({allEvidences.length})
           </button>
           <button
             type="button"
+            aria-pressed={selectedDomain === 'geometry'}
             onClick={() => setSelectedDomain('geometry')}
             className={`px-3 py-1.5 rounded-lg transition-colors ${
               selectedDomain === 'geometry'
@@ -154,10 +156,11 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
             }`}
           >
-            Geometría (24)
+            Geometría ({allEvidences.filter(ev => ev.domain === 'geometry').length})
           </button>
           <button
             type="button"
+            aria-pressed={selectedDomain === 'functions'}
             onClick={() => setSelectedDomain('functions')}
             className={`px-3 py-1.5 rounded-lg transition-colors ${
               selectedDomain === 'functions'
@@ -165,10 +168,11 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
             }`}
           >
-            Álgebra (34)
+            Funciones ({allEvidences.filter(ev => ev.domain === 'functions').length})
           </button>
           <button
             type="button"
+            aria-pressed={selectedDomain === 'statistics'}
             onClick={() => setSelectedDomain('statistics')}
             className={`px-3 py-1.5 rounded-lg transition-colors ${
               selectedDomain === 'statistics'
@@ -176,14 +180,15 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
             }`}
           >
-            Estadística (13)
+            Estadística ({allEvidences.filter(ev => ev.domain === 'statistics').length})
           </button>
         </div>
 
         <div className="relative">
           <input
-            type="text"
-            placeholder="Buscar evidencia, concepto o tema..."
+            type="search"
+            aria-label="Buscar tema o concepto"
+            placeholder="Buscar tema o concepto…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full sm:w-72 px-3.5 py-1.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-xs text-stone-900 dark:text-stone-100 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
@@ -197,7 +202,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
           <div className="flex justify-between items-start">
             <div>
               <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-amber-200 dark:bg-amber-900/80 text-amber-950 dark:text-amber-200">
-                Evidencia {activeEvidenceNode.evidenceCode}
+                Tema seleccionado
               </span>
               <h3 className="text-base font-bold text-stone-900 dark:text-stone-50 mt-1">
                 {activeEvidenceNode.evidenceDesc}
@@ -213,13 +218,13 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
           </div>
           <div className="text-xs text-stone-700 dark:text-stone-300 space-y-1.5 leading-relaxed">
             <p>
-              <strong className="text-stone-900 dark:text-stone-100">Bloque:</strong> {activeEvidenceNode.blockName} ({activeEvidenceNode.affirmationCode})
+              <strong className="text-stone-900 dark:text-stone-100">Bloque:</strong> {activeEvidenceNode.blockName}
             </p>
             <p>
-              <strong className="text-stone-900 dark:text-stone-100">Afirmación:</strong> {activeEvidenceNode.affirmationDesc}
+              <strong className="text-stone-900 dark:text-stone-100">Aprenderás:</strong> {activeEvidenceNode.affirmationDesc}
             </p>
             <p>
-              <strong className="text-stone-900 dark:text-stone-100">Estado pedagógico:</strong> Nodo curricular oficial mapeado. La lección completa con ejemplos interactivos se encuentra en el plan de expansión de contenidos.
+              <strong className="text-stone-900 dark:text-stone-100">Sobre esta lección:</strong> Estamos preparando una explicación completa. Mientras tanto, puedes explorar otros temas o practicar preguntas relacionadas.
             </p>
           </div>
           {callbacks?.onStartTargetedPractice && (
@@ -234,6 +239,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
         </div>
       )}
 
+      {groupedTree.length === 0 && <section className="feedback-state"><h2 className="text-lg font-semibold">No encontramos ese tema</h2><p className="muted">Prueba con otro concepto o explora el temario completo.</p><button className="secondary-button" onClick={() => { setSearchQuery(''); setSelectedDomain('all'); }}>Ver todos los temas</button></section>}
       {/* Curriculum Tree Accordion / List */}
       <div className="space-y-6">
         {groupedTree.map((block) => (
@@ -246,7 +252,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 {block.blockName}
               </h2>
               <span className="text-xs font-semibold text-stone-500">
-                {block.affirmations.reduce((acc, a) => acc + a.evidences.length, 0)} evidencias
+                {block.affirmations.reduce((acc, a) => acc + a.evidences.length, 0)} habilidades
               </span>
             </div>
 
@@ -255,7 +261,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                 <div key={aff.code} className="p-4 sm:p-5 space-y-3">
                   <div className="space-y-0.5">
                     <div className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
-                      Afirmación {aff.code}
+                      Objetivo de aprendizaje
                     </div>
                     <div className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
                       {aff.desc}
@@ -263,27 +269,24 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                   </div>
 
                   {/* Evidences Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
+                  <div className="curriculum-list">
                     {aff.evidences.map((ev) => {
                       const isComplete = ev.status === 'complete';
                       return (
-                        <div
+                        <button
+                          type="button"
                           key={ev.key}
                           onClick={() => selectEvidence(ev.key)}
-                          className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex flex-col justify-between gap-2 ${
-                            isComplete
-                              ? 'border-amber-300 dark:border-amber-800/80 bg-amber-50/40 dark:bg-amber-950/20 hover:border-amber-500 hover:shadow-xs'
-                              : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-850/50 hover:border-stone-300 dark:hover:border-stone-700'
-                          }`}
+                          className="curriculum-row"
                         >
                           <div className="space-y-1">
                             <div className="flex items-center justify-between gap-1">
                               <span className="font-mono text-xs font-bold text-stone-900 dark:text-stone-100">
-                                {ev.evidenceCode}
+                                Tema
                               </span>
                               {isComplete ? (
                                 <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-                                  {ev.lessonId && completedLessonIds.includes(ev.lessonId) ? '✓ Completada' : 'Lección completa'}
+                                  {ev.lessonId && completedLessonIds.includes(ev.lessonId) ? '✓ Completada' : 'Disponible'}
                                 </span>
                               ) : (
                                 <span className="text-[10px] font-medium text-stone-500 dark:text-stone-400">
@@ -297,15 +300,15 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                           </div>
 
                           <div className="flex items-center justify-between pt-1 border-t border-stone-100 dark:border-stone-800 text-[11px] font-medium text-amber-700 dark:text-amber-400">
-                            <span>{isComplete ? 'Abrir lección e interactivo →' : 'Ver detalles →'}</span>
+                            <span>{isComplete ? 'Estudiar →' : 'Ver detalles →'}</span>
                             {ev.hasInteractiveVisual && (
                               <span className="inline-flex items-center gap-1 font-semibold text-amber-600 dark:text-amber-400">
                                 <Sliders className="w-3.5 h-3.5" aria-hidden="true" />
-                                <span>SVG</span>
+                                <span>Interactivo</span>
                               </span>
                             )}
                           </div>
-                        </div>
+                        </button>
                       );
                     })}
                   </div>

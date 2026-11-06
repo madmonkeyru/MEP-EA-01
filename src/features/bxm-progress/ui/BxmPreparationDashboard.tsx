@@ -79,7 +79,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
     : evidenceRecords.filter((e) => e.domain === selectedDomain);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 space-y-6 text-stone-900 dark:text-stone-100 font-sans">
+    <div className="progress-workspace w-full max-w-6xl mx-auto p-4 sm:p-6 space-y-6 text-stone-900 dark:text-stone-100 font-sans">
       {/* Top Header */}
       <header className="border-b border-stone-200 dark:border-stone-800 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -92,10 +92,10 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-stone-950 dark:text-stone-50">
-            Panel de Preparación Formativa
+            Tu preparación
           </h1>
           <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-0.5">
-            Seguimiento de avance por indicador, desglose cognitivo y plan de estudio adaptativo.
+            Consulta tu avance y elige qué reforzar después.
           </p>
         </div>
 
@@ -197,7 +197,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
           <div className="inline-block p-2 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 text-2xl">
             🔒
           </div>
-          <h3 className="text-lg font-bold">Función Longitudinal Reservada para el Plan Pro</h3>
+          <h3 className="text-lg font-bold">Seguimiento detallado con Pro</h3>
           <p className="text-sm text-stone-600 dark:text-stone-400 max-w-xl mx-auto">
             El examen oficial de 60 preguntas, el temario de referencia y las lecciones muestra son 100% gratuitos.
             Para desbloquear el seguimiento detallado de tus 71 evidencias, la cola inteligente de refuerzo y los informes de 7 días, suscríbete al Plan BXM Pro.
@@ -214,20 +214,56 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
       {/* TAB 1: OVERVIEW */}
       {activeTab === 'overview' && (
         <div className="space-y-6">
+          {/* Next Recommended Activity Widget / Canonical Decision Surface */}
+          {canonicalRecommendation ? (
+            <section className="space-y-2">
+              <RecommendationCard
+                recommendation={canonicalRecommendation}
+                onPrimaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, false) : (rec.cta.targetId && onNavigateToPractice ? onNavigateToPractice(rec.cta.targetId, 1) : null)}
+                onSecondaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, true) : null}
+                variant="hero"
+              />
+            </section>
+          ) : (
+            <section className="bg-stone-50 dark:bg-stone-850 p-5 rounded-lg border border-stone-200 dark:border-stone-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
+                  Siguiente Paso Recomendado
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-stone-950 dark:text-stone-50 mt-0.5">
+                  {queue.length > 0 ? queue[0].reasonLabelEs : 'Explorar el Temario Digital'}
+                </h3>
+                <p className="text-xs text-stone-600 dark:text-stone-400 mt-1 max-w-xl">
+                  {queue.length > 0
+                    ? queue[0].evidenceDescription || 'Refuerza una habilidad con una práctica breve'
+                    : 'Comienza realizando ejercicios o un diagnóstico rápido para calibrar tus indicadores.'}
+                </p>
+              </div>
+
+              {queue.length > 0 && onNavigateToPractice && (
+                <button
+                  onClick={() => onNavigateToPractice(queue[0].evidenceKey, queue[0].targetDifficulty)}
+                  className="px-4 py-2 text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-stone-950 transition-colors shadow-sm whitespace-nowrap"
+                >
+                  Comenzar Ejercicio →
+                </button>
+              )}
+            </section>
+          )}
           {/* Top Stat Cards */}
           <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div className="bg-stone-50 dark:bg-stone-850 p-4 rounded-lg border border-stone-200 dark:border-stone-800">
-              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Precisión Observada</span>
+              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Respuestas correctas</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-50 mt-1">
                 {readiness.overallAuthoredAccuracyPercentage}%
               </div>
               <div className="text-xs text-stone-500 dark:text-stone-400 mt-1">
-                {readiness.totalAuthoredQualifyingResponses} respuestas calificadas
+                {readiness.totalAuthoredQualifyingResponses} respuestas de práctica
               </div>
             </div>
 
             <div className="bg-stone-50 dark:bg-stone-850 p-4 rounded-lg border border-stone-200 dark:border-stone-800">
-              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Evidencias Medidas</span>
+              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Habilidades practicadas</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-50 mt-1">
                 {readiness.measuredEvidencesCount} / 71
               </div>
@@ -237,7 +273,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             </div>
 
             <div className="bg-stone-50 dark:bg-stone-850 p-4 rounded-lg border border-stone-200 dark:border-stone-800">
-              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Estado de Dominio</span>
+              <span className="text-xs text-stone-500 dark:text-stone-400 font-medium">Habilidades dominadas</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-1">
                 {readiness.masteredEvidencesCount}
               </div>
@@ -311,6 +347,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             </div>
           </section>
 
+          <details><summary>Ver detalles de mi aprendizaje</summary>
           {/* Cognitive Level and Difficulty Breakdown */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Cognitive */}
@@ -356,42 +393,8 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             </div>
           </section>
 
-          {/* Next Recommended Activity Widget / Canonical Decision Surface */}
-          {canonicalRecommendation ? (
-            <section className="space-y-2">
-              <RecommendationCard
-                recommendation={canonicalRecommendation}
-                onPrimaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, false) : (rec.cta.targetId && onNavigateToPractice ? onNavigateToPractice(rec.cta.targetId, 1) : null)}
-                onSecondaryAction={(rec) => onRecommendationAction ? onRecommendationAction(rec, true) : null}
-                variant="hero"
-              />
-            </section>
-          ) : (
-            <section className="bg-stone-50 dark:bg-stone-850 p-5 rounded-lg border border-stone-200 dark:border-stone-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div>
-                <span className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
-                  Siguiente Paso Recomendado
-                </span>
-                <h3 className="text-base sm:text-lg font-bold text-stone-950 dark:text-stone-50 mt-0.5">
-                  {queue.length > 0 ? queue[0].reasonLabelEs : 'Explorar el Temario Digital'}
-                </h3>
-                <p className="text-xs text-stone-600 dark:text-stone-400 mt-1 max-w-xl">
-                  {queue.length > 0
-                    ? `${queue[0].rawCode}: ${queue[0].evidenceDescription || queue[0].evidenceKey}`
-                    : 'Comienza realizando ejercicios o un diagnóstico rápido para calibrar tus indicadores.'}
-                </p>
-              </div>
 
-              {queue.length > 0 && onNavigateToPractice && (
-                <button
-                  onClick={() => onNavigateToPractice(queue[0].evidenceKey, queue[0].targetDifficulty)}
-                  className="px-4 py-2 text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-stone-950 transition-colors shadow-sm whitespace-nowrap"
-                >
-                  Comenzar Ejercicio →
-                </button>
-              )}
-            </section>
-          )}
+          </details>
         </div>
       )}
 
@@ -399,7 +402,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
       {activeTab === 'evidences' && (
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <h2 className="text-lg font-bold">Matriz de Evidencias BXM ({filteredEvidences.length})</h2>
+            <h2 className="text-lg font-bold">Habilidades del programa ({filteredEvidences.length})</h2>
             <div className="flex items-center gap-1.5 text-xs">
               <span className="text-stone-500">Filtrar por área:</span>
               <button
@@ -449,10 +452,10 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
             <table className="w-full text-left text-xs">
               <thead className="bg-stone-100 dark:bg-stone-800/60 text-stone-700 dark:text-stone-300 border-b border-stone-200 dark:border-stone-800 uppercase font-bold tracking-wider">
                 <tr>
-                  <th className="p-3">Código</th>
+
                   <th className="p-3">Área</th>
-                  <th className="p-3">Descripción Oficial</th>
-                  <th className="p-3">Muestra Calificada</th>
+                  <th className="p-3">Habilidad</th>
+                  <th className="p-3">Respuestas</th>
                   <th className="p-3">Precisión</th>
                   <th className="p-3">Estado</th>
                   <th className="p-3 text-right">Acción</th>
@@ -461,10 +464,10 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
               <tbody className="divide-y divide-stone-200 dark:divide-stone-800">
                 {filteredEvidences.map((ev) => (
                   <tr key={ev.evidenceKey} className="hover:bg-stone-50 dark:hover:bg-stone-800/40">
-                    <td className="p-3 font-mono font-bold whitespace-nowrap">{ev.rawCode}</td>
+
                     <td className="p-3 capitalize">{ev.domain === 'functions' ? 'Álgebra/Funciones' : ev.domain}</td>
                     <td className="p-3 max-w-md text-stone-700 dark:text-stone-300">
-                      {ev.description || ev.evidenceKey}
+                      {ev.description || 'Habilidad del programa'}
                     </td>
                     <td className="p-3 whitespace-nowrap">
                       <span className="font-semibold">{ev.sampleSizeLabel}</span>
@@ -541,7 +544,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
-                      Prioridad #{idx + 1} · {item.rawCode}
+                      Paso {idx + 1}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 font-semibold">
                       Nivel {item.targetDifficulty} ({item.estimatedMinutes} min)
@@ -551,7 +554,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                     {item.reasonLabelEs}
                   </h3>
                   <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
-                    {item.evidenceDescription || item.evidenceKey}
+                    {item.evidenceDescription || 'Habilidad por reforzar'}
                   </p>
                 </div>
 
@@ -699,9 +702,9 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
       {activeTab === 'history' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold">Historial de Respuestas ({events.length})</h2>
+            <h2 className="text-lg font-bold">Actividad reciente ({events.length})</h2>
             <span className="text-xs text-stone-500">
-              Separa intentos de referencia oficial de la maestría formativa de autoría.
+              Tus simulaciones de referencia y tus prácticas se muestran por separado.
             </span>
           </div>
 
@@ -715,10 +718,10 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                 <thead className="bg-stone-100 dark:bg-stone-800/60 uppercase font-bold tracking-wider">
                   <tr>
                     <th className="p-2.5">Fecha</th>
-                    <th className="p-2.5">Ítem</th>
+
                     <th className="p-2.5">Procedencia</th>
-                    <th className="p-2.5">Evidencia</th>
-                    <th className="p-2.5">Nivel</th>
+                    <th className="p-2.5">Habilidad</th>
+
                     <th className="p-2.5">Respuesta</th>
                     <th className="p-2.5">Calificación</th>
                   </tr>
@@ -729,7 +732,7 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                       <td className="p-2.5 font-mono text-stone-500 whitespace-nowrap">
                         {ev.timestamp.slice(0, 10)} {ev.timestamp.slice(11, 16)}
                       </td>
-                      <td className="p-2.5 font-mono font-semibold">{ev.itemId}</td>
+
                       <td className="p-2.5 whitespace-nowrap">
                         <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
                           ev.provenance === 'official_reference'
@@ -738,11 +741,11 @@ export const BxmPreparationDashboard: React.FC<BxmPreparationDashboardProps> = (
                             ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300'
                             : 'bg-stone-200 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
                         }`}>
-                          {ev.provenance}
+                          {ev.provenance === 'official_reference' ? 'Simulación de referencia' : ev.provenance === 'authored_mastery' ? 'Práctica' : 'Actividad de estudio'}
                         </span>
                       </td>
-                      <td className="p-2.5 font-mono">{ev.primaryEvidenceKey.split('/').pop()}</td>
-                      <td className="p-2.5 capitalize">{ev.cognitiveLevel} N{ev.difficulty}</td>
+                      <td className="p-2.5 font-mono">{evidenceCatalog.find(item => item.key === ev.primaryEvidenceKey)?.description || 'Habilidad practicada'}</td>
+
                       <td className="p-2.5 font-mono">{ev.selectedOption} / {ev.correctAnswer}</td>
                       <td className="p-2.5 font-bold">
                         {ev.isCorrect ? (

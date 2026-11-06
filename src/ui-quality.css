@@ -1,0 +1,99 @@
+/* UX quality pass: shared application chrome and explicit context density. */
+:root {
+  --type-page: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --type-section: 1.25rem;
+  --type-card: 1.0625rem;
+  --type-meta: .875rem;
+  --control-radius: 8px;
+}
+.app-shell h1 { font-size: var(--type-page); font-weight: 650; }
+.app-shell h2 { font-size: var(--type-section); }
+.app-shell h3 { font-size: var(--type-card); }
+.app-shell .eyebrow { font-size: var(--type-meta); font-weight: 500; }
+.app-shell { background-image: none; }
+.app-shell .ui-surface { box-shadow: none; }
+.app-shell .primary-button, .app-shell .secondary-button, .tertiary-button {
+  min-height: 44px; padding: .55rem .9rem; font-size: .9rem;
+  border-radius: 8px; line-height: 1.4; font-weight: 600;
+}
+.app-shell .secondary-button { background: transparent; border: 1px solid var(--border-subtle); }
+.tertiary-button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; color: var(--text-primary); cursor: pointer; }
+.tertiary-button:hover { background: var(--bg-secondary); }
+.app-shell .app-header { border-bottom: 1px solid #ffffff1a; }
+.app-shell .header-link { min-height: 44px; padding: .4rem .65rem; border-radius: 6px; font-size: .875rem; font-weight: 500; color: #d6d3d1; }
+.app-shell .header-link:hover { background: #ffffff0d; color: white; }
+.header-link[aria-current="page"] { color: white; text-decoration: underline; text-underline-offset: .6rem; text-decoration-color: #a5b4fc; }
+.app-shell .brand-logo { width: 40px; height: 40px; }
+.app-shell .brand-link span { font-size: .75rem; }
+.account-summary { display: flex; align-items: center; gap: 1rem; }
+.mobile-nav { display: grid; gap: .25rem; }
+.mobile-nav .header-link { justify-content: flex-start; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); }
+.mobile-nav .header-link:hover { background: var(--bg-secondary); color: var(--text-primary); }
+.learning-intro { padding-block: .5rem; }
+.learning-nav { display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-subtle); }
+.learning-nav-link { min-height: 44px; padding: .6rem .8rem; color: var(--text-muted); border-bottom: 2px solid transparent; font-size: .9rem; cursor: pointer; }
+.learning-nav-link[aria-current="page"] { color: var(--text-primary); font-weight: 600; border-color: var(--action); }
+.learning-nav-link:hover { background: var(--bg-secondary); }
+.preparation-home { display: grid; gap: 2rem; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); }
+.recommendation { min-width: 0; padding: 1.25rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--action); border-radius: 10px; background: var(--surface); display: grid; gap: .65rem; }
+.recommendation--compact { padding: 1rem; }
+.recommendation p { font-size: .95rem; }
+.recommendation .muted, .recommendation h2 { font-size: var(--type-meta); color: var(--text-muted); }
+.preparation-summary { padding-block: .5rem; }
+.mastery-summary { display: flex; flex-wrap: wrap; gap: 1rem; font-size: .9rem; }
+.mastery-summary strong { display: block; font-size: 1.25rem; }
+.preparation-secondary { padding-top: .5rem; }
+.study-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+.study-options button { flex-direction: column; align-items: flex-start; text-align: left; font-weight: 400; }
+.study-options span { font-size: .875rem; color: var(--text-muted); }
+.curriculum-list { display: grid; }
+.curriculum-row { display: flex; flex-direction: column; gap: .5rem; padding: .85rem .5rem; text-align: left; border-bottom: 1px solid var(--border-subtle); cursor: pointer; min-width: 0; }
+.curriculum-row:hover { background: var(--bg-secondary); }
+.curriculum-row p { font-size: .95rem; -webkit-line-clamp: unset; }
+.feedback-state { padding: 1.25rem; display: grid; gap: .75rem; background: var(--surface); border-radius: 10px; }
+.loading-skeleton { display: grid; gap: .65rem; max-width: 32rem; }
+.loading-skeleton span { height: .7rem; border-radius: 4px; background: var(--bg-secondary); }
+.loading-skeleton span:nth-child(2) { width: 85%; }
+.loading-skeleton span:nth-child(3) { width: 65%; }
+.progress-workspace > div > section.grid > div { background: transparent; border: 0; border-radius: 0; border-bottom: 1px solid var(--border-subtle); }
+.progress-workspace table { min-width: 600px; }
+.assessment-workspace { min-width: 0; }
+.assessment-workspace [role="timer"] { font-variant-numeric: tabular-nums; }
+.assessment-workspace > div:first-child { font-size: var(--type-meta); }
+.dark { --action: #595ce0; }
+.dark .text-stone-500 { color: #b4aca5; }
+.dark .bg-stone-850 { background-color: var(--surface-card); }
+.dark .bg-stone-750 { background-color: #3b3532; }
+.dark .text-stone-750 { color: #d6d3d1; }
+.dark .learning-nav-link[aria-current="page"] { border-color: #a5b4fc; }
+@media (max-width: 767px) {
+  .preparation-home { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .preparation-secondary { border-top: 1px solid var(--border-subtle); padding-top: 1rem; }
+  .learning-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .learning-nav-link { padding-inline: .25rem; font-size: .875rem; }
+  .learning-nav > div { display: none; }
+  .learning-nav > button:not(.learning-nav-link) { grid-column: span 2; white-space: normal; }
+  .study-options { grid-template-columns: minmax(0, 1fr); }
+  .study-options button { flex-direction: row; justify-content: flex-start; gap: 1rem; }
+  .study-options strong { min-width: 5rem; }
+  .assessment-workspace button { min-height: 44px; }
+  .app-shell .exam-header button { min-height: 44px; }
+  .app-shell .page-intro { padding: 1.25rem; border-radius: 12px; }
+}
+@media (max-width: 640px) { html { font-size: 100%; } }
+
+@media (min-width: 768px) { .app-header .mobile-menu-trigger { display: none; } }
+
+.assessment-workspace .question-stem { font-size: 1.125rem; font-weight: 500; line-height: 1.8; text-wrap: pretty; }
+
+.assessment-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+@media (max-width: 640px) {
+  .assessment-tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .assessment-tools [role="timer"] { grid-column: 1 / -1; grid-row: 1; text-align: right; }
+  .assessment-tools button { padding: .5rem; font-size: .875rem; }
+}
+
+.assessment-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.assessment-navigation > button:last-child { grid-column: 2; grid-row: 1; }
+.assessment-question-rail { grid-row: 2; grid-column: 1 / -1; display: flex; gap: .5rem; overflow-x: auto; padding: .35rem; min-width: 0; }
+.assessment-question-rail button { width: 44px; min-width: 44px; min-height: 44px; }

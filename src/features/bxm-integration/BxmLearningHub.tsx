@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { AppRoute, LearningContextReason } from '../../services/navigation';
 import { storageService } from '../../services/storageService';
+import { FeedbackState } from '../../components/common/FeedbackState';
 import { Dialog } from '../../components/common/Dialog';
 import { PaywallModal } from '../../components/common/PaywallModal';
 import { TextRenderer } from '../../components/common/TextRenderer';
@@ -303,35 +304,19 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     };
   }, [result, events]);
 
-  return <div className="page-width py-4 sm:py-6 space-y-4 sm:space-y-5 min-w-0" data-revision={revision}>
-    {tab === 'assessment' ? (
-      /* Minimal compact header bar during active practice session */
-      <header className="ui-surface rounded-xl px-4 py-2.5 flex items-center justify-between gap-3 shadow-xs">
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="text-xs font-bold text-amber-500 uppercase tracking-wider font-mono">BXM</span>
-          <span className="text-stone-300 dark:text-stone-700">·</span>
-          <span className="text-xs font-semibold text-stone-800 dark:text-stone-200 truncate">Sesión de Evaluación en Curso</span>
-        </div>
-        <button
-          type="button"
-          onClick={() => go('diagnostic')}
-          className="text-xs font-bold px-3 py-1 rounded-lg border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors shrink-0"
-        >
-          Salir de la práctica
-        </button>
-      </header>
-    ) : (
+  return <div className="learning-workspace page-width py-4 sm:py-6 space-y-4 sm:space-y-5 min-w-0" data-revision={revision}>
+    {tab !== 'assessment' && (
       /* Standard compact header for navigation tabs */
-      <header className="ui-surface rounded-2xl p-4 sm:p-5 space-y-2.5 sm:space-y-3">
+      <header className="learning-intro space-y-3">
         <div className="space-y-1">
           <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
-            Aprendizaje guiado · Matemáticas BXM
+            Matemáticas BXM
           </h1>
           <p className="hidden sm:block text-xs sm:text-sm text-stone-600 dark:text-stone-400">
-            Diagnóstico, lecciones y práctica de autor. El paquete inicial incluye cuatro lecciones y 30 ejercicios en tres áreas; cubre una parte de las 71 evidencias.
+            Aprende, practica y comprueba tu avance a tu ritmo.
           </p>
         </div>
-        <nav aria-label="Aprendizaje BXM" className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+        <nav aria-label="Aprendizaje BXM" className="learning-nav">
           {([
             ['inicio', 'Inicio', 'inicio'],
             ['aprender', 'Aprender', 'temario'],
@@ -343,11 +328,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
               <button
                 key={pillarId}
                 aria-current={isCurrent ? 'page' : undefined}
-                className={`text-xs px-3 sm:px-3.5 py-1.5 rounded-xl font-bold whitespace-nowrap shrink-0 transition-colors ${
-                  isCurrent
-                    ? 'bg-amber-400 text-stone-950 shadow-xs'
-                    : 'bg-stone-100 dark:bg-stone-850 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-800'
-                }`}
+                className="learning-nav-link"
                 onClick={() => go(targetTab)}
               >
                 {label}
@@ -382,185 +363,32 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         const mastered = masteryRecords.filter(r => r.status === 'mastered');
         const lastResult = results[0];
 
-        return (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {/* Main Journey Column: Tu preparación & Reusable Recommendation Card */}
-            <section className="lg:col-span-2 ui-surface p-5 sm:p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 space-y-5">
-              <div className="flex items-center justify-between gap-2 border-b border-stone-100 dark:border-stone-800 pb-3">
-                <div className="space-y-0.5">
-                  <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                    Tu preparación formativa
-                  </span>
-                  <h2 className="text-lg sm:text-xl font-extrabold text-stone-900 dark:text-stone-100">
-                    {events.length > 0
-                      ? `Has trabajado en ${measured.length} de las 71 habilidades oficiales`
-                      : 'Comienza tu ruta de preparación'}
-                  </h2>
-                </div>
-                {events.length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => go('progress')}
-                    className="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline shrink-0"
-                  >
-                    Ver detalle completo →
-                  </button>
-                )}
-              </div>
-
-              {/* Canonical Reusable Recommendation Card */}
-              <RecommendationCard
-                recommendation={canonicalHomeRecommendation}
-                onPrimaryAction={(rec) => handleRecommendationAction(rec, false)}
-                onSecondaryAction={(rec) => handleRecommendationAction(rec, true)}
-                variant="hero"
-              />
-
-              {/* Progress Summary Metrics */}
-              {events.length > 0 && (
-                <div className="grid grid-cols-3 gap-3 pt-1">
-                  <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-center">
-                    <span className="text-xs text-stone-500 font-medium">Dominadas</span>
-                    <div className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-0.5">
-                      {mastered.length}
-                    </div>
-                  </div>
-                  <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-center">
-                    <span className="text-xs text-stone-500 font-medium">En progreso</span>
-                    <div className="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400 mt-0.5">
-                      {inProgress.length}
-                    </div>
-                  </div>
-                  <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-850 border border-stone-200 dark:border-stone-800 text-center">
-                    <span className="text-xs text-stone-500 font-medium">En refuerzo</span>
-                    <div className="text-xl sm:text-2xl font-black text-rose-600 dark:text-rose-400 mt-0.5">
-                      {weak.length}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Study Mode Sessions / ¿Cuánto tiempo tienes hoy? */}
-              <div className="pt-2 border-t border-stone-100 dark:border-stone-800 space-y-2">
-                <span className="text-xs font-bold text-stone-700 dark:text-stone-300">
-                  ¿Cuánto tiempo tienes para estudiar hoy?
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const target = canonicalHomeRecommendation.targetId || [...sampleLessonKeys][0];
-                      request({ kind: 'evidence_practice', evidenceKey: target });
-                    }}
-                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
-                  >
-                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">15 min</div>
-                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Reforzar una habilidad</div>
-                    <div className="text-[11px] text-stone-500 mt-0.5">Práctica enfocada de autor</div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (results.length > 0) go('practice');
-                      else request({ kind: 'diagnostic' });
-                    }}
-                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
-                  >
-                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">30 min</div>
-                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Sesión de práctica</div>
-                    <div className="text-[11px] text-stone-500 mt-0.5">Diagnóstico o práctica variada</div>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => go('simulation')}
-                    className="p-3 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 text-left transition-colors bg-white dark:bg-stone-900 cursor-pointer"
-                  >
-                    <div className="text-xs font-black text-amber-600 dark:text-amber-400">45-60 min</div>
-                    <div className="text-xs font-bold text-stone-900 dark:text-stone-100 mt-0.5">Simulacro de examen</div>
-                    <div className="text-[11px] text-stone-500 mt-0.5">Simulacro formativo o benchmark</div>
-                  </button>
-                </div>
+        return <div className="preparation-home">
+          <section className="space-y-5 min-w-0">
+            <RecommendationCard recommendation={canonicalHomeRecommendation} onPrimaryAction={rec => handleRecommendationAction(rec, false)} onSecondaryAction={rec => handleRecommendationAction(rec, true)} variant="hero" />
+            <section className="preparation-summary space-y-3">
+              <h2 className="text-xl font-semibold">Tu preparación</h2>
+              <p className="muted">{events.length ? `Has trabajado en ${measured.length} de las 71 habilidades del programa.` : 'Tu avance aparecerá después de tu primera actividad.'}</p>
+              {events.length > 0 && <div className="mastery-summary"><span><strong>{mastered.length}</strong> Dominadas</span><span><strong>{inProgress.length}</strong> En progreso</span><span><strong>{weak.length}</strong> Necesita práctica</span></div>}
+              <button className="text-link" onClick={() => go('progress')}>Ver mi progreso</button>
+            </section>
+            <section className="space-y-2 border-t border-stone-200 dark:border-stone-800 pt-4">
+              <h2 className="text-base font-semibold">¿Cuánto tiempo tienes para estudiar hoy?</h2>
+              <div className="study-options">
+                <button className="tertiary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: canonicalHomeRecommendation.targetId && inventory[canonicalHomeRecommendation.targetId] ? canonicalHomeRecommendation.targetId : [...sampleLessonKeys][0] })}><strong>15 min</strong><span>Reforzar una habilidad</span></button>
+                <button className="tertiary-button" onClick={() => results.length ? go('practice') : request({ kind: 'diagnostic' })}><strong>30 min</strong><span>Sesión de práctica</span></button>
+                <button className="tertiary-button" onClick={() => go('simulation')}><strong>45-60 min</strong><span>Simulacro de práctica</span></button>
               </div>
             </section>
-
-            {/* Side Column: Activity Summary & Contextual Links */}
-            <div className="space-y-4">
-              {/* Recent Activity Card */}
-              {lastResult ? (
-                <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
-                      Última actividad
-                    </span>
-                    <span className="text-xs text-stone-500 font-mono">
-                      {new Date(lastResult.completedAt).toLocaleDateString('es-CR', { timeZone: 'America/Costa_Rica' })}
-                    </span>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
-                      {lastResult.kind === 'diagnostic' ? 'Evaluación diagnóstica' : lastResult.kind === 'mock_exam' ? 'Simulacro formativo' : 'Sesión de práctica'}
-                    </h3>
-                    <p className="text-xs text-stone-600 dark:text-stone-400">
-                      Resultado: <strong className="text-stone-900 dark:text-stone-100">{lastResult.firstResponseCorrectCount}/{lastResult.totalActualItems} correctas</strong> ({Math.round((lastResult.firstResponseCorrectCount / (lastResult.totalActualItems || 1)) * 100)}%)
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    className="secondary-button w-full cursor-pointer text-xs"
-                    onClick={() => go('result', undefined, lastResult.sessionId)}
-                  >
-                    Ver análisis del intento
-                  </button>
-                </section>
-              ) : (
-                <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
-                      ¿Qué necesitas repasar?
-                    </h3>
-                    <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
-                      Gratis
-                    </span>
-                  </div>
-                  <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-                    Diagnóstico rápido: 20 preguntas / 30 minutos. Evalúa Geometría, Funciones y Estadística.
-                  </p>
-                  <button
-                    type="button"
-                    className="primary-button w-full cursor-pointer text-xs"
-                    onClick={() => request({ kind: 'diagnostic' })}
-                  >
-                    Preparar diagnóstico
-                  </button>
-                </section>
-              )}
-
-              {/* Official Benchmark Quick Card */}
-              <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100">
-                    Examen Oficial de Referencia
-                  </h3>
-                  <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
-                    MEP Oficial
-                  </span>
-                </div>
-                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-                  60 preguntas completas · 150 minutos. Convocatoria oficial de referencia conservada independiente y gratuita.
-                </p>
-                <button
-                  type="button"
-                  className="secondary-button w-full cursor-pointer text-xs"
-                  onClick={onOfficialSimulation}
-                >
-                  Examen oficial de referencia · 60 preguntas
-                </button>
-              </section>
-            </div>
-          </div>
-        );
+          </section>
+          <aside className="preparation-secondary space-y-5">
+            <section className="space-y-2">
+              <h2 className="text-base font-semibold">Última actividad</h2>
+              {lastResult ? <><p>{lastResult.kind === 'diagnostic' ? 'Diagnóstico' : lastResult.kind === 'mock_exam' ? 'Simulacro de práctica' : 'Sesión de práctica'}</p><p className="muted">{new Date(lastResult.completedAt).toLocaleDateString('es-CR', { timeZone: 'America/Costa_Rica' })} · {lastResult.firstResponseCorrectCount}/{lastResult.totalActualItems} correctas</p><button className="text-link" onClick={() => go('result', undefined, lastResult.sessionId)}>Ver resultado</button></> : <><p className="muted">Todavía no tienes resultados. El diagnóstico te ayuda a descubrir qué conviene reforzar.</p><button className="text-link" onClick={() => request({ kind: 'diagnostic' })}>Hacer diagnóstico</button></>}
+            </section>
+            <section className="space-y-2 border-t border-stone-200 dark:border-stone-800 pt-4"><h2 className="text-base font-semibold">Simulación de referencia</h2><p className="muted">60 preguntas · 150 minutos. Un ensayo independiente basado en el examen de referencia del MEP.</p><button className="text-link" onClick={() => setShowOfficialBriefing(true)}>Examen oficial de referencia · 60 preguntas</button></section>
+          </aside>
+        </div>;
       })()}
     </div>}
     {tab === 'temario' && <BxmDigitalTemario
@@ -585,16 +413,16 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       }}
     />}
     {tab === 'practice' && <section className="ui-surface p-5 rounded-2xl space-y-4">
-      <h2 className="text-xl font-semibold">Práctica por evidencia</h2>
-      <label className="block">Evidencia<select aria-label="Evidencia" className="w-full" value={selectedEvidence} onChange={e => setSelectedEvidence(e.target.value)}>
-        {catalog.map(e => <option key={e.key} value={e.key}>{e.domain} · {e.rawCode} · {e.description}</option>)}
+      <h2 className="text-xl font-semibold">Práctica por habilidad</h2>
+      <label className="block">Habilidad<select aria-label="Habilidad" className="w-full" value={selectedEvidence} onChange={e => setSelectedEvidence(e.target.value)}>
+        {catalog.map(e => <option key={e.key} value={e.key}>{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[e.domain]} · {e.description}</option>)}
       </select></label>
       <label className="block">Dificultad de práctica<select aria-label="Dificultad de práctica" value={difficulty || ''} onChange={e => setDifficulty(e.target.value ? Number(e.target.value) as DifficultyTier : undefined)}><option value="">Todas</option><option value="1">Básico</option><option value="2">Intermedio</option><option value="3">Avanzado</option></select></label>
-      <p>{inventory[selectedEvidence]?.totalItems || 0} ejercicios base disponibles para esta evidencia.</p>
+      <p>{inventory[selectedEvidence]?.totalItems || 0} ejercicios disponibles para esta habilidad.</p>
       <div className="action-row">
         <button className="primary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, difficulty })}>Preparar práctica</button>
         <button className="secondary-button" onClick={() => request({ kind: 'mastery_check', evidenceKey: selectedEvidence })}>Comprobar aprendizaje</button>
-        <button className="secondary-button" onClick={() => request({ kind: 'retest', evidenceKey: selectedEvidence })}>Preparar retest</button>
+        <button className="secondary-button" onClick={() => request({ kind: 'retest', evidenceKey: selectedEvidence })}>Comprobar mi avance</button>
         <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, generated: true })}>Practicar variantes</button>
       </div>
       <button className="text-link" onClick={() => openLesson(selectedEvidence)}>Ver esta evidencia en el temario</button>
@@ -618,14 +446,14 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           <div className="space-y-3.5">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-800">
-                Simulacro de práctica
+                Práctica guiada
               </span>
               <span className="text-xs font-bold text-indigo-900 dark:text-indigo-300 font-mono">
                 20 preguntas · ~45 min
               </span>
             </div>
             <div className="space-y-1">
-              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulacro Formativo de Autor</h3>
+              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulacro de práctica</h3>
               <p className="text-xs text-indigo-700 dark:text-indigo-300 font-medium">
                 Diseñado para practicar y detectar oportunidades de mejora antes de la prueba real.
               </p>
@@ -633,7 +461,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
               <li>Muestra representativa de Geometría, Funciones y Estadística.</li>
               <li>Al finalizar genera tu <strong>Plan de Nivelación</strong> personalizado.</li>
-              <li>Calcula recomendaciones de estudio directas y opciones de retest.</li>
+              <li>Recibe una recomendación para seguir mejorando.</li>
               <li>Permite calibrar y registrar tu dominio de habilidades.</li>
             </ul>
           </div>
@@ -654,7 +482,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
               </span>
             </div>
             <div className="space-y-1">
-              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Examen Oficial de Referencia</h3>
+              <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">Simulación de referencia</h3>
               <p className="text-xs text-stone-600 dark:text-stone-400 font-medium">
                 Basado en el formato de referencia oficial del MEP para medir tu preparación integral.
               </p>
@@ -662,7 +490,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
               <li>Prueba completa e íntegra de la Convocatoria Oficial 2026-c2.</li>
               <li>100% gratuita y libre de límites para todos los estudiantes.</li>
-              <li>Totalmente independiente: no contamina ni altera tus registros de dominio de autor.</li>
+              <li>Su resultado se muestra por separado de tus prácticas de aprendizaje.</li>
               <li>Recomendada como ensayo general previo al examen formal del MEP.</li>
             </ul>
           </div>
@@ -727,7 +555,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                       const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
                       return (
                         <li key={m.evidenceId} className="flex items-center justify-between">
-                          <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
+                          <span className="font-medium">{catalog.find(item => item.key === m.evidenceId)?.description || domainNames[m.domain] || 'Habilidad evaluada'}</span>
                           <StudentMasteryBadge percentage={acc} />
                         </li>
                       );
@@ -752,7 +580,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                       const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
                       return (
                         <li key={m.evidenceId} className="flex items-center justify-between">
-                          <span className="font-medium">{domainNames[m.domain] || m.domain} · {m.evidenceCode}</span>
+                          <span className="font-medium">{catalog.find(item => item.key === m.evidenceId)?.description || domainNames[m.domain] || 'Habilidad evaluada'}</span>
                           <StudentMasteryBadge percentage={acc} />
                         </li>
                       );
@@ -807,14 +635,14 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             <h2 className={`text-xs font-black uppercase tracking-wider ${
               retestRecoveryStatus.isRecovered ? 'text-emerald-800 dark:text-emerald-300' : 'text-amber-800 dark:text-amber-300'
             }`}>
-              Resultado del Retest · Recuperación de Evidencia {retestRecoveryStatus.evidenceCode}
+              Tu avance después del refuerzo
             </h2>
           </div>
           <div className="space-y-1">
             <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100">
               {retestRecoveryStatus.isRecovered
-                ? `¡Evidencia Recuperada con Éxito! (${retestRecoveryStatus.retestScore}%)`
-                : `Retest Completado (${retestRecoveryStatus.retestScore}%) · Continúa reforzando`}
+                ? `¡Has reforzado esta habilidad! (${retestRecoveryStatus.retestScore}%)`
+                : `Comprobación completada (${retestRecoveryStatus.retestScore}%) · Continúa reforzando`}
             </h3>
             <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
               {retestRecoveryStatus.isRecovered
@@ -861,16 +689,16 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         </section>
       )}
 
-      <section className="ui-surface p-5 rounded-2xl space-y-3"><h2 className="text-xl font-semibold">Desglose completo de evidencias</h2><p>Las evidencias sin preguntas en este intento permanecen sin medir.</p>
-        {Object.values(result.evidenceBreakdowns).map(e => <div key={e.evidenceId} className="flex flex-wrap gap-3 items-center"><span>{e.domain} · {e.evidenceCode}: {e.correctFirstResponseCount}/{e.totalItems}</span><button className="text-link" onClick={() => openLesson(e.evidenceId)}>Estudiar evidencia {e.evidenceCode}</button></div>)}
+      <section className="ui-surface p-5 rounded-2xl space-y-3"><h2 className="text-xl font-semibold">Detalle por habilidad</h2><p>Solo las habilidades evaluadas tienen un resultado.</p>
+        {Object.values(result.evidenceBreakdowns).map(e => <div key={e.evidenceId} className="flex flex-wrap gap-3 items-center"><span>{catalog.find(item => item.key === e.evidenceId)?.description || 'Habilidad evaluada'}: {e.correctFirstResponseCount}/{e.totalItems}</span><button className="text-link" onClick={() => openLesson(e.evidenceId)}>Repasar este tema</button></div>)}
         <div className="action-row pt-2">
           <button className="secondary-button" onClick={() => go('progress')}>Ver mi preparación</button>
           <button className="secondary-button" onClick={() => downloadResult(result)}>Descargar resultado</button>
         </div>
       </section>
       <ResultReview result={result} onExpose={id => { if (!store.markExposed(id)) setMessage(store.lastError); }} />
-    </> : <p role="status">No hay un resultado para esta dirección en el perfil actual.</p>)}
-    {tab !== 'assessment' && <section className="ui-surface p-5 rounded-2xl space-y-3">
+    </> : <FeedbackState title="Este resultado no está disponible" description="Vuelve a tu preparación para consultar tus actividades o iniciar una nueva." action={<button className="secondary-button" onClick={() => go('inicio')}>Volver a mi preparación</button>} />)}
+    {tab === 'progress' && <section className="ui-surface p-5 rounded-2xl space-y-3">
       <h2 className="text-xl font-semibold">Resultados de aprendizaje de este perfil</h2>
       {!results.length && <p>Aún no hay resultados de aprendizaje.</p>}
       {results.map(r => <div className="flex flex-wrap gap-3" key={r.sessionId}><span>{new Date(r.completedAt).toLocaleString('es-CR', { timeZone: 'America/Costa_Rica' })} · {r.firstResponseCorrectCount}/{r.totalActualItems}</span><button className="text-link" onClick={() => go('result', undefined, r.sessionId)}>Revisar aprendizaje</button></div>)}
@@ -880,15 +708,15 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     {pending && <Dialog title="Antes de comenzar la actividad" onClose={() => setPending(null)}>
       <p>{pending.selection.totalSelected} de {pending.selection.totalRequested} preguntas. {policyFor(pending.request.kind).mode === 'exam' ? `${policyFor(pending.request.kind).timeLimitMinutes} minutos; sin pistas ni corrección antes de entregar.` : 'Sin cronómetro; con explicación y reintentos.'}</p>
       {pending.selection.isPartial && <p role="status">Cobertura limitada: no hay suficientes preguntas para completar esta selección. Puedes aceptar una actividad más corta.</p>}
-      <p>{new Set(pending.selection.items.map(i => i.evidenceId)).size} de 71 evidencias; {new Set(pending.selection.items.map(i => i.familyId || i.id)).size} familias independientes.</p>
-      <p>{pending.selection.items.filter(i => events.some(e => e.itemId === String(i.id) || (!!i.familyId && e.familyId === i.familyId))).length} preguntas pertenecen a ítems o familias ya practicados.</p>
+      <p>{new Set(pending.selection.items.map(i => i.evidenceId)).size} habilidades del programa en esta actividad.</p>
+      <p>{pending.selection.items.filter(i => events.some(e => e.itemId === String(i.id) || (!!i.familyId && e.familyId === i.familyId))).length} preguntas son similares a otras que ya practicaste.</p>
       <p>Contenido de autor con controles automáticos; revisión matemática humana pendiente. La nota es un indicador de estudio, no una predicción oficial.</p>
       <button className="primary-button" onClick={begin}>{pending.selection.isPartial ? 'Aceptar actividad limitada' : 'Comenzar actividad'}</button>
     </Dialog>}
     {discard && <Dialog title="¿Descartar la actividad de aprendizaje?" onClose={() => setDiscard(false)}><p>No se registrará un resultado; se conservan las exposiciones a explicaciones ya mostradas.</p><button className="primary-button" onClick={() => { const ok = store.discardActive(); setRunner(null); setDiscard(false); setMessage(ok ? '' : store.lastError); setRevision(value => value+1); go('diagnostic'); }}>Sí, descartar actividad</button></Dialog>}
     {showOfficialBriefing && (
       <Dialog
-        title="Preparación para el Examen Oficial de Referencia (60 ítems)"
+        title="Preparación para la simulación de referencia (60 ítems)"
         onClose={() => setShowOfficialBriefing(false)}
       >
         <div className="space-y-4 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
