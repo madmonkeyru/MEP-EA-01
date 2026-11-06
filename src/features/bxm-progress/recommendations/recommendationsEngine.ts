@@ -2,8 +2,13 @@ import type {
   BxmDomain,
   DifficultyTier,
   QualifiedEvidenceInfo,
+  AttemptEvent,
+  LearningCompletion,
 } from '../domain/types';
 import type { EvidenceMasteryRecord } from '../domain/masteryEngine';
+import type { CanonicalRecommendation } from '../../../types/recommendation';
+
+export * from '../../../types/recommendation';
 
 export type QueueItemReason =
   | 'calibration_needed' // insufficient data
@@ -58,6 +63,225 @@ export interface RetestRecommendation {
 export interface QueueGenerationOptions {
   limit?: number;
   availableInventoryByEvidence?: Record<string, { totalItems: number; tiers?: DifficultyTier[] }>;
+}
+
+export interface RecommendationEngineContext {
+  evidenceRecords: EvidenceMasteryRecord[];
+  events: AttemptEvent[];
+  completions?: LearningCompletion[];
+  hasCompletedDiagnostic?: boolean;
+  availableLessons?: { evidenceKey: string; title?: string }[];
+  availableInventory?: Record<string, { totalItems: number; tiers?: DifficultyTier[] }>;
+  pendingRemediationEvidenceKey?: string;
+}
+
+const DOMAIN_FRIENDLY_NAMES: Record<string, string> = {
+  geometry: 'Geometría',
+  functions: 'Funciones y Álgebra',
+  algebra: 'Funciones y Álgebra',
+  statistics: 'Estadística y Probabilidad',
+};
+
+/**
+ * Returns a student-friendly educational title for a domain/evidence, avoiding raw codes.
+ */
+export function getFriendlyDomainName(domain: string): string {
+  return DOMAIN_FRIENDLY_NAMES[domain] || domain;
+}
+
+/**
+ * Core canonical recommendation engine function.
+ * Evaluates learner state and returns a CanonicalRecommendation { activityType, targetId, reason, priority, cta }.
+ *
+ * Priority order:
+ * 1. New/empty learner (no diagnostic yet) -> activityType: 'diagnostic', reason: 'no_diagnostic_yet', priority: 'p0'
+ * 2. Active remediation pending from recent diagnostic/simulation -> activityType: 'remediation' / 'practice', reason: 'remediation_pending', priority: 'p0'
+ * 3. Diagnostic or practice weakness (<60% accuracy) -> activityType: hasLesson ? 'lesson' : 'practice', reason: 'diagnostic_weakness', priority: 'p1'
+ * 4. Retest available (remediated skill ready for re-verification) -> activityType: 'retest', reason: 'retest_available', priority: 'p1'
+ * 5. In-progress skill (60%-74% accuracy) -> activityType: 'practice', reason: 'general_practice', priority: 'p2'
+ * 6. High mastery, simulation recommended -> activityType: 'simulation', reason: 'simulation_recommended', priority: 'p2'
+ */
+export function deriveCanonicalRecommendation(
+  context: RecommendationEngineContext
+): CanonicalRecommendation {
+  const {
+    evidenceRecords,
+    events,
+    hasCompletedDiagnostic = false,
+    availableLessons = [],
+    availableInventory = {},
+    pendingRemediationEvidenceKey,
+  } = context;
+
+  const hasEvents = events.length > 0;
+  const hasDiagnostic = hasCompletedDiagnostic || events.some(e => e.sessionKind === 'diagnostic');
+
+  // Case 1: Empty / new learner without diagnostic
+  if (!hasEvents && !hasDiagnostic) {
+    return {
+      activityType: 'diagnostic',
+      targetId: 'bxm-diagnostic-02-2026',
+      reason: 'no_diagnostic_yet',
+      priority: 'p0',
+      title: 'Diagnóstico Inicial de 20 Preguntas',
+      description: 'Evalúa tu nivel de partida en Geometría, Funciones y Estadística para diseñar tu plan de nivelación personalizado.',
+      cta: {
+        label: 'Iniciar evaluación diagnóstica',
+        action: 'diagnostic',
+        targetId: 'bxm-diagnostic-02-2026',
+        secondaryLabel: 'Explorar el Temario',
+        secondaryAction: 'lesson',
+      },
+      estimatedMinutes: 30,
+    };
+  }
+
+  // Case 2: Specific pending remediation evidence
+  if (pendingRemediationEvidenceKey) {
+    const rec = evidenceRecords.find(r => r.evidenceKey === pendingRemediationEvidenceKey);
+    const domainName = rec ? getFriendlyDomainName(rec.domain) : 'Matemáticas';
+    const code = rec?.rawCode || pendingRemediationEvidenceKey.split('/').pop() || '';
+    const hasLesson = availableLessons.some(l => l.evidenceKey === pendingRemediationEvidenceKey);
+
+    return {
+      activityType: hasLesson ? 'lesson' : 'practice',
+      targetId: pendingRemediationEvidenceKey,
+      reason: 'diagnostic_weakness',
+      priority: 'p0',
+      title: `Reforzar: Evidencia ${code} (${domainName})`,
+      description: rec?.description
+        ? `${rec.description}. Concentra tu práctica para superar los errores detectados.`
+        : `Refuerza los conceptos prioritarios identificados en tu última evaluación de ${domainName}.`,
+      domainLabel: domainName,
+      currentAccuracyPercentage: rec?.accuracyPercentage,
+      statusLabel: rec?.statusLabelEs || 'Requiere refuerzo',
+      cta: {
+        label: hasLesson ? 'Estudiar este tema en el Temario' : 'Practicar esta habilidad',
+        action: hasLesson ? 'lesson' : 'practice',
+        targetId: pendingRemediationEvidenceKey,
+        secondaryLabel: hasLesson ? 'Practicar directamente' : undefined,
+        secondaryAction: hasLesson ? 'practice' : undefined,
+        secondaryTargetId: hasLesson ? pendingRemediationEvidenceKey : undefined,
+      },
+      estimatedMinutes: 15,
+    };
+  }
+
+  // Case 3: Identify critical weaknesses (<60% accuracy or needs_reinforcement, OR measured with errors)
+  const weakRecords = evidenceRecords.filter(r => r.status === 'needs_reinforcement' || (r.totalQualifyingCount > 0 && r.accuracyPercentage < 60));
+  if (weakRecords.length > 0) {
+    // Sort by lowest accuracy first, then by available inventory
+    const sortedWeak = [...weakRecords].sort((a, b) => {
+      const invA = (availableInventory[a.evidenceKey]?.totalItems || 0) > 0 ? 1 : 0;
+      const invB = (availableInventory[b.evidenceKey]?.totalItems || 0) > 0 ? 1 : 0;
+      if (invA !== invB) return invB - invA;
+      return a.accuracyExactRatio - b.accuracyExactRatio;
+    });
+
+    const target = sortedWeak[0];
+    const domainName = getFriendlyDomainName(target.domain);
+    const hasLesson = availableLessons.some(l => l.evidenceKey === target.evidenceKey);
+
+    return {
+      activityType: hasLesson ? 'lesson' : 'practice',
+      targetId: target.evidenceKey,
+      reason: 'diagnostic_weakness',
+      priority: 'p1',
+      title: `Reforzar: Evidencia ${target.rawCode || target.evidenceKey} (${domainName})`,
+      description: target.description
+        ? `${target.description}. Tu diagnóstico detectó una oportunidad de mejora aquí.`
+        : `Tu diagnóstico detectó una oportunidad de mejora en ${domainName}.`,
+      domainLabel: domainName,
+      currentAccuracyPercentage: target.accuracyPercentage,
+      statusLabel: target.statusLabelEs,
+      cta: {
+        label: hasLesson ? 'Estudiar este tema en el Temario' : 'Practicar esta habilidad',
+        action: hasLesson ? 'lesson' : 'practice',
+        targetId: target.evidenceKey,
+        secondaryLabel: hasLesson ? 'Practicar directamente' : undefined,
+        secondaryAction: hasLesson ? 'practice' : undefined,
+        secondaryTargetId: hasLesson ? target.evidenceKey : undefined,
+      },
+      estimatedMinutes: 15,
+    };
+  }
+
+  // Case 4: In-progress skills (60%-74%)
+  const inProgressRecords = evidenceRecords.filter(r => r.status === 'in_progress');
+  if (inProgressRecords.length > 0) {
+    const target = inProgressRecords[0];
+    const domainName = getFriendlyDomainName(target.domain);
+    const hasLesson = availableLessons.some(l => l.evidenceKey === target.evidenceKey);
+
+    return {
+      activityType: 'practice',
+      targetId: target.evidenceKey,
+      reason: 'general_practice',
+      priority: 'p2',
+      title: `Consolidar Dominio: ${domainName}`,
+      description: target.description
+        ? `${target.description}. Estás cerca del dominio (75%). Continúa con práctica guiada.`
+        : `Estás cerca del umbral de dominio en ${domainName}.`,
+      domainLabel: domainName,
+      currentAccuracyPercentage: target.accuracyPercentage,
+      statusLabel: target.statusLabelEs,
+      cta: {
+        label: 'Practicar para alcanzar dominio',
+        action: 'practice',
+        targetId: target.evidenceKey,
+        secondaryLabel: hasLesson ? 'Repasar lección' : undefined,
+        secondaryAction: hasLesson ? 'lesson' : undefined,
+        secondaryTargetId: hasLesson ? target.evidenceKey : undefined,
+      },
+      estimatedMinutes: 15,
+    };
+  }
+
+  // Case 5: Mastered skills or calibration needed -> simulation or next practice
+  const masteredRecords = evidenceRecords.filter(r => r.status === 'mastered');
+  if (masteredRecords.length >= 3) {
+    return {
+      activityType: 'simulation',
+      targetId: 'formative-mock',
+      reason: 'simulation_recommended',
+      priority: 'p2',
+      title: 'Comprobar Preparación con Simulacro Formativo',
+      description: 'Has consolidado tus habilidades prioritarias. Realiza un simulacro para medir retención integral en condiciones de examen.',
+      cta: {
+        label: 'Iniciar Simulacro Formativo',
+        action: 'simulation',
+        targetId: 'formative-mock',
+        secondaryLabel: 'Ver examen oficial de referencia',
+        secondaryAction: 'simulation',
+        secondaryTargetId: 'official-reference',
+      },
+      estimatedMinutes: 45,
+    };
+  }
+
+  // Default fallback: general practice on first available lesson or evidence
+  const fallbackKey = availableLessons[0]?.evidenceKey || evidenceRecords[0]?.evidenceKey || 'geometry/A1.1';
+  const fallbackDomain = evidenceRecords[0]?.domain || 'geometry';
+  const fallbackDomainName = getFriendlyDomainName(fallbackDomain);
+
+  return {
+    activityType: 'practice',
+    targetId: fallbackKey,
+    reason: 'general_practice',
+    priority: 'p3',
+    title: `Práctica de Habilidades: ${fallbackDomainName}`,
+    description: 'Continúa resolviendo ejercicios para calibrar tu dominio y fortalecer tu preparación.',
+    domainLabel: fallbackDomainName,
+    cta: {
+      label: 'Continuar práctica',
+      action: 'practice',
+      targetId: fallbackKey,
+      secondaryLabel: 'Explorar temario',
+      secondaryAction: 'lesson',
+      secondaryTargetId: fallbackKey,
+    },
+    estimatedMinutes: 15,
+  };
 }
 
 /**
