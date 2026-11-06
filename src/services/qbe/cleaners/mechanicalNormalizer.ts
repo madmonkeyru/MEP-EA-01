@@ -40,25 +40,34 @@ export function normalizeMechanicalText(rawText: string): NormalizationResult {
 
   let current = rawText;
 
-  // 1. Whitespace & Zero-Width Artifacts
-  const noZeroWidth = current.replace(/[\u200B-\u200D\uFEFF]/g, '');
-  if (noZeroWidth !== current) {
+  // 1. Strip Google Forms boilerplate & zero-width artifacts
+  const hasBoilerplateOrZero =
+    /Acceder a Googlepara guardar|Indica que la pregunta es obligatoria|[\u200B-\u200D\uFEFF]/i.test(current);
+
+  if (hasBoilerplateOrZero) {
+    const origBefore = current;
+    const noBoilerplate = current
+      .replace(/Acceder a Googlepara guardar el progreso\.Más información/gi, '')
+      .replace(/\*?\s*Indica que la pregunta es obligatoria/gi, '')
+      .replace(/[\u200B-\u200D\uFEFF]/g, '');
+
     transformations.push(
       createRecord(
-        'MECH-01-ZERO-WIDTH',
-        current,
-        noZeroWidth,
-        'whitespace',
-        'Stripped invisible zero-width unicode characters'
+        'MECH-01-BOILERPLATE-ZERO-WIDTH',
+        origBefore,
+        noBoilerplate,
+        'formatting',
+        'Stripped Google Forms progress boilerplate and invisible characters'
       )
     );
-    current = noZeroWidth;
+    current = noBoilerplate;
   }
 
   // Normalize multi-spaces & trim
   const cleanSpaces = current
     .split('\n')
     .map(line => line.replace(/[ \t]+/g, ' ').trim())
+    .filter(line => !/^\s*\d+\s+puntos?\s*$/i.test(line)) // strip standalone "0 puntos" / "1 punto" lines
     .join('\n')
     .trim();
 
@@ -133,18 +142,22 @@ export function normalizeMechanicalText(rawText: string): NormalizationResult {
     current = replaced;
   }
 
-  // 5. Radical normalization: √5 -> \sqrt{5}, \sqrt 5 -> \sqrt{5}
-  const hasSqrt = /√\s*(\d+|[a-zA-Z]+)/.test(current);
+  // 5. Radical normalization: √5 -> \sqrt{5}, √18 -> \sqrt{18}, handling combining overlines cleanly
+  const hasSqrt = /√\s*([\d\w\u0304\u0305]+)/.test(current);
   if (hasSqrt) {
     const origBefore = current;
-    const replaced = current.replace(/√\s*(\d+|[a-zA-Z]+)/g, '\\sqrt{$1}');
+    const replaced = current.replace(/√\s*([\d\w\u0304\u0305]+)/g, (_m, inner) => {
+      // Remove combining overline from inside radical (e.g. 1̅8̅ -> 18)
+      const cleanInner = inner.replace(/[\u0304\u0305]/g, '');
+      return `\\sqrt{${cleanInner}}`;
+    });
     transformations.push(
       createRecord(
         'MECH-05-UNICODE-RADICAL',
         origBefore,
         replaced,
         'mathematical_notation',
-        'Normalized radical symbol to standard \\sqrt{} notation'
+        'Normalized radical symbol and stripped combining overline within radical'
       )
     );
     current = replaced;

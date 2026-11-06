@@ -19,19 +19,19 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?",
+        "stem_raw": "¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\n*",
+        "stem_cleaned": "¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?",
         "options": [
           {
             "id": "A",
             "text_raw": "(x-3)² + (y-4)² = √̅5̅",
-            "text_cleaned": "(x-3)^2 + (y-4)^2 = √̅5̅",
+            "text_cleaned": "$(x-3)^2 + (y-4)^2 = \\sqrt{5}$",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "(x+3)² + (y+4)² = √̅5̅",
-            "text_cleaned": "(x+3)^2 + (y+4)^2 = √̅5̅",
+            "text_cleaned": "$(x + 3)^2 + (y + 4)^2 = \\sqrt{5}$",
             "visuals": []
           },
           {
@@ -57,16 +57,16 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -88,7 +88,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -96,13 +96,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?",
+            "original_text": "¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?\n*",
+            "normalized_text": "¿Cuál es la ecuación de una circunferencia cuyo centro es (-3,-4) y la medida de su radio es 5?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.686Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -113,7 +113,29 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.686Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(x-3)^2 + (y-4)^2 = √̅5̅",
+            "normalized_text": "(x-3)^2 + (y-4)^2 = \\sqrt{5}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x-3)^2 + (y-4)^2 = \\sqrt{5}",
+            "normalized_text": "$(x-3)^2 + (y-4)^2 = \\sqrt{5}$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -124,7 +146,29 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.686Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(x+3)^2 + (y+4)^2 = √̅5̅",
+            "normalized_text": "(x+3)^2 + (y+4)^2 = \\sqrt{5}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.773Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-06-LATEX-DELIMITER-WRAP",
+            "original_text": "(x+3)^2 + (y+4)^2 = \\sqrt{5}",
+            "normalized_text": "$(x + 3)^2 + (y + 4)^2 = \\sqrt{5}$",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -135,7 +179,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.686Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -146,7 +190,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -157,7 +201,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -168,7 +212,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -188,8 +232,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente gráfica?\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente gráfica?",
+        "stem_raw": "¿Cuál es la ecuación de la siguiente gráfica?\n*",
+        "stem_cleaned": "¿Cuál es la ecuación de la siguiente gráfica?",
         "options": [
           {
             "id": "A",
@@ -239,11 +283,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -268,21 +312,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente gráfica?\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente gráfica?",
+            "original_text": "¿Cuál es la ecuación de la siguiente gráfica?\n*",
+            "normalized_text": "¿Cuál es la ecuación de la siguiente gráfica?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -293,7 +337,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -304,7 +348,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -315,7 +359,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -326,7 +370,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -337,7 +381,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -348,7 +392,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -359,7 +403,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -370,7 +414,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -390,8 +434,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
+        "stem_raw": "Analice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -428,11 +472,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -457,43 +501,43 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
+            "original_text": "Analice la circunferencia c dada por:  x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia c dada por: x² + (y+2)² = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
+            "normalized_text": "Analice la circunferencia c dada por: x^2 + (y+2)^2 = 5. Se puede afirmar que\nI. P(0,0) es un punto ubicado al exterior de c.\nII. R(1,1) es un punto interior de c.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -513,8 +557,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
+        "stem_raw": "Analice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -551,11 +595,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -580,43 +624,43 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
+            "original_text": "Analice la circunferencia d dada por:  x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia d dada por: x² + (y-1)² = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
+            "normalized_text": "Analice la circunferencia d dada por: x^2 + (y-1)^2 = 9. Se puede afirmar que\nI. La recta x=y es secante a d.\nII. La recta y=-3 es exterior a d\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -636,8 +680,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x  es secante a h.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
+        "stem_raw": "Analice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x  es secante a h.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -674,11 +718,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -703,43 +747,43 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x  es secante a h.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas\n*",
+            "original_text": "Analice la circunferencia h dada por:  (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x  es secante a h.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
+            "original_text": "Analice la circunferencia h dada por: (x+3)² + (y-2)² = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
+            "normalized_text": "Analice la circunferencia h dada por: (x+3)^2 + (y-2)^2 = 4. Se puede afirmar que\nI. La recta y=0 es tangente a h.\nII. La recta y=-x es secante a h.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -759,8 +803,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:",
+        "stem_raw": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\n*",
+        "stem_cleaned": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:",
         "options": [
           {
             "id": "A",
@@ -814,7 +858,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -840,20 +884,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:",
+            "original_text": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:\n*",
+            "normalized_text": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nCon certeza se cumple que r es perpendicular a la recta que contiene los puntos:",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.773Z"
           }
         ]
       }
@@ -873,8 +917,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;",
+        "stem_raw": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
+        "stem_cleaned": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;",
         "options": [
           {
             "id": "A",
@@ -924,11 +968,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -953,21 +997,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;",
+            "original_text": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
+            "normalized_text": "Responda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c dos unidades a la derecha, en forma paralela al eje X, entonces, se obtiene una circunferencia que se describe según la ecuación;",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -978,7 +1022,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -989,7 +1033,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1000,7 +1044,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1011,7 +1055,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1022,7 +1066,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1033,7 +1077,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1044,7 +1088,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1055,7 +1099,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1075,8 +1119,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;",
+        "stem_raw": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
+        "stem_cleaned": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;",
         "options": [
           {
             "id": "A",
@@ -1107,30 +1151,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -1155,21 +1186,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSi se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;",
+            "original_text": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;\n*",
+            "normalized_text": "Si se traslada c una unidad a la izquierda, en forma paralela al eje X, luego 3 unidades hacia abajo, paralelo a Y, entonces, se obtiene una circunferencia que se describe según la ecuación;",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1180,7 +1211,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1191,7 +1222,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1202,7 +1233,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1213,7 +1244,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1224,7 +1255,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1235,7 +1266,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1246,7 +1277,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1257,7 +1288,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1277,8 +1308,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1311,18 +1342,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-38fa45324b",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image1-38fa4532.jpg",
@@ -1344,7 +1363,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1370,20 +1389,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la siguiente figura;\nAnalice las siguientes afirmaciones;\nI. El perímetro del rectángulo BAFE es de 16 unidades.\nII. El área del hexágono AFEDCB es de 20.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1403,8 +1422,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+        "stem_raw": "La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\n*",
+        "stem_cleaned": "La diagonal de un polígono mide 5\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
         "options": [
           {
             "id": "A",
@@ -1435,35 +1454,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1485,7 +1491,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1493,13 +1499,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+            "original_text": "La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a\n*",
+            "normalized_text": "La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "La diagonal de un polígono mide 5√̅2̅ . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+            "normalized_text": "La diagonal de un polígono mide 5\\sqrt{2} . Si el ángulo externo mide 90º, entonces, el perímetro de ese polígono corresponde a",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1519,31 +1536,31 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a",
+        "stem_raw": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\n*",
+        "stem_cleaned": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\sqrt{3}, entonces el área de dicho polígono corresponde a",
         "options": [
           {
             "id": "A",
             "text_raw": "12 √̅3̅",
-            "text_cleaned": "12 √̅3̅",
+            "text_cleaned": "12 \\sqrt{3}",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "16√̅3̅",
-            "text_cleaned": "16√̅3̅",
+            "text_cleaned": "16\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "72√̅3̅",
-            "text_cleaned": "72√̅3̅",
+            "text_cleaned": "72\\sqrt{3}",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "96√̅3̅",
-            "text_cleaned": "96√̅3̅",
+            "text_cleaned": "96\\sqrt{3}",
             "visuals": []
           }
         ],
@@ -1551,35 +1568,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1601,7 +1605,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1609,13 +1613,68 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nLa suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a",
+            "original_text": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a\n*",
+            "normalized_text": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4√̅3̅, entonces el área de dicho polígono corresponde a",
+            "normalized_text": "La suma de los ángulos internos de un polígono regular es de 720º. Si la apotema mide 4\\sqrt{3}, entonces el área de dicho polígono corresponde a",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "12 √̅3̅",
+            "normalized_text": "12 \\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "16√̅3̅",
+            "normalized_text": "16\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "72√̅3̅",
+            "normalized_text": "72\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "96√̅3̅",
+            "normalized_text": "96\\sqrt{3}",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1635,8 +1694,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nSea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
+        "stem_raw": "Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
+        "stem_cleaned": "Sea un polígono regular cuyo radio mide 6 unidades. Si el ángulo central es de 72 grados, entonces el perímetro de ese polígono corresponde aproximadamente a\n*\nA 30",
         "options": [
           {
             "id": "B",
@@ -1661,30 +1720,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1711,7 +1757,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1733,8 +1779,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es",
+        "stem_raw": "Analice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es\n*",
+        "stem_cleaned": "Analice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es",
         "options": [
           {
             "id": "A",
@@ -1767,18 +1813,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-f0cccf6776",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image7-f0cccf67.jpg",
@@ -1800,7 +1834,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1826,20 +1860,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es",
+            "original_text": "Analice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es\n*",
+            "normalized_text": "Analice el cuadrilátero ABCD como sigue:\nLos puntos A y C son homólogos entre sí con respecto a la recta es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1850,7 +1884,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1861,7 +1895,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1872,7 +1906,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1883,7 +1917,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -1903,8 +1937,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1937,18 +1971,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-e930b8ab59",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image4-e930b8ab.jpg",
@@ -1966,16 +1988,16 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1997,7 +2019,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -2005,13 +2027,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nAnalice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la siguiente información;\nAnalice las siguientes afirmaciones;\nI. Existe un eje de simetría para el cuadrilátero ABCD, tal que A̅B̅ sea homólogo con D̅C̅ .\nII. Existe un eje de simetría, para el cual los cuadriláteros ABCD y SRUT son simétricos entre sí.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -2031,8 +2053,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en",
+        "stem_raw": "Responda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\n*",
+        "stem_cleaned": "Responda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en",
         "options": [
           {
             "id": "A",
@@ -2065,18 +2087,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-2aabb6edf6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
@@ -2098,7 +2108,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2124,20 +2134,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en",
+            "original_text": "Responda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en\n*",
+            "normalized_text": "Responda las preguntas 34 a 35 con base a la siguiente información;\nEl punto imagen de G después de aplicarle al cuadrilátero EHGF una reflexión sobre y=0 se encuentra en",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -2157,8 +2167,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?",
+        "stem_raw": "Responda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?\n*",
+        "stem_cleaned": "Responda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?",
         "options": [
           {
             "id": "A",
@@ -2191,18 +2201,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-2aabb6edf6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
@@ -2220,11 +2218,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2249,21 +2247,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?",
+            "original_text": "Responda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?\n*",
+            "normalized_text": "Responda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero ABCD es aplicar una__________ al cuadrilátero HGFE.\nLos anterior se completa mediante:\nI. homotecia (centro en el origen y razón k=-1).\nII. rotación (de 180 grados con centro en el origen y sentido antihorario).\n¿Cuál de ellas completa el texto de forma correcta?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -2283,8 +2281,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas",
+        "stem_raw": "Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2315,32 +2313,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2aabb6edf6",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
-          "byte_size": 34771,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -2350,7 +2323,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2376,20 +2349,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nUna forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas",
+            "original_text": "Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas\n*",
+            "normalized_text": "Una forma de obtener el cuadrilátero RWPQ es aplicar una _____________\nEl texto anterior se completa con la siguiente oración;\nI. reflexión sobre y=1 al cuadrilátero CBAD.\nII. traslación T(x+2,y-5) al cuadrilátero EHGF\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -2409,8 +2382,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
+        "stem_raw": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2441,47 +2414,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2aabb6edf6",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
-          "byte_size": 34771,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -2503,7 +2451,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2511,24 +2459,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
+            "original_text": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que  A̅B̅   sea ortogonal a N̅M̅ y  A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nSean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
+            "original_text": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Sean A̅B̅ y N̅M̅ dos diámetros de una esfera con centro O, tal que A̅B̅ sea ortogonal a N̅M̅ y A̅B̅ = 8. Analice las siguientes afirmaciones:\nI. M̅A̅ corresponde a un radio de la esfera.\nII. La distanca de O a B es mayor que la de O a A.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.774Z"
           }
         ]
       }
@@ -2548,8 +2496,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nA un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nA un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?",
+        "stem_raw": "A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\n*",
+        "stem_cleaned": "A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?",
         "options": [
           {
             "id": "A",
@@ -2580,42 +2528,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2aabb6edf6",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
-          "byte_size": 34771,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2640,21 +2563,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nA un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nA un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?",
+            "original_text": "A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?\n*",
+            "normalized_text": "A un cono circular recto se le realiza un corte con un plano que es paralelo a la base del mismo a una distancia de 15 unidades del vértice. El diámetro de la base es de 16 unidades y la altura del cono es de 20.\n¿Cuál es la longitud (perímetro) de la sección resultante obtenida en el corte?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.775Z"
           }
         ]
       }
@@ -2674,8 +2597,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas",
+        "stem_raw": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2708,30 +2631,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2aabb6edf6",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
-          "byte_size": 34771,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0b09cd3e09",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
@@ -2749,11 +2648,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2778,21 +2677,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas",
+            "original_text": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nAnalice las siguientes afirmaciones:\nI. Si se interseca el cilindro con un plano en oblicuo a las bases y sin cortarlas, se obtiene una elipse.\nII. Si se interseca el cilindro con un plano que contiene los puntos O y S se obtiene una hipérbole.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.775Z"
           }
         ]
       }
@@ -2812,8 +2711,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-2 (BXM Math GEO 02 C23)"
       },
       "content": {
-        "stem_raw": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\n*",
-        "stem_cleaned": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es",
+        "stem_raw": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\n*",
+        "stem_cleaned": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es",
         "options": [
           {
             "id": "A",
@@ -2846,30 +2745,6 @@
       },
       "visuals": [
         {
-          "id": "vis-ba2f68f84b",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image6-ba2f68f8.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "ba2f68f84b401e2e428b60d72b9057507f9f552c01cb581d9aabb4871a3a1ffc",
-          "byte_size": 27929,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2aabb6edf6",
-          "original_filename": "image3.jpg",
-          "stored_filename": "bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c2-geometry-2-image3-2aabb6ed.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2aabb6edf68b9e89c6fc637cc8ee6d5d0fe17fbf530d644736696775f6d535c6",
-          "byte_size": 34771,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0b09cd3e09",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2023-c2-geometry-2-image5-0b09cd3e.jpg",
@@ -2887,11 +2762,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2916,21 +2791,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\n*",
-            "normalized_text": "GEO02C23\nGeometría\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nResponda las preguntas 24 y 25 con en base en el siguiente gráfico:\nResponda las preguntas 34 a 35 con base a la siguiente información;\nResponda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es",
+            "original_text": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es\n*",
+            "normalized_text": "Responda las preguntas 39 y 40 con base a la siguiente información. Se muestra un cilíndro recto con AS =5 y AC=12. A, S y B colineales. C, O y D colineales.\nSi se interseca el cilindro con un plano paralelo a las bases, entonces, la longitud de la sección plana obtenida es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.687Z"
+            "timestamp": "2026-11-06T02:56:40.775Z"
           }
         ]
       }

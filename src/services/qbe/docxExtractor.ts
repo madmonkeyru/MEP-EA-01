@@ -164,6 +164,8 @@ export async function extractDocxContentAndVisuals(
   // Question start pattern: e.g. "1-", "2-", "10-", "1. ", "2) "
   const questionStartRegex = /^\s*(\d{1,3})\s*[-.)]\s*(.*)$/;
   const optionRegex = /^\s*([A-D])\s*[-.)]\s*(.*)$/i;
+  // Shared context banner pattern (e.g. "Para responder las preguntas 2 y 3...", "Con base en la siguiente figura responda los ítems 4, 5 y 6...")
+  const sharedContextRegex = /^(?:responda|con base en|para responder|considere la siguiente información)/i;
 
   const questions: ExtractedQuestionItem[] = [];
   let currentQ: {
@@ -171,12 +173,11 @@ export async function extractDocxContentAndVisuals(
     stemLines: string[];
     options: Map<string, { text: string; visuals: ExtractedVisualAsset[] }>;
     visuals: ExtractedVisualAsset[];
-    pendingContext: string[];
-    pendingVisuals: ExtractedVisualAsset[];
   } | null = null;
 
-  let sharedContextBuffer: string[] = [];
-  let sharedVisualsBuffer: ExtractedVisualAsset[] = [];
+  let activeSharedContextText: string[] = [];
+  let activeSharedVisuals: ExtractedVisualAsset[] = [];
+  let sharedContextRemainingQuestions = 0; // Number of items this shared context applies to
 
   function resolveVisualAsset(rId: string): ExtractedVisualAsset | null {
     const target = relMap.get(rId);
@@ -262,22 +263,26 @@ export async function extractDocxContentAndVisuals(
       if (v) paragraphVisuals.push(v);
     }
 
-    // Ignore noise like "1 punto"
-    if (/^\s*1\s+punto\s*$/i.test(text)) {
+    // Ignore noise like "1 punto", "0 puntos", Google Forms boilerplate
+    if (/^\s*\d+\s+puntos?\s*$/i.test(text)) {
+      continue;
+    }
+    if (/acceder a googlepara guardar|indica que la pregunta es obligatoria/i.test(text)) {
       continue;
     }
 
-    // Check shared context header, e.g. "Responda las preguntas 2 y 3 con base en..."
-    if (
-      /^(?:responda|con base en|para responder|considere la siguiente)/i.test(text) &&
-      !questionStartRegex.test(text)
-    ) {
+    // Check shared context header
+    if (sharedContextRegex.test(text) && !questionStartRegex.test(text)) {
       if (currentQ) {
         finalizeQuestion(currentQ);
         currentQ = null;
       }
-      sharedContextBuffer.push(text);
-      sharedVisualsBuffer.push(...paragraphVisuals);
+      // Parse how many questions this banner applies to, e.g. "preguntas 2 y 3" -> 2 items, "ítems 4, 5 y 6" -> 3 items
+      const targetNumbers = Array.from(text.matchAll(/\b\d{1,3}\b/g)).map(m => parseInt(m[0], 10));
+      sharedContextRemainingQuestions = targetNumbers.length > 0 ? targetNumbers.length : 2;
+
+      activeSharedContextText = [text];
+      activeSharedVisuals = [...paragraphVisuals];
       continue;
     }
 
@@ -292,22 +297,27 @@ export async function extractDocxContentAndVisuals(
       const restOfStem = qMatch[2];
 
       const initialStem: string[] = [];
-      if (sharedContextBuffer.length > 0) {
-        initialStem.push(...sharedContextBuffer);
+      const initialVisuals: ExtractedVisualAsset[] = [...paragraphVisuals];
+
+      if (sharedContextRemainingQuestions > 0 && activeSharedContextText.length > 0) {
+        initialStem.push(...activeSharedContextText);
+        initialVisuals.push(...activeSharedVisuals);
+        sharedContextRemainingQuestions--;
+        if (sharedContextRemainingQuestions <= 0) {
+          activeSharedContextText = [];
+          activeSharedVisuals = [];
+        }
       }
+
       if (restOfStem) {
         initialStem.push(restOfStem);
       }
-
-      const initialVisuals: ExtractedVisualAsset[] = [...sharedVisualsBuffer, ...paragraphVisuals];
 
       currentQ = {
         qNum,
         stemLines: initialStem,
         options: new Map(),
         visuals: initialVisuals,
-        pendingContext: [],
-        pendingVisuals: [],
       };
       continue;
     }
@@ -336,9 +346,11 @@ export async function extractDocxContentAndVisuals(
         currentQ.visuals.push(...paragraphVisuals);
       }
     } else {
-      // Unassociated text/visuals buffer
-      if (text.length > 0) sharedContextBuffer.push(text);
-      if (paragraphVisuals.length > 0) sharedVisualsBuffer.push(...paragraphVisuals);
+      // If no question is active yet, but we have an active shared context banner, append context
+      if (activeSharedContextText.length > 0) {
+        if (text.length > 0) activeSharedContextText.push(text);
+        if (paragraphVisuals.length > 0) activeSharedVisuals.push(...paragraphVisuals);
+      }
     }
   }
 

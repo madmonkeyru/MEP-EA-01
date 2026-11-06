@@ -19,8 +19,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente circunferencia c con centro O?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente circunferencia c con centro O?",
+        "stem_raw": "¿Cuál es la ecuación de la siguiente circunferencia c con centro O?\n*",
+        "stem_cleaned": "¿Cuál es la ecuación de la siguiente circunferencia c con centro O?",
         "options": [
           {
             "id": "A",
@@ -64,11 +64,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -95,7 +95,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -103,13 +103,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente circunferencia c con centro O?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es la ecuación de la siguiente circunferencia c con centro O?",
+            "original_text": "¿Cuál es la ecuación de la siguiente circunferencia c con centro O?\n*",
+            "normalized_text": "¿Cuál es la ecuación de la siguiente circunferencia c con centro O?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -120,7 +120,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -131,7 +131,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -142,7 +142,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -153,7 +153,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -164,7 +164,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -175,7 +175,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           }
         ]
       }
@@ -195,8 +195,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)^2+(y-2)^2=9. Un punto interior de c es igual a",
+        "stem_raw": "Una circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a\n*",
+        "stem_cleaned": "Una circunferencia c tiene como ecuación: (x-1)^2+(y-2)^2=9. Un punto interior de c es igual a",
         "options": [
           {
             "id": "A",
@@ -227,11 +227,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -258,7 +258,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -266,24 +266,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a",
+            "original_text": "Una circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a\n*",
+            "normalized_text": "Una circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna circunferencia c tiene como ecuación: (x-1)^2+(y-2)^2=9. Un punto interior de c es igual a",
+            "original_text": "Una circunferencia c tiene como ecuación: (x-1)²+(y-2)²=9. Un punto interior de c es igual a",
+            "normalized_text": "Una circunferencia c tiene como ecuación: (x-1)^2+(y-2)^2=9. Un punto interior de c es igual a",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           }
         ]
       }
@@ -303,8 +303,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia de centro (0,1) y radio 5 es igual a\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia de centro (0,1) y radio 5 es igual a",
+        "stem_raw": "La ecuación de la circunferencia de centro (0,1) y radio 5 es igual a\n*",
+        "stem_cleaned": "La ecuación de la circunferencia de centro (0,1) y radio 5 es igual a",
         "options": [
           {
             "id": "A",
@@ -335,11 +335,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -366,7 +366,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -374,13 +374,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia de centro (0,1) y radio 5 es igual a\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa ecuación de la circunferencia de centro (0,1) y radio 5 es igual a",
+            "original_text": "La ecuación de la circunferencia de centro (0,1) y radio 5 es igual a\n*",
+            "normalized_text": "La ecuación de la circunferencia de centro (0,1) y radio 5 es igual a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.788Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -391,7 +391,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -402,7 +402,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -413,7 +413,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -424,7 +424,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -435,7 +435,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -446,7 +446,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -466,8 +466,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x^2+ (y+3)^2=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
+        "stem_raw": "Considere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.\n*",
+        "stem_cleaned": "Considere la circunferencia c definida por x^2+ (y+3)^2=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
         "options": [
           {
             "id": "A",
@@ -498,11 +498,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -529,7 +529,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -537,24 +537,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
+            "original_text": "Considere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.\n*",
+            "normalized_text": "Considere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere la circunferencia c definida por x^2+ (y+3)^2=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
+            "original_text": "Considere la circunferencia c definida por x²+ (y+3)²=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
+            "normalized_text": "Considere la circunferencia c definida por x^2+ (y+3)^2=16. Si se traza la recta x=4, entoces esta recta es___________respecto a la circunferencia c.",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -574,8 +574,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)^2+(y-1)^2=4.",
+        "stem_raw": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.\n*",
+        "stem_cleaned": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)^2+(y-1)^2=4.",
         "options": [
           {
             "id": "A",
@@ -619,11 +619,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -650,7 +650,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -658,24 +658,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.",
+            "original_text": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.\n*",
+            "normalized_text": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa recta y=x+1 es________ a la circunferencia c dada por (x+2)^2+(y-1)^2=4.",
+            "original_text": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)²+(y-1)²=4.",
+            "normalized_text": "La recta y=x+1 es________ a la circunferencia c dada por (x+2)^2+(y-1)^2=4.",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -695,8 +695,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna recta perpendicular a r pasa por los puntos\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna recta perpendicular a r pasa por los puntos",
+        "stem_raw": "Una recta perpendicular a r pasa por los puntos\n*",
+        "stem_cleaned": "Una recta perpendicular a r pasa por los puntos",
         "options": [
           {
             "id": "A",
@@ -731,7 +731,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -766,13 +766,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna recta perpendicular a r pasa por los puntos\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUna recta perpendicular a r pasa por los puntos",
+            "original_text": "Una recta perpendicular a r pasa por los puntos\n*",
+            "normalized_text": "Una recta perpendicular a r pasa por los puntos",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -792,8 +792,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es",
+        "stem_raw": "Si c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es\n*",
+        "stem_cleaned": "Si c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es",
         "options": [
           {
             "id": "A",
@@ -824,11 +824,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -855,7 +855,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -863,13 +863,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es",
+            "original_text": "Si c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es\n*",
+            "normalized_text": "Si c se desplaza dos unidades hacia abajo (// al eje Y), entonces, se obtiene una nueva circunferencia cuya ecuación es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -880,7 +880,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -891,7 +891,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -902,7 +902,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -913,7 +913,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -924,7 +924,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -935,7 +935,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -955,8 +955,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a",
+        "stem_raw": "La circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a\n*",
+        "stem_cleaned": "La circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a",
         "options": [
           {
             "id": "A",
@@ -987,11 +987,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -1018,7 +1018,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -1026,13 +1026,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a",
+            "original_text": "La circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a\n*",
+            "normalized_text": "La circunferencia c se desplaza 4 unidades a la izquierda (// al eje X) y luego 1 unidad hacia arriba (// al eje Y). La nueva circunferencia tiene por ecuación a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1043,7 +1043,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1054,7 +1054,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1065,7 +1065,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1076,7 +1076,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1087,7 +1087,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1098,7 +1098,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1118,8 +1118,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅  ¿Cuál opción es correcta?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?",
+        "stem_raw": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅  ¿Cuál opción es correcta?\n*",
+        "stem_cleaned": "Considere el siguiente polígono AFEDCB. Con BC=\\sqrt{10} ¿Cuál opción es correcta?",
         "options": [
           {
             "id": "A",
@@ -1136,7 +1136,7 @@
           {
             "id": "C",
             "text_raw": "El perímetro del polígono AFEDCB corresponde a 20+√̅1̅0̅   unidades.",
-            "text_cleaned": "El perímetro del polígono AFEDCB corresponde a 20+√̅1̅0̅ unidades.",
+            "text_cleaned": "El perímetro del polígono AFEDCB corresponde a 20+\\sqrt{10} unidades.",
             "visuals": []
           }
         ],
@@ -1163,11 +1163,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1196,7 +1196,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1204,24 +1204,35 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅  ¿Cuál opción es correcta?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?\n*",
+            "original_text": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅  ¿Cuál opción es correcta?\n*",
+            "normalized_text": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?",
+            "original_text": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?\n*",
+            "normalized_text": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Considere el siguiente polígono AFEDCB. Con BC=√̅1̅0̅ ¿Cuál opción es correcta?",
+            "normalized_text": "Considere el siguiente polígono AFEDCB. Con BC=\\sqrt{10} ¿Cuál opción es correcta?",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1232,7 +1243,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1243,7 +1254,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1254,7 +1265,18 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "El perímetro del polígono AFEDCB corresponde a 20+√̅1̅0̅ unidades.",
+            "normalized_text": "El perímetro del polígono AFEDCB corresponde a 20+\\sqrt{10} unidades.",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1274,8 +1296,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?",
+        "stem_raw": "Considere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?\n*",
+        "stem_cleaned": "Considere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?",
         "options": [
           {
             "id": "A",
@@ -1306,11 +1328,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
@@ -1337,7 +1359,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1345,13 +1367,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?",
+            "original_text": "Considere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?\n*",
+            "normalized_text": "Considere un polígono regular en el cual se pueden trazar 2 diagonales desde el vértice y que tiene 8 unidades en sus lados. ¿Cuál es el perímetro de dicho polígono?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1371,8 +1393,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.",
+        "stem_raw": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.\n*",
+        "stem_cleaned": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3\\sqrt{3}, su área es de 54 \\sqrt{3}.",
         "options": [
           {
             "id": "A",
@@ -1407,7 +1429,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1444,13 +1466,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.",
+            "original_text": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.\n*",
+            "normalized_text": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3√̅3̅, su área es de 54 √̅3̅.",
+            "normalized_text": "Considere un polígono regular cuyo ángulo central es de 60º. ¿Cuál o cuáles afirmaciones son verdaderas?\nI. Si el radio mide 8 unidades, el perímetro es igual a 48.\nII. Si la apotema mide 3\\sqrt{3}, su área es de 54 \\sqrt{3}.",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1470,8 +1503,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+        "stem_raw": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2\\sqrt{2} , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1506,7 +1539,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1543,24 +1576,35 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+            "original_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+            "original_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades².\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+            "normalized_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2√̅2̅ , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+            "normalized_text": "Analice las siguientes afirmaciones de un polígono regular.\nI. Su ángulo externo es de 90º y su radio de 2\\sqrt{2} , entonces, su área es de 18 unidades^2.\nII. Si el ángulo interno es de 144º y su lado mide 3, entonces su perímetro es de 48 unidades.\nDe ellas son verdaderas",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1580,8 +1624,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?",
+        "stem_raw": "Analice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?\n*",
+        "stem_cleaned": "Analice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?",
         "options": [
           {
             "id": "A",
@@ -1625,11 +1669,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1656,7 +1700,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1664,13 +1708,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?",
+            "original_text": "Analice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?\n*",
+            "normalized_text": "Analice el polígono HEJF, donde la recta que contiene el segmento EF es el eje de simetría de dicho polígono. ¿Cuál opción es correcta?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.706Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1690,8 +1734,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?",
+        "stem_raw": "¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?\n*",
+        "stem_cleaned": "¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?",
         "options": [
           {
             "id": "A",
@@ -1722,11 +1766,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1753,7 +1797,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1761,13 +1805,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?",
+            "original_text": "¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?\n*",
+            "normalized_text": "¿Cuál es el número de ejes de simetría en un polígono regular de 8 lados?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1787,8 +1831,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUn eje de simetría de la siguiente figura es_____.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUn eje de simetría de la siguiente figura es_____.",
+        "stem_raw": "Un eje de simetría de la siguiente figura es_____.\n*",
+        "stem_cleaned": "Un eje de simetría de la siguiente figura es_____.",
         "options": [
           {
             "id": "A",
@@ -1844,11 +1888,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -1875,7 +1919,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.86,
         "content_confidence": 0.75
       },
       "history": {
@@ -1883,13 +1927,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUn eje de simetría de la siguiente figura es_____.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nUn eje de simetría de la siguiente figura es_____.",
+            "original_text": "Un eje de simetría de la siguiente figura es_____.\n*",
+            "normalized_text": "Un eje de simetría de la siguiente figura es_____.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1900,7 +1944,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1911,7 +1955,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1922,7 +1966,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -1942,8 +1986,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas",
+        "stem_raw": "Analice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1974,11 +2018,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2007,7 +2051,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.87,
         "content_confidence": 0.75
       },
       "history": {
@@ -2015,13 +2059,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas",
+            "original_text": "Analice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice las siguientes afirmaciones:\nI. Se puede obtener la figura 3, al aplicarle a la 1 una rotación de 180º centrada en el origen y en sentido antihorario.\nII. La figura 3 se puede obtener al aplicarle a la 1 una homotecia con centro en el origen y k=-1\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2041,8 +2085,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es",
+        "stem_raw": "Si se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es\n*",
+        "stem_cleaned": "Si se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es",
         "options": [
           {
             "id": "A",
@@ -2077,7 +2121,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2114,13 +2158,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSi se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es",
+            "original_text": "Si se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es\n*",
+            "normalized_text": "Si se aplica una reflexión a la figura 1 sobre la recta y=0, el punto imagen de E es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2140,8 +2184,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.",
+        "stem_raw": "La figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.\n*",
+        "stem_cleaned": "La figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.",
         "options": [
           {
             "id": "A",
@@ -2176,7 +2220,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2213,13 +2257,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.",
+            "original_text": "La figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.\n*",
+            "normalized_text": "La figura 2 se puede obtener a partir de la figura 1, con la siguiente traslación T_______________.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2239,8 +2283,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,",
+        "stem_raw": "¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,\n*",
+        "stem_cleaned": "¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,",
         "options": [
           {
             "id": "A",
@@ -2271,11 +2315,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2302,7 +2346,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2310,13 +2354,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\n¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,",
+            "original_text": "¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,\n*",
+            "normalized_text": "¿Qué sección plana se forma cuando un cono circular recto es cortado por un plano perpendicular al plano de la base, sin pasar por el vértice? Una_______,",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2336,8 +2380,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.",
+        "stem_raw": "La sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.\n*",
+        "stem_cleaned": "La sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.",
         "options": [
           {
             "id": "A",
@@ -2381,11 +2425,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2412,7 +2456,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2420,13 +2464,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nLa sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.",
+            "original_text": "La sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.\n*",
+            "normalized_text": "La sección plana rosada que se muestra en la figura obtenida a partir de un corte se denomina como_________.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2446,8 +2490,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?",
+        "stem_raw": "Considere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?\n*",
+        "stem_cleaned": "Considere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?",
         "options": [
           {
             "id": "A",
@@ -2478,11 +2522,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -2509,7 +2553,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2517,13 +2561,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?",
+            "original_text": "Considere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?\n*",
+            "normalized_text": "Considere un cono circular recto que tiene una base circulara de diámetro igual a 12 unidades y con una altura de 8 unidades. El cono se corta con un plano paralelo a la base en el punto medio de la altura. ¿Cuál es la circunferencia del corte?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }
@@ -2543,8 +2587,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2024-2 (BXM Math Geo 02 C24)"
       },
       "content": {
-        "stem_raw": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Analice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2588,11 +2632,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2619,7 +2663,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -2627,13 +2671,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas\n*",
-            "normalized_text": "Geo02C24\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Analice la siguiente esfera, su corte y las siguientes afirmaciones.\nI. La longitud de la sección plana de centro E es igual a 16π.\nII. MK representa el diámetro de la esfera.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.707Z"
+            "timestamp": "2026-11-06T02:56:40.789Z"
           }
         ]
       }

@@ -19,8 +19,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?",
+        "stem_raw": "Analice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?\n*",
+        "stem_cleaned": "Analice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?",
         "options": [
           {
             "id": "A",
@@ -70,11 +70,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -99,21 +99,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nAnalice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?",
+            "original_text": "Analice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?\n*",
+            "normalized_text": "Analice la siguiente circunferencia (c):\n¿Cuál es la ecuación de la información?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -124,7 +124,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -135,7 +135,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -146,7 +146,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -157,7 +157,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -168,7 +168,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -179,7 +179,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -190,7 +190,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -201,7 +201,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           }
         ]
       }
@@ -221,8 +221,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?",
+        "stem_raw": "Sea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?\n*",
+        "stem_cleaned": "Sea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?",
         "options": [
           {
             "id": "A",
@@ -259,11 +259,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -290,7 +290,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.88,
         "content_confidence": 0.75
       },
       "history": {
@@ -298,13 +298,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nSea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?",
+            "original_text": "Sea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?\n*",
+            "normalized_text": "Sea c una circunferencia cuyo centro es el punto (-2,1). Si el radio mide 4, ¿cuál ecuación la representa?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -315,7 +315,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -326,7 +326,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -337,7 +337,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -348,7 +348,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -359,7 +359,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -370,7 +370,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -381,7 +381,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -392,7 +392,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           }
         ]
       }
@@ -412,8 +412,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)^2+y^2=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
+        "stem_raw": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)^2+y^2=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -450,11 +450,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -479,32 +479,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nConsidere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)^2+y^2=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)²+y²=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
+            "normalized_text": "Considere las siguientes proposiciones referidas a la circunferencia c dada por:\n(x+1)^2+y^2=7.\nI. M(1,0) en un punto interior.\nII. T(1,2) es un punto externo.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.768Z"
           }
         ]
       }
@@ -524,8 +524,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -562,11 +562,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Rectas secantes, tangentes o exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -591,32 +591,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
+            "normalized_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=-3 es una recta secante a la circunferencia.\nII. y=-3 es una recta tangente a la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -636,8 +636,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -674,11 +674,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos interiores y exteriores a la circunferencia"
       },
       "quality": {
         "status": "needs_review",
@@ -703,32 +703,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas\n*",
+            "normalized_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
+            "original_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
+            "normalized_text": "Para responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nAnalice las siguientes proposiciones:\nI. x=y es una recta secante a la circunferencia.\nII. y=-2 es una recta exterior a la circunferencia.\nDe ellas son verdaderas",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -748,8 +748,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
+        "stem_raw": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos\n*",
+        "stem_cleaned": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
         "options": [
           {
             "id": "A",
@@ -803,7 +803,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -829,31 +829,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
+            "original_text": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos\n*",
+            "normalized_text": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nr es perpendicular a la recta que contiene los puntos",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -873,8 +862,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
+        "stem_raw": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
+        "stem_cleaned": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
         "options": [
           {
             "id": "A",
@@ -924,11 +913,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -953,32 +942,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
+            "original_text": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
+            "normalized_text": "Responda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c dos unidades hacia arriba (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -989,7 +967,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1000,7 +978,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1011,7 +989,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1022,7 +1000,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1033,7 +1011,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1044,7 +1022,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1055,7 +1033,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1066,7 +1044,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1086,8 +1064,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
+        "stem_raw": "Si se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
+        "stem_cleaned": "Si se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
         "options": [
           {
             "id": "A",
@@ -1118,30 +1096,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Representación algebraica de una circunferencia dado su centro y radio"
       },
       "quality": {
         "status": "needs_review",
@@ -1166,32 +1131,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
+            "original_text": "Si se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es\n*",
+            "normalized_text": "Si se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nSi se traslada c tres unidades hacia la derecha (paralelo al eje x) y una unidad hacia abajo (paralelo al eje y), entonces, se obtiene una circunferencia cuya ecuación es",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1202,7 +1156,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1213,7 +1167,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1224,7 +1178,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1235,7 +1189,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1246,7 +1200,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.679Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1257,7 +1211,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1268,7 +1222,7 @@
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1279,7 +1233,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1299,31 +1253,31 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
+        "stem_raw": "¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?\n*",
+        "stem_cleaned": "¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
         "options": [
           {
             "id": "A",
             "text_raw": "(9√̅3̅)",
-            "text_cleaned": "(9√̅3̅)",
+            "text_cleaned": "(9\\sqrt{3})",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "(14√̅3̅ )",
-            "text_cleaned": "(14√̅3̅ )",
+            "text_cleaned": "(14\\sqrt{3} )",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "(20√̅3̅ )",
-            "text_cleaned": "(20√̅3̅ )",
+            "text_cleaned": "(20\\sqrt{3} )",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "(27√̅3̅ )",
-            "text_cleaned": "(27√̅3̅ )",
+            "text_cleaned": "(27\\sqrt{3} )",
             "visuals": []
           }
         ],
@@ -1331,35 +1285,22 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A4",
+        "evidencia": "A4.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.82,
+        "rationale": "Matched domain rule: Perímetros o áreas de polígonos no regulares en coordenadas"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1381,7 +1322,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.82,
         "content_confidence": 0.75
       },
       "history": {
@@ -1389,24 +1330,57 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
+            "original_text": "¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?\n*",
+            "normalized_text": "¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\n¿Cuál es el área de un polígono regular que tiene como medida lado 6 unidades y un ángulo central de 120°?",
-            "correction_type": "unicode_normalization",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(9√̅3̅)",
+            "normalized_text": "(9\\sqrt{3})",
+            "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(14√̅3̅ )",
+            "normalized_text": "(14\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(20√̅3̅ )",
+            "normalized_text": "(20\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(27√̅3̅ )",
+            "normalized_text": "(27\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1426,8 +1400,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
+        "stem_raw": "El número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:\n*",
+        "stem_cleaned": "El número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
         "options": [
           {
             "id": "A",
@@ -1458,20 +1432,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -1481,7 +1442,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1507,31 +1468,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
+            "original_text": "El número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:\n*",
+            "normalized_text": "El número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nEl número de diagonales que se pueden trazar desde el vértice de un polígono es de 7. Si la medida de sus lados es de 3 unidades, entonces, su perímetro es de:",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1551,31 +1501,31 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi  A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
+        "stem_raw": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi  A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
+        "stem_cleaned": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3\\sqrt{3} , ¿cuál es área de ABCEFG?",
         "options": [
           {
             "id": "A",
             "text_raw": "(24√̅3̅ )",
-            "text_cleaned": "(24√̅3̅ )",
+            "text_cleaned": "(24\\sqrt{3} )",
             "visuals": []
           },
           {
             "id": "B",
             "text_raw": "(27√̅3̅  )",
-            "text_cleaned": "(27√̅3̅ )",
+            "text_cleaned": "(27\\sqrt{3} )",
             "visuals": []
           },
           {
             "id": "C",
             "text_raw": "(40√̅3̅ )",
-            "text_cleaned": "(40√̅3̅ )",
+            "text_cleaned": "(40\\sqrt{3} )",
             "visuals": []
           },
           {
             "id": "D",
             "text_raw": "(54√̅3̅  )",
-            "text_cleaned": "(54√̅3̅ )",
+            "text_cleaned": "(54\\sqrt{3} )",
             "visuals": []
           }
         ],
@@ -1584,18 +1534,6 @@
         "explanation_cleaned": null
       },
       "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
         {
           "id": "vis-1cd11d2530",
           "original_filename": "image5.jpg",
@@ -1618,12 +1556,12 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1653,35 +1591,46 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi  A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
+            "original_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi  A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
+            "normalized_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
+            "original_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?\n*",
+            "normalized_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nAnalice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
-            "correction_type": "unicode_normalization",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3√̅3̅ , ¿cuál es área de ABCEFG?",
+            "normalized_text": "Analice la siguiente figura que se compone de un hexágono y dos triángulos equiláteros:\nSi A̅B̅=3\\sqrt{3} , ¿cuál es área de ABCEFG?",
+            "correction_type": "mathematical_notation",
             "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(24√̅3̅ )",
+            "normalized_text": "(24\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1692,7 +1641,29 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(27√̅3̅ )",
+            "normalized_text": "(27\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(40√̅3̅ )",
+            "normalized_text": "(40\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1703,7 +1674,18 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "(54√̅3̅ )",
+            "normalized_text": "(54\\sqrt{3} )",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1723,8 +1705,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
+        "stem_raw": "Considere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?\n*",
+        "stem_cleaned": "Considere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
         "options": [
           {
             "id": "A",
@@ -1755,20 +1737,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
@@ -1778,7 +1747,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1804,31 +1773,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
+            "original_text": "Considere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?\n*",
+            "normalized_text": "Considere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nConsidere un polígono regular cuyo ángulo interno mide 108º y sus lados 6 unidades. ¿Cuál es el perímetro?",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1848,8 +1806,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
+        "stem_raw": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es\n*",
+        "stem_cleaned": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
         "options": [
           {
             "id": "A",
@@ -1882,18 +1840,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-2ac6f0ee51",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
@@ -1915,7 +1861,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1941,31 +1887,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
+            "original_text": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es\n*",
+            "normalized_text": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nUn punto que es imagen de (-2,3) es",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.680Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -1985,8 +1920,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
+        "stem_raw": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.\n*",
+        "stem_cleaned": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
         "options": [
           {
             "id": "A",
@@ -2019,18 +1954,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-2ac6f0ee51",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
@@ -2048,11 +1971,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -2077,32 +2000,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
+            "original_text": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.\n*",
+            "normalized_text": "Responda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.681Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #2 son simétricas respecto al eje de simetría_____.",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.681Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2113,7 +2025,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.681Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2124,7 +2036,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.681Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2135,7 +2047,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.681Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2146,7 +2058,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2166,8 +2078,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
+        "stem_raw": "Las figuras #1 y #3 son simétricas respecto al eje de simetría_____.\n*",
+        "stem_cleaned": "Las figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
         "options": [
           {
             "id": "A",
@@ -2198,42 +2110,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A6",
+        "evidencia": "A6.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Ejes de simetría en figuras simétricas"
       },
       "quality": {
         "status": "needs_review",
@@ -2258,32 +2145,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
+            "original_text": "Las figuras #1 y #3 son simétricas respecto al eje de simetría_____.\n*",
+            "normalized_text": "Las figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nLas figuras #1 y #3 son simétricas respecto al eje de simetría_____.",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2294,7 +2170,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2305,7 +2181,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2316,7 +2192,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2327,7 +2203,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2347,8 +2223,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
+        "stem_raw": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es\n*",
+        "stem_cleaned": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
         "options": [
           {
             "id": "A",
@@ -2381,30 +2257,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-9a33d92fc0",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
@@ -2426,7 +2278,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2452,31 +2304,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
+            "original_text": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es\n*",
+            "normalized_text": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica una reflexión respecto a la recta y=-1, entonces, el punto imagen de A es",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2496,8 +2337,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
+        "stem_raw": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es\n*",
+        "stem_cleaned": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
         "options": [
           {
             "id": "A",
@@ -2530,30 +2371,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-9a33d92fc0",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
@@ -2571,11 +2388,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
@@ -2600,32 +2417,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.87,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
+            "original_text": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es\n*",
+            "normalized_text": "Responda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi al ☐ABCD se le aplica la traslación (x+9,y+8) y luego una rotación de 90º en sentido contrario a las manecillas del reloj, entonces, el punto imagen de C es",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2645,8 +2451,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
+        "stem_raw": "Considere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas\n*",
+        "stem_cleaned": "Considere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2677,65 +2483,30 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9a33d92fc0",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9a33d92fc0dae170bb3ff8e6f537a0ccb3ace318bbb272ad84874e2981bdc452",
-          "byte_size": 33589,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A7",
+        "evidencia": "A7.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.87,
+        "rationale": "Matched domain rule: Transformaciones en el plano (homotecia, reflexión, rotación)"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
-          "missing_answer_key"
+          "missing_answer_key",
+          "missing_visual"
         ],
         "issues": [
-          "Missing explicit answer key from source asset"
+          "Missing explicit answer key from source asset",
+          "Stem text references visual diagram but no visual asset is linked"
         ]
       },
       "review": {
@@ -2749,7 +2520,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.87,
         "content_confidence": 0.75
       },
       "history": {
@@ -2757,24 +2528,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas\n*",
+            "normalized_text": "Considere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nConsidere las siguientes proposiciones suponiendo que el cuadrilátero #1 es producto de aplicarle al ☐ABCD una transformación:\nI. El punto imagen de B es el punto (4,6).\nII. Una forma de obtener el #1 es aplicarle al ☐ABCD una homotecia con centro en el origen de coordenadas y con k=-1\nDe ellas son verdaderas",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2794,8 +2554,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
+        "stem_raw": "Si un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una\n*",
+        "stem_cleaned": "Si un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
         "options": [
           {
             "id": "A",
@@ -2826,54 +2586,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9a33d92fc0",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9a33d92fc0dae170bb3ff8e6f537a0ccb3ace318bbb272ad84874e2981bdc452",
-          "byte_size": 33589,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -2898,32 +2621,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
+            "original_text": "Si un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una\n*",
+            "normalized_text": "Si un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nSi un cono circular y recto es intersecado por un plano oblicuo al plano de la base (sin pasar por el vértice) sin tocarla, entonces, la sección plana que se forma corresponde a una",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -2943,8 +2655,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
+        "stem_raw": "La medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?\n*",
+        "stem_cleaned": "La medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
         "options": [
           {
             "id": "A",
@@ -2975,54 +2687,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9a33d92fc0",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9a33d92fc0dae170bb3ff8e6f537a0ccb3ace318bbb272ad84874e2981bdc452",
-          "byte_size": 33589,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "geometry"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -3047,32 +2722,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
+            "original_text": "La medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?\n*",
+            "normalized_text": "La medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa medida de la altura de un cono circular recto es 8 y la medida del diámetro de su base es 12. Si a dicho cono se le realiza un corte con un plano paralelo a su base a 4 unidades de la misma, entonces, ¿cuál es la longitud de la sección plana obtenida?",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -3092,8 +2756,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm^2.",
+        "stem_raw": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².\n*",
+        "stem_cleaned": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm^2.",
         "options": [
           {
             "id": "A",
@@ -3126,42 +2790,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9a33d92fc0",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9a33d92fc0dae170bb3ff8e6f537a0ccb3ace318bbb272ad84874e2981bdc452",
-          "byte_size": 33589,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-6c0ba40756",
           "original_filename": "image6.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image6-6c0ba407.jpg",
@@ -3179,11 +2807,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
@@ -3208,32 +2836,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².",
+            "original_text": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².\n*",
+            "normalized_text": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm^2.",
+            "original_text": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm².",
+            "normalized_text": "La siguiente figura ilustra el resultado de realizar un corte perpendicular a las bases de un trozo de madera con forma de cilindro circular recto:\nLa altura del trozo de madera es de 100 cm y el diámetro original de una de sus bases es de 40 cm. Si el corte se realizó a una distancia de 12 cm respecto del centro de las bases del cilindro, entonces, el área de la sección plana producto de dicho corte corresponde a__________cm^2.",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }
@@ -3253,8 +2881,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2023-1 (BXM Math GEO 01 C23)"
       },
       "content": {
-        "stem_raw": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?\n*",
-        "stem_cleaned": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
+        "stem_raw": "La siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?\n*",
+        "stem_cleaned": "La siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
         "options": [
           {
             "id": "A",
@@ -3287,42 +2915,6 @@
       },
       "visuals": [
         {
-          "id": "vis-b602ef08a4",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image7-b602ef08.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "b602ef08a4d7d7b8f3f76041d2e32ad335e0d88dfc2229a058c205ce387b19b7",
-          "byte_size": 26926,
-          "relationship_id": "rId8",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-2ac6f0ee51",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image4-2ac6f0ee.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "2ac6f0ee514aaa8cb1d26b34bba19fe6dc7d5b39f2c4ed7630be379bd7627faa",
-          "byte_size": 29731,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9a33d92fc0",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2023-c1-geometry-1-image2-9a33d92f.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9a33d92fc0dae170bb3ff8e6f537a0ccb3ace318bbb272ad84874e2981bdc452",
-          "byte_size": 33589,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-f1866e6280",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2023-c1-geometry-1-image3-f1866e62.jpg",
@@ -3340,16 +2932,16 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Secciones planas de una esfera, cono o cilindro circular recto"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -3371,7 +2963,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.85,
         "content_confidence": 0.75
       },
       "history": {
@@ -3379,24 +2971,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?\n*",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
+            "original_text": "La siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?\n*",
+            "normalized_text": "La siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
-            "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x²+ (y-2)²=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
-            "normalized_text": "GEO 01 C23\nAcceder a Googlepara guardar el progreso.Más información\n* Indica que la pregunta es obligatoria\nPara responder las preguntas 4 y 5, considere la siguiente información que se refiere a la la siguiente circunferencia:\nc: x^2+ (y-2)^2=10\nResponda las preguntas 6 a 8 con base a la siguiente circunferencia:\nResponda las preguntas 13 a 15 con base en la siguiente figura:\nResponda las preguntas 16 a 18 con base en la siguiente figura:\nLa siguiente figura ilustra una esfera y una sección plana generada por el corte de un plano:\n¿Cuál es la medida de A̅B̅ ?",
-            "correction_type": "unicode_normalization",
-            "semantic_change": false,
-            "reason": "Normalized Unicode superscript exponents to standard exponential notation",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.682Z"
+            "timestamp": "2026-11-06T02:56:40.769Z"
           }
         ]
       }

@@ -74,7 +74,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -100,7 +100,7 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -113,7 +113,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.743Z"
           }
         ]
       }
@@ -184,11 +184,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
       },
       "quality": {
         "status": "needs_review",
@@ -213,8 +213,8 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -227,7 +227,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.743Z"
           }
         ]
       }
@@ -277,7 +277,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -327,8 +327,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?",
+        "stem_raw": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*",
+        "stem_cleaned": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?",
         "options": [
           {
             "id": "A",
@@ -378,11 +378,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
       },
       "quality": {
         "status": "needs_review",
@@ -407,21 +407,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?",
+            "original_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?*",
+            "normalized_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de mercadeo?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.743Z"
           }
         ]
       }
@@ -441,8 +441,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?",
+        "stem_raw": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?*",
+        "stem_cleaned": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?",
         "options": [
           {
             "id": "A",
@@ -492,11 +492,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
       },
       "quality": {
         "status": "needs_review",
@@ -521,21 +521,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?",
+            "original_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?*",
+            "normalized_text": "Responda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\n¿Cuál es el recorrido intercuartílico del departamento de informática?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.743Z"
           }
         ]
       }
@@ -555,8 +555,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
+        "stem_raw": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
+        "stem_cleaned": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -587,30 +587,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "statistics"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
       },
       "quality": {
         "status": "needs_review",
@@ -635,21 +622,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nConsidere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
+            "original_text": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Considere las siguientes proposiciones\nI- El recorrido intercuartílico del departamento de Contabilildad es igual al de Secretariado.\nII-Los datos de Secretariado son más variables que los de Contabilidad.\n¿Cuál o cuáles de ellas son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.743Z"
           }
         ]
       }
@@ -669,8 +656,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?",
+        "stem_raw": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -703,18 +690,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-a0d08ed794",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
@@ -732,11 +707,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
       },
       "quality": {
         "status": "needs_review",
@@ -761,21 +736,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?",
+            "original_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?*",
+            "normalized_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones referentes a los diagramas anteriores:\nI- La calificación mínima del primer trimestre es menor que la mínima del segundo trimestre.\nII- El recorrido intercuartílico de las calificaciones del II trimestre es mayor que el del primero.\n¿Cuál o cuáles son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -795,8 +770,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas",
+        "stem_raw": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas*",
+        "stem_cleaned": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas",
         "options": [
           {
             "id": "A",
@@ -829,18 +804,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-a0d08ed794",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
@@ -862,7 +825,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -888,20 +851,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas",
+            "original_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas*",
+            "normalized_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nAnalice las siguientes proposiciones respecto a los diagramas anteriores:\nI- Con certeza, hubo en cada semestre al menos una nota con 80.\nII- En cada uno de los semestres, al menos un 25% de las calificaciones finales se ubicaron entre 70 y 80.\n¿Cuál o cuáles son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -921,8 +884,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
+        "stem_raw": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
+        "stem_cleaned": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -955,18 +918,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-a0d08ed794",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
@@ -984,11 +935,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A3",
+        "evidencia": "A3.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.86,
+        "rationale": "Matched domain rule: Medidas de variabilidad (desviación estándar, varianza, recorrido)"
       },
       "quality": {
         "status": "needs_review",
@@ -1013,21 +964,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.86,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
+            "original_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Responda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere las siguientes proposiciones:\nI- El recorrido intercuartílico del I semestre es mayor que el obtenido en el II semestre.\nII- Hay certeza que en el I semestre un estudiante obtuvo un 80, pero en el II semestre no hay certeza.\n¿Cuál o cuáles de ellas son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1047,8 +998,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:",
+        "stem_raw": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+        "stem_cleaned": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:",
         "options": [
           {
             "id": "A",
@@ -1079,42 +1030,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "statistics"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
       },
       "quality": {
         "status": "needs_review",
@@ -1139,32 +1065,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "original_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI-  En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:",
+            "original_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de Juan es mayor que la de Rita.\nII-En términos relativos, se observa una mayor variación en las masas de las mujeres que en las de los hombres.\nDe ellas son verdaderas:",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1184,8 +1110,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:",
+        "stem_raw": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
+        "stem_cleaned": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:",
         "options": [
           {
             "id": "A",
@@ -1216,42 +1142,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "statistics"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A1",
+        "evidencia": "A1.2",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.88,
+        "rationale": "Matched domain rule: Medidas de posición (moda, media, mediana, cuartiles)"
       },
       "quality": {
         "status": "needs_review",
@@ -1276,32 +1177,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.88,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
+            "original_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:",
+            "original_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:*",
+            "normalized_text": "Considere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nConsidere las siguientes proposiciones:\nI- En términos relativos, la masa de José es mayor que la de Ana.\nII- En términos relativos, la masa de José es igual a la de María.\nDe ellas son verdaderas:",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1321,8 +1222,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII-  El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?",
+        "stem_raw": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII-  El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
+        "stem_cleaned": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -1355,30 +1256,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0450f03dae",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
@@ -1396,11 +1273,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos muestrales y operaciones de eventos aleatorios"
       },
       "quality": {
         "status": "needs_review",
@@ -1425,32 +1302,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII-  El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "original_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII-  El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?",
+            "original_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?*",
+            "normalized_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones\nI- P(A ⋃ B)= P(A)+ P(B)\nII- El complemento de C respecto a E es {1,3,5}\n¿Cuál o cuáles de ellas son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1470,8 +1347,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?",
+        "stem_raw": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -1504,30 +1381,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0450f03dae",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
@@ -1545,11 +1398,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.1",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Puntos muestrales y operaciones de eventos aleatorios"
       },
       "quality": {
         "status": "needs_review",
@@ -1574,32 +1427,21 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?",
+            "original_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?*",
+            "normalized_text": "Para responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(B⋂C)=0\nII- P(A⋃C)=P(A) + P(C) - P(A⋂C)\n¿Cuál o cuáles son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1610,7 +1452,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1630,8 +1472,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
+        "stem_raw": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
+        "stem_cleaned": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
         "options": [
           {
             "id": "A",
@@ -1662,44 +1504,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0450f03dae",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
-          "byte_size": 8053,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "statistics"
       },
@@ -1709,7 +1514,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1735,31 +1540,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nConsidere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
+            "original_text": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?*",
+            "normalized_text": "Considere las siguientes proposiciones:\nI- P(A⋃B⋃C)=1\nII- El evento B lo constituyen dos elementos.\n¿Cuál o cuáles son verdaderas?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1779,8 +1573,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?",
+        "stem_raw": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
+        "stem_cleaned": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?",
         "options": [
           {
             "id": "A",
@@ -1813,42 +1607,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0450f03dae",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
-          "byte_size": 8053,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-9f47e1667b",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
@@ -1870,7 +1628,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1896,31 +1654,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?",
+            "original_text": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?*",
+            "normalized_text": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o azul?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -1940,8 +1687,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?",
+        "stem_raw": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
+        "stem_cleaned": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?",
         "options": [
           {
             "id": "A",
@@ -1974,42 +1721,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0450f03dae",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
-          "byte_size": 8053,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-9f47e1667b",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
@@ -2031,7 +1742,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2057,31 +1768,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?",
+            "original_text": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?*",
+            "normalized_text": "Para responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\n¿De cuál bolsa se debe extraer las bolas para obtener la mayor probabilidad de que sea blanca o roja?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.642Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -2101,8 +1801,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?",
+        "stem_raw": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
+        "stem_cleaned": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?",
         "options": [
           {
             "id": "A",
@@ -2135,54 +1835,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0450f03dae",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
-          "byte_size": 8053,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9f47e1667b",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9f47e1667bf2eef94413655587a94949b30278fb8a3bb32849da12827060569f",
-          "byte_size": 127999,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-70023945bc",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
@@ -2204,7 +1856,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2230,31 +1882,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.643Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?",
+            "original_text": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?*",
+            "normalized_text": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad de que sea una mujer zurda o un hombre derecho?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.643Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }
@@ -2274,8 +1915,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2019-2 (BXM Math STATS 02 C2019)"
       },
       "content": {
-        "stem_raw": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
-        "stem_cleaned": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?",
+        "stem_raw": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
+        "stem_cleaned": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?",
         "options": [
           {
             "id": "A",
@@ -2308,54 +1949,6 @@
       },
       "visuals": [
         {
-          "id": "vis-172e4f8458",
-          "original_filename": "image6.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image6-172e4f84.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "172e4f8458b8c0b3793a0a43381b8e29d6e7dae9235f30575a07ef61d4a7d22a",
-          "byte_size": 16794,
-          "relationship_id": "rId9",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-a0d08ed794",
-          "original_filename": "image2.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image2-a0d08ed7.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "a0d08ed79483f7e69c55b7b15b1cfc2247d29dab6259a3b5b2925cb8016cd008",
-          "byte_size": 12964,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-0450f03dae",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image5-0450f03d.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "0450f03dae5196437af23e08f361f9e1e60c55d1192aa4ab251e8cc45e1135a1",
-          "byte_size": 8053,
-          "relationship_id": "rId11",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-9f47e1667b",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2019-c2-statistics-2-image7-9f47e166.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "9f47e1667bf2eef94413655587a94949b30278fb8a3bb32849da12827060569f",
-          "byte_size": 127999,
-          "relationship_id": "rId12",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-70023945bc",
           "original_filename": "image4.jpg",
           "stored_filename": "bxm-raw-2019-c2-statistics-2-image4-70023945.jpg",
@@ -2377,7 +1970,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2403,31 +1996,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
-            "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg  con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
-            "correction_type": "whitespace",
-            "semantic_change": false,
-            "reason": "Normalized internal spaces and line trims",
-            "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.643Z"
-          },
-          {
-            "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
-            "normalized_text": "Con base en esa tabla, ¿cuál es el promedio de horas de escucha por semana del grupo de amigos?*\nA) 3.3\nB) 4.2\nC) 5.6\nD) 7.6\nResponda las preguntas 4 a 6 con base en los siguientes datos. Se trata de una tabla donde se ha tabulado las edades de las personas que laboran en los diferentes departamentos de una empresa.\nResponda las preguntas 7 y 9 analizando los siguientes gráficos. Representan las notas finales de un curso de estadística en 2 semestres.\nConsidere la siguiente información para responder las preguntas 10 y 11 sobre la masa de los estudiantes:\n☞En una clase hay 14 hombres y 18 mujeres.\n☛La media aritmética de los hombres es de 58 kg con desviación estándar de 3.\n☛La media aritmética de las mujeres es de 48 kg y su desviación estándar es de 5.\n►Las masas de algunos(as) estudiantes son: Juan (70 kg), José (64 kg), Rita (65 kg), María (64 kg) y Ana (60 kg).\nPara responder las preguntas 12 a 14, considere la siguiente información:\nConsidere el siguiente espacio muestral E={1,2,3,4,5,6,7,8,9,10,11} y los siguientes eventos definidos como sigue:\n►A=obtener un número divisible por 2\n►B=obtener un número divisible por 3\n►C=obtener un número mayor o igual a 6\nLa relación entre los eventos A y C es la siguiente:\nPara responder las preguntas 15 y 16 considere la siguiente información. Cuatro bolsas contienen bolas de colores rojo, azul y blanco como se muestra a continuación. Se extraen al azar.\nConsidere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?",
+            "original_text": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?*",
+            "normalized_text": "Considere la siguiente información sobre la lateralidad de un grupo de estudiantes de un colegio para responder las preguntas 17 y 18.\nSi se escoge al azar una persona, ¿cuál es la probabilidad que sea un hombre zurdo o una mujer derecha o mujer zurda?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.643Z"
+            "timestamp": "2026-11-06T02:56:40.744Z"
           }
         ]
       }

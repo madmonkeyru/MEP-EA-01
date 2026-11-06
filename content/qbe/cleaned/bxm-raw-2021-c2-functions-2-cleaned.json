@@ -74,7 +74,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -100,7 +100,7 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -113,7 +113,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -188,7 +188,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -214,7 +214,7 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
@@ -227,7 +227,7 @@
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -247,8 +247,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\nI.  -1 ∈ S\nII.  {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
+        "stem_raw": "Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\nI.  -1 ∈ S\nII.  {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
+        "stem_cleaned": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
         "options": [
           {
             "id": "A",
@@ -279,20 +279,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -302,7 +289,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -328,42 +315,42 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\nI.  -1 ∈ S\nII.  {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
+            "original_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x):  S→{0},  con f(x)  =(x² - 1)/(x+1)\nI.  -1 ∈ S\nII.  {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
+            "normalized_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
+            "original_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la*",
+            "normalized_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
+            "original_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x² - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
+            "normalized_text": "Considere las siguientes proposiciones referidas a la función f dada por f(x): S→{0}, con f(x) =(x^2 - 1)/(x+1)\nI. -1 ∈ S\nII. {1} ⊂ S\nIII. S = {-1} U {1}\nDe ellas son verdaderas solo la",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -383,8 +370,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\nDe ellas corresponden a una función*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
+        "stem_raw": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\nDe ellas corresponden a una función*",
+        "stem_cleaned": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
         "options": [
           {
             "id": "A",
@@ -415,20 +402,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -438,7 +412,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -464,42 +438,42 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\nDe ellas corresponden a una función*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función*",
+            "original_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl.  Sea  D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y):  y =x²-4}.\nll.  Sea  A={0,-1} y B={1, 2} y T la relación de A → B determinada por la  regla T={(x, y):  y=-x+1}.\nDe ellas corresponden a una función*",
+            "normalized_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
+            "original_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función*",
+            "normalized_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nConsidere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
+            "original_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x²-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
+            "normalized_text": "Considere las siguientes proposiciones referentes a las relaciones T y J:\nl. Sea D=[-2,2] ; E={0} y J la relación de D → E determinada por la regla J={(x, y): y =x^2-4}.\nll. Sea A={0,-1} y B={1, 2} y T la relación de A → B determinada por la regla T={(x, y): y=-x+1}.\nDe ellas corresponden a una función",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -510,7 +484,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -530,8 +504,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a",
+        "stem_raw": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a*",
+        "stem_cleaned": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a",
         "options": [
           {
             "id": "A",
@@ -564,18 +538,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-630545644f",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
@@ -597,7 +559,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -623,20 +585,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a",
+            "original_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a*",
+            "normalized_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nUn intervalo del dominio de f donde f tiene inversa corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -656,8 +618,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere  las  siguientes  proposiciones:\nI. (h∘f)(1)= -5\nII.  =  (m∘h)(x)  =  3x-2\nIII.  Es  factible  efectuar  (f∘r)(x).\nDe ellas son verdaderas solo la*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la",
+        "stem_raw": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere  las  siguientes  proposiciones:\nI. (h∘f)(1)= -5\nII.  =  (m∘h)(x)  =  3x-2\nIII.  Es  factible  efectuar  (f∘r)(x).\nDe ellas son verdaderas solo la*",
+        "stem_cleaned": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la",
         "options": [
           {
             "id": "A",
@@ -690,18 +652,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-630545644f",
           "original_filename": "image5.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
@@ -723,7 +673,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -749,31 +699,31 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere  las  siguientes  proposiciones:\nI. (h∘f)(1)= -5\nII.  =  (m∘h)(x)  =  3x-2\nIII.  Es  factible  efectuar  (f∘r)(x).\nDe ellas son verdaderas solo la*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la*",
+            "original_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere  las  siguientes  proposiciones:\nI. (h∘f)(1)= -5\nII.  =  (m∘h)(x)  =  3x-2\nIII.  Es  factible  efectuar  (f∘r)(x).\nDe ellas son verdaderas solo la*",
+            "normalized_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la",
+            "original_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la*",
+            "normalized_text": "Para responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones:\nI. (h∘f)(1)= -5\nII. = (m∘h)(x) = 3x-2\nIII. Es factible efectuar (f∘r)(x).\nDe ellas son verdaderas solo la",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -784,7 +734,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -804,8 +754,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que",
+        "stem_raw": "Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
+        "stem_cleaned": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que",
         "options": [
           {
             "id": "A",
@@ -836,32 +786,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -871,7 +796,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -897,42 +822,42 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
+            "original_text": "Sea la función dada  por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
+            "normalized_text": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que",
+            "original_text": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que*",
+            "normalized_text": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que",
+            "original_text": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻¹(x)=ax+b, entonces, se cumple que",
+            "normalized_text": "Sea la función dada por f(x)=(-2x+4)/8. Si su inversa tiene la siguiente expresión: f⁻^1(x)=ax+b, entonces, se cumple que",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -943,7 +868,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -954,7 +879,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -965,7 +890,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -976,7 +901,7 @@
             "semantic_change": false,
             "reason": "Wrapped isolated algebraic equation in LaTeX dollar delimiters for KaTeX rendering",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -996,8 +921,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
+        "stem_raw": "Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
+        "stem_cleaned": "Sea f: [1,+∞[ → P; con f(x) =\\sqrt{x}+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
         "options": [
           {
             "id": "A",
@@ -1028,32 +953,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -1063,12 +963,12 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
         "gate_a_extraction_passed": true,
-        "gate_b_quality_passed": true,
+        "gate_b_quality_passed": false,
         "gate_c_internalization_passed": false,
         "review_flags": [
           "ambiguous_math",
@@ -1098,35 +998,46 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
+            "original_text": "Sea  f:  [1,+∞[  →  P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
+            "normalized_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es",
+            "original_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es*",
+            "normalized_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nSea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
+            "original_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻¹ es",
+            "normalized_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
+          },
+          {
+            "stage": "stage_1_mechanical",
+            "rule_id": "MECH-05-UNICODE-RADICAL",
+            "original_text": "Sea f: [1,+∞[ → P; con f(x) =√̅x̅+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
+            "normalized_text": "Sea f: [1,+∞[ → P; con f(x) =\\sqrt{x}+̅3̅ -1, entonces, el dominio de su inversa f⁻^1 es",
+            "correction_type": "mathematical_notation",
+            "semantic_change": false,
+            "reason": "Normalized radical symbol and stripped combining overline within radical",
+            "confidence": 0.98,
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1146,8 +1057,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI.  El  valor de la pendiente es -3/2\nll.  La recta interseca al eje Y en (0,6).\nDe  ellas  son  verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas",
+        "stem_raw": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI.  El  valor de la pendiente es -3/2\nll.  La recta interseca al eje Y en (0,6).\nDe  ellas  son  verdaderas*",
+        "stem_cleaned": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1180,30 +1091,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-ea78239588",
           "original_filename": "image1.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image1-ea782395.jpg",
@@ -1221,11 +1108,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.3",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.84,
+        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
       },
       "quality": {
         "status": "needs_review",
@@ -1250,32 +1137,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.84,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI.  El  valor de la pendiente es -3/2\nll.  La recta interseca al eje Y en (0,6).\nDe  ellas  son  verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas*",
+            "original_text": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI.  El  valor de la pendiente es -3/2\nll.  La recta interseca al eje Y en (0,6).\nDe  ellas  son  verdaderas*",
+            "normalized_text": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nAnalice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas",
+            "original_text": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas*",
+            "normalized_text": "Analice la siguiente gráfica de la recta y = mx + 6:\nConsidere las siguientes proposiciones:\nI. El valor de la pendiente es -3/2\nll. La recta interseca al eje Y en (0,6).\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1286,7 +1173,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1297,7 +1184,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1317,8 +1204,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI.  La gráfica de “g” es decreciente.\nII. La  gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas",
+        "stem_raw": "Considere las siguientes proposiciones sobre la función y =-x:\nI.  La gráfica de “g” es decreciente.\nII. La  gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1349,32 +1236,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -1384,7 +1246,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1410,31 +1272,31 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI.  La gráfica de “g” es decreciente.\nII. La  gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
+            "original_text": "Considere las siguientes proposiciones sobre la función y =-x:\nI.  La gráfica de “g” es decreciente.\nII. La  gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
+            "normalized_text": "Considere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas",
+            "original_text": "Considere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas*",
+            "normalized_text": "Considere las siguientes proposiciones sobre la función y =-x:\nI. La gráfica de “g” es decreciente.\nII. La gráfica de “g” contiene el origen de coordenadas.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1445,7 +1307,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1456,7 +1318,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.656Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1476,8 +1338,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\nConsidere  las  siguientes  proposiciones:\nI.  f es decreciente en ]5,10[.\nll.  La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas",
+        "stem_raw": "Considere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\nConsidere  las  siguientes  proposiciones:\nI.  f es decreciente en ]5,10[.\nll.  La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
+        "stem_cleaned": "Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1510,30 +1372,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-0f431ce9b6",
           "original_filename": "image3.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image3-0f431ce9.jpg",
@@ -1551,11 +1389,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.5",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.84,
+        "rationale": "Matched domain rule: Elementos o propiedades de la función cuadrática"
       },
       "quality": {
         "status": "needs_review",
@@ -1580,32 +1418,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.84,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\nConsidere  las  siguientes  proposiciones:\nI.  f es decreciente en ]5,10[.\nll.  La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
+            "original_text": "Considere la siguiente gráfica referida a la función cuadrática f con  vértice en (2,  4):\nConsidere  las  siguientes  proposiciones:\nI.  f es decreciente en ]5,10[.\nll.  La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
+            "normalized_text": "Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nConsidere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas",
+            "original_text": "Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas*",
+            "normalized_text": "Considere la siguiente gráfica referida a la función cuadrática f con vértice en (2, 4):\nConsidere las siguientes proposiciones:\nI. f es decreciente en ]5,10[.\nll. La función es inyectiva en [2,+∞[\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1616,7 +1454,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1627,7 +1465,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1647,8 +1485,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “g” es creciente.\nll.  “f\" es decreciente.\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “g” es creciente.\nll.  “f\" es decreciente.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1681,30 +1519,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-f9d50cbb18",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
@@ -1726,7 +1540,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1752,31 +1566,31 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “g” es creciente.\nll.  “f\" es decreciente.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas*",
+            "original_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “g” es creciente.\nll.  “f\" es decreciente.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “g” es creciente.\nll. “f\" es decreciente.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1787,7 +1601,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1807,8 +1621,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas",
+        "stem_raw": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -1841,30 +1655,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-f9d50cbb18",
           "original_filename": "image7.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
@@ -1886,7 +1676,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -1912,31 +1702,31 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
+            "original_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI.  “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas",
+            "original_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas*",
+            "normalized_text": "Para responder los ítems 34 y 35 considere las funciones f y g:\nConsidere las siguientes proposiciones:\nI. “f\" y “g” son inversas entre sí.\nll. Se cumple con certeza que a=b.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1947,7 +1737,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -1958,7 +1748,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -1978,8 +1768,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas",
+        "stem_raw": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
+        "stem_cleaned": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2010,44 +1800,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -2057,7 +1810,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2083,31 +1836,31 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
+            "original_text": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La  máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
+            "normalized_text": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nUna empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas",
+            "original_text": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas*",
+            "normalized_text": "Una empresa debe adquirir una máquina para producir botones y tiene las siguientes dos opciones:\n∎La máquina uno produce 3 lotes de 30 botones cada 2 minutos.\n∎La máquina dos produce 5 lotes de 21 botones cada 3 minutos.\nDe acuerdo con la información dada considere las siguientes proposiciones:\nI. Si la empresa requiere la mayor producción de botones por minuto, entonces, debe adquirir la máquina dos.\nII. Si (x) corresponde al tiempo en minutos, entonces, la cantidad de botones “c” que produce la máquina uno corresponde a c(x)=15x.\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2118,7 +1871,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -2138,8 +1891,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nAna fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nAna fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?",
+        "stem_raw": "Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*",
+        "stem_cleaned": "Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?",
         "options": [
           {
             "id": "A",
@@ -2170,44 +1923,7 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -2217,7 +1933,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2243,20 +1959,20 @@
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
         "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nAna fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nAna fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?",
+            "original_text": "Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?*",
+            "normalized_text": "Ana fueron a la pulperia juntas y compraron los siguientes productos: Ana compro 3 kilos de papas y 2 kilos de yuca y pagó ₡2800 en total. Ligia compró 2 kilos de papas y 3 kilos de yuca y pagó ₡2700 en total. Si ambas compraron a los mismos precios, entonces, ¿cuál es el precio del kilo de yuca?",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -2276,51 +1992,14 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ",
+        "stem_raw": "La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ",
+        "stem_cleaned": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ",
         "options": [],
         "detected_answer": null,
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
@@ -2330,7 +2009,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2366,24 +2045,24 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ",
+            "original_text": "La  población “p” de ranas de cierta reserva en función del tiempo t en horas  se expresa como  p(t)  =  8000•(2)⁻⁰·²ᵗ",
+            "normalized_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nLa población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ",
+            "original_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻⁰·²ᵗ",
+            "normalized_text": "La población “p” de ranas de cierta reserva en función del tiempo t en horas se expresa como p(t) = 8000•(2)⁻^0·^2ᵗ",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -2403,8 +2082,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
+        "stem_raw": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
+        "stem_cleaned": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
         "options": [
           {
             "id": "A",
@@ -2435,54 +2114,17 @@
         "explanation_raw": null,
         "explanation_cleaned": null
       },
-      "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        }
-      ],
+      "visuals": [],
       "classification": {
         "topic": "functions"
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A5",
+        "evidencia": "A5.6",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.85,
+        "rationale": "Matched domain rule: Propiedades y simplificación de expresiones con logaritmos"
       },
       "quality": {
         "status": "needs_review",
@@ -2507,43 +2149,43 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.85,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
+            "original_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nSi f es una función, tal que, f(x)  =  logₐ(x)  +  logₐ(x²), entonces, f(a⁴)  corresponde  a*",
+            "normalized_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
+            "original_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a*",
+            "normalized_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-04-UNICODE-SUPERSCRIPT",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
+            "original_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x²), entonces, f(a⁴) corresponde a",
+            "normalized_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nSi f es una función, tal que, f(x) = logₐ(x) + logₐ(x^2), entonces, f(a^4) corresponde a",
             "correction_type": "unicode_normalization",
             "semantic_change": false,
             "reason": "Normalized Unicode superscript exponents to standard exponential notation",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.658Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -2563,50 +2205,14 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:",
+        "stem_raw": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:",
+        "stem_cleaned": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:",
         "options": [],
         "detected_answer": null,
         "explanation_raw": null,
         "explanation_cleaned": null
       },
       "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
         {
           "id": "vis-ed5078b482",
           "original_filename": "image6.jpg",
@@ -2629,7 +2235,7 @@
         "evidencia": null,
         "mapping_status": "unmapped",
         "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "rationale": "No confident match found against official 02-2026 evidence criteria"
       },
       "quality": {
         "status": "needs_review",
@@ -2665,13 +2271,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:",
+            "original_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nLa  cantidad  “m”  de  metros  que  le  hacen  falta  a  un  atleta  para  terminar  una  competencia de  400  metros  planos  transcurrido  “s”  segundos  esta  indicada  en  la  siguiente  tabla:",
+            "normalized_text": "Con base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nLa cantidad “m” de metros que le hacen falta a un atleta para terminar una competencia de 400 metros planos transcurrido “s” segundos esta indicada en la siguiente tabla:",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           }
         ]
       }
@@ -2691,8 +2297,8 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nCon base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
+        "stem_raw": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+        "stem_cleaned": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
         "options": [
           {
             "id": "A",
@@ -2725,42 +2331,6 @@
       },
       "visuals": [
         {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
           "id": "vis-da67b22d02",
           "original_filename": "image2.jpg",
           "stored_filename": "bxm-raw-2021-c2-functions-2-image2-da67b22d.jpg",
@@ -2778,11 +2348,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.3",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.84,
+        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
       },
       "quality": {
         "status": "needs_review",
@@ -2807,32 +2377,32 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.95,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
-        "content_confidence": 0.75
+        "mapping_confidence": 0.84,
+        "content_confidence": 0.9
       },
       "history": {
         "transformations": [
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nCon base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "original_text": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI.  El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII.  El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "normalized_text": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-03-ARTIFACT-STAR",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
+            "original_text": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas*",
+            "normalized_text": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente\nDe acuerdo con la información dada considere las siguientes proposiciones\nI. El modelo que mejor se adapta a la relación establecida entre las variables “x\" y “y” en la tabla A involucra la función exponencial.\nII. El modelo que mejor se adapta a la relación establecida entre las variables “x” y “y” en la tabla B involucra la función logarítmica\nDe ellas son verdaderas",
             "correction_type": "formatting",
             "semantic_change": false,
             "reason": "Removed trailing asterisk exam artifact",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2843,7 +2413,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.754Z"
           },
           {
             "stage": "stage_1_mechanical",
@@ -2854,7 +2424,7 @@
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.755Z"
           }
         ]
       }
@@ -2874,50 +2444,14 @@
         "claimed_origin": "Convocatoria Oficial BXM 2021-2 (BXM Math FUN 02 C2021)"
       },
       "content": {
-        "stem_raw": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nCon base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
-        "stem_cleaned": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
+        "stem_raw": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
+        "stem_cleaned": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
         "options": [],
         "detected_answer": null,
         "explanation_raw": null,
         "explanation_cleaned": null
       },
       "visuals": [
-        {
-          "id": "vis-cd5cd5498a",
-          "original_filename": "image4.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image4-cd5cd549.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "cd5cd5498ad9f3cef801da9c76e18ca8396784780a4c4b3a8f15d7bd45a16ae3",
-          "byte_size": 13462,
-          "relationship_id": "rId6",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-630545644f",
-          "original_filename": "image5.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image5-63054564.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "630545644f71979a4fd4173f61c3e3da24624018f0b172bec3cd3292dfe46ea4",
-          "byte_size": 45047,
-          "relationship_id": "rId7",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
-        {
-          "id": "vis-f9d50cbb18",
-          "original_filename": "image7.jpg",
-          "stored_filename": "bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "rel_path": "content/qbe/assets/media/bxm-raw-2021-c2-functions-2-image7-f9d50cbb.jpg",
-          "content_type": "image/jpeg",
-          "sha256": "f9d50cbb1862837a4f71bcc5a634da59b2a3babc224db3b8be1c43a5debd17ed",
-          "byte_size": 18772,
-          "relationship_id": "rId10",
-          "role": "question_diagram",
-          "required_for_answer": true
-        },
         {
           "id": "vis-4189d0eedf",
           "original_filename": "image8.jpg",
@@ -2936,11 +2470,11 @@
       },
       "evaluation": {
         "framework_version": "02-2026",
-        "afirmacion": null,
-        "evidencia": null,
-        "mapping_status": "unmapped",
-        "mapping_confidence": 0,
-        "rationale": "Unmapped initial extraction from historical asset"
+        "afirmacion": "A2",
+        "evidencia": "A2.3",
+        "mapping_status": "candidate",
+        "mapping_confidence": 0.84,
+        "rationale": "Matched domain rule: Pendiente e intersecciones de la función lineal"
       },
       "quality": {
         "status": "needs_review",
@@ -2968,7 +2502,7 @@
         "source_confidence": 0.5,
         "extraction_confidence": 0.65,
         "answer_confidence": 0,
-        "mapping_confidence": 0,
+        "mapping_confidence": 0.84,
         "content_confidence": 0.5
       },
       "history": {
@@ -2976,13 +2510,13 @@
           {
             "stage": "stage_1_mechanical",
             "rule_id": "MECH-02-WHITESPACE",
-            "original_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA)  ambas.\nB)  ninguna.\nC)  solo la  I.\nD)  solo la  II.\nCon base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
-            "normalized_text": "Para responder lo ítems 23 y 24 considere la siguiente representación referida a la función f.\nPara responder los ítems 27 y 28 considere las siguientes funciones f, h, m y r:\nPara responder los ítems 34 y 35 considere las funciones f y g:\nCon base en la información dada considere las siguientes proposiciones:\nI. En el tiempo de inicio el número de ranas es de 8000.\nII. A los cuatro años de inicio la población de ranas se redujo a la mitad.\nDe ellas son verdaderas*\nA) ambas.\nB) ninguna.\nC) solo la I.\nD) solo la II.\nCon base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
+            "original_text": "Con base en la información dada el modelo que mejor describe la función es*\nA)  lineal.\nB)  cuadrática.\nC)  logarítmica.\nD)  exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
+            "normalized_text": "Con base en la información dada el modelo que mejor describe la función es*\nA) lineal.\nB) cuadrática.\nC) logarítmica.\nD) exponencial.\nConsidere la información de las siguientes tablas donde “x” es la variable independiente y “y” es la dependiente:",
             "correction_type": "whitespace",
             "semantic_change": false,
             "reason": "Normalized internal spaces and line trims",
             "confidence": 0.98,
-            "timestamp": "2026-11-06T00:31:46.659Z"
+            "timestamp": "2026-11-06T02:56:40.755Z"
           }
         ]
       }
