@@ -307,21 +307,24 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
               {/* Qué ocurrió pedagógicamente */}
               {!currentFeedback.isCorrect && (
-                <div className="space-y-1 text-xs sm:text-sm">
-                  <div className="font-bold uppercase tracking-wider text-[11px] text-rose-800 dark:text-rose-300">
+                <div className="space-y-2 text-xs sm:text-sm">
+                  <div className="font-black uppercase tracking-wider text-[11px] text-rose-800 dark:text-rose-300">
                     ¿Qué ocurrió?
                   </div>
                   {currentFeedback.authoredMisconception ? (
-                    <div className="leading-relaxed">
+                    <div className="leading-relaxed p-2.5 rounded-lg bg-rose-100/60 dark:bg-rose-900/30 border border-rose-200 dark:border-rose-800">
                       <TextRenderer content={currentFeedback.authoredMisconception.explanation} inline />
                     </div>
-                  ) : currentFeedback.learnerReportedReason ? (
-                    <div className="leading-relaxed italic">
-                      Causa reportada: {currentFeedback.learnerReportedReason}
-                    </div>
                   ) : (
-                    <div className="leading-relaxed">
-                      Tu selección no coincide con el procedimiento matemático esperado para esta habilidad.
+                    <div className="leading-relaxed p-2.5 rounded-lg bg-rose-100/60 dark:bg-rose-900/30 border border-rose-200 dark:border-rose-800">
+                      Tu selección no coincide con el procedimiento matemático requerido para esta pregunta.
+                    </div>
+                  )}
+
+                  {currentItem.solutionSteps && currentItem.solutionSteps.length > 0 && (
+                    <div className="p-2.5 rounded-lg bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-stone-900 dark:text-stone-100">
+                      <span className="font-bold text-amber-800 dark:text-amber-400 block mb-0.5">Recuerda la regla clave:</span>
+                      <TextRenderer content={typeof currentItem.solutionSteps[0] === 'string' ? currentItem.solutionSteps[0] : currentItem.solutionSteps[0].explanation} inline />
                     </div>
                   )}
                 </div>
@@ -330,7 +333,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
               {currentItem.solutionSteps && currentItem.solutionSteps.length > 0 && (
                 <div className="pt-2 border-t border-current/15 space-y-2">
                   <div className="font-bold text-xs uppercase tracking-wider">
-                    Paso a paso de la resolución:
+                    {currentFeedback.isCorrect ? 'Resolución paso a paso:' : 'Paso a paso para resolver:'}
                   </div>
                   <ol className="list-decimal list-inside space-y-1.5 text-xs sm:text-sm leading-relaxed">
                     {currentItem.solutionSteps.map((step, sIdx) => (
