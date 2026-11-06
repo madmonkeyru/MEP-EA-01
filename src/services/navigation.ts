@@ -2,9 +2,11 @@ import { programManifest } from './programCatalog';
 
 export type LearningContextReason =
   | 'diagnostic_weakness'
-  | 'temario_exploration'
+  | 'simulation_weakness'
   | 'remediation'
+  | 'remediation_retest'
   | 'study_session'
+  | 'temario_exploration'
   | 'direct';
 
 export interface AppRoute {
@@ -38,7 +40,7 @@ export function readRoute(hash: string): AppRoute {
   const phase = params.get('pantalla');
   const learning = phase === 'aprendizaje' && program.id === 'bxm' && subject?.id === 'matematicas' && convocatoriaId === '2026-c2';
   const rawContext = params.get('motivo');
-  const validContexts: LearningContextReason[] = ['diagnostic_weakness', 'temario_exploration', 'remediation', 'study_session', 'direct'];
+  const validContexts: LearningContextReason[] = ['diagnostic_weakness', 'simulation_weakness', 'remediation', 'remediation_retest', 'study_session', 'temario_exploration', 'direct'];
   const contextReason: LearningContextReason | undefined = validContexts.includes(rawContext as LearningContextReason) ? (rawContext as LearningContextReason) : undefined;
 
   return { view: subject ? (learning ? 'learning' : phase === 'prueba' ? 'test' : phase === 'resultado' ? 'results' : 'hub') : 'framework', programId: program.id,

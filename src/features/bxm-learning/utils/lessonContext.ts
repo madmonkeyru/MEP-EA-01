@@ -24,6 +24,20 @@ export function getLessonContextBanner(
         description: `Esta lección te ayuda a dominar los conceptos clave de ${domainName} antes de volver a practicar.`,
         badgeStyle: 'rose',
       };
+    case 'simulation_weakness':
+      return {
+        tag: 'Oportunidad de Simulacro',
+        headline: `Tu simulacro detectó una oportunidad en ${skillName}`,
+        description: `Repasa este tema prioritario de ${domainName} antes de volver a simular o presentar tu examen.`,
+        badgeStyle: 'rose',
+      };
+    case 'remediation_retest':
+      return {
+        tag: 'Preparación para Retest',
+        headline: `Nivelación previa al Retest: ${skillName}`,
+        description: `Refuerza los puntos críticos de ${domainName} para certificar tu dominio en el retest.`,
+        badgeStyle: 'indigo',
+      };
     case 'remediation':
       return {
         tag: 'Plan de Nivelación',
