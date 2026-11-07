@@ -13,37 +13,31 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   isMvp = false,
   onSelect,
 }) => {
+  const description = program.id === 'bxm'
+    ? 'Una prueba por asignatura.'
+    : program.description;
+
   return (
     <a href={'#/programas/' + program.id + '?convocatoria=2026-c2'}
       onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onSelect(program.id); } }}
       className={`group relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
     >
       <div>
-        {/* Top Badges */}
-        <div className="flex items-center justify-between gap-2 mb-3.5">
-          <span className="inline-flex items-center px-2.5 py-1 bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold rounded-lg uppercase tracking-wider border border-stone-200/60 dark:border-stone-700/60">
-            {program.id.toUpperCase()}
-          </span>
-
-          {isMvp ? (
+        {isMvp && (
+          <div className="flex items-center gap-2 mb-3.5">
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-semibold rounded-full border border-emerald-300/40">
               <CheckCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
               Práctica disponible
             </span>
-          ) : (
-            <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
-              PDF y estructura
-            </span>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Title & Description */}
         <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors font-['Outfit']">
           {program.name}
         </h3>
-        <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300 mt-0.5">{program.id === 'cico' || program.id === 'i_ii_ciclo' ? 'Meta: completar primaria' : program.id === 'iii_ciclo' ? 'Meta: concluir noveno año' : 'Meta: Bachillerato en Educación Media'}</p>
         <p className="text-sm text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">
-          {program.description}
+          {description}
         </p>
 
         {/* Metadata Details */}

@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { WelcomePage } from './WelcomePage';
 
@@ -62,5 +62,23 @@ describe('WelcomePage', () => {
       fireEvent.click(edadCard);
       expect(onSelectProgram).toHaveBeenCalledWith('edad');
     }
+  });
+
+  it('keeps program cards free of repeated acronym and goal labels', () => {
+    render(
+      <WelcomePage
+        onSelectProgram={vi.fn()}
+        onEnterMvpMath={vi.fn()}
+      />
+    );
+
+    const carousel = within(screen.getByRole('region', { name: 'Programas disponibles' }));
+    const bxmCard = carousel.getByRole('link', { name: /Bachillerato por Madurez Suficiente/ });
+
+    expect(within(bxmCard).getByRole('heading', { name: 'Bachillerato por Madurez Suficiente (BXM)' })).toBeInTheDocument();
+    expect(within(bxmCard).queryByText('BXM', { exact: true })).not.toBeInTheDocument();
+    expect(within(bxmCard).getByText('Una prueba por asignatura.')).toBeInTheDocument();
+    expect(carousel.queryByText(/^Meta:/)).not.toBeInTheDocument();
+    expect(carousel.queryByText('PDF y estructura')).not.toBeInTheDocument();
   });
 });

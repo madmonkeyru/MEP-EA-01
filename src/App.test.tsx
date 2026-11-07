@@ -34,6 +34,21 @@ function mount(hash = '#/') {
 }
 
 describe('application curriculum flows', () => {
+  it('does not refocus the page heading when switching subject hub tabs', async () => {
+    mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
+    await screen.findByRole('tab', { name: 'Práctica y simulación' });
+    const heading = screen.getByRole('heading', { name: 'Tu espacio de Matemáticas BXM' });
+    await waitFor(() => expect(heading).toHaveFocus());
+    const focusHeading = vi.spyOn(heading, 'focus');
+
+    for (const name of ['Recursos', 'Temario Digital', 'Ruta de estudio', 'Mi progreso', 'Práctica y simulación']) {
+      const tab = screen.getByRole('tab', { name });
+      fireEvent.click(tab);
+      await waitFor(() => expect(tab).toHaveAttribute('aria-selected', 'true'));
+      expect(focusHeading).not.toHaveBeenCalled();
+    }
+  });
+
   it('finds a curriculum evidence and opens its linked lesson', async () => {
     mount('#/programas/bxm/matematicas?convocatoria=2026-c2&seccion=resources&recurso=specs');
     const search = await screen.findByRole('searchbox', { name: 'Buscar en el temario' });
@@ -233,4 +248,3 @@ describe('application curriculum flows', () => {
     await screen.findByRole('button', { name: 'Ensayar el examen' });
   });
 });
-
