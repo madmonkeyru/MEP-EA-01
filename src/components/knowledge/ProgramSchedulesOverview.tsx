@@ -41,11 +41,8 @@ export const ProgramSchedulesOverview: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-stone-100 dark:border-stone-800 pb-4">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
-            Cronograma Oficial de Pruebas y Matrícula
+            Cronograma de Pruebas y Matrícula
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-0.5">
-            Compara fechas oficiales de inscripción, publicación de sedes y aplicación entre los 4 programas de Educación Abierta.
-          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 min-w-0">

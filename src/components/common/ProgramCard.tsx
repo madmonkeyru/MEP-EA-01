@@ -23,14 +23,14 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       className={`group relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
     >
       <div>
-        {isMvp && (
+        {/* {isMvp && (
           <div className="flex items-center gap-2 mb-3.5">
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-semibold rounded-full border border-emerald-300/40">
               <CheckCircle className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
               Práctica disponible
             </span>
           </div>
-        )}
+        )} */}
 
         {/* Title & Description */}
         <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors font-['Outfit']">
