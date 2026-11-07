@@ -98,28 +98,26 @@ export const LearnerShell: React.FC<LearnerShellProps> = ({ currentRoute, onNavi
 
   return (
     <div className="learner-shell min-h-screen flex flex-col">
-      <header className="ui-header app-header bg-amber-50/50 dark:bg-stone-900 border-b border-amber-200/50 dark:border-stone-800">
+      <header className="ui-header app-header">
         <div className="page-width flex items-center justify-between gap-3 py-2">
-          <div className="flex items-center gap-3">
-            <a
-              href="#/"
-              className="brand-link min-w-0"
-              onClick={(e) => {
-                if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
-                  e.preventDefault();
-                  onNavigate({ view: 'landing' });
-                }
-              }}
-            >
-              <img className="brand-logo" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" />
-              <div className="min-w-0 hidden sm:block">
-                <strong className="text-sm">MEP-EA-01</strong>
-                <span className="truncate block text-xs text-stone-500">Espacio de Estudio · Matemáticas BXM</span>
-              </div>
-            </a>
-          </div>
+          <a
+            href="#/"
+            className="brand-link min-w-0"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                e.preventDefault();
+                onNavigate({ view: 'landing' });
+              }
+            }}
+          >
+            <img className="brand-logo" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" />
+            <div className="min-w-0">
+              <strong className="text-sm">MEP-EA-01</strong>
+              <span className="truncate">Espacio de Estudio · Matemáticas BXM</span>
+            </div>
+          </a>
 
-          <nav aria-label="Pilares de aprendizaje" className="app-primary-nav hidden md:flex items-center gap-1">
+          <nav aria-label="Pilares de aprendizaje" className="app-primary-nav items-center gap-1">
             {learnerPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
@@ -127,11 +125,7 @@ export const LearnerShell: React.FC<LearnerShellProps> = ({ currentRoute, onNavi
                   key={pillar.id}
                   onClick={pillar.onClick}
                   aria-current={pillar.active ? 'page' : undefined}
-                  className={`header-link flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                    pillar.active
-                      ? 'bg-amber-100 text-amber-950 dark:bg-amber-950/60 dark:text-amber-200 shadow-xs'
-                      : 'text-stone-700 hover:text-stone-950 dark:text-stone-300 dark:hover:text-white'
-                  }`}
+                  className="header-link"
                 >
                   <Icon size={16} aria-hidden="true" />
                   <span>{pillar.label}</span>
@@ -140,24 +134,24 @@ export const LearnerShell: React.FC<LearnerShellProps> = ({ currentRoute, onNavi
             })}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <div className="hidden lg:block">
               <ThemeToggle />
             </div>
 
             <button
-              className="header-link account-trigger flex items-center gap-1.5 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 px-2.5 py-1 rounded-full text-xs font-medium shadow-2xs"
-              aria-label={learner ? `Espacio privado de ${learner.name}` : 'Mi espacio'}
+              className="header-link account-trigger"
+              aria-label={learner ? `Espacio de ${learner.name}` : 'Mi espacio'}
               aria-haspopup="dialog"
               onClick={() => setAccountOpen(true)}
             >
-              <UserRound size={16} className="text-amber-600 dark:text-amber-400" aria-hidden="true" />
-              <span className="truncate max-w-24">{learner ? learner.name : 'Mi espacio'}</span>
+              <UserRound size={18} aria-hidden="true" />
+              <span className="hidden sm:inline truncate max-w-28">{learner ? learner.name : 'Mi espacio'}</span>
             </button>
 
             <button
-              className="header-link md:hidden mobile-menu-trigger"
-              aria-label="Abrir menú de estudio"
+              className="header-link mobile-menu-trigger"
+              aria-label="Abrir menú"
               aria-haspopup="dialog"
               aria-expanded={sidebarOpen}
               onClick={() => setSidebarOpen(true)}
