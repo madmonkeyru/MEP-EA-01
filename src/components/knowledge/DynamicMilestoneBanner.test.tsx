@@ -50,3 +50,24 @@ it('opens schedule details in place and returns to the program overview', () => 
   fireEvent.click(screen.getByRole('button', { name: '← Comparar programas' }));
   expect(screen.getByRole('button', { name: 'Explorar fechas · EDAD' })).toBeInTheDocument();
 });
+
+it('supports switching between grid and timeline view and filtering by program pills', () => {
+  render(<OfficialCalendar initialConvocatoria="2026-c2" />);
+
+  // View mode toggle
+  const timelineBtn = screen.getByRole('button', { name: 'Cronograma' });
+  fireEvent.click(timelineBtn);
+  expect(timelineBtn).toHaveAttribute('aria-pressed', 'true');
+
+  const gridBtn = screen.getByRole('button', { name: 'Cuadrícula' });
+  fireEvent.click(gridBtn);
+  expect(gridBtn).toHaveAttribute('aria-pressed', 'true');
+
+  // Program quick pill
+  fireEvent.click(screen.getByRole('button', { name: 'Bachillerato por Madurez' }));
+  expect(screen.getByLabelText('Programa')).toHaveValue('bxm');
+
+  // Unselect / All pill
+  fireEvent.click(screen.getByRole('button', { name: 'Todos' }));
+  expect(screen.getByLabelText('Programa')).toHaveValue('');
+});
