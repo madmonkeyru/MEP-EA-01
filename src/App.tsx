@@ -8,7 +8,7 @@ import { WizardProvider } from './components/onboarding/wizardStore';
 import { ActivityContext } from './components/layout/ActivityContext';
 import { Header } from './components/layout/Header';
 import { EntryLandingPage } from './components/pages/EntryLandingPage';
-import { WelcomePage } from './components/pages/WelcomePage';
+
 import { FeedbackState } from './components/common/FeedbackState';
 import { Dialog } from './components/common/Dialog';
 import { PaywallModal } from './components/common/PaywallModal';
@@ -27,6 +27,7 @@ const HelperPage = lazy(() => import('./components/onboarding/HelperPage').then(
 const ReadinessWizard = lazy(() => import('./components/onboarding/ReadinessWizard').then(module => ({ default: module.ReadinessWizard })));
 const BxmLearningHub = lazy(() => import('./features/bxm-integration/BxmLearningHub').then(module => ({ default: module.BxmLearningHub })));
 const AboutFaqPage = lazy(() => import('./components/pages/AboutFaqPage').then(module => ({ default: module.AboutFaqPage })));
+const WelcomePage = lazy(() => import('./components/pages/WelcomePage').then(module => ({ default: module.WelcomePage })));
 
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => storageService.getCurrentUser());
