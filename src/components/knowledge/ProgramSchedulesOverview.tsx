@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { OfficialCalendar } from './OfficialCalendar';
 import { ExternalLink } from 'lucide-react';
 
 interface CalendarEvent {
@@ -30,6 +31,7 @@ const programLabels: Record<string, string> = {
 };
 
 export const ProgramSchedulesOverview: React.FC = () => {
+  const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
   const [selectedConvocatoria, setSelectedConvocatoria] = useState('2026-c2');
 
   const programList = ['bxm', 'edad', 'iii_ciclo', 'i_ii_ciclo'];
@@ -46,15 +48,15 @@ export const ProgramSchedulesOverview: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 min-w-0">
           <label htmlFor="schedule-convocatoria-select" className="text-xs font-semibold text-stone-600 dark:text-stone-400">
             Convocatoria:
           </label>
           <select
             id="schedule-convocatoria-select"
             value={selectedConvocatoria}
-            onChange={e => setSelectedConvocatoria(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-xs font-bold text-stone-800 dark:text-stone-200"
+            onChange={e => { setSelectedConvocatoria(e.target.value); setExpandedProgram(null); }}
+            className="max-w-full min-w-0 px-3 py-1.5 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-xs font-bold text-stone-800 dark:text-stone-200"
           >
             <option value="2026-c2">02-2026 (Segunda Convocatoria)</option>
             <option value="2026-c1">01-2026 (Primera Convocatoria)</option>
@@ -62,7 +64,7 @@ export const ProgramSchedulesOverview: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4">
+      {expandedProgram ? <div className="space-y-4"><button className="secondary-button" onClick={() => setExpandedProgram(null)}>← Comparar programas</button><OfficialCalendar key={expandedProgram + selectedConvocatoria} initialProgram={expandedProgram} initialConvocatoria={selectedConvocatoria} /></div> : <div className="grid sm:grid-cols-2 gap-4">
         {programList.map(pid => {
           const events = allEvents.filter(
             e => e.programId === pid && e.convocatoriaId === selectedConvocatoria
@@ -116,6 +118,7 @@ export const ProgramSchedulesOverview: React.FC = () => {
                 </div>
               </div>
 
+              <button className="secondary-button w-full" onClick={() => setExpandedProgram(pid)}>Explorar fechas · {pid === 'bxm' ? 'BXM' : pid === 'edad' ? 'EDAD' : pid === 'iii_ciclo' ? 'III Ciclo' : 'I y II Ciclo'}</button>
               {firstExam?.sourceUrl && (
                 <div className="pt-2 border-t border-stone-200/40 dark:border-stone-700/40 flex justify-between items-center text-[11px] text-stone-500 dark:text-stone-400">
                   <span>Fuente oficial DGEC</span>
@@ -133,7 +136,7 @@ export const ProgramSchedulesOverview: React.FC = () => {
             </div>
           );
         })}
-      </div>
+      </div>}
     </section>
   );
 };

@@ -36,6 +36,13 @@ describe('StorageService', () => {
     expect(saved[0].id).toBe('att-1');
   });
 
+  it('bulk deletes only results in the selected profile and context', () => {
+    const base: Attempt = { id: 'current', userId: 'guest', timestamp: new Date().toISOString(), mode: 'simulation', scopeText: 'Test', scorePercentage: 80, correctCount: 48, totalItems: 60, durationSeconds: 100, responses: {}, programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' };
+    for (const attempt of [base, { ...base, id: 'other-profile', userId: 'u1' }, { ...base, id: 'other-call', convocatoriaId: '2026-c1' }, { ...base, id: 'other-subject', subjectId: 'espanol' }]) storageService.saveAttempt(attempt);
+    expect(storageService.deleteContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })).toBe(true);
+    expect(storageService.getAttempts().map(attempt => attempt.id).sort()).toEqual(['other-call', 'other-profile', 'other-subject']);
+  });
+
   it('calculates performance level with green-to-red color gradient', () => {
     expect(storageService.calculatePerformanceLevel([]).color).toBe('#9ca3af');
 

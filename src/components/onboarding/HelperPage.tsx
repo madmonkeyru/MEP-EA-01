@@ -1,3 +1,4 @@
+import { Tabs } from '../common/Tabs';
 import { useEffect, useState } from 'react';
 import { ArrowRight, BookOpen, Compass, CheckCircle2 } from 'lucide-react';
 import { AppRoute, routeHash } from '../../services/navigation';
@@ -16,6 +17,7 @@ export function helperProgramRoute(program: ProgramId, level?: LevelId): AppRout
 
 export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute) => void; route?: AppRoute }) {
   const wizard = useWizard();
+  const [panel, setPanel] = useState('resources');
   const [program, setProgram] = useState<ProgramId>(() => {
     if (wizard.program && wizard.program !== 'unsure') return wizard.program;
     const active = route?.programId || dataService.getCurrentProgramId();
@@ -26,7 +28,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
   const copy = PROGRAMS[program];
   const button = 'min-h-11 px-4 py-3 rounded-xl font-semibold text-sm cursor-pointer';
 
-  return <div className="helper-page max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+  return <div className="helper-page page-width py-8 space-y-8">
     <header className="page-intro rounded-3xl p-6 sm:p-8 space-y-4">
       <p className="text-xs uppercase tracking-widest font-semibold text-indigo-600 dark:text-indigo-300">A tu ritmo · Sin registro</p>
       <h1 tabIndex={-1} className="text-3xl sm:text-4xl font-semibold">Guía y recursos</h1>
@@ -92,14 +94,13 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
       </div>
     </section>
 
-    <FormHelper key={program} program={program} />
-
+    <Tabs label="Explorar guía y recursos" value={panel} onChange={setPanel} items={[{ id: 'resources', label: 'Materiales de estudio' }, { id: 'forms', label: 'Trámites y formularios' }, { id: 'programs', label: 'Conoce tus opciones' }, { id: 'support', label: 'Matrícula y apoyos' }]}>
     <section className="space-y-4" aria-labelledby="helper-programs">
       <h2 id="helper-programs" className="text-xl font-semibold">Conoce tus opciones</h2>
       <div className="flex flex-wrap gap-2" aria-label="Programa para consultar">
         {PROGRAM_ORDER.map(id => <button key={id} aria-pressed={program === id} onClick={() => { setProgram(id); const query = new URLSearchParams(window.location.hash.split('?')[1]); query.set('programa', id === 'i-ii' ? 'i_ii_ciclo' : id === 'iii' ? 'iii_ciclo' : id); for (const key of ['buscar', 'materiaFiltro', 'nivelFiltro', 'tipo']) query.delete(key); window.history.replaceState(null, '', '#/ayuda?' + query); }} className={`${button} ${program === id ? 'bg-indigo-600 text-white' : 'ui-surface'}`}>{PROGRAMS[id].name}</button>)}
       </div>
-      <button className="secondary-button" onClick={() => { wizard.selectProgram(program); onNavigate({ view: 'guide' }); }}>Orientarme sobre {copy.name}</button>
+      {panel === 'programs' && <><button className="secondary-button" onClick={() => { wizard.selectProgram(program); onNavigate({ view: 'guide' }); }}>Orientarme sobre {copy.name}</button>
       <article className="ui-surface p-5 sm:p-7 rounded-2xl space-y-4">
         <div><h3 className="text-xl font-semibold">{copy.name} · {copy.offer}</h3><p className="mt-2 text-muted">{copy.summary}</p></div>
         <p className="text-sm">{copy.topology} Nota mínima por prueba: <strong>{copy.pass}</strong>.</p>
@@ -108,10 +109,12 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <div className="flex flex-wrap gap-2">{(PROGRAM_LEVELS[program].length ? PROGRAM_LEVELS[program] : [undefined]).map(level => <button key={level || program} className={`${button} ui-muted-button inline-flex items-center gap-2`} onClick={() => onNavigate(helperProgramRoute(program, level))}>Ver asignaturas{level ? ` · ${program === 'edad' ? (level === '10' ? 'Parte 1' : 'Parte 2') : `${level}°`}` : ''}<ArrowRight size={16} /></button>)}</div>
         <a className="text-link" href={routeHash({ ...helperProgramRoute(program), view: 'calendar' })}>Consultar fechas de este programa</a>
         <p className="text-xs text-muted">Información de referencia de Educación Abierta. Confirma requisitos, fechas y costos de tu convocatoria con la DGEC.</p>
-      </article>
+      </article></>}
     </section>
 
-    <section className="space-y-4" aria-labelledby="available-resources">
+    {panel === 'forms' && <FormHelper key={program} program={program} />}
+
+    {panel === 'resources' && <section className="space-y-4" aria-labelledby="available-resources">
       <h2 id="available-resources" className="text-xl font-semibold flex gap-2 items-center"><BookOpen size={22} /> Recursos para estudiar</h2>
       <div className="ui-surface rounded-2xl p-5 space-y-3">
         <h3 className="font-semibold">Práctica interactiva de Matemáticas BXM · 02-2026</h3>
@@ -119,10 +122,9 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <button className={`${button} bg-indigo-600 text-white`} onClick={() => onNavigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' })}>Abrir Matemáticas BXM</button>
       </div>
       <OfficialResources key={program} programId={program === 'i-ii' ? 'i_ii_ciclo' : program === 'iii' ? 'iii_ciclo' : program} subjectId={route?.subjectId} moduleId={route?.moduleId} />
-    </section>
-
+    </section>}
     <IssueDraft />
-    <section className="ui-surface rounded-2xl p-5 space-y-4" aria-labelledby="official-support">
+    {panel === 'support' && <section className="ui-surface rounded-2xl p-5 space-y-4" aria-labelledby="official-support">
       <h2 id="official-support" className="text-xl font-semibold">Matrícula y apoyos educativos</h2>
       <p className="text-sm text-muted">Consulta el registro de calificaciones antes de inscribir materias. Conserva el comprobante de matrícula aceptada y presenta tu identificación original el día de la prueba.</p>
       <p className="text-sm text-muted">Si necesitas apoyos educativos, consulta a la Asesoría Pedagógica de Educación Especial de tu región. En III Ciclo y EDAD se debe adjuntar la carta de apoyos aprobados e indicarlos al matricular. Los reconocimientos de materias y estudios extranjeros requieren un trámite previo.</p>
@@ -131,7 +133,8 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <a href="https://dgec.mep.go.cr/" target="_blank" rel="noreferrer" className="min-h-11 inline-flex items-center underline">DGEC · Fechas y programas</a>
         <a href="https://dgec.mep.go.cr/consultas/" target="_blank" rel="noreferrer" className="min-h-11 inline-flex items-center underline">DGEC · Consultas y reconocimientos</a>
       </div>
-    </section>
+    </section>}
+    </Tabs>
   </div>;
 }
 

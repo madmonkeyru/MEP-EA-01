@@ -21,7 +21,7 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
   const [last] = useState(() => { try { const route = localStorage.getItem('mep_last_subject'); return route?.startsWith('#/programas/') ? route : null; } catch { return null; } });
   return (
     <div className="entry-page min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-20 w-full space-y-10">
+      <div className="page-width py-6 sm:py-10 w-full space-y-10">
         {/* Hero Section with Cartographic Costa Rica Background */}
         <div className="relative rounded-3xl p-6 sm:p-12 overflow-hidden border border-stone-200/80 dark:border-stone-800/80 bg-stone-50/60 dark:bg-stone-900/40 backdrop-blur-xs">
           {/* Faded Cartographic Map Background */}

@@ -27,7 +27,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
   const currentConvocatoria = '2026-c2';
 
   return (
-    <div className="welcome-page max-w-7xl 2xl:max-w-[1536px] mx-auto px-3.5 sm:px-6 py-6 sm:py-10 space-y-8 text-stone-900 dark:text-slate-100 transition-colors">
+    <div className="welcome-page page-width py-6 sm:py-10 space-y-8 text-stone-900 dark:text-slate-100 transition-colors">
       {/* 1. Header Hero / Welcome Portal Banner */}
       <div className="page-intro rounded-3xl p-6 sm:p-10 relative overflow-hidden">
         {/* Faded Costa Rica map watermark */}
@@ -105,7 +105,8 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <p className="sm:hidden text-sm muted">Desliza para explorar los programas o usa Tab para recorrerlos.</p>
+        <div className="program-carousel" role="region" aria-label="Programas disponibles" tabIndex={0}>
           {programs.map((prog) => (
             <ProgramCard
               key={prog.id}

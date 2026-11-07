@@ -63,6 +63,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     if (nextGoal === 'diagnostic') {
       setMode('diagnostic');
       setCount(8);
+      setMinutes(20);
     } else if (nextGoal === 'practice') {
       setMode('area');
       setCount(10);
@@ -150,7 +151,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   ];
 
   return (
-    <section className="ui-surface rounded-2xl p-5 sm:p-7 space-y-6" aria-labelledby="practice-config-title">
+    <section className="study-config ui-surface rounded-2xl p-5 sm:p-7 space-y-4" aria-labelledby="practice-config-title">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-stone-200 dark:border-stone-700/60 pb-4">
         <div>
           <h2 id="practice-config-title" className="text-xl sm:text-2xl font-bold tracking-tight">
@@ -204,7 +205,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
         </div>
       </fieldset>
 
-      <form className="form-stack pt-2" onSubmit={event => { event.preventDefault(); start(); }}>
+      <form className="form-stack study-config-grid pt-2" onSubmit={event => { event.preventDefault(); start(); }}>
         {goal === 'diagnostic' && (
           <div className="bg-stone-50 dark:bg-stone-900/40 rounded-xl p-4 border border-stone-200 dark:border-stone-700/60 space-y-3">
             <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-medium text-sm">

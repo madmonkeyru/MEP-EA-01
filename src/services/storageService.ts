@@ -47,6 +47,10 @@ class StorageService {
     return session?.isCompleted && validSession({ ...session, isCompleted: false }, userId) ? session : null;
   }
   deleteAttempt(id: string) { return this.write(KEYS.attempts, this.getAttempts().filter(a => a.id !== id || a.userId !== (this.getCurrentUser()?.id || 'guest'))); }
+  deleteContextAttempts(config: Partial<PracticeConfig>, userId = this.getCurrentUser()?.id || 'guest') {
+    const ids = new Set(this.getContextAttempts(config, userId).map(attempt => attempt.id));
+    return this.write(KEYS.attempts, this.getAttempts().filter(attempt => attempt.userId !== userId || !ids.has(attempt.id)));
+  }
   clearAttempts() { return this.write(KEYS.attempts, null); }
   private activeKey(userId: string) { return KEYS.active + (userId === 'guest' ? '' : ':' + userId); }
   getActiveSession(userId = this.getCurrentUser()?.id || 'guest'): TestSession | null {

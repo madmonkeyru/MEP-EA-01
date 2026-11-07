@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { DynamicMilestoneBanner } from './DynamicMilestoneBanner';
+import { OfficialCalendar } from './OfficialCalendar';
 import { ProgramSchedulesOverview } from './ProgramSchedulesOverview';
 
 describe('DynamicMilestoneBanner & ProgramSchedulesOverview', () => {
@@ -26,7 +27,26 @@ describe('DynamicMilestoneBanner & ProgramSchedulesOverview', () => {
     expect(screen.getByText('Cronograma Oficial de Pruebas y Matrícula')).toBeInTheDocument();
     expect(screen.getByText(/Bachillerato por Madurez Suficiente/)).toBeInTheDocument();
     expect(screen.getByText(/Educación Diversificada a Distancia/)).toBeInTheDocument();
-    expect(screen.getByText(/III Ciclo/)).toBeInTheDocument();
-    expect(screen.getByText(/I y II Ciclo/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /III Ciclo/ })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /I y II Ciclo/ })).toBeInTheDocument();
   });
+});
+
+
+it('filters calendar cards by event type and resets filters', () => {
+  render(<OfficialCalendar initialProgram="bxm" initialConvocatoria="2026-c2" />);
+  fireEvent.change(screen.getByLabelText('Tipo de evento'), { target: { value: 'exam' } });
+  expect(screen.queryByRole('heading', { name: /Inscripción ·/ })).not.toBeInTheDocument();
+  expect(screen.getAllByRole('heading', { name: /Aplicación de pruebas/ })).toHaveLength(3);
+  fireEvent.click(screen.getByRole('button', { name: 'Restablecer filtros' }));
+  expect(screen.getByLabelText('Programa')).toHaveValue('');
+  expect(screen.getAllByRole('heading', { name: /Inscripción ·/ }).length).toBeGreaterThan(0);
+});
+
+it('opens schedule details in place and returns to the program overview', () => {
+  render(<ProgramSchedulesOverview />);
+  fireEvent.click(screen.getByRole('button', { name: 'Explorar fechas · BXM' }));
+  expect(screen.getByLabelText('Programa')).toHaveValue('bxm');
+  fireEvent.click(screen.getByRole('button', { name: '← Comparar programas' }));
+  expect(screen.getByRole('button', { name: 'Explorar fechas · EDAD' })).toBeInTheDocument();
 });

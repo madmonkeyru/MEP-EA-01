@@ -83,7 +83,7 @@ export const DynamicMilestoneBanner: React.FC<{
                 ? 'Abierta'
                 : calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'upcoming'
                 ? 'Próxima'
-                : 'Finalizada'}
+                : calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'pending' ? 'Por confirmar' : 'Finalizada'}
             </span>
           </div>
           <p className="text-xs text-stone-600 dark:text-stone-400">
@@ -117,7 +117,7 @@ export const DynamicMilestoneBanner: React.FC<{
               <span>Examen {subjectFilter}</span>
             </span>
             <span className="px-2 py-0.2 rounded-full text-[10px] font-bold bg-indigo-200/80 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
-              {mathExamEvent?.start ? formatDay(mathExamEvent.start) : 'Por programar'}
+              {mathExamEvent?.start ? formatDay(mathExamEvent.start) : 'Por programar'} · {({ past: 'Realizado', open: 'Hoy', upcoming: 'Próximo', pending: 'Por confirmar' })[calendarStatus(today, mathExamEvent?.start, mathExamEvent?.end)]}
             </span>
           </div>
           <p className="text-xs text-indigo-800 dark:text-indigo-300">
@@ -128,7 +128,7 @@ export const DynamicMilestoneBanner: React.FC<{
 
       {mathExamEvent?.sourceUrl && (
         <div className="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 pt-1">
-          <span>Verificación oficial: {formatDay(mathExamEvent.verifiedOn)}</span>
+          <span>Última actualización: {formatDay(programEvents.map(event => event.verifiedOn).sort().at(-1)!)}</span>
           <a
             href={mathExamEvent.sourceUrl}
             target="_blank"
