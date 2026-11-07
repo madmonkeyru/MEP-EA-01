@@ -1,7 +1,7 @@
 import type { PracticeConfig, TestSession } from '../types';
 
 export function scopeKey(config: PracticeConfig) {
-  return JSON.stringify([config.programId || 'bxm', config.subjectId || 'matematicas', config.subprogramId || '', config.convocatoriaId || '2026-c2', config.mode, config.area || '', config.topic || '', config.conceptId || '', config.setId || '', config.itemIds || [], config.itemCount, config.enableTimer, config.timerDurationMinutes, ...(config.reviewDraft ? [config.reviewDraft] : []), ...(config.difficultyTier === undefined ? [] : [config.difficultyTier])]);
+  return JSON.stringify([config.programId || 'bxm', config.subjectId || 'matematicas', config.subprogramId || '', config.convocatoriaId || '2026-c2', config.mode, config.area || '', config.topic || '', config.conceptId || '', config.setId || '', config.itemIds || [], config.itemCount, config.enableTimer, config.timerDurationMinutes, ...(config.reviewDraft ? [config.reviewDraft] : []), ...(config.difficultyTier === undefined ? [] : [config.difficultyTier]), ...(config.remediation ? [config.remediation.stage, config.remediation.rootSessionId] : [])]);
 }
 export function validSession(session: TestSession | null, userId: string): session is TestSession {
   return !!session && session.version === 2 && session.userId === userId && !session.isCompleted && !!session.config &&

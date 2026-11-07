@@ -37,7 +37,7 @@ describe('Milestone 4 (M4): Simulation Loop & Exam Preparation Readiness', () =>
       // Verify header and distinct modes
       expect(screen.getByText('Simulación de Examen BXM')).toBeInTheDocument();
       expect(screen.getByText('Simulacro de práctica')).toBeInTheDocument();
-      expect(screen.getByText('20 preguntas · ~45 min')).toBeInTheDocument();
+      expect(screen.getByText('20 preguntas · 30 min')).toBeInTheDocument();
       expect(screen.getByText('Simulación de referencia')).toBeInTheDocument();
       expect(screen.getByText('60 preguntas · 150 min')).toBeInTheDocument();
     });

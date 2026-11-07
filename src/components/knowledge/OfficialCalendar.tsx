@@ -1,3 +1,4 @@
+import { ScheduleBadge } from '../common/StatusBadge';
 import { useState } from 'react';
 type CalendarEvent = {
   programId: string;
@@ -86,7 +87,7 @@ export function OfficialCalendar({ initialProgram = '', initialConvocatoria = ''
       {events.map(event => <li key={[event.programId, event.moduleId, event.type, event.start].join('/')} className="calendar-event-card" data-status={calendarStatus(today, event.start, event.end)}>
         <details><summary>
         <h3 className="font-semibold">{eventLabels[event.type]} · {programs[event.programId as keyof typeof programs]}{event.moduleId && (event.moduleId === 'EDAD_1' ? ' · Prueba 1' : ' · Prueba 2')}</h3>
-        <p>{event.start && <>{formatDay(event.start)}{event.end && ' – ' + formatDay(event.end)} · </>}{statusLabels[calendarStatus(today, event.start, event.end)]}</p>
+        <p>{event.start && <>{formatDay(event.start)}{event.end && ' – ' + formatDay(event.end)} · </>}<ScheduleBadge status={calendarStatus(today, event.start, event.end)} /></p>
         </summary>
         {event.sessions && <ul className="list-disc pl-5 text-sm">
           {event.sessions.map(session => <li key={session.subject}>{session.startTime}–{session.endTime} · {session.subject}</li>)}

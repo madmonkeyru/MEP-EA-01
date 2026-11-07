@@ -183,7 +183,7 @@ describe('remediationEngine', () => {
     const plan = generateRemediationPlan(session);
     saveActiveRemediationPlan(plan);
 
-    const retrieved = getActiveRemediationPlan();
+    const retrieved = getActiveRemediationPlan(plan.userId);
     expect(retrieved).not.toBeNull();
     expect(retrieved?.id).toBe(plan.id);
 
@@ -191,7 +191,7 @@ describe('remediationEngine', () => {
     const stats = storageService.getTelemetryFunnelStats();
     expect(stats.remediationStarted).toBe(1);
 
-    clearActiveRemediationPlan();
-    expect(getActiveRemediationPlan()).toBeNull();
+    clearActiveRemediationPlan(plan.userId);
+    expect(getActiveRemediationPlan(plan.userId)).toBeNull();
   });
 });

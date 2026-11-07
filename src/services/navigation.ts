@@ -13,6 +13,7 @@ export interface AppRoute {
   view: 'landing' | 'welcome' | 'framework' | 'hub' | 'guide' | 'helper' | 'calendar' | 'test' | 'results' | 'learning';
   evidenceKey?: string;
   sessionId?: string;
+  sourceSessionId?: string;
   tab?: string;
   resourceTab?: string;
   programId?: string;
@@ -44,10 +45,11 @@ export function readRoute(hash: string): AppRoute {
   const contextReason: LearningContextReason | undefined = validContexts.includes(rawContext as LearningContextReason) ? (rawContext as LearningContextReason) : undefined;
 
   return { view: subject ? (learning ? 'learning' : phase === 'prueba' ? 'test' : phase === 'resultado' ? 'results' : 'hub') : 'framework', programId: program.id,
+    ...(learning && params.get('origen') ? { sourceSessionId: params.get('origen')! } : {}),
     ...(learning && params.get('evidencia') ? { evidenceKey: params.get('evidencia')! } : {}),
     ...(params.get('intento') ? { sessionId: params.get('intento')! } : {}),
     ...(contextReason ? { contextReason } : {}),
-    ...(['practice', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','simulation','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
+    ...(['practice', 'simulation', 'resources', 'temario', 'path', 'progress', 'review', ...(learning ? ['inicio','diagnostic','assessment','result'] : [])].includes(params.get('seccion') || '') ? { tab: params.get('seccion')! } : {}),
     ...(['pdf', 'specs', 'terms', 'formulas'].includes(params.get('recurso') || '') ? { resourceTab: params.get('recurso')! } : {}),
     subjectId: subject?.id, moduleId, convocatoriaId };
 }
@@ -62,6 +64,7 @@ export function routeHash(route: AppRoute): string {
   if (route.moduleId) params.set('nivel', route.moduleId);
   params.set('convocatoria', route.convocatoriaId || '2026-c2');
   if (route.view === 'learning') {
+    if (route.sourceSessionId) params.set('origen', route.sourceSessionId);
     params.set('pantalla', 'aprendizaje');
     if (route.sessionId) params.set('intento', route.sessionId);
     if (route.evidenceKey) params.set('evidencia', route.evidenceKey);

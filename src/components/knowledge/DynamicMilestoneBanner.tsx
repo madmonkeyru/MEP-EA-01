@@ -1,3 +1,4 @@
+import { ScheduleBadge } from '../common/StatusBadge';
 import React from 'react';
 import { Calendar, Clock, ExternalLink, MapPin, UserCheck } from 'lucide-react';
 import { calendarStatus } from './OfficialCalendar';
@@ -65,26 +66,12 @@ export const DynamicMilestoneBanner: React.FC<{
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {/* Registration */}
         <div className="rounded-xl border border-stone-100 bg-stone-50/70 p-3.5 dark:border-stone-800/80 dark:bg-stone-800/40 space-y-1.5">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
             <span className="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1.5">
               <UserCheck className="size-3.5 text-indigo-600 dark:text-indigo-400" />
               <span>Matrícula</span>
             </span>
-            <span
-              className={`px-2 py-0.2 rounded-full text-[10px] font-bold ${
-                calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'open'
-                  ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
-                  : calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'upcoming'
-                  ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
-                  : 'bg-stone-200 text-stone-700 dark:bg-stone-700 dark:text-stone-300'
-              }`}
-            >
-              {calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'open'
-                ? 'Abierta'
-                : calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'upcoming'
-                ? 'Próxima'
-                : calendarStatus(today, registrationEvent?.start, registrationEvent?.end) === 'pending' ? 'Por confirmar' : 'Finalizada'}
-            </span>
+            <ScheduleBadge status={calendarStatus(today, registrationEvent?.start, registrationEvent?.end)} />
           </div>
           <p className="text-xs text-stone-600 dark:text-stone-400">
             {registrationEvent?.start && registrationEvent?.end
@@ -95,7 +82,7 @@ export const DynamicMilestoneBanner: React.FC<{
 
         {/* Sites */}
         <div className="rounded-xl border border-stone-100 bg-stone-50/70 p-3.5 dark:border-stone-800/80 dark:bg-stone-800/40 space-y-1.5">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
             <span className="font-semibold text-stone-700 dark:text-stone-300 flex items-center gap-1.5">
               <MapPin className="size-3.5 text-indigo-600 dark:text-indigo-400" />
               <span>Sedes</span>
@@ -111,23 +98,22 @@ export const DynamicMilestoneBanner: React.FC<{
 
         {/* Math Exam Application */}
         <div className="rounded-xl border border-indigo-100 bg-indigo-50/50 p-3.5 dark:border-indigo-950/60 dark:bg-indigo-950/20 space-y-1.5">
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
             <span className="font-bold text-indigo-900 dark:text-indigo-200 flex items-center gap-1.5">
               <Clock className="size-3.5 text-indigo-600 dark:text-indigo-400" />
               <span>Examen {subjectFilter}</span>
             </span>
-            <span className="px-2 py-0.2 rounded-full text-[10px] font-bold bg-indigo-200/80 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
-              {mathExamEvent?.start ? formatDay(mathExamEvent.start) : 'Por programar'} · {({ past: 'Realizado', open: 'Hoy', upcoming: 'Próximo', pending: 'Por confirmar' })[calendarStatus(today, mathExamEvent?.start, mathExamEvent?.end)]}
-            </span>
+            <ScheduleBadge status={calendarStatus(today, mathExamEvent?.start, mathExamEvent?.end)} />
           </div>
           <p className="text-xs text-indigo-800 dark:text-indigo-300">
+            {mathExamEvent?.start && <span className="block">{formatDay(mathExamEvent.start)}</span>}
             {mathSession ? `${mathSession.startTime} – ${mathSession.endTime} hrs (${mathSession.subject})` : 'Horario oficial DGEC'}
           </p>
         </div>
       </div>
 
       {mathExamEvent?.sourceUrl && (
-        <div className="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 pt-1">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-500 dark:text-stone-400 pt-1">
           <span>Última actualización: {formatDay(programEvents.map(event => event.verifiedOn).sort().at(-1)!)}</span>
           <a
             href={mathExamEvent.sourceUrl}

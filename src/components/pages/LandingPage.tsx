@@ -1,3 +1,5 @@
+import { StatusBadge } from '../common/StatusBadge';
+import { PageContainer, SplitPane } from '../layout/Workspace';
 import { PreparationPathView } from "../curriculum/PreparationPathView";
 import { DigitalTemarioView } from "../curriculum/DigitalTemarioView";
 import { useState } from 'react';
@@ -39,7 +41,7 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
   const tab = route?.tab || localTab;
   const resource = route?.resourceTab || localResource;
   function change(tab: string, resourceTab?: string) { if (onNavigate) navigate({ ...context, tab, resourceTab: resourceTab || context.resourceTab }); else { setLocalTab(tab); if (resourceTab) setLocalResource(resourceTab); } }
-  return <div className="subject-hub-page page-width py-8 space-y-6" data-revision={revision}>
+  return <PageContainer className="subject-hub-page" data-revision={revision}>
     <Breadcrumbs items={[{ label: 'Programas', href: '#/programas' }, { label: program?.name || 'BXM', href: routeHash({ ...context, view: 'framework', subjectId: undefined }), onClick: onNavigateHome }, { label: 'Matemáticas' }]} />
     <header className="page-intro relative isolate overflow-hidden p-6 sm:p-8 rounded-3xl">
       <svg
@@ -74,18 +76,22 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
     </header>
 
     {/* Dynamic MEP Milestones Banner */}
+    <details className="subject-schedule">
+    <summary>Fechas oficiales MEP</summary>
     <DynamicMilestoneBanner
       programId="bxm"
       convocatoriaId={context.convocatoriaId || '2026-c2'}
       subjectFilter="Matemáticas"
     />
+    </details>
 
     <Tabs
       label="Secciones de Matemáticas"
       value={tab}
       onChange={value => change(value)}
       items={[
-        { id: 'practice', label: 'Práctica y simulación' },
+        { id: 'practice', label: 'Práctica' },
+        { id: 'simulation', label: 'Simulaciones' },
         { id: 'resources', label: 'Recursos' },
         { id: 'temario', label: 'Temario Digital' },
         { id: 'path', label: 'Ruta de estudio' },
@@ -94,13 +100,13 @@ export function SubjectHubPage({ contextControls, currentUser, route, onNavigate
     >
       {tab === 'temario' ? <DigitalTemarioView onStartQuiz={onStartPractice} />
       : tab === 'path' ? <PreparationPathView programId={context.programId || 'bxm'} subjectId={context.subjectId || 'matematicas'} convocatoriaId={context.convocatoriaId || '02-2026'} onStartQuiz={onStartPractice} />
-      : tab === 'practice' ? <div className="grid lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,1fr)] gap-6 items-start"><EvaluationModulesWidget onStartPractice={onStartPractice} onStartSimulation={onStartSimulation} /><aside className="ui-surface rounded-2xl p-6 space-y-4"><h2 className="text-xl font-semibold">Tu próximo paso</h2><p>{comparable.length ? 'Última simulación completa: ' + comparable[0].scorePercentage + '%.' : 'Aún sin datos de simulación. Puedes empezar con una práctica corta y sin tiempo.'}</p><p className="muted">Las prácticas de aprendizaje y las simulaciones se muestran por separado. El resultado no predice una nota oficial.</p><button className="secondary-button" onClick={() => change('progress')}>Ver historial de este perfil</button><button className="secondary-button" onClick={() => change('resources', 'pdf')}>Buscar materiales oficiales</button></aside></div>
+      : (tab === 'practice' || tab === 'simulation') ? <SplitPane><EvaluationModulesWidget key={tab} initialMode={tab === 'simulation' ? 'simulation' : 'area'} onStartPractice={onStartPractice} onStartSimulation={onStartSimulation} /><aside className="ui-surface rounded-2xl p-6 space-y-4"><h2 className="text-xl font-semibold">Tu próximo paso</h2><p>{comparable.length ? 'Última simulación completa: ' + comparable[0].scorePercentage + '%.' : 'Aún sin datos de simulación. Puedes empezar con una práctica corta y sin tiempo.'}</p><p className="muted">Las prácticas de aprendizaje y las simulaciones se muestran por separado. El resultado no predice una nota oficial.</p><button className="secondary-button" onClick={() => change('progress')}>Ver historial de este perfil</button><button className="secondary-button" onClick={() => change('resources', 'pdf')}>Buscar materiales oficiales</button></aside></SplitPane>
       : tab === 'resources' ? <Tabs label="Tipo de recurso" value={resource} onChange={value => change('resources', value)} items={[{ id: 'pdf', label: 'PDF oficiales' }, { id: 'specs', label: 'Temario' }, { id: 'terms', label: 'Diccionario' }, { id: 'formulas', label: 'Fórmulas' }]}>
         {resource === 'pdf' ? <OfficialResources programId="bxm" subjectId="matematicas" /> : resource === 'specs' ? <SpecsTable onStartPracticeByItems={onStartPracticeByItems} onOpenLesson={() => change('path')} /> : resource === 'terms' ? <TermsDictionary onPractice={onStartPractice} /> : <FormulasSheet />}
-      </Tabs> : <section className="ui-surface rounded-2xl p-6 space-y-5"><div className="flex flex-wrap justify-between gap-3"><h2 className="text-xl font-semibold">Historial de este perfil</h2><button className="secondary-button" disabled={!attempts.length} onClick={() => setClearHistory(true)}>Eliminar todo el historial</button></div><p className="muted">Solo Matemáticas BXM y esta convocatoria. Guardado en este navegador; borrar sus datos elimina el historial. Cambiar de perfil no mezcla los resultados.</p>{!attempts.length && <p>Aún sin intentos. Tu primer resultado aparecerá aquí.</p>}{attempts.map(a => <article key={a.id} className="history-row"><div><h3 className="font-semibold">{a.session ? modeLabel(a.session.config) : a.scopeText}</h3><p>{new Date(a.timestamp).toLocaleString('es-CR')} · {a.correctCount}/{a.totalItems} correctas · {a.scorePercentage}%</p></div><div className="action-row">{a.session ? <a className="text-link" href={routeHash({ ...context, view: 'results', sessionId: a.id })}>Revisar resultado</a> : <span className="muted">Registro antiguo sin detalle guardado</span>}<button className="secondary-button" onClick={() => setDeleting(a.id)}>Eliminar</button></div></article>)}{undone && <p role="status">Registro eliminado. <button className="text-link" onClick={() => { storageService.saveAttempt(undone); setUndone(null); setRevision(value => value + 1); }}>Deshacer</button></p>}{error && <p role="alert">{error}</p>}</section>}
+      </Tabs> : <section className="ui-surface rounded-2xl p-6 space-y-5"><div className="flex flex-wrap justify-between gap-3"><h2 className="text-xl font-semibold">Historial de este perfil</h2><button className="secondary-button" disabled={!attempts.length} onClick={() => setClearHistory(true)}>Eliminar todo el historial</button></div><p className="muted">Solo Matemáticas BXM y esta convocatoria. Guardado en este navegador; borrar sus datos elimina el historial. Cambiar de perfil no mezcla los resultados.</p>{!attempts.length && <p>Aún sin intentos. Tu primer resultado aparecerá aquí.</p>}{attempts.map(a => <article key={a.id} className="history-row"><div><h3 className="font-semibold">{a.session ? modeLabel(a.session.config) : a.scopeText}</h3><StatusBadge status="completed" /><p>{new Date(a.timestamp).toLocaleString('es-CR')} · {a.correctCount}/{a.totalItems} correctas · {a.scorePercentage}%</p></div><div className="action-row">{a.session ? <a className="text-link" href={routeHash({ ...context, view: 'results', sessionId: a.id })}>Revisar resultado</a> : <span className="muted">Registro antiguo sin detalle guardado</span>}<button className="secondary-button" onClick={() => setDeleting(a.id)}>Eliminar</button></div></article>)}{undone && <p role="status">Registro eliminado. <button className="text-link" onClick={() => { storageService.saveAttempt(undone); setUndone(null); setRevision(value => value + 1); }}>Deshacer</button></p>}{error && <p role="alert">{error}</p>}</section>}
     </Tabs>
     {clearHistory && <Dialog title="¿Eliminar todo el historial?" onClose={() => setClearHistory(false)}><p>Se eliminarán {attempts.length} resultados de Matemáticas BXM de esta convocatoria y este perfil. Los otros perfiles y convocatorias se conservan. Esta acción no se puede deshacer.</p><div className="action-row"><button className="secondary-button" onClick={() => setClearHistory(false)}>Cancelar</button><button className="primary-button" onClick={() => { if (storageService.deleteContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: context.convocatoriaId }, currentUser?.id || 'guest')) { setUndone(null); setClearHistory(false); setError(''); setRevision(value => value + 1); } else setError(storageService.lastError); }}>Sí, eliminar todos</button></div>{error && <p role="alert">{error}</p>}</Dialog>}
     {deleting && <Dialog title="¿Eliminar este resultado?" onClose={() => setDeleting(null)}><p>Solo se eliminará este registro del perfil actual.</p><button className="primary-button" onClick={() => { const previous = attempts.find(a => a.id === deleting)!; if (storageService.deleteAttempt(deleting)) { setUndone(previous); setRevision(value => value + 1); setDeleting(null); } else setError(storageService.lastError); }}>Eliminar resultado</button></Dialog>}
-  </div>;
+  </PageContainer>;
 }
 export const LandingPage = SubjectHubPage;

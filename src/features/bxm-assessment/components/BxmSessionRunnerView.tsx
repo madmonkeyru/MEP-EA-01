@@ -457,7 +457,7 @@ export const BxmSessionResultBreakdownView: React.FC<{
         <div>
           <h2 className="text-xl font-bold">Tu resultado</h2>
           <p className="text-xs text-stone-500">
-            {result.kind === 'diagnostic' ? 'Diagnóstico completado' : result.mode === 'exam' ? 'Simulación completada' : 'Práctica completada'}
+            {result.kind === 'diagnostic' ? 'Diagnóstico completado' : result.kind === 'retest' ? 'Comprobación sin ayudas completada' : result.kind === 'mastery_check' ? 'Comprobación de dominio completada' : result.kind === 'mock_exam' ? 'Simulacro de práctica completado' : 'Práctica completada'}
           </p>
         </div>
         {onExit && (

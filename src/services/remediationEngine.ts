@@ -5,6 +5,7 @@ import { storageService } from './storageService';
 type RemediationDomain = 'numbers' | 'geometry' | 'measurement' | 'algebra' | 'statistics';
 
 export interface ConceptRemediationItem {
+  evidenceKeys?: string[];
   conceptId: string;
   conceptName: string;
   domain: RemediationDomain;
@@ -26,6 +27,7 @@ export interface DomainRemediationSummary {
 }
 
 export interface RemediationPlan {
+  userId?: string;
   id: string;
   sessionId: string;
   generatedAt: string;
@@ -197,7 +199,7 @@ export function generateRemediationPlan(session: TestSession): RemediationPlan {
   const domains: RemediationDomain[] = ['geometry', 'algebra', 'statistics'];
   if (domainMap.numbers.total) domains.unshift('numbers');
   if (domainMap.measurement.total) domains.splice(domains.indexOf('geometry') + 1, 0, 'measurement');
-  const domainSummaries: DomainRemediationSummary[] = domains.map((dom) => {
+  const domainSummaries: DomainRemediationSummary[] = domains.filter(dom => domainMap[dom].total > 0).map((dom) => {
     const domData = domainMap[dom];
     const acc = domData.total > 0 ? Math.round(((domData.total - domData.incorrect) / domData.total) * 100) : 0;
     let status: 'critical' | 'needs_reinforcement' | 'mastered' = 'mastered';
@@ -227,6 +229,7 @@ export function generateRemediationPlan(session: TestSession): RemediationPlan {
   suggestedNextSteps.push('Realizar una prueba de 10 preguntas aleatorias de refuerzo antes del simulacro completo.');
 
   const plan: RemediationPlan = {
+    userId: session.userId,
     id: `plan-${Date.now()}-${session.sessionId.slice(0, 8)}`,
     sessionId: session.sessionId,
     generatedAt: new Date().toISOString(),
@@ -307,7 +310,14 @@ export function generateRemediationPlanFromSessionResult(result: SessionResultEx
     isCompleted: true,
   };
 
-  return generateRemediationPlan(pseudoSession);
+  const plan = generateRemediationPlan(pseudoSession);
+  for (const concept of plan.weakConcepts) {
+    concept.evidenceKeys = [...new Set(result.itemSnapshots.filter(snapshot =>
+      mapConceptId(snapshot.conceptId, snapshot.domain) === concept.conceptId &&
+      !result.attempts[String(snapshot.id)]?.firstResponse?.isCorrect
+    ).map(snapshot => snapshot.evidenceId))];
+  }
+  return plan;
 }
 
 function hashString(str: string): number {
@@ -340,11 +350,12 @@ function mapConceptId(id?: string, domain?: string): string {
   return clean;
 }
 
-const ACTIVE_PLAN_KEY = 'mep_ea_active_remediation_plan';
+const activePlanKey = (userId: string) => `mep_ea_active_remediation_plan:${encodeURIComponent(userId)}`;
+const currentLearner = () => storageService.getCurrentUser()?.id || 'guest';
 
 export function saveActiveRemediationPlan(plan: RemediationPlan): void {
   try {
-    localStorage.setItem(ACTIVE_PLAN_KEY, JSON.stringify(plan));
+    localStorage.setItem(activePlanKey(plan.userId || currentLearner()), JSON.stringify(plan));
     // Log telemetry funnel transition: diagnostic completed -> remediation generated
     storageService.logTelemetryEvent(
       'remediation_started',
@@ -358,18 +369,18 @@ export function saveActiveRemediationPlan(plan: RemediationPlan): void {
   }
 }
 
-export function getActiveRemediationPlan(): RemediationPlan | null {
+export function getActiveRemediationPlan(userId = currentLearner()): RemediationPlan | null {
   try {
-    const raw = localStorage.getItem(ACTIVE_PLAN_KEY);
+    const raw = localStorage.getItem(activePlanKey(userId));
     return raw ? JSON.parse(raw) as RemediationPlan : null;
   } catch {
     return null;
   }
 }
 
-export function clearActiveRemediationPlan(): void {
+export function clearActiveRemediationPlan(userId = currentLearner()): void {
   try {
-    localStorage.removeItem(ACTIVE_PLAN_KEY);
+    localStorage.removeItem(activePlanKey(userId));
   } catch {
     // Non-fatal
   }

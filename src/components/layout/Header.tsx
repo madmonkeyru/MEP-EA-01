@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, UserRound } from 'lucide-react';
+import { appNavigation } from '../../services/appNavigation';
+import type { AppRoute } from '../../services/navigation';
 import type { User } from '../../types';
 import { programManifest } from '../../services/programCatalog';
 import { storageService } from '../../services/storageService';
@@ -10,9 +12,9 @@ import { PaywallModal } from '../common/PaywallModal';
 import { Dialog } from '../common/Dialog';
 import { useTheme, type Theme } from '../../context/ThemeContext';
 
-export function Header({ currentUser, onUserChanged, onNavigateHome, currentView = 'landing', programId = programManifest.default_program, onProgramChange, onOpenHelper }: {
+export function Header({ currentUser, onUserChanged, onNavigateHome, currentView = 'landing', programId = programManifest.default_program, onProgramChange, onOpenHelper, route }: {
   currentUser: User | null; onUserChanged: (user: User | null) => void; onNavigateHome: () => void;
-  currentView?: string; programId?: string; onProgramChange?: (id: string) => void; onOpenHelper?: () => void;
+  route?: AppRoute; currentView?: string; programId?: string; onProgramChange?: (id: string) => void; onOpenHelper?: () => void;
 }) {
   const [profile, setProfile] = useState(false);
   const [account, setAccount] = useState(false);
@@ -28,11 +30,15 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
   }, []);
   const showProgramSelect = ['framework', 'hub', 'learning', 'resources', 'results'].includes(currentView);
   const programOptions = programManifest.programs.map(p => ({ value: p.id, label: p.name }));
-  const links = <>
-    <a href="#/programas" aria-current={currentView === 'welcome' || currentView === 'framework' ? 'page' : undefined} className="header-link" onClick={() => setSidebarOpen(false)}>Programas</a>
-    <a href="#/calendario" aria-current={currentView === 'calendar' ? 'page' : undefined} className="header-link" onClick={() => setSidebarOpen(false)}>Calendario</a>
-    {onOpenHelper && <button className="header-link" onClick={() => { setSidebarOpen(false); onOpenHelper(); }}>Guía y recursos</button>}
-  </>;
+  const destinations = appNavigation(route || { view: currentView as AppRoute['view'], programId });
+  const links = <>{destinations.map(item => <a key={item.label} href={item.href}
+    aria-current={item.active ? 'page' : undefined} className="header-link"
+    onClick={event => {
+      setSidebarOpen(false);
+      if (item.label === 'Guía y recursos' && onOpenHelper && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.button === 0) {
+        event.preventDefault(); onOpenHelper();
+      }
+    }}>{item.label}</a>)}</>;
   return <>
     <header ref={header} className="ui-header app-header">
       <div className="page-width flex items-center justify-between gap-3 py-2">
@@ -40,7 +46,7 @@ export function Header({ currentUser, onUserChanged, onNavigateHome, currentView
           <img className="brand-logo" src="/logo_yiguirro_cr_high_fidelity.svg" alt="Yigüirro de Costa Rica" />
           <div className="min-w-0"><strong className="text-sm">MEP-EA-01</strong><span className="truncate">Educación Abierta Digital</span></div>
         </a>
-        <nav aria-label="Navegación principal" className="hidden md:!flex items-center gap-1">{links}</nav>
+        <nav aria-label="Navegación principal" className="app-primary-nav items-center gap-1">{links}</nav>
         <div className="flex items-center gap-1">
           <div className="hidden lg:block"><ThemeToggle /></div>
           <button className="header-link account-trigger" aria-label={currentUser ? `Perfil: ${currentUser.name}` : 'Perfil'} aria-haspopup="dialog" onClick={() => setAccount(true)}><UserRound size={18} aria-hidden="true" /><span className="hidden sm:inline truncate max-w-28">{currentUser?.name || 'Perfil'}</span></button>

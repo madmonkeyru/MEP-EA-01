@@ -150,7 +150,7 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
   return <div className="test-shell">
     <header ref={examHeader} className="exam-header"><div className="page-width flex flex-wrap items-center justify-between gap-3">
       <div><p className="font-semibold">{modeLabel(config)}</p><p className="text-sm">{answered}/{items.length} respondidas · {flagged} marcadas</p></div>
-      <div className="action-row items-center"><ThemeToggle /><button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>
+      <div className="action-row items-center"><ThemeToggle />{config.remediation?.stage !== 'retest' && <button className="secondary-button" onClick={() => setOverlay('formulas')}>Fórmulas</button>}
         <ExamClock enabled={config.enableTimer} deadline={session.deadline} startTime={session.startTime} onExpire={submit} />
         <button className="primary-button" onClick={() => setOverlay('submit')}>Finalizar</button></div>
     </div></header>
@@ -210,7 +210,7 @@ export function TestShell({ config, initialSession, onFinishTest, onLeave }: {
       </section>
     </div>
     {overlay === 'navigator' && <Dialog title="Preguntas de la prueba" onClose={() => setOverlay(null)}>{navigator}</Dialog>}
-    {overlay === 'formulas' && <Dialog title="Fórmulas de referencia" onClose={() => setOverlay(null)}><p className="muted">Material de apoyo para estudiar. Consulta el PDF oficial para identificar los anexos del examen.</p><FormulasSheet /><button className="secondary-button" onClick={() => setOverlay(null)}>Cerrar fórmulas</button></Dialog>}
+    {overlay === 'formulas' && config.remediation?.stage !== 'retest' && <Dialog title="Fórmulas de referencia" onClose={() => setOverlay(null)}><p className="muted">Material de apoyo para estudiar. Consulta el PDF oficial para identificar los anexos del examen.</p><FormulasSheet /><button className="secondary-button" onClick={() => setOverlay(null)}>Cerrar fórmulas</button></Dialog>}
     {overlay === 'submit' && <Dialog title="Finalizar o pausar prueba" onClose={() => setOverlay(null)}>
       <p>{answered} respondidas, {items.length - answered} sin responder y {flagged} marcadas.</p>
       <div className="space-y-3">

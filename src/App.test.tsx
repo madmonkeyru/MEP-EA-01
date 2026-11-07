@@ -34,14 +34,33 @@ function mount(hash = '#/') {
 }
 
 describe('application curriculum flows', () => {
+  it('opens the simulation configuration directly and restores it on reload', async () => {
+    const hash = '#/programas/bxm/matematicas?convocatoria=2026-c2&seccion=simulation';
+    const view = mount(hash);
+    await screen.findByRole('button', { name: 'Preparar simulación' });
+    expect(screen.getByRole('tab', { name: 'Simulaciones' })).toHaveAttribute('aria-selected', 'true');
+    view.unmount();
+    mount(hash);
+    await screen.findByRole('button', { name: 'Preparar simulación' });
+    expect(screen.getByRole('button', { name: 'Ensayar el examen' })).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  it('does not offer a sample as a complete simulation', async () => {
+    mount('#/programas/edad/matematicas?nivel=EDAD_2&convocatoria=2026-c2&seccion=simulation');
+    await screen.findByText(/No hay una simulación completa disponible/);
+    expect(screen.queryByRole('button', { name: 'Iniciar muestra' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Preparar simulación' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Práctica' }));
+    await screen.findByRole('button', { name: 'Iniciar muestra' });
+  });
   it('does not refocus the page heading when switching subject hub tabs', async () => {
     mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
-    await screen.findByRole('tab', { name: 'Práctica y simulación' });
+    await screen.findByRole('tab', { name: 'Práctica' });
     const heading = screen.getByRole('heading', { name: 'Tu espacio de Matemáticas BXM' });
     await waitFor(() => expect(heading).toHaveFocus());
     const focusHeading = vi.spyOn(heading, 'focus');
 
-    for (const name of ['Recursos', 'Temario Digital', 'Ruta de estudio', 'Mi progreso', 'Práctica y simulación']) {
+    for (const name of ['Recursos', 'Temario Digital', 'Ruta de estudio', 'Mi progreso', 'Práctica']) {
       const tab = screen.getByRole('tab', { name });
       fireEvent.click(tab);
       await waitFor(() => expect(tab).toHaveAttribute('aria-selected', 'true'));

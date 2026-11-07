@@ -1,3 +1,4 @@
+import { PageContainer } from '../layout/Workspace';
 import { dataService } from '../../services/dataService';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { ProgramInfo } from '../../types';
@@ -60,7 +61,7 @@ export function ContextControls({ program, route, onChange }: {
 export function FrameworkHubPage({ program, route, onNavigate }: {
   program: ProgramInfo; route: AppRoute; onNavigate: (route: AppRoute) => void;
 }) {
-  return <div className="page-width py-8 space-y-6">
+  return <PageContainer>
     <Breadcrumbs items={[{ label: 'Inicio', href: '#/' },
       { label: 'Programas', href: '#/programas' }, { label: program.name }]} />
     <section className="page-intro rounded-3xl p-6 sm:p-8 space-y-5">
@@ -98,7 +99,7 @@ export function FrameworkHubPage({ program, route, onNavigate }: {
       </a>)}</div></details>)}
 
     </section>
-  </div>;
+  </PageContainer>;
 }
 
 function catalogueLabel(coverage?: 'complete' | 'sample') {

@@ -73,6 +73,7 @@ export interface AssessmentItem {
 }
 
 export interface AssessmentPolicy {
+  learningContext?: { sourceSessionId: string; rootSessionId: string; evidenceKey: string };
   mode: SessionMode;
   kind: SessionKind;
   timeLimitMinutes?: number;
@@ -170,6 +171,7 @@ export interface EvidenceScoreBreakdown {
 }
 
 export interface SessionResultExport {
+  learningContext?: AssessmentPolicy['learningContext'];
   isFinalized: boolean;
   itemSnapshots: AssessmentItem[];
   deadline?: string;

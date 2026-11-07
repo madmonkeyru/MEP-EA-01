@@ -5,6 +5,7 @@ import { programManifest } from './services/programCatalog';
 import type { createSession } from './services/learningSession';
 import { validSession } from './services/sessionStorageMetadata';
 import { WizardProvider } from './components/onboarding/wizardStore';
+import { ActivityContext } from './components/layout/ActivityContext';
 import { Header } from './components/layout/Header';
 import { EntryLandingPage } from './components/pages/EntryLandingPage';
 import { WelcomePage } from './components/pages/WelcomePage';
@@ -100,7 +101,7 @@ export function App() {
   const enterMath = () => navigate({ view: 'hub', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' });
   return <WizardProvider><div className="app-shell min-h-screen flex flex-col">
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); main.current?.focus(); }}>Saltar al contenido</a>
-    {route.view !== 'test' && !(route.view === 'learning' && route.tab === 'assessment') && <Header currentUser={currentUser} onUserChanged={setCurrentUser} onNavigateHome={() => navigate({ view: 'landing' })} currentView={route.view} programId={route.programId} onOpenHelper={() => navigate({ view: 'helper', programId: route.programId, subjectId: route.subjectId, moduleId: route.moduleId })} onProgramChange={programId => {
+    {route.view !== 'test' && !(route.view === 'learning' && route.tab === 'assessment') && <Header route={route} currentUser={currentUser} onUserChanged={setCurrentUser} onNavigateHome={() => navigate({ view: 'landing' })} currentView={route.view} programId={route.programId} onOpenHelper={() => navigate({ view: 'helper', programId: route.programId, subjectId: route.subjectId, moduleId: route.moduleId })} onProgramChange={programId => {
       const target = programManifest.programs.find(program => program.id === programId);
       const subjectId = target?.subjects.find(subject => subject.id === route.subjectId)?.id;
       navigate({ view: subjectId ? 'hub' : 'framework', programId, subjectId, convocatoriaId: route.convocatoriaId });
@@ -108,6 +109,7 @@ export function App() {
     <main id="main-content" ref={main} tabIndex={-1} className="flex-1 outline-none">
       {error && <section className="page-width py-6" role="alert"><h1>No se pudo completar la carga</h1><p>{error}</p><div className="action-row"><button className="primary-button" onClick={() => setRetry(value => value + 1)}>Reintentar</button><button className="secondary-button" onClick={() => navigate({ view: 'helper', programId: route.programId })}>Consultar recursos</button></div></section>}
       {!error && <Suspense fallback={<div className="page-width py-6"><FeedbackState busy title="Preparando tu espacio de estudio…" description="Enseguida podrás continuar." /></div>}>
+        {['test', 'results'].includes(route.view) && <ActivityContext route={route} />}
         {contextReady && <RouteFocus key={["focus", route.view, contextKey, route.sessionId, route.evidenceKey].join(":")} main={main} />}
         {route.view !== 'test' && route.view !== 'results' && resumable && <section className="resume-banner page-width"><div><strong>Tienes un intento guardado</strong><p>{resumable.itemIds.length} preguntas · {resumable.config.enableTimer ? 'El tiempo continúa mientras estás fuera.' : 'Práctica sin límite de tiempo.'}</p></div><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar intento</button><button className="secondary-button" onClick={() => setDiscard(true)}>Descartar</button></div></section>}
         {route.view === 'landing' && <EntryLandingPage onOpenHelper={() => navigate({ view: 'helper' })} onExplorePrograms={() => navigate({ view: 'welcome' })} onEnterBxmHub={enterMath} />}

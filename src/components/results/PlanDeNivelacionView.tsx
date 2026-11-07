@@ -9,9 +9,13 @@ export function PlanDeNivelacionView({
   plan,
   onLaunchRemediationPractice,
   onViewFormulaSheet,
+  onLaunchGuidedPractice,
+  evidenceLabel,
 }: {
   plan: RemediationPlan;
   onLaunchRemediationPractice: (config: PracticeConfig) => void;
+  onLaunchGuidedPractice?: (evidenceKey: string) => void;
+  evidenceLabel?: (evidenceKey: string) => string;
   onViewFormulaSheet?: (conceptId: string) => void;
 }) {
   const [expandedConcept, setExpandedConcept] = useState<string | null>(plan.topPriorityDrilldowns[0]?.conceptId || null);
@@ -40,14 +44,14 @@ export function PlanDeNivelacionView({
               <Sparkles className="size-4" />
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-              Diagnóstico Adaptativo
+              Refuerzo por concepto
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-ink">
             Tu Plan Personalizado de Nivelación
           </h2>
           <p className="text-sm text-muted max-w-2xl">
-            Generado a partir de tu diagnóstico. Este plan prioriza los conceptos donde obtuviste menor precisión para maximizar tu puntaje en el menor tiempo.
+            Generado a partir de tus respuestas. Prioriza los conceptos por reforzar en este intento; puedes practicar y comprobar tu avance.
           </p>
         </div>
         <div className="rounded-2xl border border-line bg-paper px-4 py-3 text-right">
@@ -67,7 +71,7 @@ export function PlanDeNivelacionView({
           const statusLabels = {
             critical: 'Prioridad Urgente',
             needs_reinforcement: 'Reforzar Conceptos',
-            mastered: 'Dominio Aceptable',
+            mastered: 'Buen resultado en este intento',
           };
 
           return (
@@ -104,7 +108,6 @@ export function PlanDeNivelacionView({
                 className="rounded-2xl border border-line bg-paper overflow-hidden transition-all duration-200"
               >
                 <div
-                  onClick={() => setExpandedConcept(isExpanded ? null : concept.conceptId)}
                   className="p-4 cursor-pointer flex flex-wrap items-center justify-between gap-3 hover:bg-surface/50"
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -117,19 +120,11 @@ export function PlanDeNivelacionView({
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleStartDrilldown(concept.conceptId, concept.recommendedPracticeItems, concept.conceptName);
-                      }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700 transition-colors shadow-xs"
-                    >
-                      Practicar este concepto
-                      <ArrowRight className="size-3.5" />
-                    </button>
-                    <span className="text-muted p-1">
-                      {isExpanded ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-                    </span>
+                    {onLaunchGuidedPractice ? concept.evidenceKeys?.map(key => <button key={key} data-evidence-key={key} className="secondary-button" onClick={event => { event.stopPropagation(); onLaunchGuidedPractice(key); }}>Practicar: {evidenceLabel?.(key) || key}</button>) : <button
+                      onClick={event => { event.stopPropagation(); handleStartDrilldown(concept.conceptId, concept.recommendedPracticeItems, concept.conceptName); }}
+                      className="secondary-button" disabled={!concept.recommendedPracticeItems.length}
+                    >Practicar este concepto<ArrowRight className="size-3.5" /></button>}
+                    <button type="button" className="icon-button" aria-label={`Detalles de ${concept.conceptName}`} aria-expanded={isExpanded} onClick={() => setExpandedConcept(isExpanded ? null : concept.conceptId)}>{isExpanded ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}</button>
                   </div>
                 </div>
 

@@ -16,10 +16,11 @@ export function policyFor(kind: SessionKind): AssessmentPolicy {
   return { mode: exam ? 'exam' : 'study', kind, enableTimer: exam, timeLimitMinutes: kind === 'mastery_check' ? 10 : 30,
     allowHints: !exam, allowRetries: !exam, allowImmediateFeedback: !exam, allowFormulaSheet: !exam, allowCalculator: true, maxRetriesPerItem: 3 };
 }
-export interface ActivityRequest { kind: SessionKind; evidenceKey?: string; difficulty?: DifficultyTier; generated?: boolean }
+export interface ActivityRequest { kind: SessionKind; evidenceKey?: string; difficulty?: DifficultyTier; generated?: boolean; itemCount?: number; sourceSessionId?: string; rootSessionId?: string }
 export function selectActivity(request: ActivityRequest, seed: number, seenItemIds: string[] = [], seenFamilyIds: string[] = []): BlueprintSelectionResult {
   if (request.kind === 'diagnostic' || request.kind === 'mock_exam') return SelectionEngine.assembleDiagnostic(authoredPool, { seed, excludeSeenFamilyIds: seenFamilyIds });
-  const count = 5;
+  const count = request.kind === 'evidence_practice' || request.kind === 'topic_practice' ? request.itemCount ?? 5 : 5;
+  if (!Number.isInteger(count) || count < 1 || count > 100) throw new RangeError('Practice count must be an integer from 1 to 100');
   const pool = request.generated ? generateVariants(request.evidenceKey!, seed) : authoredPool;
   const items = request.kind === 'mastery_check'
     ? SelectionEngine.assembleMasteryCheck(pool, request.evidenceKey!, count, { seed })

@@ -652,6 +652,7 @@ export class SessionRunner {
       schemaVersion: '1.0.0',
       sessionId: this.sessionId,
       kind: this.policy.kind,
+      ...(this.policy.learningContext ? { learningContext: this.policy.learningContext } : {}),
       mode: this.policy.mode,
       programId: 'bxm',
       subjectId: 'matematica',

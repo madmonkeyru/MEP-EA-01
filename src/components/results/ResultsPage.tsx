@@ -1,3 +1,5 @@
+import { remediationConfig, remediationComparison, sameLearningContext } from '../../services/legacyRemediation';
+import { routeHash } from '../../services/navigation';
 import { useEffect, useState } from 'react';
 import type { Item, PracticeConfig, TestSession } from '../../types';
 import { storageService } from '../../services/storageService';
@@ -16,8 +18,7 @@ export function ResultsPage({
   onRetry,
   onNewTest,
   onGoHome,
-  onPracticeMissed,
-  onPracticeWeakestArea
+  onPracticeMissed
 }: {
   session: TestSession;
   onRetry: () => void;
@@ -54,7 +55,7 @@ export function ResultsPage({
   const visible = items.filter(item => filter === 'all' || (filter === 'correct' ? correct(item) : filter === 'pending' ? !answered(item) : answered(item) && !correct(item)));
   const missed = items.filter(item => !correct(item));
   const domains = ['numbers', 'geometry', 'measurement', 'functions', 'statistics'].map(area => { const pool = items.filter(item => item.area_id === area); return { area, total: pool.length, correct: pool.filter(correct).length }; }).filter(d => d.total);
-  const weakest = [...domains].sort((a, b) => a.correct / a.total - b.correct / b.total)[0];
+  const weakest = domains.filter(domain => domain.correct < domain.total).sort((a, b) => a.correct / a.total - b.correct / b.total)[0];
   const current = selected !== null ? items[selected] : null;
   const open = (index: number) => { setSelected(index); setRevealed(false); };
 
@@ -63,24 +64,14 @@ export function ResultsPage({
     onRetry();
   };
 
-  const handleRemediate = () => {
-    storageService.logTelemetryEvent('remediation_started', {
-      weakestArea: weakest?.area,
-      missedCount: missed.length
-    });
-    if (missed.length > 0 && onPracticeMissed) {
-      onPracticeMissed({
-        ...session.config,
-        mode: 'area',
-        itemIds: missed.map(item => item.id),
-        title: 'Refuerzo de preguntas por repasar',
-        itemCount: missed.length,
-        enableTimer: false
-      });
-    } else if (weakest && onPracticeWeakestArea) {
-      onPracticeWeakestArea(weakest.area);
-    }
-  };
+  const origin = session.config.remediation ? storageService.getResult(session.config.remediation.rootSessionId, session.userId) : null;
+  const baseline = origin && sameLearningContext(session, origin) ? origin : null;
+  const comparison = remediationComparison(session, baseline);
+  function launchRemediation(ids: number[], label: string, stage: 'practice' | 'retest' = 'practice') {
+    const config = remediationConfig(session, ids, label, stage);
+    if (config && onPracticeMissed) onPracticeMissed(config);
+  }
+  const handleRemediate = () => launchRemediation(missed.map(item => item.id), 'Preguntas por repasar');
 
   function download() {
     const summary = [modeLabel(session.config), 'Referencia: ' + (session.config.convocatoriaId || '2026-c2'), 'Resultado: ' + score + '%', correctCount + ' correctas; ' + (total - correctCount - unanswered) + ' incorrectas; ' + unanswered + ' sin responder', 'Duración: ' + Math.floor(session.elapsedSeconds / 60) + ' minutos', ...domains.map(d => areaLabel(d.area) + ': ' + d.correct + '/' + d.total), ...missed.map(item => 'Repasar pregunta ' + (items.indexOf(item) + 1) + ': ' + item.topic)].join('\n');
@@ -103,10 +94,11 @@ export function ResultsPage({
         {correctCount} Correctas · {total - correctCount - unanswered} Incorrectas · {unanswered} Sin responder · {Math.floor(session.elapsedSeconds / 60)} min {session.elapsedSeconds % 60} s
       </p>
       <p className="text-sm text-stone-600 dark:text-stone-400">
-        {isExam(session.config) ? 'Nota de referencia del programa: ' + (session.passingScore || 70) + '. Este resultado corresponde a una simulación independiente.' : session.config.mode === 'diagnostic' ? 'Diagnóstico rápido completado: revisa tus áreas y sigue la recomendación de estudio abajo.' : 'Práctica de aprendizaje: el porcentaje refleja tus primeras respuestas, no una predicción de la nota del examen.'}
+        {session.config.remediation?.stage === 'retest' ? 'Comprobación sin ayudas sobre preguntas ya practicadas. Este resultado no certifica dominio ni equivale a una nueva evaluación independiente.' : isExam(session.config) ? 'Nota de referencia del programa: ' + (session.passingScore || 70) + '. Este resultado corresponde a una simulación independiente.' : session.config.mode === 'diagnostic' ? 'Diagnóstico rápido completado: revisa tus áreas y sigue la recomendación de estudio abajo.' : 'Práctica de aprendizaje: el porcentaje refleja tus primeras respuestas, no una predicción de la nota del examen.'}
       </p>
       <div className="action-row">
-        {missed.length > 0 && <button className="primary-button font-semibold" onClick={handleRemediate}>Reforzar preguntas falladas ({missed.length})</button>}
+        {session.config.remediation?.stage === 'practice' && onPracticeMissed && <button className="primary-button" onClick={() => launchRemediation(session.itemIds, session.config.remediation!.label, 'retest')}>Comprobar sin ayudas</button>}
+        {missed.length > 0 && onPracticeMissed && <button className={session.config.remediation?.stage === 'practice' ? 'secondary-button' : 'primary-button'} onClick={handleRemediate}>Reforzar preguntas falladas ({missed.length})</button>}
         <button className="secondary-button" onClick={handleRetry}>Repetir estas preguntas</button>
         <button className="secondary-button" onClick={onNewTest}>Elegir otra práctica</button>
         <button className="secondary-button" onClick={onGoHome}>Volver a Matemáticas</button>
@@ -115,12 +107,21 @@ export function ResultsPage({
       {saveError && <p role="alert">{saveError}</p>}
     </header>
 
+    {session.config.remediation && <section className="workspace-section" aria-label="Seguimiento del refuerzo">
+      <h2>{session.config.remediation.stage === 'retest' ? 'Tu avance después del refuerzo' : 'Después de practicar, comprueba tu avance'}</h2>
+      {comparison && <p>En las mismas {comparison.total} preguntas: {comparison.before}/{comparison.total} correctas antes del refuerzo → {comparison.after}/{comparison.total} en este intento.</p>}
+      <p>Estas preguntas ya fueron vistas. Repite sin consultar las explicaciones y utiliza una nueva práctica para ampliar la evidencia de aprendizaje.</p>
+      {baseline && <a className="text-link" href={routeHash({ view: 'results', programId: session.config.programId || 'bxm', subjectId: session.config.subjectId || 'matematicas', moduleId: session.config.subprogramId, convocatoriaId: session.config.convocatoriaId, tab: session.config.reviewDraft ? 'review' : undefined, sessionId: baseline.sessionId })}>Ver resultado de origen</a>}
+      {!baseline && <p>El resultado de origen ya no está disponible en este perfil. Puedes continuar practicando.</p>}
+    </section>}
+    {domains.some(domain => domain.correct === domain.total) && <section className="workspace-section"><h2>Fortalezas en este intento</h2><p>{domains.filter(domain => domain.correct === domain.total).map(domain => `${areaLabel(domain.area)} · ${domain.correct}/${domain.total}`).join(' · ')}</p><p className="muted">Solo refleja las preguntas evaluadas en este intento.</p></section>}
+    {!missed.length && <p role="status">No quedaron preguntas por reforzar en este intento. Puedes continuar con una nueva práctica o volver a tu materia.</p>}
     {/* Plan de Nivelación (if session is a diagnostic or has generated plan) */}
-    {remediationPlan && (
+    {remediationPlan && remediationPlan.topPriorityDrilldowns.length > 0 && (
       <PlanDeNivelacionView
         plan={remediationPlan}
         onLaunchRemediationPractice={(config) => {
-          if (onPracticeMissed) onPracticeMissed(config);
+          launchRemediation(config.itemIds || [], config.title || 'Concepto por reforzar');
         }}
       />
     )}
@@ -148,6 +149,7 @@ export function ResultsPage({
                 <span className="text-xs text-stone-500 dark:text-stone-400 block font-medium">{areaLabel(d.area)}</span>
                 <span className="text-lg font-bold text-stone-900 dark:text-stone-100">{d.correct} / {d.total}</span>
                 <span className="text-xs text-stone-600 dark:text-stone-400 ml-1.5 font-semibold">({domainPct}%)</span>
+                {d.correct < d.total && onPracticeMissed && <button className="text-link block" onClick={() => launchRemediation(missed.filter(item => item.area_id === d.area).map(item => item.id), areaLabel(d.area))}>Practicar {areaLabel(d.area)}</button>}
               </div>
             );
           })}

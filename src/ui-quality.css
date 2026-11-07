@@ -1,10 +1,51 @@
 /* UX quality pass: shared application chrome and explicit context density. */
 :root {
+  --space-xs: .25rem;
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
   --type-page: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   --type-section: 1.25rem;
   --type-card: 1.0625rem;
   --type-meta: .875rem;
   --control-radius: 8px;
+}
+.workspace-page { min-width: 0; padding-block: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-lg); }
+.workspace-section { min-width: 0; padding: var(--space-lg); display: grid; gap: var(--space-md); border: 1px solid var(--border-subtle); border-radius: var(--control-radius); background: var(--surface); }
+.workspace-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
+.workspace-split > * { min-width: 0; }
+.learning-configuration { display: grid; gap: var(--space-lg); min-width: 0; }
+.learning-configuration fieldset { min-width: 0; display: grid; gap: var(--space-sm); }
+.configuration-scope { gap: var(--space-md); }
+.configuration-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); }
+.configuration-controls label, .configuration-scope > label { display: grid; gap: var(--space-sm); min-width: 0; }
+.configuration-controls select, .configuration-controls input, .configuration-scope select { width: 100%; max-width: 100%; min-width: 0; }
+.assessment-summary { border-block: 1px solid var(--border-subtle); padding-block: var(--space-md); display: grid; gap: var(--space-sm); }
+.assessment-summary-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
+.assessment-summary-details dt { color: var(--text-muted); font-size: var(--type-meta); }
+.assessment-summary-details dd { margin: 0; overflow-wrap: anywhere; }
+.configuration-submit { justify-self: end; }
+@media (max-width: 639px) {
+  .configuration-controls, .assessment-summary-details { grid-template-columns: minmax(0, 1fr); }
+  .configuration-submit { justify-self: stretch; }
+}
+.subject-hub-page .page-intro { padding: var(--space-lg); border-radius: var(--control-radius); }
+.subject-schedule { border-block: 1px solid var(--border-subtle); }
+.subject-schedule > summary { display: list-item; padding: .75rem .25rem; min-height: 44px; font-size: var(--type-meta); font-weight: 600; cursor: pointer; }
+.subject-schedule[open] > summary { margin-bottom: var(--space-sm); }
+.status-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: .2rem .5rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-size: var(--type-meta); line-height: 1.4; font-weight: 500; background: var(--bg-secondary); color: var(--text-primary); }
+.status-badge[data-tone="positive"] { color: #166534; background: #f0fdf4; border-color: #bbf7d0; }
+.status-badge[data-tone="info"] { color: #3730a3; background: #eef2ff; border-color: #c7d2fe; }
+.status-badge[data-tone="attention"] { color: #92400e; background: #fffbeb; border-color: #fde68a; }
+.dark .status-badge[data-tone="positive"] { color: #bbf7d0; background: #14532d; border-color: #166534; }
+.dark .status-badge[data-tone="info"] { color: #e0e7ff; background: #312e81; border-color: #4338ca; }
+.dark .status-badge[data-tone="attention"] { color: #fde68a; background: #78350f; border-color: #92400e; }
+@media (min-width: 1024px) { .workspace-split { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); } }
+@media (max-width: 639px) {
+  .workspace-page { gap: var(--space-md); padding-block: var(--space-md); }
+  .workspace-section { padding: var(--space-md); }
 }
 .app-shell h1 { font-size: var(--type-page); font-weight: 650; }
 .app-shell h2 { font-size: var(--type-section); }
@@ -130,3 +171,19 @@
 .calendar-event-card[data-status="upcoming"] { border-inline-start-color: var(--accent, #6366f1); }
 .calendar-event-card[data-status="open"] { border-inline-start-color: #059669; }
 .calendar-event-card[data-status="pending"] { border-inline-start-style: dashed; }
+
+/* Shell breakpoints leave room for the complete contextual navigation. */
+.app-primary-nav { display: none; }
+.activity-context { padding-block: .75rem; }
+.activity-context-back { display: none; min-height: 44px; align-items: center; }
+@media (min-width: 1200px) {
+  .app-primary-nav { display: flex; }
+  .app-header .mobile-menu-trigger { display: none; }
+}
+@media (max-width: 1199px) {
+  .app-header .mobile-menu-trigger { display: inline-flex; }
+}
+@media (max-width: 639px) {
+  .activity-context-trail { display: none; }
+  .activity-context-back { display: inline-flex; }
+}

@@ -5,7 +5,7 @@ import { knowledgeService } from '../../services/knowledgeService';
 import { storageService } from '../../services/storageService';
 import { subscriptionService, type SubscriptionTier } from '../../services/subscriptionService';
 import { prepareItems, modeLabel, isExam } from '../../services/learningSession';
-import { Dialog } from '../common/Dialog';
+import { LearningConfiguration, AssessmentBriefing } from './LearningConfiguration';
 import { CustomSelect } from '../common/CustomSelect';
 import { PaywallModal } from '../common/PaywallModal';
 import { Compass } from 'lucide-react';
@@ -88,6 +88,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   };
 
   function start() {
+    if (count !== 'all' && (!Number.isInteger(count) || count < 1 || count > 100)) { setError('Elige entre 1 y 100 preguntas.'); return; }
     if (!eligible || (mode === 'concept_drilldown' && !concept)) { setError('Elige una selección con preguntas disponibles.'); return; }
     if (config.enableTimer && (!Number.isFinite(config.timerDurationMinutes) || config.timerDurationMinutes < 5 || config.timerDurationMinutes > 180)) { setError('El tiempo debe ser de 5 a 180 minutos.'); return; }
     if (isExam(config) && actual < 60) { setError('No hay 60 preguntas disponibles para esta simulación. Cambia el conjunto.'); return; }
@@ -143,13 +144,6 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
     ...dataService.getTopicsByArea(area, set).map(t => ({ value: t, label: t })),
   ];
 
-  const countOptions = [
-    { value: '5', label: '5 preguntas' },
-    { value: '10', label: '10 preguntas' },
-    { value: '20', label: '20 preguntas' },
-    { value: 'all', label: 'Todas las disponibles' },
-  ];
-
   return (
     <section className="study-config ui-surface rounded-2xl p-5 sm:p-7 space-y-4" aria-labelledby="practice-config-title">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-stone-200 dark:border-stone-700/60 pb-4">
@@ -174,38 +168,29 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
         </div>
       </div>
 
-      {/* Goal Selector: 3 Clear Pillars */}
-      <fieldset>
-        <legend className="field-legend mb-2">Tu objetivo</legend>
-        <div className="action-row flex flex-wrap gap-2">
-          <button
-            type="button"
-            className={goal === 'practice' ? 'primary-button' : 'secondary-button'}
-            aria-pressed={goal === 'practice'}
-            onClick={() => selectGoal('practice')}
-          >
-            Aprender y repasar
-          </button>
-          <button
-            type="button"
-            className={goal === 'diagnostic' ? 'primary-button' : 'secondary-button'}
-            aria-pressed={goal === 'diagnostic'}
-            onClick={() => selectGoal('diagnostic')}
-          >
-            Diagnóstico Rápido
-          </button>
-          <button
-            type="button"
-            className={goal === 'exam' ? 'primary-button' : 'secondary-button'}
-            aria-pressed={goal === 'exam'}
-            onClick={() => selectGoal('exam')}
-          >
-            Ensayar el examen
-          </button>
-        </div>
-      </fieldset>
-
-      <form className="form-stack study-config-grid pt-2" onSubmit={event => { event.preventDefault(); start(); }}>
+      <LearningConfiguration
+        modes={[{ value: 'practice', label: 'Aprender y repasar' }, { value: 'diagnostic', label: 'Diagnóstico Rápido' }, { value: 'exam', label: 'Ensayar el examen' }]}
+        mode={goal} onModeChange={value => selectGoal(value as 'practice' | 'diagnostic' | 'exam')}
+        difficulty={goal === 'practice' ? { value: difficulty, onChange: value => { setDifficulty(value); setError(''); } } : undefined}
+        quantity={goal === 'practice' ? { value: count, onChange: setCount, allowAll: true } : undefined}
+        summary={{ requested: config.itemCount === 'all' ? eligible : config.itemCount, actual, available: eligible,
+          scope: goal === 'diagnostic' || goal === 'exam' ? 'Todo el programa' : mode === 'topic' ? topic : mode === 'concept_drilldown' ? concepts.find(c => c.id === concept)?.term || 'Elige un concepto' : mode === 'random_practice' ? 'Preguntas variadas' : areaOptions.find(option => option.value === area)?.label || 'Área temática',
+          difficulty: config.difficultyTier, timerMinutes: config.enableTimer ? config.timerDurationMinutes : undefined }}
+        error={error} onSubmit={start}
+        submitLabel={goal === 'diagnostic' ? 'Iniciar Diagnóstico (8 ítems)' : isExam(config) ? 'Preparar simulación' : 'Iniciar práctica'}
+        timing={goal === 'practice' ? <div className="configuration-timing">
+            <label className="inline-choice">
+              <input type="checkbox" checked={timed} onChange={e => setTimed(e.target.checked)} />
+              Practicar con límite de tiempo
+            </label>
+            {timed && (
+              <label>Duración en minutos
+                <input type="number" min={5} max={180} required value={minutes || ''} onChange={e => setMinutes(Number(e.target.value))} />
+              </label>
+            )}
+            <p className="muted">Puedes comprobar cada respuesta para aprender. Una vez verificada, se conserva tu primera elección.</p>
+        </div> : undefined}
+        scope={<>
         {goal === 'diagnostic' && (
           <div className="bg-stone-50 dark:bg-stone-900/40 rounded-xl p-4 border border-stone-200 dark:border-stone-700/60 space-y-3">
             <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-medium text-sm">
@@ -297,57 +282,16 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
                 />
               </label>
             )}
-            <label>Dificultad
-              <CustomSelect
-                label="Dificultad"
-                value={difficulty === undefined ? 'all' : String(difficulty)}
-                options={[
-                  { value: 'all', label: 'Todos los niveles' },
-                  { value: '1', label: 'Nivel 1 · Básico' },
-                  { value: '2', label: 'Nivel 2 · Intermedio' },
-                  { value: '3', label: 'Nivel 3 · Avanzado' },
-                ]}
-                onChange={value => {
-                  setDifficulty(value === 'all' ? undefined : Number(value) as DifficultyTier);
-                  setError('');
-                }}
-              />
-            </label>
-            <label>Cantidad de preguntas
-              <CustomSelect
-                label="Cantidad de preguntas"
-                value={String(count)}
-                options={countOptions}
-                onChange={val => setCount(val === 'all' ? 'all' : Number(val))}
-              />
-            </label>
-            <label className="inline-choice">
-              <input type="checkbox" checked={timed} onChange={e => setTimed(e.target.checked)} />
-              Practicar con límite de tiempo
-            </label>
-            {timed && (
-              <label>Duración en minutos
-                <input type="number" min={5} max={180} required value={minutes || ''} onChange={e => setMinutes(Number(e.target.value))} />
-              </label>
-            )}
-            <p className="muted">Puedes comprobar cada respuesta para aprender. Una vez verificada, se conserva tu primera elección.</p>
           </>
         )}
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-stone-200 dark:border-stone-700/60">
-          <p role="status" className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
-            {eligible} preguntas en banco. Este intento tendrá <strong>{actual}</strong>
-            {!isExam(config) && mode !== 'diagnostic' && count !== 'all' && count > eligible ? ' (ajustado)' : ''}.
-          </p>
-          {error && <p role="alert" className="error-message text-sm text-red-600 dark:text-red-400">{error}</p>}
-          <button className="primary-button self-stretch sm:self-auto py-2.5 px-6 font-semibold" disabled={!actual}>
-            {goal === 'diagnostic' ? 'Iniciar Diagnóstico (8 ítems)' : isExam(config) ? 'Preparar simulación' : 'Iniciar práctica'}
-          </button>
-        </div>
-      </form>
+        </>}
+      />
 
       {preflight && (
-        <Dialog title="Antes de comenzar" onClose={() => setPreflight(null)}>
+        <AssessmentBriefing title="Antes de comenzar" onClose={() => setPreflight(null)}
+          summary={{ requested: 60, actual: Number(preflight.itemCount), scope: 'Todo el programa', timerMinutes: preflight.timerDurationMinutes }}
+          startLabel="Iniciar simulación" onStart={() => { const selected = preflight; setPreflight(null); if (selected.mode === 'simulation') onStartSimulation(); else onStartPractice(selected); }}>
           <h3 className="font-bold text-lg mb-2">{modeLabel(preflight)}</h3>
           <p className="text-sm mb-2">Matemáticas BXM · Referencia 02-2026 · 60 preguntas · 150 minutos.</p>
           <p className="text-sm text-stone-600 dark:text-stone-300 mb-2">
@@ -356,18 +300,7 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
           <p className="text-xs text-stone-500 dark:text-stone-400 mb-4">
             Fórmulas: apoyo de estudio disponible. Calculadora no programable. Esta práctica independiente no equivale a una prueba ni matrícula del MEP.
           </p>
-          <button
-            className="primary-button w-full py-2.5"
-            onClick={() => {
-              const selected = preflight;
-              setPreflight(null);
-              if (selected.mode === 'simulation') onStartSimulation();
-              else onStartPractice(selected);
-            }}
-          >
-            Iniciar simulación
-          </button>
-        </Dialog>
+        </AssessmentBriefing>
       )}
 
       <PaywallModal

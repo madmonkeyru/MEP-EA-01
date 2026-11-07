@@ -79,6 +79,7 @@ describe('BxmLearningHub - Sprint 5 Freemium Matrix', () => {
       />
     );
 
+    fireEvent.click(screen.getByText('Más opciones de práctica'));
     const variantBtn = screen.getByRole('button', { name: /Practicar variantes/i });
     fireEvent.click(variantBtn);
 

@@ -1,3 +1,4 @@
+import { LearningConfiguration, AssessmentBriefing } from '../../components/practice/LearningConfiguration';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { AppRoute, LearningContextReason } from '../../services/navigation';
 import { storageService } from '../../services/storageService';
@@ -19,7 +20,6 @@ import { computeEvidenceMasteryRecords } from '../bxm-progress/domain/masteryEng
 import { PlanDeNivelacionView } from '../../components/results/PlanDeNivelacionView';
 import { generateRemediationPlanFromSessionResult } from '../../services/remediationEngine';
 import { RecommendationCard } from '../../components/common/RecommendationCard';
-import { StudentMasteryBadge } from '../../components/common/StudentMasteryBadge';
 import { deriveCanonicalRecommendation } from '../bxm-progress/recommendations/recommendationsEngine';
 import type { CanonicalRecommendation } from '../../types/recommendation';
 import { telemetryService } from '../../services/telemetryService';
@@ -37,6 +37,8 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   const [discard, setDiscard] = useState(false);
   const [pending, setPending] = useState<Pending | null>(null);
   const [selectedEvidence, setSelectedEvidence] = useState(route.evidenceKey || [...sampleLessonKeys][0]);
+  const [practiceCount, setPracticeCount] = useState(5);
+  useEffect(() => { if (route.evidenceKey) setSelectedEvidence(route.evidenceKey); }, [route.evidenceKey]);
   const [difficulty, setDifficulty] = useState<DifficultyTier | undefined>();
   const [runner, setRunner] = useState<SessionRunner | null>(() => {
     const saved = store.getActive();
@@ -52,8 +54,8 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   }, [tab]);
 
   const go = useCallback((nextTab: string, evidenceKey?: string, sessionId?: string, contextReason?: LearningContextReason) => onNavigate({
-    view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: nextTab, evidenceKey, sessionId, contextReason,
-  }), [onNavigate]);
+    view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: nextTab, evidenceKey, sessionId, contextReason, sourceSessionId: ['temario', 'practice'].includes(nextTab) ? route.sourceSessionId : undefined,
+  }), [onNavigate, route.sourceSessionId]);
   useEffect(() => { store.reconcile(); if (store.lastError) setMessage(store.lastError); }, [store]);
   const persist = useCallback((current: SessionRunner) => {
     if (!store.saveActive(current)) setMessage(store.lastError);
@@ -108,11 +110,15 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   const active = store.getActive();
   const result = store.getResult(route.sessionId);
   const events = store.progress.getEvents();
+  const practicePreview = selectActivity({ kind: 'evidence_practice', evidenceKey: selectedEvidence, difficulty, itemCount: Number.isInteger(practiceCount) && practiceCount > 0 && practiceCount <= 100 ? practiceCount : 5 }, 0, events.map(event => event.itemId));
+
   const allow = (feature: Parameters<typeof capabilities.canAccess>[0]) => {
     if (capabilities.canAccess(feature)) return true;
     setPaywall(true); return false;
   };
   function request(requested: ActivityRequest) {
+    const source = result || store.getResult(route.sourceSessionId);
+    if (requested.evidenceKey && source) requested = { ...requested, sourceSessionId: source.sessionId, rootSessionId: source.learningContext?.rootSessionId || source.sessionId };
     if (requested.kind !== 'diagnostic' && !allow(requested.generated ? 'isomorphic_practice_drills' : requested.kind === 'mock_exam' ? 'configurable_mock_sessions' : 'extended_authored_practice')) return;
     if (active) { setMessage('Tienes una actividad guardada. Reanúdala o descártala antes de iniciar otra.'); return; }
     const seed = crypto.getRandomValues(new Uint32Array(1))[0];
@@ -125,7 +131,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     // Recheck permissions when the preflight is accepted, including a tier change.
     if (pending.request.kind !== 'diagnostic' && !allow(pending.request.generated ? 'isomorphic_practice_drills' : pending.request.kind === 'mock_exam' ? 'configurable_mock_sessions' : 'extended_authored_practice')) return;
     const next = new SessionRunner({ sessionId: `bxm-${crypto.randomUUID()}`, items: preparePresentation(pending.selection.items, pending.seed, store.getExposedItemIds()),
-      policy: policyFor(pending.request.kind), shortfalls: pending.selection.shortfalls, benchmarkExposed: pending.selection.benchmarkExposed });
+      policy: { ...policyFor(pending.request.kind), ...(pending.request.sourceSessionId && pending.request.rootSessionId && pending.request.evidenceKey ? { learningContext: { sourceSessionId: pending.request.sourceSessionId, rootSessionId: pending.request.rootSessionId, evidenceKey: pending.request.evidenceKey } } : {}) }, shortfalls: pending.selection.shortfalls, benchmarkExposed: pending.selection.benchmarkExposed });
     persist(next); setRunner(next); setPending(null); setMessage(store.lastError);
 
     // M8 Telemetry: session start
@@ -148,8 +154,9 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     try { const restored = SessionRunner.restore(active); setRunner(restored); go('assessment', undefined, active.sessionId); }
     catch { setMessage('No se pudo reanudar este intento. El registro se conserva para su revisión.'); }
   }
-  function openLesson(key: string, reason?: LearningContextReason) { go('temario', key, undefined, reason); }
+  function openLesson(key: string, reason?: LearningContextReason) { onNavigate({ view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: 'temario', evidenceKey: key, contextReason: reason, sourceSessionId: result?.sessionId || route.sourceSessionId }); }
   const results = store.getResults();
+  const loopOrigin = result?.learningContext ? store.getResult(result.learningContext.rootSessionId) : undefined;
   const legacy = storageService.getContextAttempts({ programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2' }, userId);
 
   // Compute prioritized canonical recommendation from learner state & results using recommendationsEngine
@@ -172,7 +179,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     if (!measuredBreakdowns.length) return null;
 
     // Prioritize evidence with errors in first response (lowest accuracy first)
-    const sorted = [...measuredBreakdowns].sort((a, b) => {
+    const sorted = measuredBreakdowns.filter(evidence => evidence.correctFirstResponseCount < evidence.totalItems).sort((a, b) => {
       const accA = a.totalItems > 0 ? a.correctFirstResponseCount / a.totalItems : 1;
       const accB = b.totalItems > 0 ? b.correctFirstResponseCount / b.totalItems : 1;
       if (accA !== accB) return accA - accB;
@@ -180,6 +187,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     });
 
     const target = sorted[0];
+    if (!target) return null;
     const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
     return deriveCanonicalRecommendation({
       evidenceRecords: masteryRecords,
@@ -193,7 +201,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     });
   }, [result, events, store]);
 
-  const handleRecommendationAction = useCallback((rec: CanonicalRecommendation, isSecondary = false) => {
+  const handleRecommendationAction = (rec: CanonicalRecommendation, isSecondary = false) => {
     const action = isSecondary ? rec.cta.secondaryAction : rec.cta.action;
     const targetId = isSecondary ? rec.cta.secondaryTargetId : rec.cta.targetId;
 
@@ -252,7 +260,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       default:
         go('practice');
     }
-  }, [go, onOfficialSimulation]);
+  };
 
   // Compute remediation plan for mock_exam or diagnostic results
   const remediationPlan = useMemo(() => {
@@ -272,7 +280,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
     const targetRecord = masteryRecords.find(r => r.evidenceKey === targetKey);
     const hasEnoughFamilies = (targetRecord?.qualifyingFamiliesCount || 0) >= (targetRecord?.minRequiredFamilies || 5);
-    const isMastered = targetRecord?.status === 'mastered' || (result.firstResponseScorePercentage >= 75 && (targetRecord?.qualifyingFamiliesCount || 0) >= 3);
+    const isMastered = targetRecord?.status === 'mastered';
     return {
       evidenceKey: targetKey,
       record: targetRecord,
@@ -289,16 +297,16 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     if (!targetKey) return null;
     const masteryRecords = computeEvidenceMasteryRecords(catalog, events, new Date());
     const targetRecord = masteryRecords.find(r => r.evidenceKey === targetKey);
-    const accuracy = targetRecord?.accuracyPercentage || result.firstResponseScorePercentage;
-    const isRecovered = (targetRecord?.status === 'mastered') || (result.firstResponseScorePercentage >= 75);
+    const accuracy = targetRecord?.accuracyPercentage ?? result.firstResponseScorePercentage;
+    const isRecovered = result.firstResponseScorePercentage >= 75;
     return {
       evidenceKey: targetKey,
       evidenceCode: result.evidenceBreakdowns[targetKey]?.evidenceCode || 'A',
       domain: result.evidenceBreakdowns[targetKey]?.domain || 'geometry',
       retestScore: result.firstResponseScorePercentage,
       overallAccuracy: accuracy,
-      status: targetRecord?.status || (isRecovered ? 'mastered' : 'needs_reinforcement'),
-      statusLabel: targetRecord?.statusLabelEs || (isRecovered ? 'Dominio alcanzado' : 'Requiere refuerzo adicional'),
+      status: targetRecord?.status || 'insufficient_data',
+      statusLabel: targetRecord?.statusLabelEs || 'Datos insuficientes',
       isRecovered,
       qualifyingCount: targetRecord?.qualifyingFamiliesCount || 0,
     };
@@ -414,17 +422,21 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
     />}
     {tab === 'practice' && <section className="ui-surface p-5 rounded-2xl space-y-4">
       <h2 className="text-xl font-semibold">Práctica por habilidad</h2>
-      <label className="block">Habilidad<select aria-label="Habilidad" className="w-full" value={selectedEvidence} onChange={e => setSelectedEvidence(e.target.value)}>
-        {catalog.map(e => <option key={e.key} value={e.key}>{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[e.domain]} · {e.description}</option>)}
-      </select></label>
-      <label className="block">Dificultad de práctica<select aria-label="Dificultad de práctica" value={difficulty || ''} onChange={e => setDifficulty(e.target.value ? Number(e.target.value) as DifficultyTier : undefined)}><option value="">Todas</option><option value="1">Básico</option><option value="2">Intermedio</option><option value="3">Avanzado</option></select></label>
-      <p>{inventory[selectedEvidence]?.totalItems || 0} ejercicios disponibles para esta habilidad.</p>
-      <div className="action-row">
-        <button className="primary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, difficulty })}>Preparar práctica</button>
+      <LearningConfiguration
+        scope={<label>Habilidad<select aria-label="Habilidad" value={selectedEvidence} onChange={event => setSelectedEvidence(event.target.value)}>
+          {catalog.map(evidence => <option key={evidence.key} value={evidence.key}>{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[evidence.domain]} · {evidence.description}</option>)}
+        </select></label>}
+        difficulty={{ value: difficulty, onChange: setDifficulty, label: 'Dificultad de práctica' }}
+        quantity={{ value: practiceCount, onChange: value => setPracticeCount(Number(value)) }}
+        summary={{ requested: practiceCount, actual: practiceCount > 0 && practiceCount <= 100 ? practicePreview.totalSelected : 0, scope: catalog.find(evidence => evidence.key === selectedEvidence)?.description || selectedEvidence, difficulty }}
+        onSubmit={() => { if (Number.isInteger(practiceCount) && practiceCount > 0 && practiceCount <= 100) request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, difficulty, itemCount: practiceCount }); }}
+        submitLabel="Preparar práctica"
+      />
+      <details><summary className="text-link">Más opciones de práctica</summary><div className="action-row">
         <button className="secondary-button" onClick={() => request({ kind: 'mastery_check', evidenceKey: selectedEvidence })}>Comprobar aprendizaje</button>
         <button className="secondary-button" onClick={() => request({ kind: 'retest', evidenceKey: selectedEvidence })}>Comprobar mi avance</button>
         <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: selectedEvidence, generated: true })}>Practicar variantes</button>
-      </div>
+      </div></details>
       <button className="text-link" onClick={() => openLesson(selectedEvidence)}>Ver esta evidencia en el temario</button>
     </section>}
     {tab === 'simulation' && <section className="space-y-6">
@@ -449,7 +461,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                 Práctica guiada
               </span>
               <span className="text-xs font-bold text-indigo-900 dark:text-indigo-300 font-mono">
-                20 preguntas · ~45 min
+                20 preguntas · 30 min
               </span>
             </div>
             <div className="space-y-1">
@@ -509,6 +521,11 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       : <section className="feedback-panel"><h2>Actividad no disponible en este perfil</h2><p>Busca el intento guardado o inicia otra actividad.</p><button onClick={() => go('diagnostic')}>Volver al diagnóstico</button></section>)}
     {tab === 'result' && (result ? <>
       <BxmSessionResultBreakdownView result={result} onExit={() => go('diagnostic')} />
+      {result.learningContext && <section className="workspace-section" aria-label="Seguimiento del refuerzo">
+        <h2>Seguimiento de esta habilidad</h2>
+        {(() => { const before = loopOrigin?.evidenceBreakdowns[result.learningContext.evidenceKey]; const after = result.evidenceBreakdowns[result.learningContext.evidenceKey]; return before && after ? <p>Evaluación de origen: {before.correctFirstResponseCount}/{before.totalItems} correctas. Este intento: {after.correctFirstResponseCount}/{after.totalItems}. Las muestras pueden tener preguntas distintas o repetidas.</p> : <p>El resultado de origen no está disponible en este perfil. Puedes continuar con esta habilidad.</p>; })()}
+        {loopOrigin && <button className="text-link" onClick={() => go('result', undefined, loopOrigin.sessionId)}>Ver resultado de origen</button>}
+      </section>}
 
       {/* Actionable Launchpad: Lo que ya dominas vs Lo que necesitas reforzar */}
       {(() => {
@@ -530,15 +547,15 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           <section className="ui-surface p-5 sm:p-6 rounded-2xl border-2 border-stone-200 dark:border-stone-800 space-y-4">
             <div className="space-y-1">
               <span className="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                {result.kind === 'mock_exam' ? 'Análisis del Simulacro Formativo' : 'Diagnóstico de habilidades'}
+                {result.kind === 'mock_exam' ? 'Análisis del Simulacro Formativo' : result.kind === 'diagnostic' ? 'Diagnóstico de habilidades' : 'Análisis de esta actividad'}
               </span>
               <h2 className="text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100">
-                {result.kind === 'mock_exam' ? 'Resultados del Simulacro: ¿Dónde estás y qué sigue?' : 'Tu diagnóstico: ¿dónde estás y qué sigue?'}
+                {result.kind === 'mock_exam' ? 'Resultados del Simulacro: ¿Dónde estás y qué sigue?' : result.kind === 'diagnostic' ? 'Tu diagnóstico: ¿dónde estás y qué sigue?' : result.kind === 'retest' ? 'Tu comprobación: ¿qué sigue?' : 'Tu práctica: ¿qué sigue?'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
                 {result.kind === 'mock_exam'
                   ? '¿Cómo te fue? → ¿Qué debes mejorar? → ¿Qué haces ahora? Revisa tus fortalezas y tu plan de nivelación recomendado.'
-                  : 'Identificamos claramente las áreas consolidadas y las habilidades prioritarias para tu plan de estudio.'}
+                  : 'Revisa las fortalezas y las habilidades por reforzar en este intento. El dominio acumulado se consulta en Mi preparación.'}
               </p>
             </div>
 
@@ -547,7 +564,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
               <div className="p-4 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-2.5">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-800 dark:text-emerald-300">
                   <span className="font-bold">✓</span>
-                  <span>Lo que ya dominas ({mastered.length})</span>
+                  <span>Fortalezas en este intento ({mastered.length})</span>
                 </div>
                 {mastered.length > 0 ? (
                   <ul className="space-y-1.5 text-xs text-stone-700 dark:text-stone-300">
@@ -556,14 +573,14 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                       return (
                         <li key={m.evidenceId} className="flex items-center justify-between">
                           <span className="font-medium">{catalog.find(item => item.key === m.evidenceId)?.description || domainNames[m.domain] || 'Habilidad evaluada'}</span>
-                          <StudentMasteryBadge percentage={acc} />
+                          <span>{acc}% en este intento</span>
                         </li>
                       );
                     })}
                   </ul>
                 ) : (
                   <p className="text-xs text-stone-500 italic">
-                    Continúa practicando para certificar tus primeras habilidades dominadas (≥75%).
+                    Continúa practicando para ampliar la evidencia de aprendizaje; este resumen solo refleja las preguntas evaluadas.
                   </p>
                 )}
               </div>
@@ -579,9 +596,10 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
                     {[...needReinforcement, ...inProgress].map(m => {
                       const acc = Math.round((m.correctFirstResponseCount / m.totalItems) * 100);
                       return (
-                        <li key={m.evidenceId} className="flex items-center justify-between">
+                        <li key={m.evidenceId} data-evidence-key={m.evidenceId} className="flex flex-wrap gap-2 items-center justify-between">
                           <span className="font-medium">{catalog.find(item => item.key === m.evidenceId)?.description || domainNames[m.domain] || 'Habilidad evaluada'}</span>
-                          <StudentMasteryBadge percentage={acc} />
+                          <span>{acc}% en este intento</span>
+                          <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: m.evidenceId })}>Practicar esta habilidad</button>
                         </li>
                       );
                     })}
@@ -613,13 +631,9 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       {remediationPlan && remediationPlan.topPriorityDrilldowns.length > 0 && (
         <PlanDeNivelacionView
           plan={remediationPlan}
-          onLaunchRemediationPractice={() => {
-            if (canonicalResultRecommendation?.targetId) {
-              request({ kind: 'evidence_practice', evidenceKey: canonicalResultRecommendation.targetId });
-            } else {
-              go('practice');
-            }
-          }}
+          onLaunchRemediationPractice={() => go('practice')}
+          onLaunchGuidedPractice={key => request({ kind: 'evidence_practice', evidenceKey: key })}
+          evidenceLabel={key => catalog.find(evidence => evidence.key === key)?.description || key}
         />
       )}
 
@@ -646,8 +660,8 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
             </h3>
             <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300">
               {retestRecoveryStatus.isRecovered
-                ? `Has superado el umbral del 75% requerido para certificar el dominio en esta habilidad. Estado actualizado: ${retestRecoveryStatus.statusLabel}.`
-                : `Tu puntaje actual es ${retestRecoveryStatus.overallAccuracy}% hacia el 75% requerido. Te recomendamos realizar otra práctica o repasar el tema en el temario.`}
+                ? `Has superado el 75% en esta comprobación. Estado acumulado: ${retestRecoveryStatus.statusLabel}. Un resultado aislado no certifica dominio; también se requiere variedad de familias y respuestas sin ayudas.`
+                : `Tu precisión acumulada es ${retestRecoveryStatus.overallAccuracy}%. Te recomendamos realizar otra práctica o repasar el tema en el temario.`}
             </p>
           </div>
           <div className="action-row pt-1">
@@ -663,6 +677,10 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         </section>
       )}
 
+      {result.kind === 'evidence_practice' && Object.keys(result.evidenceBreakdowns)[0] && <section className="workspace-section" aria-label="Siguiente paso del refuerzo">
+        <h2>Comprueba tu avance sin ayudas</h2><p>Después del repaso, realiza una comprobación de esta misma habilidad. Las preguntas repetidas se identifican; un único resultado no certifica dominio.</p>
+        <button className="primary-button" onClick={() => request({ kind: 'retest', evidenceKey: Object.keys(result.evidenceBreakdowns)[0] })}>Comprobar mi avance sin ayudas</button>
+      </section>}
       {/* Post-practice Mastery Eligibility Decision */}
       {practiceMasteryStatus && (
         <section className="ui-surface p-5 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3">
@@ -679,7 +697,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           ) : (
             <div className="space-y-2">
               <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
-                Llevas {practiceMasteryStatus.qualifyingCount} de {practiceMasteryStatus.minRequired} familias evaluadas. Continúa reforzando antes del Mastery Check oficial.
+                Llevas {practiceMasteryStatus.qualifyingCount} de {practiceMasteryStatus.minRequired} familias evaluadas. Continúa reforzando antes de la comprobación de dominio.
               </p>
               <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: practiceMasteryStatus.evidenceKey })}>
                 Seguir practicando esta evidencia
@@ -690,7 +708,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       )}
 
       <section className="ui-surface p-5 rounded-2xl space-y-3"><h2 className="text-xl font-semibold">Detalle por habilidad</h2><p>Solo las habilidades evaluadas tienen un resultado.</p>
-        {Object.values(result.evidenceBreakdowns).map(e => <div key={e.evidenceId} className="flex flex-wrap gap-3 items-center"><span>{catalog.find(item => item.key === e.evidenceId)?.description || 'Habilidad evaluada'}: {e.correctFirstResponseCount}/{e.totalItems}</span><button className="text-link" onClick={() => openLesson(e.evidenceId)}>Repasar este tema</button></div>)}
+        {Object.values(result.evidenceBreakdowns).map(e => <div key={e.evidenceId} className="flex flex-wrap gap-3 items-center"><span>{catalog.find(item => item.key === e.evidenceId)?.description || 'Habilidad evaluada'}: {e.correctFirstResponseCount}/{e.totalItems}</span><button className="text-link" onClick={() => openLesson(e.evidenceId)}>Repasar este tema</button>{e.correctFirstResponseCount < e.totalItems && <button className="secondary-button" onClick={() => request({ kind: 'evidence_practice', evidenceKey: e.evidenceId })}>Practicar esta habilidad</button>}</div>)}
         <div className="action-row pt-2">
           <button className="secondary-button" onClick={() => go('progress')}>Ver mi preparación</button>
           <button className="secondary-button" onClick={() => downloadResult(result)}>Descargar resultado</button>
@@ -705,19 +723,25 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
       <p>Comprobaciones de lección: {store.getActivities().length}. Se registran como actividad; no certifican dominio.</p>
       {legacy.length > 0 && <><p>{legacy.length} registros anteriores se conservan en el historial de referencia.</p><button className="secondary-button" onClick={() => { store.progress.importLegacyBaselineAttempts(); const report = store.progress.lastImport; setMessage(`Importados: ${report.imported}; solo resumen: ${report.summaryOnly}; omitidos: ${report.skipped}. Los registros antiguos no cuentan para dominio.`); setRevision(value => value+1); }}>Importar historial anterior de este perfil</button></>}
     </section>}
-    {pending && <Dialog title="Antes de comenzar la actividad" onClose={() => setPending(null)}>
-      <p>{pending.selection.totalSelected} de {pending.selection.totalRequested} preguntas. {policyFor(pending.request.kind).mode === 'exam' ? `${policyFor(pending.request.kind).timeLimitMinutes} minutos; sin pistas ni corrección antes de entregar.` : 'Sin cronómetro; con explicación y reintentos.'}</p>
+    {pending && <AssessmentBriefing title="Antes de comenzar la actividad" onClose={() => setPending(null)}
+      summary={{ requested: pending.selection.totalRequested, actual: pending.selection.totalSelected,
+        scope: pending.request.evidenceKey ? catalog.find(evidence => evidence.key === pending.request.evidenceKey)?.description || pending.request.evidenceKey : 'Todo el programa',
+        difficulty: pending.request.difficulty, timerMinutes: policyFor(pending.request.kind).enableTimer ? policyFor(pending.request.kind).timeLimitMinutes : undefined }}
+      onStart={begin} startLabel={pending.selection.isPartial ? 'Aceptar actividad limitada' : 'Comenzar actividad'}>
+      <p>{policyFor(pending.request.kind).mode === 'exam' ? `${policyFor(pending.request.kind).timeLimitMinutes} minutos; sin pistas ni corrección antes de entregar.` : 'Sin cronómetro; con explicación y reintentos.'}</p>
       {pending.selection.isPartial && <p role="status">Cobertura limitada: no hay suficientes preguntas para completar esta selección. Puedes aceptar una actividad más corta.</p>}
       <p>{new Set(pending.selection.items.map(i => i.evidenceId)).size} habilidades del programa en esta actividad.</p>
       <p>{pending.selection.items.filter(i => events.some(e => e.itemId === String(i.id) || (!!i.familyId && e.familyId === i.familyId))).length} preguntas son similares a otras que ya practicaste.</p>
       <p>Contenido de autor con controles automáticos; revisión matemática humana pendiente. La nota es un indicador de estudio, no una predicción oficial.</p>
-      <button className="primary-button" onClick={begin}>{pending.selection.isPartial ? 'Aceptar actividad limitada' : 'Comenzar actividad'}</button>
-    </Dialog>}
+    </AssessmentBriefing>}
     {discard && <Dialog title="¿Descartar la actividad de aprendizaje?" onClose={() => setDiscard(false)}><p>No se registrará un resultado; se conservan las exposiciones a explicaciones ya mostradas.</p><button className="primary-button" onClick={() => { const ok = store.discardActive(); setRunner(null); setDiscard(false); setMessage(ok ? '' : store.lastError); setRevision(value => value+1); go('diagnostic'); }}>Sí, descartar actividad</button></Dialog>}
     {showOfficialBriefing && (
-      <Dialog
+      <AssessmentBriefing
         title="Preparación para la simulación de referencia (60 ítems)"
         onClose={() => setShowOfficialBriefing(false)}
+        summary={{ requested: 60, actual: 60, scope: 'Todo el programa', timerMinutes: 150 }}
+        startLabel="Comenzar Simulación Oficial (150 min)"
+        onStart={() => { setShowOfficialBriefing(false); onOfficialSimulation(); }}
       >
         <div className="space-y-4 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
           <div className="p-3.5 rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50/60 dark:bg-amber-950/20 space-y-1.5">
@@ -766,30 +790,11 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
           <ul className="space-y-1.5 text-xs text-stone-600 dark:text-stone-400 list-disc list-inside">
             <li>El benchmark no contamina ni sobreescribe tus registros de dominio de autor.</li>
             <li>Asegúrate de disponer de 150 minutos continuos sin interrupciones.</li>
-            <li>Calculadora científica básica permitida según normativa DGEC.</li>
+            <li>Calculadora no programable. Consulta las condiciones del material de referencia.</li>
           </ul>
 
-          <div className="action-row pt-2">
-            <button
-              type="button"
-              className="primary-button py-2 px-4 text-xs font-bold"
-              onClick={() => {
-                setShowOfficialBriefing(false);
-                onOfficialSimulation();
-              }}
-            >
-              Comenzar Simulación Oficial (150 min)
-            </button>
-            <button
-              type="button"
-              className="secondary-button py-2 px-4 text-xs"
-              onClick={() => setShowOfficialBriefing(false)}
-            >
-              Cancelar
-            </button>
-          </div>
         </div>
-      </Dialog>
+      </AssessmentBriefing>
     )}
     <PaywallModal isOpen={paywall} onClose={() => setPaywall(false)} />
   </div>;

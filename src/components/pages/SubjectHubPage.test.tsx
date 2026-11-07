@@ -4,8 +4,10 @@ import { SubjectHubPage } from './LandingPage';
 afterEach(cleanup);
 it('makes resource panels keyboard navigable and exposes official PDFs without a guide', () => {
   render(<SubjectHubPage currentUser={null} onStartPractice={vi.fn()} onStartSimulation={vi.fn()} />);
-  const practice = screen.getByRole('tab', { name: 'Práctica y simulación' });
+  const practice = screen.getByRole('tab', { name: 'Práctica' });
   practice.focus(); fireEvent.keyDown(practice, { key: 'ArrowRight' });
+  expect(screen.getByRole('tab', { name: 'Simulaciones' })).toHaveFocus();
+  fireEvent.keyDown(screen.getByRole('tab', { name: 'Simulaciones' }), { key: 'ArrowRight' });
   expect(screen.getByRole('tab', { name: 'Recursos' })).toHaveFocus();
   expect(screen.getByRole('heading', { name: 'Materiales oficiales en PDF' })).toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: 'Abrir PDF (otra pestaña)' }).length).toBeGreaterThan(0);

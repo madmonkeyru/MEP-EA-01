@@ -3,7 +3,7 @@ import { dataService } from './dataService';
 import { getReviewItems } from './reviewDraft';
 import { TestEngine } from './testEngine';
 
-export const isExam = (config: PracticeConfig) => config.mode === 'simulation' || config.mode === 'dynamic_mock';
+export const isExam = (config: PracticeConfig) => config.mode === 'simulation' || config.mode === 'dynamic_mock' || config.remediation?.stage === 'retest';
 export const modeLabel = (config: PracticeConfig) => config.title || ({ simulation: 'Simulación completa', dynamic_mock: 'Simulación con distribución curricular', diagnostic: 'Diagnóstico Rápido', area: 'Práctica por área', topic: 'Práctica por tema', concept_drilldown: 'Práctica por concepto', random_practice: 'Práctica variada' }[config.mode]);
 export const areaLabel = (area?: string) => ({ numbers: 'Números', measurement: 'Medidas', geometry: 'Geometría', functions: 'Relaciones y álgebra', statistics: 'Estadística y probabilidad' }[area || ''] || 'Todas las áreas');
 export { scopeKey, validSession } from './sessionStorageMetadata';

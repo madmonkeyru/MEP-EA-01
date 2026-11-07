@@ -292,6 +292,13 @@ export type PracticeMode =
   | 'random_practice';
 
 export interface PracticeConfig {
+  remediation?: {
+    rootSessionId: string;
+    sourceSessionId: string;
+    stage: 'practice' | 'retest';
+    targetItemIds: number[];
+    label: string;
+  };
   reviewDraft?: "cico-2026-c2";
   subjectId?: string;
   itemIds?: number[];
