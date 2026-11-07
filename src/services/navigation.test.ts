@@ -3,6 +3,12 @@ import { readRoute, routeHash } from './navigation';
 import { dataService } from './dataService';
 
 describe('program navigation', () => {
+  it('parses about and faq routes and generates canonical hash', () => {
+    expect(readRoute('#/acerca')).toEqual({ view: 'about' });
+    expect(readRoute('#/faq')).toEqual({ view: 'about' });
+    expect(routeHash({ view: 'about' })).toBe('#/acerca');
+  });
+
   it('round trips persisted test/result routes and resource tabs', () => {
     for (const view of ['test', 'results'] as const) {
       expect(readRoute(routeHash({ view, programId: 'bxm', subjectId: 'matematicas', sessionId: 'saved-123', convocatoriaId: '2026-c2' }))).toMatchObject({ view, sessionId: 'saved-123', subjectId: 'matematicas' });

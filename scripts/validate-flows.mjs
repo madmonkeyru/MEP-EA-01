@@ -1,2 +1,2 @@
-// The current UI regression journey is maintained in one place.
-import './validate-ui.mjs';
+// Compatibility entry point for the unified production browser suite.
+import './run-browser-suite.mjs';

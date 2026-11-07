@@ -302,7 +302,7 @@ export const BxmDigitalTemario: React.FC<BxmDigitalTemarioProps> = ({
                           <div className="flex items-center justify-between pt-1 border-t border-stone-100 dark:border-stone-800 text-[11px] font-medium text-amber-700 dark:text-amber-400">
                             <span>{isComplete ? 'Estudiar →' : 'Ver detalles →'}</span>
                             {ev.hasInteractiveVisual && (
-                              <span className="inline-flex items-center gap-1 font-semibold text-amber-600 dark:text-amber-400">
+                              <span className="inline-flex items-center gap-1 font-semibold text-amber-800 dark:text-amber-400">
                                 <Sliders className="w-3.5 h-3.5" aria-hidden="true" />
                                 <span>Interactivo</span>
                               </span>

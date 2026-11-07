@@ -27,13 +27,13 @@ describe('BxmSessionRunnerView Component (Agent B)', () => {
 
     const finishFn = vi.fn();
 
-    render(<BxmSessionRunnerView runner={runner} onFinish={finishFn} />);
+    const { container } = render(<BxmSessionRunnerView runner={runner} onFinish={finishFn} />);
 
     // Item 1 stem
     expect(screen.getByText(/Considere la circunferencia/i)).toBeDefined();
 
     // Select option A
-    const optionA = screen.getByRole('button', { name: 'Opción A' });
+    const optionA = container.querySelector<HTMLButtonElement>('button[data-option="A"]')!;
     fireEvent.click(optionA);
 
     expect(runner.getItemState(sampleAuthoredItems[0].id)?.draftOption).toBe('A');

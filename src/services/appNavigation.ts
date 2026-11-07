@@ -17,5 +17,6 @@ export function appNavigation(route: AppRoute) {
     ] : []),
     { label: 'Calendario', href: routeHash({ view: 'calendar', programId: route.programId, convocatoriaId: route.convocatoriaId }), active: route.view === 'calendar' },
     { label: 'Guía y recursos', href: routeHash({ view: 'helper', programId: route.programId, subjectId: route.subjectId, moduleId: route.moduleId }), active: route.view === 'helper' },
+    { label: 'FAQ y Acerca de', href: '#/acerca', active: route.view === 'about' },
   ];
 }

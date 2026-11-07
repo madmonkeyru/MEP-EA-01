@@ -30,6 +30,11 @@ try {
   await page.getByRole('heading', { name: 'Encuentra tu programa de estudio' }).waitFor();
   await page.goto(base + '/#/programas/bxm/matematicas?convocatoria=2026-c2');
   await page.getByRole('button', { name: 'Iniciar práctica', exact: true }).click();
+  await page.getByRole('dialog', { name: 'Práctica Pro' }).waitFor();
+  assert.equal(await page.getByRole('button', { name: /Modo pruebas/ }).count(), 0);
+  await page.evaluate(() => localStorage.setItem('mep_ea_subscription_tier', 'premium'));
+  await page.reload();
+  await page.getByRole('button', { name: 'Iniciar práctica', exact: true }).click();
   await page.getByRole('heading', { name: 'Pregunta 1 de 10' }).waitFor();
   await page.getByRole('radio').first().check();
   await page.getByRole('button', { name: 'Finalizar', exact: true }).click();
@@ -100,8 +105,9 @@ try {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(base + '/#/ayuda?programa=iii_ciclo');
       await page.getByRole('heading', { name: 'Guía y recursos', exact: true }).waitFor();
-      const themeToggle = page.getByRole('switch', { name: 'Modo oscuro' });
-      if ((await themeToggle.getAttribute('aria-checked')) !== String(theme === 'dark')) await themeToggle.click();
+      await page.evaluate(value => { localStorage.setItem('mep_ea_01_theme', value); }, theme);
+      await page.reload();
+      await page.getByRole('heading', { name: 'Guía y recursos', exact: true }).waitFor();
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Body overflow at ' + width + ', ' + theme);
       await page.screenshot({ path: 'artifacts/ui-validation/resources-' + width + '-' + theme + '.png', fullPage: true });
     }

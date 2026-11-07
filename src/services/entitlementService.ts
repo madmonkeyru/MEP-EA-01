@@ -1,4 +1,7 @@
-export type UserTier = 'free' | 'premium';
+import type { UserTier } from '../types/learningDomain';
+export type { UserTier } from '../types/learningDomain';
+import { createCapabilityProvider, type ProductCapability } from './capabilityModel';
+import { STORAGE_KEYS } from './storageRegistry';
 
 export type Entitlement =
   | 'official_resources'
@@ -94,7 +97,17 @@ export const ENTITLEMENT_DEFINITIONS: Record<Entitlement, EntitlementDefinition>
   },
 };
 
-const STORAGE_TIER_KEY = 'mep_ea_subscription_tier';
+const STORAGE_TIER_KEY = STORAGE_KEYS.subscription;
+const ENTITLEMENT_CAPABILITY: Record<Entitlement, ProductCapability> = {
+  official_resources: 'official_specifications_and_resources', diagnostic: 'initial_diagnostic_and_basic_results',
+  reference_exam: 'official_reference_benchmark', basic_results: 'initial_diagnostic_and_basic_results',
+  lesson_library: 'full_authored_lesson_pack', practice_bank: 'extended_authored_practice',
+  adaptive_practice: 'isomorphic_practice_drills', mock_exams: 'configurable_mock_sessions',
+  advanced_progress: 'longitudinal_mastery_dashboard', study_sessions: 'structured_study_plans',
+};
+function isAllowed(tier: UserTier, entitlement: Entitlement) {
+  return createCapabilityProvider(tier).canAccess(ENTITLEMENT_CAPABILITY[entitlement]);
+}
 
 export interface EntitlementProvider {
   getTier: () => UserTier;
@@ -137,7 +150,10 @@ class EntitlementManager implements EntitlementProvider {
 
   public subscribe(listener: (tier: UserTier) => void): () => void {
     this.listeners.push(listener);
+    const changed = (event: StorageEvent) => { if (event.key === STORAGE_TIER_KEY || event.key === null) listener(this.getTier()); };
+    window.addEventListener('storage', changed);
     return () => {
+      window.removeEventListener('storage', changed);
       this.listeners = this.listeners.filter((l) => l !== listener);
     };
   }
@@ -166,11 +182,11 @@ class EntitlementManager implements EntitlementProvider {
       };
     }
 
-    const hasAccess = tier === 'premium' ? def.premiumAllowed : def.freeAllowed;
+    const hasAccess = isAllowed(tier, entitlement);
     return {
       entitlement,
       hasAccess,
-      requiredTier: def.freeAllowed ? 'free' : 'premium',
+      requiredTier: isAllowed('free', entitlement) ? 'free' : 'premium',
       labelEs: def.labelEs,
       reasonEs: hasAccess ? undefined : def.freeReasonEs,
       upgradeCtaTextEs: hasAccess ? undefined : def.upgradeCtaTextEs,
@@ -219,11 +235,11 @@ export function createEntitlementProvider(initialTier?: unknown): EntitlementPro
           labelEs: entitlement,
         };
       }
-      const hasAccess = tier === 'premium' ? def.premiumAllowed : def.freeAllowed;
+      const hasAccess = isAllowed(tier, entitlement);
       return {
         entitlement,
         hasAccess,
-        requiredTier: def.freeAllowed ? 'free' : 'premium',
+        requiredTier: isAllowed('free', entitlement) ? 'free' : 'premium',
         labelEs: def.labelEs,
         reasonEs: hasAccess ? undefined : def.freeReasonEs,
         upgradeCtaTextEs: hasAccess ? undefined : def.upgradeCtaTextEs,
@@ -232,7 +248,7 @@ export function createEntitlementProvider(initialTier?: unknown): EntitlementPro
     hasEntitlement: (entitlement: Entitlement): boolean => {
       const def = ENTITLEMENT_DEFINITIONS[entitlement];
       if (!def) return false;
-      return tier === 'premium' ? def.premiumAllowed : def.freeAllowed;
+      return isAllowed(tier, entitlement);
     },
   };
 }

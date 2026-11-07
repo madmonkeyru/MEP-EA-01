@@ -1,4 +1,6 @@
-export type SubscriptionTier = 'free' | 'premium';
+import { entitlementService } from './entitlementService';
+export type { UserTier as SubscriptionTier } from '../types/learningDomain';
+import type { UserTier as SubscriptionTier } from '../types/learningDomain';
 
 export interface SubscriptionPlan {
   id: string;
@@ -18,7 +20,7 @@ export interface EntitlementCheckResult {
   featureName: string;
 }
 
-const STORAGE_TIER_KEY = 'mep_ea_subscription_tier';
+
 
 export const PLANS: SubscriptionPlan[] = [
   {
@@ -54,58 +56,13 @@ export const PLANS: SubscriptionPlan[] = [
 ];
 
 class SubscriptionService {
-  private listeners: Array<(tier: SubscriptionTier) => void> = [];
-
-  getTier(): SubscriptionTier {
-    try {
-      const stored = localStorage.getItem(STORAGE_TIER_KEY);
-      if (stored === 'premium' || stored === 'free') {
-        return stored;
-      }
-    } catch {
-      // storage unavailable
-    }
-    return 'free';
-  }
-
-  setTier(tier: SubscriptionTier): void {
-    try {
-      localStorage.setItem(STORAGE_TIER_KEY, tier);
-    } catch {
-      // ignore
-    }
-    this.notify(tier);
-  }
-
-  isPremium(): boolean {
-    return this.getTier() === 'premium';
-  }
-
-  toggleTier(): SubscriptionTier {
-    const next = this.isPremium() ? 'free' : 'premium';
-    this.setTier(next);
-    return next;
-  }
-
-  subscribe(listener: (tier: SubscriptionTier) => void): () => void {
-    this.listeners.push(listener);
-    return () => {
-      this.listeners = this.listeners.filter(l => l !== listener);
-    };
-  }
-
-  private notify(tier: SubscriptionTier) {
-    this.listeners.forEach(l => {
-      try {
-        l(tier);
-      } catch {
-        // ignore error
-      }
-    });
-  }
+  getTier(): SubscriptionTier { return entitlementService.getTier(); }
+  setTier(tier: SubscriptionTier): void { entitlementService.setTier(tier); }
+  isPremium(): boolean { return this.getTier() === 'premium'; }
+  toggleTier(): SubscriptionTier { return entitlementService.toggleTier(); }
+  subscribe(listener: (tier: SubscriptionTier) => void): () => void { return entitlementService.subscribe(listener); }
 
   checkFeatureAccess(feature: 'official_exam' | 'dynamic_mock' | 'area_practice' | 'topic_practice' | 'concept_drilldown' | 'difficulty_filter' | 'textbook_reading' | 'checkpoint_quizzes' | 'analytics_advanced'): EntitlementCheckResult {
-    const tier = this.getTier();
 
     // Free features
     if (feature === 'official_exam') {
@@ -128,7 +85,8 @@ class SubscriptionService {
       analytics_advanced: 'Analítica de Progreso y Nivelación',
     };
 
-    const hasAccess = tier === 'premium';
+    const entitlement = feature === 'dynamic_mock' ? 'mock_exams' : feature === 'textbook_reading' ? 'lesson_library' : feature === 'analytics_advanced' ? 'advanced_progress' : 'practice_bank';
+    const hasAccess = entitlementService.hasEntitlement(entitlement);
     return {
       hasAccess,
       requiredTier: 'premium',

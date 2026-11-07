@@ -95,7 +95,7 @@ describe('UX-09 complete result → remediation → retest journeys', () => {
     expect(active.items.every(item => item.evidenceId === key)).toBe(true);
     expect(active.policy.learningContext?.rootSessionId).toBe(root.sessionId);
     for (let index = 0; index < active.items.length; index++) {
-      fireEvent.click(screen.getByRole('button', { name: `Opción ${active.items[index].correctAnswer}` }));
+      fireEvent.click(document.querySelector<HTMLButtonElement>(`button[data-option="${active.items[index].correctAnswer}"]`)!);
       fireEvent.click(screen.getByRole('button', { name: 'Verificar respuesta' }));
       if (index < active.items.length - 1) fireEvent.click(screen.getByRole('button', { name: 'Siguiente' }));
     }
@@ -112,7 +112,7 @@ describe('UX-09 complete result → remediation → retest journeys', () => {
     view.unmount(); view = mount(url);
     await screen.findByRole('button', { name: 'Entregar examen' });
     for (let index = 0; index < active.items.length; index++) {
-      fireEvent.click(screen.getByRole('button', { name: `Opción ${active.items[index].correctAnswer}` }));
+      fireEvent.click(document.querySelector<HTMLButtonElement>(`button[data-option="${active.items[index].correctAnswer}"]`)!);
       if (index < active.items.length - 1) fireEvent.click(screen.getByRole('button', { name: 'Siguiente' }));
     }
     fireEvent.click(screen.getByRole('button', { name: 'Entregar examen' }));

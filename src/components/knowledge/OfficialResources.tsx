@@ -11,6 +11,7 @@ export function OfficialResources({ programId = 'bxm', subjectId, moduleId }: { 
   const [saved, setSaved] = useState<string[]>(() => { try { return JSON.parse(localStorage.getItem('mep_reading_list') || '[]'); } catch { return []; } });
   const [shortlist, setShortlist] = useState(false);
   const [error, setError] = useState('');
+  const [previews, setPreviews] = useState<string[]>([]);
   const pool = officialDocuments.filter(doc => doc.programId === programId);
   const docs = pool.filter(doc => (subject === 'all' || doc.subjectId === subject) && (level === 'all' || doc.moduleId === level) && (kind === 'all' || doc.type === kind) && (!shortlist || saved.includes(doc.id)) && normalizeSearch(doc.title).includes(normalizeSearch(search)));
   useEffect(() => {
@@ -58,10 +59,11 @@ export function OfficialResources({ programId = 'bxm', subjectId, moduleId }: { 
     <div className="action-row"><button className="secondary-button" onClick={clear}>Limpiar filtros</button><button className="secondary-button" aria-pressed={shortlist} onClick={() => setShortlist(!shortlist)}>Mi lista de lectura</button><span className="muted">Lista local de este navegador, compartida entre sus perfiles.</span><a className="text-link" href="https://dgec.mep.go.cr/" target="_blank" rel="noreferrer">Consultar la DGEC (otra pestaña)</a></div>
     <p role="status">{docs.length} materiales encontrados</p>{error && <p role="alert">{error}</p>}
     <ul className="grid sm:grid-cols-2 gap-4">{docs.map(doc => <li key={doc.id} className="resource-pdf-card ui-surface rounded-2xl space-y-3">
-      <div className="resource-pdf-card__preview" aria-hidden="true">
-        <iframe src={`${doc.url}#page=1&toolbar=0&navpanes=0&view=FitH`} title="" tabIndex={-1} loading="lazy" />
-      </div>
       <div className="resource-pdf-card__content p-5 space-y-3">
+        <button type="button" className="secondary-button" aria-expanded={previews.includes(doc.id)} aria-controls={`pdf-preview-${doc.id}`} onClick={() => setPreviews(current => current.includes(doc.id) ? current.filter(id => id !== doc.id) : [...current, doc.id])}>
+          {previews.includes(doc.id) ? 'Ocultar' : 'Mostrar'} vista previa: {doc.title}
+        </button>
+        {previews.includes(doc.id) && <iframe id={`pdf-preview-${doc.id}`} className="w-full h-80 border-0" src={`${doc.url}#page=1&toolbar=0&navpanes=0&view=FitH`} title={`Vista previa: ${doc.title}`} />}
         <h3 className="font-semibold">{doc.subject}</h3><p>{doc.type}{doc.level ? ' · ' + doc.level : ''}</p><p className="muted">PDF · {Math.ceil(doc.size / 1024)} KB · Referencia 02-2026</p><div className="action-row"><a className="text-link" href={doc.url} target="_blank" rel="noreferrer">Abrir PDF (otra pestaña)</a><a className="text-link" href={doc.url} download={doc.filename}>Descargar</a><button className="secondary-button" aria-pressed={saved.includes(doc.id)} aria-label={(saved.includes(doc.id) ? 'Quitar de mi lista: ' : 'Guardar en mi lista: ') + doc.title} onClick={() => { const next = saved.includes(doc.id) ? saved.filter(id => id !== doc.id) : [...saved, doc.id]; setSaved(next); try { localStorage.setItem('mep_reading_list', JSON.stringify(next)); } catch { setError('No fue posible guardar la lista en este navegador.'); } }}>{saved.includes(doc.id) ? '✓ Guardado' : 'Guardar'}</button></div>
       </div>
     </li>)}</ul>

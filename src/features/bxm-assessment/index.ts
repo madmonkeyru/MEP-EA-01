@@ -1,5 +1,5 @@
 /**
- * Public Entry Points for Agent B Feature: BXM Assessment
+ * Assessment feature public API
  * Exclusively exports components, engines, and boundary types.
  */
 
@@ -9,5 +9,3 @@ export * from './sessionRunner';
 export * from './wrongAnswerClassifier';
 export * from './microQuizEngine';
 export * from './components/BxmSessionRunnerView';
-export * from './components/BxmAssessmentPreview';
-export * from './fixtures/sampleItems';

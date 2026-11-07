@@ -10,7 +10,6 @@
   --type-section: 1.25rem;
   --type-card: 1.0625rem;
   --type-meta: .875rem;
-  --control-radius: 8px;
 }
 .workspace-page { min-width: 0; padding-block: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-lg); }
 .workspace-section { min-width: 0; padding: var(--space-lg); display: grid; gap: var(--space-md); border: 1px solid var(--border-subtle); border-radius: var(--control-radius); background: var(--surface); }
@@ -103,9 +102,6 @@
 .assessment-workspace > div:first-child { font-size: var(--type-meta); }
 .dark { --action: #595ce0; }
 .dark .text-stone-500 { color: #b4aca5; }
-.dark .bg-stone-850 { background-color: var(--surface-card); }
-.dark .bg-stone-750 { background-color: #3b3532; }
-.dark .text-stone-750 { color: #d6d3d1; }
 .dark .learning-nav-link[aria-current="page"] { border-color: #a5b4fc; }
 @media (max-width: 767px) {
   .preparation-home { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
@@ -121,7 +117,6 @@
   .app-shell .exam-header button { min-height: 44px; }
   .app-shell .page-intro { padding: 1.25rem; border-radius: 12px; }
 }
-@media (max-width: 640px) { html { font-size: 100%; } }
 
 @media (min-width: 768px) { .app-header .mobile-menu-trigger { display: none; } }
 
@@ -140,7 +135,6 @@
 .assessment-question-rail button { width: 44px; min-width: 44px; min-height: 44px; }
 
 /* Responsive workspace and compact, navigable panels. */
-.page-width { width: min(100% - 3rem, 1600px); }
 .app-header .page-width { width: calc(100% - 3rem); max-width: none; }
 .program-carousel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .program-carousel > a { min-width: 0; }
@@ -187,3 +181,6 @@
   .activity-context-trail { display: none; }
   .activity-context-back { display: inline-flex; }
 }
+
+.calendar-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+.calendar-filters label, .calendar-filters select { min-width: 0; width: 100%; }

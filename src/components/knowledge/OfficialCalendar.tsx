@@ -64,7 +64,7 @@ export function OfficialCalendar({ initialProgram = '', initialConvocatoria = ''
   return <section className="ui-surface rounded-2xl p-5 sm:p-7 space-y-4" aria-label="Calendario oficial de Educación Abierta">
     <h2 className="text-xl font-semibold">Fechas de Educación Abierta</h2>
     <p>Consulta el aviso de la DGEC para confirmar la hora y las condiciones de tu prueba. Las fechas se muestran en hora de Costa Rica.</p>
-    <div className="flex flex-wrap gap-4">
+    <div className="calendar-filters">
       <label className="grid gap-1">Programa
         <select aria-label="Programa" value={program} onChange={event => setProgram(event.target.value)}>
           <option value="">Todos</option>

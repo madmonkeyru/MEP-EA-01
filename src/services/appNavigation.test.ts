@@ -11,6 +11,13 @@ describe('application destinations', () => {
     }
     expect(readRoute(links.find(link => link.label === 'Calendario')!.href)).toMatchObject({ programId: 'edad', convocatoriaId: '2026-c1' });
   });
+  it('includes FAQ and About destination in global navigation', () => {
+    const destinations = appNavigation({ view: 'about' });
+    const aboutDest = destinations.find(d => d.label === 'FAQ y Acerca de');
+    expect(aboutDest).toBeDefined();
+    expect(aboutDest?.href).toBe('#/acerca');
+    expect(aboutDest?.active).toBe(true);
+  });
   it('keeps guided learning destinations in the guided flow and drops evidence-specific state', () => {
     const links = appNavigation({ view: 'learning', programId: 'bxm', subjectId: 'matematicas', convocatoriaId: '2026-c2', tab: 'simulation', evidenceKey: 'A1.1', sessionId: 'old' });
     expect(links.filter(link => link.active).map(link => link.label)).toEqual(['Simulaciones']);

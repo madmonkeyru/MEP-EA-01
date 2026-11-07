@@ -3,11 +3,13 @@
  * Conforms to CONSOLIDATED DECISIONS v1 Section 8.
  */
 
-export type BxmDomain = 'geometry' | 'functions' | 'statistics';
+export type { LearningDomain as BxmDomain } from '../../../types/learningDomain';
+import type { LearningDomain as BxmDomain } from '../../../types/learningDomain';
 
-export type CognitiveLevel = 'reproduccion' | 'conexion' | 'reflexion';
+import type { CognitiveLevel, DifficultyTier } from '../../../types/learningDomain';
+export type { CognitiveLevel, DifficultyTier } from '../../../types/learningDomain';
 
-export type DifficultyTier = 1 | 2 | 3;
+
 
 export type ItemProvenance = 'official_reference' | 'official_past' | 'authored_mastery' | 'isomorphic_generated' | 'legacy_unknown';
 

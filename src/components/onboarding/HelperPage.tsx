@@ -132,6 +132,7 @@ export function HelperPage({ onNavigate, route }: { onNavigate: (route: AppRoute
         <a href="https://portaldgec.mep.go.cr/yo_aplico/Login" target="_blank" rel="noreferrer" className="min-h-11 inline-flex items-center underline">Yo Aplico · Matrícula</a>
         <a href="https://dgec.mep.go.cr/" target="_blank" rel="noreferrer" className="min-h-11 inline-flex items-center underline">DGEC · Fechas y programas</a>
         <a href="https://dgec.mep.go.cr/consultas/" target="_blank" rel="noreferrer" className="min-h-11 inline-flex items-center underline">DGEC · Consultas y reconocimientos</a>
+        <a href="#/acerca" className="min-h-11 inline-flex items-center underline">Preguntas Frecuentes y Acerca de</a>
       </div>
     </section>}
     </Tabs>

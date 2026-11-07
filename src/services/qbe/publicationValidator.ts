@@ -100,7 +100,7 @@ export class PublicationEligibilityValidator {
           code: 'MALFORMED_OPTION_KEYS',
           verdict: 'BLOCKER',
           field: 'content.options',
-          message: `Options must have consecutive unique IDs A–C or A–D. Found: ${optionLetters.join(', ')}`,
+          message: `Options must have consecutive unique IDs A-C or A-D. Found: ${optionLetters.join(', ')}`,
         });
       }
 

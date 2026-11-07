@@ -4,9 +4,11 @@
  * Compliant with CONSOLIDATED DECISIONS v1.
  */
 
-export type StandardDomainArea = 'geometry' | 'functions' | 'statistics';
-export type CognitiveLevel = 'reproduccion' | 'conexion' | 'reflexion';
-export type DifficultyTier = 1 | 2 | 3;
+export type { LearningDomain as StandardDomainArea } from '../../types/learningDomain';
+import type { LearningDomain as StandardDomainArea } from '../../types/learningDomain';
+import type { CognitiveLevel, DifficultyTier } from '../../types/learningDomain';
+export type { CognitiveLevel, DifficultyTier } from '../../types/learningDomain';
+
 
 export type SessionKind =
   | 'diagnostic'

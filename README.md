@@ -1,149 +1,62 @@
-# MEP-EA-01 — Costa Rican Educación Abierta Test Simulator & Practice Platform
+# MEP Educación Abierta Digital
 
-**MEP EA Digital (`MEP-EA-01`)** is an edge-accelerated, high-fidelity web test simulator, diagnostic assessment, and learning practice platform engineered for the Costa Rican *Educación Abierta* system administered by the *Ministerio de Educación Pública* (MEP / DGEC).
+A React and TypeScript application for independent preparation for Costa Rica’s Educación Abierta programs. It includes official reference materials, local assessment history, guided BXM Mathematics lessons and practice, and DGEC calendar information.
 
-Authoritative System Architecture & Engineering Specifications: **[Master Architecture Suite (v3.0.0)](project_docs/INDEX.md)**.
-Historical exploratory pre-dev logs and audits: **[Historical Archive](project_docs/archive/README.md)**.
+The app is an independent study tool. Refer to the DGEC notices linked in the app for official requirements and dates.
 
----
+## Run locally
 
-The platform spans the four core Educación Abierta certification tracks: **I & II Ciclo (CICO)**, **III Ciclo (7°, 8°, 9°)**, **EDAD (Parte 1 & Parte 2)**, and **BXM (Bachillerato por Madurez)**. The active prototype exposes full multi-program navigation, dynamic formula sheets, terms dictionary, official specification tables, and production question sets in BXM Mathematics.
+Use Node.js 22 and npm.
 
-## 🚀 Key Features
-
-- **Multi-Program Architecture Across 4 Testing Tracks**:
-  - **I & II Ciclo (CICO)**: Five primary-level subject exams, with strict calculator prohibition in Mathematics (`calculatorAllowed: false`).
-  - **III Ciclo**: 3 lower secondary-level exams (7°, 8°, and 9° Año).
-  - **EDAD**: 2 upper secondary-level exams separated into distinct testing modules (Parte 1 / 10° Año, Parte 2 / 11° Año).
-  - **BXM**: One exam per subject covering combined 10° & 11° grade concepts.
-- **Biannual Convocatoria Blueprints**:
-  - Decoupled exam assembly manifests supporting multiple annual testing windows (e.g. Convocatoria 01-2026 and 02-2026) with passing score thresholds, item weights, and section boundaries.
-- **Decoupled Math Concept Library**:
-  - Centralized concept item bank located in `content/library/math/` (`geometry_concepts.json`, `algebra_concepts.json`, `statistics_concepts.json`).
-  - Standardized concept metadata: unique ID, domain, curriculum module tags, formal definitions, KaTeX formulas, examples, and official criteria links.
-- **Decoupled Item Repository**:
-  - Atomic question assets located in `content/items/math/`, tagged with linked concepts, evidence targets, cognitive levels, and calculator constraints.
-- **Full Exam Simulation & Practice Engine**:
-  - Timed 60-item simulation following official MEP specifications and distributions across Geometry, Functions & Algebra, and Statistics & Probability.
-  - Modular practice filterable by Domain Area, Topic, or Question Set across **170+ high-quality question items**, with configurable item counts and optional timers.
-- **Dynamic Math & Visual Rendering Engine**:
-  - LaTeX mathematical equations rendered via **KaTeX** with inline (`$...$`) and block (`$$...$$`) support.
-  - Interactive and vector-based 2D/3D visualizations (Cartesian planes, circles, transformations, function graphs, box plots, frequency/contingency tables, Venn diagrams) powered by custom SVG composite components.
-- **Resource & Knowledge Library**:
-  - Official Table of Specifications (Affirmations, Evidences, Points per block).
-  - Searchable Terms Dictionary and Formula Sheets with KaTeX LaTeX rendering and collapsible accordion sections.
-- **Answer Capture, Instant Scoring & Analytics**: Single-choice selection, question flag/review grid, automatic scoring upon submission, step-by-step solutions, and longitudinal attempt history with green-to-red performance indicator trends.
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Bundler & Build**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Math Rendering**: [KaTeX](https://katex.org/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Testing**: [Vitest](https://vitest.dev/) + [Testing Library (React & Jest DOM)](https://testing-library.com/) + [Playwright](https://playwright.dev/)
-
----
-
-## 📦 Getting Started
-
-### Prerequisites
-
-Ensure you have **Node.js** (v20+ recommended) and **npm** installed.
-
-### Installation
-
-```bash
-# Clone repository and install dependencies
-npm install
-```
-
-### Development Server
-
-Run the Vite development server with Hot Module Replacement (HMR):
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-### Production Build
-
-Type-check and build the production bundle:
-
-```bash
+```sh
 npm run build
-```
-
-Preview the production build locally:
-
-```bash
 npm run preview
 ```
 
----
+The production output is in `dist/`. Hash routing supports static hosting without server rewrite rules. Fonts are bundled locally.
 
-## 🧪 Testing & Quality Assurance
+## Checks
 
-### Unit & Component Tests
-
-Run unit tests using Vitest:
-
-```bash
-npx vitest run
-```
-
-### Linting
-
-Run Oxlint:
-
-```bash
+```sh
 npm run lint
+npm test
+npm run build
+npm run test:flows
 ```
 
----
+`test:flows` starts a production preview on port 4189 and runs the reference-exam/resource journeys, guided learning recovery/access journeys, and axe checks at 320px and 1280px in light and dark themes. Build first. Set `FLOW_BASE_URL` to use an already running server. Pass `--start-server` to the browser runner if a custom URL needs its own preview server.
 
-## 📂 Project Structure
+On Windows, the runner uses an installed Chrome from `%ProgramFiles%` when available. Else install Chromium with `npx playwright install chromium`. `FLOW_CHROME_PATH` selects another browser executable.
 
-```
-├── content/                     # Question bank, concept library, and blueprints
-│   ├── manifest.json            # Central registry mapping programs, libraries, subjects
-│   ├── schema.json              # Item content JSON schema validator
-│   ├── library/                 # Centralized Math Concept Registry
-│   │   └── math/
-│   │       ├── geometry_concepts.json
-│   │       ├── algebra_concepts.json
-│   │       └── statistics_concepts.json
-│   ├── items/                   # Centralized Reusable Item Repository
-│   │   └── math/
-│   │       ├── geometry/
-│   │       ├── algebra/
-│   │       └── statistics/
-│   ├── programs/                # Program-specific rules & convocatoria assembly blueprints
-│   │   ├── bxm/                 # BXM subject metadata & convocatorias
-│   │   ├── edad/                # EDAD modules (Parte 1 & Parte 2) & convocatorias
-│   │   ├── iii_ciclo/           # III Ciclo subprograms (7°, 8°, 9°) & convocatorias
-│   │   └── i_ii_ciclo/          # I & II Ciclo (CICO) blueprints (calculator prohibited)
-│   └── bxm/
-│       └── matematicas/         # BXM verified sets (set_1 through set_4) & groups
-├── project_docs/                # Requirements, SRS, architecture specs
-│   ├── SRS.md                   # System Requirements Specification (v2.0)
-│   ├── Strategy_for_Developing_Reusable_Visualisation_Components.md
-│   ├── images/                  # Architecture and UI screenshots
-│   └── reference_dumps/         # Raw text and PDF extractions
-├── src/
-│   ├── components/              # UI components (common, knowledge, layout, pages, practice, test, visuals)
-│   ├── services/                # Services (dataService, storageService, knowledgeService)
-│   ├── types/                   # TypeScript interfaces and domain types
-│   ├── utils/                   # Math, coordinate transform, and tick helpers
-│   ├── App.tsx
-│   └── main.tsx
-└── vitest.config.ts             # Vitest configuration
+```sh
+npm run test:learning
+npm run audit:performance
+npm run audit:bundle
 ```
 
----
+Reports and screenshots are written under `artifacts/`. The bundle check enforces the Phase 0 entry-chunk byte/gzip budget; aggregate route/data JavaScript is reported separately. CI runs the production journeys and uploads reports. Lighthouse scores depend on machine load; compare repeated measurements under matching conditions. The full Vitest suite currently uses one worker and can take several minutes.
 
-## 📄 License
+## Product access
 
-This project is developed for educational purposes supporting student preparation for MEP Educación Abierta exams.
+Free access includes official reference exams, diagnostics and basic results, official resources, and sample lessons. Guided and legacy practice require Pro. Production plan buttons do not grant access: simulated upgrades are available only in development. Billing and server authorization are not implemented by this local prototype.
+
+The capability matrix is in `src/services/capabilityModel.ts`; older entitlement and subscription APIs delegate to it and share the tier service. Browser storage remains local to the device. Existing key formats and histories are preserved; this change does not migrate learner records.
+
+## Source and architecture
+
+- `content/manifest.json`: program and subject catalog.
+- `content/programs/`: exam manifests and published content configuration.
+- `content/bxm-mvp-learning/`: guided curriculum, lesson, practice and template data.
+- `content/calendar/`: published calendar records with source links and verification dates.
+- `src/services/storageRegistry.ts`: shared storage key registry and migration policy.
+- `src/types/learningDomain.ts`: shared learning types.
+- [Architecture documentation](project_docs/INDEX.md).
+- [Consolidation execution status](project_docs/consolidation/EXECUTION.md).
+- [Requested consolidation plan](Plan_Exe.md).
+
+The consolidation is staged. The reference player and guided player still coexist; replacing the legacy engine and migrating storage require the later phases tracked in the execution status.

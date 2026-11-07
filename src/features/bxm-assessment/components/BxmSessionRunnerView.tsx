@@ -169,6 +169,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
 
   return (
     <div className="assessment-workspace max-w-4xl mx-auto p-4 sm:p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl shadow-sm text-stone-900 dark:text-stone-100">
+      <h1 className="sr-only">{runner.policy.kind === 'diagnostic' ? 'Diagnóstico' : isExam ? 'Simulacro de práctica' : 'Sesión de práctica'}</h1>
       {/* Top Header */}
       <div className="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-stone-200 dark:border-stone-800 gap-2">
         <div className="flex items-center gap-3">
@@ -219,9 +220,9 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
       <p className="muted mb-4">{{ geometry: 'Geometría', functions: 'Funciones', statistics: 'Estadística' }[currentItem.domain]}</p>
 
       {/* Stem */}
-      <h1 ref={questionHeading} tabIndex={-1} className="question-stem mb-6">
+      <h2 ref={questionHeading} tabIndex={-1} className="question-stem mb-6">
         <TextRenderer content={currentItem.stem} inline />
-      </h1>
+      </h2>
 
       {/* Options */}
       <div className="space-y-2 sm:space-y-3 mb-6">
@@ -230,8 +231,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
           return (
             <button
               key={opt.letter}
-              aria-label={`Opción ${opt.letter}`}
-              aria-describedby={`bxm-option-description-${opt.letter}`}
+              data-option={opt.letter}
               aria-pressed={isSelected}
               onClick={() => handleOptionSelect(opt.letter)}
               className={`w-full text-left p-2.5 sm:p-3.5 rounded-xl border text-xs sm:text-base flex items-start gap-2.5 sm:gap-3 transition cursor-pointer min-w-0 ${
@@ -240,10 +240,10 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
                   : 'border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/50 text-stone-800 dark:text-stone-200'
               }`}
             >
-              <span className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 sm:mt-0 ${
+              <span id={`bxm-option-letter-${opt.letter}`} className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 sm:mt-0 ${
                 isSelected ? 'bg-blue-600 text-white' : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300'
               }`}>
-                {opt.letter}
+                <span className="sr-only">Opción </span>{opt.letter}
               </span>
               <span id={`bxm-option-description-${opt.letter}`} className="flex-1 min-w-0 break-words leading-relaxed">
                 <TextRenderer content={opt.text} inline />
@@ -397,7 +397,7 @@ export const BxmSessionRunnerView: React.FC<BxmSessionRunnerViewProps> = ({
                     ? 'ring-2 ring-blue-600 bg-stone-200 dark:bg-stone-700'
                     : isDone
                     ? 'bg-stone-300 dark:bg-stone-600 text-stone-800 dark:text-stone-200'
-                    : 'bg-stone-100 dark:bg-stone-800 text-stone-400'
+                    : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300'
                 }`}
               >
                 {idx + 1}

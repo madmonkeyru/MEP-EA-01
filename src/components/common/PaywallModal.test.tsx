@@ -1,9 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { cleanup, render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { PaywallModal } from './PaywallModal';
 import { subscriptionService } from '../../services/subscriptionService';
 
 describe('PaywallModal', () => {
+  afterEach(() => { cleanup(); vi.unstubAllEnvs(); });
   beforeEach(() => {
     subscriptionService.setTier('free');
   });
@@ -48,10 +49,19 @@ describe('PaywallModal', () => {
     const onClose = vi.fn();
     render(<PaywallModal isOpen={true} onClose={onClose} />);
 
-    const choosePlanBtn = screen.getByRole('button', { name: /Elegir Plan Mensual Pro/i });
+    const choosePlanBtn = screen.getByRole('button', { name: /Simular acceso: Plan Mensual Pro/i });
     fireEvent.click(choosePlanBtn);
 
     expect(subscriptionService.isPremium()).toBe(true);
     expect(onClose).toHaveBeenCalled();
+  });
+
+  it('has no production controls that grant Pro access', () => {
+    vi.stubEnv('DEV', false);
+    render(<PaywallModal isOpen onClose={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: /Modo pruebas|Simular acceso/ })).not.toBeInTheDocument();
+    const plans = screen.getAllByRole('button', { name: 'Contratación próximamente' });
+    for (const plan of plans) { expect(plan).toBeDisabled(); fireEvent.click(plan); }
+    expect(subscriptionService.getTier()).toBe('free');
   });
 });

@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '../services/storageRegistry';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark' | 'system';
@@ -11,7 +12,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const THEME_STORAGE_KEY = 'mep_ea_01_theme';
+const THEME_STORAGE_KEY = STORAGE_KEYS.theme;
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {

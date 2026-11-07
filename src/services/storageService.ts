@@ -1,6 +1,7 @@
+import { STORAGE_KEYS } from './storageRegistry';
 import type { User, Attempt, TestSession, PracticeConfig, FunnelEvent, FunnelEventType } from '../types';
 import { scopeKey, validSession } from './sessionStorageMetadata';
-const KEYS = { user: 'mep_ea_user', attempts: 'mep_ea_attempts', active: 'mep_ea_active_session', telemetry: 'mep_ea_telemetry_events' };
+const KEYS = { user: STORAGE_KEYS.user, attempts: STORAGE_KEYS.attempts, active: STORAGE_KEYS.activeSession, telemetry: STORAGE_KEYS.legacyTelemetry };
 class StorageService {
   lastError = '';
   private read<T>(key: string, fallback: T): T {
@@ -15,9 +16,9 @@ class StorageService {
     const user = this.read<User | null>(KEYS.user, null);
     return user && typeof user.id === 'string' && typeof user.name === 'string' ? user : null;
   }
-  getProfiles(): User[] { const values = this.read<User[]>('mep_local_profiles', []); return Array.isArray(values) ? values.filter(user => user && typeof user.id === 'string' && typeof user.name === 'string') : []; }
+  getProfiles(): User[] { const values = this.read<User[]>(STORAGE_KEYS.profiles, []); return Array.isArray(values) ? values.filter(user => user && typeof user.id === 'string' && typeof user.name === 'string') : []; }
   setCurrentUser(user: User | null) {
-    if (user && !this.write('mep_local_profiles', [user, ...this.getProfiles().filter(profile => profile.id !== user.id)])) return false;
+    if (user && !this.write(STORAGE_KEYS.profiles, [user, ...this.getProfiles().filter(profile => profile.id !== user.id)])) return false;
     return this.write(KEYS.user, user);
   }
   getAttempts(): Attempt[] {

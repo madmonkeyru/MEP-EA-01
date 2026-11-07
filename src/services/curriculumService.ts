@@ -10,7 +10,6 @@ import {
   OfficialSpecTable,
   OfficialSpecBlock,
   OfficialSpecAffirmation,
-  OFFICIAL_SPEC_BXM_MATH_02_2026,
   ALL_OFFICIAL_SPECS,
 } from '../types/officialSpecs';
 import { Item, PracticeConfig } from '../types';
@@ -67,16 +66,24 @@ class CurriculumService {
       const subKey = `${programId}-${subprogramId}-${subjectId}-${convocatoriaId}`;
       if (this.specTablesMap.has(subKey)) return this.specTablesMap.get(subKey);
     }
-    const key = `${programId}-${subjectId}-${convocatoriaId}`;
-    return this.specTablesMap.get(key) || OFFICIAL_SPEC_BXM_MATH_02_2026;
+    const specId = /^(\d{4})-c([12])$/.exec(convocatoriaId);
+    const canonicalId = specId ? `0${specId[2]}-${specId[1]}` : convocatoriaId;
+    const subjectAlias = subjectId === 'matematicas' ? 'matematica' : subjectId === 'matematica' ? 'matematicas' : subjectId;
+    if (subprogramId) {
+      return this.specTablesMap.get(`${programId}-${subprogramId}-${subjectId}-${canonicalId}`)
+        ?? this.specTablesMap.get(`${programId}-${subprogramId}-${subjectAlias}-${canonicalId}`);
+    }
+    return this.specTablesMap.get(`${programId}-${subjectId}-${canonicalId}`)
+      ?? this.specTablesMap.get(`${programId}-${subjectAlias}-${canonicalId}`);
   }
 
   public getPreparationPath(
     programId: string = 'bxm',
     subjectId: string = 'matematicas',
     convocatoriaId: string = '02-2026'
-  ): PreparationPathModel {
-    const table = this.getSpecTable(programId, subjectId, convocatoriaId) || OFFICIAL_SPEC_BXM_MATH_02_2026;
+  ): PreparationPathModel | undefined {
+    const table = this.getSpecTable(programId, subjectId, convocatoriaId);
+    if (!table) return undefined;
     const allItems = dataService.getAllItems();
 
     const blocks: PreparationBlockPath[] = table.blocks.map((block: OfficialSpecBlock) => {

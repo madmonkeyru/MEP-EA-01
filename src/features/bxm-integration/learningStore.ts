@@ -1,3 +1,4 @@
+import { learningStorageKey } from '../../services/storageRegistry';
 import { SessionRunner, type SessionSnapshot } from '../bxm-assessment/sessionRunner';
 import type { SessionResultExport } from '../bxm-assessment/types';
 import { BxmProgressStorage, createBrowserStorageAdapter, type StorageAdapter } from '../bxm-progress/storage/progressStorage';
@@ -32,7 +33,7 @@ interface LearningDocument {
   completedLessons?: StoredLessonCompletion[];
   exposedItemIds?: string[];
 }
-export const learningKey = (userId: string) => `bxm-mvp-progress:v1:learning:${encodeURIComponent(userId)}`;
+export const learningKey = learningStorageKey;
 
 /** Session records are the recovery journal; the progress event sink is idempotent. */
 export class BxmLearningStore {

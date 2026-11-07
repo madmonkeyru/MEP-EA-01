@@ -18,7 +18,9 @@ export const PreparationPathView: React.FC<PreparationPathViewProps> = ({
   onStartQuiz,
 }) => {
   const pathModel = curriculumService.getPreparationPath(programId, subjectId, convocatoriaId);
-  const [expandedBlock, setExpandedBlock] = useState<string>(pathModel.blocks[0]?.blockCode || '');
+  const [expandedBlock, setExpandedBlock] = useState<string>(pathModel?.blocks[0]?.blockCode || '');
+
+  if (!pathModel) return <section className="feedback-state"><h2>Temario no disponible</h2><p>Aún no hay una tabla de especificaciones para esta materia y convocatoria.</p></section>;
 
   return (
     <div className="space-y-6">

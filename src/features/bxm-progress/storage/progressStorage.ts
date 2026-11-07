@@ -1,9 +1,10 @@
+import { STORAGE_KEYS } from '../../../services/storageRegistry';
 import type { AttemptEvent } from '../domain/types';
 import { isAttemptEvent } from '../domain/validateAttempt';
 
 export const PROGRESS_STORAGE_NAMESPACE = 'bxm-mvp-progress';
-export const PROGRESS_EVENTS_KEY = `${PROGRESS_STORAGE_NAMESPACE}:v1:events`;
-export const PROGRESS_ACTIVE_PROFILE_KEY = `${PROGRESS_STORAGE_NAMESPACE}:v1:active_profile`;
+export const PROGRESS_EVENTS_KEY = STORAGE_KEYS.progressEvents;
+export const PROGRESS_ACTIVE_PROFILE_KEY = STORAGE_KEYS.progressProfile;
 export interface StorageAdapter {
   getItem: (key: string) => string | null;
   setItem: (key: string, value: string) => void;

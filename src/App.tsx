@@ -11,6 +11,9 @@ import { EntryLandingPage } from './components/pages/EntryLandingPage';
 import { WelcomePage } from './components/pages/WelcomePage';
 import { FeedbackState } from './components/common/FeedbackState';
 import { Dialog } from './components/common/Dialog';
+import { PaywallModal } from './components/common/PaywallModal';
+import { canStartLegacyActivity } from './services/practiceAccess';
+import { useSubscriptionCapabilities } from './hooks/useCapabilities';
 import { type AppRoute, readRoute, routeHash } from './services/navigation';
 const OfficialCalendar = lazy(() => import('./components/knowledge/OfficialCalendar').then(module => ({ default: module.OfficialCalendar })));
 const SubjectHubPage = lazy(() => import('./components/pages/LandingPage').then(module => ({ default: module.SubjectHubPage })));
@@ -23,6 +26,7 @@ const GenericSubjectHubPage = lazy(() => import('./components/pages/GenericSubje
 const HelperPage = lazy(() => import('./components/onboarding/HelperPage').then(module => ({ default: module.HelperPage })));
 const ReadinessWizard = lazy(() => import('./components/onboarding/ReadinessWizard').then(module => ({ default: module.ReadinessWizard })));
 const BxmLearningHub = lazy(() => import('./features/bxm-integration/BxmLearningHub').then(module => ({ default: module.BxmLearningHub })));
+const AboutFaqPage = lazy(() => import('./components/pages/AboutFaqPage').then(module => ({ default: module.AboutFaqPage })));
 
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => storageService.getCurrentUser());
@@ -35,6 +39,8 @@ export function App() {
   const [pending, setPending] = useState<PracticeConfig | null>(null);
   const [pendingSource, setPendingSource] = useState<TestSession | null>(null);
   const [discard, setDiscard] = useState(false);
+  const [paywall, setPaywall] = useState(false);
+  useSubscriptionCapabilities();
   const main = useRef<HTMLElement>(null);
   const userId = currentUser?.id || 'guest';
   const program = programManifest.programs.find(program => program.id === route.programId);
@@ -73,7 +79,7 @@ export function App() {
   }, [needsContext, contextKey, retry]);
   useEffect(() => {
     if (contextReady && route.view === 'hub') try { localStorage.setItem('mep_last_subject', routeHash(route)); } catch { /* Navigation still works without storage. */ }
-    const label = route.view === 'learning' ? 'Aprendizaje guiado BXM' : route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'calendar' ? 'Calendario DGEC' : route.view === 'helper' ? 'Guía y recursos' : program?.name || 'Educación Abierta';
+    const label = route.view === 'learning' ? 'Aprendizaje guiado BXM' : route.view === 'test' ? 'Prueba en curso' : route.view === 'results' ? 'Resultados' : route.view === 'guide' ? 'Guía opcional' : route.view === 'calendar' ? 'Calendario DGEC' : route.view === 'helper' ? 'Guía y recursos' : route.view === 'about' ? 'FAQ y Acerca de' : program?.name || 'Educación Abierta';
     document.title = label + ' · MEP-EA-01';
   }, [route.view, route.programId, route.subjectId, route.moduleId, route.convocatoriaId, route.sessionId, route.tab, route.resourceTab, contextReady]);
   const hub = () => navigate({ ...route, view: 'hub', sessionId: undefined, tab: test?.config.reviewDraft || result?.config.reviewDraft ? 'review' : route.tab });
@@ -85,6 +91,7 @@ export function App() {
   const test = matchesRoute(candidateTest) ? candidateTest : null;
   const result = matchesRoute(candidateResult) ? candidateResult : null;
   function begin(config: PracticeConfig, force = false, source?: TestSession | null) {
+    if (!canStartLegacyActivity(config)) { setPaywall(true); return; }
     const context = { ...config, programId: route.programId || 'bxm', subjectId: route.subjectId || 'matematicas', subprogramId: route.moduleId, convocatoriaId: route.convocatoriaId || '2026-c2' };
     if (!force && resumable) { setPending(context); setPendingSource(source || null); return; }
     if (loadedContext?.key !== contextKey) return;
@@ -95,6 +102,7 @@ export function App() {
   }
   function resume() {
     if (!resumable) return;
+    if (!canStartLegacyActivity(resumable.config)) { setPaywall(true); return; }
     setActive(resumable); setPending(null);
     navigate({ view: 'test', programId: resumable.config.programId || 'bxm', subjectId: resumable.config.subjectId || 'matematicas', convocatoriaId: resumable.config.convocatoriaId || '2026-c2', moduleId: resumable.config.subprogramId, tab: resumable.config.reviewDraft ? 'review' : undefined, sessionId: resumable.sessionId });
   }
@@ -118,6 +126,7 @@ export function App() {
           <h1 className="text-3xl font-semibold">Calendario DGEC</h1>
           <OfficialCalendar key={routeHash(route)} initialProgram={route.programId} initialConvocatoria={route.convocatoriaId} />
         </div>}
+        {route.view === 'about' && <AboutFaqPage onNavigate={navigate} />}
         {route.view === 'helper' && <HelperPage route={route} onNavigate={navigate} />}
         {route.view === 'guide' && <ReadinessWizard onNavigate={navigate} onSkip={() => navigate({ view: 'welcome' })} onExplore={() => navigate({ view: 'helper' })} />}
         {!contextReady && ['framework', 'hub', 'test', 'results', 'learning'].includes(route.view) && <div className="page-width py-6"><FeedbackState busy title="Preparando tu materia…" description="Estamos cargando las lecciones y actividades." /></div>}
@@ -130,10 +139,11 @@ export function App() {
           onStartSimulation={() => begin({ mode: 'simulation', itemCount: 60, enableTimer: true, timerDurationMinutes: 150 })} onStartPractice={config => begin(config)}
           onStartPracticeByItems={(itemIds, title) => begin({ mode: 'area', itemIds, title, itemCount: itemIds.length, enableTimer: false, timerDurationMinutes: 30 })}
           onNavigateHome={() => navigate({ ...route, view: 'framework', subjectId: undefined })} />}
-        {contextReady && route.view === 'test' && (test ? <TestShell key={test.sessionId} config={test.config} initialSession={test} onLeave={hub} onFinishTest={session => { setCompleted(session); setActive(null); navigate({ ...route, view: 'results', sessionId: session.sessionId }); }} /> : <section className="page-width p-8"><h1>No hay un intento activo para esta dirección</h1><p>Vuelve a tu materia para iniciar o reanudar una práctica.</p><button className="primary-button" onClick={hub}>Volver a la materia</button></section>)}
+        {contextReady && route.view === 'test' && (test && !canStartLegacyActivity(test.config) ? <section className="page-width py-6"><h1>Práctica Pro</h1><p>Esta actividad requiere el plan Pro. El intento guardado se conserva.</p><button className="primary-button" onClick={() => setPaywall(true)}>Ver planes</button><button className="secondary-button" onClick={hub}>Volver a la materia</button></section> : test ? <TestShell key={test.sessionId} config={test.config} initialSession={test} onLeave={hub} onFinishTest={session => { setCompleted(session); setActive(null); navigate({ ...route, view: 'results', sessionId: session.sessionId }); }} /> : <section className="page-width p-8"><h1>No hay un intento activo para esta dirección</h1><p>Vuelve a tu materia para iniciar o reanudar una práctica.</p><button className="primary-button" onClick={hub}>Volver a la materia</button></section>)}
         {contextReady && route.view === 'results' && (result ? <ResultsPage key={result.sessionId} session={result} onRetry={() => begin({ ...result.config, itemIds: result.itemIds }, false, result)} onNewTest={hub} onGoHome={hub} onPracticeMissed={config => begin(config, false, result)} onPracticeWeakestArea={area => begin({ mode: 'area', area, itemCount: 10, enableTimer: false, timerDurationMinutes: 30 }, false)} /> : <section className="page-width p-8"><h1>Resultado no disponible en este perfil</h1><p>Los resultados se guardan solo en este navegador.</p><button className="primary-button" onClick={hub}>Volver a la materia</button></section>)}
       </Suspense>}
     </main>
+    <PaywallModal isOpen={paywall} onClose={() => setPaywall(false)} featureTitle="Práctica Pro" />
     {pending && <Dialog title="Ya tienes un intento guardado" onClose={() => setPending(null)}><p>Puedes reanudarlo o descartarlo para comenzar la nueva selección. No se mezclarán sus respuestas.</p><div className="action-row"><button className="primary-button" onClick={resume}>Reanudar intento</button><button className="secondary-button" onClick={() => begin(pending, true, pendingSource)}>Descartar anterior e iniciar otro</button></div></Dialog>}
     {discard && <Dialog title="¿Descartar el intento guardado?" onClose={() => setDiscard(false)}><p>Se eliminarán sus respuestas sin registrar un resultado.</p><button className="primary-button" onClick={() => { storageService.clearActiveSession(); setActive(null); setDiscard(false); }}>Sí, descartar</button></Dialog>}
   </div></WizardProvider>;

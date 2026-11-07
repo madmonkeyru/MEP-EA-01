@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from './storageRegistry';
 import type {
   ActivationEventName,
   AssessmentEventName,
@@ -10,7 +11,7 @@ import type {
   TelemetryEventName,
 } from '../types/telemetry';
 
-const STORAGE_TELEMETRY_KEY = 'mep_ea_telemetry_events_v1';
+const STORAGE_TELEMETRY_KEY = STORAGE_KEYS.telemetry;
 const MAX_LOCAL_EVENTS = 500;
 const DEDUPLICATION_WINDOW_MS = 2000; // 2 seconds idempotency guard for identical semantic events
 
@@ -29,7 +30,7 @@ export class TelemetryService {
 
   private getOrCreateSessionId(): string {
     try {
-      const key = 'mep_ea_session_id';
+      const key = STORAGE_KEYS.telemetrySession;
       let sid = sessionStorage.getItem(key);
       if (!sid) {
         sid = `sess_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
@@ -43,7 +44,7 @@ export class TelemetryService {
 
   private getOrCreateAnonymousUserId(): string {
     try {
-      const key = 'mep_ea_anon_user_id';
+      const key = STORAGE_KEYS.anonymousUser;
       let uid = localStorage.getItem(key);
       if (!uid) {
         uid = `anon_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;

@@ -10,7 +10,7 @@ export type LearningContextReason =
   | 'direct';
 
 export interface AppRoute {
-  view: 'landing' | 'welcome' | 'framework' | 'hub' | 'guide' | 'helper' | 'calendar' | 'test' | 'results' | 'learning';
+  view: 'landing' | 'welcome' | 'framework' | 'hub' | 'guide' | 'helper' | 'calendar' | 'about' | 'test' | 'results' | 'learning';
   evidenceKey?: string;
   sessionId?: string;
   sourceSessionId?: string;
@@ -29,6 +29,7 @@ export function readRoute(hash: string): AppRoute {
   if (path === '/calendario') { const params = new URLSearchParams(query); return { view: 'calendar', programId: params.get('programa') || undefined, convocatoriaId: params.get('convocatoria') || undefined }; }
   if (path === '/guia') return { view: 'guide' };
   if (path === '/ayuda') { const params = new URLSearchParams(query); return { view: 'helper', programId: params.get('programa') || undefined, subjectId: params.get('materia') || undefined, moduleId: params.get('nivel') || undefined }; }
+  if (path === '/acerca' || path === '/faq') return { view: 'about' };
   if (path === '/programas') return { view: 'welcome' };
   const parts = path.split('/').filter(Boolean);
   const program = programManifest.programs.find(p => p.id === parts[1]);
@@ -58,6 +59,7 @@ export function routeHash(route: AppRoute): string {
   if (route.view === 'calendar') { const params = new URLSearchParams(); if (route.programId) params.set('programa', route.programId); if (route.convocatoriaId) params.set('convocatoria', route.convocatoriaId); return '#/calendario' + (params.size ? '?' + params : ''); }
   if (route.view === 'guide') return '#/guia';
   if (route.view === 'helper') { const params = new URLSearchParams(); if (route.programId) params.set('programa', route.programId); if (route.subjectId) params.set('materia', route.subjectId); if (route.moduleId) params.set('nivel', route.moduleId); return '#/ayuda' + (params.size ? '?' + params : ''); }
+  if (route.view === 'about') return '#/acerca';
   if (route.view === 'landing') return '#/';
   if (route.view === 'welcome') return '#/programas';
   const params = new URLSearchParams();

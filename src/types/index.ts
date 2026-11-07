@@ -37,7 +37,8 @@ export interface ConceptRegistryEntry {
 }
 
 export type CognitiveLevel = 'reproduccion' | 'conexion' | 'reflexion' | string;
-export type DifficultyTier = 1 | 2 | 3; // 1: Básico, 2: Intermedio, 3: Avanzado
+import type { DifficultyTier } from './learningDomain';
+export type { DifficultyTier } from './learningDomain'; // 1: Básico, 2: Intermedio, 3: Avanzado
 
 export interface CurriculumCompetency {
   evidenceId: string; // e.g. 'A1.2'

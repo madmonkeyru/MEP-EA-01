@@ -11,17 +11,7 @@ import {
 } from '../types/persistence';
 import type { UserTier } from './entitlementService';
 
-const STORAGE_KEYS = {
-  PROFILE: 'mep_ea_learner_profile_v1',
-  ATTEMPTS: 'mep_ea_learner_attempts_v1',
-  MASTERY: 'mep_ea_learner_mastery_v1',
-  RECOMMENDATION: 'mep_ea_learner_rec_v1',
-  ENTITLEMENT: 'mep_ea_learner_entitlement_v1',
-  HISTORY: 'mep_ea_learner_history_v1',
-  LEGACY_USER: 'mep_ea_user',
-  LEGACY_ATTEMPTS: 'mep_ea_attempts',
-  LEGACY_SUBSCRIPTION: 'mep_ea_subscription_tier',
-};
+import { PERSISTENCE_KEYS as STORAGE_KEYS } from './storageRegistry';
 
 function generateDeterministicId(prefix: string): string {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;

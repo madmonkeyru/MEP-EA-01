@@ -1,3 +1,4 @@
+import { canStartLegacyActivity } from '../../services/practiceAccess';
 import { useState, useEffect } from 'react';
 import type { DifficultyTier, DomainArea, PracticeConfig, PracticeMode } from '../../types';
 import { dataService } from '../../services/dataService';
@@ -88,6 +89,10 @@ export function EvaluationModulesWidget({ onStartSimulation, onStartPractice, in
   };
 
   function start() {
+    if (!canStartLegacyActivity(config)) {
+      triggerPaywall('Práctica Pro', 'La práctica por área, tema, concepto y selección variada requiere el plan Pro. La prueba de referencia y el diagnóstico siguen disponibles gratis.');
+      return;
+    }
     if (count !== 'all' && (!Number.isInteger(count) || count < 1 || count > 100)) { setError('Elige entre 1 y 100 preguntas.'); return; }
     if (!eligible || (mode === 'concept_drilldown' && !concept)) { setError('Elige una selección con preguntas disponibles.'); return; }
     if (config.enableTimer && (!Number.isFinite(config.timerDurationMinutes) || config.timerDurationMinutes < 5 || config.timerDurationMinutes > 180)) { setError('El tiempo debe ser de 5 a 180 minutos.'); return; }

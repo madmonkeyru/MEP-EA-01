@@ -4,6 +4,7 @@ import { App } from './App';
 import { ThemeProvider } from './context/ThemeContext';
 import { dataService } from './services/dataService';
 import { storageService } from './services/storageService';
+import { subscriptionService } from './services/subscriptionService';
 
 configure({ asyncUtilTimeout: 5000 });
 vi.setConfig({ testTimeout: 15000 });
@@ -34,6 +35,14 @@ function mount(hash = '#/') {
 }
 
 describe('application curriculum flows', () => {
+  it('gates legacy practice for free learners without creating a session', async () => {
+    subscriptionService.setTier('free');
+    mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
+    fireEvent.click(await screen.findByRole('button', { name: 'Iniciar práctica' }));
+    expect(screen.getByRole('dialog', { name: 'Práctica Pro' })).toBeInTheDocument();
+    expect(storageService.getActiveSession()).toBeNull();
+  });
+
   it('opens the simulation configuration directly and restores it on reload', async () => {
     const hash = '#/programas/bxm/matematicas?convocatoria=2026-c2&seccion=simulation';
     const view = mount(hash);
@@ -79,6 +88,7 @@ describe('application curriculum flows', () => {
   });
 
   it('starts only questions in the requested difficulty tier and uses the preview count', async () => {
+    subscriptionService.setTier('premium');
     mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
     await screen.findByRole('button', { name: 'Iniciar práctica' });
     fireEvent.change(screen.getByLabelText('Dificultad'), { target: { value: '3' } });
@@ -109,6 +119,7 @@ describe('application curriculum flows', () => {
   });
 
   it('recovers the timed review draft and keeps its results separate from public samples', async () => {
+    subscriptionService.setTier('premium');
     const review = '#/programas/i_ii_ciclo/matematicas?convocatoria=2026-c2&seccion=review';
     const view = mount(review);
     fireEvent.click(await screen.findByRole('button', { name: 'Iniciar examen de revisión' }));
@@ -144,6 +155,7 @@ describe('application curriculum flows', () => {
   });
 
   it('launches only the selected level’s sample', async () => {
+    subscriptionService.setTier('premium');
     mount('#/programas/edad/matematicas?convocatoria=2026-c2&nivel=EDAD_2');
     await screen.findByRole('heading', { name: 'Muestra interactiva' });
     fireEvent.click(screen.getByRole('button', { name: 'Iniciar muestra' }));
@@ -163,6 +175,7 @@ describe('application curriculum flows', () => {
   });
 
   it('restores exact active answers and reopens completed results through their URLs', async () => {
+    subscriptionService.setTier('premium');
     let view = mount('#/programas/bxm/matematicas?convocatoria=2026-c2');
     fireEvent.click(await screen.findByRole('button', { name: 'Iniciar práctica' }));
     await screen.findByRole('heading', { name: 'Pregunta 1 de 10' });

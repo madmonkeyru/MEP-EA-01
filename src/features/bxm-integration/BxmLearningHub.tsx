@@ -151,6 +151,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
   }
   function resume() {
     if (!active) return;
+    if (active.policy.kind !== 'diagnostic' && !allow(active.policy.kind === 'mock_exam' ? 'configurable_mock_sessions' : 'extended_authored_practice')) return;
     try { const restored = SessionRunner.restore(active); setRunner(restored); go('assessment', undefined, active.sessionId); }
     catch { setMessage('No se pudo reanudar este intento. El registro se conserva para su revisión.'); }
   }
@@ -517,7 +518,7 @@ export function BxmLearningHub({ userId, route, onNavigate, onOfficialSimulation
         canonicalRecommendation={canonicalHomeRecommendation} onRecommendationAction={handleRecommendationAction}
         onNavigateToLesson={openLesson} onNavigateToPractice={(key, tier) => request({ kind: 'evidence_practice', evidenceKey: key, difficulty: tier as DifficultyTier })} onOpenUpgradeModal={() => setPaywall(true)} />
       : <section className="feedback-panel space-y-3"><h2>Seguimiento personalizado Premium</h2><p>El diagnóstico, sus resultados básicos y una lección completa por área siguen disponibles gratis.</p><button className="primary-button" onClick={() => setPaywall(true)}>Ver opciones Premium</button></section>)}
-    {tab === 'assessment' && (runner && runner.sessionId === route.sessionId ? <BxmSessionRunnerView key={runner.sessionId} runner={runner} onFinish={finish} onStateChange={persist} onExit={() => go('diagnostic')} formulaSheet={<FormulasSheet />} />
+    {tab === 'assessment' && (runner && runner.policy.kind !== 'diagnostic' && !capabilities.canAccess(runner.policy.kind === 'mock_exam' ? 'configurable_mock_sessions' : 'extended_authored_practice') ? <section className="feedback-panel"><h2>Práctica Pro</h2><p>El intento guardado se conserva. Activa Pro para continuar esta actividad.</p><button className="primary-button" onClick={() => setPaywall(true)}>Ver planes</button></section> : runner && runner.sessionId === route.sessionId ? <BxmSessionRunnerView key={runner.sessionId} runner={runner} onFinish={finish} onStateChange={persist} onExit={() => go('diagnostic')} formulaSheet={<FormulasSheet />} />
       : <section className="feedback-panel"><h2>Actividad no disponible en este perfil</h2><p>Busca el intento guardado o inicia otra actividad.</p><button onClick={() => go('diagnostic')}>Volver al diagnóstico</button></section>)}
     {tab === 'result' && (result ? <>
       <BxmSessionResultBreakdownView result={result} onExit={() => go('diagnostic')} />

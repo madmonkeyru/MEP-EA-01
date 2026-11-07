@@ -1,8 +1,10 @@
+import { subscriptionService } from '../../services/subscriptionService';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import { SubjectHubPage } from './LandingPage';
-afterEach(cleanup);
+afterEach(() => { cleanup(); subscriptionService.setTier('free'); });
 it('starts with untimed learning, previews the exact count and presents simulation preflight', () => {
+  subscriptionService.setTier('premium');
   const onPractice = vi.fn(), onSimulation = vi.fn();
   render(<SubjectHubPage currentUser={null} onStartPractice={onPractice} onStartSimulation={onSimulation} />);
   expect(screen.getByText(/Aún sin datos de simulación/)).toBeInTheDocument();

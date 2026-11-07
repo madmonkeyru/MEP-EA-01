@@ -12,7 +12,7 @@ export function LearningJourney() {
       {steps.map(({ icon: Icon, title, text }, index) => <li key={title} className="flex items-start gap-3">
         <Icon size={22} className="text-stone-400 dark:text-slate-500 shrink-0 mt-1" aria-hidden="true" />
         <div className="space-y-1.5">
-          <p className="text-[11px] text-stone-400 dark:text-slate-500 font-medium">0{index + 1}</p>
+          <p className="text-xs text-stone-600 dark:text-slate-400 font-medium">0{index + 1}</p>
           <h3 className="text-sm font-semibold">{title}</h3>
           <p className="text-sm text-stone-600 dark:text-slate-400 leading-relaxed">{text}</p>
         </div>

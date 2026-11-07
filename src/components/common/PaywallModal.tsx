@@ -26,12 +26,14 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   if (!isOpen) return null;
 
   const handleSimulateUpgrade = (_planId: string) => {
+    if (!import.meta.env.DEV) return;
     subscriptionService.setTier('premium');
     setCurrentTier('premium');
     onClose();
   };
 
   const handleToggleTier = () => {
+    if (!import.meta.env.DEV) return;
     const next = subscriptionService.toggleTier();
     setCurrentTier(next);
   };
@@ -81,14 +83,14 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                 {currentTier === 'premium' ? 'Plan Pro Activo' : 'Acceso Gratuito (Freemium)'}
               </span>
             </div>
-            <button
+            {import.meta.env.DEV && <button
               type="button"
               onClick={handleToggleTier}
               className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold flex items-center gap-1"
             >
               <Zap className="size-3.5" />
               <span>[Modo pruebas: Cambiar a {currentTier === 'premium' ? 'Free' : 'Premium'}]</span>
-            </button>
+            </button>}
           </div>
 
           {/* Plan selection grid */}
@@ -131,6 +133,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                 <div className="mt-6 pt-4 border-t border-stone-100 dark:border-stone-800">
                   <button
                     type="button"
+                    disabled={!import.meta.env.DEV}
                     onClick={() => handleSimulateUpgrade(plan.id)}
                     className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition active:scale-98 ${
                       plan.highlight
@@ -138,7 +141,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                         : 'bg-stone-900 hover:bg-stone-800 text-white dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white'
                     }`}
                   >
-                    Elegir {plan.name}
+                    {import.meta.env.DEV ? `Simular acceso: ${plan.name}` : 'Contratación próximamente'}
                   </button>
                 </div>
               </div>

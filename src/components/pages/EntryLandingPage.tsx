@@ -73,7 +73,7 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
                 <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 ">
                   Activo
                 </span>
-                <span className="text-xs font-semibold text-stone-500 dark:text-stone-400">
+                <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
                   Bachillerato
                 </span>
               </div>
@@ -101,7 +101,7 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
                 <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-stone-300 ">
                   Portal
                 </span>
-                <span className="text-xs font-semibold text-stone-500 dark:text-stone-400">
+                <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
                   4 Programas
                 </span>
               </div>
@@ -133,8 +133,23 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 dark:border-stone-800 py-4 px-6 text-center text-xs text-stone-500 dark:text-stone-400">
-        MEP-EA-01 Prototipo de Educación Abierta • Sistema Independiente de Práctica
+      <footer className="border-t border-stone-200 dark:border-stone-800 py-6 px-6 text-xs text-stone-600 dark:text-stone-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span>MEP-EA-01 Prototipo de Educación Abierta • Sistema Independiente de Práctica</span>
+        </div>
+        <div className="flex items-center gap-4 text-xs font-medium">
+          <a href="#/acerca" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            Preguntas Frecuentes y Acerca de
+          </a>
+          <span className="text-stone-300 dark:text-stone-700">•</span>
+          <a href="#/calendario" className="hover:text-stone-700 dark:hover:text-stone-200">
+            Calendario DGEC
+          </a>
+          <span className="text-stone-300 dark:text-stone-700">•</span>
+          <a href="#/ayuda" className="hover:text-stone-700 dark:hover:text-stone-200">
+            Guía y trámites
+          </a>
+        </div>
       </footer>
     </div>
   );
