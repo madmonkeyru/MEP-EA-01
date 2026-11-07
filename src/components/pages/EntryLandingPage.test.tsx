@@ -26,4 +26,17 @@ describe('EntryLandingPage', () => {
     fireEvent.click(exploreBtn);
     expect(handleExplore).toHaveBeenCalledTimes(1);
   });
+
+  it('renders the wavy flag as a decorative, non-interactive ambient background', () => {
+    const { container } = render(
+      <EntryLandingPage
+        onExplorePrograms={vi.fn()}
+        onEnterBxmHub={vi.fn()}
+      />
+    );
+
+    const background = container.querySelector('[aria-hidden="true"]');
+    expect(background).toHaveClass('pointer-events-none');
+    expect(background?.querySelector('svg[viewBox="0 0 1440 680"]')).toBeInTheDocument();
+  });
 });

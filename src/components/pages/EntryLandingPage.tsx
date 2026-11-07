@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LearningJourney } from '../common/LearningJourney';
+import { WavyFlagBackground } from '../common/WavyFlagBackground';
 import { provinces, provinceBorders, coast } from '../maps/map-geometry';
 import {
   ArrowRight,
@@ -20,7 +21,8 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
 }) => {
   const [last] = useState(() => { try { const route = localStorage.getItem('mep_last_subject'); return route?.startsWith('#/programas/') ? route : null; } catch { return null; } });
   return (
-    <div className="entry-page min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
+    <div className="entry-page relative min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
+      <WavyFlagBackground className="h-[680px] max-w-[1920px] mx-auto z-0" />
       <div className="page-width py-6 sm:py-10 w-full space-y-10">
         {/* Hero Section with Cartographic Costa Rica Background */}
         <div className="relative rounded-3xl p-6 sm:p-12 overflow-hidden border border-stone-200/80 dark:border-stone-800/80 bg-stone-50/60 dark:bg-stone-900/40 backdrop-blur-xs">
