@@ -138,11 +138,12 @@
 .app-header .page-width { width: calc(100% - 3rem); max-width: none; }
 .program-carousel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .program-carousel > a { min-width: 0; }
-.calendar-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1rem; padding: 0; list-style: none; }
-.calendar-event-card { padding: 1rem; border: 1px solid var(--border-subtle); border-radius: 1rem; background: var(--bg-secondary); }
-.calendar-event-card summary { cursor: pointer; min-height: 5rem; }
+.calendar-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.calendar-event-card { padding: 1.15rem; border: 1px solid var(--border-subtle); border-radius: 1.25rem; background: var(--bg-secondary); }
+.calendar-event-card summary { cursor: pointer; list-style: none; }
+.calendar-event-card summary::-webkit-details-marker { display: none; }
 .calendar-event-card summary h3 { display: inline; }
-.calendar-event-card summary p { margin-top: .75rem; color: var(--text-secondary); }
+.calendar-event-card summary p { margin-top: .5rem; color: var(--text-secondary); }
 .calendar-event-card details[open] > p, .calendar-event-card details[open] > ul { margin-top: 1rem; }
 .subject-card-compact { padding: 1rem; }
 .subject-card-compact > .relative { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; align-items: center; }
