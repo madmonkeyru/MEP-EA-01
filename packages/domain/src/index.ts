@@ -43,6 +43,8 @@ export interface Attempt {
   schemaVersion: 1; id: string; learnerId: string; assessmentId: string; assessmentVersion: string;
   questionIds: string[]; status: 'in_progress' | 'submitted'; currentIndex: number;
   answers: Record<string, Answer>; startedAt: string; updatedAt: string;
+  /** Earliest response per question; legacy snapshots fall back to their saved response. */
+  firstAnswers?: Record<string, Answer>;
   deadlineAt: string; submittedAt?: string; score?: Score;
 }
 export type DiagnosticTier = 'strong' | 'developing' | 'needs_practice';
@@ -56,3 +58,25 @@ export interface RemediationPlan { learnerId: string; conceptIds: string[]; reas
 }
 export interface LearningProgress { learnerId: string; evidenceId: string; distinctFamilies: number; accuracy: number; updatedAt: string }
 export interface GuidanceEvaluation { programId: ProgramId; requiredSubjectIds: string[]; recognizedSubjectIds: string[]; sourceVersion: string }
+
+export type MasteryTier = 'mastered' | 'in_progress' | 'needs_practice' | 'insufficient_evidence';
+export interface MasteryMeasure {
+  id: string; correct: number; total: number; distinctFamilies: number; accuracy: number | null; tier: MasteryTier;
+}
+export interface MasteryObservation {
+  evidenceId: string; domainId: string; familyId: string; questionId: string; correct: boolean;
+}
+export interface LearningEvidence {
+  mode: AssessmentMode; programId: ProgramId; subjectId: string; firstResponseKnown: boolean; observations: MasteryObservation[];
+}
+export interface MasterySnapshot {
+  schemaVersion: 1; learnerId: string; generatedAt: string; windowDays: 30; minimumFamilies: 5;
+  evidence: MasteryMeasure[]; domains: MasteryMeasure[];
+}
+export type NivelacionReason = 'no_diagnostic_yet' | 'remediation_pending' | 'diagnostic_weakness' |
+  'simulation_weakness' | 'retest_available' | 'general_practice';
+export interface NivelacionPlan {
+  schemaVersion: 1; learnerId: string; generatedAt: string;
+  activities: { evidenceId: string; conceptIds: string[]; reason: NivelacionReason;
+    action: 'diagnose' | 'learn' | 'practice' | 'retest'; questionIds: string[] }[];
+}

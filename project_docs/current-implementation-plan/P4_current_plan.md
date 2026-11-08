@@ -30,7 +30,7 @@ Importantly, I would **not reopen P3** merely because those production and accep
 
 # P4 — Durable Data Foundation & Mastery Continuity
 
-This document defines P4. Implementation and verification evidence will be recorded in [P4_EXECUTION.md](../P4_EXECUTION.md) once executed.
+This document defines P4. Implementation and verification evidence is recorded in [P4_EXECUTION.md](../P4_EXECUTION.md).
 
 Based on the authoritative architecture and the boundary explicitly established by P3, I would make the next milestone:
 
@@ -254,6 +254,6 @@ P4 should establish the **system of record and the longitudinal mastery/remediat
 
 ### Execution status
 
-Not yet implemented. This document is the plan baseline. After implementation, record evidence in [P4_EXECUTION.md](../P4_EXECUTION.md) following the same structure used for P3.
+Implemented on `p4m`, 2026-11-08. This document remains the scope baseline. See [P4_EXECUTION.md](../P4_EXECUTION.md) for acceptance evidence, local PostgreSQL setup, revision semantics and verification limits.
 
 P4 establishes durable learner continuity (attempts → mastery → Plan de Nivelación) on a PostgreSQL foundation while preserving offline-first behavior and the provider-neutral service contracts from P3. It does not claim production authentication, multi-region deployment, native device acceptance, or editorial publication.

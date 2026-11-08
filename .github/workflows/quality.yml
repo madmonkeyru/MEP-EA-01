@@ -4,6 +4,18 @@ on: [push, pull_request]
 jobs:
   verify:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: mep_test
+          POSTGRES_USER: mep_test
+          POSTGRES_PASSWORD: ci-disposable-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U mep_test -d mep_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -11,6 +23,9 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run test:postgres
+        env:
+          MEP_TEST_DATABASE_URL: postgresql://mep_test:ci-disposable-only@127.0.0.1:5432/mep_test
       - run: node scripts/ingest-validate-content.mjs
       - run: npm run content:check
       - run: npm run lint

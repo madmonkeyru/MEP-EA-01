@@ -1,4 +1,4 @@
-import type { Attempt, Diagnostic, RemediationPlan, AssessmentBlueprint } from '@mep-ea/domain';
+import type { Attempt, Diagnostic, RemediationPlan, AssessmentBlueprint, LearningEvidence, MasterySnapshot, NivelacionPlan } from '@mep-ea/domain';
 import { loadRegistry, parseBlueprint, type ContentRegistry } from '@mep-ea/content';
 import { object, text, list, ensure, unique } from '@mep-ea/validation';
 
@@ -6,7 +6,14 @@ export interface LearnerIdentity { learnerId: string }
 export interface AttemptRecord {
   schemaVersion: 1; revision: 1; attempt: Attempt; receivedAt: string;
   result: { diagnostic: Diagnostic; remediation: RemediationPlan };
+  learningEvidence?: LearningEvidence;
 }
+export interface LearningContinuity { schemaVersion: 1; mastery: MasterySnapshot; plan: NivelacionPlan }
+export interface DraftWrite { schemaVersion: 1; attempt: Attempt; baseRevision: number; deviceId: string }
+export interface DraftRecord { schemaVersion: 1; revision: number; attempt: Attempt; deviceId: string; receivedAt: string }
+export interface DraftConflict { id: string; candidate: DraftWrite; currentRevision: number; receivedAt: string }
+export interface DraftState { schemaVersion: 1; draft: DraftRecord | null; conflicts: DraftConflict[]; completed: boolean }
+export type DraftWriteResult = { accepted: true; record: DraftRecord } | { accepted: false; state: DraftState };
 export interface CatalogPackage {
   schemaVersion: 1; version: string; channel: 'production' | 'development';
   registry: ContentRegistry; blueprints: AssessmentBlueprint[];

@@ -36,8 +36,9 @@ The shared API now exposes authenticated attempt submission/retrieval and versio
 ## P4 Implementation
 
 - [P4 durable data foundation and mastery continuity plan](./current-implementation-plan/P4_current_plan.md)
+- [P4 execution, PostgreSQL setup and acceptance evidence](./P4_EXECUTION.md)
 
-P4 establishes the PostgreSQL system of record, longitudinal mastery snapshots, Plan de Nivelación generation, and multi-device revision rules on top of the P3 service contracts, while preserving offline-first behavior. Execution evidence will be recorded in `P4_EXECUTION.md` after implementation. Production identity-provider productization, Redis/object storage, and editorial publication remain out of scope.
+P4 implements the PostgreSQL system of record, longitudinal mastery snapshots, Plan de Nivelación generation, and multi-device revision rules on top of the P3 service contracts, while preserving offline-first behavior. Both durable adapters pass the shared service contracts; CI now includes a PostgreSQL-backed gate. Production identity-provider productization, database deployment, Redis/object storage, and editorial publication remain out of scope.
 
 ## 1. Authoritative Target Architecture (Authoritative)
 

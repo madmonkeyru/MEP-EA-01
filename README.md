@@ -73,11 +73,30 @@ npm run build         # Production TypeScript compilation & bundling
 npm run typecheck     # Web, platform-independent packages, and Expo
 npm run check:boundaries # Enforce shared package dependency direction
 npm run test:foundation # Shared content, lifecycle, persistence, auth contracts
+npm run test:postgres   # Requires MEP_TEST_DATABASE_URL; isolated PostgreSQL schema
 npm run build:mobile  # Export both Android and iOS Hermes bundles
 npm run test:learning # BXM Learning content integrity validation
 ```
 
 ---
+
+## P4 service and PostgreSQL development
+
+P4 adds a PostgreSQL repository, durable mastery snapshots, prioritized Plan de Nivelación, and revision-aware draft synchronization. Web/Expo keep the default database-free `p2-local` journey. The service uses the file development adapter unless `MEP_DATABASE_URL` is supplied; a configured database failure never silently switches stores.
+
+```powershell
+docker compose up -d --wait
+$env:MEP_DATABASE_URL = 'postgresql://mep_development:local-development-only@127.0.0.1:54329/mep_development'
+npm run db:migrate
+$env:MEP_TEST_DATABASE_URL = $env:MEP_DATABASE_URL
+npm run test:postgres
+$env:MEP_DEV_TOKEN = node -e "process.stdout.write(require('node:crypto').randomBytes(32).toString('hex'))"
+$env:MEP_DEV_LEARNER_ID = 'p4-development'
+$env:MEP_ALLOW_DRAFT_PREVIEW = 'true'
+npm run dev:service
+```
+
+The Compose credential is for loopback local development only. Migrations are explicit and forward-only; existing file records stay in their original store. `docker compose stop` stops the local database while preserving its volume. See [P4 execution](project_docs/P4_EXECUTION.md) for API contracts, first-response qualification, conflict reconciliation, and verification limits.
 
 ## Documentation Governance
 

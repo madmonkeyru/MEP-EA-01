@@ -24,7 +24,9 @@
     "test:poc": "vitest run",
     "test:foundation:browser": "node scripts/verify-foundation.mjs",
     "build:service": "vite build --config vite.service.config.ts",
-    "dev:service": "npm run build:service && node dist-service/main.js"
+    "dev:service": "npm run build:service && node dist-service/main.js",
+    "db:migrate": "npm run build:service && node dist-service/main.js --migrate",
+    "test:postgres": "node scripts/test-postgres.mjs"
   },
   "dependencies": {
     "fast-xml-parser": "^5.12.0",
@@ -38,6 +40,7 @@
     "@testing-library/react": "^16.3.3",
     "@types/katex": "^0.16.8",
     "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/yauzl": "^3.4.0",
@@ -45,12 +48,12 @@
     "jsdom": "^29.1.1",
     "lighthouse": "^12.8.2",
     "oxlint": "^1.89.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~7.0.2",
     "vite": "^8.3.5",
-    "vitest": "^5.0.5",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "vitest": "^5.0.5"
   },
   "workspaces": [
     "apps/*",

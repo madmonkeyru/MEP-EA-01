@@ -4,12 +4,13 @@ import { attemptKey, type PersistenceAdapter } from './persistence';
 export * from './persistence';
 export * from './journey';
 export * from './sync';
+export * from './continuity';
 
 export function initializeAttempt(assessment: Assessment, id: string, learnerId: string, now: string): Attempt {
   text(id, 'attempt.id'); text(learnerId, 'attempt.learnerId'); timestamp(now, 'now');
   ensure(assessment.questions.length === assessment.blueprint.totalItems && assessment.questions.length > 0, 'assessment', 'invalid item count');
   return { schemaVersion: 1, id, learnerId, assessmentId: assessment.id, assessmentVersion: assessment.blueprint.version,
-    questionIds: assessment.questions.map(q => q.id), status: 'in_progress', currentIndex: 0, answers: {}, startedAt: now, updatedAt: now,
+    questionIds: assessment.questions.map(q => q.id), status: 'in_progress', currentIndex: 0, answers: {}, firstAnswers: {}, startedAt: now, updatedAt: now,
     deadlineAt: new Date(Date.parse(now) + assessment.blueprint.timeLimitSeconds * 1000).toISOString() };
 }
 function matches(assessment: Assessment, attempt: Attempt) {
@@ -25,7 +26,10 @@ export function recordAnswer(assessment: Assessment, attempt: Attempt, questionI
   ensure(Date.parse(now) < Date.parse(attempt.deadlineAt), 'attempt', 'time limit reached; submit to score');
   const question = assessment.questions.find(q => q.id === questionId);
   ensure(question?.options.some(o => o.id === optionId), 'answer', 'unknown question or option');
-  return { ...attempt, updatedAt: now, answers: { ...attempt.answers, [questionId]: { questionId, optionId, answeredAt: now } } };
+  const answer = { questionId, optionId, answeredAt: now };
+  const firstAnswers = { ...(attempt.firstAnswers ?? attempt.answers) };
+  firstAnswers[questionId] ??= answer;
+  return { ...attempt, updatedAt: now, ...(attempt.firstAnswers ? { firstAnswers } : {}), answers: { ...attempt.answers, [questionId]: answer } };
 }
 export function navigate(assessment: Assessment, attempt: Attempt, index: number, now: string): Attempt {
   matches(assessment, attempt); mutable(attempt, now); integer(index, 'index');
@@ -74,6 +78,20 @@ export function restoreAttempt(assessment: Assessment, raw: unknown, learnerId: 
     answers[id] = { questionId: id, optionId: a.optionId as OptionId, answeredAt };
   }
   const attempt: Attempt = { ...initialized, updatedAt, currentIndex, answers, status: v.status };
+  // Keep absent first-response metadata absent so legacy immutable retries still normalize identically.
+  delete attempt.firstAnswers;
+  if (v.firstAnswers !== undefined) {
+    const firstAnswers: Attempt['answers'] = {};
+    for (const [id, rawFirst] of Object.entries(object(v.firstAnswers, 'attempt.firstAnswers'))) {
+      const a = object(rawFirst, 'firstAnswer'); const question = assessment.questions.find(q => q.id === id);
+      const answeredAt = timestamp(a.answeredAt, 'firstAnswer.answeredAt');
+      ensure(a.questionId === id && question?.options.some(o => o.id === a.optionId) && !!answers[id], 'firstAnswer', 'unknown response');
+      ensure(Date.parse(answeredAt) >= Date.parse(initialized.startedAt) && Date.parse(answeredAt) <= Date.parse(answers[id].answeredAt), 'firstAnswer', 'invalid timestamp');
+      firstAnswers[id] = { questionId: id, optionId: a.optionId as OptionId, answeredAt };
+    }
+    ensure(Object.keys(firstAnswers).length === Object.keys(answers).length, 'firstAnswers', 'response missing');
+    attempt.firstAnswers = firstAnswers;
+  }
   if (v.status === 'submitted') {
     const submittedAt = timestamp(v.submittedAt, 'attempt.submittedAt');
     ensure(submittedAt === updatedAt, 'attempt.submittedAt', 'inconsistent submission timestamp');

@@ -1,9 +1,10 @@
 import type { Attempt } from '@mep-ea/domain';
-import { parseCatalogPackage, type AttemptRecord, type CatalogPackage } from './contracts';
+import { parseCatalogPackage, type AttemptRecord, type CatalogPackage, type LearningContinuity, type DraftWrite, type DraftRecord, type DraftState } from './contracts';
 export * from './contracts';
 export * from './journey';
 export * from './transport';
 export * from './catalog';
+export * from './drafts';
 
 export type AuthSession = { kind: 'anonymous'; learnerId: string; tier: 'free' } | {
   kind: 'authenticated'; learnerId: string; tier: 'free' | 'premium'; roles: ('learner' | 'content_admin' | 'platform_admin')[];
@@ -17,10 +18,13 @@ export interface PlatformApi {
   submitAttempt(attempt: Attempt): Promise<void>;
   getAttempt(id: string): Promise<AttemptRecord>;
   getCatalog(channel?: CatalogPackage['channel']): Promise<CatalogPackage>;
+  getLearningContinuity(): Promise<LearningContinuity>;
+  getDraft(id: string): Promise<DraftState>;
+  saveDraft(write: DraftWrite): Promise<DraftRecord>;
 }
 export class AuthenticationRequired extends Error {}
 export class ApiError extends Error {
-  constructor(readonly status: number) { super(`Service request failed (${status})`); }
+  constructor(readonly status: number, readonly body?: unknown) { super(`Service request failed (${status})`); }
 }
 export function requireSession(session: AuthSession, now: number) {
   if (session.kind !== 'authenticated' || !session.learnerId.trim() || !session.accessToken.trim() ||
@@ -41,6 +45,16 @@ export function createPlatformApi(auth: AuthProvider, transport: ApiTransport, n
   },
   async getAttempt(id) { return await read(`/v1/attempts/${encodeURIComponent(id)}`) as AttemptRecord; },
   async getCatalog(channel = 'production') { return parseCatalogPackage(await read(`/v1/catalog/${channel}`)); },
+  async getLearningContinuity() { return await read('/v1/learning-continuity') as LearningContinuity; },
+  async getDraft(id) { return await read(`/v1/drafts/${encodeURIComponent(id)}`) as DraftState; },
+  async saveDraft(write) {
+    const session = requireSession(await auth.getSession(), now());
+    if (write.attempt.learnerId !== session.learnerId || !session.roles.includes('learner')) throw new AuthenticationRequired('Draft owner must match learner session');
+    const response = await transport.send({ method: 'PUT', path: `/v1/drafts/${encodeURIComponent(write.attempt.id)}`,
+      headers: { Authorization: `Bearer ${session.accessToken}`, 'Content-Type': 'application/json' }, body: JSON.stringify(write) });
+    if (response.status !== 200) throw new ApiError(response.status, response.body);
+    return response.body as DraftRecord;
+  },
   };
   async function read(path: string) {
     const session = requireSession(await auth.getSession(), now());
