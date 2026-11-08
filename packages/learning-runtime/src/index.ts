@@ -2,6 +2,7 @@ import type { Assessment, Attempt, OptionId, Score } from '@mep-ea/domain';
 import { ensure, integer, object, text, timestamp } from '@mep-ea/validation';
 import { attemptKey, type PersistenceAdapter } from './persistence';
 export * from './persistence';
+export * from './journey';
 
 export function initializeAttempt(assessment: Assessment, id: string, learnerId: string, now: string): Attempt {
   text(id, 'attempt.id'); text(learnerId, 'attempt.learnerId'); timestamp(now, 'now');
@@ -39,7 +40,10 @@ export function scoreAttempt(assessment: Assessment, attempt: Attempt): Score {
     const hit = answer?.optionId === q.correctOptionId ? 1 : 0; correct += hit;
     const domain = domains[q.domainId] ??= { correct: 0, total: 0 }; domain.correct += hit; domain.total++;
   }
-  return { correct, total: assessment.questions.length, unanswered, percentage: correct * 100 / assessment.questions.length, domains };
+  const items = assessment.questions.map(q => ({ questionId: q.id, evidenceId: q.evidenceId, conceptIds: [...q.conceptIds],
+    correct: attempt.answers[q.id]?.optionId === q.correctOptionId,
+    ...(attempt.answers[q.id] ? { selectedOptionId: attempt.answers[q.id].optionId } : {}) }));
+  return { correct, total: assessment.questions.length, unanswered, percentage: correct * 100 / assessment.questions.length, domains, items };
 }
 export function submitAttempt(assessment: Assessment, attempt: Attempt, now: string): Attempt {
   matches(assessment, attempt);

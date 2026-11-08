@@ -34,6 +34,7 @@ export interface AssessmentBlueprint {
 export interface Assessment { id: string; blueprint: AssessmentBlueprint; questions: Question[] }
 export interface Answer { questionId: string; optionId: OptionId; answeredAt: string }
 export interface Score {
+  items: { questionId: string; evidenceId: string; conceptIds: string[]; correct: boolean; selectedOptionId?: OptionId }[];
   correct: number; total: number; unanswered: number; percentage: number;
   domains: Record<string, { correct: number; total: number }>;
 }
@@ -43,7 +44,14 @@ export interface Attempt {
   answers: Record<string, Answer>; startedAt: string; updatedAt: string;
   deadlineAt: string; submittedAt?: string; score?: Score;
 }
-export interface Diagnostic { attemptId: string; weakEvidenceIds: string[]; generatedAt: string }
-export interface RemediationPlan { learnerId: string; conceptIds: string[]; reason: 'diagnostic_weakness' | 'simulation_weakness' | 'remediation_pending' }
+export type DiagnosticTier = 'strong' | 'developing' | 'needs_practice';
+export interface Diagnostic { attemptId: string; weakEvidenceIds: string[]; generatedAt: string;
+  domains: { domainId: string; correct: number; total: number; tier: DiagnosticTier }[];
+  provisional: true;
+}
+export interface RemediationPlan { learnerId: string; conceptIds: string[]; reason: 'diagnostic_weakness' | 'simulation_weakness' | 'remediation_pending';
+  activities: { conceptId: string; questionId: string; title: string; steps: string[] }[];
+  nextStep: 'practice' | 'reassess';
+}
 export interface LearningProgress { learnerId: string; evidenceId: string; distinctFamilies: number; accuracy: number; updatedAt: string }
 export interface GuidanceEvaluation { programId: ProgramId; requiredSubjectIds: string[]; recognizedSubjectIds: string[]; sourceVersion: string }

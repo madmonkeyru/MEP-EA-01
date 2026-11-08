@@ -12,6 +12,13 @@
 
 The implementation evidence records what is executable today; it does not replace the authoritative target architecture below.
 
+## P1 Implementation
+
+- [P1 core product vertical slice plan](./current-implementation-plan/P1_current_plan.md)
+- [P1 execution, acceptance evidence, and remaining native validation](./P1_EXECUTION.md)
+
+The Web journey is available at `/learn` (also `/foundation`); Expo uses the same shared journey controller. The three-item content remains an explicit draft development preview. Native device acceptance is pending.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.

@@ -41,7 +41,7 @@ npm run preview
 
 The production output is built to `dist/`. Hash routing supports static hosting without server rewrite rules. Fonts and assets are bundled locally.
 
-The existing POC now lives in `apps/web/` and remains the default Web experience. Open `/foundation` while the Web server is running for the P0 assessment preview. Start the Expo foundation with `npm run dev:mobile` and open it on an iOS or Android development device. Both clients consume the same domain, content, validation, and assessment runtime packages. The native client persists locally through Expo SQLite; Web uses its local storage adapter.
+The existing POC lives in `apps/web/` and remains the default Web experience. Open `/learn` (also `/foundation`) for the P1 learner journey: program/subject selection, assessment, scoring, provisional diagnosis and worked remediation. Start Expo with `npm run dev:mobile` and open it on an iOS or Android development device. Both clients consume the same domain, content, validation, and learner journey runtime. The native client persists locally through Expo SQLite; Web uses its local storage adapter. See [P1 execution and pending native acceptance](project_docs/P1_EXECUTION.md).
 
 The foundation preview contains three existing authored BXM items, one per domain, with their original provenance. They remain **draft development content**, pending editorial signoff. The preview is not a full diagnostic or a production content release. Its native screen displays plain source math notation; native mathematical typesetting is downstream work.
 

@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppErrorBoundary><ThemeProvider>
       <Suspense fallback={<p>Cargando…</p>}>
-        {window.location.pathname === '/foundation' ? <FoundationApp /> : <App />}
+        {['/learn', '/foundation'].includes(window.location.pathname) ? <FoundationApp /> : <App />}
       </Suspense>
     </ThemeProvider></AppErrorBoundary>
   </StrictMode>,
