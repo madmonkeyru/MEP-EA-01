@@ -1,4 +1,4 @@
-import type { Attempt } from '@mep-ea/domain';
+import type { Assessment, Attempt } from '@mep-ea/domain';
 import { parseCatalogPackage, type AttemptRecord, type CatalogPackage, type LearningContinuity, type DraftWrite, type DraftRecord, type DraftState } from './contracts';
 export * from './contracts';
 export * from './journey';
@@ -23,6 +23,13 @@ export interface AuthResponse {
   session: { learnerId: string; username: string; tier: 'free' | 'premium'; roles: ('learner' | 'content_admin' | 'platform_admin')[] };
 }
 
+export interface CompileAssessmentPayload {
+  programId: 'bxm';
+  subjectId: 'matematica';
+  mode: 'diagnostic' | 'mock' | 'simulation';
+  seed?: number;
+}
+
 export interface PlatformApi {
   submitAttempt(attempt: Attempt): Promise<void>;
   getAttempt(id: string): Promise<AttemptRecord>;
@@ -30,6 +37,7 @@ export interface PlatformApi {
   getLearningContinuity(): Promise<LearningContinuity>;
   getDraft(id: string): Promise<DraftState>;
   saveDraft(write: DraftWrite): Promise<DraftRecord>;
+  compileAssessment(payload: CompileAssessmentPayload): Promise<Assessment>;
   register(payload: AuthRegisterPayload): Promise<AuthResponse>;
   login(payload: AuthLoginPayload): Promise<AuthResponse>;
   getSession(): Promise<AuthSession>;
@@ -79,6 +87,24 @@ export function createPlatformApi(auth: AuthProvider, transport: ApiTransport, n
     }
     if (response.status !== 200) throw new ApiError(response.status, response.body);
     return response.body as DraftRecord;
+  },
+  async compileAssessment(payload) {
+    const session = requireSession(await auth.getSession(), now());
+    const response = await transport.send({
+      method: 'POST',
+      path: '/v1/assessments/compile',
+      headers: {
+        Authorization: `Bearer ${session.accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+    if (response.status === 403 && (response.body as { error?: string })?.error === 'entitlement_required') {
+      const b = response.body as { requiredTier: 'premium'; reasonEs?: string };
+      throw new EntitlementRequired(b.requiredTier, b.reasonEs);
+    }
+    if (response.status !== 200) throw new ApiError(response.status, response.body);
+    return (response.body as { assessment: Assessment }).assessment;
   },
   async register(payload) {
     const response = await transport.send({
