@@ -33,6 +33,12 @@ The shared Web/Expo learning surface now exposes 71 canonical evidence nodes, fo
 
 The shared API now exposes authenticated attempt submission/retrieval and versioned content packages. Web/Expo share an optional durable synchronization seam while preserving local development journeys. A loopback HTTP service uses server-side validation/scoring and a durable single-process file repository. Production identity-provider integration and database deployment remain downstream work; drafts are not published.
 
+## P4 Implementation
+
+- [P4 durable data foundation and mastery continuity plan](./current-implementation-plan/P4_current_plan.md)
+
+P4 establishes the PostgreSQL system of record, longitudinal mastery snapshots, Plan de Nivelación generation, and multi-device revision rules on top of the P3 service contracts, while preserving offline-first behavior. Execution evidence will be recorded in `P4_EXECUTION.md` after implementation. Production identity-provider productization, Redis/object storage, and editorial publication remain out of scope.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.
