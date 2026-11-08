@@ -1,6 +1,7 @@
 import type { ApiRequest, ApiResponse, AuthSession, AttemptRecord, CatalogPackage, LearningContinuity } from '@mep-ea/api';
 import { parseCatalogPackage, requireSession } from '@mep-ea/api';
-import { resolveBlueprint } from '@mep-ea/content';
+import { resolveBlueprint, compileAssessment, type CompilationMode } from '@mep-ea/content';
+import type { Assessment } from '@mep-ea/domain';
 import { restoreAttempt, diagnose, remediate, calculateMastery, collectLearningEvidence, generateNivelacion } from '@mep-ea/learning-runtime';
 import { object, text, integer, ensure } from '@mep-ea/validation';
 import type { ContinuityRepository } from './continuity-repository';
@@ -37,7 +38,13 @@ export function createService(options: {
       catch { return false; }
     }) });
   const eligible = options.allowDevelopment ? source : production;
-  const assessments = eligible.blueprints.map(b => resolveBlueprint(b, eligible.registry, { allowDraftPreview: options.allowDevelopment }));
+  const staticAssessments = eligible.blueprints.map(b => resolveBlueprint(b, eligible.registry, { allowDraftPreview: options.allowDevelopment }));
+  const dynamicAssessments = new Map<string, Assessment>();
+
+  function findAssessment(assessmentId: string): Assessment | undefined {
+    return dynamicAssessments.get(assessmentId) ?? staticAssessments.find(a => a.id === assessmentId);
+  }
+
   const fail = (status: number, body?: unknown): never => { throw new ServiceFailure(status, body); };
   const continuityRepository = options.repository as Partial<ContinuityRepository>;
   const userRepository = options.repository as Partial<UserAccountRepository>;
@@ -48,7 +55,7 @@ export function createService(options: {
       // Upgrade P3 records using exact server content when still available; unknown revisions contribute no invented evidence.
       const history = records.map(record => {
         if (record.learningEvidence) return record;
-        const assessment = assessments.find(a => a.id === record.attempt.assessmentId && a.blueprint.version === record.attempt.assessmentVersion);
+        const assessment = findAssessment(record.attempt.assessmentId);
         return assessment ? { ...record, learningEvidence: collectLearningEvidence(assessment, record.attempt) } : record;
       });
       const mastery = calculateMastery(owner, history, new Date(now()).toISOString());
@@ -61,7 +68,7 @@ export function createService(options: {
 
   function checkEntitlement(session: AuthSession, assessmentId?: string) {
     if (assessmentId) {
-      const assessment = assessments.find(a => a.id === assessmentId);
+      const assessment = findAssessment(assessmentId);
       if (assessment) {
         // Enforce Pro entitlement for full benchmark/simulation mode or blueprints requiring premium
         if (assessment.blueprint.mode === 'benchmark' && session.tier !== 'premium') {
@@ -159,6 +166,49 @@ export function createService(options: {
         };
       }
 
+      // --- P6: Assessment Compilation Endpoint ---
+      if (request.method === 'POST' && request.path === '/v1/assessments/compile') {
+        let compMode: CompilationMode;
+        let programId: 'bxm';
+        let subjectId: 'matematica';
+        let seed: number | undefined;
+        try {
+          const body = object(JSON.parse(request.body ?? '{}'), 'compile');
+          programId = text(body.programId, 'programId') as 'bxm';
+          subjectId = text(body.subjectId, 'subjectId') as 'matematica';
+          compMode = text(body.mode, 'mode') as CompilationMode;
+          if (body.seed !== undefined) seed = integer(body.seed, 'seed');
+          ensure(programId === 'bxm', 'compile.programId', 'unsupported program');
+          ensure(subjectId === 'matematica', 'compile.subjectId', 'unsupported subject');
+          ensure(['diagnostic', 'mock', 'simulation'].includes(compMode), 'compile.mode', 'invalid mode');
+        } catch {
+          return fail(400);
+        }
+
+        // P6.4 / P6.5 Entitlement: 60-item official simulation requires premium tier
+        if (compMode === 'simulation' && session.tier !== 'premium') {
+          return fail(403, {
+            error: 'entitlement_required',
+            requiredTier: 'premium',
+            reasonEs: 'La simulación completa de examen requiere una suscripción Pro.',
+          });
+        }
+
+        const assessment = compileAssessment(
+          { programId, subjectId, mode: compMode, seed },
+          eligible.registry,
+          { allowDraftPreview: options.allowDevelopment }
+        );
+
+        // Retain compiled assessment in memory for subsequent attempt verification / scoring
+        dynamicAssessments.set(assessment.id, assessment);
+
+        return {
+          status: 200,
+          body: { assessment },
+        };
+      }
+
       if (request.method === 'GET' && request.path === '/v1/learning-continuity') return { status: 200, body: await continuity(session.learnerId) };
       if (request.method === 'GET' && request.path === '/v1/catalog/production') return { status: 200, body: production };
       if (request.method === 'GET' && request.path === '/v1/catalog/development') {
@@ -180,7 +230,8 @@ export function createService(options: {
           const candidate = object(raw.attempt, 'draft.attempt');
           if (candidate.learnerId !== session.learnerId) fail(403);
           if (candidate.id !== id! || candidate.status !== 'in_progress') fail(400);
-          const assessment = assessments.find(a => a.id === candidate.assessmentId);
+          const candidateAssessmentId = text(candidate.assessmentId, 'draft.attempt.assessmentId');
+          const assessment = findAssessment(candidateAssessmentId);
           if (!assessment) fail(422);
           checkEntitlement(session, assessment!.id);
           const attempt = restoreAttempt(assessment!, candidate, session.learnerId, id!);
@@ -208,7 +259,7 @@ export function createService(options: {
         if (raw.learnerId !== session.learnerId) fail(403);
         if (raw.id !== id! || raw.status !== 'submitted') fail(400);
         const assessmentId = text(raw.assessmentId, 'assessmentId');
-        const assessment = assessments.find(a => a.id === assessmentId);
+        const assessment = findAssessment(assessmentId);
         if (!assessment) fail(422);
         checkEntitlement(session, assessment!.id);
         attempt = restoreAttempt(assessment!, raw, session.learnerId, id!);
