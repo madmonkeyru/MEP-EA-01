@@ -3,7 +3,7 @@ import { dirname, resolve, relative } from 'node:path';
 
 const allowed = {
   domain: [], validation: [], content: ['domain', 'validation'],
-  'learning-runtime': ['domain', 'content', 'validation'], api: ['domain'], analytics: ['domain'], 'design-system': [],
+  'learning-runtime': ['domain', 'content', 'validation'], api: ['domain', 'content', 'validation', 'learning-runtime'], analytics: ['domain'], 'design-system': [],
 };
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });

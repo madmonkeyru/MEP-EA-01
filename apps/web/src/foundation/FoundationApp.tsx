@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { createLearningPreviewCatalog } from '@mep-ea/content/expansion';
+import { createOfflineJourney } from '@mep-ea/api';
 import { LearningBrowser } from './LearningBrowser';
-import { LearnerJourney, type JourneyState } from '@mep-ea/learning-runtime';
+import type { JourneyState } from '@mep-ea/learning-runtime';
 import { TextRenderer as MathText } from '../components/common/TextRenderer';
 const catalog = createLearningPreviewCatalog();
-const journey = new LearnerJourney(catalog, {
+const { journey } = createOfflineJourney(catalog, {
   getItem: key => localStorage.getItem(key), setItem: (key, value) => localStorage.setItem(key, value), removeItem: key => localStorage.removeItem(key),
 }, 'p2-local');
 const tiers = { strong: 'Fortaleza', developing: 'En progreso', needs_practice: 'Necesita práctica' };

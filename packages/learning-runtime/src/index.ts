@@ -3,6 +3,7 @@ import { ensure, integer, object, text, timestamp } from '@mep-ea/validation';
 import { attemptKey, type PersistenceAdapter } from './persistence';
 export * from './persistence';
 export * from './journey';
+export * from './sync';
 
 export function initializeAttempt(assessment: Assessment, id: string, learnerId: string, now: string): Attempt {
   text(id, 'attempt.id'); text(learnerId, 'attempt.learnerId'); timestamp(now, 'now');

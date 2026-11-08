@@ -26,6 +26,13 @@ The Web journey is available at `/learn` (also `/foundation`); Expo uses the sam
 
 The shared Web/Expo learning surface now exposes 71 canonical evidence nodes, four draft lessons and 30 authored practice items. Scaffolded lessons remain unavailable; official benchmark questions remain isolated. Native device execution and editorial approval remain pending.
 
+## P3 Implementation
+
+- [P3 production service foundation plan](./current-implementation-plan/P3_current_plan.md)
+- [P3 service contracts, execution and acceptance evidence](./P3_EXECUTION.md)
+
+The shared API now exposes authenticated attempt submission/retrieval and versioned content packages. Web/Expo share an optional durable synchronization seam while preserving local development journeys. A loopback HTTP service uses server-side validation/scoring and a durable single-process file repository. Production identity-provider integration and database deployment remain downstream work; drafts are not published.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.

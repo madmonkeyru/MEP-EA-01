@@ -17,12 +17,14 @@
     "audit:performance": "node scripts/run-browser-suite.mjs --performance",
     "audit:bundle": "node scripts/measure-bundle.mjs",
     "dev:mobile": "npm run start --workspace @mep-ea/mobile",
-    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.packages.json --noEmit && npm run typecheck --workspace @mep-ea/mobile",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.packages.json --noEmit && npm run typecheck --workspace @mep-ea/mobile && tsc -p tsconfig.service.json --noEmit",
     "test:foundation": "vitest run --config vitest.foundation.config.ts",
     "check:boundaries": "node scripts/check-boundaries.mjs",
     "build:mobile": "npm run export --workspace @mep-ea/mobile",
     "test:poc": "vitest run",
-    "test:foundation:browser": "node scripts/verify-foundation.mjs"
+    "test:foundation:browser": "node scripts/verify-foundation.mjs",
+    "build:service": "vite build --config vite.service.config.ts",
+    "dev:service": "npm run build:service && node dist-service/main.js"
   },
   "dependencies": {
     "fast-xml-parser": "^5.12.0",

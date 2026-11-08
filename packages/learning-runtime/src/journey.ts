@@ -3,6 +3,7 @@ import { resolveBlueprint, type ContentRegistry } from '@mep-ea/content';
 import { ensure } from '@mep-ea/validation';
 import { AssessmentSession, scoreAttempt } from './index';
 import { attemptKey, createLocalAdapter, type StringStorage } from './persistence';
+import type { AttemptOutbox } from './sync';
 
 export interface JourneyCatalog { registry: ContentRegistry; blueprints: AssessmentBlueprint[]; allowDraftPreview?: boolean }
 export interface JourneyState { assessment: Assessment; attempt: Attempt }
@@ -29,7 +30,8 @@ export class LearnerJourney {
   private session: AssessmentSession | null = null;
   private key: string;
   constructor(readonly catalog: JourneyCatalog, private storage: StringStorage, private learnerId: string,
-    private now: () => string = () => new Date().toISOString(), private newId: () => string = () => `${Date.now()}-${Math.random().toString(36).slice(2)}`) {
+    private now: () => string = () => new Date().toISOString(), private newId: () => string = () => `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+    private outbox?: AttemptOutbox) {
     this.key = `mep-ea:v1:journey:${encodeURIComponent(learnerId)}`;
   }
   private compile(blueprintId: string) {
@@ -49,9 +51,13 @@ export class LearnerJourney {
     const assessment = this.compile(pointer.blueprintId);
     const session = this.create(assessment, pointer.attemptId);
     const attempt = await session.open(); this.session = session;
+    if (attempt.status === 'submitted') await this.queue(attempt);
     return this.expire({ assessment, attempt });
   }
   async start(blueprintId: string): Promise<JourneyState> {
+    // Do not replace the recovery pointer until a previously completed attempt is queued.
+    const previous = this.session?.snapshot;
+    if (previous?.status === 'submitted') await this.outbox?.enqueue(previous);
     const assessment = this.compile(blueprintId); const id = this.newId();
     const session = this.create(assessment, id); const attempt = await session.open();
     await this.storage.setItem(this.key, JSON.stringify({ schemaVersion: 1, blueprintId, attemptId: id }));
@@ -60,13 +66,23 @@ export class LearnerJourney {
   private active() { ensure(this.session, 'journey', 'start or resume first'); return this.session; }
   async expire(state: JourneyState): Promise<JourneyState> {
     return state.attempt.status === 'in_progress' && Date.parse(this.now()) >= Date.parse(state.attempt.deadlineAt)
-      ? { assessment: state.assessment, attempt: await this.active().submit() } : state;
+      ? { assessment: state.assessment, attempt: await this.submitLocal() } : state;
   }
   async answer(questionId: string, optionId: Parameters<AssessmentSession['answer']>[1]) {
     const s = this.active(); return { assessment: s.assessment, attempt: await s.answer(questionId, optionId) };
   }
   async goTo(index: number) { const s = this.active(); return { assessment: s.assessment, attempt: await s.goTo(index) }; }
-  async submit() { const s = this.active(); return { assessment: s.assessment, attempt: await s.submit() }; }
+  private async queue(attempt: Attempt) {
+    // Local result is already durable. Resume repairs an interrupted/failed outbox enqueue.
+    try { await this.outbox?.enqueue(attempt); } catch { /* local learning remains available */ }
+  }
+  private async submitLocal() { const attempt = await this.active().submit(); await this.queue(attempt); return attempt; }
+  async synchronize() {
+    const attempt = this.session?.snapshot;
+    if (attempt?.status === 'submitted') await this.outbox?.enqueue(attempt);
+    return this.outbox?.flush() ?? { sent: 0, pending: 0 };
+  }
+  async submit() { const s = this.active(); return { assessment: s.assessment, attempt: await this.submitLocal() }; }
   result(state: JourneyState) {
     const diagnostic = diagnose(state.assessment, state.attempt);
     return { diagnostic, plan: remediate(state.assessment, state.attempt, diagnostic) };

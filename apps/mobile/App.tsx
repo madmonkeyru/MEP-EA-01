@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Storage from 'expo-sqlite/kv-store';
 import { createLearningPreviewCatalog } from '@mep-ea/content/expansion';
+import { createOfflineJourney } from '@mep-ea/api';
 import { LearningBrowser } from './LearningBrowser';
-import { LearnerJourney, type JourneyState } from '@mep-ea/learning-runtime';
+import type { JourneyState } from '@mep-ea/learning-runtime';
 import { tokens } from '@mep-ea/design-system';
 const catalog = createLearningPreviewCatalog();
-const journey = new LearnerJourney(catalog, Storage, 'p2-local');
+const { journey } = createOfflineJourney(catalog, Storage, 'p2-local');
 const tiers = { strong: 'Fortaleza', developing: 'En progreso', needs_practice: 'Necesita práctica' };
 export default function App() {
   const [state, setState] = useState<JourneyState | null>(null);

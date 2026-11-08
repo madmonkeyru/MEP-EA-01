@@ -9,6 +9,6 @@ const data = {
 const path = 'packages/content/src/expansion-data.json';
 const output = `${JSON.stringify(data, null, 2)}\n`;
 if (process.argv.includes('--check')) {
-  if (await readFile(path, 'utf8') !== output) throw new Error('Learning catalog is stale: run npm run content:sync');
+  if ((await readFile(path, 'utf8')).replace(/\r\n/g, '\n') !== output) throw new Error('Learning catalog is stale: run npm run content:sync');
 } else await writeFile(path, output);
 console.log('Learning catalog snapshot matches preserved source packs.');
