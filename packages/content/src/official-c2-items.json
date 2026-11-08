@@ -1,0 +1,1324 @@
+[
+  {
+    "code": "item-geo-001",
+    "area_id": "geometry",
+    "evidence": "A1.2",
+    "concept_id": "mep-geo-circunferencia-01",
+    "cognitive_level": "reproduccion",
+    "stem": "Si la medida del radio de la circunferencia \u201cc\u201d es 5 y su centro es (2, 3), entonces, la ecuaci\u00f3n de \u201cc\u201d corresponde a",
+    "options": {
+      "A": "(x+2)^2 + (y+3)^2 = 25",
+      "B": "(x-2)^2 + (y-3)^2 = 25",
+      "C": "(x+3)^2 + (y-2)^2 = 25",
+      "D": "(x-3)^2 + (y-2)^2 = 25"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "La ecuaci\u00f3n ordinaria de una circunferencia con centro (h,k) y radio r es (x-h)^2 + (y-k)^2 = r^2.",
+      "Sustituyendo h=2, k=3, r=5: (x-2)^2 + (y-3)^2 = 25.",
+      "Por lo tanto, la opci\u00f3n correcta es B."
+    ]
+  },
+  {
+    "code": "item-geo-002",
+    "area_id": "geometry",
+    "evidence": "A1.3",
+    "concept_id": "mep-geo-circunferencia-01",
+    "cognitive_level": "conexion",
+    "stem": "Una torre de control de un aeropuerto tiene un radar con un alcance m\u00e1ximo de 20 kil\u00f3metros. Tomando como origen la pista principal del aeropuerto, la torre de control se ubica 5 kil\u00f3metros al este (eje x positivo) y 4 kil\u00f3metros al sur (eje y negativo) de dicha pista. \u00bfCu\u00e1l es la ecuaci\u00f3n que representa el alcance m\u00e1ximo del radar de la torre de control?",
+    "options": {
+      "A": "(x-5)^2 + (y+4)^2 = 400",
+      "B": "(x+5)^2 + (y-4)^2 = 400",
+      "C": "(x-5)^2 + (y-4)^2 = 400",
+      "D": "(x+5)^2 + (y+4)^2 = 400"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "El centro de la circunferencia es (5, -4) porque 5 km al este y 4 km al sur.",
+      "El radio es 20 km, por lo que r^2 = 400.",
+      "La ecuaci\u00f3n es (x-5)^2 + (y+4)^2 = 400.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-003",
+    "area_id": "geometry",
+    "evidence": "A1.1",
+    "concept_id": "mep-geo-circunferencia-01",
+    "cognitive_level": "reproduccion",
+    "stem": "Considere la siguiente representaci\u00f3n gr\u00e1fica de la circunferencia \u201cc\u201d, de centro \u201cO\u201d: [imagen]. De acuerdo con la informaci\u00f3n dada la ecuaci\u00f3n de \u201cc\u201d corresponde a",
+    "options": {
+      "A": "x^2 + (y \u2212 2)^2 = 6",
+      "B": "x^2 + (y + 2)^2 = 9",
+      "C": "x^2 + (y \u2212 2)^2 = 9",
+      "D": "x^2 + (y + 2)^2 = 6"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Del gr\u00e1fico, el centro O est\u00e1 en (0, 2).",
+      "El radio es la distancia del centro a un punto de la circunferencia, por ejemplo (0,5): r = 3.",
+      "La ecuaci\u00f3n es (x-0)^2 + (y-2)^2 = 3^2, es decir, x^2 + (y-2)^2 = 9.",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-004",
+    "area_id": "geometry",
+    "evidence": "A1.3",
+    "concept_id": "mep-geo-circunferencia-01",
+    "cognitive_level": "conexion",
+    "stem": "Un faro de luz direccional emite una se\u00f1al que cubre una zona circular en el mar. El borde de la zona iluminada est\u00e1 delimitado por la circunferencia \u201cc\u201d dada por la ecuaci\u00f3n (x + 2)^2 + (y \u2212 7)^2 = 49. \u00bfCu\u00e1l es el alcance m\u00e1ximo del haz de luz del faro?",
+    "options": {
+      "A": "7 m",
+      "B": "14 m",
+      "C": "49 m",
+      "D": "98 m"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "La ecuaci\u00f3n dada est\u00e1 en forma ordinaria: (x+2)^2 + (y-7)^2 = 49.",
+      "El radio al cuadrado es 49, por lo tanto el radio es 7.",
+      "El alcance m\u00e1ximo es el radio: 7 m.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-005",
+    "area_id": "geometry",
+    "evidence": "A2.1",
+    "concept_id": "mep-geo-traslacion-03",
+    "cognitive_level": "reflexion",
+    "stem": "Considere la siguiente representaci\u00f3n de la circunferencia \u201cd\u201d de centro O: [imagen]. Si a \u201cd\u201d se le aplica una traslaci\u00f3n de cinco unidades a la izquierda (paralela al eje x) y tres unidades hacia abajo (paralela al eje y), entonces, se obtiene una circunferencia cuya ecuaci\u00f3n corresponde a",
+    "options": {
+      "A": "(x+1)^2 + (y-3)^2 = 9",
+      "B": "(x-1)^2 + (y-3)^2 = 9",
+      "C": "(x+1)^2 + (y+3)^2 = 9",
+      "D": "(x-1)^2 + (y+3)^2 = 9"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Del gr\u00e1fico, la circunferencia d tiene centro en (4,0) y radio 3 (pues pasa por (4,3) y (4,-3)).",
+      "Trasladar 5 unidades a la izquierda: x' = x - 5; 3 unidades hacia abajo: y' = y - 3.",
+      "El nuevo centro es (4-5, 0-3) = (-1, -3).",
+      "La ecuaci\u00f3n resultante es (x+1)^2 + (y+3)^2 = 9.",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-006",
+    "area_id": "geometry",
+    "evidence": "A2.1",
+    "concept_id": "mep-geo-traslacion-03",
+    "cognitive_level": "conexion",
+    "stem": "Sea \u201cc\u201d la circunferencia dada por c:(x \u2212 2)^2 + (y \u2212 3)^2 = 4. Al trasladar a \u201cc\u201d dos unidades hacia la izquierda (paralela al eje x) y tres unidades hacia arriba (paralela al eje y), se obtiene la circunferencia \u201cd\u201d de centro O. \u00bfCu\u00e1l de las siguientes opciones corresponde a la representaci\u00f3n de \u201cd\u201d?",
+    "options": {
+      "A": "Gr\u00e1fico A",
+      "B": "Gr\u00e1fico B",
+      "C": "Gr\u00e1fico C",
+      "D": "Gr\u00e1fico D"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Centro original de c: (2,3), radio 2.",
+      "Traslaci\u00f3n: 2 izquierda \u2192 x-2; 3 arriba \u2192 y+3.",
+      "Nuevo centro: (2-2, 3+3) = (0, 6).",
+      "La circunferencia d tiene centro (0,6) y radio 2.",
+      "El gr\u00e1fico A muestra una circunferencia con centro en (0,6) y radio 2 (pasa por (0,4) y (0,8) aproximadamente).",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-007",
+    "area_id": "geometry",
+    "evidence": "A2.2",
+    "concept_id": "mep-geo-traslacion-03",
+    "cognitive_level": "reproduccion",
+    "stem": "Sea \u201cc\u201d la circunferencia dada por c:(x + 2)^2 + y^2 = 6. Si se traslada \u201cc\u201d y se obtiene d:x^2 + (y +3)^2 = 6, entonces, la traslaci\u00f3n aplicada corresponde a dos unidades hacia la",
+    "options": {
+      "A": "izquierda paralela al eje x y tres unidades hacia abajo paralela al eje y.",
+      "B": "izquierda paralela al eje x y tres unidades hacia arriba paralela al eje y.",
+      "C": "derecha paralela al eje x y tres unidades hacia arriba paralela al eje y.",
+      "D": "derecha paralela al eje x y tres unidades hacia abajo paralela al eje y."
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Centro de c: (-2, 0). Centro de d: (0, -3).",
+      "Para ir de (-2,0) a (0,-3): x aumenta en 2 (derecha), y disminuye en 3 (abajo).",
+      "Por lo tanto, la traslaci\u00f3n es 2 unidades a la derecha y 3 unidades hacia abajo.",
+      "Opci\u00f3n correcta: D."
+    ]
+  },
+  {
+    "code": "item-geo-008",
+    "area_id": "geometry",
+    "evidence": "A3.1",
+    "concept_id": "mep-geo-posicion-punto-04",
+    "cognitive_level": "conexion",
+    "stem": "\u00bfCu\u00e1l opci\u00f3n contiene las coordenadas de un punto interior a la circunferencia dada por (x\u22122)^2 + y^2 = 5?",
+    "options": {
+      "A": "(0, 2)",
+      "B": "(1, 0)",
+      "C": "(2, 3)",
+      "D": "(3, 3)"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "La circunferencia tiene centro (2,0) y radio \u221a5 \u2248 2.236.",
+      "Un punto (x,y) es interior si (x-2)^2 + y^2 < 5.",
+      "Evaluar (1,0): (1-2)^2 + 0^2 = 1 < 5 \u2192 interior.",
+      "Las dem\u00e1s opciones dan valores \u2265 5.",
+      "Opci\u00f3n correcta: B."
+    ]
+  },
+  {
+    "code": "item-geo-009",
+    "area_id": "geometry",
+    "evidence": "A3.1",
+    "concept_id": "mep-geo-posicion-punto-04",
+    "cognitive_level": "reproduccion",
+    "stem": "Un radar de ciberseguridad monitorea una red local. El servidor central est\u00e1 ubicado en el punto O y su zona de cobertura abarca un radio de 4 km, tal como se ilustra con el siguiente sistema de coordenadas: [imagen]. Considere las coordenadas de ubicaci\u00f3n de cuatro dispositivos conectados: P(5,2), Q(4,1), R(6,1), S(8,4). \u00bfCu\u00e1l de los dispositivos se encuentra fuera del \u00e1rea de cobertura?",
+    "options": {
+      "A": "P",
+      "B": "Q",
+      "C": "R",
+      "D": "S"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Del gr\u00e1fico, el centro O est\u00e1 en (5,0) y el radio es 4.",
+      "La ecuaci\u00f3n es (x-5)^2 + y^2 = 16.",
+      "Para un punto fuera, (x-5)^2 + y^2 > 16.",
+      "Evaluar S(8,4): (8-5)^2 + 4^2 = 9 + 16 = 25 > 16 \u2192 fuera.",
+      "Los dem\u00e1s puntos est\u00e1n dentro o sobre.",
+      "Opci\u00f3n correcta: D."
+    ]
+  },
+  {
+    "code": "item-geo-010",
+    "area_id": "geometry",
+    "evidence": "A3.2",
+    "concept_id": "mep-geo-posicion-recta-05",
+    "cognitive_level": "reflexion",
+    "stem": "\u00bfCu\u00e1l opci\u00f3n contiene una recta secante a la circunferencia dada por (x \u2212 2)^2 + y^2 = 4?",
+    "options": {
+      "A": "$x = 5$",
+      "B": "$y = 3$",
+      "C": "$x = 1$",
+      "D": "$y = -2$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "La circunferencia tiene centro (2,0) y radio 2.",
+      "Una recta es secante si la distancia del centro a la recta es menor que el radio.",
+      "Para x=1: distancia = |1-2| = 1 < 2 \u2192 secante.",
+      "Para x=5: distancia = 3 > 2 (exterior).",
+      "Para y=3: distancia = 3 > 2 (exterior).",
+      "Para y=-2: distancia = 2 = radio (tangente).",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-011",
+    "area_id": "geometry",
+    "evidence": "A3.2",
+    "concept_id": "mep-geo-posicion-recta-05",
+    "cognitive_level": "reproduccion",
+    "stem": "\u00bfCu\u00e1l opci\u00f3n contiene una recta tangente a la circunferencia dada por (x \u2212 3)^2 + (y + 2)^2 = 1?",
+    "options": {
+      "A": "$y = 0$",
+      "B": "$x = 1$",
+      "C": "$y = -1$",
+      "D": "$x = -2$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Centro (3,-2), radio 1.",
+      "Recta tangente si la distancia del centro a la recta es igual al radio.",
+      "Para y = -1: distancia = |-1 - (-2)| = 1 \u2192 tangente.",
+      "Para y = 0: distancia = 2 > 1 (exterior).",
+      "Para x = 1: distancia = 2 > 1 (exterior).",
+      "Para x = -2: distancia = 5 > 1 (exterior).",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-012",
+    "area_id": "geometry",
+    "evidence": "A4.3",
+    "concept_id": "mep-geo-poligono-regular-07",
+    "cognitive_level": "conexion",
+    "stem": "La siguiente representaci\u00f3n gr\u00e1fica corresponde al dise\u00f1o de una pieza de metal para el logotipo de una empresa automotriz, cuyas dimensiones est\u00e1n dadas en cent\u00edmetros: [imagen]. De acuerdo con la informaci\u00f3n anterior, el \u00e1rea en cent\u00edmetros cuadrados de esa pieza de metal es mayor que:",
+    "options": {
+      "A": "2200 pero menor que 2600.",
+      "B": "2600 pero menor que 2900.",
+      "C": "2900 pero menor que 3300.",
+      "D": "3300 pero menor que 3800."
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "La regi\u00f3n est\u00e1 delimitada por la base y = 40 (de x = 40 a x = 120), el lado vertical x = 40 (de y = 40 a y = 100), la curva que desciende de (40, 100) a (100, 60) y el segmento de (100, 60) a (120, 40).",
+      "Se estima el \u00e1rea sobre la base y = 40 usando trapecios de ancho 20:",
+      "De x = 40 a 100: (60 + 40)/2 \u00b7 20 + (40 + 25)/2 \u00b7 20 + (25 + 20)/2 \u00b7 20 = 1000 + 650 + 450 = 2100.",
+      "De x = 100 a 120: (20 + 0)/2 \u00b7 20 = 200.",
+      "\u00c1rea total \u2248 2100 + 200 = 2300 cm\u00b2.",
+      "El \u00e1rea (\u2248 2300 cm\u00b2) es mayor que 2200 pero menor que 2600.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-013",
+    "area_id": "geometry",
+    "evidence": "A4.3",
+    "concept_id": "mep-geo-poligono-regular-07",
+    "cognitive_level": "reproduccion",
+    "stem": "La siguiente representaci\u00f3n gr\u00e1fica ilustra el perfil lateral de una rampa de acceso para un puente colgante, la cual asciende de forma curva desde el pilar lateral del soporte hasta alcanzar la torre central de suspensi\u00f3n, cuyas dimensiones de los ejes est\u00e1n en metros: [imagen]. De acuerdo con la informaci\u00f3n anterior, el \u00e1rea de la superficie lateral bajo esta secci\u00f3n del puente en metros cuadrados es",
+    "options": {
+      "A": "mayor que 20.",
+      "B": "mayor que 30.",
+      "C": "menor que 18.",
+      "D": "menor que 15."
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "La regi\u00f3n est\u00e1 bajo una curva que va de (2,2) a (7,6).",
+      "Se puede aproximar el \u00e1rea con trapecios o contando cuadr\u00edculas.",
+      "El \u00e1rea es aproximadamente 20-25 m\u00b2.",
+      "Por lo tanto, es mayor que 20.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-014",
+    "area_id": "geometry",
+    "evidence": "A4.1",
+    "concept_id": "mep-geo-poligono-regular-07",
+    "cognitive_level": "conexion",
+    "stem": "Si la medida del \u00e1ngulo interno de un pol\u00edgono regular es $120^\\circ$ y la apotema $2\\sqrt{3}$, entonces, \u00bfcu\u00e1l es el per\u00edmetro de dicho pol\u00edgono?",
+    "options": {
+      "A": "12",
+      "B": "15",
+      "C": "20",
+      "D": "24"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "\u00c1ngulo interno = 120\u00b0 \u2192 180(n-2)/n = 120 \u2192 180n - 360 = 120n \u2192 60n = 360 \u2192 n = 6 (hex\u00e1gono).",
+      "La apotema a = 2\u221a3. Para un hex\u00e1gono regular, la apotema se relaciona con el lado L: a = L\u221a3/2.",
+      "2\u221a3 = L\u221a3/2 \u2192 L = 4.",
+      "Per\u00edmetro = 6 \u00d7 4 = 24.",
+      "Opci\u00f3n correcta: D."
+    ]
+  },
+  {
+    "code": "item-geo-015",
+    "area_id": "geometry",
+    "evidence": "A4.1",
+    "concept_id": "mep-geo-poligono-regular-07",
+    "cognitive_level": "reflexion",
+    "stem": "Si la medida del radio de un pol\u00edgono regular es $3\\sqrt{2}$ y la de su \u00e1ngulo externo $90^\\circ$, entonces, \u00bfcu\u00e1l es el \u00e1rea de ese pol\u00edgono?",
+    "options": {
+      "A": "36",
+      "B": "24",
+      "C": "18",
+      "D": "12"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "\u00c1ngulo externo = 90\u00b0 \u2192 n = 360/90 = 4 (cuadrado).",
+      "El radio de un cuadrado es la distancia del centro a un v\u00e9rtice, que es la mitad de la diagonal.",
+      "Si radio = 3\u221a2, entonces la diagonal = 6\u221a2, y el lado L = diagonal/\u221a2 = 6.",
+      "\u00c1rea = L^2 = 36.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-016",
+    "area_id": "geometry",
+    "evidence": "A5.3",
+    "concept_id": "mep-geo-cuerpos-3d-09",
+    "cognitive_level": "conexion",
+    "stem": "Un florero artesanal se fabric\u00f3 a partir de una pieza esf\u00e9rica de porcelana de 13 cm de radio, a la cual se le realiz\u00f3 un corte para su abertura (boca). Si el centro de dicha abertura qued\u00f3 a 12 cm del centro de la esfera, entonces, \u00bfde cu\u00e1ntos cent\u00edmetros es el per\u00edmetro (aproximadamente) de la abertura de ese florero?",
+    "options": {
+      "A": "15,7",
+      "B": "31,4",
+      "C": "25,0",
+      "D": "39,2"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "La secci\u00f3n plana de una esfera es un c\u00edrculo. El radio de la secci\u00f3n r se obtiene con el teorema de Pit\u00e1goras: r^2 + d^2 = R^2, donde d=12, R=13.",
+      "r^2 = 13^2 - 12^2 = 169 - 144 = 25 \u2192 r = 5.",
+      "El per\u00edmetro de la abertura es 2\u03c0r = 2 \u00d7 3.14 \u00d7 5 = 31.4 cm.",
+      "Opci\u00f3n correcta: B."
+    ]
+  },
+  {
+    "code": "item-geo-017",
+    "area_id": "geometry",
+    "evidence": "A5.3",
+    "concept_id": "mep-geo-cuerpos-3d-09",
+    "cognitive_level": "reproduccion",
+    "stem": "Si el radio de una esfera mide 25 y esta se interseca con una secci\u00f3n plana de radio 24, entonces, \u00bfa qu\u00e9 distancia del centro de la esfera se encuentra dicha secci\u00f3n?",
+    "options": {
+      "A": "7",
+      "B": "12",
+      "C": "14",
+      "D": "49"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "En una esfera, la relaci\u00f3n entre el radio de la esfera R, el radio de la secci\u00f3n r y la distancia d del centro al plano es R^2 = r^2 + d^2.",
+      "25^2 = 24^2 + d^2 \u2192 625 = 576 + d^2 \u2192 d^2 = 49 \u2192 d = 7.",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-geo-018",
+    "area_id": "geometry",
+    "evidence": "A5.3",
+    "concept_id": "mep-geo-cuerpos-3d-09",
+    "cognitive_level": "conexion",
+    "stem": "Un bloque de queso industrial con forma de cilindro circular recto de 40 cm de altura y 15 cm de radio en sus bases se corta con un cuchillo de manera perpendicular a ellas, pasando por los centros de ambas. \u00bfCu\u00e1l es el \u00e1rea, en cent\u00edmetros cuadrados, de la superficie del corte?",
+    "options": {
+      "A": "300",
+      "B": "600",
+      "C": "1200",
+      "D": "2400"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "El corte perpendicular a las bases que pasa por los centros es un rect\u00e1ngulo.",
+      "Las dimensiones del rect\u00e1ngulo son la altura del cilindro (40 cm) y el di\u00e1metro de la base (2 \u00d7 15 = 30 cm).",
+      "\u00c1rea = 40 \u00d7 30 = 1200 cm\u00b2.",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-019",
+    "area_id": "geometry",
+    "evidence": "A6.1",
+    "concept_id": "mep-geo-transformaciones-10",
+    "cognitive_level": "reproduccion",
+    "stem": "Considere el siguiente pol\u00edgono QRPS: [imagen]. De acuerdo con la informaci\u00f3n de la gr\u00e1fica, \u00bfcu\u00e1l es la cantidad total de ejes de simetr\u00eda que se le pueden trazar al pol\u00edgono QRPS?",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "2",
+      "D": "1"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "El pol\u00edgono QRPS es un rombo (o cuadril\u00e1tero con v\u00e9rtices Q(3,7), R(1,4), P(3,1), S(5,4)).",
+      "Un rombo tiene 2 ejes de simetr\u00eda: las diagonales.",
+      "Por lo tanto, la cantidad total de ejes de simetr\u00eda es 2.",
+      "Opci\u00f3n correcta: C."
+    ]
+  },
+  {
+    "code": "item-geo-020",
+    "area_id": "geometry",
+    "evidence": "A6.2",
+    "concept_id": "mep-geo-transformaciones-10",
+    "cognitive_level": "reflexion",
+    "stem": "Considere el siguiente pol\u00edgono DEFGHIJ: [imagen]. De acuerdo con la informaci\u00f3n de la gr\u00e1fica, \u00bfcu\u00e1l punto corresponde a la imagen de J con respecto al eje y?",
+    "options": {
+      "A": "F",
+      "B": "E",
+      "C": "G",
+      "D": "H"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "La reflexi\u00f3n respecto al eje y cambia (x,y) a (-x,y).",
+      "J est\u00e1 en (4,5). Su imagen es (-4,5).",
+      "El punto en (-4,5) es E.",
+      "Opci\u00f3n correcta: B."
+    ]
+  },
+  {
+    "code": "item-geo-021",
+    "area_id": "geometry",
+    "evidence": "A7.1",
+    "concept_id": "mep-geo-transformaciones-10",
+    "cognitive_level": "reproduccion",
+    "stem": "Si se aplica una homotecia centrada en (0,0) al pol\u00edgono #2 para obtener el #4, entonces, con certeza el valor de la raz\u00f3n de la homotecia corresponde a",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "-1"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Una homotecia centrada en (0, 0) con raz\u00f3n k transforma cada punto (x, y) en (kx, ky).",
+      "El pol\u00edgono #4 es el sim\u00e9trico central (respecto al origen) del pol\u00edgono #2, lo que corresponde a una homotecia de raz\u00f3n k = \u22121.",
+      "Por lo tanto, el valor de la raz\u00f3n de la homotecia es \u22121.",
+      "Opci\u00f3n correcta: D."
+    ]
+  },
+  {
+    "code": "item-geo-022",
+    "area_id": "geometry",
+    "evidence": "A7.1",
+    "concept_id": "mep-geo-transformaciones-10",
+    "cognitive_level": "conexion",
+    "stem": "Una forma de obtener el pol\u00edgono #3 es aplic\u00e1ndole al pol\u00edgono #4 una reflexi\u00f3n sobre",
+    "options": {
+      "A": "y = 1",
+      "B": "x = 1",
+      "C": "y = 2",
+      "D": "x = 2"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "El pol\u00edgono #4 se ubica en la regi\u00f3n de abscisas negativas y el pol\u00edgono #3 en la de abscisas positivas.",
+      "Una reflexi\u00f3n respecto a una recta vertical x = a transforma cada punto (x, y) en (2a \u2212 x, y).",
+      "La recta de reflexi\u00f3n es vertical y equidista de ambos pol\u00edgonos: x = 1.",
+      "Por lo tanto, el pol\u00edgono #3 se obtiene reflejando el pol\u00edgono #4 sobre la recta x = 1.",
+      "Opci\u00f3n correcta: B."
+    ]
+  },
+  {
+    "code": "item-geo-023",
+    "area_id": "geometry",
+    "evidence": "A7.3",
+    "concept_id": "mep-geo-transformaciones-10",
+    "cognitive_level": "reproduccion",
+    "stem": "Si al pol\u00edgono #1 se le aplica una rotaci\u00f3n de $270^\\circ$ en sentido horario y con centro en el punto $(0, 0)$, entonces, \u00bfcu\u00e1l es el punto imagen de $(-1, 3)$?",
+    "options": {
+      "A": "$(-3, -1)$",
+      "B": "$(-3, 1)$",
+      "C": "$(3, -1)$",
+      "D": "$(3, 1)$"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Una rotaci\u00f3n de 270\u00b0 en sentido horario equivale a una rotaci\u00f3n de 90\u00b0 en sentido antihorario.",
+      "La transformaci\u00f3n para 90\u00b0 antihorario es (x,y) \u2192 (-y, x).",
+      "Aplicando a (-1,3): (-3, -1).",
+      "Opci\u00f3n correcta: A."
+    ]
+  },
+  {
+    "code": "item-alg-051",
+    "area_id": "functions",
+    "evidence": "A1.1",
+    "concept_id": "mep-alg-concepto-funcion-01",
+    "cognitive_level": "reproduccion",
+    "stem": "En las siguientes relaciones \u201cx\u201d representa la variable independiente y \u201cy\u201d la dependiente. \u00bfCu\u00e1l de ellas corresponde a una funci\u00f3n?",
+    "options": {
+      "A": "Gr\u00e1fica A (curva suave que pasa la prueba de la recta vertical)",
+      "B": "Gr\u00e1fica B (dos rayos desde un punto en el eje y)",
+      "C": "Gr\u00e1fica C (curva en forma de S acostada)",
+      "D": "Gr\u00e1fica D (dos rayos desde un punto en el eje x positivo)"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Una relaci\u00f3n es funci\u00f3n si a cada valor de x le corresponde un \u00fanico valor de y.",
+      "Esto se verifica con la prueba de la recta vertical: si alguna recta vertical interseca la gr\u00e1fica en m\u00e1s de un punto, la relaci\u00f3n no es funci\u00f3n.",
+      "La gr\u00e1fica A pasa la prueba de la recta vertical en todo su dominio.",
+      "Las gr\u00e1ficas B, C y D fallan la prueba: B y D tienen dos valores de y para un mismo x en ciertos intervalos; C tiene m\u00faltiples valores de y para un mismo x.",
+      "Por lo tanto, la respuesta correcta es A."
+    ]
+  },
+  {
+    "code": "item-alg-052",
+    "area_id": "functions",
+    "evidence": "A1.4",
+    "concept_id": "mep-alg-composicion-02",
+    "cognitive_level": "conexion",
+    "stem": "Considere las siguientes funciones $f$, $g$ y $p$ con sus respectivos dominios y \u00e1mbitos:\n\u2022 $f: [0, 4] \\to [1, 5]$\n\u2022 $g: [2, 6] \\to [1, 4]$\n\u2022 $p: [2, 6] \\to [0, 4]$\n\n\u00bfCu\u00e1l de las siguientes composiciones de funciones est\u00e1 bien definida?",
+    "options": {
+      "A": "$(g \\circ f)(x)$",
+      "B": "$(p \\circ f)(x)$",
+      "C": "$(f \\circ p)(x)$",
+      "D": "$(g \\circ p)(x)$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Para que (h \u00b0 k)(x) = h(k(x)) est\u00e9 bien definida, el \u00e1mbito de k debe estar contenido en el dominio de h.",
+      "(g \u00b0 f): \u00e1mbito de f = [1, 5]; dominio de g = [2, 6]. [1, 5] \u2284 [2, 6]. No est\u00e1 bien definida.",
+      "(p \u00b0 f): \u00e1mbito de f = [1, 5]; dominio de p = [2, 6]. [1, 5] \u2284 [2, 6]. No est\u00e1 bien definida.",
+      "(f \u00b0 p): \u00e1mbito de p = [0, 4]; dominio de f = [0, 4]. [0, 4] \u2286 [0, 4]. \u2713 Bien definida.",
+      "(g \u00b0 p): \u00e1mbito de p = [0, 4]; dominio de g = [2, 6]. [0, 4] \u2284 [2, 6]. No est\u00e1 bien definida.",
+      "Por lo tanto, la respuesta correcta es C."
+    ]
+  },
+  {
+    "code": "item-alg-053",
+    "area_id": "functions",
+    "evidence": "A2.1",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "reproduccion",
+    "stem": "\u00bfCu\u00e1l fue el precio del litro de combustible, en colones, en la semana 10?",
+    "options": {
+      "A": "600",
+      "B": "650",
+      "C": "750",
+      "D": "900"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "En la gr\u00e1fica, entre la semana 8 y la semana 12, el precio se mantiene constante en 750 colones.",
+      "La semana 10 est\u00e1 dentro de ese intervalo.",
+      "Por lo tanto, el precio en la semana 10 es 750 colones.",
+      "Respuesta: C."
+    ]
+  },
+  {
+    "code": "item-alg-054",
+    "area_id": "functions",
+    "evidence": "A2.1",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "conexion",
+    "stem": "\u00bfEn cu\u00e1l semana se registr\u00f3 el precio m\u00e1s alto de todo el periodo?",
+    "options": {
+      "A": "18",
+      "B": "16",
+      "C": "20",
+      "D": "24"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "El punto m\u00e1s alto de la gr\u00e1fica corresponde a 900 colones.",
+      "Observando la gr\u00e1fica, ese valor ocurre en x = 16 semanas.",
+      "Por lo tanto, el precio m\u00e1s alto se registr\u00f3 en la semana 16.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-055",
+    "area_id": "functions",
+    "evidence": "A2.4",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "reflexion",
+    "stem": "Sea la funci\u00f3n $g$ cuyo criterio est\u00e1 definido por $g(x) = mx + 4$. Si el punto $(3, 19)$ pertenece a la gr\u00e1fica de $g$, entonces, \u00bfcu\u00e1l es la pendiente de $g$?",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "8",
+      "D": "15"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Sustituyendo el punto (3, 19) en g(x) = mx + 4:",
+      "19 = m(3) + 4",
+      "19 \u2212 4 = 3m",
+      "15 = 3m",
+      "m = 5",
+      "Por lo tanto, la pendiente de g es 5.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-056",
+    "area_id": "functions",
+    "evidence": "A2.5",
+    "concept_id": "mep-alg-funcion-cuadratica-04",
+    "cognitive_level": "conexion",
+    "stem": "Considere la siguiente representaci\u00f3n gr\u00e1fica de la funci\u00f3n $g$, definida por $g(x) = ax^2 + bx + c$, con $a < 0$:\n\n[gr\u00e1fica de par\u00e1bola que abre hacia abajo, con v\u00e9rtice en (\u22121, 5) y ra\u00edces en \u22124 y 2]\n\n\u00bfEn cu\u00e1l valor de \u201cx\u201d alcanza \u201cg\u201d su valor m\u00e1ximo?",
+    "options": {
+      "A": "2",
+      "B": "5",
+      "C": "\u22121",
+      "D": "\u22124"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Como a < 0, la par\u00e1bola abre hacia abajo y su valor m\u00e1ximo se alcanza en el v\u00e9rtice.",
+      "En la gr\u00e1fica, el v\u00e9rtice est\u00e1 en el punto (\u22121, 5).",
+      "Por lo tanto, g alcanza su valor m\u00e1ximo cuando x = \u22121.",
+      "Respuesta: C."
+    ]
+  },
+  {
+    "code": "item-alg-057",
+    "area_id": "functions",
+    "evidence": "A2.3",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "reproduccion",
+    "stem": "Dada la ecuaci\u00f3n de la recta $y = 2x + b$, y sabiendo que el punto (\u22122, 1) pertenece a ella, \u00bfcu\u00e1les son las coordenadas del punto de intersecci\u00f3n con el eje $y$?",
+    "options": {
+      "A": "$(0, -3)$",
+      "B": "$(-3, 0)$",
+      "C": "$(5, 0)$",
+      "D": "$(0, 5)$"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Sustituyendo el punto (\u22122, 1) en y = 2x + b:",
+      "1 = 2(\u22122) + b",
+      "1 = \u22124 + b",
+      "b = 5",
+      "La intersecci\u00f3n con el eje y ocurre cuando x = 0, es decir, en (0, b) = (0, 5).",
+      "Respuesta: D."
+    ]
+  },
+  {
+    "code": "item-alg-058",
+    "area_id": "functions",
+    "evidence": "A3.1",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "conexion",
+    "stem": "Un gimnasio ofrece un paquete de entrenamiento personalizado para un mes. Toda persona que desee inscribirse debe pagar una cuota \u00fanica de inscripci\u00f3n de 25 000 y luego 4000 por cada clase asistida con el entrenador. Si un cliente reserv\u00f3 espacio para 15 clases durante el \u00faltimo mes, pero al final asisti\u00f3 solamente a 12 clases, entonces, \u00bfcu\u00e1nto pag\u00f3 en total?",
+    "options": {
+      "A": "85 000",
+      "B": "73 000",
+      "C": "60 000",
+      "D": "48 000"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "El pago total es la cuota de inscripci\u00f3n m\u00e1s el costo por las clases efectivamente asistidas.",
+      "Clases asistidas: 12 (no 15, pues se cobra solo por clase a la que asisti\u00f3).",
+      "Pago = 25 000 + 4000 \u00d7 12",
+      "Pago = 25 000 + 48 000 = 73 000",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-059",
+    "area_id": "functions",
+    "evidence": "A3.1",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "reproduccion",
+    "stem": "Luis llama por tel\u00e9fono a Ana y le comenta que la temperatura en su ciudad es de 41 \u00b0F. Si se sabe que la relaci\u00f3n entre la temperatura en grados Fahrenheit (\u00b0F) y en grados Celsius (\u00b0C) est\u00e1 asociada mediante la funci\u00f3n $F(C) = \\frac{9}{5}C + 32$, entonces, \u00bfa cu\u00e1ntos grados Celsius equivale la temperatura comentada?",
+    "options": {
+      "A": "5",
+      "B": "9",
+      "C": "22,8",
+      "D": "40,5"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Sustituyendo F = 41 en F(C) = (9/5)C + 32:",
+      "41 = (9/5)C + 32",
+      "41 \u2212 32 = (9/5)C",
+      "9 = (9/5)C",
+      "C = 9 \u00d7 (5/9) = 5",
+      "Por lo tanto, 41 \u00b0F equivalen a 5 \u00b0C.",
+      "Respuesta: A."
+    ]
+  },
+  {
+    "code": "item-alg-060",
+    "area_id": "functions",
+    "evidence": "A3.3",
+    "concept_id": "mep-alg-sistemas-ecuaciones-05",
+    "cognitive_level": "reflexion",
+    "stem": "En una pasteler\u00eda se producen \u00fanicamente queques de chocolate y galletas de avena. Cada queque requiere 4 h de horneado y 2 h de decoraci\u00f3n; mientras que cada paquete de galletas requiere 3 h de horneado y 1 h de decoraci\u00f3n. Si en total se utilizaron 110 h para horneado y 50 h para decoraci\u00f3n, entonces, \u00bfcu\u00e1ntos queques de chocolate se produjeron?",
+    "options": {
+      "A": "30",
+      "B": "20",
+      "C": "15",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Sea q = cantidad de queques y g = cantidad de paquetes de galletas.",
+      "Sistema de ecuaciones:\n4q + 3g = 110  (horneado)\n2q + g = 50    (decoraci\u00f3n)",
+      "De la segunda ecuaci\u00f3n: g = 50 \u2212 2q.",
+      "Sustituyendo en la primera: 4q + 3(50 \u2212 2q) = 110",
+      "4q + 150 \u2212 6q = 110",
+      "\u22122q = \u221240",
+      "q = 20",
+      "Por lo tanto, se produjeron 20 queques de chocolate.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-061",
+    "area_id": "functions",
+    "evidence": "A3.3",
+    "concept_id": "mep-alg-sistemas-ecuaciones-05",
+    "cognitive_level": "reproduccion",
+    "stem": "Roy y Rosa fueron de compras. \u00c9l compr\u00f3 5 kg de zanahoria y 3 kg de br\u00f3coli y por esa compra pag\u00f3 4650 en total; mientras que ella compr\u00f3 3 kg de zanahoria y 5 kg de br\u00f3coli y pag\u00f3 5350 en total. Si ambos compraron a los mismos precios, entonces, \u00bfcu\u00e1nto cost\u00f3 el kilogramo de br\u00f3coli?",
+    "options": {
+      "A": "700",
+      "B": "800",
+      "C": "625",
+      "D": "900"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Sea z = precio del kg de zanahoria y b = precio del kg de br\u00f3coli.",
+      "Sistema:\n5z + 3b = 4650\n3z + 5b = 5350",
+      "Multiplicando la primera ecuaci\u00f3n por 3 y la segunda por 5:\n15z + 9b = 13 950\n15z + 25b = 26 750",
+      "Restando la primera de la segunda:\n16b = 12 800",
+      "b = 800",
+      "Por lo tanto, el kilogramo de br\u00f3coli cost\u00f3 800.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-062",
+    "area_id": "functions",
+    "evidence": "A4.1",
+    "concept_id": "mep-alg-funcion-inversa-06",
+    "cognitive_level": "conexion",
+    "stem": "Sea una funci\u00f3n f con dominio A y codominio B (considere el codominio igual al \u00e1mbito). \u00bfCu\u00e1l de las siguientes condiciones es necesaria y suficiente para garantizar la existencia de su funci\u00f3n inversa?",
+    "options": {
+      "A": "Que la funci\u00f3n sea lineal.",
+      "B": "Que la gr\u00e1fica de la funci\u00f3n no pase por el origen (0, 0).",
+      "C": "Que la funci\u00f3n posea \u00fanicamente n\u00fameros positivos en su dominio.",
+      "D": "Que elementos distintos del dominio A tengan im\u00e1genes distintas en el codominio B."
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Una funci\u00f3n tiene inversa si y solo si es inyectiva (uno a uno).",
+      "La inyectividad significa que elementos distintos del dominio tienen im\u00e1genes distintas en el codominio.",
+      "La opci\u00f3n D expresa exactamente esta condici\u00f3n necesaria y suficiente.",
+      "Las opciones A, B y C no garantizan inyectividad (una funci\u00f3n lineal puede no ser inyectiva si es constante; pasar o no por el origen no determina inyectividad; restringir a positivos no garantiza inyectividad).",
+      "Respuesta: D."
+    ]
+  },
+  {
+    "code": "item-alg-063",
+    "area_id": "functions",
+    "evidence": "A4.3",
+    "concept_id": "mep-alg-funcion-inversa-06",
+    "cognitive_level": "reproduccion",
+    "stem": "Una posible gr\u00e1fica de la funci\u00f3n $h(x) = x^2 - 4$; $x \\in \\mathbb{R}$ es la siguiente:\n\n[gr\u00e1fica de par\u00e1bola que abre hacia arriba, v\u00e9rtice en (0, \u22124), ra\u00edces en \u22122 y 2]\n\nSi se desea que $h$ tenga inversa, entonces, un posible dominio para $h$ corresponde a",
+    "options": {
+      "A": "$[-2, 2]$",
+      "B": "$]-\\infty, 2]$",
+      "C": "$[0, +\\infty[$",
+      "D": "$[-2, +\\infty[$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Para que una funci\u00f3n tenga inversa, debe ser inyectiva en su dominio.",
+      "h(x) = x\u00b2 \u2212 4 es una par\u00e1bola que abre hacia arriba con v\u00e9rtice en (0, \u22124).",
+      "Es decreciente en ]\u2212\u221e, 0] y creciente en [0, +\u221e[.",
+      "Restringiendo el dominio a [0, +\u221e[ (donde es estrictamente creciente), h es inyectiva y por tanto tiene inversa.",
+      "El intervalo [\u22122, 2] incluye el v\u00e9rtice, donde la funci\u00f3n no es inyectiva. Los intervalos ]\u2212\u221e, 2] y [\u22122, +\u221e[ tampoco garantizan inyectividad.",
+      "Respuesta: C."
+    ]
+  },
+  {
+    "code": "item-alg-064",
+    "area_id": "functions",
+    "evidence": "A4.4",
+    "concept_id": "mep-alg-funcion-inversa-06",
+    "cognitive_level": "conexion",
+    "stem": "Si la inversa de la funci\u00f3n $r$ dada por $r(x) = \\frac{6 - 2x}{8}$ es de la forma $r^{-1}(x) = ax + b$, entonces, se cumple que",
+    "options": {
+      "A": "$a = -4$ y $b = -3$",
+      "B": "$a = -4$ y $b = 3$",
+      "C": "$a = -8$ y $b = 6$",
+      "D": "$a = 4$ y $b = 3$"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Simplificando r(x): r(x) = (6 \u2212 2x)/8 = 6/8 \u2212 2x/8 = 3/4 \u2212 x/4.",
+      "Para hallar la inversa, se escribe y = 3/4 \u2212 x/4 y se intercambian x e y:",
+      "x = 3/4 \u2212 y/4",
+      "4x = 3 \u2212 y",
+      "y = 3 \u2212 4x",
+      "Por lo tanto, r\u207b\u00b9(x) = 3 \u2212 4x, es decir, a = \u22124 y b = 3.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-065",
+    "area_id": "functions",
+    "evidence": "A4.5",
+    "concept_id": "mep-alg-funcion-raiz-cuadrada-07",
+    "cognitive_level": "reflexion",
+    "stem": "Sea la funci\u00f3n $f$ definida por $f(x) = \\sqrt{x}$. Si su gr\u00e1fica original se traslada verticalmente tres unidades hacia abajo para obtener la funci\u00f3n $h$, entonces, \u00bfcu\u00e1l es el criterio de $h(x)$?",
+    "options": {
+      "A": "$\\sqrt{x - 3}$",
+      "B": "$\\sqrt{x} + 3$",
+      "C": "$\\sqrt{x + 3}$",
+      "D": "$\\sqrt{x} - 3$"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Una traslaci\u00f3n vertical de k unidades hacia abajo se obtiene restando k a la funci\u00f3n original.",
+      "Si f(x) = \u221ax y la traslaci\u00f3n es 3 unidades hacia abajo:",
+      "h(x) = f(x) \u2212 3 = \u221ax \u2212 3",
+      "Por lo tanto, el criterio es h(x) = \u221ax \u2212 3.",
+      "Respuesta: D."
+    ]
+  },
+  {
+    "code": "item-alg-066",
+    "area_id": "functions",
+    "evidence": "A4.2",
+    "concept_id": "mep-alg-funcion-inversa-06",
+    "cognitive_level": "conexion",
+    "stem": "Considere la representaci\u00f3n gr\u00e1fica de una funci\u00f3n p:\n[recta que pasa por (0, \u22123) y (6, 0)]\nCon base en la informaci\u00f3n dada, \u00bfcu\u00e1l es la representaci\u00f3n gr\u00e1fica de la funci\u00f3n inversa de p?",
+    "options": {
+      "A": "Recta que pasa por $(-3, 0)$ y $(0, 6)$",
+      "B": "Recta que pasa por $(0, 6)$ y $(3, 0)$",
+      "C": "Recta que pasa por $(-6, 0)$ y $(0, 3)$",
+      "D": "Recta que pasa por $(0, 3)$ y $(6, 0)$"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "La funci\u00f3n p pasa por (0, \u22123) y (6, 0). Su ecuaci\u00f3n es p(x) = x/2 \u2212 3.",
+      "La inversa se obtiene intercambiando x e y: x = y/2 \u2212 3 \u2192 y = 2x + 6.",
+      "La recta y = 2x + 6 pasa por (\u22123, 0) y (0, 6).",
+      "Esta corresponde a la opci\u00f3n A.",
+      "Respuesta: A."
+    ]
+  },
+  {
+    "code": "item-alg-067",
+    "area_id": "functions",
+    "evidence": "A5.4",
+    "concept_id": "mep-alg-exponencial-logaritmica-08",
+    "cognitive_level": "reproduccion",
+    "stem": "Si la poblaci\u00f3n \u201cp(x)\u201d de una comunidad se estima mediante $p(x) = 2000 \\cdot 2^{x/5}$, donde \u201cx\u201d representa los a\u00f1os transcurridos a partir de 2025, entonces, \u00bfcu\u00e1ntos a\u00f1os deben transcurrir para que la poblaci\u00f3n sea de 16 000 individuos?",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "8",
+      "D": "3"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Igualando p(x) = 16 000:",
+      "16 000 = 2000 \u2022 2^(x/5)",
+      "8 = 2^(x/5)",
+      "2\u00b3 = 2^(x/5)",
+      "3 = x/5",
+      "x = 15",
+      "Por lo tanto, deben transcurrir 15 a\u00f1os.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-068",
+    "area_id": "functions",
+    "evidence": "A4.6",
+    "concept_id": "mep-alg-funcion-raiz-cuadrada-07",
+    "cognitive_level": "conexion",
+    "stem": "El tiempo $T(v)$, en minutos, que tarda un video corto en volverse viral se modela mediante la funci\u00f3n $T(v) = 5\\sqrt{v}$, donde \u201cv\u201d representa la cantidad de veces que se ha compartido (en miles). Si el video se tard\u00f3 20 minutos en viralizarse, entonces, \u00bfcu\u00e1ntas miles de veces se comparti\u00f3?",
+    "options": {
+      "A": "4",
+      "B": "16",
+      "C": "25",
+      "D": "80"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Sustituyendo T = 20 en T(v) = 5\u221av:",
+      "20 = 5\u221av",
+      "\u221av = 4",
+      "v = 16",
+      "Por lo tanto, el video se comparti\u00f3 16 mil veces.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-069",
+    "area_id": "functions",
+    "evidence": "A5.7",
+    "concept_id": "mep-alg-propiedades-logaritmos-09",
+    "cognitive_level": "reproduccion",
+    "stem": "La escala de pH de una soluci\u00f3n qu\u00edmica especial est\u00e1 dada por la funci\u00f3n $p(x) = 2\\log_3(x)$, donde \u201cx\u201d representa la concentraci\u00f3n de ciertos iones en la mezcla con $3 \\le x \\le 81$. Si la concentraci\u00f3n detectada es de 27 unidades, entonces, \u00bfcu\u00e1l es el valor del pH obtenido?",
+    "options": {
+      "A": "6",
+      "B": "9",
+      "C": "18",
+      "D": "54"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Sustituyendo x = 27 en p(x) = 2log\u2083(x):",
+      "p(27) = 2 \u00b7 log\u2083(27)",
+      "Como 3\u00b3 = 27, log\u2083(27) = 3.",
+      "p(27) = 2 \u00b7 3 = 6",
+      "Por lo tanto, el pH obtenido es 6.",
+      "Respuesta: A."
+    ]
+  },
+  {
+    "code": "item-alg-070",
+    "area_id": "functions",
+    "evidence": "A5.1",
+    "concept_id": "mep-alg-exponencial-logaritmica-08",
+    "cognitive_level": "reflexion",
+    "stem": "\u00bfCu\u00e1l de las siguientes funciones es inversa con la funci\u00f3n $f(x) = 2^x$?",
+    "options": {
+      "A": "$g(x) = (1/2)^x$",
+      "B": "$t(x) = \\log_2(x)$",
+      "C": "$h(x) = \\log_1(x)$",
+      "D": "$r(x) = 2\\log(x)$"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "La funci\u00f3n inversa de una funci\u00f3n exponencial de base a es la funci\u00f3n logar\u00edtmica de base a.",
+      "Para f(x) = 2^x, la inversa es f\u207b\u00b9(x) = log\u2082(x).",
+      "Por lo tanto, t(x) = log\u2082(x) es la funci\u00f3n inversa.",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-071",
+    "area_id": "functions",
+    "evidence": "A5.8",
+    "concept_id": "mep-alg-exponencial-logaritmica-08",
+    "cognitive_level": "reproduccion",
+    "stem": "En un centro de investigaci\u00f3n, dos bacterias cl\u00f3nicas se reproducen en laboratorios con ambientes distintos. La cantidad de bacterias del primer tipo se comporta seg\u00fan la expresi\u00f3n $3^{x+8}$, mientras que la del segundo tipo sigue la expresi\u00f3n $9^{x+1}$, donde \u201cx\u201d representa el tiempo transcurrido en horas. \u00bfQu\u00e9 valor debe tomar la variable x para que ambos laboratorios tengan exactamente la misma cantidad de bacterias?",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "4",
+      "D": "10"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Igualando ambas expresiones:",
+      "3^(x+8) = 9^(x+1)",
+      "Como 9 = 3\u00b2, se tiene: 9^(x+1) = (3\u00b2)^(x+1) = 3^(2x+2)",
+      "Por lo tanto: 3^(x+8) = 3^(2x+2)",
+      "Igualando exponentes: x + 8 = 2x + 2",
+      "8 \u2212 2 = 2x \u2212 x",
+      "6 = x",
+      "Respuesta: A."
+    ]
+  },
+  {
+    "code": "item-alg-072",
+    "area_id": "functions",
+    "evidence": "A6.1",
+    "concept_id": "mep-alg-exponencial-logaritmica-08",
+    "cognitive_level": "conexion",
+    "stem": "Una persona abre una cuenta de ahorros especial que duplica el dinero depositado cada a\u00f1o que pasa. Si la cantidad inicial depositada fue de 250 colones, entonces, \u00bfcu\u00e1l es el criterio del modelo matem\u00e1tico $D(t)$ que explica la cantidad de dinero acumulado en funci\u00f3n de los a\u00f1os t?",
+    "options": {
+      "A": "$250 + 2t$",
+      "B": "$250 \\cdot 2t$",
+      "C": "$250 + 2^t$",
+      "D": "$250 \\cdot 2^t$"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "El dinero se duplica cada a\u00f1o, lo que corresponde a un crecimiento exponencial.",
+      "El modelo general es D(t) = D\u2080 \u2022 r^t, donde D\u2080 es la cantidad inicial y r es el factor de crecimiento.",
+      "Aqu\u00ed D\u2080 = 250 y r = 2 (se duplica).",
+      "Por lo tanto: D(t) = 250 \u2022 2^t.",
+      "Respuesta: D."
+    ]
+  },
+  {
+    "code": "item-alg-073",
+    "area_id": "functions",
+    "evidence": "A6.5",
+    "concept_id": "mep-alg-funcion-lineal-03",
+    "cognitive_level": "reproduccion",
+    "stem": "Una aplicaci\u00f3n de transporte cobra una tarifa por viaje de 1500 por seguro de vida m\u00e1s 1000 por kil\u00f3metro del recorrido. Si x representa la cantidad de kil\u00f3metros recorridos y C(x) el costo total en colones, entonces, \u00bfcu\u00e1l es el criterio de la funci\u00f3n C(x) que describe la situaci\u00f3n anterior?",
+    "options": {
+      "A": "500x",
+      "B": "2500x",
+      "C": "1000x + 1500",
+      "D": "1500x + 1000"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "El costo total es la suma de una tarifa fija (seguro) m\u00e1s un costo variable por kil\u00f3metro.",
+      "Tarifa fija: 1500",
+      "Costo variable: 1000 por kil\u00f3metro \u2192 1000x",
+      "Por lo tanto: C(x) = 1000x + 1500.",
+      "Respuesta: C."
+    ]
+  },
+  {
+    "code": "item-alg-074",
+    "area_id": "functions",
+    "evidence": "A6.5",
+    "concept_id": "mep-alg-funcion-cuadratica-04",
+    "cognitive_level": "conexion",
+    "stem": "En el dise\u00f1o de la pantalla de un nuevo tel\u00e9fono inteligente, el largo de la pantalla mide el triple de su ancho. Si el \u00e1rea total de la pantalla se calcula en mil\u00edmetros cuadrados, entonces, \u00bfcu\u00e1l es el criterio que modela correctamente el \u00e1rea A(x) de la pantalla en funci\u00f3n de su ancho denotado con \u201cx\u201d?",
+    "options": {
+      "A": "$9x^2$",
+      "B": "$3x^2$",
+      "C": "$\\frac{1}{3}x^2$",
+      "D": "$\\frac{1}{9}x^2$"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Sea x el ancho de la pantalla.",
+      "El largo es el triple del ancho: largo = 3x.",
+      "El \u00e1rea de un rect\u00e1ngulo es ancho \u00d7 largo:",
+      "A(x) = x \u00b7 3x = 3x\u00b2",
+      "Respuesta: B."
+    ]
+  },
+  {
+    "code": "item-alg-075",
+    "area_id": "functions",
+    "evidence": "A6.3",
+    "concept_id": "mep-alg-exponencial-logaritmica-08",
+    "cognitive_level": "reflexion",
+    "stem": "Un bi\u00f3logo determina que el crecimiento C(t) de una colonia de hongos se comporta seg\u00fan un modelo logar\u00edtmico que depende del tiempo (t) en d\u00edas. Si a los 8 d\u00edas el crecimiento registra un valor exacto de 3, entonces, \u00bfcu\u00e1l es el criterio de C(t) que modela correctamente esta situaci\u00f3n?",
+    "options": {
+      "A": "$\\log_2(t)$",
+      "B": "$\\log_3(t)$",
+      "C": "$\\log_5(t)$",
+      "D": "$\\log_8(t)$"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Se busca una funci\u00f3n logar\u00edtmica C(t) = log_b(t) tal que C(8) = 3.",
+      "Probando con base b: log_b(8) = 3 \u2192 b\u00b3 = 8 \u2192 b = 2.",
+      "Por lo tanto, C(t) = log\u2082(t).",
+      "Verificaci\u00f3n: C(8) = log\u2082(8) = 3. \u2713",
+      "Respuesta: A."
+    ]
+  },
+  {
+    "code": "item-est-076",
+    "area_id": "statistics",
+    "evidence": "A1.5",
+    "concept_id": "mep-est-medidas-posicion-01",
+    "cognitive_level": "conexion",
+    "stem": "Se realiz\u00f3 un estudio para determinar la cantidad de kil\u00f3metros diarios que recorren 100 estudiantes para asistir al centro educativo. A continuaci\u00f3n, se muestran los resultados obtenidos:\n\n[Ver tabla de frecuencia]\n\n\u00bfCu\u00e1l es el promedio de kil\u00f3metros diarios que recorre cada estudiante para llegar al centro educativo?",
+    "options": {
+      "A": "8",
+      "B": "12",
+      "C": "15",
+      "D": "20"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Se calcula el punto medio de cada clase: (0+10)/2 = 5; (10+20)/2 = 15; (20+30)/2 = 25.",
+      "Se multiplica cada punto medio por su frecuencia: 5\u00d750 = 250; 15\u00d730 = 450; 25\u00d720 = 500.",
+      "Se suman los productos: 250 + 450 + 500 = 1200.",
+      "Se divide entre el total de estudiantes: 1200 / 100 = 12.",
+      "El promedio es 12 km diarios."
+    ]
+  },
+  {
+    "code": "item-est-077",
+    "area_id": "statistics",
+    "evidence": "A1.4",
+    "concept_id": "mep-est-medidas-posicion-01",
+    "cognitive_level": "reproduccion",
+    "stem": "El siguiente cuadro muestra las calificaciones obtenidas por un estudiante en el curso universitario de Qu\u00edmica Org\u00e1nica, as\u00ed como el valor porcentual de cada rubro calificado. La nota final se obtiene a partir de la sumatoria de los porcentajes obtenidos:\n\n[Ver tabla de ponderaciones]\n\n\u00bfCu\u00e1l fue la nota final que obtuvo el estudiante en el curso de Qu\u00edmica?",
+    "options": {
+      "A": "78,50",
+      "B": "79,50",
+      "C": "81,25",
+      "D": "82,50"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "Se multiplica cada calificaci\u00f3n por su peso porcentual: 70\u00d70,30 = 21; 80\u00d70,35 = 28; 90\u00d70,15 = 13,5; 85\u00d70,20 = 17.",
+      "Se suman los productos: 21 + 28 + 13,5 + 17 = 79,5.",
+      "La nota final es 79,50."
+    ]
+  },
+  {
+    "code": "item-est-078",
+    "area_id": "statistics",
+    "evidence": "A1.3",
+    "concept_id": "mep-est-medidas-posicion-01",
+    "cognitive_level": "conexion",
+    "stem": "La distribuci\u00f3n de los datos correspondientes a las calificaciones de un examen de admisi\u00f3n universitario presenta una asimetr\u00eda. De acuerdo con el reporte del departamento de registro, se determin\u00f3 que 80 puntos representan a la mediana de esos datos y 85 puntos representan a la moda.\n\n[Ver curva de distribuci\u00f3n asim\u00e9trica]\n\nCon certeza, la calificaci\u00f3n promedio de los estudiantes en ese examen fue:",
+    "options": {
+      "A": "igual que 85.",
+      "B": "menor que 80.",
+      "C": "mayor que 85.",
+      "D": "mayor que 80 y menor que 85."
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "En una distribuci\u00f3n asim\u00e9trica negativa (cola hacia la izquierda), la moda es mayor que la mediana, y la mediana es mayor que la media.",
+      "Dado que moda = 85 y mediana = 80, se cumple: media < mediana < moda, es decir, media < 80 < 85.",
+      "Por lo tanto, la calificaci\u00f3n promedio es menor que 80."
+    ]
+  },
+  {
+    "code": "item-est-079",
+    "area_id": "statistics",
+    "evidence": "A3.1",
+    "concept_id": "mep-est-medidas-posicion-01",
+    "cognitive_level": "reproduccion",
+    "stem": "Considere la siguiente informaci\u00f3n referida a la duraci\u00f3n (en horas continuas) de las bater\u00edas de una marca de tel\u00e9fonos inteligentes:\n\n[Ver resumen de cinco n\u00fameros]\n\nCon base en la informaci\u00f3n anterior, se cumple con certeza que al menos el 50 % de las bater\u00edas tienen una duraci\u00f3n entre",
+    "options": {
+      "A": "12 y 16 horas.",
+      "B": "16 y 22 horas.",
+      "C": "16 y 28 horas.",
+      "D": "12 y 28 horas"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "El recorrido intercuart\u00edlico (Q3 \u2212 Q1) contiene al menos el 50 % de los datos.",
+      "Q1 = 16 y Q3 = 22.",
+      "Por lo tanto, al menos el 50 % de las bater\u00edas tienen una duraci\u00f3n entre 16 y 22 horas."
+    ]
+  },
+  {
+    "code": "item-est-080",
+    "area_id": "statistics",
+    "evidence": "A2.4",
+    "concept_id": "mep-est-eventos-probabilidad-02",
+    "cognitive_level": "reflexion",
+    "stem": "Con base en la informaci\u00f3n dada en la tabla de contingencia, se establecen los siguientes eventos al elegir al azar para control de calidad:\n\n\u2022 E: Que la orden incluya una reposter\u00eda dulce con caf\u00e9 negro.\n\n\u2022 F: Que la orden incluya una reposter\u00eda salada con caf\u00e9 negro.\n\n\u2022 G: Que la orden incluya una reposter\u00eda salada con un caf\u00e9 con leche o jugo natural.\n\n\u2022 H: Que la orden sea de reposter\u00eda dulce o salada acompa\u00f1ado de jugo natural.\n\n\u00bfCu\u00e1l es la probabilidad de que ocurra el evento $E \\cup F$?",
+    "options": {
+      "A": "$1/80$",
+      "B": "$7/80$",
+      "C": "$23/80$",
+      "D": "$57/80$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "E: reposter\u00eda dulce con caf\u00e9 negro = 8 \u00f3rdenes.",
+      "F: reposter\u00eda salada con caf\u00e9 negro = 15 \u00f3rdenes.",
+      "E \u2229 F = 0 (una orden no puede ser simult\u00e1neamente dulce y salada).",
+      "P(E \u222a F) = P(E) + P(F) \u2212 P(E \u2229 F) = (8/80) + (15/80) \u2212 0 = 23/80."
+    ]
+  },
+  {
+    "code": "item-est-081",
+    "area_id": "statistics",
+    "evidence": "A2.3",
+    "concept_id": "mep-est-eventos-probabilidad-02",
+    "cognitive_level": "reproduccion",
+    "stem": "Con base en la informaci\u00f3n dada en la tabla de contingencia, se establecen los siguientes eventos al elegir al azar para control de calidad:\n\n\u2022 E: Que la orden incluya una reposter\u00eda dulce con caf\u00e9 negro.\n\n\u2022 F: Que la orden incluya una reposter\u00eda salada con caf\u00e9 negro.\n\n\u2022 G: Que la orden incluya una reposter\u00eda salada con un caf\u00e9 con leche o jugo natural.\n\n\u2022 H: Que la orden sea de reposter\u00eda dulce o salada acompa\u00f1ado de jugo natural.\n\n\u00bfCu\u00e1l evento es imposible que ocurra?",
+    "options": {
+      "A": "$F^c \\cup G^c$",
+      "B": "$F^c \\cap G^c$",
+      "C": "$F \\cap G$",
+      "D": "$F \\cup G$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "F: reposter\u00eda salada con caf\u00e9 negro (15 \u00f3rdenes).",
+      "G: reposter\u00eda salada con caf\u00e9 con leche o jugo natural (16 + 14 = 30 \u00f3rdenes).",
+      "F \u2229 G requerir\u00eda una orden de reposter\u00eda salada que incluya simult\u00e1neamente caf\u00e9 negro y (caf\u00e9 con leche o jugo natural), lo cual es imposible porque cada orden tiene una sola bebida.",
+      "Por lo tanto, F \u2229 G es un evento imposible."
+    ]
+  },
+  {
+    "code": "item-est-082",
+    "area_id": "statistics",
+    "evidence": "A2.1",
+    "concept_id": "mep-est-eventos-probabilidad-02",
+    "cognitive_level": "conexion",
+    "stem": "En una academia de artes se imparte m\u00fasica, pintura y ballet. El siguiente diagrama muestra la cantidad de estudiantes matriculados en esas disciplinas:\n\n[Ver diagrama de Venn]\n\nSi se selecciona al azar un estudiante de esa academia, entonces, la probabilidad de que est\u00e9 matriculado en las tres disciplinas corresponde a",
+    "options": {
+      "A": "$36/43$",
+      "B": "$18/43$",
+      "C": "$0$",
+      "D": "$1$"
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Del diagrama de Venn se observa que no hay regi\u00f3n de intersecci\u00f3n triple (M\u00fasica \u2229 Pintura \u2229 Ballet).",
+      "El n\u00famero de estudiantes en las tres disciplinas es 0.",
+      "El total de estudiantes es 8 + 4 + 11 + 3 + 17 = 43.",
+      "P(tres disciplinas) = 0/43 = 0."
+    ]
+  },
+  {
+    "code": "item-est-083",
+    "area_id": "statistics",
+    "evidence": "A2.1",
+    "concept_id": "mep-est-eventos-probabilidad-02",
+    "cognitive_level": "reproduccion",
+    "stem": "En una academia de artes se imparte m\u00fasica, pintura y ballet. El siguiente diagrama muestra la cantidad de estudiantes matriculados en esas disciplinas:\n\n[Ver diagrama de Venn]\n\nSi se selecciona al azar un estudiante de esa academia, entonces, la probabilidad de que est\u00e9 matriculado en dos de esas disciplinas corresponde a",
+    "options": {
+      "A": "7/43",
+      "B": "14/43",
+      "C": "15/43",
+      "D": "20/43"
+    },
+    "correct_answer": "A",
+    "solution_steps": [
+      "Estudiantes en exactamente dos disciplinas: M\u00fasica \u2229 Pintura (4) + Pintura \u2229 Ballet (3) + M\u00fasica \u2229 Ballet (0) = 7.",
+      "Total de estudiantes: 8 + 4 + 11 + 3 + 17 = 43.",
+      "P(exactamente dos disciplinas) = 7/43."
+    ]
+  },
+  {
+    "code": "item-est-084",
+    "area_id": "statistics",
+    "evidence": "A1.2",
+    "concept_id": "mep-est-medidas-posicion-01",
+    "cognitive_level": "conexion",
+    "stem": "Considere la informaci\u00f3n de los diagramas de caja sobre las edades de los empleados de dos empresas, A y B.\n\n[Ver diagramas de caja]\n\nEntre ambas empresas, \u00bfcu\u00e1ntos a\u00f1os tiene el empleado de menor edad?",
+    "options": {
+      "A": "45",
+      "B": "33",
+      "C": "23",
+      "D": "19"
+    },
+    "correct_answer": "D",
+    "solution_steps": [
+      "Se observan los valores m\u00ednimos de ambos diagramas de caja.",
+      "El m\u00ednimo de la empresa A es 23 a\u00f1os.",
+      "El m\u00ednimo de la empresa B es 19 a\u00f1os.",
+      "El empleado de menor edad entre ambas empresas tiene 19 a\u00f1os."
+    ]
+  },
+  {
+    "code": "item-est-085",
+    "area_id": "statistics",
+    "evidence": "A3.2",
+    "concept_id": "mep-est-diagrama-cajas-ric-03",
+    "cognitive_level": "reflexion",
+    "stem": "Considere la informaci\u00f3n de los diagramas de caja sobre las edades de los empleados de dos empresas, A y B.\n\n[Ver diagramas de caja]\n\n\u00bfCu\u00e1l de las siguientes afirmaciones es verdadera?",
+    "options": {
+      "A": "El empleado de mayor edad pertenece \u00fanicamente a la empresa A.",
+      "B": "En ambas empresas al menos un 50% de sus empleados tienen 33 a\u00f1os o m\u00e1s.",
+      "C": "En la empresa B al menos el 75% de sus empleados tiene 38 a\u00f1os cumplidos o m\u00e1s.",
+      "D": "Con certeza en ambas empresas hay al menos un empleado con una edad de 33 a\u00f1os cumplidos."
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "A) Falso: el valor m\u00e1ximo de ambas empresas es 45, por lo que el empleado de mayor edad podr\u00eda pertenecer a cualquiera de las dos.",
+      "B) Verdadero: la mediana de la empresa A es 33 (\u2265 33) y la mediana de la empresa B es 33 (\u2265 33); por lo tanto, al menos el 50 % de los empleados de cada empresa tiene 33 a\u00f1os o m\u00e1s.",
+      "C) Falso: en la empresa B, Q3 = 38, lo que indica que a lo sumo el 25 % tiene 38 a\u00f1os o m\u00e1s.",
+      "D) Falso: no se puede garantizar que exista un empleado con exactamente 33 a\u00f1os en ambas empresas."
+    ]
+  },
+  {
+    "code": "item-est-086",
+    "area_id": "statistics",
+    "evidence": "A3.3",
+    "concept_id": "mep-est-posicion-relativa-cv-04",
+    "cognitive_level": "conexion",
+    "stem": "El grupo que presenta menor variabilidad relativa corresponde al",
+    "options": {
+      "A": "H",
+      "B": "Q",
+      "C": "S",
+      "D": "P"
+    },
+    "correct_answer": "B",
+    "solution_steps": [
+      "El coeficiente de variaci\u00f3n se calcula como Cv = (desviaci\u00f3n est\u00e1ndar / media aritm\u00e9tica) \u00d7 100.",
+      "Cv_H = (4,4 / 15) \u00d7 100 = 29,33 %",
+      "Cv_Q = (4,5 / 16) \u00d7 100 = 28,13 %",
+      "Cv_S = (5,3 / 18) \u00d7 100 = 29,44 %",
+      "Cv_P = (5,0 / 17) \u00d7 100 = 29,41 %",
+      "El menor coeficiente de variaci\u00f3n corresponde al grupo Q (28,13 %)."
+    ]
+  },
+  {
+    "code": "item-est-087",
+    "area_id": "statistics",
+    "evidence": "A3.3",
+    "concept_id": "mep-est-posicion-relativa-cv-04",
+    "cognitive_level": "reproduccion",
+    "stem": "En t\u00e9rminos relativos y con respecto a su grupo de referencia, la persona que presenta la mayor posici\u00f3n relativa corresponde a",
+    "options": {
+      "A": "Andr\u00e9s.",
+      "B": "Sof\u00eda.",
+      "C": "Mar\u00eda.",
+      "D": "Rosa."
+    },
+    "correct_answer": "C",
+    "solution_steps": [
+      "Se calcula la posici\u00f3n relativa (estandarizaci\u00f3n) de cada persona: Pr = (dato \u2212 media) / desviaci\u00f3n est\u00e1ndar.",
+      "Sof\u00eda (H): Pr = (15 \u2212 15) / 4,4 = 0",
+      "Mar\u00eda (Q): Pr = (17 \u2212 16) / 4,5 = 0,222",
+      "Andr\u00e9s (S): Pr = (19 \u2212 18) / 5,3 = 0,189",
+      "Rosa (P): Pr = (16 \u2212 17) / 5,0 = \u22120,2",
+      "El mayor valor de posici\u00f3n relativa corresponde a Mar\u00eda (0,222), por lo que presenta el mejor desempe\u00f1o relativo."
+    ]
+  }
+]

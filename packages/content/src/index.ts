@@ -2,6 +2,7 @@ import type { Assessment, AssessmentBlueprint, CurriculumTaxonomy, Question } fr
 import { ensure, unique } from '@mep-ea/validation';
 import { parseBlueprint, parseQuestion, parseTaxonomy } from './schemas';
 export * from './schemas';
+export * from './compilation';
 
 export interface ContentRegistry { taxonomy: CurriculumTaxonomy; questions: Question[] }
 export function loadRegistry(taxonomy: unknown, items: unknown[]): ContentRegistry {
