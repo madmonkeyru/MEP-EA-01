@@ -38,5 +38,12 @@ describe('EntryLandingPage', () => {
     const background = container.querySelector('[aria-hidden="true"]');
     expect(background).toHaveClass('pointer-events-none');
     expect(background?.querySelector('svg[viewBox="0 0 1440 680"]')).toBeInTheDocument();
+
+    const fadeMask = background?.querySelector('#flag-fade-mask');
+    expect(fadeMask?.querySelector('stop[offset="0%"]')).toHaveAttribute('stop-opacity', '0.65');
+    expect(fadeMask?.querySelector('stop[offset="100%"]')).toHaveAttribute('stop-opacity', '0.65');
+
+    const blueGradient = background?.querySelector('#cr-blue-grad');
+    expect(blueGradient?.querySelector('stop[offset="50%"]')).toHaveAttribute('stop-opacity', '0.38');
   });
 });

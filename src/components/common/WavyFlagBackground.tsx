@@ -18,10 +18,10 @@ export const WavyFlagBackground: React.FC<WavyFlagBackgroundProps> = ({ classNam
     >
       <defs>
         <linearGradient id="flag-fade-mask" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#fff" stopOpacity="0.1" />
-          <stop offset="25%" stopColor="#fff" stopOpacity="0.9" />
-          <stop offset="70%" stopColor="#fff" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#fff" stopOpacity="0.65" />
+          <stop offset="12%" stopColor="#fff" stopOpacity="1" />
+          <stop offset="88%" stopColor="#fff" stopOpacity="1" />
+          <stop offset="100%" stopColor="#fff" stopOpacity="0.65" />
         </linearGradient>
         <linearGradient id="flag-h-fade" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#fff" stopOpacity="0" />
@@ -34,14 +34,14 @@ export const WavyFlagBackground: React.FC<WavyFlagBackgroundProps> = ({ classNam
           <rect width="1440" height="680" fill="url(#flag-h-fade)" style={{ mixBlendMode: 'multiply' }} />
         </mask>
         <linearGradient id="cr-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#002b7f" stopOpacity="0.05" />
-          <stop offset="50%" stopColor="#1e3a8a" stopOpacity="0.08" />
-          <stop offset="100%" stopColor="#2563eb" stopOpacity="0.04" />
+          <stop offset="0%" stopColor="#002b7f" stopOpacity="0.24" />
+          <stop offset="50%" stopColor="#1e3a8a" stopOpacity="0.38" />
+          <stop offset="100%" stopColor="#2563eb" stopOpacity="0.22" />
         </linearGradient>
         <linearGradient id="cr-red-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ce1126" stopOpacity="0.04" />
-          <stop offset="45%" stopColor="#e11d48" stopOpacity="0.075" />
-          <stop offset="100%" stopColor="#be123c" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#ce1126" stopOpacity="0.03" />
+          <stop offset="45%" stopColor="#e11d48" stopOpacity="0.05" />
+          <stop offset="100%" stopColor="#be123c" stopOpacity="0.03" />
         </linearGradient>
         <linearGradient id="wave-highlight" x1="20%" y1="0%" x2="80%" y2="100%">
           <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
@@ -67,7 +67,7 @@ export const WavyFlagBackground: React.FC<WavyFlagBackgroundProps> = ({ classNam
         <path
           d="M -100 310 C 220 270, 480 400, 800 330 C 1080 270, 1320 380, 1540 320 L 1540 380 C 1320 440, 1080 330, 800 390 C 480 460, 220 330, -100 370 Z"
           fill="#e11d48"
-          opacity="0.03"
+          opacity="0.02"
         />
         <path
           d="M -100 425 C 220 375, 480 515, 800 445 C 1080 370, 1320 490, 1540 425 L 1540 475 C 1320 540, 1080 425, 800 495 C 480 565, 220 430, -100 475 Z"

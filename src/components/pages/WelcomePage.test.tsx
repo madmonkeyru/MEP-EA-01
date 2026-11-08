@@ -81,4 +81,21 @@ describe('WelcomePage', () => {
     expect(carousel.queryByText(/^Meta:/)).not.toBeInTheDocument();
     expect(carousel.queryByText('PDF y estructura')).not.toBeInTheDocument();
   });
+
+  it('gives each program card its own warm background treatment', () => {
+    render(
+      <WelcomePage
+        onSelectProgram={vi.fn()}
+        onEnterMvpMath={vi.fn()}
+      />
+    );
+
+    const cards = screen.getByRole('region', { name: 'Programas disponibles' }).querySelectorAll('a.program-card');
+    expect(Array.from(cards, card => card.getAttribute('data-program'))).toEqual([
+      'i_ii_ciclo',
+      'iii_ciclo',
+      'edad',
+      'bxm',
+    ]);
+  });
 });

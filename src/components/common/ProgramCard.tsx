@@ -20,7 +20,8 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   return (
     <a href={'#/programas/' + program.id + '?convocatoria=2026-c2'}
       onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onSelect(program.id); } }}
-      className={`group relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
+      data-program={program.id}
+      className={`group program-card relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
     >
       <div>
         {/* {isMvp && (
