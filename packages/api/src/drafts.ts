@@ -34,11 +34,15 @@ export class DraftSynchronizer {
     const raw = await this.storage.getItem(`${this.key}:${encodeURIComponent(attemptId)}:conflict`);
     return raw ? JSON.parse(raw) as DraftState : null;
   }
+  async clearConflict(attemptId: string): Promise<void> {
+    await this.storage.removeItem(`${this.key}:${encodeURIComponent(attemptId)}:conflict`);
+  }
   private async push(key: string, write: DraftWrite): Promise<DraftRecord | null> {
     try {
       const record = await this.api.saveDraft(write);
       await this.storage.setItem(key, JSON.stringify({ revision: record.revision }));
-      // Retain earlier conflicts until explicitly reconciled by the caller.
+      // Clear resolved conflict upon successful draft persistence
+      await this.storage.removeItem(`${key}:conflict`);
       return record;
     } catch (error) {
       if (error instanceof ApiError && error.status === 409) await this.storage.setItem(`${key}:conflict`, JSON.stringify(error.body));

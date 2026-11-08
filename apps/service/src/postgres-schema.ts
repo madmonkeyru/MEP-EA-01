@@ -33,3 +33,18 @@ CREATE TABLE IF NOT EXISTS draft_conflicts (
 );
 INSERT INTO schema_migrations(version) VALUES (1) ON CONFLICT DO NOTHING;
 `;
+
+/** Forward-only P5 migration for learner accounts & entitlement persistence. */
+export const schemaV2 = `
+CREATE TABLE IF NOT EXISTS auth_users (
+  id text PRIMARY KEY,
+  username text NOT NULL UNIQUE,
+  password_hash text NOT NULL,
+  tier text NOT NULL CHECK (tier IN ('free', 'premium')),
+  roles jsonb NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS auth_users_username_lower ON auth_users (lower(username));
+INSERT INTO schema_migrations(version) VALUES (2) ON CONFLICT DO NOTHING;
+`;
