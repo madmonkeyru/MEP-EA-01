@@ -12,6 +12,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/ingest-validate-content.mjs
+      - run: npm run content:check
       - run: npm run lint
       - run: npm run check:boundaries
       - run: npm run typecheck

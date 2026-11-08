@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Storage from 'expo-sqlite/kv-store';
-import { createJourneyPreviewCatalog } from '@mep-ea/content/preview';
+import { createLearningPreviewCatalog } from '@mep-ea/content/expansion';
+import { LearningBrowser } from './LearningBrowser';
 import { LearnerJourney, type JourneyState } from '@mep-ea/learning-runtime';
 import { tokens } from '@mep-ea/design-system';
-const catalog = createJourneyPreviewCatalog();
-const journey = new LearnerJourney(catalog, Storage, 'p1-local');
+const catalog = createLearningPreviewCatalog();
+const journey = new LearnerJourney(catalog, Storage, 'p2-local');
 const tiers = { strong: 'Fortaleza', developing: 'En progreso', needs_practice: 'Necesita práctica' };
 export default function App() {
   const [state, setState] = useState<JourneyState | null>(null);
+  const [evidenceKey, setEvidenceKey] = useState('');
   const [program, setProgram] = useState(''); const [subject, setSubject] = useState('');
   const [ready, setReady] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
   const run = async (action: () => Promise<JourneyState | null>) => {
@@ -26,7 +28,7 @@ export default function App() {
   const result = state && attempt?.status === 'submitted' ? journey.result(state) : null;
   return <ScrollView contentContainerStyle={styles.page}>
     <Text style={styles.heading} accessibilityRole="header">Mi ruta de aprendizaje</Text>
-    <Text>Vista previa de desarrollo · 3 preguntas de BXM. Contenido pendiente de revisión editorial.</Text>
+    <Text>Vista previa de desarrollo · 71 evidencias y 30 preguntas propias de BXM. Contenido pendiente de revisión editorial.</Text>
     {error ? <View accessibilityRole="alert"><Text>{error}</Text><Button title="Reintentar carga" disabled={busy} onPress={() => void run(() => journey.resume())} /></View> : null}
     {busy || !ready && !error ? <ActivityIndicator /> : null}
     {ready && !state ? <View style={styles.card}>
@@ -34,22 +36,26 @@ export default function App() {
       {catalog.registry.taxonomy.programs.map(p => <Button key={p.id} title={`${program === p.id ? '✓ ' : ''}${p.name}`} onPress={() => { setProgram(p.id); setSubject(''); }} />)}
       <Text>Asignatura</Text>
       {catalog.registry.taxonomy.subjects.filter(s => s.programId === program).map(s => <Button key={s.id} title={`${subject === s.id ? '✓ ' : ''}${s.name}`} onPress={() => setSubject(s.id)} />)}
-      {catalog.blueprints.filter(b => b.programId === program && b.subjectId === subject).map(b => <View key={b.id}>
+      {catalog.blueprints.filter(b => b.mode === 'diagnostic' && b.programId === program && b.subjectId === subject).map(b => <View key={b.id}>
         <Text>Diagnóstico breve · {b.totalItems} preguntas · {b.timeLimitSeconds / 60} minutos</Text>
         <Button title="Comenzar diagnóstico" disabled={busy} onPress={() => void run(() => journey.start(b.id))} />
       </View>)}
     </View> : null}
+    {ready && !state && program === 'bxm' && subject === 'matematica' && <LearningBrowser initialKey={evidenceKey} catalog={catalog} busy={busy} start={id => void run(() => journey.start(id))} />}
+
     {result && attempt && state ? <View style={styles.card}>
       <Text accessibilityRole="header">Resultado: {attempt.score?.correct} / {attempt.score?.total}</Text><Text>Sin responder: {attempt.score?.unanswered}</Text>
       <Text accessibilityRole="header">Diagnóstico inicial</Text><Text>Estimación provisional de esta prueba breve; no acredita dominio sostenido.</Text>
       {result.diagnostic.domains.map(d => <Text key={d.domainId}>{catalog.registry.taxonomy.domains.find(t => t.id === d.domainId)?.name}: {tiers[d.tier]} ({d.correct}/{d.total})</Text>)}
       <Text accessibilityRole="header">Plan de refuerzo</Text>
+      {result.diagnostic.weakEvidenceIds.map(key => <Button key={key} title={`Estudiar evidencia ${key.split('/').at(-1)}`} disabled={busy} onPress={() => { setEvidenceKey(key); setState(null); setProgram('bxm'); setSubject('matematica'); }} />)}
       {result.plan.activities.map(a => <View key={a.conceptId} style={styles.card}>
         <Text accessibilityRole="header">{catalog.registry.taxonomy.concepts.find(c => c.id === a.conceptId)?.name}</Text>
         <Text>Revisa el ejemplo y resuélvelo de nuevo.</Text><Text>{a.title}</Text>
         {a.steps.map((s, i) => <Text key={i}>{i + 1}. {s}</Text>)}
       </View>)}
       <Text>{result.plan.nextStep === 'practice' ? 'Siguiente paso: repasa los ejemplos y vuelve a evaluar lo aprendido.' : 'Siguiente paso: repite la evaluación para comprobar tu aprendizaje.'}</Text>
+      <Button title="Volver al catálogo" disabled={busy} onPress={() => { setState(null); setProgram('bxm'); setSubject('matematica'); }} />
       <Button title="Iniciar nueva evaluación" disabled={busy} onPress={() => void run(() => journey.start(state.assessment.blueprint.id))} />
     </View> : state && attempt && question ? <View style={styles.card}>
       <Text>Pregunta {attempt.currentIndex + 1} de {state.assessment.questions.length}</Text>

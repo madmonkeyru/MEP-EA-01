@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "content:sync": "node scripts/sync-learning-catalog.mjs",
+    "content:check": "node scripts/sync-learning-catalog.mjs --check",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",

@@ -19,8 +19,10 @@ export function loadRegistry(taxonomy: unknown, items: unknown[]): ContentRegist
 export function resolveBlueprint(raw: AssessmentBlueprint, registry: ContentRegistry, options: { allowDraftPreview?: boolean } = {}): Assessment {
   const blueprint = parseBlueprint(raw);
   ensure(registry.taxonomy.subjects.some(s => s.id === blueprint.subjectId && s.programId === blueprint.programId), blueprint.id, 'unknown program/subject');
+  ensure(!blueprint.evidenceIds || blueprint.evidenceIds.every(id => registry.taxonomy.evidences.some(e => e.id === id)), blueprint.id, 'unknown evidence');
   const candidates = registry.questions.map(parseQuestion).filter(q =>
     q.programId === blueprint.programId && q.subjectId === blueprint.subjectId && q.stream === blueprint.stream &&
+    (!blueprint.evidenceIds || blueprint.evidenceIds.includes(q.evidenceId)) &&
     (q.publication.status === 'published' || options.allowDraftPreview === true));
   unique(candidates.map(q => q.id), 'assessment.questions');
   const questions = blueprint.domainQuotas.flatMap(quota => {

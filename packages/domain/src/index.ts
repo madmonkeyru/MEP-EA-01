@@ -30,6 +30,7 @@ export interface AssessmentBlueprint {
   id: string; version: string; programId: ProgramId; subjectId: string; convocatoriaId: string;
   mode: AssessmentMode; stream: ContentStream; totalItems: number; timeLimitSeconds: number;
   domainQuotas: { domainId: string; count: number }[];
+  evidenceIds?: string[];
 }
 export interface Assessment { id: string; blueprint: AssessmentBlueprint; questions: Question[] }
 export interface Answer { questionId: string; optionId: OptionId; answeredAt: string }

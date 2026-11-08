@@ -7,7 +7,7 @@
 
 ## P0 Implementation
 
-- [Current P0 plan](./current_plan_doc.md)
+- [Current P0 plan](./current-implementation-plan/P0_current_plan.md)
 - [P0 execution evidence, workspace decisions, and limitations](./P0_EXECUTION.md)
 
 The implementation evidence records what is executable today; it does not replace the authoritative target architecture below.
@@ -18,6 +18,13 @@ The implementation evidence records what is executable today; it does not replac
 - [P1 execution, acceptance evidence, and remaining native validation](./P1_EXECUTION.md)
 
 The Web journey is available at `/learn` (also `/foundation`); Expo uses the same shared journey controller. The three-item content remains an explicit draft development preview. Native device acceptance is pending.
+
+## P2 Implementation
+
+- [P2 content and learning expansion plan](./current-implementation-plan/P2_current_plan.md)
+- [P2 execution and acceptance evidence](./P2_EXECUTION.md)
+
+The shared Web/Expo learning surface now exposes 71 canonical evidence nodes, four draft lessons and 30 authored practice items. Scaffolded lessons remain unavailable; official benchmark questions remain isolated. Native device execution and editorial approval remain pending.
 
 ## 1. Authoritative Target Architecture (Authoritative)
 

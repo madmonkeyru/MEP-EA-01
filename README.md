@@ -41,9 +41,9 @@ npm run preview
 
 The production output is built to `dist/`. Hash routing supports static hosting without server rewrite rules. Fonts and assets are bundled locally.
 
-The existing POC lives in `apps/web/` and remains the default Web experience. Open `/learn` (also `/foundation`) for the P1 learner journey: program/subject selection, assessment, scoring, provisional diagnosis and worked remediation. Start Expo with `npm run dev:mobile` and open it on an iOS or Android development device. Both clients consume the same domain, content, validation, and learner journey runtime. The native client persists locally through Expo SQLite; Web uses its local storage adapter. See [P1 execution and pending native acceptance](project_docs/P1_EXECUTION.md).
+The existing POC lives in `apps/web/` and remains the default Web experience. Open `/learn` (also `/foundation`) for the P2 learner journey: program/subject selection, evidence browsing, draft lessons, targeted practice, assessment, scoring, provisional diagnosis and worked remediation. Start Expo with `npm run dev:mobile` and open it on an iOS or Android development device. Both clients consume the same domain, content, validation, and learner journey runtime. The native client persists locally through Expo SQLite; Web uses its local storage adapter. See [P2 execution and pending acceptance](project_docs/P2_EXECUTION.md).
 
-The foundation preview contains three existing authored BXM items, one per domain, with their original provenance. They remain **draft development content**, pending editorial signoff. The preview is not a full diagnostic or a production content release. Its native screen displays plain source math notation; native mathematical typesetting is downstream work.
+The learning preview contains 71 canonical BXM evidence nodes, four existing lessons and 30 authored items with their original provenance. The other 67 lessons remain explicitly unavailable. Evidence with authored questions can offer draft practice independently of lesson availability. They remain **draft development content**, pending editorial signoff. The 30-item development assessment reuses the entire authored pool; it is not a validated diagnostic or a production content release. Official benchmark content is excluded. P2 uses a separate local learner namespace (`p2-local`), preserving P1 records without migrating them. Its native screen displays plain source math notation; native mathematical typesetting is downstream work.
 
 Workspace layout:
 
@@ -65,6 +65,8 @@ See [P0 execution evidence and limitations](project_docs/P0_EXECUTION.md) before
 ## Quality & Verification Checks
 
 ```sh
+npm run content:check # Verify bundled learning snapshot matches source packs
+npm run content:sync  # Refresh snapshot after source content changes
 npm run lint          # oxlint checks across source code
 npm test              # Vitest test suite
 npm run build         # Production TypeScript compilation & bundling

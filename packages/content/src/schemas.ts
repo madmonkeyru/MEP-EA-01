@@ -78,9 +78,12 @@ export function parseBlueprint(value: unknown): AssessmentBlueprint {
   const mode = oneOf(v.mode, ['diagnostic', 'practice', 'benchmark'] as const, 'blueprint.mode');
   const stream = oneOf(v.stream, ['authored', 'official_reference'] as const, 'blueprint.stream');
   ensure(stream !== 'official_reference' || mode === 'benchmark', 'blueprint.stream', 'official items reserved for benchmarks');
+  const evidenceIds = v.evidenceIds === undefined ? undefined : strings(v.evidenceIds, 'blueprint.evidenceIds');
+  if (evidenceIds) { ensure(evidenceIds.length > 0, 'blueprint.evidenceIds', 'cannot be empty'); unique(evidenceIds, 'blueprint.evidenceIds'); }
   return { id: text(v.id, 'blueprint.id'), version: text(v.version, 'blueprint.version'), programId: oneOf(v.programId, programs, 'blueprint.programId'),
     subjectId: text(v.subjectId, 'blueprint.subjectId'), convocatoriaId: text(v.convocatoriaId, 'blueprint.convocatoriaId'),
-    mode, stream, totalItems, timeLimitSeconds: integer(v.timeLimitSeconds, 'blueprint.timeLimitSeconds', 1), domainQuotas };
+    mode, stream, totalItems, timeLimitSeconds: integer(v.timeLimitSeconds, 'blueprint.timeLimitSeconds', 1), domainQuotas,
+    ...(evidenceIds ? { evidenceIds } : {}) };
 }
 export function parseTaxonomy(value: unknown): CurriculumTaxonomy {
   const v = object(value, 'taxonomy');
