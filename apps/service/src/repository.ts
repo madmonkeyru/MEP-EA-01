@@ -3,12 +3,16 @@ import { resolve } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import type { AttemptRecord, DraftState } from '@mep-ea/api';
 import { emptyDraftState, reviseDraft, type ContinuityRepository } from './continuity-repository';
+import type { UserAccount, UserAccountRepository } from './auth';
 
 const writers = new Map<string, Promise<unknown>>();
 /** Single-process development persistence. Serialized atomic renames prevent partial visibility. */
-export function createFileAttemptRepository(directory: string): ContinuityRepository {
+export function createFileAttemptRepository(directory: string): ContinuityRepository & UserAccountRepository {
   directory = resolve(directory);
   const filename = (owner: string, id: string) => resolve(directory, `${createHash('sha256').update(JSON.stringify([owner, id])).digest('hex')}.json`);
+  const userFilename = (id: string) => resolve(directory, `user_${createHash('sha256').update(id).digest('hex')}.json`);
+  const usernameIndexFilename = (username: string) => resolve(directory, `username_${createHash('sha256').update(username.toLowerCase()).digest('hex')}.json`);
+
   const find: ContinuityRepository['find'] = async (owner, id) => {
     try { return JSON.parse(await readFile(filename(owner, id), 'utf8')) as AttemptRecord; }
     catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null; throw error; }
@@ -53,6 +57,37 @@ export function createFileAttemptRepository(directory: string): ContinuityReposi
     const state = await readDraft(write.attempt.learnerId, write.attempt.id);
     const result = reviseDraft(state, write, receivedAt);
     await save(draftPath(write.attempt.learnerId, write.attempt.id), state); return result;
+  }); },
+  async findById(id: string): Promise<UserAccount | null> {
+    try {
+      return JSON.parse(await readFile(userFilename(id), 'utf8')) as UserAccount;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+      throw error;
+    }
+  },
+  async findByUsername(username: string): Promise<UserAccount | null> {
+    try {
+      const idRecord = JSON.parse(await readFile(usernameIndexFilename(username), 'utf8')) as { id: string };
+      return this.findById(idRecord.id);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+      throw error;
+    }
+  },
+  create(account: UserAccount) { return serialize(async () => {
+    const existing = await this.findByUsername(account.username);
+    if (existing) throw new Error('Username already exists');
+    await save(userFilename(account.id), account);
+    await save(usernameIndexFilename(account.username), { id: account.id });
+    return account;
+  }); },
+  updateTier(id: string, tier: 'free' | 'premium') { return serialize(async () => {
+    const existing = await this.findById(id);
+    if (!existing) return null;
+    const updated: UserAccount = { ...existing, tier, updatedAt: new Date().toISOString() };
+    await save(userFilename(id), updated);
+    return updated;
   }); },
   };
 }

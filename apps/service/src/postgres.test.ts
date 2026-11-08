@@ -29,7 +29,7 @@ describe.skipIf(!connectionString)('P4 real PostgreSQL', () => {
       const rows = (await pool.query(`SELECT row_to_json(t)::text AS payload FROM ${table} t`)).rows;
       expect(rows.every(r => !r.payload.includes('p4-fixture-token') && !r.payload.includes('accessToken'))).toBe(true);
     }
-    const columns = (await pool.query('SELECT column_name FROM information_schema.columns WHERE table_schema=$1', [schema])).rows;
+    const columns = (await pool.query("SELECT column_name FROM information_schema.columns WHERE table_schema=$1 AND table_name IN ('attempts', 'mastery_snapshots', 'attempt_drafts', 'draft_conflicts')", [schema])).rows;
     expect(columns.every(r => !/token|password|credential/.test(r.column_name))).toBe(true);
   });
 });

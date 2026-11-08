@@ -4,6 +4,8 @@ import { resolveBlueprint } from '@mep-ea/content';
 import { restoreAttempt, diagnose, remediate, calculateMastery, collectLearningEvidence, generateNivelacion } from '@mep-ea/learning-runtime';
 import { object, text, integer, ensure } from '@mep-ea/validation';
 import type { ContinuityRepository } from './continuity-repository';
+import type { UserAccountRepository, TokenLifecycleManager } from './auth';
+import { hashPassword, verifyPassword } from './auth';
 
 /** Implementations must insert atomically, returning the existing record on duplicate owner/id. */
 export interface AttemptRepository {
@@ -17,10 +19,14 @@ export function canonical(value: unknown): string {
   if (value && typeof value === 'object') return `{${Object.entries(value).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${JSON.stringify(k)}:${canonical(v)}`).join(',')}}`;
   return JSON.stringify(value);
 }
-class ServiceFailure extends Error { constructor(readonly status: number) { super(); } }
+class ServiceFailure extends Error { constructor(readonly status: number, readonly body?: unknown) { super(); } }
 export function createService(options: {
-  verifier: SessionVerifier; repository: AttemptRepository & Partial<ContinuityRepository>; catalog: CatalogPackage;
-  allowDevelopment?: boolean; now?: () => number;
+  verifier: SessionVerifier;
+  repository: AttemptRepository & Partial<ContinuityRepository> & Partial<UserAccountRepository>;
+  catalog: CatalogPackage;
+  tokenManager?: TokenLifecycleManager;
+  allowDevelopment?: boolean;
+  now?: () => number;
 }) {
   const source = parseCatalogPackage(options.catalog);
   const now = options.now ?? Date.now;
@@ -32,8 +38,10 @@ export function createService(options: {
     }) });
   const eligible = options.allowDevelopment ? source : production;
   const assessments = eligible.blueprints.map(b => resolveBlueprint(b, eligible.registry, { allowDraftPreview: options.allowDevelopment }));
-  const fail = (status: number): never => { throw new ServiceFailure(status); };
+  const fail = (status: number, body?: unknown): never => { throw new ServiceFailure(status, body); };
   const continuityRepository = options.repository as Partial<ContinuityRepository>;
+  const userRepository = options.repository as Partial<UserAccountRepository>;
+
   async function continuity(owner: string): Promise<LearningContinuity> {
     if (!continuityRepository.continuity) return fail(503);
     return continuityRepository.continuity(owner, records => {
@@ -50,8 +58,87 @@ export function createService(options: {
       return { schemaVersion: 1, mastery, plan: generateNivelacion(mastery, history, taxonomy, eligible.registry.questions) };
     });
   }
+
+  function checkEntitlement(session: AuthSession, assessmentId?: string) {
+    if (assessmentId) {
+      const assessment = assessments.find(a => a.id === assessmentId);
+      if (assessment) {
+        // Enforce Pro entitlement for full benchmark/simulation mode or blueprints requiring premium
+        if (assessment.blueprint.mode === 'benchmark' && session.tier !== 'premium') {
+          fail(403, {
+            error: 'entitlement_required',
+            requiredTier: 'premium',
+            reasonEs: 'La simulación completa de examen requiere una suscripción Pro.',
+          });
+        }
+      }
+    }
+  }
+
   return { async send(request: ApiRequest): Promise<ApiResponse> {
     try {
+      // --- Public Auth Endpoints ---
+      if (request.method === 'POST' && request.path === '/v1/auth/register') {
+        if (!userRepository.create || !userRepository.findByUsername || !options.tokenManager) fail(503);
+        let regData: { username: string; password: string; tier: 'free' | 'premium' };
+        try {
+          const body = object(JSON.parse(request.body ?? '{}'), 'register');
+          const username = text(body.username, 'username').trim();
+          const password = text(body.password, 'password');
+          const tier: 'free' | 'premium' = body.tier === 'premium' ? 'premium' : 'free';
+          ensure(username.length >= 3 && username.length <= 64, 'username', 'invalid length');
+          ensure(password.length >= 6 && password.length <= 128, 'password', 'invalid length');
+          regData = { username, password, tier };
+        } catch { return fail(400); }
+        const existing = await userRepository.findByUsername!(regData.username);
+        if (existing) fail(409, { error: 'username_already_registered' });
+        const id = `learner_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+        const account = {
+          id,
+          username: regData.username,
+          passwordHash: hashPassword(regData.password),
+          tier: regData.tier,
+          roles: ['learner' as const],
+          createdAt: new Date(now()).toISOString(),
+          updatedAt: new Date(now()).toISOString(),
+        };
+        await userRepository.create!(account);
+        const { token, expiresAt } = options.tokenManager!.issueToken(account);
+        return {
+          status: 200,
+          body: {
+            token,
+            expiresAt,
+            session: { learnerId: account.id, username: account.username, tier: account.tier, roles: account.roles },
+          },
+        };
+      }
+
+      if (request.method === 'POST' && request.path === '/v1/auth/login') {
+        if (!userRepository.findByUsername || !options.tokenManager) fail(503);
+        let logData: { username: string; password: string };
+        try {
+          const body = object(JSON.parse(request.body ?? '{}'), 'login');
+          const username = text(body.username, 'username').trim();
+          const password = text(body.password, 'password');
+          logData = { username, password };
+        } catch { return fail(400); }
+        const account = await userRepository.findByUsername!(logData.username);
+        if (!account || !verifyPassword(logData.password, account.passwordHash)) {
+          fail(401, { error: 'invalid_credentials' });
+        }
+        const { token, expiresAt } = options.tokenManager!.issueToken(account!);
+        return {
+          status: 200,
+          body: {
+            token,
+            expiresAt,
+            session: { learnerId: account!.id, username: account!.username, tier: account!.tier, roles: account!.roles },
+          },
+        };
+      }
+
+      // --- Authenticated Endpoints ---
       const authorization = Object.entries(request.headers).find(([k]) => k.toLowerCase() === 'authorization')?.[1];
       const token = authorization?.match(/^Bearer (\S+)$/)?.[1];
       const verified = token ? await options.verifier.verify(token) : null;
@@ -59,6 +146,19 @@ export function createService(options: {
       let session;
       try { session = requireSession(verified!, now()); } catch { return { status: 401, body: { error: 'unauthorized' } }; }
       if (!session.roles.includes('learner')) fail(403);
+
+      if (request.method === 'GET' && request.path === '/v1/auth/session') {
+        return {
+          status: 200,
+          body: {
+            learnerId: session.learnerId,
+            tier: session.tier,
+            roles: session.roles,
+            expiresAt: session.expiresAt,
+          },
+        };
+      }
+
       if (request.method === 'GET' && request.path === '/v1/learning-continuity') return { status: 200, body: await continuity(session.learnerId) };
       if (request.method === 'GET' && request.path === '/v1/catalog/production') return { status: 200, body: production };
       if (request.method === 'GET' && request.path === '/v1/catalog/development') {
@@ -82,6 +182,7 @@ export function createService(options: {
           if (candidate.id !== id! || candidate.status !== 'in_progress') fail(400);
           const assessment = assessments.find(a => a.id === candidate.assessmentId);
           if (!assessment) fail(422);
+          checkEntitlement(session, assessment!.id);
           const attempt = restoreAttempt(assessment!, candidate, session.learnerId, id!);
           ensure(Date.parse(attempt.updatedAt) <= now() + 300_000, 'draft', 'future timestamp');
           const baseRevision = integer(raw.baseRevision, 'draft.baseRevision');
@@ -109,6 +210,7 @@ export function createService(options: {
         const assessmentId = text(raw.assessmentId, 'assessmentId');
         const assessment = assessments.find(a => a.id === assessmentId);
         if (!assessment) fail(422);
+        checkEntitlement(session, assessment!.id);
         attempt = restoreAttempt(assessment!, raw, session.learnerId, id!);
         if (Date.parse(attempt.updatedAt) > now() + 300_000) fail(422);
         const diagnostic = diagnose(assessment!, attempt);
@@ -126,8 +228,10 @@ export function createService(options: {
         throw error;
       }
     } catch (error) {
-      const status = error instanceof ServiceFailure ? error.status : 503;
-      return { status, body: { error: status === 503 ? 'service_unavailable' : `request_rejected_${status}` } };
+      if (error instanceof ServiceFailure) {
+        return { status: error.status, body: error.body ?? { error: `request_rejected_${error.status}` } };
+      }
+      return { status: 503, body: { error: 'service_unavailable' } };
     }
   } };
 }
