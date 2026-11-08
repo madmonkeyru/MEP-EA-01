@@ -14,7 +14,7 @@ export const WavyFlagBackground: React.FC<WavyFlagBackgroundProps> = ({ classNam
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMin slice"
-      className="w-full h-full opacity-80 dark:opacity-25 transition-opacity duration-500"
+      className="w-full h-full opacity-90 dark:opacity-40 transition-opacity duration-500"
     >
       <defs>
         <linearGradient id="flag-fade-mask" x1="0%" y1="0%" x2="0%" y2="100%">

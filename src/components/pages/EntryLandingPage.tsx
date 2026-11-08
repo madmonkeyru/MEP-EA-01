@@ -22,13 +22,14 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
   const [last] = useState(() => { try { const route = localStorage.getItem('mep_last_subject'); return route?.startsWith('#/programas/') ? route : null; } catch { return null; } });
   return (
     <div className="entry-page relative min-h-[calc(100vh-65px)] text-stone-900 dark:text-stone-100 flex flex-col justify-between">
-      <WavyFlagBackground className="h-[680px] max-w-[1920px] mx-auto z-0" />
+      <WavyFlagBackground className="max-w-[1920px] mx-auto z-0" />
       <div className="page-width py-6 sm:py-10 w-full space-y-10">
-        {/* Hero Section with Cartographic Costa Rica Background */}
-        <div className="relative rounded-3xl p-6 sm:p-12 overflow-hidden border border-stone-200/80 dark:border-stone-800/80 bg-stone-50/60 dark:bg-stone-900/40 backdrop-blur-xs">
-          {/* Faded Cartographic Map Background */}
+        <section
+          aria-labelledby="entry-heading"
+          className="relative rounded-3xl overflow-hidden border border-stone-200/80 dark:border-stone-800/80 bg-stone-50/60 dark:bg-stone-900/40 backdrop-blur-xs"
+        >
           <div
-            className="absolute -right-16 -bottom-16 sm:-right-8 sm:-bottom-12 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] pointer-events-none select-none opacity-[0.07] dark:opacity-[0.09] transition-opacity duration-300"
+            className="absolute -right-16 -top-32 sm:-right-8 sm:-top-44 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] pointer-events-none select-none opacity-[0.07] dark:opacity-[0.09] transition-opacity duration-300"
             aria-hidden="true"
           >
             <svg
@@ -52,78 +53,75 @@ export const EntryLandingPage: React.FC<EntryLandingPageProps> = ({
             </svg>
           </div>
 
-          <div className="relative z-10 space-y-4 max-w-2xl">
+          <div className="relative z-10 space-y-4 max-w-2xl p-6 pb-8 sm:p-12 sm:pb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/50">
               <MapPin className="w-3.5 h-3.5 text-indigo-500" />
               <span>Educación Abierta Costa Rica</span>
             </div>
-            <h1 tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+            <h1 id="entry-heading" tabIndex={-1} className="text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
               Prepárate para cualquier materia
             </h1>
             <p className="text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
               Refuerza lo que sabes y prepárate a tu ritmo
             </p>
           </div>
-        </div>
 
-        {/* Action Pathway Cards for User Flow Validation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Pathway 1: Enter Math BXM MVP directly */}
-          <div className="ui-surface entry-featured rounded-2xl p-6 flex flex-col justify-between gap-6 ui-lift">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 ">
-                  Activo
-                </span>
-                <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
-                  Bachillerato
-                </span>
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 border-t border-stone-200/80 dark:border-stone-800/80">
+            <div className="flex flex-col justify-between gap-6 p-6 sm:p-8 border-b sm:border-b-0 sm:border-r border-stone-200/80 dark:border-stone-800/80">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 ">
+                    Activo
+                  </span>
+                  <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
+                    Bachillerato
+                  </span>
+                </div>
+                <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
+                  Matemáticas BXM
+                </h2>
+                <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                  Accede directamente al simulador de práctica de 60 ítems, práctica modular por área y
+                  especificaciones curriculares completas.
+                </p>
               </div>
-              <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                Matemáticas BXM
-              </h2>
-              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                Accede directamente al simulador de práctica de 60 ítems, práctica modular por área y
-                especificaciones curriculares completas.
-              </p>
+              <button
+                onClick={onEnterBxmHub}
+                className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
+              >
+                <span>Practicar Matemáticas BXM</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
-            <button
-              onClick={onEnterBxmHub}
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
-            >
-              <span>Practicar Matemáticas BXM</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
 
-          {/* Pathway 2: Explore all programs via Welcome Page */}
-          <div className="ui-surface rounded-2xl p-6 flex flex-col justify-between gap-6 ui-lift">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-stone-300 ">
-                  Portal
-                </span>
-                <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
-                  4 Programas
-                </span>
+            <div className="flex flex-col justify-between gap-6 p-6 sm:p-8">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-semibold px-2.5 py-1 rounded bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-stone-300 ">
+                    Portal
+                  </span>
+                  <span className="text-xs font-semibold text-stone-600 dark:text-stone-400">
+                    4 Programas
+                  </span>
+                </div>
+                <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
+                  Explorar Programas
+                </h2>
+                <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                  Consulta los 4 planes de estudio (I&II CICLO, III Ciclo, EDAD, BXM), reglas de calculadora,
+                  notas mínimas y convocatorias de referencia.
+                </p>
               </div>
-              <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                Explorar Programas
-              </h2>
-              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                Consulta los 4 planes de estudio (I&II CICLO, III Ciclo, EDAD, BXM), reglas de calculadora,
-                notas mínimas y convocatorias de referencia.
-              </p>
+              <button
+                onClick={onExplorePrograms}
+                className="w-full py-3 bg-stone-900 dark:bg-stone-800 hover:bg-stone-800 dark:hover:bg-stone-700 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
+              >
+                <span>Explorar programas</span>
+                <GraduationCap className="w-4 h-4" />
+              </button>
             </div>
-            <button
-              onClick={onExplorePrograms}
-              className="w-full py-3 bg-stone-900 dark:bg-stone-800 hover:bg-stone-800 dark:hover:bg-stone-700 text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-xs min-h-[44px]"
-            >
-              <span>Explorar programas</span>
-              <GraduationCap className="w-4 h-4" />
-            </button>
           </div>
-        </div>
+        </section>
         {onOpenHelper && <section className="ui-surface rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-2"><p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">Orientación opcional</p>
           <h2 className="text-lg font-semibold">¿Necesitas ubicar tu próximo paso?</h2>

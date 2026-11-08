@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { WelcomePage } from './WelcomePage';
 
 describe('WelcomePage', () => {
-  it('renders hero banner, quick MVP access, program cards, and regulations', () => {
+  it('renders a unified welcome card with subtle MVP access, program cards, and regulations', () => {
     const onSelectProgram = vi.fn();
     const onEnterMvpMath = vi.fn();
 
@@ -14,20 +14,17 @@ describe('WelcomePage', () => {
       />
     );
 
-    // Hero title
+    const welcomeCard = screen.getByRole('region', {
+      name: 'Encuentra tu programa de estudio',
+    });
     expect(
-      screen.getByText('Encuentra tu programa de estudio')
+      within(welcomeCard).getByText('Matemáticas BXM (Convocatoria 02-2026)')
     ).toBeInTheDocument();
-
-    // Prominent quick entry card for MVP
-    expect(
-      screen.getByText('Matemáticas BXM (Convocatoria 02-2026)')
-    ).toBeInTheDocument();
-
-    const enterMvpButton = screen.getByRole('button', {
+    const enterMvpButton = within(welcomeCard).getByRole('button', {
       name: /^Practicar$/i,
     });
     expect(enterMvpButton).toBeInTheDocument();
+    expect(enterMvpButton).not.toHaveClass('bg-indigo-600');
     fireEvent.click(enterMvpButton);
     expect(onEnterMvpMath).toHaveBeenCalledTimes(1);
 

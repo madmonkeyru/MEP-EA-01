@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Soft circular background glow for icon frame -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EAF5E5" />
+      <stop offset="70%" stop-color="#C2E2B1" />
+      <stop offset="100%" stop-color="#99CC85" />
+    </radialGradient>
+
+    <!-- Gradient for the branch -->
+    <linearGradient id="branchGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5C4033" />
+      <stop offset="50%" stop-color="#8B5A2B" />
+      <stop offset="100%" stop-color="#A07855" />
+    </linearGradient>
+
+    <!-- Soft belly gradient -->
+    <linearGradient id="bellyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEDAC2" />
+      <stop offset="50%" stop-color="#DDBA94" />
+      <stop offset="100%" stop-color="#B88A58" />
+    </linearGradient>
+
+    <!-- Olive back and head gradient -->
+    <linearGradient id="oliveGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#8C854B" />
+      <stop offset="50%" stop-color="#6E6B39" />
+      <stop offset="100%" stop-color="#4F4E28" />
+    </linearGradient>
+
+    <!-- Tail/Wing darker olive brown -->
+    <linearGradient id="darkFeatherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B5B38" />
+      <stop offset="100%" stop-color="#3D321A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Icon Base -->
+  <circle cx="250" cy="250" r="230" fill="url(#bgGlow)" stroke="#7BAE66" stroke-width="6" />
+
+  <!-- Background Soft Foliage Accents -->
+  <path d="M 50,220 C 30,170 80,120 120,150 C 100,100 160,80 180,130 C 220,90 260,130 230,170 Z" fill="#A1D08A" opacity="0.4" />
+  <path d="M 320,80 C 360,50 420,90 400,140 C 440,160 420,220 370,210 Z" fill="#8EB873" opacity="0.35" />
+
+  <!-- Tree Branch -->
+  <g id="branch">
+    <!-- Main Branch Body -->
+    <path d="M 30,480 C 140,450 250,380 370,290 L 480,200 C 490,190 470,170 450,185 L 340,270 C 220,360 120,410 20,440 Z" fill="url(#branchGrad)" stroke="#3E2723" stroke-width="2" />
+    <!-- Branch Bark Texture Highlights & Knots -->
+    <path d="M 60,435 C 130,410 210,360 300,300" stroke="#A07855" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7" />
+    <path d="M 180,390 C 240,350 320,290 400,230" stroke="#3E2723" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6" />
+    <path d="M 380,250 C 390,245 400,250 395,260 C 390,268 375,262 380,250 Z" fill="#3E2723" opacity="0.5" />
+  </g>
+
+  <!-- Clay-colored Thrush (Yigüirro) Body Group -->
+  <g id="bird">
+
+    <!-- Tail Feathers -->
+    <g id="tail">
+      <path d="M 185,350 L 110,480 C 100,495 85,480 95,465 L 160,330 Z" fill="url(#darkFeatherGrad)" stroke="#2C2213" stroke-width="1.5" />
+      <path d="M 175,360 L 130,485 C 120,498 108,488 118,472 L 155,380 Z" fill="#57462B" stroke="#2C2213" stroke-width="1.5" />
+      <path d="M 195,355 L 155,475 C 148,485 138,478 145,468 L 180,370 Z" fill="#7A633F" stroke="#2C2213" stroke-width="1.5" />
+    </g>
+
+    <!-- Left Leg & Claws (Back Leg) -->
+    <g id="back-leg" stroke="#4A3B32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 215,370 L 225,445 L 210,452" />
+      <path d="M 225,445 L 225,455" />
+      <path d="M 225,445 L 238,452" />
+    </g>
+
+    <!-- Main Body Base (Belly & Chest) -->
+    <path d="M 180,180 C 160,230 150,300 180,350 C 210,390 290,370 330,310 C 360,260 350,180 300,130 C 260,90 200,120 180,180 Z" fill="url(#bellyGrad)" />
+
+    <!-- Fluff & Body Texture (Soft Feathers) -->
+    <path d="M 220,330 C 250,370 310,340 335,290 C 310,320 250,340 220,330 Z" fill="#C49A6C" opacity="0.6" />
+
+    <!-- Back & Head Olive Overlay -->
+    <path d="M 230,70 C 190,75 170,120 175,180 C 180,230 160,300 165,320 C 175,300 200,160 250,110 C 280,80 260,68 230,70 Z" fill="url(#oliveGrad)" />
+    
+    <!-- Head Cap & Crown -->
+    <path d="M 230,70 C 270,68 315,95 325,135 C 300,100 260,80 230,70 Z" fill="#77713C" />
+
+    <!-- Wing -->
+    <g id="wing">
+      <!-- Wing Outer Outline & Primary Feathers -->
+      <path d="M 205,170 C 180,220 155,290 150,320 C 165,325 185,310 205,270 C 225,230 220,185 205,170 Z" fill="url(#darkFeatherGrad)" stroke="#2A2011" stroke-width="1.5" />
+      
+      <!-- Wing Coverts & Feather Layers -->
+      <path d="M 205,170 C 195,200 180,230 170,270 C 180,270 195,250 210,220 C 220,200 215,180 205,170 Z" fill="#8C764D" stroke="#3B301B" stroke-width="1.2" />
+      <path d="M 212,185 C 205,210 195,235 188,260 C 196,258 208,240 218,215 C 222,200 218,190 212,185 Z" fill="#A38C5E" />
+
+      <!-- Individual Feather Stems / Details -->
+      <path d="M 195,200 L 165,290" stroke="#2A2011" stroke-width="1.2" opacity="0.7" />
+      <path d="M 202,205 L 178,285" stroke="#2A2011" stroke-width="1.2" opacity="0.7" />
+      <path d="M 208,215 L 190,275" stroke="#2A2011" stroke-width="1.2" opacity="0.7" />
+    </g>
+
+    <!-- Throat Stripes (Distinct Yigüirro Feature) -->
+    <g id="throat-streaks" stroke="#6E5235" stroke-width="1.8" stroke-linecap="round" opacity="0.75">
+      <path d="M 240,135 C 242,145 245,155 247,165" />
+      <path d="M 248,133 C 252,146 256,158 260,170" />
+      <path d="M 258,135 C 264,148 270,160 275,172" />
+      <path d="M 268,140 C 274,150 280,162 284,170" />
+      <path d="M 278,148 C 283,156 288,165 290,170" />
+    </g>
+
+    <!-- Right Leg & Claws (Foreground Leg) -->
+    <g id="front-leg">
+      <path d="M 232,365 L 245,435 L 255,423" stroke="#5A4A3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <!-- Claws wrapping branch -->
+      <path d="M 245,435 C 248,443 258,444 263,438 C 266,434 263,425 255,423" fill="none" stroke="#3B2F27" stroke-width="3.5" stroke-linecap="round" />
+      <path d="M 245,435 C 242,444 232,446 226,441 C 222,437 228,429 238,430" fill="none" stroke="#3B2F27" stroke-width="3" stroke-linecap="round" />
+      <path d="M 245,435 L 248,448" fill="none" stroke="#3B2F27" stroke-width="3" stroke-linecap="round" />
+    </g>
+
+    <!-- Beak -->
+    <g id="beak">
+      <!-- Upper Mandible -->
+      <path d="M 290,105 L 350,112 C 340,120 315,123 295,122 Z" fill="#D6C585" stroke="#4A4123" stroke-width="1.2" />
+      <!-- Lower Mandible -->
+      <path d="M 295,122 C 315,123 335,120 345,115 L 293,127 Z" fill="#B5A466" stroke="#4A4123" stroke-width="1" />
+      <!-- Nostril -->
+      <ellipse cx="305" cy="112" rx="3" ry="1" fill="#4A4123" opacity="0.7" />
+    </g>
+
+    <!-- Eye (Expressive & Detailed) -->
+    <g id="eye">
+      <!-- Outer Ring / Pale Eyering -->
+      <circle cx="280" cy="108" r="15" fill="#C5B382" opacity="0.8" />
+      <circle cx="280" cy="108" r="13" fill="#3D1E0B" />
+      <!-- Iris (Warm Reddish Brown) -->
+      <circle cx="280" cy="108" r="11" fill="#A8381E" />
+      <circle cx="280" cy="108" r="8" fill="#8B250D" />
+      <!-- Pupil -->
+      <circle cx="280" cy="108" r="5" fill="#0D0704" />
+      <!-- Catchlight / Specular Reflection -->
+      <circle cx="277" cy="105" r="2.5" fill="#FFFFFF" />
+      <circle cx="283" cy="111" r="1" fill="#FFFFFF" opacity="0.6" />
+    </g>
+
+    <!-- Head & Feather Outline Accents (Vector Crispness) -->
+    <path d="M 230,70 C 265,68 300,85 320,110" stroke="#4E4A28" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <path d="M 180,180 C 165,225 158,280 180,340" stroke="#4A3C28" stroke-width="1.5" fill="none" opacity="0.4" />
+  </g>
+
+  <!-- Foreground Leaf Accent for Icon Framing -->
+  <g id="foreground-leaves">
+    <path d="M 410,340 C 440,320 480,350 460,390 C 430,410 390,380 410,340 Z" fill="#5C8A3A" stroke="#3B5924" stroke-width="1.5" />
+    <path d="M 410,340 C 430,360 440,380 460,390" stroke="#3B5924" stroke-width="1.5" fill="none" />
+    <path d="M 435,280 C 470,270 490,300 480,330 C 450,350 420,320 435,280 Z" fill="#76A34F" stroke="#3B5924" stroke-width="1.5" />
+  </g>
+</svg>

@@ -16,14 +16,28 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
   const description = program.id === 'bxm'
     ? 'Una prueba por asignatura.'
     : program.description;
+  const artwork = {
+    i_ii_ciclo: '/program-backgrounds/i_ii_ciclo.svg',
+    iii_ciclo: '/program-backgrounds/iii_ciclo.svg',
+    edad: '/program-backgrounds/edad.svg',
+    bxm: '/program-backgrounds/bxm.svg',
+  }[program.id];
 
   return (
     <a href={'#/programas/' + program.id + '?convocatoria=2026-c2'}
       onClick={event => { if (!event.ctrlKey && !event.metaKey) { event.preventDefault(); onSelect(program.id); } }}
       data-program={program.id}
-      className={`group program-card relative text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
+      className={`group program-card relative isolate overflow-hidden text-left ui-surface ui-lift rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between ${isMvp ? 'program-featured' : ''}`}
     >
-      <div>
+      {artwork && (
+        <img
+          src={artwork}
+          alt=""
+          aria-hidden="true"
+          className="program-card-art absolute inset-y-0 right-0 h-full w-[78%] object-cover"
+        />
+      )}
+      <div className="relative z-10">
         {/* {isMvp && (
           <div className="flex items-center gap-2 mb-3.5">
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-semibold rounded-full border border-emerald-300/40">
@@ -64,7 +78,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({
       </div>
 
       {/* Action Footer */}
-      <div className="mt-5 pt-3 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+      <div className="relative z-10 mt-5 pt-3 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400">
         <span>{'Ver asignaturas y estructura'}</span>
         <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
       </div>

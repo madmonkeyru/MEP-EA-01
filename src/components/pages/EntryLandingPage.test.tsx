@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { EntryLandingPage } from './EntryLandingPage';
 
 describe('EntryLandingPage', () => {
-  it('renders simple prototype landing without hero, offering clear validation paths', () => {
+  it('renders a unified landing card with clear validation paths', () => {
     const handleExplore = vi.fn();
     const handleEnterBxm = vi.fn();
 
@@ -14,9 +14,9 @@ describe('EntryLandingPage', () => {
       />
     );
 
-    expect(screen.getByText(/Prepárate para cualquier materia/i)).toBeInTheDocument();
-    expect(screen.getByText('Matemáticas BXM')).toBeInTheDocument();
-    expect(screen.getByText('Explorar Programas')).toBeInTheDocument();
+    const landingCard = screen.getByRole('region', { name: /Prepárate para cualquier materia/i });
+    expect(within(landingCard).getByText('Matemáticas BXM')).toBeInTheDocument();
+    expect(within(landingCard).getByText('Explorar Programas')).toBeInTheDocument();
 
     const enterBxmBtn = screen.getByText('Practicar Matemáticas BXM');
     fireEvent.click(enterBxmBtn);
@@ -38,6 +38,9 @@ describe('EntryLandingPage', () => {
     const background = container.querySelector('[aria-hidden="true"]');
     expect(background).toHaveClass('pointer-events-none');
     expect(background?.querySelector('svg[viewBox="0 0 1440 680"]')).toBeInTheDocument();
+    expect(background).toHaveClass('inset-0');
+    expect(background).not.toHaveClass('h-[680px]');
+    expect(background?.querySelector('svg')).toHaveClass('opacity-90', 'dark:opacity-40');
 
     const fadeMask = background?.querySelector('#flag-fade-mask');
     expect(fadeMask?.querySelector('stop[offset="0%"]')).toHaveAttribute('stop-opacity', '0.65');

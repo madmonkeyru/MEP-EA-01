@@ -28,8 +28,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
 
   return (
     <div className="welcome-page page-width py-6 sm:py-10 space-y-8 text-stone-900 dark:text-slate-100 transition-colors">
-      {/* 1. Header Hero / Welcome Portal Banner */}
-      <div className="page-intro rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <section aria-labelledby="welcome-heading" className="page-intro rounded-3xl relative overflow-hidden">
         {/* Faded Costa Rica map watermark */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 w-[280px] sm:w-[420px] md:w-[500px] pointer-events-none opacity-10 dark:opacity-[0.13] select-none z-0" aria-hidden="true">
           <svg
@@ -51,48 +50,40 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-3xl space-y-3">
+        <div className="relative z-10 max-w-3xl space-y-3 p-6 pb-7 sm:p-10 sm:pb-8">
           <div className="flex flex-wrap items-center gap-2">
             <ConvocatoriaBadge convocatoriaId={currentConvocatoria} />
           </div>
 
-          <h1 tabIndex={-1} className="text-2xl sm:text-4xl font-semibold tracking-tight leading-tight">
+          <h1 id="welcome-heading" tabIndex={-1} className="text-2xl sm:text-4xl font-semibold tracking-tight leading-tight">
             Encuentra tu programa de estudio
           </h1>
           <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 max-w-xl leading-relaxed">
             Hay distintas opciones para completar la escuela, el noveno grado, y obtener el bachillerato. Explora el programa que mejor te ayuda a obtener tu titulo.
           </p>
         </div>
-      </div>
 
-      {/* 2. Prominent Quick-Entry Card for MVP (Matemáticas — BXM) */}
-      <div className="ui-featured rounded-3xl p-6 sm:p-8 border border-indigo-200/60 dark:border-indigo-900/40 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 bg-gradient-to-br from-[var(--surface-card,#ffffff)] to-[var(--accent-soft,#eeedf9)] dark:from-[var(--surface-card,#282422)] dark:to-[var(--accent-soft,#2e2b45)]">
-        <div className="space-y-2 max-w-2xl">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+        <div className="relative z-10 mx-6 border-t border-stone-300/70 py-5 sm:mx-10 sm:py-6 dark:border-stone-700/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-stone-500 dark:text-stone-400">
               Bachillerato por Madurez Suficiente
-            </span>
+            </p>
+            <h2 className="text-base font-semibold text-stone-800 dark:text-stone-200 tracking-tight">
+              Matemáticas BXM (Convocatoria 02-2026)
+            </h2>
+            <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+              Prácticas completas, simulaciones de examen, explicaciones con pasos y fórmulas oficiales.
+            </p>
           </div>
-
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight font-['Outfit']">
-            Matemáticas BXM (Convocatoria 02-2026)
-          </h2>
-
-          <p className="text-sm text-stone-700 dark:text-stone-300 font-normal leading-relaxed">
-            Prácticas completas, simulaciones de examen, explicaciones con pasos y fórmulas oficiales.
-          </p>
-        </div>
-
-        <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5 items-stretch sm:items-center md:items-stretch">
           <button
             onClick={onEnterMvpMath}
-            className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-sm cursor-pointer min-h-[48px] hover:shadow-md"
+            className="shrink-0 self-start sm:self-center px-4 py-2.5 border border-stone-300 dark:border-stone-600 bg-stone-50/60 dark:bg-stone-800/50 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 font-semibold rounded-lg text-sm flex items-center justify-center gap-2 transition cursor-pointer min-h-[44px]"
           >
             <span>Practicar</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-stone-500 dark:text-stone-400" />
           </button>
         </div>
-      </div>
+      </section>
 
       {/* 3. Program Tracks Overview Grid */}
       <div className="space-y-4">
