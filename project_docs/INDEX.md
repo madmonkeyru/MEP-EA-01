@@ -40,6 +40,12 @@ The shared API now exposes authenticated attempt submission/retrieval and versio
 
 P4 implements the PostgreSQL system of record, longitudinal mastery snapshots, Plan de Nivelación generation, and multi-device revision rules on top of the P3 service contracts, while preserving offline-first behavior. Both durable adapters pass the shared service contracts; CI now includes a PostgreSQL-backed gate. Production identity-provider productization, database deployment, Redis/object storage, and editorial publication remain out of scope.
 
+## P5 Implementation
+
+- [P5 production identity, entitlement and continuity surface plan](./current-implementation-plan/P5_current_plan.md)
+
+P5 closes the identity and entitlement gap, surfaces durable mastery and Plan de Nivelación in Web/Expo, and hardens multi-device offline recovery. It builds directly on the P4 continuity layer while leaving content publication, payments, Redis, Test Compilation, and deployment topology for later milestones.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.
