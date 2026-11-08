@@ -14,12 +14,12 @@ const canonicalKeys = new Set(canonical.map(e => e.key));
 const learning = read('content/bxm-mvp-learning/evidence-catalog.json').evidences;
 const authored = read('content/bxm-mvp-learning/authored-items-pack.json').items;
 const templates = read('content/bxm-mvp-learning/isomorphic-templates.json').templates;
-const { BXM_OFFICIAL_EVIDENCES_FIXTURE: progress } = load('src/features/bxm-progress/ui/evidenceCatalogFixture.ts');
-const { BxmIsomorphicGenerator: generator } = load('src/features/bxm-learning/services/bxmIsomorphicGenerator.ts');
-const { SelectionEngine } = load('src/features/bxm-assessment/selectionEngine.ts');
-const { SessionRunner } = load('src/features/bxm-assessment/sessionRunner.ts');
-const { qualifyAttemptObservation } = load('src/features/bxm-progress/domain/qualifyingObservation.ts');
-const { BxmProgressStorage, createMemoryStorageAdapter, PROGRESS_EVENTS_KEY } = load('src/features/bxm-progress/storage/progressStorage.ts');
+const { BXM_OFFICIAL_EVIDENCES_FIXTURE: progress } = load('apps/web/src/features/bxm-progress/ui/evidenceCatalogFixture.ts');
+const { BxmIsomorphicGenerator: generator } = load('apps/web/src/features/bxm-learning/services/bxmIsomorphicGenerator.ts');
+const { SelectionEngine } = load('apps/web/src/features/bxm-assessment/selectionEngine.ts');
+const { SessionRunner } = load('apps/web/src/features/bxm-assessment/sessionRunner.ts');
+const { qualifyAttemptObservation } = load('apps/web/src/features/bxm-progress/domain/qualifyingObservation.ts');
+const { BxmProgressStorage, createMemoryStorageAdapter, PROGRESS_EVENTS_KEY } = load('apps/web/src/features/bxm-progress/storage/progressStorage.ts');
 const now = new Date('2026-11-05T18:00:00Z');
 const item = {
   id: 'audit-authored', familyId: 'audit-family', provenance: 'authored', reviewStatus: 'unreviewed',

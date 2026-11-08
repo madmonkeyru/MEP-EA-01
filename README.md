@@ -25,7 +25,7 @@ For the master documentation index, refer to [`project_docs/INDEX.md`](./project
 
 ---
 
-## Local Development (Current POC)
+## Local Development
 
 Use Node.js 22 and npm.
 
@@ -41,12 +41,37 @@ npm run preview
 
 The production output is built to `dist/`. Hash routing supports static hosting without server rewrite rules. Fonts and assets are bundled locally.
 
+The existing POC now lives in `apps/web/` and remains the default Web experience. Open `/foundation` while the Web server is running for the P0 assessment preview. Start the Expo foundation with `npm run dev:mobile` and open it on an iOS or Android development device. Both clients consume the same domain, content, validation, and assessment runtime packages. The native client persists locally through Expo SQLite; Web uses its local storage adapter.
+
+The foundation preview contains three existing authored BXM items, one per domain, with their original provenance. They remain **draft development content**, pending editorial signoff. The preview is not a full diagnostic or a production content release. Its native screen displays plain source math notation; native mathematical typesetting is downstream work.
+
+Workspace layout:
+
+```text
+apps/web                 React/Vite POC plus thin foundation preview
+apps/mobile              Expo native foundation
+packages/domain          Platform-independent product contracts
+packages/validation      Runtime validation primitives
+packages/content         Canonical schemas, registry, blueprint resolution
+packages/learning-runtime Assessment lifecycle and persistence ports
+packages/api             Auth/session and injected API transport boundary
+packages/analytics       Privacy-conscious event/sink contracts
+packages/design-system   Shared semantic tokens
+content                  Preserved POC content and ingestion outputs
+```
+
+See [P0 execution evidence and limitations](project_docs/P0_EXECUTION.md) before extending the foundation. The P0 plan selects npm workspaces for this repository; backend deployment, account UX, payments, and cloud synchronization remain downstream milestones.
+
 ## Quality & Verification Checks
 
 ```sh
 npm run lint          # oxlint checks across source code
 npm test              # Vitest test suite
 npm run build         # Production TypeScript compilation & bundling
+npm run typecheck     # Web, platform-independent packages, and Expo
+npm run check:boundaries # Enforce shared package dependency direction
+npm run test:foundation # Shared content, lifecycle, persistence, auth contracts
+npm run build:mobile  # Export both Android and iOS Hermes bundles
 npm run test:learning # BXM Learning content integrity validation
 ```
 

@@ -5,6 +5,13 @@
 
 ---
 
+## P0 Implementation
+
+- [Current P0 plan](./current_plan_doc.md)
+- [P0 execution evidence, workspace decisions, and limitations](./P0_EXECUTION.md)
+
+The implementation evidence records what is executable today; it does not replace the authoritative target architecture below.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.

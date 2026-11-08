@@ -1,15 +1,15 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { initializeCanonicalQuestion } from '../../src/services/qbe/canonicalSchema';
+import { initializeCanonicalQuestion } from '../../apps/web/src/services/qbe/canonicalSchema';
 import {
   cleanAndReviewCanonicalQuestion,
   compileCleaningSummaryReport,
-} from '../../src/services/qbe/cleaners/reviewFlagger';
+} from '../../apps/web/src/services/qbe/cleaners/reviewFlagger';
 import type {
   SourceManifestSummary,
   ExtractedAssetDocumentResult,
   CanonicalIntermediateQuestion,
-} from '../../src/types/qbe';
+} from '../../apps/web/src/types/qbe';
 
 async function main() {
   console.log('🚀 Running QBE-03 & QBE-04: Intermediate Cleaning & Review Flagging Pipeline...');

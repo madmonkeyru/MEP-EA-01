@@ -2,7 +2,7 @@ import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
 import { basename, join } from 'node:path';
 import assert from 'node:assert/strict';
-const budget = JSON.parse(await readFile('project_docs/consolidation/bundle-budget.json', 'utf8'));
+const budget = JSON.parse(await readFile('project_docs/archive/historical_sprints_and_poc/consolidation/bundle-budget.json', 'utf8'));
 const html = await readFile('dist/index.html', 'utf8');
 const entryFile = basename(html.match(/<script[^>]+src="([^"]+\.js)"/)[1]);
 const javascript = [];

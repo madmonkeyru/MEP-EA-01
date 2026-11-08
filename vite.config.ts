@@ -5,8 +5,12 @@ import { officialResources } from './scripts/officialResources.ts';
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: 'apps/web',
+  publicDir: 'public',
   plugins: [react(), tailwindcss(), officialResources()],
   build: {
+    outDir: '../../dist',
+    emptyOutDir: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {

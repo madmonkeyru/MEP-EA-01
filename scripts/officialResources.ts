@@ -18,7 +18,7 @@ export function officialResources(): Plugin {
     async configResolved(config) {
       base = config.base;
       isBuild = config.command === 'build';
-      const root = path.resolve(config.root, 'project_docs/program_official_pdfs');
+      const root = path.resolve(import.meta.dirname, '../project_docs/program_official_pdfs');
       const entries = await readdir(root, { recursive: true });
       files = entries.filter(entry => entry.toLowerCase().endsWith('.pdf')).sort().map(entry => {
         const key = entry.replaceAll('\\', '/');

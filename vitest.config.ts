@@ -7,12 +7,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), officialResources()],
   test: {
     globals: true,
-    include: ['src/**/*.test.{ts,tsx}'],
+    include: ['apps/web/src/**/*.test.{ts,tsx}'],
     // Keep transforms in-process: persisted temp paths are unreliable in Windows sandboxes.
     pool: 'threads',
     fsModuleCache: false,
     maxWorkers: 1,
     environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
+    setupFiles: './apps/web/src/test/setup.ts',
   },
 });

@@ -1,0 +1,263 @@
+{
+  "taxonomy": {
+    "programs": [
+      {
+        "id": "bxm",
+        "name": "Bachillerato por Madurez Suficiente",
+        "subjectIds": [
+          "matematica"
+        ]
+      }
+    ],
+    "subjects": [
+      {
+        "id": "matematica",
+        "programId": "bxm",
+        "name": "Matemática"
+      }
+    ],
+    "domains": [
+      {
+        "id": "geometry",
+        "subjectId": "matematica",
+        "name": "Geometría"
+      },
+      {
+        "id": "functions",
+        "subjectId": "matematica",
+        "name": "Funciones"
+      },
+      {
+        "id": "statistics",
+        "subjectId": "matematica",
+        "name": "Estadística"
+      }
+    ],
+    "concepts": [
+      {
+        "id": "mep-geo-circunferencia-01",
+        "domainId": "geometry",
+        "name": "Reconoce la representación algebraica de una circunferencia dado su centro y su radio, en diversos contextos.",
+        "prerequisiteIds": []
+      },
+      {
+        "id": "mep-alg-funcion-lineal-03",
+        "domainId": "functions",
+        "name": "Determina la pendiente, la intersección con el eje de las ordenadas o de las abscisas de una recta dada en forma gráfica o algebraica en diversos contextos.",
+        "prerequisiteIds": []
+      },
+      {
+        "id": "mep-est-medidas-posicion-01",
+        "domainId": "statistics",
+        "name": "Interpreta la información que proporcionan algunas medidas de posición (moda, media aritmética, mediana, cuartiles, el máximo o el mínimo) de un grupo de datos resumido en situaciones de diversos contextos.",
+        "prerequisiteIds": []
+      }
+    ],
+    "evidences": [
+      {
+        "id": "bxm/matematica/02-2026/geometry/A1.2",
+        "domainId": "geometry",
+        "affirmationCode": "A1",
+        "description": "Reconoce la representación algebraica de una circunferencia dado su centro y su radio, en diversos contextos.",
+        "conceptIds": [
+          "mep-geo-circunferencia-01"
+        ]
+      },
+      {
+        "id": "bxm/matematica/02-2026/functions/A2.3",
+        "domainId": "functions",
+        "affirmationCode": "A2",
+        "description": "Determina la pendiente, la intersección con el eje de las ordenadas o de las abscisas de una recta dada en forma gráfica o algebraica en diversos contextos.",
+        "conceptIds": [
+          "mep-alg-funcion-lineal-03"
+        ]
+      },
+      {
+        "id": "bxm/matematica/02-2026/statistics/A1.2",
+        "domainId": "statistics",
+        "affirmationCode": "A1",
+        "description": "Interpreta la información que proporcionan algunas medidas de posición (moda, media aritmética, mediana, cuartiles, el máximo o el mínimo) de un grupo de datos resumido en situaciones de diversos contextos.",
+        "conceptIds": [
+          "mep-est-medidas-posicion-01"
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "bxm-authored-v1-geo-001",
+      "version": "1.1.0",
+      "programId": "bxm",
+      "subjectId": "matematica",
+      "domainId": "geometry",
+      "evidenceId": "bxm/matematica/02-2026/geometry/A1.2",
+      "conceptIds": [
+        "mep-geo-circunferencia-01"
+      ],
+      "familyId": "bxm-iso-geo-circ-canon",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "Considere una circunferencia cuyo centro es el punto $(3, -4)$ y cuya medida del radio es $5$. ¿Cuál es la ecuación canónica de dicha circunferencia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "$(x - 3)^2 + (y + 4)^2 = 25$"
+        },
+        {
+          "id": "B",
+          "text": "$(x + 3)^2 + (y - 4)^2 = 25$",
+          "rationale": "Invirtió los signos de las coordenadas del centro al sustituir en $(x-h)^2 + (y-k)^2 = r^2$."
+        },
+        {
+          "id": "C",
+          "text": "$(x - 3)^2 + (y + 4)^2 = 5$",
+          "rationale": "Olvidó elevar el radio al cuadrado en el miembro derecho ($r=5$, pero puso $5$ en vez de $25$)."
+        },
+        {
+          "id": "D",
+          "text": "$(x + 3)^2 + (y - 4)^2 = 5$",
+          "rationale": "Invirtió los signos del centro y además no elevó el radio al cuadrado."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "La forma canónica de una circunferencia con centro $(h, k)$ y radio $r$ es $(x - h)^2 + (y - k)^2 = r^2$.",
+        "Sustituyendo $h = 3$, $k = -4$ y $r = 5$:",
+        "$(x - 3)^2 + (y - (-4))^2 = 5^2$",
+        "$(x - 3)^2 + (y + 4)^2 = 25$."
+      ],
+      "provenance": {
+        "source": "content/bxm-mvp-learning/authored-items-pack.json#bxm-authored-v1-geo-001",
+        "status": "authored_computationally_checked"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "bxm-authored-v1-func-001",
+      "version": "1.1.0",
+      "programId": "bxm",
+      "subjectId": "matematica",
+      "domainId": "functions",
+      "evidenceId": "bxm/matematica/02-2026/functions/A2.3",
+      "conceptIds": [
+        "mep-alg-funcion-lineal-03"
+      ],
+      "familyId": "bxm-fixed-func-001",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "¿Cuál es la pendiente de la recta que pasa por los puntos $P(2, -3)$ y $Q(6, 5)$?",
+      "options": [
+        {
+          "id": "A",
+          "text": "$2$"
+        },
+        {
+          "id": "B",
+          "text": "$\\frac{1}{2}$",
+          "rationale": "Invirtió la fórmula calculando $\\Delta x / \\Delta y$ en vez de $\\Delta y / \\Delta x$."
+        },
+        {
+          "id": "C",
+          "text": "$-2$",
+          "rationale": "Error de signos en la diferencia de las ordenadas."
+        },
+        {
+          "id": "D",
+          "text": "$4$",
+          "rationale": "Calculó únicamente la diferencia de las abscisas."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "La fórmula de la pendiente es $m = \\frac{y_2 - y_1}{x_2 - x_1}$.",
+        "Sustituyendo los puntos: $m = \\frac{5 - (-3)}{6 - 2} = \\frac{5 + 3}{4} = \\frac{8}{4} = 2$."
+      ],
+      "provenance": {
+        "source": "content/bxm-mvp-learning/authored-items-pack.json#bxm-authored-v1-func-001",
+        "status": "authored_computationally_checked"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "bxm-authored-v1-stat-001",
+      "version": "1.1.0",
+      "programId": "bxm",
+      "subjectId": "matematica",
+      "domainId": "statistics",
+      "evidenceId": "bxm/matematica/02-2026/statistics/A1.2",
+      "conceptIds": [
+        "mep-est-medidas-posicion-01"
+      ],
+      "familyId": "bxm-fixed-stat-001",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "Se tienen las calificaciones de 7 estudiantes: $68, 72, 75, 80, 85, 90, 94$. ¿Cuál es el valor de la mediana de este conjunto de datos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "$80$"
+        },
+        {
+          "id": "B",
+          "text": "$80.57$",
+          "rationale": "Calculó la media aritmética en lugar de la mediana."
+        },
+        {
+          "id": "C",
+          "text": "$75$",
+          "rationale": "Tomó el primer cuartil aproximado."
+        },
+        {
+          "id": "D",
+          "text": "$85$",
+          "rationale": "Tomó el tercer cuartil."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Los datos ya están ordenados en forma ascendente: $68, 72, 75, 80, 85, 90, 94$.",
+        "Al ser $n = 7$ (número impar), la mediana corresponde exactamente al dato central en la posición $\\frac{7+1}{2} = 4$.",
+        "El cuarto dato es $80$."
+      ],
+      "provenance": {
+        "source": "content/bxm-mvp-learning/authored-items-pack.json#bxm-authored-v1-stat-001",
+        "status": "authored_computationally_checked"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    }
+  ],
+  "blueprint": {
+    "id": "foundation-bxm-preview",
+    "version": "1.0.0",
+    "programId": "bxm",
+    "subjectId": "matematica",
+    "convocatoriaId": "02-2026",
+    "mode": "diagnostic",
+    "stream": "authored",
+    "totalItems": 3,
+    "timeLimitSeconds": 900,
+    "domainQuotas": [
+      {
+        "domainId": "geometry",
+        "count": 1
+      },
+      {
+        "domainId": "functions",
+        "count": 1
+      },
+      {
+        "domainId": "statistics",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
-import { SelectionEngine } from '../../src/features/bxm-assessment/selectionEngine';
-import { SessionRunner, SystemClock } from '../../src/features/bxm-assessment/sessionRunner';
-import { WrongAnswerClassifier } from '../../src/features/bxm-assessment/wrongAnswerClassifier';
-import { sampleAuthoredItems } from '../../src/features/bxm-assessment/fixtures/sampleItems';
+import { SelectionEngine } from '../../apps/web/src/features/bxm-assessment/selectionEngine';
+import { SessionRunner, SystemClock } from '../../apps/web/src/features/bxm-assessment/sessionRunner';
+import { WrongAnswerClassifier } from '../../apps/web/src/features/bxm-assessment/wrongAnswerClassifier';
+import { sampleAuthoredItems } from '../../apps/web/src/features/bxm-assessment/fixtures/sampleItems';
 
 console.log('=== [Agent B] Validating BXM Assessment Features ===');
 

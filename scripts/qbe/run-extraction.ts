@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { extractDocxContentAndVisuals, saveExtractedResult } from '../../src/services/qbe/docxExtractor';
-import type { SourceManifestSummary } from '../../src/types/qbe';
+import { extractDocxContentAndVisuals, saveExtractedResult } from '../../apps/web/src/services/qbe/docxExtractor';
+import type { SourceManifestSummary } from '../../apps/web/src/types/qbe';
 
 async function main() {
   console.log('🚀 Running QBE-02: DOCX Extraction Pipeline...');

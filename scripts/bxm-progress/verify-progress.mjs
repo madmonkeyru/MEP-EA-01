@@ -15,13 +15,13 @@ console.log('=== BXM Progress Module Verification (Agent C) ===\n');
 
 // 1. Verify owned directory layout
 const requiredDirs = [
-  'src/features/bxm-progress/domain',
-  'src/features/bxm-progress/recommendations',
-  'src/features/bxm-progress/analytics',
-  'src/features/bxm-progress/capabilities',
-  'src/features/bxm-progress/storage',
-  'src/features/bxm-progress/ui',
-  'src/features/bxm-progress/__tests__',
+  'apps/web/src/features/bxm-progress/domain',
+  'apps/web/src/features/bxm-progress/recommendations',
+  'apps/web/src/features/bxm-progress/analytics',
+  'apps/web/src/features/bxm-progress/capabilities',
+  'apps/web/src/features/bxm-progress/storage',
+  'apps/web/src/features/bxm-progress/ui',
+  'apps/web/src/features/bxm-progress/__tests__',
   'scripts/bxm-progress',
   'project_docs/bxm-mvp/agent-c',
 ];
@@ -56,9 +56,9 @@ try {
 }
 
 // 4. Run Vitest suite for bxm-progress
-console.log('[4/4] Running Vitest suite for src/features/bxm-progress...');
+console.log('[4/4] Running Vitest suite for apps/web/src/features/bxm-progress...');
 try {
-  execFileSync(process.execPath, ['node_modules/vitest/vitest.mjs', 'run', 'src/features/bxm-progress/', '--pool=threads', '--maxWorkers=1'], { stdio: 'inherit' });
+  execFileSync(process.execPath, ['node_modules/vitest/vitest.mjs', 'run', 'apps/web/src/features/bxm-progress/', '--pool=threads', '--maxWorkers=1'], { stdio: 'inherit' });
   console.log('✓ Progress module tests passed successfully.\n');
 } catch {
   console.error('✗ Vitest tests failed.');

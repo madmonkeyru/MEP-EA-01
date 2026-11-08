@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { applyQualityReview, compileMappingReport } from '../../src/services/qbe/qualityReview';
-import type { CanonicalIntermediateQuestion } from '../../src/types/qbe';
+import { applyQualityReview, compileMappingReport } from '../../apps/web/src/services/qbe/qualityReview';
+import type { CanonicalIntermediateQuestion } from '../../apps/web/src/types/qbe';
 
 async function main() {
   console.log('🚀 Running QBE-05 & QBE-06: Evaluation Mapping & Quality Review Pipeline...');

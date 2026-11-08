@@ -16,11 +16,13 @@ The current repository codebase was constructed rapidly as an exploratory Proof 
 
 ## 2. Divergence Analysis: Current POC vs. Target Architecture
 
+P0 now adds shared package boundaries and an executable Expo foundation while preserving the POC. See [P0 execution evidence](../P0_EXECUTION.md) for the current implementation and its validation limits. The matrix below describes the original POC behavior, which remains isolated from the new foundation.
+
 The following matrix documents the key divergences between current experimental code and the approved target architecture, outlining the required evolution roadmap:
 
 | Domain | Current POC Implementation | Approved Target Architecture | Gap / Evolution Path |
 |---|---|---|---|
-| **Client Platforms** | Single React + TypeScript Web SPA (`src/`). Responsive down to mobile, but entirely browser-based. | Multi-platform client architecture: Web SPA + native iOS & Android applications via React Native & Expo. | Extract platform-agnostic business logic into the `Shared Application Layer`; bootstrap Expo native mobile clients sharing common domain modules. |
+| **Client Platforms** | Single React + TypeScript Web SPA (`apps/web/src/`). Responsive down to mobile, but entirely browser-based. | Multi-platform client architecture: Web SPA + native iOS & Android applications via React Native & Expo. | Extract platform-agnostic business logic into the `Shared Application Layer`; bootstrap Expo native mobile clients sharing common domain modules. |
 | **Backend & Services** | Zero-backend / Mock Client. All scoring, compilation, progress, and persistence run entirely in browser `localStorage`. | Dedicated API Gateway and Core Domain Services (Auth, Test Compilation, Scoring, Remediation, Knowledge, Guidance). | Implement standalone domain services behind API Gateway; migrate from pure client-side simulation to authenticated cloud sync with offline fallback. |
 | **Data Infrastructure** | Browser `localStorage` and bundled static JSON files (`content/`). No databases. | PostgreSQL (Primary Data), Redis (Cache), Object Storage (PDFs/Visuals), and Centralized Audit Logs. | Provision PostgreSQL schemas for users, attempts, snapshots; introduce Redis for session/catalog caching; move raw documents to object storage. |
 | **Shared Application Layer** | Domain types, scoring logic, and state management co-located within Web UI features (`src/features/bxm-*`). | Explicitly partitioned Shared Application Layer (`SHARED`) with domain logic, TS types, API client, validation, design tokens, and runtime. | Decompose monolithic UI features; lift pure assessment, scoring, validation, and analytics engines into standalone shared packages/workspaces. |
@@ -38,10 +40,10 @@ In accordance with strict architectural governance, items that cannot be definit
 - **Decision to be made:** Should these services be deployed initially as independent containerized microservices (e.g., Kubernetes / ECS), or as a well-partitioned modular monolith (e.g., NestJS / Go / FastAPI) sharing a single deployment pipeline during early production stages?
 - **Current Status:** *Pending infrastructure and scaling trade-off review by engineering leadership.*
 
-### UAD-2: Mobile Codebase Strategy (Monorepo vs. Polyrepo)
+### UAD-2: Mobile Codebase Strategy (Resolved for P0)
 - **Context:** The diagram specifies React Native + Expo for iOS/Android and React + Vite for Web, sharing a unified Shared Application Layer.
 - **Decision to be made:** Should the repository transition to a Turborepo/Nx workspace monorepo hosting `@mep-ea/shared`, `@mep-ea/web`, and `@mep-ea/mobile`, or should mobile be maintained in a separate repository consuming `@mep-ea/shared` as an internal private npm package?
-- **Current Status:** *Pending team organizational structure and CI/CD pipeline design.*
+- **Current Status:** *Resolved by the current P0 plan: npm workspaces with `apps/web`, `apps/mobile`, and seven explicit shared packages. No additional Nx/Turborepo orchestration is required for this foundation. See [P0 execution evidence](../P0_EXECUTION.md).*
 
 ### UAD-3: Commercial Payment Gateway & Billing Integration
 - **Context:** The platform includes Free and Pro entitlement tiers and paywall modals, but deliberately avoids any financial transaction dependencies in the current codebase.

@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { scanRawAssets, saveInventoryArtifacts } from '../../src/services/qbe/assetInventory';
+import { scanRawAssets, saveInventoryArtifacts } from '../../apps/web/src/services/qbe/assetInventory';
 
 async function main() {
   console.log('🚀 Running QBE-01: Asset Inventory & Provenance Scan...');

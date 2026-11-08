@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { PublicationEligibilityValidator } from '../../src/services/qbe/publicationValidator.ts';
+import { PublicationEligibilityValidator } from '../../apps/web/src/services/qbe/publicationValidator.ts';
 
 function main() {
   const cleanedDir = path.resolve(process.cwd(), 'content/qbe/cleaned');

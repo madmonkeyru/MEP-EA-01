@@ -13,7 +13,10 @@ jobs:
       - run: npm ci
       - run: node scripts/ingest-validate-content.mjs
       - run: npm run lint
+      - run: npm run check:boundaries
+      - run: npm run typecheck
       - run: npm run build
+      - run: npm run build:mobile
       - run: npm run audit:bundle
       - run: npm test
       - run: npx playwright install --with-deps chromium
@@ -24,6 +27,7 @@ jobs:
             if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
             sleep 1
           done
+          FLOW_BASE_URL=http://127.0.0.1:4173 npm run test:foundation:browser
           FLOW_BASE_URL=http://127.0.0.1:4173 npm run test:flows
       - uses: actions/upload-artifact@v4
         if: always()

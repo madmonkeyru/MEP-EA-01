@@ -2,9 +2,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const load = require('../bxm-integration/load-ts.cjs');
-const { extractDocxContentAndVisuals } = load('src/services/qbe/docxExtractor.ts');
-const { initializeCanonicalQuestion } = load('src/services/qbe/canonicalSchema.ts');
-const { cleanAndReviewCanonicalQuestion } = load('src/services/qbe/cleaners/reviewFlagger.ts');
+const { extractDocxContentAndVisuals } = load('apps/web/src/services/qbe/docxExtractor.ts');
+const { initializeCanonicalQuestion } = load('apps/web/src/services/qbe/canonicalSchema.ts');
+const { cleanAndReviewCanonicalQuestion } = load('apps/web/src/services/qbe/cleaners/reviewFlagger.ts');
 
 (async () => {
   const manifest = JSON.parse(fs.readFileSync('content/qbe/manifests/source_manifest.json', 'utf8'));
