@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 import type { LearningContinuity } from '@mep-ea/api';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
+import { tokens } from '@mep-ea/design-system';
 
 const reasonLabels: Record<string, string> = {
   no_diagnostic_yet: 'Diagnóstico pendiente',
@@ -88,12 +89,12 @@ export function ContinuitySurface({
 }
 
 const styles = StyleSheet.create({
-  container: { gap: 12, paddingVertical: 8 },
-  title: { fontSize: 20, fontWeight: '700', color: '#0f172a' },
+  container: { gap: tokens.spacing.small, paddingVertical: 8 },
+  title: { fontSize: 20, fontWeight: '700', color: tokens.color.text },
   subtitle: { fontSize: 13, color: '#64748b', marginBottom: 8 },
-  sectionHeader: { fontSize: 16, fontWeight: '600', color: '#1e293b', marginTop: 12 },
-  card: { padding: 12, borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 8, backgroundColor: '#f8fafc', gap: 6 },
-  bold: { fontWeight: '600', color: '#0f172a' },
+  sectionHeader: { fontSize: 16, fontWeight: '600', color: tokens.color.text, marginTop: 12 },
+  card: { padding: tokens.spacing.small, borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 8, backgroundColor: '#f8fafc', gap: 6 },
+  bold: { fontWeight: '600', color: tokens.color.text },
   reasonTag: { fontSize: 12, color: '#334155', fontWeight: '500' },
   emptyText: { fontSize: 13, color: '#94a3b8', fontStyle: 'italic' },
 });

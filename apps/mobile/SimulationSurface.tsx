@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, TouchableOpacity, ScrollView } from 're
 import type { Assessment, OptionId, Attempt } from '@mep-ea/domain';
 import type { PlatformApi } from '@mep-ea/api';
 import { EntitlementRequired } from '@mep-ea/api';
+import { tokens } from '@mep-ea/design-system';
 
 export type SimulationMode = 'diagnostic' | 'mock' | 'simulation';
 
@@ -293,7 +294,7 @@ export function SimulationSurface({
         <View style={styles.submitContainer}>
           <Button
             title={submitting ? 'Entregando…' : 'Entregar prueba'}
-            color="#059669"
+            color={tokens.color.mastered}
             disabled={submitting}
             onPress={() => void handleSubmit()}
           />
@@ -351,7 +352,7 @@ export function SimulationSurface({
         <Text style={styles.cardDesc}>60 ítems oficiales de referencia 02-2026. Límite 150 min.</Text>
         <Button
           title="Comenzar simulación"
-          color="#d97706"
+          color={tokens.color.inProgress}
           disabled={loading}
           onPress={() => void handleLaunch('simulation')}
         />
@@ -361,33 +362,33 @@ export function SimulationSurface({
 }
 
 const styles = StyleSheet.create({
-  container: { gap: 12, paddingVertical: 12 },
-  title: { fontSize: 20, fontWeight: '700', color: '#0f172a' },
+  container: { gap: tokens.spacing.small, paddingVertical: 12 },
+  title: { fontSize: 20, fontWeight: '700', color: tokens.color.text },
   subtitle: { fontSize: 13, color: '#64748b', marginBottom: 6 },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  modeBadge: { fontSize: 11, fontWeight: '700', color: '#4338ca', backgroundColor: '#e0e7ff', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 4 },
-  timerBadge: { fontSize: 13, fontWeight: '700', color: '#0f172a', backgroundColor: '#f1f5f9', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
+  modeBadge: { fontSize: 11, fontWeight: '700', color: tokens.color.primary, backgroundColor: '#e0e7ff', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 4 },
+  timerBadge: { fontSize: 13, fontWeight: '700', color: tokens.color.text, backgroundColor: '#f1f5f9', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
   bookmarkButton: { padding: 8, borderWidth: 1, borderColor: '#cbd5e1', borderRadius: 6, alignItems: 'center' },
   bookmarkActive: { backgroundColor: '#fef3c7', borderColor: '#fde68a' },
   bookmarkText: { fontSize: 12, fontWeight: '600', color: '#334155' },
   filterRow: { flexDirection: 'row', gap: 10, marginTop: 4 },
   filterText: { fontSize: 12, color: '#64748b' },
-  filterActive: { fontWeight: '700', color: '#0f172a', textDecorationLine: 'underline' },
-  gridContainer: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, padding: 8, backgroundColor: '#f8fafc', borderRadius: 8, borderWidth: 1, borderColor: '#e2e8f0' },
+  filterActive: { fontWeight: '700', color: tokens.color.text, textDecorationLine: 'underline' },
+  gridContainer: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, padding: tokens.spacing.small, backgroundColor: '#f8fafc', borderRadius: 8, borderWidth: 1, borderColor: '#e2e8f0' },
   gridItem: { width: 32, height: 32, justifyContent: 'center', alignItems: 'center', borderRadius: 4, backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#cbd5e1' },
-  gridCurrent: { backgroundColor: '#4f46e5', borderColor: '#4338ca' },
-  gridAnswered: { backgroundColor: '#1e293b', borderColor: '#0f172a' },
+  gridCurrent: { backgroundColor: tokens.color.primary, borderColor: tokens.color.primary },
+  gridAnswered: { backgroundColor: tokens.color.text, borderColor: tokens.color.text },
   gridDimmed: { opacity: 0.3 },
   gridNumber: { fontSize: 12, fontWeight: '600', color: '#334155' },
   whiteText: { color: '#ffffff' },
   flagDot: { position: 'absolute', top: 2, right: 2, width: 6, height: 6, borderRadius: 3, backgroundColor: '#f59e0b' },
-  stemContainer: { padding: 12, backgroundColor: '#f8fafc', borderRadius: 8, borderWidth: 1, borderColor: '#e2e8f0' },
-  stemText: { fontSize: 15, color: '#0f172a', lineHeight: 22 },
+  stemContainer: { padding: tokens.spacing.small, backgroundColor: '#f8fafc', borderRadius: 8, borderWidth: 1, borderColor: '#e2e8f0' },
+  stemText: { fontSize: 15, color: tokens.color.text, lineHeight: 22 },
   optionsList: { gap: 8 },
   optionItem: { flexDirection: 'row', alignItems: 'center', gap: 10, padding: 10, borderWidth: 1, borderColor: '#cbd5e1', borderRadius: 8, backgroundColor: '#ffffff' },
-  optionSelected: { borderColor: '#4f46e5', backgroundColor: '#eef2ff' },
+  optionSelected: { borderColor: tokens.color.primary, backgroundColor: '#eef2ff' },
   letterBadge: { width: 24, height: 24, borderRadius: 12, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f1f5f9' },
-  letterBadgeSelected: { backgroundColor: '#4f46e5' },
+  letterBadgeSelected: { backgroundColor: tokens.color.primary },
   letterText: { fontSize: 12, fontWeight: '700', color: '#334155' },
   optionText: { fontSize: 14, color: '#1e293b', flexShrink: 1 },
   navRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 },
@@ -396,10 +397,10 @@ const styles = StyleSheet.create({
   proCard: { borderColor: '#fde68a', backgroundColor: '#fffbeb' },
   tag: { fontSize: 10, fontWeight: '700', textTransform: 'uppercase', color: '#0369a1' },
   proTag: { fontSize: 10, fontWeight: '700', textTransform: 'uppercase', color: '#b45309' },
-  bold: { fontSize: 15, fontWeight: '700', color: '#0f172a' },
+  bold: { fontSize: 15, fontWeight: '700', color: tokens.color.text },
   cardDesc: { fontSize: 12, color: '#64748b' },
-  paywallCard: { padding: 12, backgroundColor: '#fef3c7', borderRadius: 8, gap: 6, borderWidth: 1, borderColor: '#fcd34d' },
+  paywallCard: { padding: tokens.spacing.small, backgroundColor: '#fef3c7', borderRadius: 8, gap: 6, borderWidth: 1, borderColor: '#fcd34d' },
   paywallTitle: { fontSize: 14, fontWeight: '700', color: '#92400e' },
   paywallDesc: { fontSize: 12, color: '#78350f' },
-  errorText: { fontSize: 13, color: '#dc2626' },
+  errorText: { fontSize: 13, color: tokens.color.needsPractice },
 });
