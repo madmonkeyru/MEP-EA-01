@@ -48,3 +48,30 @@ CREATE TABLE IF NOT EXISTS auth_users (
 CREATE INDEX IF NOT EXISTS auth_users_username_lower ON auth_users (lower(username));
 INSERT INTO schema_migrations(version) VALUES (2) ON CONFLICT DO NOTHING;
 `;
+
+/** Forward-only P8 migration for telemetry event ingestion, persistence hardening & operational observability. */
+export const schemaV3 = `
+CREATE TABLE IF NOT EXISTS telemetry_events (
+  id text PRIMARY KEY,
+  name text NOT NULL,
+  stage text NOT NULL,
+  platform text NOT NULL,
+  anonymous_session_id text NOT NULL,
+  learner_id text,
+  occurred_at timestamptz NOT NULL,
+  received_at timestamptz NOT NULL DEFAULT now(),
+  idempotency_key text,
+  payload jsonb NOT NULL
+);
+CREATE INDEX IF NOT EXISTS telemetry_events_occurred_at ON telemetry_events (occurred_at DESC);
+CREATE INDEX IF NOT EXISTS telemetry_events_stage_name ON telemetry_events (stage, name);
+CREATE INDEX IF NOT EXISTS telemetry_events_anonymous_session ON telemetry_events (anonymous_session_id);
+CREATE INDEX IF NOT EXISTS telemetry_events_learner ON telemetry_events (learner_id) WHERE learner_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS telemetry_events_idempotency ON telemetry_events (idempotency_key) WHERE idempotency_key IS NOT NULL;
+
+-- Performance index hardening on attempts and attempt_drafts for longitudinal analytics & sync
+CREATE INDEX IF NOT EXISTS attempts_received_at ON attempts (received_at DESC);
+CREATE INDEX IF NOT EXISTS attempts_learner_received ON attempts (learner_id, received_at DESC);
+
+INSERT INTO schema_migrations(version) VALUES (3) ON CONFLICT DO NOTHING;
+`;

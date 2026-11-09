@@ -30,6 +30,27 @@ export interface CompileAssessmentPayload {
   seed?: number;
 }
 
+export interface TelemetryIngestResponse {
+  accepted: number;
+  duplicate: number;
+  rejected: number;
+}
+
+export interface LongitudinalMetricsResponse {
+  metrics: {
+    learnerId: string;
+    evaluatedAt: string;
+    totalAttempts: number;
+    firstAttemptAt: string | null;
+    lastAttemptAt: string | null;
+    loopCounts: { diagnostic: number; practice: number; mock: number; simulation: number };
+    overallAccuracy: number | null;
+    domainCoverage: Record<string, { total: number; correct: number; distinctFamilies: number }>;
+    habits: { averageDurationSeconds: number; unansweredRate: number; totalQuestionsEncountered: number };
+    loopStage: 'diagnostic_needed' | 'remediation_in_progress' | 'ready_for_retest' | 'exam_ready';
+  };
+}
+
 export interface PlatformApi {
   submitAttempt(attempt: Attempt): Promise<void>;
   getAttempt(id: string): Promise<AttemptRecord>;
@@ -41,6 +62,8 @@ export interface PlatformApi {
   register(payload: AuthRegisterPayload): Promise<AuthResponse>;
   login(payload: AuthLoginPayload): Promise<AuthResponse>;
   getSession(): Promise<AuthSession>;
+  sendTelemetry(events: unknown[]): Promise<TelemetryIngestResponse>;
+  getLongitudinalMetrics(): Promise<LongitudinalMetricsResponse['metrics']>;
 }
 export class AuthenticationRequired extends Error {}
 export class EntitlementRequired extends Error {
@@ -128,6 +151,26 @@ export function createPlatformApi(auth: AuthProvider, transport: ApiTransport, n
   },
   async getSession() {
     return auth.getSession();
+  },
+  async sendTelemetry(events: unknown[]) {
+    const session = await auth.getSession();
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (session.kind === 'authenticated' && session.accessToken) {
+      headers.Authorization = `Bearer ${session.accessToken}`;
+    }
+    const response = await transport.send({
+      method: 'POST',
+      path: '/v1/telemetry/events',
+      headers,
+      body: JSON.stringify({ events }),
+    });
+    if (response.status !== 200) throw new ApiError(response.status, response.body);
+    return response.body as TelemetryIngestResponse;
+  },
+  async getLongitudinalMetrics() {
+    requireSession(await auth.getSession(), now());
+    const res = await read('/v1/learners/me/progress/longitudinal') as { metrics: LongitudinalMetricsResponse['metrics'] };
+    return res.metrics;
   },
   };
   async function read(path: string) {

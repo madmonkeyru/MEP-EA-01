@@ -11,6 +11,7 @@ import { ContinuitySurface } from './ContinuitySurface';
 import { createLocalPlatformApi } from './localPlatformApi';
 import { TextRenderer as MathText } from '../components/common/TextRenderer';
 import { PaywallModal } from '../components/common/PaywallModal';
+import { ClientTelemetryService } from './clientTelemetry';
 
 export type FoundationTab = 'aprender' | 'practicar' | 'progreso';
 
@@ -51,6 +52,18 @@ export function FoundationApp() {
   const api: PlatformApi = useMemo(() => {
     return createLocalPlatformApi(authProvider, catalog);
   }, [authProvider]);
+
+  const telemetry = useMemo(() => {
+    return new ClientTelemetryService({
+      platform: 'web',
+      api,
+      learnerId: session.kind === 'authenticated' ? session.learnerId : undefined,
+    });
+  }, [api, session]);
+
+  useEffect(() => {
+    telemetry.track('session_started', { source: 'web_foundation_init' });
+  }, [telemetry]);
 
   // Continuity data
   const [continuity, setContinuity] = useState<LearningContinuity | null>(null);
