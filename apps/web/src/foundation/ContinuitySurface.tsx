@@ -1,3 +1,4 @@
+import { ExamReadinessSurface } from './ExamReadinessSurface';
 import type { LearningContinuity, LongitudinalMetricsResponse } from '@mep-ea/api';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
 
@@ -41,6 +42,16 @@ export function ContinuitySurface({
 
   return (
     <section aria-label="Mi Progreso y Plan de Nivelación" className="space-y-6 bg-white p-6 border rounded-xl shadow-sm">
+{/* P13 Reference Composite Experience: Exam Readiness */}
+      <ExamReadinessSurface
+        metrics={metrics ?? null}
+        priorityWeakness={topNode ? { evidenceKey: topNode.key, domainName: topNode.domainId } : undefined}
+        onNavigateToDiagnostic={() => onAction?.('diagnostic', 'diagnose')}
+        onNavigateToPractice={(evKey) => onAction?.(evKey ?? (topNode?.key ?? ''), 'practice')}
+        onNavigateToSimulation={() => onAction?.('simulation', 'simulation')}
+      />
+
+
       <div className="border-b pb-4">
         <h2 className="text-2xl font-bold text-slate-900">Mi Progreso · Nivelación Continua</h2>
         <p className="text-sm text-slate-500 mt-1">
