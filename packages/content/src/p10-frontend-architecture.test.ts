@@ -95,7 +95,7 @@ describe('P10 Multi-Subject Architectural Proof & Boundary Suite', () => {
       setItem: (key: string, value: string) => { memory.set(key, value); },
     };
     const auth = createTokenAuthProvider({ kind: 'anonymous', learnerId: 'learner-tel', tier: 'free' });
-    const api = createLocalPlatformApi(auth, catalog, storage);
+    const _api = createLocalPlatformApi(auth, catalog, storage);
 
     let sentEvents: any[] = [];
     const telemetry = new ClientTelemetryService({

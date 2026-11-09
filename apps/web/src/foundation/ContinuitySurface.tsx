@@ -1,4 +1,4 @@
-import type { LearningContinuity } from '@mep-ea/api';
+import type { LearningContinuity, LongitudinalMetricsResponse } from '@mep-ea/api';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
 
 const reasonLabels: Record<string, { label: string; badgeColor: string }> = {
@@ -27,22 +27,90 @@ const tierLabels: Record<string, { label: string; color: string }> = {
 export function ContinuitySurface({
   continuity,
   catalog,
+  metrics,
   onAction,
 }: {
   continuity: LearningContinuity;
   catalog: LearningCatalog;
+  metrics?: LongitudinalMetricsResponse['metrics'] | null;
   onAction?: (evidenceKey: string, action: string) => void;
 }) {
   const { mastery, plan } = continuity;
+  const topActivity = plan.activities[0];
+  const topNode = topActivity ? catalog.nodes.find(n => n.key === topActivity.evidenceId) : null;
 
   return (
     <section aria-label="Mi Progreso y Plan de Nivelación" className="space-y-6 bg-white p-6 border rounded-xl shadow-sm">
       <div className="border-b pb-4">
         <h2 className="text-2xl font-bold text-slate-900">Mi Progreso · Nivelación Continua</h2>
         <p className="text-sm text-slate-500 mt-1">
-          Estado longitudinal calculado por el servidor con base en tus primeras respuestas (ventana de 30 días, mínimo 5 familias).
+          Superficie de decisión pedagógica con hábitos longitudinales y plan de nivelación adaptativo.
         </p>
       </div>
+
+      {/* Siguiente Paso Recomendado (Decision Surface) */}
+      <div className="p-5 rounded-xl border-2 border-indigo-200 bg-gradient-to-r from-indigo-50/70 to-blue-50/50 space-y-3">
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-600 text-white">
+            Siguiente paso recomendado
+          </span>
+          {topActivity && (
+            <span className={`text-xs px-2 py-0.5 rounded font-medium ${reasonLabels[topActivity.reason]?.badgeColor ?? 'bg-slate-100'}`}>
+              {reasonLabels[topActivity.reason]?.label ?? topActivity.reason}
+            </span>
+          )}
+        </div>
+        <div>
+          <h3 className="text-lg font-bold text-slate-900">
+            {topNode ? `${topNode.code}: ${topNode.description}` : 'Comienza con tu Diagnóstico Curricular'}
+          </h3>
+          <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+            {topActivity
+              ? 'Nuestra analítica pedagógica detectó que esta evidencia optimizará tu curva de aprendizaje hacia el examen oficial.'
+              : 'Realiza una evaluación diagnóstica para calibrar tus fortalezas y activar tu plan de nivelación personalizado.'}
+          </p>
+        </div>
+        {onAction && (
+          <div className="pt-1">
+            <button
+              type="button"
+              onClick={() => onAction(topActivity?.evidenceId ?? 'diag', topActivity?.action ?? 'diagnose')}
+              className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow-xs"
+            >
+              {topActivity ? (actionLabels[topActivity.action] ?? 'Comenzar sesión focalizada') : 'Realizar diagnóstico inicial'} →
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Hábitos de Estudio Longitudinales */}
+      {metrics && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold text-slate-800">Hábitos de Estudio Longitudinales</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="p-3.5 bg-slate-50 border rounded-lg">
+              <span className="text-xs text-slate-500 font-medium">Intentos totales</span>
+              <p className="text-lg font-bold text-slate-900 mt-0.5">{metrics.totalAttempts}</p>
+            </div>
+            <div className="p-3.5 bg-slate-50 border rounded-lg">
+              <span className="text-xs text-slate-500 font-medium">Precisión global</span>
+              <p className="text-lg font-bold text-slate-900 mt-0.5">
+                {metrics.overallAccuracy !== null ? `${metrics.overallAccuracy}%` : '—'}
+              </p>
+            </div>
+            <div className="p-3.5 bg-slate-50 border rounded-lg">
+              <span className="text-xs text-slate-500 font-medium">Preguntas respondidas</span>
+              <p className="text-lg font-bold text-slate-900 mt-0.5">{metrics.habits.totalQuestionsEncountered}</p>
+            </div>
+            <div className="p-3.5 bg-slate-50 border rounded-lg">
+              <span className="text-xs text-slate-500 font-medium">Bucle formativo</span>
+              <p className="text-xs font-semibold text-slate-700 mt-1">
+                {metrics.loopCounts.diagnostic} diag · {metrics.loopCounts.practice} práct · {metrics.loopCounts.simulation} sim
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Snapshot de Dominio por Áreas y Evidencias */}
       <div className="space-y-4">
