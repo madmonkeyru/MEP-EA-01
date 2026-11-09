@@ -1,4 +1,4 @@
-import type { AssessmentBlueprint, Concept, CurriculumTaxonomy, Program, Question, VisualSpecification } from '@mep-ea/domain';
+import type { AssessmentBlueprint, Concept, CurriculumTaxonomy, CurriculumVersion, Program, Question, VisualSpecification } from '@mep-ea/domain';
 import { ensure, finite, integer, list, object, oneOf, text, timestamp, unique } from '@mep-ea/validation';
 
 const programs = ['bxm', 'edad', 'iii_ciclo', 'i_ii_ciclo'] as const;
@@ -29,6 +29,20 @@ export function parseConcept(value: unknown): Concept {
   unique(prerequisiteIds, 'concept.prerequisiteIds'); ensure(!prerequisiteIds.includes(id), 'concept', 'cannot require itself');
   return { id, domainId: text(v.domainId, 'concept.domainId'), name: text(v.name, 'concept.name'), prerequisiteIds };
 }
+export function parseCurriculumVersion(value: unknown): CurriculumVersion {
+  const v = object(value, 'curriculumVersion');
+  return {
+    id: text(v.id, 'curriculumVersion.id'),
+    programId: oneOf(v.programId, programs, 'curriculumVersion.programId'),
+    subjectId: text(v.subjectId, 'curriculumVersion.subjectId'),
+    version: text(v.version, 'curriculumVersion.version'),
+    effectiveFrom: text(v.effectiveFrom, 'curriculumVersion.effectiveFrom'),
+    ...(v.effectiveTo ? { effectiveTo: text(v.effectiveTo, 'curriculumVersion.effectiveTo') } : {}),
+    sourceReference: text(v.sourceReference, 'curriculumVersion.sourceReference'),
+    status: oneOf(v.status, ['active', 'archived', 'draft'] as const, 'curriculumVersion.status'),
+  };
+}
+
 export function parseQuestion(value: unknown): Question {
   const v = object(value, 'question');
   const options = list(v.options, 'question.options').map((raw, i) => {
@@ -64,6 +78,7 @@ export function parseQuestion(value: unknown): Question {
     conceptIds, familyId: text(v.familyId, 'question.familyId'), cognitiveLevel: oneOf(v.cognitiveLevel, ['reproduccion', 'conexion', 'reflexion'] as const, 'question.cognitiveLevel'),
     stream: oneOf(v.stream, ['authored', 'official_reference'] as const, 'question.stream'), stem, options, correctOptionId,
     requiresVisual: v.requiresVisual, ...(visual ? { visual } : {}), solution: strings(v.solution, 'question.solution'),
+    ...(v.curriculumVersionId ? { curriculumVersionId: text(v.curriculumVersionId, 'question.curriculumVersionId') } : {}),
     provenance: { source: text(provenance.source, 'provenance.source'), status: provenanceStatus }, publication: { status, ...(signoff ? { signoff } : {}) },
   };
 }
@@ -82,16 +97,19 @@ export function parseBlueprint(value: unknown): AssessmentBlueprint {
   if (evidenceIds) { ensure(evidenceIds.length > 0, 'blueprint.evidenceIds', 'cannot be empty'); unique(evidenceIds, 'blueprint.evidenceIds'); }
   return { id: text(v.id, 'blueprint.id'), version: text(v.version, 'blueprint.version'), programId: oneOf(v.programId, programs, 'blueprint.programId'),
     subjectId: text(v.subjectId, 'blueprint.subjectId'), convocatoriaId: text(v.convocatoriaId, 'blueprint.convocatoriaId'),
+    ...(v.curriculumVersionId ? { curriculumVersionId: text(v.curriculumVersionId, 'blueprint.curriculumVersionId') } : {}),
     mode, stream, totalItems, timeLimitSeconds: integer(v.timeLimitSeconds, 'blueprint.timeLimitSeconds', 1), domainQuotas,
     ...(evidenceIds ? { evidenceIds } : {}) };
 }
 export function parseTaxonomy(value: unknown): CurriculumTaxonomy {
   const v = object(value, 'taxonomy');
+  const curriculumVersions = v.curriculumVersions === undefined ? undefined : list(v.curriculumVersions, 'curriculumVersions').map(parseCurriculumVersion);
   const taxonomy: CurriculumTaxonomy = {
     programs: list(v.programs, 'programs').map(parseProgram), concepts: list(v.concepts, 'concepts').map(parseConcept),
     subjects: list(v.subjects, 'subjects').map(raw => { const s = object(raw, 'subject'); return { id: text(s.id, 'subject.id'), name: text(s.name, 'subject.name'), programId: oneOf(s.programId, programs, 'subject.programId') }; }),
-    domains: list(v.domains, 'domains').map(raw => { const d = object(raw, 'domain'); return { id: text(d.id, 'domain.id'), subjectId: text(d.subjectId, 'domain.subjectId'), name: text(d.name, 'domain.name') }; }),
+    domains: list(v.domains, 'domains').map(raw => { const d = object(raw, 'domain'); return { id: text(d.id, 'domain.id'), subjectId: text(d.subjectId, 'domain.subjectId'), name: text(d.name, 'domain.name'), ...(d.curriculumVersionId ? { curriculumVersionId: text(d.curriculumVersionId, 'domain.curriculumVersionId') } : {}) }; }),
     evidences: list(v.evidences, 'evidences').map(raw => { const e = object(raw, 'evidence'); return { id: text(e.id, 'evidence.id'), domainId: text(e.domainId, 'evidence.domainId'), affirmationCode: text(e.affirmationCode, 'evidence.affirmationCode'), description: text(e.description, 'evidence.description'), conceptIds: strings(e.conceptIds, 'evidence.conceptIds') }; }),
+    ...(curriculumVersions ? { curriculumVersions } : {}),
   };
   for (const [key, entities] of Object.entries(taxonomy)) unique(entities.map((e: { id: string }) => e.id), `taxonomy.${key}`);
   for (const p of taxonomy.programs) ensure(p.subjectIds.every(id => taxonomy.subjects.some(s => s.id === id && s.programId === p.id)), p.id, 'unknown subject');
