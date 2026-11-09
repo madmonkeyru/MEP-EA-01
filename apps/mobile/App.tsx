@@ -20,6 +20,7 @@ import { LearningBrowser } from './LearningBrowser';
 import { SimulationSurface } from './SimulationSurface';
 import { ContinuitySurface } from './ContinuitySurface';
 import { createMobilePlatformApi } from './localPlatformApi';
+import { ClientTelemetryService } from './clientTelemetry';
 
 export type MobileTab = 'aprender' | 'practicar' | 'progreso';
 
@@ -55,6 +56,18 @@ export default function App() {
   const api: PlatformApi = useMemo(() => {
     return createMobilePlatformApi(authProvider, catalog);
   }, [authProvider]);
+
+  const telemetry = useMemo(() => {
+    return new ClientTelemetryService({
+      platform: 'ios',
+      api,
+      learnerId: session.kind === 'authenticated' ? session.learnerId : undefined,
+    });
+  }, [api, session]);
+
+  useEffect(() => {
+    telemetry.track('session_started', { source: 'mobile_foundation_init' });
+  }, [telemetry]);
 
   // Continuity data
   const [continuity, setContinuity] = useState<LearningContinuity | null>(null);

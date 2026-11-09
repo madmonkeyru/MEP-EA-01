@@ -1,4 +1,4 @@
-import type { PlatformApi, AuthSession, AuthProvider, AuthRegisterPayload, AuthLoginPayload, AuthResponse, CompileAssessmentPayload, AttemptRecord, LearningContinuity, DraftWrite, DraftRecord, DraftState } from '@mep-ea/api';
+import type { PlatformApi, AuthSession, AuthProvider, AuthRegisterPayload, AuthLoginPayload, AuthResponse, CompileAssessmentPayload, AttemptRecord, LearningContinuity, DraftWrite, DraftRecord, DraftState, TelemetryIngestResponse, LongitudinalMetricsResponse } from '@mep-ea/api';
 import { EntitlementRequired } from '@mep-ea/api';
 import type { Assessment, Attempt, Diagnostic, RemediationPlan } from '@mep-ea/domain';
 import { compileAssessment } from '@mep-ea/content';
@@ -8,6 +8,7 @@ import { restoreAttempt, diagnose, remediate, calculateMastery, collectLearningE
 export function createLocalPlatformApi(authProvider: AuthProvider, catalog = createLearningPreviewCatalog()): PlatformApi {
   const STORAGE_KEY_ATTEMPTS = 'mep_ea_foundation_attempts_v1';
   const STORAGE_KEY_ACCOUNTS = 'mep_ea_foundation_accounts_v1';
+  const STORAGE_KEY_TELEMETRY = 'mep_ea_foundation_telemetry_v1';
 
   function getStoredAttempts(): AttemptRecord[] {
     try {
@@ -220,6 +221,75 @@ export function createLocalPlatformApi(authProvider: AuthProvider, catalog = cre
 
     async getSession(): Promise<AuthSession> {
       return authProvider.getSession();
+    },
+
+    async sendTelemetry(events: unknown[]): Promise<TelemetryIngestResponse> {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_TELEMETRY);
+        const current = raw ? JSON.parse(raw) : [];
+        localStorage.setItem(STORAGE_KEY_TELEMETRY, JSON.stringify([...current, ...events]));
+      } catch {
+        // local storage unavailable
+      }
+      return { accepted: events.length, duplicate: 0, rejected: 0 };
+    },
+
+    async getLongitudinalMetrics(): Promise<LongitudinalMetricsResponse['metrics']> {
+      const session = await authProvider.getSession();
+      const attempts = getStoredAttempts().filter(a => a.attempt.learnerId === session.learnerId);
+      const nowIso = new Date().toISOString();
+      let totalQuestions = 0;
+      let totalCorrect = 0;
+      let totalUnanswered = 0;
+      let totalDurationSeconds = 0;
+      const domainCoverage: Record<string, { total: number; correct: number; distinctFamilies: number }> = {};
+      const loopCounts = { diagnostic: 0, practice: 0, mock: 0, simulation: 0 };
+
+      for (const a of attempts) {
+        if (a.learningEvidence?.mode === 'diagnostic' || a.attempt.assessmentId.includes('diagnostic')) loopCounts.diagnostic++;
+        else if (a.learningEvidence?.mode === 'practice') loopCounts.practice++;
+        else if (a.attempt.questionIds.length >= 60) loopCounts.simulation++;
+        else loopCounts.mock++;
+
+        if (a.attempt.score) {
+          totalQuestions += a.attempt.score.total;
+          totalCorrect += a.attempt.score.correct;
+          totalUnanswered += a.attempt.score.unanswered;
+        }
+
+        const start = Date.parse(a.attempt.startedAt);
+        const end = Date.parse(a.attempt.submittedAt ?? a.attempt.updatedAt);
+        if (!isNaN(start) && !isNaN(end) && end >= start) {
+          totalDurationSeconds += Math.round((end - start) / 1000);
+        }
+
+        if (a.learningEvidence?.observations) {
+          for (const obs of a.learningEvidence.observations) {
+            if (!domainCoverage[obs.domainId]) {
+              domainCoverage[obs.domainId] = { total: 0, correct: 0, distinctFamilies: 0 };
+            }
+            domainCoverage[obs.domainId].total++;
+            if (obs.correct) domainCoverage[obs.domainId].correct++;
+          }
+        }
+      }
+
+      return {
+        learnerId: session.learnerId,
+        evaluatedAt: nowIso,
+        totalAttempts: attempts.length,
+        firstAttemptAt: attempts[0]?.receivedAt ?? null,
+        lastAttemptAt: attempts[attempts.length - 1]?.receivedAt ?? null,
+        loopCounts,
+        overallAccuracy: totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 1000) / 10 : null,
+        domainCoverage,
+        habits: {
+          averageDurationSeconds: attempts.length > 0 ? Math.round(totalDurationSeconds / attempts.length) : 0,
+          unansweredRate: totalQuestions > 0 ? Math.round((totalUnanswered / totalQuestions) * 1000) / 1000 : 0,
+          totalQuestionsEncountered: totalQuestions,
+        },
+        loopStage: loopCounts.diagnostic === 0 ? 'diagnostic_needed' : 'remediation_in_progress',
+      };
     },
   };
 }

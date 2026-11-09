@@ -68,6 +68,19 @@ describe('Web SimulationSurface (P6.3 & P6.4)', () => {
       accessToken: 'token',
       expiresAt: new Date(Date.now() + 3600_000).toISOString(),
     }),
+    sendTelemetry: vi.fn().mockResolvedValue({ accepted: 1, duplicate: 0, rejected: 0 }),
+    getLongitudinalMetrics: vi.fn().mockResolvedValue({
+      learnerId: 'learner-p6-test',
+      evaluatedAt: new Date().toISOString(),
+      totalAttempts: 0,
+      firstAttemptAt: null,
+      lastAttemptAt: null,
+      loopCounts: { diagnostic: 0, practice: 0, mock: 0, simulation: 0 },
+      overallAccuracy: null,
+      domainCoverage: {},
+      habits: { averageDurationSeconds: 0, unansweredRate: 0, totalQuestionsEncountered: 0 },
+      loopStage: 'diagnostic_needed',
+    }),
     ...overrides,
   });
 

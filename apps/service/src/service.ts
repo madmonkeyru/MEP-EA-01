@@ -4,9 +4,13 @@ import { resolveBlueprint, compileAssessment, type CompilationMode } from '@mep-
 import type { Assessment } from '@mep-ea/domain';
 import { restoreAttempt, diagnose, remediate, calculateMastery, collectLearningEvidence, generateNivelacion } from '@mep-ea/learning-runtime';
 import { object, text, integer, ensure } from '@mep-ea/validation';
+import type { TelemetryEvent } from '@mep-ea/analytics';
+import { sanitizeTelemetryPayload, getFunnelStageForEvent } from '@mep-ea/analytics';
 import type { ContinuityRepository } from './continuity-repository';
 import type { UserAccountRepository, TokenLifecycleManager } from './auth';
 import { hashPassword, verifyPassword } from './auth';
+import type { TelemetryRepository } from './telemetry-repository';
+import { Logger } from './logger';
 
 /** Implementations must insert atomically, returning the existing record on duplicate owner/id. */
 export interface AttemptRepository {
@@ -23,7 +27,7 @@ export function canonical(value: unknown): string {
 class ServiceFailure extends Error { constructor(readonly status: number, readonly body?: unknown) { super(); } }
 export function createService(options: {
   verifier: SessionVerifier;
-  repository: AttemptRepository & Partial<ContinuityRepository> & Partial<UserAccountRepository>;
+  repository: AttemptRepository & Partial<ContinuityRepository> & Partial<UserAccountRepository> & Partial<TelemetryRepository>;
   catalog: CatalogPackage;
   tokenManager?: TokenLifecycleManager;
   allowDevelopment?: boolean;
@@ -31,6 +35,7 @@ export function createService(options: {
 }) {
   const source = parseCatalogPackage(options.catalog);
   const now = options.now ?? Date.now;
+  const startTime = now();
   const production = parseCatalogPackage({ ...source, channel: 'production',
     registry: { ...source.registry, questions: source.registry.questions.filter(q => q.publication.status === 'published') },
     blueprints: source.blueprints.filter(b => {
@@ -41,6 +46,11 @@ export function createService(options: {
   const staticAssessments = eligible.blueprints.map(b => resolveBlueprint(b, eligible.registry, { allowDraftPreview: options.allowDevelopment }));
   const dynamicAssessments = new Map<string, Assessment>();
 
+  let requestsTotal = 0;
+  let errorsTotal = 0;
+  let telemetryIngested = 0;
+  let syncConflictsTotal = 0;
+
   function findAssessment(assessmentId: string): Assessment | undefined {
     return dynamicAssessments.get(assessmentId) ?? staticAssessments.find(a => a.id === assessmentId);
   }
@@ -48,6 +58,7 @@ export function createService(options: {
   const fail = (status: number, body?: unknown): never => { throw new ServiceFailure(status, body); };
   const continuityRepository = options.repository as Partial<ContinuityRepository>;
   const userRepository = options.repository as Partial<UserAccountRepository>;
+  const telemetryRepository = options.repository as Partial<TelemetryRepository>;
 
   async function continuity(owner: string): Promise<LearningContinuity> {
     if (!continuityRepository.continuity) return fail(503);
@@ -83,7 +94,95 @@ export function createService(options: {
   }
 
   return { async send(request: ApiRequest): Promise<ApiResponse> {
+    requestsTotal++;
+    const correlationId = request.headers['x-correlation-id'] || request.headers['x-request-id'] || `req_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const logger = new Logger('service', correlationId);
+
     try {
+      // --- Public Operational & Health Endpoints ---
+      if (request.method === 'GET' && request.path === '/health') {
+        const uptimeSeconds = Math.round((now() - startTime) / 1000);
+        return {
+          status: 200,
+          body: {
+            status: 'healthy',
+            uptimeSeconds,
+            timestamp: new Date(now()).toISOString(),
+            service: 'mep-ea-service',
+          },
+        };
+      }
+
+      if (request.method === 'GET' && request.path === '/v1/diagnostics') {
+        const uptimeSeconds = Math.round((now() - startTime) / 1000);
+        const storageDiag = telemetryRepository.getDiagnostics ? await telemetryRepository.getDiagnostics() : {
+          type: 'file_memory' as const,
+          connected: true,
+          totalAttempts: 0,
+          totalTelemetryEvents: 0,
+        };
+        const memoryUsage = typeof process !== 'undefined' && process.memoryUsage ? Math.round(process.memoryUsage().heapUsed / (1024 * 1024)) : 0;
+        return {
+          status: 200,
+          body: {
+            status: 'healthy',
+            uptimeSeconds,
+            memoryUsageMb: memoryUsage,
+            storage: storageDiag,
+            metrics: {
+              requestsTotal,
+              errorsTotal,
+              telemetryIngested,
+              syncConflictsTotal,
+            },
+          },
+        };
+      }
+
+      // --- Telemetry Batch Ingestion (Session-aware or Anonymous) ---
+      if (request.method === 'POST' && request.path === '/v1/telemetry/events') {
+        if (!telemetryRepository.recordTelemetry) return fail(503);
+        let rawEvents: any[];
+        try {
+          const body = object(JSON.parse(request.body ?? '{}'), 'telemetry_payload');
+          rawEvents = Array.isArray(body.events) ? body.events : [];
+        } catch {
+          return fail(400);
+        }
+
+        const authorization = Object.entries(request.headers).find(([k]) => k.toLowerCase() === 'authorization')?.[1];
+        const token = authorization?.match(/^Bearer (\S+)$/)?.[1];
+        const verified = token ? await options.verifier.verify(token) : null;
+        const verifiedLearnerId = verified && verified.kind === 'authenticated' ? verified.learnerId : undefined;
+
+        const validatedEvents: TelemetryEvent[] = [];
+        for (const raw of rawEvents) {
+          if (!raw || typeof raw !== 'object' || !raw.name) continue;
+          const sanitizedPayload = sanitizeTelemetryPayload(raw.payload ?? {});
+          const evt: TelemetryEvent = {
+            id: typeof raw.id === 'string' && raw.id ? raw.id : `evt_${Math.random().toString(36).slice(2, 10)}_${Date.now()}`,
+            name: raw.name,
+            stage: getFunnelStageForEvent(raw.name),
+            occurredAt: typeof raw.occurredAt === 'string' ? raw.occurredAt : new Date(now()).toISOString(),
+            platform: ['web', 'ios', 'android', 'service'].includes(raw.platform) ? raw.platform : 'web',
+            anonymousSessionId: typeof raw.anonymousSessionId === 'string' ? raw.anonymousSessionId : 'anonymous',
+            learnerId: verifiedLearnerId ?? (typeof raw.learnerId === 'string' ? raw.learnerId : undefined),
+            payload: sanitizedPayload,
+            idempotencyKey: typeof raw.idempotencyKey === 'string' ? raw.idempotencyKey : undefined,
+          };
+          validatedEvents.push(evt);
+        }
+
+        const result = await telemetryRepository.recordTelemetry(validatedEvents);
+        telemetryIngested += result.accepted;
+        logger.info('Ingested telemetry events batch', { accepted: result.accepted, duplicate: result.duplicate });
+
+        return {
+          status: 200,
+          body: result,
+        };
+      }
+
       // --- Public Auth Endpoints ---
       if (request.method === 'POST' && request.path === '/v1/auth/register') {
         if (!userRepository.create || !userRepository.findByUsername || !options.tokenManager) fail(503);
@@ -111,6 +210,7 @@ export function createService(options: {
         };
         await userRepository.create!(account);
         const { token, expiresAt } = options.tokenManager!.issueToken(account);
+        logger.info('Registered new learner account', { learnerId: account.id, tier: account.tier });
         return {
           status: 200,
           body: {
@@ -135,6 +235,7 @@ export function createService(options: {
           fail(401, { error: 'invalid_credentials' });
         }
         const { token, expiresAt } = options.tokenManager!.issueToken(account!);
+        logger.info('Learner logged in successfully', { learnerId: account!.id });
         return {
           status: 200,
           body: {
@@ -166,6 +267,16 @@ export function createService(options: {
         };
       }
 
+      // --- P8.3: Longitudinal Learner Analytics Query Endpoint ---
+      if (request.method === 'GET' && request.path === '/v1/learners/me/progress/longitudinal') {
+        if (!telemetryRepository.getLongitudinalMetrics) return fail(503);
+        const metrics = await telemetryRepository.getLongitudinalMetrics(session.learnerId);
+        return {
+          status: 200,
+          body: { metrics },
+        };
+      }
+
       // --- P6: Assessment Compilation Endpoint ---
       if (request.method === 'POST' && request.path === '/v1/assessments/compile') {
         let compMode: CompilationMode;
@@ -185,7 +296,6 @@ export function createService(options: {
           return fail(400);
         }
 
-        // P6.4 / P6.5 Entitlement: 60-item official simulation requires premium tier
         if (compMode === 'simulation' && session.tier !== 'premium') {
           return fail(403, {
             error: 'entitlement_required',
@@ -200,7 +310,6 @@ export function createService(options: {
           { allowDraftPreview: options.allowDevelopment }
         );
 
-        // Retain compiled assessment in memory for subsequent attempt verification / scoring
         dynamicAssessments.set(assessment.id, assessment);
 
         return {
@@ -244,6 +353,10 @@ export function createService(options: {
           fail(422);
         }
         const result = await continuityRepository.writeDraft!(write!, new Date(now()).toISOString());
+        if (!result.accepted) {
+          syncConflictsTotal++;
+          logger.warn('Draft write conflict detected', { attemptId: id!, learnerId: session.learnerId });
+        }
         return result.accepted ? { status: 200, body: result.record } : { status: 409, body: result.state };
       }
       if (request.method === 'GET') {
@@ -269,19 +382,19 @@ export function createService(options: {
           result: { diagnostic, remediation: remediate(assessment!, attempt, diagnostic) }, learningEvidence: collectLearningEvidence(assessment!, attempt) };
         const stored = await options.repository.insert(record);
         if (canonical(stored.attempt) !== canonical(attempt)) fail(409);
-        // If projection storage fails, return 503. The immutable retry repairs it after an outage.
         if (continuityRepository.continuity) await continuity(session.learnerId);
         return { status: 200, body: stored };
       } catch (error) {
         if (error instanceof ServiceFailure) throw error;
-        // Validation failures are client errors; repository failures are handled separately below.
         if (error instanceof SyntaxError || (error instanceof Error && error.name === 'ValidationError')) fail(422);
         throw error;
       }
     } catch (error) {
+      errorsTotal++;
       if (error instanceof ServiceFailure) {
         return { status: error.status, body: error.body ?? { error: `request_rejected_${error.status}` } };
       }
+      logger.error('Unhandled service exception', error);
       return { status: 503, body: { error: 'service_unavailable' } };
     }
   } };
