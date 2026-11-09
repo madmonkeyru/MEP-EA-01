@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, Button, Modal, ScrollView, TouchableOpacity } from 'react-native';
 import type { Attempt, Answer } from '@mep-ea/domain';
 import type { DraftState } from '@mep-ea/api';
+import { tokens } from '@mep-ea/design-system';
 
 export interface ConflictResolutionChoice {
   type: 'accept_server' | 'keep_local' | 'combine';
@@ -101,10 +102,10 @@ export function ConflictReviewModal({
               <View style={[styles.choiceCard, styles.localHighlight]}>
                 <Text style={styles.cardHeader}>Versión Local</Text>
                 <Text style={styles.meta}>Respuestas: {Object.keys(localAttempt.answers || {}).length} preguntas</Text>
-                <Button title="Conservar versión local" onPress={handleKeepLocal} color="#2563eb" />
+                <Button title="Conservar versión local" onPress={handleKeepLocal} color={tokens.color.primary} />
               </View>
 
-              <Button title="Combinar pregunta por pregunta →" onPress={() => setMode('combine')} color="#4f46e5" />
+              <Button title="Combinar pregunta por pregunta →" onPress={() => setMode('combine')} color={tokens.color.primary} />
               <Button title="Cerrar sin resolver" onPress={onCancel} color="#94a3b8" />
             </View>
           ) : (
@@ -139,7 +140,7 @@ export function ConflictReviewModal({
                   );
                 })}
               </ScrollView>
-              <Button title="Guardar selección combinada" onPress={handleConfirmCombine} color="#0f172a" />
+              <Button title="Guardar selección combinada" onPress={handleConfirmCombine} color={tokens.color.text} />
               <Button title="← Volver" onPress={() => setMode('choose')} color="#64748b" />
             </View>
           )}
@@ -150,22 +151,22 @@ export function ConflictReviewModal({
 }
 
 const styles = StyleSheet.create({
-  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', padding: 20 },
-  dialog: { backgroundColor: '#fff', borderRadius: 12, padding: 20, gap: 12, maxHeight: '85%' },
-  badge: { fontSize: 11, fontWeight: '700', color: '#b45309', backgroundColor: '#fef3c7', alignSelf: 'flex-start', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4 },
-  title: { fontSize: 18, fontWeight: '700', color: '#0f172a' },
+  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', padding: tokens.spacing.medium },
+  dialog: { backgroundColor: '#fff', borderRadius: 12, padding: tokens.spacing.medium, gap: tokens.spacing.small, maxHeight: '85%' },
+  badge: { fontSize: 11, fontWeight: '700', color: tokens.color.inProgress, backgroundColor: '#fef3c7', alignSelf: 'flex-start', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4 },
+  title: { fontSize: 18, fontWeight: '700', color: tokens.color.text },
   subtitle: { fontSize: 13, color: '#64748b' },
-  section: { gap: 12 },
-  choiceCard: { padding: 12, borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 8, gap: 8, backgroundColor: '#f8fafc' },
+  section: { gap: tokens.spacing.small },
+  choiceCard: { padding: tokens.spacing.small, borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 8, gap: 8, backgroundColor: '#f8fafc' },
   localHighlight: { borderColor: '#bfdbfe', backgroundColor: '#eff6ff' },
-  cardHeader: { fontWeight: '600', color: '#0f172a' },
+  cardHeader: { fontWeight: '600', color: tokens.color.text },
   meta: { fontSize: 12, color: '#475569' },
   scrollList: { maxHeight: 220 },
   itemRow: { paddingVertical: 8, borderBottomWidth: 1, borderColor: '#f1f5f9', gap: 6 },
   itemTitle: { fontSize: 12, color: '#334155' },
   btnRow: { flexDirection: 'row', gap: 8 },
   smallBtn: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 4, backgroundColor: '#e2e8f0' },
-  activeBtn: { backgroundColor: '#2563eb' },
+  activeBtn: { backgroundColor: tokens.color.primary },
   activeText: { color: '#ffffff', fontSize: 12, fontWeight: '600' },
   inactiveText: { color: '#334155', fontSize: 12 },
 });
