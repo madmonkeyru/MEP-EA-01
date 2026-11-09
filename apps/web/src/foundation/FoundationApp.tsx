@@ -251,12 +251,6 @@ export function FoundationApp() {
               </button>
             )}
 
-            <a
-              href="/legacy"
-              className="text-xs text-slate-400 hover:text-slate-600 underline ml-1"
-            >
-              POC Clásico
-            </a>
           </div>
         </div>
 
