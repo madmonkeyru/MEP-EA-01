@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { BookOpen, PenTool, BarChart2, Shield, User as UserIcon, LogOut } from 'lucide-react';
-import { createLearningPreviewCatalog } from '@mep-ea/content/expansion';
+import { createMultiSubjectCatalog } from '@mep-ea/content';
 import { createOfflineJourney, createTokenAuthProvider, type PlatformApi, type AuthSession } from '@mep-ea/api';
 import type { JourneyState } from '@mep-ea/learning-runtime';
 import type { LearningContinuity } from '@mep-ea/api';
@@ -12,10 +12,11 @@ import { createLocalPlatformApi } from './localPlatformApi';
 import { TextRenderer as MathText } from '../components/common/TextRenderer';
 import { PaywallModal } from '../components/common/PaywallModal';
 import { ClientTelemetryService } from './clientTelemetry';
+import { parseEducationalHash, serializeEducationalHash, type EducationalRouteContext } from './educationalNavigation';
 
 export type FoundationTab = 'aprender' | 'practicar' | 'progreso';
 
-const catalog = createLearningPreviewCatalog();
+const catalog = createMultiSubjectCatalog();
 const { journey } = createOfflineJourney(catalog, {
   getItem: key => localStorage.getItem(key),
   setItem: (key, value) => localStorage.setItem(key, value),
@@ -25,14 +26,49 @@ const { journey } = createOfflineJourney(catalog, {
 const tiers = { strong: 'Fortaleza', developing: 'En progreso', needs_practice: 'Necesita práctica' };
 
 export function FoundationApp() {
-  const [activeTab, setActiveTab] = useState<FoundationTab>('aprender');
+  const [initialNav] = useState<EducationalRouteContext>(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      return parseEducationalHash(window.location.hash);
+    }
+    return { tab: 'aprender' };
+  });
+
+  const [activeTab, setActiveTab] = useState<FoundationTab>(initialNav.tab);
   const [state, setState] = useState<JourneyState | null>(null);
-  const [evidenceKey, setEvidenceKey] = useState('');
-  const [program, setProgram] = useState('');
-  const [subject, setSubject] = useState('');
+  const [evidenceKey, setEvidenceKey] = useState(initialNav.evidenceKey ?? '');
+  const [program, setProgram] = useState(initialNav.programId ?? '');
+  const [subject, setSubject] = useState(initialNav.subjectId ?? '');
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+
+  // Keep hash synchronized with active educational context
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const nextHash = serializeEducationalHash({
+      tab: activeTab,
+      programId: program || undefined,
+      subjectId: subject || undefined,
+      evidenceKey: evidenceKey || undefined,
+    });
+    if (window.location.hash !== nextHash) {
+      window.history.replaceState(null, '', nextHash);
+    }
+  }, [activeTab, program, subject, evidenceKey]);
+
+  // Handle browser back/forward or hash changes
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onHashChange = () => {
+      const parsed = parseEducationalHash(window.location.hash);
+      if (parsed.tab) setActiveTab(parsed.tab);
+      if (parsed.programId !== undefined) setProgram(parsed.programId);
+      if (parsed.subjectId !== undefined) setSubject(parsed.subjectId);
+      if (parsed.evidenceKey !== undefined) setEvidenceKey(parsed.evidenceKey);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   // Auth & Session
   const [session, setSession] = useState<AuthSession>(() => {
@@ -219,7 +255,7 @@ export function FoundationApp() {
                 Educación Abierta
               </span>
               <span className="text-[11px] text-slate-500 font-medium hidden sm:block truncate">
-                Plataforma Oficial de Preparación · BXM Matemática
+                Plataforma Oficial de Preparación · {subject ? (catalog.registry.taxonomy.subjects.find(s => s.id === subject)?.name ?? 'Educación Abierta') : 'Educación Abierta'}
               </span>
             </div>
           </div>
@@ -319,13 +355,13 @@ export function FoundationApp() {
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
             {activeTab === 'aprender'
-              ? 'Aprender · Temario Digital BXM'
+              ? `Aprender · Temario Digital ${subject ? (catalog.registry.taxonomy.subjects.find(s => s.id === subject)?.name ?? '') : 'Educación Abierta'}`
               : activeTab === 'practicar'
               ? 'Practicar & Simular · Evaluaciones'
               : 'Mi Progreso · Plan de Nivelación'}
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            71 evidencias y 30 preguntas propias de BXM. Simulación oficial aislada bajo convocatoria 02-2026.
+            {catalog.nodes.length} evidencias curriculares y {catalog.registry.questions.length} preguntas disponibles en el catálogo sovereign multi-materia.
           </p>
         </div>
 
@@ -533,11 +569,12 @@ export function FoundationApp() {
                   ))}
                 </section>
 
-                {program === 'bxm' && subject === 'matematica' && (
+                {Boolean(program && subject) && (
                   <LearningBrowser
                     initialKey={evidenceKey}
                     catalog={catalog}
                     busy={busy}
+                    selectedSubject={subject}
                     start={id => void run(() => journey.start(id))}
                   />
                 )}

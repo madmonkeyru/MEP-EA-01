@@ -282,3 +282,5 @@ export class BufferingAnalyticsSink implements AnalyticsSink {
     this.seenKeys.clear();
   }
 }
+
+export * from './clientTelemetry';

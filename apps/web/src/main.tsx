@@ -11,18 +11,11 @@ import { AppErrorBoundary } from './components/common/AppErrorBoundary'
 // Sole production learner foundation entrypoint
 const FoundationApp = lazy(() => import('./foundation/FoundationApp').then(m => ({ default: m.FoundationApp })));
 
-// Quarantined legacy POC shell for reference / backward compatibility
-const LegacyApp = lazy(() => import('./App.tsx').then(m => ({ default: m.App })));
-
-const isLegacyRoute = typeof window !== 'undefined' && (
-  window.location.pathname.startsWith('/legacy') || window.location.hash.startsWith('#legacy')
-);
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppErrorBoundary><ThemeProvider>
       <Suspense fallback={<p className="p-6 text-slate-500">Cargando…</p>}>
-        {isLegacyRoute ? <LegacyApp /> : <FoundationApp />}
+        <FoundationApp />
       </Suspense>
     </ThemeProvider></AppErrorBoundary>
   </StrictMode>,
