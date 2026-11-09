@@ -87,6 +87,6 @@ describe('P6 Compilation Engine', () => {
 
   it('rejects unsupported modes or programs', () => {
     expect(() => compileAssessment({ programId: 'bxm', subjectId: 'matematica', mode: 'unknown' as any }, catalog.registry)).toThrow('invalid mode');
-    expect(() => compileAssessment({ programId: 'edad' as any, subjectId: 'matematica', mode: 'diagnostic' }, catalog.registry)).toThrow('only bxm supported');
+    expect(() => compileAssessment({ programId: 'edad' as any, subjectId: 'matematica', mode: 'diagnostic' }, catalog.registry)).toThrow('program edad not found in taxonomy');
   });
 });

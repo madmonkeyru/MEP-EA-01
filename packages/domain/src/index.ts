@@ -6,11 +6,16 @@ export type CognitiveLevel = 'reproduccion' | 'conexion' | 'reflexion';
 export type AssessmentMode = 'diagnostic' | 'practice' | 'benchmark';
 export interface Program { id: ProgramId; name: string; subjectIds: string[] }
 export interface Subject { id: string; programId: ProgramId; name: string }
-export interface CurriculumDomain { id: string; subjectId: string; name: string }
+export interface CurriculumVersion {
+  id: string; programId: ProgramId; subjectId: string; version: string;
+  effectiveFrom: string; effectiveTo?: string; sourceReference: string; status: 'active' | 'archived' | 'draft';
+}
+export interface CurriculumDomain { id: string; subjectId: string; name: string; curriculumVersionId?: string }
 export interface Concept { id: string; domainId: string; name: string; prerequisiteIds: string[] }
 export interface Evidence { id: string; domainId: string; affirmationCode: string; description: string; conceptIds: string[] }
 export interface CurriculumTaxonomy {
   programs: Program[]; subjects: Subject[]; domains: CurriculumDomain[]; concepts: Concept[]; evidences: Evidence[];
+  curriculumVersions?: CurriculumVersion[];
 }
 export type VisualSpecification = {
   kind: 'coordinate-plane'; alt: string; xRange: [number, number]; yRange: [number, number];
@@ -23,11 +28,13 @@ export interface Question {
   evidenceId: string; conceptIds: string[]; familyId: string; cognitiveLevel: CognitiveLevel;
   stream: ContentStream; stem: string; options: QuestionOption[]; correctOptionId: OptionId;
   requiresVisual: boolean; visual?: VisualSpecification; solution: string[];
+  curriculumVersionId?: string;
   provenance: { source: string; status: 'source_unverified' | 'authored_computationally_checked' | 'verified' };
   publication: { status: 'draft' | 'published'; signoff?: ReviewSignoff };
 }
 export interface AssessmentBlueprint {
   id: string; version: string; programId: ProgramId; subjectId: string; convocatoriaId: string;
+  curriculumVersionId?: string;
   mode: AssessmentMode; stream: ContentStream; totalItems: number; timeLimitSeconds: number;
   domainQuotas: { domainId: string; count: number }[];
   evidenceIds?: string[];

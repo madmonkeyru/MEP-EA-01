@@ -3,8 +3,9 @@ import { ensure, unique } from '@mep-ea/validation';
 import { parseBlueprint, parseQuestion, parseTaxonomy } from './schemas';
 export * from './schemas';
 export * from './compilation';
+export * from './secondSubjectFixture';
 
-export interface ContentRegistry { taxonomy: CurriculumTaxonomy; questions: Question[] }
+export interface ContentRegistry { taxonomy: CurriculumTaxonomy; questions: Question[]; blueprints?: AssessmentBlueprint[] }
 export function loadRegistry(taxonomy: unknown, items: unknown[]): ContentRegistry {
   const registry = { taxonomy: parseTaxonomy(taxonomy), questions: items.map(parseQuestion) };
   unique(registry.questions.map(q => q.id), 'registry.questions');
