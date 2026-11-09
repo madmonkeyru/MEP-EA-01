@@ -34,7 +34,15 @@ function mount(hash = '#/') {
   return render(<ThemeProvider><App /></ThemeProvider>);
 }
 
-describe('application curriculum flows', () => {
+/**
+ * Legacy POC Regression & Compatibility Test Suite
+ *
+ * Retention Reason: Retained under P10.16 Gate 15 as an isolated regression suite
+ * ensuring backwards-compatibility of legacy calculation algorithms, onboarding
+ * evaluation rules, and legacy resource catalog metadata while production traffic
+ * is strictly routed through FoundationApp.
+ */
+describe('Legacy POC Regression Suite (Compatibility Only)', () => {
   it('gates legacy practice for free learners without creating a session', async () => {
     subscriptionService.setTier('free');
     mount('#/programas/bxm/matematicas?convocatoria=2026-c2');

@@ -5,6 +5,7 @@ export * from './journey';
 export * from './transport';
 export * from './catalog';
 export * from './drafts';
+export * from './localPlatformApi';
 
 export type AuthSession = { kind: 'anonymous'; learnerId: string; tier: 'free' } | {
   kind: 'authenticated'; learnerId: string; tier: 'free' | 'premium'; roles: ('learner' | 'content_admin' | 'platform_admin')[];

@@ -4,6 +4,8 @@ import { parseBlueprint, parseQuestion, parseTaxonomy } from './schemas';
 export * from './schemas';
 export * from './compilation';
 export * from './secondSubjectFixture';
+export * from './expansion';
+export * from './multiSubjectCatalog';
 
 export interface ContentRegistry { taxonomy: CurriculumTaxonomy; questions: Question[]; blueprints?: AssessmentBlueprint[] }
 export function loadRegistry(taxonomy: unknown, items: unknown[]): ContentRegistry {

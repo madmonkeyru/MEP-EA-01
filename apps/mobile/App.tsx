@@ -11,7 +11,7 @@ import {
   View,
 } from 'react-native';
 import Storage from 'expo-sqlite/kv-store';
-import { createLearningPreviewCatalog } from '@mep-ea/content/expansion';
+import { createMultiSubjectCatalog } from '@mep-ea/content';
 import { createOfflineJourney, createTokenAuthProvider, type PlatformApi, type AuthSession, type LearningContinuity } from '@mep-ea/api';
 import type { JourneyState } from '@mep-ea/learning-runtime';
 import type { Attempt } from '@mep-ea/domain';
@@ -24,7 +24,7 @@ import { ClientTelemetryService } from './clientTelemetry';
 
 export type MobileTab = 'aprender' | 'practicar' | 'progreso';
 
-const catalog = createLearningPreviewCatalog();
+const catalog = createMultiSubjectCatalog();
 const { journey } = createOfflineJourney(catalog, Storage, 'p2-local');
 const tiers = { strong: 'Fortaleza', developing: 'En progreso', needs_practice: 'Necesita práctica' };
 
@@ -439,11 +439,12 @@ export default function App() {
                   </View>
                 ))}
 
-              {program === 'bxm' && subject === 'matematica' && (
+              {Boolean(program && subject) && (
                 <LearningBrowser
                   initialKey={evidenceKey}
                   catalog={catalog}
                   busy={busy}
+                  selectedSubject={subject}
                   start={id => void run(() => journey.start(id))}
                 />
               )}
