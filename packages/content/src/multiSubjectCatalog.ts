@@ -1,5 +1,8 @@
-import type { AssessmentBlueprint } from '@mep-ea/domain';
-import { createLearningPreviewCatalog, type LearningCatalog, type LearningNode } from './expansion';
+import type { LearningCatalog, LearningLesson, LearningNode } from './expansion';
+import type { SubjectAuthoringPackage } from './authoring/types';
+import type { AssessmentBlueprint, CurriculumTaxonomy, Question } from '@mep-ea/domain';
+import { createLearningPreviewCatalog } from './expansion';
+import { ingestSubjectPackage } from './authoring/ingestion';
 import {
   civicaAuthoredQuestions,
   civicaDiagnosticBlueprint,
@@ -9,13 +12,25 @@ import {
 } from './secondSubjectFixture';
 import { loadRegistry } from './index';
 
+// Import Estudios Sociales authored package
+import estudiosSocialesPackageJson from './data/estudios-sociales-package.json';
+
+/**
+ * Registry of authorized and published subject authoring packages.
+ * Only validated and explicitly registered packages are exposed to runtime.
+ */
+export const registeredSubjectPackages: SubjectAuthoringPackage[] = [
+  estudiosSocialesPackageJson as unknown as SubjectAuthoringPackage,
+];
+
 /**
  * Creates a generalized multi-subject learning catalog combining
- * BXM Matemática and BXM Educación Cívica 02-2026.
+ * all base, fixture, and registered subject packages dynamically.
  */
-export function createMultiSubjectCatalog(): LearningCatalog {
+export function createMultiSubjectCatalog(customPackages?: SubjectAuthoringPackage[]): LearningCatalog {
   const base = createLearningPreviewCatalog();
 
+  // 1. Cívica fixture nodes
   const civicaNodes: LearningNode[] = civicaTaxonomy.evidences.map(e => {
     const items = civicaAuthoredQuestions.filter(q => q.evidenceId === e.id);
     return {
@@ -31,34 +46,6 @@ export function createMultiSubjectCatalog(): LearningCatalog {
       practiceBlueprintId: items.length ? `p2-practice:${e.id}` : null,
     };
   });
-
-  const allNodes: LearningNode[] = [...base.nodes, ...civicaNodes];
-  const allQuestions = [...base.registry.questions, ...civicaAuthoredQuestions];
-
-  const mergedTaxonomy = {
-    programs: [
-      { id: 'bxm', name: 'Bachillerato por Madurez Suficiente', subjectIds: ['matematica', 'civica'] },
-    ],
-    subjects: [
-      ...base.registry.taxonomy.subjects,
-      { id: 'civica', programId: 'bxm', name: 'Educación Cívica' },
-    ],
-    curriculumVersions: civicaTaxonomy.curriculumVersions,
-    domains: [
-      ...base.registry.taxonomy.domains,
-      ...civicaTaxonomy.domains,
-    ],
-    concepts: [
-      ...base.registry.taxonomy.concepts,
-      ...civicaTaxonomy.concepts,
-    ],
-    evidences: [
-      ...base.registry.taxonomy.evidences,
-      ...civicaTaxonomy.evidences,
-    ],
-  };
-
-  const registry = loadRegistry(mergedTaxonomy, allQuestions);
 
   const civicaPracticeBlueprints: AssessmentBlueprint[] = civicaNodes
     .filter(n => n.practiceBlueprintId)
@@ -76,18 +63,94 @@ export function createMultiSubjectCatalog(): LearningCatalog {
       domainQuotas: [{ domainId: n.domainId, count: n.practiceItemIds.length }],
     }));
 
+  // 2. Ingest registered subject packages dynamically
+  const packagesToIngest = customPackages ?? registeredSubjectPackages;
+  const ingestedResults = packagesToIngest.map(pkg => ingestSubjectPackage(pkg));
+
+  const allNodes: LearningNode[] = [
+    ...base.nodes,
+    ...civicaNodes,
+    ...ingestedResults.flatMap(r => r.nodes),
+  ];
+
+  const allLessons: LearningLesson[] = [
+    ...base.lessons,
+    ...ingestedResults.flatMap(r => r.lessons),
+  ];
+
+  const allQuestions: Question[] = [
+    ...base.registry.questions,
+    ...civicaAuthoredQuestions,
+    ...ingestedResults.flatMap(r => r.questions),
+  ];
+
+  const allSubjectIds = [
+    'matematica',
+    'civica',
+    ...packagesToIngest.map(p => p.subject.id),
+  ];
+
+  const mergedTaxonomy: CurriculumTaxonomy = {
+    programs: [
+      {
+        id: 'bxm',
+        name: 'Bachillerato por Madurez Suficiente',
+        subjectIds: [...new Set(allSubjectIds)],
+      },
+    ],
+    subjects: [
+      ...base.registry.taxonomy.subjects,
+      { id: 'civica', programId: 'bxm', name: 'Educación Cívica' },
+      ...packagesToIngest.map(p => ({
+        id: p.subject.id,
+        programId: p.program.id,
+        name: p.subject.name,
+      })),
+    ],
+    curriculumVersions: [
+      ...(base.registry.taxonomy.curriculumVersions ?? []),
+      ...(civicaTaxonomy.curriculumVersions ?? []),
+      ...packagesToIngest.map(p => p.curriculumVersion),
+    ],
+    domains: [
+      ...base.registry.taxonomy.domains,
+      ...civicaTaxonomy.domains,
+      ...packagesToIngest.flatMap(p =>
+        p.domains.map(d => ({
+          id: d.id,
+          subjectId: p.subject.id,
+          name: d.name,
+          curriculumVersionId: p.curriculumVersion.id,
+        }))
+      ),
+    ],
+    concepts: [
+      ...base.registry.taxonomy.concepts,
+      ...civicaTaxonomy.concepts,
+      ...packagesToIngest.flatMap(p => p.concepts),
+    ],
+    evidences: [
+      ...base.registry.taxonomy.evidences,
+      ...civicaTaxonomy.evidences,
+      ...packagesToIngest.flatMap(p => p.evidences),
+    ],
+  };
+
+  const registry = loadRegistry(mergedTaxonomy, allQuestions);
+
   const allBlueprints: AssessmentBlueprint[] = [
     ...base.blueprints,
     civicaDiagnosticBlueprint,
     civicaMockBlueprint,
     civicaOfficialSimulationBlueprint,
     ...civicaPracticeBlueprints,
+    ...ingestedResults.flatMap(r => r.blueprints),
   ];
 
   return {
     registry,
     nodes: allNodes,
-    lessons: base.lessons,
+    lessons: allLessons,
     blueprints: allBlueprints,
     allowDraftPreview: true,
   };

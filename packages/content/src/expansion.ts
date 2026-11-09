@@ -3,7 +3,38 @@ import type { AssessmentBlueprint, Question } from '@mep-ea/domain';
 import { ensure, unique } from '@mep-ea/validation';
 import { loadRegistry, parseBlueprint, type ContentRegistry } from './index';
 
-export type LearningLesson = typeof raw.lessons.lessons[number] & { publication: { status: 'draft' } };
+export type LessonFormulas = { name: string; latex: string; notes: string };
+export type LessonCommonMistake = { mistake: string; description: string; correction: string };
+export type LessonWorkedExample = {
+  statement: string;
+  primaryMethod: { name: string; steps: string[] };
+  alternativeMethod?: { name: string; steps: string[] };
+};
+export type LessonMicroQuiz = {
+  id: string;
+  question: string;
+  options: { A: string; B: string; C: string; D: string };
+  correctOption: string;
+  explanation: string;
+};
+
+export interface LearningLesson {
+  id: string;
+  domain: string;
+  evidenceKey: string;
+  evidenceCode: string;
+  title: string;
+  subtitle: string;
+  conceptIds: string[];
+  prerequisites: string[];
+  formulas: LessonFormulas[];
+  coreExplanation: string;
+  commonMistakes: LessonCommonMistake[];
+  workedExample: LessonWorkedExample;
+  interactiveVisualType: string | null;
+  microQuiz: LessonMicroQuiz[];
+  publication: { status: 'draft' };
+}
 export interface LearningNode {
   key: string; domainId: string; code: string; description: string;
   status: 'complete' | 'scaffolded_available_soon'; reviewStatus: string;
