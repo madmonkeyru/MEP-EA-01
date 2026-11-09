@@ -25,8 +25,8 @@ export interface AuthResponse {
 }
 
 export interface CompileAssessmentPayload {
-  programId: 'bxm';
-  subjectId: 'matematica';
+  programId: string;
+  subjectId: string;
   mode: 'diagnostic' | 'mock' | 'simulation';
   seed?: number;
 }

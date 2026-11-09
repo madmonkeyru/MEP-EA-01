@@ -9,14 +9,20 @@ export type SimulationMode = 'diagnostic' | 'mock' | 'simulation';
 
 export interface MobileSimulationSurfaceProps {
   api: PlatformApi;
+  programId?: string;
+  subjectId?: string;
   onAttemptSubmitted?: (attempt: Attempt) => void;
   onBackToHub?: () => void;
+  onNavigateToRemediation?: () => void;
 }
 
 export function SimulationSurface({
   api,
+  programId = 'bxm',
+  subjectId = 'matematica',
   onAttemptSubmitted,
   onBackToHub,
+  onNavigateToRemediation,
 }: MobileSimulationSurfaceProps) {
   const [selectedMode, setSelectedMode] = useState<SimulationMode | null>(null);
   const [assessment, setAssessment] = useState<Assessment | null>(null);
@@ -54,8 +60,8 @@ export function SimulationSurface({
     setPaywallNotice(null);
     try {
       const compiled = await api.compileAssessment({
-        programId: 'bxm',
-        subjectId: 'matematica',
+        programId,
+        subjectId,
         mode,
       });
       setAssessment(compiled);
@@ -165,14 +171,23 @@ export function SimulationSurface({
           <Text>Respondidas: {answeredCount}</Text>
           <Text>Sin responder: {totalCount - answeredCount}</Text>
         </View>
-        <Button
-          title="Realizar otra prueba"
-          onPress={() => {
-            setAssessment(null);
-            setSelectedMode(null);
-            setSubmittedAttempt(null);
-          }}
-        />
+        <View style={{ gap: 8 }}>
+          {onNavigateToRemediation && (
+            <Button
+              title="Ver Plan de Nivelación y Reforzar"
+              color={tokens.color.primary}
+              onPress={onNavigateToRemediation}
+            />
+          )}
+          <Button
+            title="Realizar otra prueba"
+            onPress={() => {
+              setAssessment(null);
+              setSelectedMode(null);
+              setSubmittedAttempt(null);
+            }}
+          />
+        </View>
         {onBackToHub && <Button title="Volver a mi preparación" onPress={onBackToHub} />}
       </View>
     );

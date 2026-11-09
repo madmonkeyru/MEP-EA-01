@@ -71,6 +71,7 @@ export default function App() {
 
   // Continuity data
   const [continuity, setContinuity] = useState<LearningContinuity | null>(null);
+  const [longitudinalMetrics, setLongitudinalMetrics] = useState<import('@mep-ea/api').LongitudinalMetricsResponse['metrics'] | null>(null);
   const [lastSubmittedAttempt, setLastSubmittedAttempt] = useState<Attempt | null>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [usernameInput, setUsernameInput] = useState('');
@@ -82,6 +83,12 @@ export default function App() {
     try {
       const data = await api.getLearningContinuity();
       setContinuity(data);
+      try {
+        const metrics = await api.getLongitudinalMetrics();
+        setLongitudinalMetrics(metrics);
+      } catch {
+        // non-blocking
+      }
     } catch {
       // non-blocking
     }
@@ -456,10 +463,31 @@ export default function App() {
       {/* Tab 2: Practicar & Simular */}
       {activeTab === 'practicar' && (
         <View style={styles.tabContent}>
+          <View style={styles.card}>
+            <Text style={styles.fieldLabel}>Materia activa:</Text>
+            <View style={styles.btnRow}>
+              {catalog.registry.taxonomy.subjects.map(s => (
+                <Button
+                  key={s.id}
+                  title={`${(subject || 'matematica') === s.id ? '✓ ' : ''}${s.name}`}
+                  onPress={() => {
+                    setProgram(s.programId);
+                    setSubject(s.id);
+                  }}
+                />
+              ))}
+            </View>
+          </View>
           <SimulationSurface
             api={api}
+            programId={program || 'bxm'}
+            subjectId={subject || 'matematica'}
             onAttemptSubmitted={handleSimulationSubmitted}
             onBackToHub={() => {
+              void refreshContinuity();
+              setActiveTab('progreso');
+            }}
+            onNavigateToRemediation={() => {
               void refreshContinuity();
               setActiveTab('progreso');
             }}
@@ -488,6 +516,7 @@ export default function App() {
             <ContinuitySurface
               continuity={continuity}
               catalog={catalog}
+              metrics={longitudinalMetrics}
               onAction={handleContinuityAction}
             />
           ) : (

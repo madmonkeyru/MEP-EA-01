@@ -46,6 +46,14 @@ P4 implements the PostgreSQL system of record, longitudinal mastery snapshots, P
 
 P5 closes the identity and entitlement gap, surfaces durable mastery and Plan de Nivelación in Web/Expo, and hardens multi-device offline recovery. It builds directly on the P4 continuity layer while leaving content publication, payments, Redis, Test Compilation, and deployment topology for later milestones.
 
+## P11 Implementation
+
+- [Current P11 plan](./current-implementation-plan/P11_current_plan.md)
+- [P11 frontend readiness audit](./P11_FRONTEND_READINESS_AUDIT.md)
+- [P11 execution evidence, product maturation and multi-subject experience](./P11_EXECUTION.md)
+
+P11 matures the learner-facing product surfaces using the P10 architectural foundation. It introduces dynamic multi-subject support (Matemática and Cívica BXM 02-2026), transforms "Mi Progreso" into an actionable decision surface powered by longitudinal study habits, closes the pedagogical remediation loop from assessment results, achieves full Web/Mobile experience parity, and passes all 13 acceptance gates.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.
