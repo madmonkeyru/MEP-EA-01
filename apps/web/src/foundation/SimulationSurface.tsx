@@ -9,14 +9,20 @@ export type SimulationMode = 'diagnostic' | 'mock' | 'simulation';
 
 export interface SimulationSurfaceProps {
   api: PlatformApi;
+  programId?: string;
+  subjectId?: string;
   onAttemptSubmitted?: (attempt: Attempt) => void;
   onBackToHub?: () => void;
+  onNavigateToRemediation?: () => void;
 }
 
 export function SimulationSurface({
   api,
+  programId = 'bxm',
+  subjectId = 'matematica',
   onAttemptSubmitted,
   onBackToHub,
+  onNavigateToRemediation,
 }: SimulationSurfaceProps) {
   // Mode Selection / Compilation state
   const [selectedMode, setSelectedMode] = useState<SimulationMode | null>(null);
@@ -56,8 +62,8 @@ export function SimulationSurface({
     setError(null);
     try {
       const compiled = await api.compileAssessment({
-        programId: 'bxm',
-        subjectId: 'matematica',
+        programId,
+        subjectId,
         mode,
       });
       setAssessment(compiled);
@@ -195,7 +201,16 @@ export function SimulationSurface({
           </div>
         </div>
 
-        <div className="flex gap-4 pt-4 border-t">
+        <div className="flex gap-4 pt-4 border-t flex-wrap">
+          {onNavigateToRemediation && (
+            <button
+              type="button"
+              onClick={onNavigateToRemediation}
+              className="px-5 py-2.5 text-sm font-bold bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition shadow-xs"
+            >
+              Ver Plan de Nivelación y Reforzar Debilidades →
+            </button>
+          )}
           <button
             type="button"
             onClick={() => {

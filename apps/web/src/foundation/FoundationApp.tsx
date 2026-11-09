@@ -103,6 +103,7 @@ export function FoundationApp() {
 
   // Continuity data
   const [continuity, setContinuity] = useState<LearningContinuity | null>(null);
+  const [longitudinalMetrics, setLongitudinalMetrics] = useState<import('@mep-ea/api').LongitudinalMetricsResponse['metrics'] | null>(null);
   const [lastSubmittedAttempt, setLastSubmittedAttempt] = useState<Attempt | null>(null);
   const [paywallOpen, setPaywallOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -114,6 +115,12 @@ export function FoundationApp() {
     try {
       const data = await api.getLearningContinuity();
       setContinuity(data);
+      try {
+        const metrics = await api.getLongitudinalMetrics();
+        setLongitudinalMetrics(metrics);
+      } catch {
+        // non-blocking
+      }
     } catch {
       // non-blocking
     }
@@ -586,10 +593,42 @@ export function FoundationApp() {
         {/* Tab 2: PRACTICAR & SIMULAR */}
         {activeTab === 'practicar' && (
           <div className="space-y-6">
+            <div className="bg-white p-4 border rounded-xl flex items-center justify-between gap-4 flex-wrap">
+              <span className="text-xs font-semibold text-slate-700">Materia activa para evaluaciones:</span>
+              <div className="flex gap-2">
+                {catalog.registry.taxonomy.subjects.map(s => {
+                  const isSelected = (subject || 'matematica') === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      onClick={() => {
+                        setProgram(s.programId);
+                        setSubject(s.id);
+                      }}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
+                        isSelected
+                          ? 'bg-indigo-600 text-white shadow-xs'
+                          : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      }`}
+                    >
+                      {s.name} ({s.programId.toUpperCase()})
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <SimulationSurface
               api={api}
+              programId={program || 'bxm'}
+              subjectId={subject || 'matematica'}
               onAttemptSubmitted={handleSimulationSubmitted}
               onBackToHub={() => {
+                void refreshContinuity();
+                setActiveTab('progreso');
+              }}
+              onNavigateToRemediation={() => {
                 void refreshContinuity();
                 setActiveTab('progreso');
               }}
@@ -619,6 +658,7 @@ export function FoundationApp() {
               <ContinuitySurface
                 continuity={continuity}
                 catalog={catalog}
+                metrics={longitudinalMetrics}
                 onAction={handleContinuityAction}
               />
             ) : (

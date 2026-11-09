@@ -175,16 +175,20 @@ export function compileAssessment(
       ];
       targetTotalItems = 20;
     } else {
-      // Dynamic quota generation based on available subject domains in registry taxonomy
+      // Dynamic quota generation based on candidate pool in registry taxonomy
       const subjectDomains = registry.taxonomy.domains.filter(d => d.subjectId === request.subjectId);
-      const domainCount = Math.max(subjectDomains.length, 1);
-      const basePerDomain = Math.floor(targetTotalItems / domainCount);
-      let remainder = targetTotalItems % domainCount;
-      domainQuotas = subjectDomains.map(d => {
-        const count = basePerDomain + (remainder > 0 ? 1 : 0);
-        if (remainder > 0) remainder--;
-        return { domainId: d.id, count };
-      }).filter(q => q.count > 0);
+      // Check candidate pool availability per domain to calibrate total items realistically
+      const availablePerDomain = subjectDomains.map(d => ({
+        domainId: d.id,
+        available: candidatePool.filter(q => q.domainId === d.id).length,
+      }));
+      const minAvailable = Math.min(...availablePerDomain.map(a => a.available));
+      const perDomain = Math.min(Math.floor(targetTotalItems / Math.max(subjectDomains.length, 1)), minAvailable);
+      domainQuotas = subjectDomains.map(d => ({
+        domainId: d.id,
+        count: perDomain,
+      })).filter(q => q.count > 0);
+      targetTotalItems = domainQuotas.reduce((sum, q) => sum + q.count, 0);
     }
   }
 
