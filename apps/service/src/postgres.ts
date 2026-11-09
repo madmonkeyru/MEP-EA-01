@@ -1,8 +1,11 @@
 import { Pool, type PoolClient } from 'pg';
 import type { AttemptRecord, DraftRecord, DraftConflict, DraftState } from '@mep-ea/api';
+import type { TelemetryEvent } from '@mep-ea/analytics';
 import { reviseDraft, type ContinuityRepository } from './continuity-repository';
-import { schemaV1, schemaV2 } from './postgres-schema';
+import { schemaV1, schemaV2, schemaV3 } from './postgres-schema';
 import type { UserAccount, UserAccountRepository } from './auth';
+import type { TelemetryRepository, TelemetryBatchResult, LongitudinalLearnerMetrics, OperationalDiagnostics } from './telemetry-repository';
+import { deriveLongitudinalMetrics } from './longitudinal';
 
 export function createPostgresPool(connectionString: string): Pool {
   const pool = new Pool({ connectionString, connectionTimeoutMillis: 5000, statement_timeout: 10000 });
@@ -28,6 +31,8 @@ export async function migratePostgres(pool: Pool): Promise<void> {
     if (!v1.rowCount) await client.query(schemaV1);
     const v2 = await client.query('SELECT version FROM schema_migrations WHERE version = 2');
     if (!v2.rowCount) await client.query(schemaV2);
+    const v3 = await client.query('SELECT version FROM schema_migrations WHERE version = 3');
+    if (!v3.rowCount) await client.query(schemaV3);
   });
 }
 async function readDraft(client: PoolClient, owner: string, id: string): Promise<DraftState> {
@@ -37,7 +42,7 @@ async function readDraft(client: PoolClient, owner: string, id: string): Promise
   return { schemaVersion: 1, draft: draft.rows[0]?.record ?? null, conflicts: conflicts.rows.map(r => r.conflict), completed: !!completed.rowCount };
 }
 /** JSON payloads are normalized by the service; SQL keys, constraints and locks enforce durable ownership/revisions. */
-export function createPostgresRepository(pool: Pool): ContinuityRepository & UserAccountRepository {
+export function createPostgresRepository(pool: Pool): ContinuityRepository & UserAccountRepository & TelemetryRepository {
   return {
     async find(owner, id) {
       const result = await pool.query<{ record: AttemptRecord }>('SELECT record FROM attempts WHERE learner_id=$1 AND attempt_id=$2', [owner, id]);
@@ -128,6 +133,64 @@ export function createPostgresRepository(pool: Pool): ContinuityRepository & Use
         roles: row.roles,
         createdAt: row.created_at,
         updatedAt: row.updated_at,
+      };
+    },
+    async recordTelemetry(events: TelemetryEvent[]): Promise<TelemetryBatchResult> {
+      let accepted = 0;
+      let duplicate = 0;
+      let rejected = 0;
+
+      for (const evt of events) {
+        try {
+          const res = await pool.query(
+            `INSERT INTO telemetry_events (id, name, stage, platform, anonymous_session_id, learner_id, occurred_at, idempotency_key, payload)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+             ON CONFLICT (id) DO NOTHING`,
+            [
+              evt.id,
+              evt.name,
+              evt.stage,
+              evt.platform,
+              evt.anonymousSessionId,
+              evt.learnerId ?? null,
+              evt.occurredAt,
+              evt.idempotencyKey ?? null,
+              JSON.stringify(evt.payload ?? {}),
+            ]
+          );
+          if (res.rowCount && res.rowCount > 0) {
+            accepted++;
+          } else {
+            duplicate++;
+          }
+        } catch (err: any) {
+          if (err?.code === '23505') {
+            duplicate++;
+          } else {
+            rejected++;
+          }
+        }
+      }
+      return { accepted, duplicate, rejected };
+    },
+    async getTelemetryCount(): Promise<number> {
+      const res = await pool.query<{ count: string }>('SELECT count(*) FROM telemetry_events');
+      return parseInt(res.rows[0]?.count ?? '0', 10);
+    },
+    async getLongitudinalMetrics(learnerId: string): Promise<LongitudinalLearnerMetrics> {
+      const res = await pool.query<{ record: AttemptRecord }>('SELECT record FROM attempts WHERE learner_id = $1 ORDER BY received_at ASC', [learnerId]);
+      return deriveLongitudinalMetrics(learnerId, res.rows.map(r => r.record));
+    },
+    async getDiagnostics(): Promise<OperationalDiagnostics['storage']> {
+      const attemptsCount = await pool.query<{ count: string }>('SELECT count(*) FROM attempts');
+      const telemetryCount = await pool.query<{ count: string }>('SELECT count(*) FROM telemetry_events');
+      const draftsCount = await pool.query<{ count: string }>('SELECT count(*) FROM attempt_drafts');
+      return {
+        type: 'postgres',
+        connected: true,
+        totalAttempts: parseInt(attemptsCount.rows[0]?.count ?? '0', 10),
+        totalTelemetryEvents: parseInt(telemetryCount.rows[0]?.count ?? '0', 10),
+        activeDrafts: parseInt(draftsCount.rows[0]?.count ?? '0', 10),
       };
     },
   };
