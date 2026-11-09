@@ -122,3 +122,5 @@ export class AssessmentSession {
   goTo(index: number) { return this.enqueue(() => this.commit(navigate(this.assessment, this.active(), index, this.now()))); }
   submit() { return this.enqueue(() => this.commit(submitAttempt(this.assessment, this.active(), this.now()))); }
 }
+
+export * from './featureControllers';

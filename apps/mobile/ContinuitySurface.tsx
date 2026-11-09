@@ -1,3 +1,4 @@
+import { ExamReadinessSurface } from './ExamReadinessSurface';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import type { LearningContinuity, LongitudinalMetricsResponse } from '@mep-ea/api';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
@@ -43,6 +44,15 @@ export function ContinuitySurface({
 
   return (
     <View style={styles.container}>
+{/* P13 Reference Composite Experience: Exam Readiness */}
+      <ExamReadinessSurface
+        metrics={metrics ?? null}
+        priorityWeakness={topNode ? { evidenceKey: topNode.key, domainName: topNode.domainId } : undefined}
+        onNavigateToDiagnostic={() => onAction?.('diagnostic', 'diagnose')}
+        onNavigateToPractice={(evKey) => onAction?.(evKey ?? (topNode?.key ?? ''), 'practice')}
+        onNavigateToSimulation={() => onAction?.('simulation', 'simulation')}
+      />
+
       <Text accessibilityRole="header" style={styles.title}>Mi Progreso · Nivelación Continua</Text>
       <Text style={styles.subtitle}>
         Superficie de decisión pedagógica con hábitos longitudinales y plan de nivelación adaptativo.

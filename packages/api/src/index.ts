@@ -195,3 +195,5 @@ export function createTokenAuthProvider(initialSession?: AuthSession): AuthProvi
     setSession(s: AuthSession) { current = s; },
   };
 }
+
+export * from './platformCapabilities';
