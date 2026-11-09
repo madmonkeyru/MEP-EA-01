@@ -2,18 +2,41 @@ import { useState } from 'react';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
 import { TextRenderer as MathText } from '../components/common/TextRenderer';
 
-export function LearningBrowser({ catalog, busy, start, initialKey = '' }: { catalog: LearningCatalog; busy: boolean; start: (id: string) => void; initialKey?: string }) {
+export function LearningBrowser({
+  catalog,
+  busy,
+  start,
+  initialKey = '',
+  selectedSubject,
+}: {
+  catalog: LearningCatalog;
+  busy: boolean;
+  start: (id: string) => void;
+  initialKey?: string;
+  selectedSubject?: string;
+}) {
   const [domain, setDomain] = useState('');
   const [key, setKey] = useState(initialKey);
-  const node = catalog.nodes.find(n => n.key === key); const lesson = node?.lesson;
+
+  const eligibleDomains = selectedSubject
+    ? catalog.registry.taxonomy.domains.filter(d => d.subjectId === selectedSubject)
+    : catalog.registry.taxonomy.domains;
+
+  const eligibleDomainIds = new Set(eligibleDomains.map(d => d.id));
+
+  const eligibleNodes = catalog.nodes.filter(n => eligibleDomainIds.has(n.domainId));
+
+  const node = eligibleNodes.find(n => n.key === key);
+  const lesson = node?.lesson;
+
   return <section aria-label="Catálogo de evidencias" className="space-y-4">
     <h2>Aprender por evidencia</h2>
-    <p>{catalog.nodes.length} evidencias · {catalog.lessons.length} lecciones en borrador · {catalog.registry.questions.length} preguntas propias</p>
+    <p>{eligibleNodes.length} evidencias · {eligibleNodes.filter(n => n.lesson).length} lecciones en borrador · {catalog.registry.questions.filter(q => !selectedSubject || q.subjectId === selectedSubject).length} preguntas propias</p>
     <label className="block">Área <select aria-label="Área" value={domain} onChange={e => { setDomain(e.target.value); setKey(''); }}>
-      <option value="">Todas las áreas</option>{catalog.registry.taxonomy.domains.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+      <option value="">Todas las áreas</option>{eligibleDomains.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
     </select></label>
     <label className="block">Evidencia <select aria-label="Evidencia" className="max-w-full" value={key} onChange={e => setKey(e.target.value)}>
-      <option value="">Seleccionar evidencia</option>{catalog.nodes.filter(n => !domain || n.domainId === domain).map(n =>
+      <option value="">Seleccionar evidencia</option>{eligibleNodes.filter(n => !domain || n.domainId === domain).map(n =>
         <option key={n.key} value={n.key}>{n.domainId} · {n.code} · {n.lesson ? 'Lección en borrador' : 'Lección no disponible'}</option>)}
     </select></label>
     {node && <div className="space-y-4" data-evidence-key={node.key}>

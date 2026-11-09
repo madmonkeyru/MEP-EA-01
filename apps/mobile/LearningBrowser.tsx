@@ -2,15 +2,38 @@ import { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 import type { LearningCatalog } from '@mep-ea/content/expansion';
 
-export function LearningBrowser({ catalog, busy, start, initialKey = '' }: { catalog: LearningCatalog; busy: boolean; start: (id: string) => void; initialKey?: string }) {
-  const [domain, setDomain] = useState(''); const [key, setKey] = useState(initialKey);
-  const node = catalog.nodes.find(n => n.key === key); const lesson = node?.lesson;
+export function LearningBrowser({
+  catalog,
+  busy,
+  start,
+  initialKey = '',
+  selectedSubject,
+}: {
+  catalog: LearningCatalog;
+  busy: boolean;
+  start: (id: string) => void;
+  initialKey?: string;
+  selectedSubject?: string;
+}) {
+  const [domain, setDomain] = useState('');
+  const [key, setKey] = useState(initialKey);
+
+  const eligibleDomains = selectedSubject
+    ? catalog.registry.taxonomy.domains.filter(d => d.subjectId === selectedSubject)
+    : catalog.registry.taxonomy.domains;
+
+  const eligibleDomainIds = new Set(eligibleDomains.map(d => d.id));
+  const eligibleNodes = catalog.nodes.filter(n => eligibleDomainIds.has(n.domainId));
+
+  const node = eligibleNodes.find(n => n.key === key);
+  const lesson = node?.lesson;
+
   return <View style={{ gap: 16 }}>
     <Text accessibilityRole="header">Aprender por evidencia</Text>
-    <Text>{catalog.nodes.length} evidencias · {catalog.lessons.length} lecciones en borrador · {catalog.registry.questions.length} preguntas propias</Text>
+    <Text>{eligibleNodes.length} evidencias · {eligibleNodes.filter(n => n.lesson).length} lecciones en borrador · {catalog.registry.questions.filter(q => !selectedSubject || q.subjectId === selectedSubject).length} preguntas propias</Text>
     <Button title="Todas las áreas" onPress={() => { setDomain(''); setKey(''); }} />
-    {catalog.registry.taxonomy.domains.map(d => <Button key={d.id} title={`${domain === d.id ? '✓ ' : ''}${d.name}`} onPress={() => { setDomain(d.id); setKey(''); }} />)}
-    {!node && catalog.nodes.filter(n => !domain || n.domainId === domain).map(n => <Button key={n.key}
+    {eligibleDomains.map(d => <Button key={d.id} title={`${domain === d.id ? '✓ ' : ''}${d.name}`} onPress={() => { setDomain(d.id); setKey(''); }} />)}
+    {!node && eligibleNodes.filter(n => !domain || n.domainId === domain).map(n => <Button key={n.key}
       title={`${key === n.key ? '✓ ' : ''}${n.domainId} · ${n.code} · ${n.lesson ? 'Lección en borrador' : 'Lección no disponible'}`} onPress={() => setKey(n.key)} />)}
     {node && <View style={{ gap: 16 }}>
       <Button title="Cambiar evidencia" onPress={() => setKey('')} />
