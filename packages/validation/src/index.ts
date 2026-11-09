@@ -1,5 +1,10 @@
 export class ValidationError extends Error {
-  constructor(public readonly path: string, message: string) { super(`${path}: ${message}`); this.name = 'ValidationError'; }
+  readonly path: string;
+  constructor(path: string, message: string) {
+    super(`${path}: ${message}`);
+    this.name = 'ValidationError';
+    this.path = path;
+  }
 }
 export function ensure(condition: unknown, path: string, message: string): asserts condition {
   if (!condition) throw new ValidationError(path, message);

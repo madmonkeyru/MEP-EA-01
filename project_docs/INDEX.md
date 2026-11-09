@@ -54,6 +54,19 @@ P5 closes the identity and entitlement gap, surfaces durable mastery and Plan de
 
 P11 matures the learner-facing product surfaces using the P10 architectural foundation. It introduces dynamic multi-subject support (Matemática and Cívica BXM 02-2026), transforms "Mi Progreso" into an actionable decision surface powered by longitudinal study habits, closes the pedagogical remediation loop from assessment results, achieves full Web/Mobile experience parity, and passes all 13 acceptance gates.
 
+## P12 Implementation
+
+- [Current P12 plan](./current-implementation-plan/P12_current_plan.md)
+- [P12 content readiness audit](./P12_CONTENT_READINESS_AUDIT.md)
+- [P12 execution report, content authoring, ingestion and multi-subject productization](./P12_EXECUTION.md)
+- [Subject onboarding developer guide](./content/SUBJECT_ONBOARDING.md)
+- [Content authoring guide](./content/AUTHORING_GUIDE.md)
+- [Content model specification](./content/CONTENT_MODEL.md)
+- [Validation engine specification](./content/VALIDATION.md)
+- [Ingestion pipeline specification](./content/INGESTION.md)
+
+P12 operationalizes the generalized educational platform established across P9–P11 by introducing a repeatable, validated pipeline for subject-specific educational content, curriculum structures, and content ingestion. It proves that a new subject (Estudios Sociales BXM 02-2026) can be authored, validated, ingested, versioned, and delivered through existing Web and Mobile product surfaces with zero frontend presentation code modifications.
+
 ## 1. Authoritative Target Architecture (Authoritative)
 
 The target architecture defines the forward-looking production design of the MEP EA digital platform, based directly on the approved system architecture diagrams. It serves as the single source of architectural truth for future development.

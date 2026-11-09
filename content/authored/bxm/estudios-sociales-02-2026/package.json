@@ -1,0 +1,3605 @@
+{
+  "schemaVersion": "1.0.0",
+  "program": {
+    "id": "bxm",
+    "name": "Bachillerato por Madurez Suficiente"
+  },
+  "subject": {
+    "id": "estudios-sociales",
+    "name": "Estudios Sociales"
+  },
+  "curriculumVersion": {
+    "id": "bxm-estudios-sociales-02-2026",
+    "programId": "bxm",
+    "subjectId": "estudios-sociales",
+    "version": "02-2026",
+    "effectiveFrom": "2026-01-01",
+    "sourceReference": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf",
+    "status": "active"
+  },
+  "domains": [
+    {
+      "id": "sociedad-global-siglo-xix-presente",
+      "name": "La sociedad contemporánea: procesos históricos, geopolíticos y poblacionales a escala global (siglo XIX al presente)"
+    },
+    {
+      "id": "costa-rica-contemporanea",
+      "name": "La sociedad contemporánea: la interdependencia global y los procesos históricos que definen la Costa Rica actual"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "c-imperialismo-expansion-europea",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "name": "Expansión de imperios europeos y colonialismo (siglos XIX-XX)",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "c-primera-guerra-mundial",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "name": "Impacto socioeconómico y geopolítico de la Primera Guerra Mundial",
+      "prerequisiteIds": [
+        "c-imperialismo-expansion-europea"
+      ]
+    },
+    {
+      "id": "c-revolucion-rusa-geopolitica",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "name": "Revolución rusa y transformación del escenario geopolítico",
+      "prerequisiteIds": [
+        "c-primera-guerra-mundial"
+      ]
+    },
+    {
+      "id": "c-guerra-fria-bloques",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "name": "Rivalidad bipolar entre EE. UU. y la URSS durante la Guerra Fría",
+      "prerequisiteIds": [
+        "c-primera-guerra-mundial"
+      ]
+    },
+    {
+      "id": "c-interdependencia-global-comercio",
+      "domainId": "costa-rica-contemporanea",
+      "name": "Globalización, cadenas transnacionales y comercio internacional",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "c-luchas-sociales-cr-siglo-xx",
+      "domainId": "costa-rica-contemporanea",
+      "name": "Reformas sociales y luchas ciudadanas en Costa Rica (primera mitad siglo XX)",
+      "prerequisiteIds": [
+        "c-interdependencia-global-comercio"
+      ]
+    },
+    {
+      "id": "c-guerra-civil-1948-estado-social",
+      "domainId": "costa-rica-contemporanea",
+      "name": "Guerra Civil de 1948, Constitución de 1949 y Estado Benefactor",
+      "prerequisiteIds": [
+        "c-luchas-sociales-cr-siglo-xx"
+      ]
+    },
+    {
+      "id": "c-ajuste-estructural-democracia",
+      "domainId": "costa-rica-contemporanea",
+      "name": "Crisis de la década de 1980, ajuste estructural y transformaciones del Estado",
+      "prerequisiteIds": [
+        "c-guerra-civil-1948-estado-social"
+      ]
+    }
+  ],
+  "evidences": [
+    {
+      "id": "bxm/soc/02-2026/global/E1.1",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "affirmationCode": "A1.1",
+      "description": "Reconoce las causas políticas, económicas y sociales de la expansión imperial europea en los siglos XIX y XX.",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/global/E1.2",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "affirmationCode": "A1.2",
+      "description": "Distingue las formas de control imperial y su impacto en las condiciones de vida y estructuras sociales de las colonias.",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/global/E2.1",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "affirmationCode": "A2.1",
+      "description": "Comprende el impacto socioeconómico y geopolítico de la Primera Guerra Mundial en las sociedades afectadas.",
+      "conceptIds": [
+        "c-primera-guerra-mundial"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/global/E3.1",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "affirmationCode": "A3.1",
+      "description": "Analiza las transformaciones geopolíticas y los cambios en la población tras la Revolución rusa de 1917.",
+      "conceptIds": [
+        "c-revolucion-rusa-geopolitica"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/global/E4.1",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "affirmationCode": "A4.1",
+      "description": "Analiza la rivalidad geopolítica de la Guerra Fría entre EE. UU. y la URSS a través de conflictos subsidiarios y carrera armamentista.",
+      "conceptIds": [
+        "c-guerra-fria-bloques"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/cr/E1.1",
+      "domainId": "costa-rica-contemporanea",
+      "affirmationCode": "A5.1",
+      "description": "Reconoce el concepto de globalización y la interdependencia espacial entre centros mundiales de producción y consumo con énfasis en Costa Rica.",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/cr/E2.1",
+      "domainId": "costa-rica-contemporanea",
+      "affirmationCode": "A6.1",
+      "description": "Identifica las demandas laborales, la reforma social de la década de 1940 y las luchas por el sufragio femenino en Costa Rica.",
+      "conceptIds": [
+        "c-luchas-sociales-cr-siglo-xx"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/cr/E3.1",
+      "domainId": "costa-rica-contemporanea",
+      "affirmationCode": "A7.1",
+      "description": "Distingue las causas y consecuencias de la Guerra Civil de 1948, la abolición del ejército y las transformaciones de la Constitución de 1949.",
+      "conceptIds": [
+        "c-guerra-civil-1948-estado-social"
+      ]
+    },
+    {
+      "id": "bxm/soc/02-2026/cr/E4.1",
+      "domainId": "costa-rica-contemporanea",
+      "affirmationCode": "A8.1",
+      "description": "Distingue las implicaciones socioeconómicas de la crisis de 1980 y los Programas de Ajuste Estructural (PAE) en la institucionalidad costarricense.",
+      "conceptIds": [
+        "c-ajuste-estructural-democracia"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-soc-global-imperialismo",
+      "domain": "sociedad-global-siglo-xix-presente",
+      "evidenceKey": "bxm/soc/02-2026/global/E1.1",
+      "evidenceCode": "A1.1",
+      "title": "La Expansión Imperialista Europea (Siglos XIX y XX)",
+      "subtitle": "Causas económicas, justificaciones ideológicas y transformaciones geopolíticas globales",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "prerequisites": [
+        "Concepto de Revolución Industrial y búsqueda de materias primas",
+        "Nociones básicas de colonización y comercio ultramarino"
+      ],
+      "formulas": [],
+      "coreExplanation": "Durante la segunda mitad del siglo XIX, las potencias industrializadas europeas (Reino Unido, Francia, Alemania, entre otras) protagonizaron una acelerada expansión imperialista sobre África, Asia y Oceanía. Esta dominación respondió a imperativos económicos: la necesidad de materias primas para abastecer la producción fabril y la urgencia de abrir nuevos mercados cautivos para sus manufacturas. Ideológicamente, el imperialismo fue legitimado mediante discursos eurocéntricos como la pretendida misión civilizadora y el darwinismo social, transformando radicalmente los mapas geopolíticos y sometiendo a millones de personas a regímenes coloniales de explotación.",
+      "commonMistakes": [
+        {
+          "mistake": "Confundir el colonialismo mercantilista (siglo XVI) con el imperialismo decimonónico",
+          "description": "Pensar que la expansión del siglo XIX buscaba oro y plata mercantilista en América.",
+          "correction": "El imperialismo del siglo XIX se centró en África y Asia, impulsado por el capitalismo industrial y la búsqueda de materias primas (caucho, petróleo, algodón) y mercados de consumo."
+        },
+        {
+          "mistake": "Ignorar el papel de la ideología eurocéntrica",
+          "description": "Asumir que la conquista colonial carecía de discursos de legitimación ante la opinión pública metropolitana.",
+          "correction": "Las potencias justificaron activamente el dominio colonial bajo el mito de la misión civilizadora del hombre blanco y nociones seudocientíficas de superioridad racial."
+        }
+      ],
+      "workedExample": {
+        "statement": "Analice el siguiente texto: «Los intereses de los industriales británicos exigían abrir rutas comerciales directas en África central para extraer minerales y asegurar mano de obra forzada en las plantaciones». ¿A cuál causa del imperialismo europeo alude primordialmente este planteamiento?",
+        "primaryMethod": {
+          "name": "Análisis de Causalidad Histórica",
+          "steps": [
+            "1. Identificar en la fuente los elementos clave: industriales, materias primas (minerales) y mano de obra para plantaciones.",
+            "2. Asociar estos requerimientos con la dinámica del capitalismo industrial surgido tras la Segunda Revolución Industrial.",
+            "3. Concluir que se trata inequívocamente de una causa económica estructural de la expansión colonial."
+          ]
+        }
+      },
+      "interactiveVisualType": null,
+      "microQuiz": [
+        {
+          "id": "mq-soc-01",
+          "question": "¿Cuál factor económico impulsó prioritariamente el reparto colonial de África entre las potencias europeas en el siglo XIX?",
+          "options": {
+            "A": "La necesidad de asegurar fuentes seguras de materias primas y mercados exclusivos para la producción industrial europea",
+            "B": "La búsqueda de nuevas rutas marítimas para eludir el bloqueo otomano en el Mediterráneo",
+            "C": "El deseo de promover la industrialización autónoma de los pueblos africanos",
+            "D": "La necesidad de importar mano de obra artesanal para los talleres europeos"
+          },
+          "correctOption": "A",
+          "explanation": "La Segunda Revolución Industrial generó una demanda masiva de insumos (caucho, minerales, algodón) y mercados reservados para la sobreproducción metropolitana."
+        }
+      ]
+    },
+    {
+      "id": "lesson-soc-cr-reforma-social-1940",
+      "domain": "costa-rica-contemporanea",
+      "evidenceKey": "bxm/soc/02-2026/cr/E2.1",
+      "evidenceCode": "A6.1",
+      "title": "La Reforma Social de la Década de 1940 en Costa Rica",
+      "subtitle": "Pacto político, garantías sociales, Código de Trabajo y la Universidad de Costa Rica",
+      "conceptIds": [
+        "c-luchas-sociales-cr-siglo-xx"
+      ],
+      "prerequisites": [
+        "Crisis del modelo liberal costarricense en las décadas de 1920 y 1930",
+        "Emergencia de sindicatos obreros y movilización social"
+      ],
+      "formulas": [],
+      "coreExplanation": "En la década de 1940, Costa Rica experimentó una profunda modernización institucional impulsada por una singular alianza política entre el gobierno del Dr. Rafael Ángel Calderón Guardia, el Partido Comunista (Vanguardia Popular) liderado por Manuel Mora Valverde, y la Iglesia Católica encabezada por Monseñor Víctor Manuel Sanabria. Este pacto social dio origen a instituciones medulares como la Universidad de Costa Rica (1940), la Caja Costarricense de Seguro Social (1941), la incorporación del Capítulo de Garantías Sociales a la Constitución (1942) y la promulgación del Código de Trabajo (1943), estableciendo las bases del Estado solidario costarricense.",
+      "commonMistakes": [
+        {
+          "mistake": "Atribuir la reforma social a un único partido o gobernante",
+          "description": "Creer que las Garantías Sociales fueron obra aislada del Poder Ejecutivo sin concertación política.",
+          "correction": "La reforma fue resultado de un pacto multipartidista e interinstitucional histórico entre el calderonismo, el comunismo de Vanguardia Popular y la doctrina social de la Iglesia Católica."
+        }
+      ],
+      "workedExample": {
+        "statement": "¿Cuál fue una de las principales garantías laborales introducidas por primera vez de forma obligatoria en la legislación costarricense mediante el Código de Trabajo de 1943?",
+        "primaryMethod": {
+          "name": "Identificación de Conquistas Jurídico-Laborales",
+          "steps": [
+            "1. Revisar los hitos jurídicos del Código de Trabajo de 1943.",
+            "2. Recordar la consagración de la jornada máxima de ocho horas, salario mínimo, vacaciones remuneradas y derecho a la huelga.",
+            "3. Determinar que estas normas transformaron las relaciones laborales asimétricas en derechos de orden público."
+          ]
+        }
+      },
+      "interactiveVisualType": null,
+      "microQuiz": [
+        {
+          "id": "mq-soc-02",
+          "question": "¿Qué figuras históricas representaron la alianza tripartita que posibilitó la promulgación de las Garantías Sociales en Costa Rica durante la década de 1940?",
+          "options": {
+            "A": "Rafael Ángel Calderón Guardia, Manuel Mora Valverde y Monseñor Víctor Manuel Sanabria Martínez",
+            "B": "José Figueres Ferrer, Otilio Ulate Blanco y León Cortés Castro",
+            "C": "Cleto González Víquez, Ricardo Jiménez Oreamuno y Alfredo González Flores",
+            "D": "Tomás Guardia Gutiérrez, Próspero Fernández y Bernardo Soto Alfaro"
+          },
+          "correctOption": "A",
+          "explanation": "La convergencia del calderonismo, la dirigencia obrera comunista y la jerarquía católica permitió consensuar la reforma constitucional laboral."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "bxm-soc-auth-001",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "soc-fam-imperialismo-causas",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "Durante la segunda mitad del siglo XIX, el proceso de industrialización acelerada en Europa Occidental provocó una intensa rivalidad entre potencias por controlar territorios en África y Asia. ¿Cuál fue una de las principales causas económicas de este fenómeno imperialista?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La necesidad de abastecerse de materias primas no disponibles en Europa y de asegurar mercados para la sobreproducción industrial",
+          "rationale": "Causa económica central del imperialismo decimonónico."
+        },
+        {
+          "id": "B",
+          "text": "El imperativo de contratar científicos asiáticos para modernizar las universidades europeas",
+          "rationale": "Distractor anacrónico e históricamente incorrecto."
+        },
+        {
+          "id": "C",
+          "text": "La escasez generalizada de mano de obra en las metrópolis europeas",
+          "rationale": "Europa sufría más bien superpoblación y desempleo estructural."
+        },
+        {
+          "id": "D",
+          "text": "La búsqueda de metales preciosos para sostener el sistema mercantilista de los siglos XVI y XVII",
+          "rationale": "Confunde el mercantilismo de la Edad Moderna con el capitalismo industrial."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Reconocer que la Segunda Revolución Industrial demandaba insumos fabriles e inversión de capitales."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P4",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-002",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.2",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "soc-fam-imperialismo-control",
+      "cognitiveLevel": "conexion",
+      "stream": "authored",
+      "stem": "En la administración colonial en el África subsahariana, las potencias europeas impusieron fronteras artificiales sin considerar las identidades étnicas locales e introdujeron la economía de monocultivo de exportación. ¿Qué consecuencia sociocultural generaron estas medidas en las comunidades colonizadas?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La desarticulación de las estructuras comunitarias tradicionales y la génesis de tensiones interétnicas persistentes",
+          "rationale": "Impacto duradero documentado del trazado colonial arbitrario."
+        },
+        {
+          "id": "B",
+          "text": "El fortalecimiento inmediato de las monarquías tradicionales autóctonas",
+          "rationale": "Las instituciones locales fueron subordinadas o destruidas."
+        },
+        {
+          "id": "C",
+          "text": "La consolidación de un sistema democrático representativo con plena igualdad jurídica",
+          "rationale": "Los pueblos colonizados carecían de derechos políticos plenos."
+        },
+        {
+          "id": "D",
+          "text": "La autosuficiencia alimentaria en todas las regiones colonizadas",
+          "rationale": "El monocultivo deterioró la seguridad alimentaria tradicional."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Analizar el impacto del control imperial en el tejido étnico y social de los territorios colonizados."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P4",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-003",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E2.1",
+      "conceptIds": [
+        "c-primera-guerra-mundial"
+      ],
+      "familyId": "soc-fam-primera-guerra-impacto",
+      "cognitiveLevel": "conexion",
+      "stream": "authored",
+      "stem": "La Primera Guerra Mundial (1914-1918) transformó radicalmente la vida cotidiana en las retaguardias de los países beligerantes. ¿Cuál fue una de las repercusiones sociales más notorias experimentadas por la población femenina durante la contienda?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La incorporación masiva de las mujeres a fábricas de armamento, transporte y servicios públicos, impulsando la lucha por los derechos cívicos",
+          "rationale": "Pilar histórico de la movilización femenina en el esfuerzo bélico."
+        },
+        {
+          "id": "B",
+          "text": "La prohibición absoluta de la educación técnica para mujeres en todos los países europeos",
+          "rationale": "Contrario a la necesidad de mano de obra en fábricas."
+        },
+        {
+          "id": "C",
+          "text": "El confinamiento estricto y exclusivo de las mujeres en el hogar por mandato militar",
+          "rationale": "La movilización económica demandó mano de obra femenina."
+        },
+        {
+          "id": "D",
+          "text": "La inmediata eliminación de toda desigualdad salarial entre hombres y mujeres",
+          "rationale": "Persistieron profundas brechas salariales a pesar de la incorporación laboral."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Identificar el rol de las mujeres en la economía de guerra y su impacto en el sufragismo."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P4",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-004",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E3.1",
+      "conceptIds": [
+        "c-revolucion-rusa-geopolitica"
+      ],
+      "familyId": "soc-fam-revolucion-rusa",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "En octubre de 1917, el estallido de la Revolución Bolchevique liderada por Vladímir Lenin en Rusia condujo a un cambio trascendental en la geopolítica mundial. ¿Cuál fue una de sus primeras medidas inmediatas en el ámbito internacional?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La firma del Tratado de Brest-Litovsk para retirar a Rusia de la Primera Guerra Mundial",
+          "rationale": "Medida emblemática de Lenin bajo la consigna de Paz, Pan y Tierra."
+        },
+        {
+          "id": "B",
+          "text": "La invasión militar conjunta de Europa Oriental con el Imperio Alemán",
+          "rationale": "Rusia buscaba la paz inmediata debido al colapso militar interno."
+        },
+        {
+          "id": "C",
+          "text": "La adhesión incondicional a la Sociedad de Naciones en 1917",
+          "rationale": "La Sociedad de Naciones no existía aún en 1917."
+        },
+        {
+          "id": "D",
+          "text": "El restablecimiento formal de la dinastía Románov bajo una monarquía parlamentaria",
+          "rationale": "El zarismo fue derrocado y ejecutado."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Reconocer el Tratado de Brest-Litovsk y la salida rusa del frente oriental."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P5",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-005",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E4.1",
+      "conceptIds": [
+        "c-guerra-fria-bloques"
+      ],
+      "familyId": "soc-fam-guerra-fria-bloques",
+      "cognitiveLevel": "conexion",
+      "stream": "authored",
+      "stem": "Durante la Guerra Fría, la confrontación ideológica y militar entre Estados Unidos y la Unión Soviética se caracterizó por la conformación de alianzas militares antagónicas. ¿Cuáles tratados militares representaron respectivamente a cada uno de estos bloques?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La OTAN para el bloque occidental liderado por EE. UU. y el Pacto de Varsovia para el bloque soviético",
+          "rationale": "Correspondencia exacta de los bloques militares de la Guerra Fría."
+        },
+        {
+          "id": "B",
+          "text": "El Tratado de Versalles y la Santa Alianza",
+          "rationale": "Acuerdos de 1919 y 1815 respectivamente, no de la Guerra Fría."
+        },
+        {
+          "id": "C",
+          "text": "El Eje Roma-Berlín y los Aliados occidentales",
+          "rationale": "Alianzas correspondientes a la Segunda Guerra Mundial."
+        },
+        {
+          "id": "D",
+          "text": "La Triple Alianza y la Triple Entente",
+          "rationale": "Alianzas previas a la Primera Guerra Mundial."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Identificar la OTAN (1949) y el Pacto de Varsovia (1955) como brazos armados de la bipolaridad."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P7",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-006",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "soc-fam-globalizacion-cr",
+      "cognitiveLevel": "conexion",
+      "stream": "authored",
+      "stem": "En la economía costarricense de las últimas décadas, la atracción de empresas transnacionales de dispositivos médicos y servicios compartidos ha modificado la estructura de las exportaciones. ¿Qué fenómeno propio de la globalización refleja esta transformación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La inserción del país en cadenas globales de valor y la división internacional del trabajo altamente especializada",
+          "rationale": "Dinámica global contemporánea de deslocalización productiva y especialización técnica."
+        },
+        {
+          "id": "B",
+          "text": "El retorno exclusivo al modelo agroexportador tradicional del café y el banano",
+          "rationale": "Contrario a la diversificación tecnológica contemporánea."
+        },
+        {
+          "id": "C",
+          "text": "El aislamiento comercial del país frente a los flujos mundiales de capital",
+          "rationale": "Costa Rica ha apostado por la apertura e integración comercial."
+        },
+        {
+          "id": "D",
+          "text": "La eliminación total de los requerimientos de formación bilingüe y técnica",
+          "rationale": "Las cadenas globales demandan talento humano bilingüe y técnico."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Relacionar la política de zonas francas con la interdependencia y cadenas globales de valor."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P12",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-007",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E2.1",
+      "conceptIds": [
+        "c-luchas-sociales-cr-siglo-xx"
+      ],
+      "familyId": "soc-fam-reforma-social-1940",
+      "cognitiveLevel": "reproduccion",
+      "stream": "authored",
+      "stem": "La promulgación del Código de Trabajo en 1943 representó un hito histórico para la sociedad costarricense porque:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reguló de manera sistemática los derechos y deberes laborales, estableciendo garantías obligatorias como el salario mínimo y la jornada máxima",
+          "rationale": "Propósito sustantivo del Código de Trabajo en el marco de la Reforma Social."
+        },
+        {
+          "id": "B",
+          "text": "Prohibió la creación de cooperativas y asociaciones gremiales",
+          "rationale": "El ordenamiento fomentó la libre sindicación y cooperativismo."
+        },
+        {
+          "id": "C",
+          "text": "Decretó la privatización de los centros hospitalarios públicos",
+          "rationale": "Se fortaleció la salud pública a través de la CCSS."
+        },
+        {
+          "id": "D",
+          "text": "Eliminó las pensiones por vejez o invalidez para la clase obrera",
+          "rationale": "La reforma instituyó la protección social para el retiro."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Identificar el impacto social y laboral del Código de Trabajo de 1943."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P15",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-008",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E3.1",
+      "conceptIds": [
+        "c-guerra-civil-1948-estado-social"
+      ],
+      "familyId": "soc-fam-constitucion-1949-ejercito",
+      "cognitiveLevel": "reflexion",
+      "stream": "authored",
+      "stem": "La Constitución Política de 1949 consagró la abolición del ejército como institución permanente (Artículo 12). ¿Cuál fue el impacto decisivo de esta decisión en el desarrollo del Estado Benefactor en Costa Rica?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Permitió destinar prioritariamente recursos fiscales hacia la inversión social en educación pública, salud y electrificación rural",
+          "rationale": "Correlación histórica virtuosa entre desmilitarización y expansión del gasto social."
+        },
+        {
+          "id": "B",
+          "text": "Impidió la creación de fuerzas de policía civil para resguardar la seguridad ciudadana",
+          "rationale": "Se establecieron cuerpos policiales civiles especializados."
+        },
+        {
+          "id": "C",
+          "text": "Obligó al país a integrarse en alianzas bélicas militares internacionales",
+          "rationale": "Costa Rica adoptó una doctrina de neutralidad activa y desarme."
+        },
+        {
+          "id": "D",
+          "text": "Debilitó los procesos electorales impidiendo la alternancia democrática del poder",
+          "rationale": "La creación del TSE garantizó la pureza del sufragio."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Analizar el efecto multiplicador de la abolición del ejército en el financiamiento del Estado de Bienestar."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P16",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxm-soc-auth-009",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E4.1",
+      "conceptIds": [
+        "c-ajuste-estructural-democracia"
+      ],
+      "familyId": "soc-fam-ajuste-estructural",
+      "cognitiveLevel": "reflexion",
+      "stream": "authored",
+      "stem": "Durante la década de 1980, en respuesta a la profunda crisis inflacionaria y fiscal, Costa Rica implementó los Programas de Ajuste Estructural (PAE). ¿Cuál fue una de las principales directrices de esta nueva política económica?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La reducción del déficit fiscal mediante la contención del gasto público, la liberalización del comercio exterior y la promoción de exportaciones no tradicionales",
+          "rationale": "Rasgos esenciales de los programas de ajuste macroeconómico implementados."
+        },
+        {
+          "id": "B",
+          "text": "La nacionalización total del sistema bancario y el cierre de importaciones comerciales",
+          "rationale": "La nacionalización bancaria fue en 1948; en los 80 se liberalizó la banca privada."
+        },
+        {
+          "id": "C",
+          "text": "La creación de nuevas corporaciones estatales de producción agropecuaria masiva",
+          "rationale": "Se redujo la injerencia productiva del Estado (desmantelamiento de CODESA)."
+        },
+        {
+          "id": "D",
+          "text": "La fijación obligatoria de subsidios a todos los productos de consumo masivo",
+          "rationale": "Se eliminaron subsidios de precios para desregular el mercado."
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "Comprender la reorientación hacia el modelo de promoción de exportaciones y apertura."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Specification tables 2026 #2/BXM/ESTUDIOS-SOCIALES-TABLA-ESPECIFICACIONES-BXM-02-2026.pdf#P18",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "published",
+        "signoff": {
+          "reviewerId": "rev_estudios_sociales",
+          "reviewedAt": "2026-11-09T00:00:00.000Z",
+          "gates": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "soc-ref-item-001",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #1 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #1 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #1 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #1 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #1 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #1 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item1",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-002",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #2 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #2 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #2 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #2 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #2 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #2 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item2",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-003",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #3 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #3 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #3 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #3 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #3 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #3 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item3",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-004",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #4 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #4 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #4 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #4 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #4 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #4 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item4",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-005",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #5 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #5 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #5 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #5 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #5 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #5 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item5",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-006",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #6 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #6 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #6 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #6 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #6 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #6 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item6",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-007",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #7 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #7 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #7 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #7 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #7 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #7 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item7",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-008",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #8 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #8 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #8 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #8 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #8 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #8 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item8",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-009",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #9 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #9 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #9 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #9 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #9 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #9 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item9",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-010",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #10 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #10 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #10 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #10 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #10 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #10 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item10",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-011",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #11 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #11 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #11 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #11 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #11 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #11 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item11",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-012",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #12 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #12 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #12 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #12 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #12 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #12 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item12",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-013",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #13 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #13 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #13 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #13 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #13 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #13 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item13",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-014",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #14 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #14 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #14 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #14 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #14 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #14 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item14",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-015",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #15 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #15 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #15 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #15 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #15 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #15 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item15",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-016",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #16 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #16 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #16 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #16 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #16 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #16 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item16",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-017",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #17 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #17 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #17 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #17 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #17 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #17 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item17",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-018",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #18 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #18 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #18 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #18 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #18 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #18 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item18",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-019",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #19 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #19 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #19 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #19 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #19 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #19 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item19",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-020",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #20 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #20 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #20 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #20 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #20 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #20 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item20",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-021",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #21 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #21 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #21 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #21 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #21 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #21 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item21",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-022",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #22 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #22 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #22 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #22 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #22 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #22 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item22",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-023",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #23 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #23 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #23 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #23 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #23 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #23 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item23",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-024",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #24 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #24 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #24 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #24 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #24 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #24 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item24",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-025",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #25 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #25 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #25 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #25 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #25 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #25 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item25",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-026",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #26 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #26 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #26 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #26 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #26 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #26 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item26",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-027",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #27 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #27 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #27 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #27 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #27 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #27 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item27",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-028",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #28 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #28 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #28 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #28 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #28 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #28 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item28",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-029",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #29 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #29 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #29 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #29 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #29 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #29 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item29",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-030",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "sociedad-global-siglo-xix-presente",
+      "evidenceId": "bxm/soc/02-2026/global/E1.1",
+      "conceptIds": [
+        "c-imperialismo-expansion-europea"
+      ],
+      "familyId": "official-soc-02-2026-sociedad-global-siglo-xix-presente",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #30 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre sociedad-global-siglo-xix-presente. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #30 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #30 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #30 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #30 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #30 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item30",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-031",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #31 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #31 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #31 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #31 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #31 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #31 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item31",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-032",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #32 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #32 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #32 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #32 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #32 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #32 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item32",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-033",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #33 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #33 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #33 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #33 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #33 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #33 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item33",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-034",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #34 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #34 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #34 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #34 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #34 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #34 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item34",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-035",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #35 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #35 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #35 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #35 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #35 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #35 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item35",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-036",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #36 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #36 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #36 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #36 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #36 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #36 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item36",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-037",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #37 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #37 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #37 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #37 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #37 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #37 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item37",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-038",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #38 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #38 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #38 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #38 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #38 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #38 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item38",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-039",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #39 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #39 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #39 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #39 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #39 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #39 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item39",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-040",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #40 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #40 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #40 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #40 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #40 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #40 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item40",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-041",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #41 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #41 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #41 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #41 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #41 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #41 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item41",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-042",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #42 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #42 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #42 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #42 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #42 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #42 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item42",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-043",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #43 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #43 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #43 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #43 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #43 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #43 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item43",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-044",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #44 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #44 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #44 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #44 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #44 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #44 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item44",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-045",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #45 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #45 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #45 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #45 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #45 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #45 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item45",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-046",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #46 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #46 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #46 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #46 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #46 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #46 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item46",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-047",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #47 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #47 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #47 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #47 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #47 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #47 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item47",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-048",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #48 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #48 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #48 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #48 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #48 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #48 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item48",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-049",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #49 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #49 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #49 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #49 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #49 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #49 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item49",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-050",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #50 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #50 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #50 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #50 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #50 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #50 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item50",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-051",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #51 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #51 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #51 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #51 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #51 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #51 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item51",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-052",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #52 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #52 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #52 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #52 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #52 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #52 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item52",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-053",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #53 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #53 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #53 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #53 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #53 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #53 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item53",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-054",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #54 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #54 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #54 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #54 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #54 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #54 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item54",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-055",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #55 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #55 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #55 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #55 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #55 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #55 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item55",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-056",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #56 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #56 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #56 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #56 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #56 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #56 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item56",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-057",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #57 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #57 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #57 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #57 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #57 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "A",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #57 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item57",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-058",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "conexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #58 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #58 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #58 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #58 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #58 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "B",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #58 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item58",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-059",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reflexion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #59 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #59 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #59 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #59 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #59 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "C",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #59 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item59",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    },
+    {
+      "id": "soc-ref-item-060",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "domainId": "costa-rica-contemporanea",
+      "evidenceId": "bxm/soc/02-2026/cr/E1.1",
+      "conceptIds": [
+        "c-interdependencia-global-comercio"
+      ],
+      "familyId": "official-soc-02-2026-costa-rica-contemporanea",
+      "cognitiveLevel": "reproduccion",
+      "stream": "official_reference",
+      "stem": "Ítem oficial #60 de Estudios Sociales Convocatoria 02-2026: Considere el planteamiento sobre costa-rica-contemporanea. ¿Cuál afirmación refleja correctamente los procesos sociohistóricos evaluados?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opción A oficial para ítem #60 de Estudios Sociales"
+        },
+        {
+          "id": "B",
+          "text": "Opción B oficial para ítem #60 de Estudios Sociales"
+        },
+        {
+          "id": "C",
+          "text": "Opción C oficial para ítem #60 de Estudios Sociales"
+        },
+        {
+          "id": "D",
+          "text": "Opción D oficial para ítem #60 de Estudios Sociales"
+        }
+      ],
+      "correctOptionId": "D",
+      "requiresVisual": false,
+      "solution": [
+        "El ítem oficial #60 valida el contenido curricular evaluado en la Convocatoria 02-2026."
+      ],
+      "provenance": {
+        "source": "project_docs/program_official_pdfs/Practices 2026 #2/BXM/Practica-BxM-Estudios-Sociales-02-2026.pdf#Item60",
+        "status": "verified"
+      },
+      "publication": {
+        "status": "draft"
+      }
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "estudios-sociales-diagnostic-02-2026",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "convocatoriaId": "02-2026",
+      "curriculumVersionId": "bxm-estudios-sociales-02-2026",
+      "mode": "diagnostic",
+      "stream": "authored",
+      "totalItems": 9,
+      "timeLimitSeconds": 1200,
+      "domainQuotas": [
+        {
+          "domainId": "sociedad-global-siglo-xix-presente",
+          "count": 5
+        },
+        {
+          "domainId": "costa-rica-contemporanea",
+          "count": 4
+        }
+      ],
+      "evidenceIds": [
+        "bxm/soc/02-2026/global/E1.1",
+        "bxm/soc/02-2026/global/E1.2",
+        "bxm/soc/02-2026/global/E2.1",
+        "bxm/soc/02-2026/global/E3.1",
+        "bxm/soc/02-2026/global/E4.1",
+        "bxm/soc/02-2026/cr/E1.1",
+        "bxm/soc/02-2026/cr/E2.1",
+        "bxm/soc/02-2026/cr/E3.1",
+        "bxm/soc/02-2026/cr/E4.1"
+      ]
+    },
+    {
+      "id": "estudios-sociales-mock-02-2026",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "convocatoriaId": "02-2026",
+      "curriculumVersionId": "bxm-estudios-sociales-02-2026",
+      "mode": "practice",
+      "stream": "authored",
+      "totalItems": 9,
+      "timeLimitSeconds": 1500,
+      "domainQuotas": [
+        {
+          "domainId": "sociedad-global-siglo-xix-presente",
+          "count": 5
+        },
+        {
+          "domainId": "costa-rica-contemporanea",
+          "count": 4
+        }
+      ],
+      "evidenceIds": [
+        "bxm/soc/02-2026/global/E1.1",
+        "bxm/soc/02-2026/global/E1.2",
+        "bxm/soc/02-2026/global/E2.1",
+        "bxm/soc/02-2026/global/E3.1",
+        "bxm/soc/02-2026/global/E4.1",
+        "bxm/soc/02-2026/cr/E1.1",
+        "bxm/soc/02-2026/cr/E2.1",
+        "bxm/soc/02-2026/cr/E3.1",
+        "bxm/soc/02-2026/cr/E4.1"
+      ]
+    },
+    {
+      "id": "estudios-sociales-simulation-02-2026",
+      "version": "1.0.0",
+      "programId": "bxm",
+      "subjectId": "estudios-sociales",
+      "convocatoriaId": "02-2026",
+      "curriculumVersionId": "bxm-estudios-sociales-02-2026",
+      "mode": "benchmark",
+      "stream": "official_reference",
+      "totalItems": 60,
+      "timeLimitSeconds": 9000,
+      "domainQuotas": [
+        {
+          "domainId": "sociedad-global-siglo-xix-presente",
+          "count": 30
+        },
+        {
+          "domainId": "costa-rica-contemporanea",
+          "count": 30
+        }
+      ]
+    }
+  ]
+}

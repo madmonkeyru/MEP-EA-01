@@ -26,7 +26,9 @@
     "build:service": "vite build --config vite.service.config.ts",
     "dev:service": "npm run build:service && node dist-service/main.js",
     "db:migrate": "npm run build:service && node dist-service/main.js --migrate",
-    "test:postgres": "node scripts/test-postgres.mjs"
+    "test:postgres": "node scripts/test-postgres.mjs",
+    "content:validate": "npx tsx scripts/content/validate.mjs",
+    "content:ingest": "npx tsx scripts/content/ingest.mjs"
   },
   "dependencies": {
     "fast-xml-parser": "^5.12.0",
