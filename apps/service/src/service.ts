@@ -70,9 +70,12 @@ export function createService(options: {
         return assessment ? { ...record, learningEvidence: collectLearningEvidence(assessment, record.attempt) } : record;
       });
       const mastery = calculateMastery(owner, history, new Date(now()).toISOString());
-      // Restrict baseline recommendations to the current BXM Mathematics eligible surface.
-      const domainIds = new Set(eligible.registry.questions.filter(q => q.programId === 'bxm' && q.subjectId === 'matematica').map(q => q.domainId));
-      const taxonomy = { ...eligible.registry.taxonomy, evidences: eligible.registry.taxonomy.evidences.filter(e => domainIds.has(e.domainId)) };
+      // Filter recommendations against eligible active taxonomy without forcing single-subject hardcoded BXM
+      const activeEvidenceIds = new Set(eligible.registry.questions.map(q => q.evidenceId));
+      const taxonomy = {
+        ...eligible.registry.taxonomy,
+        evidences: eligible.registry.taxonomy.evidences.filter(e => activeEvidenceIds.has(e.id)),
+      };
       return { schemaVersion: 1, mastery, plan: generateNivelacion(mastery, history, taxonomy, eligible.registry.questions) };
     });
   }
@@ -277,20 +280,20 @@ export function createService(options: {
         };
       }
 
-      // --- P6: Assessment Compilation Endpoint ---
+      // --- P6 & P9: Generalized Assessment Compilation Endpoint ---
       if (request.method === 'POST' && request.path === '/v1/assessments/compile') {
         let compMode: CompilationMode;
-        let programId: 'bxm';
-        let subjectId: 'matematica';
+        let programId: string;
+        let subjectId: string;
         let seed: number | undefined;
         try {
           const body = object(JSON.parse(request.body ?? '{}'), 'compile');
-          programId = text(body.programId, 'programId') as 'bxm';
-          subjectId = text(body.subjectId, 'subjectId') as 'matematica';
+          programId = text(body.programId, 'programId');
+          subjectId = text(body.subjectId, 'subjectId');
           compMode = text(body.mode, 'mode') as CompilationMode;
           if (body.seed !== undefined) seed = integer(body.seed, 'seed');
-          ensure(programId === 'bxm', 'compile.programId', 'unsupported program');
-          ensure(subjectId === 'matematica', 'compile.subjectId', 'unsupported subject');
+          ensure(eligible.registry.taxonomy.programs.some(p => p.id === programId), 'compile.programId', 'unsupported program');
+          ensure(eligible.registry.taxonomy.subjects.some(s => s.id === subjectId && s.programId === programId), 'compile.subjectId', 'unsupported subject');
           ensure(['diagnostic', 'mock', 'simulation'].includes(compMode), 'compile.mode', 'invalid mode');
         } catch {
           return fail(400);

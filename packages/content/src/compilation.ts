@@ -7,14 +7,16 @@ import officialItemsRaw from './official-c2-items.json';
 export type CompilationMode = 'diagnostic' | 'mock' | 'simulation';
 
 export interface CompilationRequest {
-  programId: 'bxm';
-  subjectId: 'matematica';
+  programId: string;
+  subjectId: string;
   mode: CompilationMode;
   seed?: number;
+  blueprint?: AssessmentBlueprint;
 }
 
 export interface CompilationEngineOptions {
   allowDraftPreview?: boolean;
+  officialQuestionsProvider?: (request: CompilationRequest) => Question[];
 }
 
 /** Linear Congruential Generator (LCG) for deterministic seeded pseudo-random selection. */
@@ -85,40 +87,65 @@ export function compileAssessment(
   registry: ContentRegistry,
   options: CompilationEngineOptions = {}
 ): Assessment {
-  ensure(request.programId === 'bxm', 'compile', 'only bxm supported');
-  ensure(request.subjectId === 'matematica', 'compile', 'only matematica supported');
   ensure(['diagnostic', 'mock', 'simulation'].includes(request.mode), 'compile', 'invalid mode');
+  ensure(registry.taxonomy.programs.some(p => p.id === request.programId), 'compile', `program ${request.programId} not found in taxonomy`);
+  ensure(registry.taxonomy.subjects.some(s => s.id === request.subjectId && s.programId === request.programId), 'compile', `subject ${request.subjectId} not found for program ${request.programId}`);
 
   const seed = request.seed ?? 202602;
   const rng = createRng(seed);
 
+  // If a custom blueprint is provided in the request or configured in the registry, use it;
+  // otherwise, default to BXM Matemática blueprint for backwards compatibility.
   if (request.mode === 'simulation') {
-    // Official-Reference Stream 60-item benchmark
-    const officialQuestions = loadOfficialReferenceQuestions();
-    ensure(officialQuestions.length === 60, 'compile', 'official benchmark must contain exactly 60 items');
+    // Official-Reference Stream benchmark
+    const officialQuestions = options.officialQuestionsProvider
+      ? options.officialQuestionsProvider(request)
+      : (request.programId === 'bxm' && request.subjectId === 'matematica'
+          ? loadOfficialReferenceQuestions()
+          : registry.questions.filter(q => q.programId === request.programId && q.subjectId === request.subjectId && q.stream === 'official_reference'));
 
-    const blueprint: AssessmentBlueprint = parseBlueprint({
-      id: `p6-official-simulation:2026-c2:s${seed}`,
-      version: '1.0.0',
-      programId: 'bxm',
-      subjectId: 'matematica',
-      convocatoriaId: '2026-c2',
-      mode: 'benchmark',
-      stream: 'official_reference',
-      totalItems: 60,
-      timeLimitSeconds: 150 * 60, // 150 minutes standard examination
-      domainQuotas: [
-        { domainId: 'geometry', count: 23 },
-        { domainId: 'functions', count: 25 },
-        { domainId: 'statistics', count: 12 },
-      ],
-    });
+    const blueprint: AssessmentBlueprint = request.blueprint ?? (
+      request.programId === 'bxm' && request.subjectId === 'matematica'
+        ? parseBlueprint({
+            id: `p6-official-simulation:2026-c2:s${seed}`,
+            version: '1.0.0',
+            programId: 'bxm',
+            subjectId: 'matematica',
+            convocatoriaId: '2026-c2',
+            mode: 'benchmark',
+            stream: 'official_reference',
+            totalItems: 60,
+            timeLimitSeconds: 150 * 60, // 150 minutes standard examination
+            domainQuotas: [
+              { domainId: 'geometry', count: 23 },
+              { domainId: 'functions', count: 25 },
+              { domainId: 'statistics', count: 12 },
+            ],
+          })
+        : parseBlueprint({
+            id: `simulation:${request.programId}-${request.subjectId}:s${seed}`,
+            version: '1.0.0',
+            programId: request.programId as any,
+            subjectId: request.subjectId,
+            convocatoriaId: '02-2026',
+            mode: 'benchmark',
+            stream: 'official_reference',
+            totalItems: officialQuestions.length,
+            timeLimitSeconds: 150 * 60,
+            domainQuotas: [...new Set(officialQuestions.map(q => q.domainId))].map(dId => ({
+              domainId: dId,
+              count: officialQuestions.filter(q => q.domainId === dId).length,
+            })),
+          })
+    );
+
+    ensure(officialQuestions.length === blueprint.totalItems, 'compile', 'official benchmark items count must match blueprint totalItems');
 
     // Verification of quotas
-    const geoCount = officialQuestions.filter(q => q.domainId === 'geometry').length;
-    const funcCount = officialQuestions.filter(q => q.domainId === 'functions').length;
-    const statCount = officialQuestions.filter(q => q.domainId === 'statistics').length;
-    ensure(geoCount === 23 && funcCount === 25 && statCount === 12, 'compile', 'official stream quota mismatch');
+    for (const quota of blueprint.domainQuotas) {
+      const actualCount = officialQuestions.filter(q => q.domainId === quota.domainId).length;
+      ensure(actualCount === quota.count, 'compile', `official stream quota mismatch for domain ${quota.domainId}: expected ${quota.count}, found ${actualCount}`);
+    }
 
     return {
       id: JSON.stringify([blueprint.id, blueprint.version, ...officialQuestions.map(q => [q.id, q.version])]),
@@ -127,19 +154,39 @@ export function compileAssessment(
     };
   }
 
-  // 20-item Diagnostic or Formative Mock (selected strictly from authored stream)
+  // Diagnostic or Formative Mock (selected strictly from authored stream)
   const candidatePool = registry.questions.filter(q => {
-    // P6.2: Official reference items must NEVER appear in diagnostic or mock
+    // Official reference items must NEVER appear in diagnostic or mock
     if (q.stream !== 'authored') return false;
-    if (q.programId !== 'bxm' || q.subjectId !== 'matematica') return false;
+    if (q.programId !== request.programId || q.subjectId !== request.subjectId) return false;
     return q.publication.status === 'published' || options.allowDraftPreview === true;
   });
 
-  const domainQuotas = [
-    { domainId: 'geometry', count: 8 },
-    { domainId: 'functions', count: 8 },
-    { domainId: 'statistics', count: 4 },
-  ];
+  // Determine domain quotas
+  let domainQuotas = request.blueprint?.domainQuotas;
+  let targetTotalItems = request.blueprint?.totalItems ?? 20;
+
+  if (!domainQuotas) {
+    if (request.programId === 'bxm' && request.subjectId === 'matematica') {
+      domainQuotas = [
+        { domainId: 'geometry', count: 8 },
+        { domainId: 'functions', count: 8 },
+        { domainId: 'statistics', count: 4 },
+      ];
+      targetTotalItems = 20;
+    } else {
+      // Dynamic quota generation based on available subject domains in registry taxonomy
+      const subjectDomains = registry.taxonomy.domains.filter(d => d.subjectId === request.subjectId);
+      const domainCount = Math.max(subjectDomains.length, 1);
+      const basePerDomain = Math.floor(targetTotalItems / domainCount);
+      let remainder = targetTotalItems % domainCount;
+      domainQuotas = subjectDomains.map(d => {
+        const count = basePerDomain + (remainder > 0 ? 1 : 0);
+        if (remainder > 0) remainder--;
+        return { domainId: d.id, count };
+      }).filter(q => q.count > 0);
+    }
+  }
 
   const selectedQuestions: Question[] = [];
 
@@ -168,19 +215,19 @@ export function compileAssessment(
   }
 
   unique(selectedQuestions.map(q => q.id), 'compile.selectedQuestions');
-  ensure(selectedQuestions.length === 20, 'compile', 'compiled assessment must have exactly 20 items');
+  ensure(selectedQuestions.length === targetTotalItems, 'compile', `compiled assessment must have exactly ${targetTotalItems} items`);
 
-  const blueprintId = `p6-compiled-${request.mode}:bxm-matematica:s${seed}`;
-  const blueprint: AssessmentBlueprint = parseBlueprint({
+  const blueprintId = request.blueprint?.id ?? `compiled-${request.mode}:${request.programId}-${request.subjectId}:s${seed}`;
+  const blueprint: AssessmentBlueprint = request.blueprint ?? parseBlueprint({
     id: blueprintId,
     version: '1.0.0',
-    programId: 'bxm',
-    subjectId: 'matematica',
+    programId: request.programId as any,
+    subjectId: request.subjectId,
     convocatoriaId: '02-2026',
     mode: request.mode === 'diagnostic' ? 'diagnostic' : 'practice',
     stream: 'authored',
-    totalItems: 20,
-    timeLimitSeconds: request.mode === 'diagnostic' ? 30 * 60 : 45 * 60, // 30 min diagnostic / 45 min mock
+    totalItems: targetTotalItems,
+    timeLimitSeconds: request.mode === 'diagnostic' ? 30 * 60 : 45 * 60,
     domainQuotas,
     evidenceIds: [...new Set(selectedQuestions.map(q => q.evidenceId))],
   });

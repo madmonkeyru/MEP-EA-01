@@ -103,6 +103,9 @@ export interface TelemetryEvent<T extends TelemetryEventName = TelemetryEventNam
   platform: PlatformId;
   anonymousSessionId: string;
   learnerId?: string;
+  programId?: string;
+  subjectId?: string;
+  curriculumVersionId?: string;
   payload: T extends keyof TelemetryEventPayloads ? TelemetryEventPayloads[T] : Record<string, unknown>;
   /** Client-side idempotency key to prevent accidental duplicate submission. */
   idempotencyKey?: string;
@@ -197,6 +200,9 @@ export function createTelemetryEvent<T extends TelemetryEventName>(params: {
   platform: PlatformId;
   anonymousSessionId: string;
   learnerId?: string;
+  programId?: string;
+  subjectId?: string;
+  curriculumVersionId?: string;
   payload: T extends keyof TelemetryEventPayloads ? TelemetryEventPayloads[T] : Record<string, unknown>;
   id?: string;
   occurredAt?: string;
@@ -211,6 +217,9 @@ export function createTelemetryEvent<T extends TelemetryEventName>(params: {
     platform: params.platform,
     anonymousSessionId: params.anonymousSessionId,
     learnerId: params.learnerId,
+    ...(params.programId ? { programId: params.programId } : {}),
+    ...(params.subjectId ? { subjectId: params.subjectId } : {}),
+    ...(params.curriculumVersionId ? { curriculumVersionId: params.curriculumVersionId } : {}),
     payload: sanitizedPayload as any,
     idempotencyKey: params.idempotencyKey,
   };
